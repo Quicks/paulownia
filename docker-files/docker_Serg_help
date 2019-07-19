@@ -1,0 +1,28 @@
+docker-compose up -d     //to run containers in a background (daemon) described at docker-compose.yml file in current folder
+	//the server is at http://127.0.0.1:8000 or http://localhost:8000/
+	//the PhpMyAdmin is at http://localhost:9191/index.php
+
+docker-compose down     //to stop all runned containers
+
+docker-compose restart   //to restart all runned containers
+docker-compose restart nginx  //to restart nginx container
+
+winpty docker-compose exec mysql bash   //to enter mysql container console
+winpty docker-compose exec php bash   //to enter php container console
+
+mysql -u root -p     //to enter mysql in mysql container. Next - type a password
+
+	//to fix DB connection problem (Connect Error: SQLSTATE[HY000] [2054] The server requested authentication method unknown to the client) execute in mysql:
+	ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'secret';
+	ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'secret';
+	ALTER USER 'default'@'%' IDENTIFIED WITH mysql_native_password BY 'secret';
+
+
+
+	//.env DB variables:
+		DB_CONNECTION=mysql
+		DB_HOST=mysql
+		DB_PORT=3306
+		DB_DATABASE=mysql
+		DB_USERNAME=root
+		DB_PASSWORD=secret

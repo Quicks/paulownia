@@ -44,7 +44,7 @@
                                                 <tr>
                                                     <th> Text ({{$locale}}) </th>
                                                     <td @if($locale == 'ar') dir="rtl" class="text-right" @endif>
-                                                        {{ $news->translate($locale)->text }}
+                                                        {{!! $news->translate($locale)->text !!}}
                                                     </td>
                                                 </tr>
                                             @endisset

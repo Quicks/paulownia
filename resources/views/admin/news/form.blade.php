@@ -22,7 +22,7 @@
             <label for="{{$locale.'[title]'}}" class="control-label">
                 {{ 'Title ('.$locale.')'}}
             </label>
-            <input class="form-control" 
+            <input class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
                 name="{{$locale.'[title]'}}" type="text" 
                 id="{{$locale.'[title]'}}" 
                 value="{{ isset($news) && isset($news->translate($locale)->title) ? $news->translate($locale)->title : ''}}" 
@@ -32,7 +32,7 @@
 
         <div class="form-group {{ $errors->has($locale.'[text]') ? 'has-error' : ''}}">
             <label for="{{$locale.'[text]'}}" class="control-label">{{ 'Text ('.$locale.')'}}</label>
-            <textarea class="form-control" 
+            <textarea class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
                 name="{{$locale.'[text]'}}"
                 id="{{$locale.'[text]'}}" rows="3" 
                 required>{{isset($news) && isset($news->translate($locale)->text) ? $news->translate($locale)->text : ''}}</textarea>

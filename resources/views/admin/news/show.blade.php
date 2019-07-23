@@ -27,7 +27,24 @@
                                     <tr>
                                         <th>ID</th><td>{{ $news->id }}</td>
                                     </tr>
-                                    <tr><th> Name </th><td> {{ $news->name }} </td></tr><tr><th> Active </th><td> {{ $news->active }} </td></tr><tr><th> Publish Date </th><td> {{ $news->publish_date }} </td></tr>
+                                    <tr><th> Name </th><td> {{ $news->name }} </td></tr>
+                                    <tr><th> Active </th><td> {{ $news->active }} </td></tr>
+                                    <tr><th> Publish Date </th><td> {{ $news->publish_date }} </td></tr>
+                                    @foreach(config('translatable.locales') as $locale)
+                                        <tbody class="bg-light">
+                                            <tr>
+                                                <th> Title ({{$locale}}) </th>
+                                                <td @if($locale == 'ar') dir="rtl" class="text-right" @endif>{{ $news->translate($locale)->title }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th> Text ({{$locale}}) </th>
+                                                <td @if($locale == 'ar') dir="rtl" class="text-right" @endif>
+                                                    {{ $news->translate($locale)->text }}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tr class="m-4 p-4"><td></td><td></td></tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

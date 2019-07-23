@@ -32,16 +32,22 @@
                                     <tr><th> Publish Date </th><td> {{ $news->publish_date }} </td></tr>
                                     @foreach(config('translatable.locales') as $locale)
                                         <tbody class="bg-light">
-                                            <tr>
-                                                <th> Title ({{$locale}}) </th>
-                                                <td @if($locale == 'ar') dir="rtl" class="text-right" @endif>{{ $news->translate($locale)->title }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th> Text ({{$locale}}) </th>
-                                                <td @if($locale == 'ar') dir="rtl" class="text-right" @endif>
-                                                    {{ $news->translate($locale)->text }}
-                                                </td>
-                                            </tr>
+                                            @isset($news->translate($locale)->title)
+                                                <tr>
+                                                    <th> Title ({{$locale}}) </th>
+                                                    <td @if($locale == 'ar') dir="rtl" class="text-right" @endif>
+                                                        {{ $news->translate($locale)->title }}
+                                                    </td>
+                                                </tr>
+                                            @endisset
+                                            @isset($news->translate($locale)->text)
+                                                <tr>
+                                                    <th> Text ({{$locale}}) </th>
+                                                    <td @if($locale == 'ar') dir="rtl" class="text-right" @endif>
+                                                        {{ $news->translate($locale)->text }}
+                                                    </td>
+                                                </tr>
+                                            @endisset
                                         </tbody>
                                         <tr class="m-4 p-4"><td></td><td></td></tr>
                                     @endforeach

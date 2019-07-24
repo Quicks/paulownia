@@ -17,8 +17,8 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ url('/admin/welcome') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,25 +34,29 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @if(!Auth::check())
-                            <li><a class="nav-link" href="{{ url('/login') }}">Login</a></li>
-                            <li><a class="nav-link" href="{{ url('/register') }}">Register</a></li>
+                        @if(!auth()->guard('admin')->check())
+                            <li><a class="nav-link" href="{{ url('/admin/login') }}">Login</a></li>
+                            <li><a class="nav-link" href="{{ url('/customer/register') }}">Register</a></li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <div style="display: inline-block; vertical-align: middle;">
+                                        <span class="name">
+                                            {{ auth()->guard('admin')->user()->name }}
+                                        </span>
+
+                                        <span class="role">
+                                            {{ auth()->guard('admin')->user()->role['name'] }}
+                                        </span>
+                                    </div>
+                                    <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('/logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+                                    <label>Account</label>
+                                    <a class="dropdown-item" href="{{ route('shop.home.index') }}" target="_blank">{{ trans('admin::app.layouts.visit-shop') }}</a>
+                                    <a class="dropdown-item" href="{{ route('admin.account.edit') }}">{{ trans('admin::app.layouts.my-account') }}</a>
+                                    <a class="dropdown-item" href="{{ route('admin.session.destroy') }}">{{ trans('admin::app.layouts.logout') }}</a>
                                 </div>
                             </li>
                         @endif
@@ -70,17 +74,17 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
 
-    <script>
-        $(document).ready(function () {
-            tinymce.init({
-                selector: 'textarea',
-                height: 200,
-                width: "100%",
-                plugins: 'image imagetools media wordcount save fullscreen code',
-                toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent  | removeformat | code',
-                image_advtab: true
-            });
+<script>
+    $(document).ready(function () {
+        tinymce.init({
+            selector: 'textarea',
+            height: 200,
+            width: "100%",
+            plugins: 'image imagetools media wordcount save fullscreen code',
+            toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent  | removeformat | code',
+            image_advtab: true
         });
-    </script>
+    });
+</script>
 </body>
 </html>

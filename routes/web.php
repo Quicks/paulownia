@@ -10,4 +10,43 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('admin/news', 'Admin\\NewsController');
+
+Route::group(['middleware' => ['web']], function () {
+    Route::prefix('admin')->group(function () {
+
+        Route::get('/', 'Webkul\Admin\Http\Controllers\Controller@redirectToLogin');
+
+        // Login Routes
+        Route::get('/login', 'Webkul\User\Http\Controllers\SessionController@create')->defaults('_config', [
+            'view' => 'admin::users.sessions.create'
+        ])->name('admin.session.create');
+
+        //login post route to admin auth controller
+        Route::post('/login', 'Webkul\User\Http\Controllers\SessionController@store')->defaults('_config', [
+            'redirect' => 'admin.welcome'
+        ])->name('admin.session.store');
+
+        // Forget Password Routes
+        Route::get('/forget-password', 'Webkul\User\Http\Controllers\ForgetPasswordController@create')->defaults('_config', [
+            'view' => 'admin::users.forget-password.create'
+        ])->name('admin.forget-password.create');
+
+        Route::post('/forget-password', 'Webkul\User\Http\Controllers\ForgetPasswordController@store')->name('admin.forget-password.store');
+
+        // Reset Password Routes
+        Route::get('/reset-password/{token}', 'Webkul\User\Http\Controllers\ResetPasswordController@create')->defaults('_config', [
+            'view' => 'admin::users.reset-password.create'
+        ])->name('admin.reset-password.create');
+
+        Route::post('/reset-password', 'Webkul\User\Http\Controllers\ResetPasswordController@store')->defaults('_config', [
+            'redirect' => 'admin.dashboard.index'
+        ])->name('admin.reset-password.store');
+
+
+        Route::group(['middleware' => ['admin']], function () {
+            Route::view('/welcome', 'admin.dashboard')->name('admin.welcome');
+
+            Route::resource('news', 'App\Http\Controllers\Admin\\NewsController');
+        });
+    });
+});

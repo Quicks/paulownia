@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             @include('admin.sidebar')
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
+                    <div class="card-header">Welcome</div>
 
                     <div class="card-body">
-                        Your application's dashboard.
+                        Your application's welcome admin page.
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <div class="navbar-top">
     <div class="navbar-top-left">
         <div class="brand-logo">
-            <a href="{{ route('admin.dashboard.index') }}">
+            <a href="{{ route('admin.welcome') }}">
                 <img src="{{ asset('vendor/webkul/ui/assets/images/logo.png') }}" alt="Bagisto"/>
             </a>
         </div>

@@ -28,7 +28,6 @@ class NewsController extends Controller
         } else {
             $news = News::latest()->paginate($perPage);
         }
-//dd(config('translatable.locales'));
         return view('admin.news.index', compact('news'));
     }
 

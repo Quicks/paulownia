@@ -10,6 +10,7 @@
 
         <link rel="stylesheet" href="{{ asset('vendor/webkul/admin/assets/css/admin.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         @yield('head')
 
@@ -72,6 +73,7 @@
                 @endif
             @endif
         </script>
+{{--        <script src="{{ asset('js/app.js') }}" defer></script>--}}
 
         <script type="text/javascript" src="{{ asset('vendor/webkul/admin/assets/js/admin.js') }}"></script>
         <script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script>

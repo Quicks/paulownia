@@ -12,3 +12,22 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+
+.page-header {
+  height: 100px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: fixed;
+  top: 60px;
+  z-index: 9999;
+  background-color: #f5f8fa;
+}
+
+.page-action {
+  position: fixed;
+  right: 25px;
+}
+.page-content {
+  margin-top: 80px;
+}

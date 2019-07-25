@@ -43,12 +43,12 @@ class SessionController extends Controller
     public function create()
     {
         if (auth()->guard('admin')->check()) {
-            return redirect()->route('admin.dashboard.index');
+            return redirect()->route('admin.welcome');
         } else {
             if (strpos(url()->previous(), 'admin') !== false) {
                 $intendedUrl = url()->previous();
             } else {
-                $intendedUrl = route('admin.dashboard.index');
+                $intendedUrl = route('admin.welcome');
             }
 
             session()->put('url.intended', $intendedUrl);

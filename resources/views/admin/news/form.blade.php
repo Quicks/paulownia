@@ -26,7 +26,7 @@
                 name="{{$locale.'[title]'}}" type="text" 
                 id="{{$locale.'[title]'}}" 
                 value="{{ isset($news) && isset($news->translate($locale)->title) ? $news->translate($locale)->title : ''}}" 
-                required>
+                >
             {!! $errors->first($locale.'[title]', '<p class="help-block">:message</p>') !!}
         </div>
 
@@ -35,7 +35,7 @@
             <textarea class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
                 name="{{$locale.'[text]'}}"
                 id="{{$locale.'[text]'}}" rows="3" 
-                required>{{isset($news) && isset($news->translate($locale)->text) ? $news->translate($locale)->text : ''}}</textarea>
+                >{{isset($news) && isset($news->translate($locale)->text) ? $news->translate($locale)->text : ''}}</textarea>
             {!! $errors->first($locale.'[text]', '<p class="help-block">:message</p>') !!}
         </div>
     </div>

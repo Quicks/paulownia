@@ -1,0 +1,18 @@
+
+.page-header {
+    height: 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: fixed;
+    top: 60px;
+    z-index: 4;
+    background-color: #fff;
+}
+
+.page-action {
+    position: fixed;
+    right: 25px;
+}
+.page-content {
+    margin-top: 80px;
+}

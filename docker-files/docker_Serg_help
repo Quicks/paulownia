@@ -7,15 +7,12 @@ docker-compose down     //to stop all runned containers
 docker-compose restart   //to restart all runned containers
 docker-compose restart nginx  //to restart nginx container
 
-winpty docker-compose exec mysql bash   //to enter mysql container console
-winpty docker-compose exec php bash   //to enter php container console
+docker-compose up --force-recreate //recreate all containers (down, build, up) if images should be redownloaded (down, build --no-cache, up)
+
+winpty docker-compose exec mysql bash   //to enter mysql container console in windows
+winpty docker-compose exec php bash   //to enter php container console in windows
 
 mysql -u root -p     //to enter mysql in mysql container. Next - type a password
-
-	//to fix DB connection problem (Connect Error: SQLSTATE[HY000] [2054] The server requested authentication method unknown to the client) execute in mysql:
-	ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'secret';
-	ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'secret';
-	ALTER USER 'default'@'%' IDENTIFIED WITH mysql_native_password BY 'secret';
 
 
 

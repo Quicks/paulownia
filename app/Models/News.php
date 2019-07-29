@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -8,7 +8,7 @@ class News extends Model
 {
     use \Dimsav\Translatable\Translatable;
 
-    public $translationModel = 'App\NewsTranslation';
+    public $translationModel = 'App\Models\Translations\NewsTranslation';
     
     public $translatedAttributes = ['title', 'text'];
     /**

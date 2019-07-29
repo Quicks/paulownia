@@ -52,4 +52,3 @@ Route::group(['middleware' => ['web']], function () {
         });
     });
 });
-//Route::resource('admin/treatises', 'Admin\\TreatisesController');

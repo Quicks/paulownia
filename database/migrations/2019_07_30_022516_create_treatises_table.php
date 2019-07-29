@@ -39,7 +39,7 @@ class CreateTreatisesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('treatises_translations');
+        Schema::drop('treatise_translations');
         Schema::drop('treatises');
     }
 }

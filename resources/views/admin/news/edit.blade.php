@@ -5,35 +5,99 @@
         <div class="row">
             @include('admin.sidebar')
 
-            <div class="col-md-9">
+            <div class="col-md-10">
+
+                {{--<div class="tab-content" id="v-pills-tabContent">--}}
+                {{--<div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main">--}}
+
                 <div class="card">
                     <div class="card-header">Edit News #{{ $news->id }}</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/news') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
+                        <div class="container">
+                            <div class="row">
 
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+                                <div class="col-sm">
+                                    @if ($errors->any())
+                                        <ul class="alert alert-danger">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <a href="{{ url('/admin/news') }}" title="Back">
+                                                    <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left"
+                                                                                              aria-hidden="true"></i>
+                                                        Back
+                                                    </button>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm">
+                                                <div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
+                                                    <label for="name" class="control-label">{{ 'Name' }}</label>
+                                                    <input class="form-control" name="name" type="text" id="name"
+                                                           value="{{ isset($news->name) ? $news->name : ''}}" required>
+                                                    {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
+                                                </div>
+                                            </div>
 
-                        <form method="POST" action="{{ url('/admin/news/' . $news->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
-                            {{ csrf_field() }}
+                                        </div>
+                                    </div>
+                                    <form method="POST" action="{{ url('/admin/news/' . $news->id) }}"
+                                          accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                                        {{ method_field('PATCH') }}
+                                        {{ csrf_field() }}
+                                        @include ('admin.news.form', ['formMode' => 'edit'])
+                                    </form>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="card">
+                                        <div class="card-header">Main Panel</div>
 
-                            @include ('admin.news.form', ['formMode' => 'edit'])
 
-                        </form>
+                                        <div class="card-body">
+
+
+
+                                            <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist"
+                                                 aria-orientation="vertical">
+
+                                                {{--<a class="nav-link" id="main" data-toggle="pill" href="#main" role="tab"--}}
+                                                {{--aria-controls="main" aria-selected="false">Profile</a>--}}
+
+                                                @foreach(config('translatable.locales') as $locale)
+                                                    <br>
+                                                    <a class="nav-link btn btn-outline-primary btn-sm" id={{$locale}} data-toggle="pill"
+                                                       href="#{{$locale}}" role="tab"
+                                                       aria-controls={{$locale}} aria-selected="false"> <label
+                                                                for="{{$locale.'[title]'}}"
+                                                                class="control-label">
+                                                            {{ strtoupper($locale)}}
+                                                        </label></a>
+                                                @endforeach
+
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>
+
             </div>
+
+
         </div>
     </div>
+
 @endsection
 
 

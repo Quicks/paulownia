@@ -1,44 +1,206 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">
-                <label for="active" class="control-label">{{ 'Active' }}</label>
 
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-2">
-                            <div class="radio">
-                                <label><input name="active" type="radio" value="1" {{ (isset($news) && 1 == $news->active) ? 'checked' : '' }}> Yes</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="radio">
-                                <label><input name="active" type="radio" value="0" @if (isset($news)) {{ (0 == $news->active) ? 'checked' : '' }} @else {{ 'checked' }} @endif> No</label>
-                            </div>
-                            {!! $errors->first('active', '<p class="help-block">:message</p>') !!}
-                        </div>
+<div class="d-flex flex-row">
+    <div class="p-3">
+
+
+        <a href="{{ url('/admin/news') }}" title="Back">
+            <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left"
+                                                      aria-hidden="true"></i>
+                Back
+            </button>
+        </a>
+
+
+    </div>
+    <div class="p-3">
+
+        <div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
+            <label for="name" class="control-label">{{ 'Name' }}</label>
+            <input class="form-control" name="name" type="text" id="name"
+                   value="{{ isset($news->name) ? $news->name : ''}}" required>
+            {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
+        </div>
+
+    </div>
+
+
+    <div class="p-3">
+
+        <div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">
+            <label for="active" class="control-label">{{ 'Active' }}</label>
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="radio">
+                        <label><input name="active" type="radio" value="1" {{ (isset($news) && 1 == $news->active) ? 'checked' : '' }}> Yes</label>
                     </div>
                 </div>
-
-
-
-
-
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-group {{ $errors->has('publish_date') ? 'has-error' : ''}}">
-                <label for="publish_date" class="control-label">{{ 'Publish Date' }}</label>
-                <input class="form-control" name="publish_date" type="date" id="publish_date" value="{{ isset($news->publish_date) ? $news->publish_date : ''}}" required>
-                {!! $errors->first('publish_date', '<p class="help-block">:message</p>') !!}
+                <div class="col-sm-2">
+                    <div class="radio">
+                        <label><input name="active" type="radio" value="0" @if (isset($news)) {{ (0 == $news->active) ? 'checked' : '' }} @else {{ 'checked' }} @endif> No</label>
+                    </div>
+                    {!! $errors->first('active', '<p class="help-block">:message</p>') !!}
+                </div>
             </div>
 
         </div>
 
 
     </div>
+    <div class="p-3">
+
+        <div class="form-group {{ $errors->has('publish_date') ? 'has-error' : ''}}">
+            <label for="publish_date" class="control-label">{{ 'Publish Date' }}</label>
+            <input class="form-control" name="publish_date" type="date" id="publish_date" value="{{ isset($news->publish_date) ? $news->publish_date : ''}}" required>
+            {!! $errors->first('publish_date', '<p class="help-block">:message</p>') !!}
+        </div>
+
+
+
+
 </div>
+
+
+</div>
+
+
+
+{{--<div class="container">--}}
+    {{--<div class="row">--}}
+        {{--<div class="col-sm">--}}
+
+            {{--<div class="row">--}}
+                {{--<div class="col">--}}
+
+                    {{--<a href="{{ url('/admin/news') }}" title="Back">--}}
+                        {{--<button class="btn btn-warning btn-md"><i class="fa fa-arrow-left"--}}
+                                                                  {{--aria-hidden="true"></i>--}}
+                            {{--Back--}}
+                        {{--</button>--}}
+                    {{--</a>--}}
+
+                {{--</div>--}}
+
+                {{--<div class="w-100"></div>--}}
+
+                {{--<br>--}}
+                {{--<br>--}}
+
+                {{--<div class="col-sm">--}}
+                    {{--<div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">--}}
+                        {{--<label for="name" class="control-label">{{ 'Name' }}</label>--}}
+                        {{--<input class="form-control" name="name" type="text" id="name"--}}
+                               {{--value="{{ isset($news->name) ? $news->name : ''}}" required>--}}
+                        {{--{!! $errors->first('name', '<p class="help-block">:message</p>') !!}--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+
+
+            {{--</div>--}}
+
+
+        {{--</div>--}}
+        {{--<div class="col-sm">--}}
+
+            {{--<div class="row">--}}
+                {{--<div class="col">--}}
+
+
+                    {{--<div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">--}}
+                        {{--<label for="active" class="control-label">{{ 'Active' }}</label>--}}
+
+                        {{--<div class="row">--}}
+                            {{--<div class="col-sm-2">--}}
+                                {{--<div class="radio">--}}
+                                    {{--<label><input name="active" type="radio" value="1" {{ (isset($news) && 1 == $news->active) ? 'checked' : '' }}> Yes</label>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-sm-2">--}}
+                                {{--<div class="radio">--}}
+                                    {{--<label><input name="active" type="radio" value="0" @if (isset($news)) {{ (0 == $news->active) ? 'checked' : '' }} @else {{ 'checked' }} @endif> No</label>--}}
+                                {{--</div>--}}
+                                {{--{!! $errors->first('active', '<p class="help-block">:message</p>') !!}--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+
+                    {{--</div>--}}
+
+                {{--</div>--}}
+
+                {{--<div class="w-100"></div>--}}
+
+                {{--<div class="col">--}}
+
+
+                    {{--<div class="form-group {{ $errors->has('publish_date') ? 'has-error' : ''}}">--}}
+                        {{--<label for="publish_date" class="control-label">{{ 'Publish Date' }}</label>--}}
+                        {{--<input class="form-control" name="publish_date" type="date" id="publish_date" value="{{ isset($news->publish_date) ? $news->publish_date : ''}}" required>--}}
+                        {{--{!! $errors->first('publish_date', '<p class="help-block">:message</p>') !!}--}}
+                    {{--</div>--}}
+
+
+                {{--</div>--}}
+
+            {{--</div>--}}
+
+
+
+
+        {{--</div>--}}
+
+    {{--</div>--}}
+{{--</div>--}}
+
+
+
+
+
+
+
+
+
+{{--<div class="container">--}}
+    {{--<div class="row">--}}
+        {{--<div class="col-sm">--}}
+            {{--<div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">--}}
+                {{--<label for="active" class="control-label">{{ 'Active' }}</label>--}}
+
+
+                {{--<div class="container">--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col-sm-2">--}}
+                            {{--<div class="radio">--}}
+                                {{--<label><input name="active" type="radio" value="1" {{ (isset($news) && 1 == $news->active) ? 'checked' : '' }}> Yes</label>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="col-sm-2">--}}
+                            {{--<div class="radio">--}}
+                                {{--<label><input name="active" type="radio" value="0" @if (isset($news)) {{ (0 == $news->active) ? 'checked' : '' }} @else {{ 'checked' }} @endif> No</label>--}}
+                            {{--</div>--}}
+                            {{--{!! $errors->first('active', '<p class="help-block">:message</p>') !!}--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+
+
+
+
+
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="col-sm">--}}
+            {{--<div class="form-group {{ $errors->has('publish_date') ? 'has-error' : ''}}">--}}
+                {{--<label for="publish_date" class="control-label">{{ 'Publish Date' }}</label>--}}
+                {{--<input class="form-control" name="publish_date" type="date" id="publish_date" value="{{ isset($news->publish_date) ? $news->publish_date : ''}}" required>--}}
+                {{--{!! $errors->first('publish_date', '<p class="help-block">:message</p>') !!}--}}
+            {{--</div>--}}
+
+        {{--</div>--}}
+
+
+    {{--</div>--}}
+{{--</div>--}}
 
 
 

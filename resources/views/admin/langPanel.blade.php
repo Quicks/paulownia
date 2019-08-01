@@ -11,15 +11,17 @@
 
 
 
+
             @foreach(config('translatable.locales') as $locale)
+
+
+
                 <br>
-                <a class="nav-link btn btn-outline-primary btn-sm" id={{$locale}} data-toggle="pill"
+                <a class="nav-link btn btn-outline-primary btn-sm   @if ($loop->first)active @endif" id={{$locale}} data-toggle="pill"
                    href="#{{$locale}}" role="tab"
-                   aria-controls={{$locale}} aria-selected="false"> <label
-                            for="{{$locale.'[title]'}}"
-                            class="control-label">
+                   aria-controls={{$locale}} aria-selected=@if ($loop->first)"true" @else "false" @endif>
                         {{ strtoupper($locale)}}
-                    </label></a>
+                        </a>
             @endforeach
 
 

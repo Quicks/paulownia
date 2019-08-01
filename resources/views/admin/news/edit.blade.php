@@ -12,27 +12,12 @@
                     <div class="card-body">
 
 
-                        <div class="container">
-                            {{--<div class="row">--}}
-                                {{--<div class="col-sm">--}}
-                                    {{--<form method="POST" action="{{ url('/admin/news/' . $news->id) }}"--}}
-                                          {{--accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">--}}
-                                        {{--{{ method_field('PATCH') }}--}}
-                                        {{--{{ csrf_field() }}--}}
-                                        {{--@include ('admin.news.form', ['formMode' => 'edit'])--}}
-                                    {{--</form>--}}
-                                {{--<div class="col-sm">--}}
-                                    {{--@include('admin.news.langPanel')--}}
-                                {{--</div>--}}
+                        <div class="container-fluid">
 
-                            {{--</div>--}}
-                        {{--</div>--}}
+                            <div class="row">
 
 
-                            <div class="d-flex flex-row justify-content-between">
-                                <div class="p-2">
-
-                                    <div class="col">
+                                    <div class="col-md-10">
                                         <form method="POST" action="{{ url('/admin/news/' . $news->id) }}"
                                               accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                                             {{ method_field('PATCH') }}
@@ -40,37 +25,14 @@
                                             @include ('admin.news.form', ['formMode' => 'edit'])
                                         </form>
                                     </div>
-
-                                </div>
-                                <div class="p-2 ">
-
-                                    <div class="col">
-                                        @include('admin.news.langPanel')
+                                
+                                    <div class="col-md-2">
+                                        @include('admin.langPanel')
                                     </div>
 
-                                </div>
+
 
                             </div>
-
-
-
-                        {{--<div class="container">--}}
-                            {{--<div class="row" style="flex-direction: row">--}}
-                                {{--<div class="col-8">--}}
-                                    {{--<form method="POST" action="{{ url('/admin/news/' . $news->id) }}"--}}
-                                          {{--accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">--}}
-                                        {{--{{ method_field('PATCH') }}--}}
-                                        {{--{{ csrf_field() }}--}}
-                                        {{--@include ('admin.news.form', ['formMode' => 'edit'])--}}
-                                    {{--</form>--}}
-                                {{--</div>--}}
-
-                                {{--</div>--}}
-                                {{--<div class="col-3">--}}
-                                   {{--@include('admin.news.langPanel')--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
 
 
                     </div>

@@ -25,10 +25,10 @@
                                             @include ('admin.news.form', ['formMode' => 'edit'])
                                         </form>
                                     </div>
-                                
-                                    <div class="col-md-2">
+
+
                                         @include('admin.langPanel')
-                                    </div>
+
 
 
 

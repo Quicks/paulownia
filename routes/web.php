@@ -47,6 +47,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::view('/welcome', 'admin.dashboard')->name('admin.welcome');
 
             Route::resource('news', 'App\Http\Controllers\Admin\\NewsController');
+            Route::resource('galleries', 'App\Http\Controllers\Admin\\GalleriesController');
         });
     });
 });

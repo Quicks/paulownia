@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateNewsTable extends Migration
+class CreateGalleriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,24 +12,23 @@ class CreateNewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('name')->nullable();
             $table->boolean('active')->nullable();
-            $table->date('publish_date')->nullable();
             });
 
-        Schema::create('news_translations', function(Blueprint $table) {
+        Schema::create('galleries_translations', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('news_id')->unsigned();
+            $table->integer('gallery_id')->unsigned();
             $table->string('title');
-            $table->text('text');
+            $table->text('desc');
             $table->string('locale')->index();
             $table->timestamps();
 
-            $table->unique(['news_id','locale']);
-            $table->foreign('news_id')->references('id')->on('news')->onDelete('cascade');
+            $table->unique(['gallery_id','locale']);
+            $table->foreign('gallery_id')->references('id')->on('galleries')->onDelete('cascade');
         });
     }
 
@@ -40,7 +39,7 @@ class CreateNewsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('news_translations');
-        Schema::drop('news');
+        Schema::drop('galleries_translations');
+        Schema::drop('galleries');
     }
 }

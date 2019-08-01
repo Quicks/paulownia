@@ -4,8 +4,9 @@ namespace App\Models\Translations;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NewsTranslation extends Model {
+class GalleryTranslation extends Model {
 
+    protected $table = 'galleries_translations';
     public $timestamps = true;
     protected $fillable = ['title', 'text'];
 

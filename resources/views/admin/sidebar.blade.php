@@ -18,6 +18,11 @@
                         Galleries
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{Request::is('admin/treatises*') ? "active" : ""}}" href="{{route('treatises.index')}}">
+                        Treatises
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

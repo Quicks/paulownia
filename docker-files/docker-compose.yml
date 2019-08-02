@@ -37,6 +37,7 @@ services:
             - ./mysql:/var/lib/mysql
         # задаем пароль для root пользователя
         environment:
+            MYSQL_DATABASE: paulownia
             MYSQL_ROOT_PASSWORD: secret
 
     phpmyadmin:

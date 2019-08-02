@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\Gallery;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class GalleriesController extends Controller
@@ -23,7 +24,6 @@ class GalleriesController extends Controller
         if (!empty($keyword)) {
             $galleries = Gallery::where('name', 'LIKE', "%$keyword%")
                 ->orWhere('active', 'LIKE', "%$keyword%")
-                ->orWhere('image', 'LIKE', "%$keyword%")
                 ->orWhere('title', 'LIKE', "%$keyword%")
                 ->orWhere('desc', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
@@ -56,16 +56,19 @@ class GalleriesController extends Controller
         $this->validate($request, [
 			'name' => 'required|max:90',
 			'active' => 'required|boolean',
-			'image' => 'image|max:2048',
-			'title' => 'required|max:250'
+            'image' => 'image|max:2000'
 		]);
-        $requestData = $request->all();
-                if ($request->hasFile('image')) {
-            $requestData['image'] = $request->file('image')
-                ->store('uploads', 'public');
+
+        $newGalery = Gallery::create($request->except(['image_atr','image']));
+
+        if ($request->hasFile('image')) {
+            $imageAtributes = $request->image_atr;
+            $imageAtributes['image'] = $request->file('image')->store('uploads', 'public');
+            $imageAtributes['imageable_id'] = $newGalery->id;
+            $imageAtributes['imageable_type'] = 'App\Models\Gallery';
+            Image::create($imageAtributes);
         }
 
-        Gallery::create($requestData);
 
         return redirect('admin/galleries')->with('flash_message', 'Gallery added!');
     }
@@ -110,18 +113,10 @@ class GalleriesController extends Controller
     {
         $this->validate($request, [
 			'name' => 'required|max:90',
-			'active' => 'required|boolean',
-			'image' => 'image|max:2048',
-			'title' => 'required|max:250'
+			'active' => 'required|boolean'
 		]);
-        $requestData = $request->all();
-                if ($request->hasFile('image')) {
-            $requestData['image'] = $request->file('image')
-                ->store('uploads', 'public');
-        }
-
         $gallery = Gallery::findOrFail($id);
-        $gallery->update($requestData);
+        $gallery->update($request->all());
 
         return redirect('admin/galleries')->with('flash_message', 'Gallery updated!');
     }

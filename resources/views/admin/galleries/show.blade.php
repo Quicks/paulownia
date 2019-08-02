@@ -24,11 +24,29 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
-                                    <tr>
-                                        <th>ID</th><td>{{ $gallery->id }}</td>
-                                    </tr>
-                                    <tr><th> Name </th><td> {{ $gallery->name }} </td></tr><tr><th> Active </th><td> {{ $gallery->active }} </td></tr><tr><th> Image </th><td> {{ $gallery->image }} </td></tr>
+                                    <tr><th>ID</th><td>{{ $gallery->id }}</td></tr>
+                                    <tr><th> Name </th><td> {{ $gallery->name }} </td></tr>
+                                    <tr><th> Active </th><td> {{ $gallery->active }} </td></tr>
+                                    @foreach ($gallery->images as $image)
+                                        <tr>
+                                            <th> Image {{$loop->iteration}} </th>
+                                            <td>
+                                                <img src="{{asset('storage/'.$image->image)}}">
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
+                                @foreach(config('translatable.locales') as $locale)
+                                    <tbody class="bg-light">
+                                        @isset($gallery->translate($locale)->title)
+                                            <tr><th> Title ({{$locale}}) </th><td> {{ $gallery->translate($locale)->title }} </td></tr>
+                                        @endisset
+                                        @isset($gallery->translate($locale)->desc)
+                                            <tr><th> Description ({{$locale}}) </th><td> {!! $gallery->translate($locale)->desc !!} </td></tr>
+                                        @endisset
+                                    </tbody>
+                                    <tr class="m-4 p-4"><td></td><td></td></tr>
+                                @endforeach
                             </table>
                         </div>
 

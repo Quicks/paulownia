@@ -4,19 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Gallery extends Model
+class Image extends Model
 {
     use \Dimsav\Translatable\Translatable;
 
-    public $translationModel = 'App\Models\Translations\GalleryTranslation';
+    public $translationModel = 'App\Models\Translations\ImageTranslation';
     
-    public $translatedAttributes = ['title', 'text'];
+    public $translatedAttributes = ['title', 'desc'];
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'galleries';
+    protected $table = 'images';
 
     /**
     * The database primary key value.
@@ -30,11 +30,11 @@ class Gallery extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'active'];
+    protected $fillable = ['image', 'imageable_id', 'imageable_type'];
 
-    public function images()
+    public function imageable()
     {
-        return $this->morphMany('App\Models\Image', 'imageable');
+        return $this->morphTo();
     }
 
 }

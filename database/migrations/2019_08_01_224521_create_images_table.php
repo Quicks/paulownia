@@ -16,18 +16,20 @@ class CreateImagesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('image');
+            $table->integer('imageable_id');
+            $table->string('imageable_type');
             });
 
         Schema::create('images_translations', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('images_id')->unsigned();
+            $table->integer('image_id')->unsigned();
             $table->string('title');
             $table->text('desc');
             $table->string('locale')->index();
             $table->timestamps();
 
-            $table->unique(['images_id','locale']);
-            $table->foreign('images_id')->references('id')->on('images')->onDelete('cascade');
+            $table->unique(['image_id','locale']);
+            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
         });
     }
 

@@ -13,21 +13,45 @@
 </div>
     {!! $errors->first('active', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group {{ $errors->has('image') ? 'has-error' : ''}}">
-    <label for="image" class="control-label">{{ 'Image' }}</label>
-    <input class="form-control" name="image" type="file" id="image" value="{{ isset($gallery->image) ? $gallery->image : ''}}" required>
-    {!! $errors->first('image', '<p class="help-block">:message</p>') !!}
-</div>
-<div class="form-group {{ $errors->has('title') ? 'has-error' : ''}}">
-    <label for="title" class="control-label">{{ 'Title' }}</label>
-    <input class="form-control" name="title" type="text" id="title" value="{{ isset($gallery->title) ? $gallery->title : ''}}" required>
-    {!! $errors->first('title', '<p class="help-block">:message</p>') !!}
-</div>
-<div class="form-group {{ $errors->has('desc') ? 'has-error' : ''}}">
-    <label for="desc" class="control-label">{{ 'Desc' }}</label>
-    <textarea class="form-control" rows="5" name="desc" type="textarea" id="desc" >{{ isset($gallery->desc) ? $gallery->desc : ''}}</textarea>
-    {!! $errors->first('desc', '<p class="help-block">:message</p>') !!}
-</div>
+
+@foreach(config('translatable.locales') as $locale)
+    <div class="form-group {{ $errors->has($locale.'[title]') ? 'has-error' : ''}}">
+        <label for="{{$locale.'[title]'}}" class="control-label">{{ 'Galery title ('.$locale.')' }}</label>
+        <input class="form-control" name="{{$locale.'[title]'}}" type="text" id="{{$locale.'[title]'}}" 
+            value="{{ isset($gallery) && isset($gallery->translate($locale)->title) ? $gallery->translate($locale)->title : ''}}">
+        {!! $errors->first($locale.'[title]', '<p class="help-block">:message</p>') !!}
+    </div>
+    <div class="form-group {{ $errors->has($locale.'[desc]') ? 'has-error' : ''}}">
+        <label for="{{$locale.'[desc]'}}" class="control-label">{{ 'Galery description ('.$locale.')' }}</label>
+        <textarea class="form-control" rows="5" name="{{$locale.'[desc]'}}" type="textarea" id="{{$locale.'[desc]'}}" >
+            {{ isset($gallery) && isset($gallery->translate($locale)->desc) ? $gallery->translate($locale)->desc : ''}}
+        </textarea>
+        {!! $errors->first($locale.'[desc]', '<p class="help-block">:message</p>') !!}
+    </div>
+@endforeach
+
+    <div class="form-group {{ $errors->has('image') ? 'has-error' : ''}}">
+        <label for="image" class="control-label">Image</label>
+         <input class="form-control" name="image" type="file" id="image" value="">
+
+        {!! $errors->first('image', '<p class="help-block">:message</p>') !!}
+    </div>
+
+@foreach(config('translatable.locales') as $locale)
+    <div class="form-group {{ $errors->has('image_atr['.$locale.'][title]') ? 'has-error' : ''}}">
+        <label for="{{'image_atr['.$locale.'][title]'}}" class="control-label">{{ 'Image title ('.$locale.')' }}</label>
+        <input class="form-control" name="{{'image_atr['.$locale.'][title]'}}" type="text" id="{{'image_atr['.$locale.'][title]'}}" 
+            value="">
+        {!! $errors->first('image_atr['.$locale.'][title]', '<p class="help-block">:message</p>') !!}
+    </div>
+    <div class="form-group {{ $errors->has('image_atr['.$locale.'][desc]') ? 'has-error' : ''}}">
+        <label for="{{'image_atr['.$locale.'][desc]'}}" class="control-label">{{ 'Image description ('.$locale.')' }}</label>
+        <textarea class="form-control" rows="5" name="{{'image_atr['.$locale.'][desc]'}}" type="textarea" id="{{'image_atr['.$locale.'][desc]'}}" >
+            
+        </textarea>
+        {!! $errors->first('image_atr['.$locale.'][desc]', '<p class="help-block">:message</p>') !!}
+    </div>
+@endforeach
 
 
 <div class="form-group">

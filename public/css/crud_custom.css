@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500");
+
+.custom-drop-menu {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 4px 0px, rgba(0, 0, 0, 0.16) 0px 0px 9px 0px;
+    cursor: pointer;
+    height: 151px;
+    left: -76.7344px;
+    position: absolute;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(58, 58, 58);
+    top: 63px;
+    width: 200px;
+    border: 0px none rgb(58, 58, 58);
+    border-radius: 3px 3px 3px 3px;
+    font: normal normal 500 normal 15px / 19px Montserrat, sans-serif;
+    margin: 0px 0px 20px;
+    padding: 20px;
+    overflow-y: hidden;
+}
+
+.drop-list-label{
+    color: rgb(158, 158, 158);
+    display: inline-block;
+    text-transform: uppercase;
+    font: normal normal 700 normal 15px / 19px Montserrat, sans-serif;
+    padding: 0px 0px 5px;
+}
+
+.custom-drop-menu ul {
+    padding: 0px;
+}
+
+.custom-drop-menu ul li {
+    cursor: pointer;
+    list-style: none outside none;
+    padding: 5px 0px;
+}
+
+.custom-drop-menu ul li a {
+    color: rgb(51, 51, 51);
+    letter-spacing: -0.26px;
+}
+
+.custom-drop-menu ul li a:hover {
+    text-decoration: none;
+    color: #0041ff;
+}
+
+.custom-profile {
+    cursor: pointer;
+    display: inline-block;
+    height: 38px;
+    vertical-align: middle;
+}
+
+.user-name {
+    color: rgb(0, 3, 17);
+    cursor: pointer;
+    display: block;
+    letter-spacing: -0.26px;
+    font: normal normal 500 normal 15px / 19px Montserrat, sans-serif;
+}
+
+.user-role {
+    color: rgb(142, 142, 142);
+    cursor: pointer;
+    display: block;
+    letter-spacing: -0.26px;
+    font: normal normal 500 normal 14px / 19px Montserrat, sans-serif;
+}

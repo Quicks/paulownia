@@ -42,6 +42,14 @@
                                             <a href="{{ url('/admin/galleries/' . $item->id) }}" title="View Gallery"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/admin/galleries/' . $item->id . '/edit') }}" title="Edit Gallery"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
+                                            <a href="{{ url('/admin/galleries/image_add/' . $item->id ) }}" 
+                                                title="Add Image">
+                                                <button class="btn btn-warning btn-sm">
+                                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                                     Add image
+                                                 </button>
+                                            </a>
+
                                             <form method="POST" action="{{ url('/admin/galleries' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}

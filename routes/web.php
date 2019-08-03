@@ -48,6 +48,10 @@ Route::group(['middleware' => ['web']], function () {
             Route::resource('news', 'App\Http\Controllers\Admin\\NewsController');
             Route::resource('galleries', 'App\Http\Controllers\Admin\\GalleriesController');
             Route::resource('treatises', 'App\Http\Controllers\Admin\\TreatisesController');
+            Route::get('/galleries/image_add/{galleryId}', 
+                'App\Http\Controllers\Admin\ImageController@createGalleryImage');
+            Route::post('/galleries/image_save/{galleryId}', 
+                'App\Http\Controllers\Admin\ImageController@storeGalleryImage');
         });
     });
 });

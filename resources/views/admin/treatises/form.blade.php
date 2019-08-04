@@ -41,7 +41,7 @@
 
 <div class="form-group {{ $errors->has('publish_date') ? 'has-error' : ''}}">
     <label for="publish_date" class="control-label">{{ 'Publish Date' }}</label>
-    <input class="form-control" name="publish_date" type="date" id="publish_date" value="{{ isset($treatise->publish_date) ? $treatise->publish_date : ''}}">
+    <input class="form-control" name="publish_date" type="date" id="publish_date" value="{{ isset($treatise->publish_date) ? $treatise->publish_date : ''}}" required>
     {!! $errors->first('publish_date', '<p class="help-block">:message</p>') !!}
 </div>
 
@@ -49,30 +49,3 @@
 <div class="form-group">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
 </div>
-
-{{--@push('scripts')--}}
-    {{--<script>--}}
-        {{--$(document).ready(function () {--}}
-            {{--$('form').on('submit', function (event) {--}}
-                {{--validForm();--}}
-            {{--});--}}
-
-            {{--function validForm() {--}}
-                {{--var isOneLanguagefilled = false;--}}
-                {{--$(".part-form").each(function() {--}}
-                    {{--var empty = $(this).find(".valid").filter(function() {--}}
-                        {{--return $(this).val().trim() === "";--}}
-                    {{--});--}}
-                    {{--if (!empty.length) {--}}
-                        {{--isOneLanguagefilled = true;--}}
-                        {{--return false;--}}
-                    {{--}--}}
-                {{--});--}}
-                {{--if (!isOneLanguagefilled) {--}}
-                    {{--event.preventDefault();--}}
-                    {{--alert('All fields must be filled in at least one language!');--}}
-                {{--}--}}
-            {{--}--}}
-        {{--});--}}
-    {{--</script>--}}
-{{--@endpush--}}

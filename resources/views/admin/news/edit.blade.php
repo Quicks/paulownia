@@ -21,7 +21,7 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/news/' . $news->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/admin/news/' . $news->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" id="validForm">
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
@@ -48,7 +48,13 @@
                 width: "100%",
                 plugins: 'image imagetools media wordcount save fullscreen code',
                 toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent  | removeformat | code',
-                image_advtab: true
+                image_advtab: true,
+                setup: function (editor) {
+                    editor.on("change keyup", function(e){
+                        tinyMCE.triggerSave();
+                        $(editor.getElement()).trigger('change');
+                    });
+                }
             });
         });
     </script>

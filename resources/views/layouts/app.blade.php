@@ -26,6 +26,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/admin-form-validate.js') }}"></script>
     @stack('scripts')
     
 </body>

@@ -17,12 +17,12 @@
 
 @foreach(config('translatable.locales') as $locale)
 
-    <div class="border p-4 mb-4 bg-light rounded">
+    <div class="border p-4 mb-4 bg-light rounded part-form">
         <div class="form-group {{ $errors->has($locale.'[title]') ? 'has-error' : ''}}">
             <label for="{{$locale.'[title]'}}" class="control-label">
                 {{ 'Title ('.$locale.')'}}
             </label>
-            <input class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
+            <input class="form-control valid" @if($locale == 'ar') dir="rtl" class="text-right" @endif
                 name="{{$locale.'[title]'}}" type="text" 
                 id="{{$locale.'[title]'}}" 
                 value="{{ isset($news) && isset($news->translate($locale)->title) ? $news->translate($locale)->title : ''}}" 
@@ -32,7 +32,7 @@
 
         <div class="form-group {{ $errors->has($locale.'[text]') ? 'has-error' : ''}}">
             <label for="{{$locale.'[text]'}}" class="control-label">{{ 'Text ('.$locale.')'}}</label>
-            <textarea class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
+            <textarea class="form-control valid" @if($locale == 'ar') dir="rtl" class="text-right" @endif
                 name="{{$locale.'[text]'}}"
                 id="{{$locale.'[text]'}}" rows="3" 
                 >{{isset($news) && isset($news->translate($locale)->text) ? $news->translate($locale)->text : ''}}</textarea>

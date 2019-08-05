@@ -12,7 +12,13 @@
 
                         <a href="{{ url('/admin/galleries') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <a href="{{ url('/admin/galleries/' . $gallery->id . '/edit') }}" title="Edit Gallery"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-
+                        <a href="{{ url('/admin/galleries/image_add/' . $gallery->id ) }}" 
+                            title="Add Image">
+                            <button class="btn btn-warning btn-sm">
+                                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                 Add image
+                             </button>
+                        </a>
                         <form method="POST" action="{{ url('admin/galleries' . '/' . $gallery->id) }}" accept-charset="UTF-8" style="display:inline">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}

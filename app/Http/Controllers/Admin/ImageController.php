@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;
+use App\Models\Image;
 
 class ImageController extends Controller
 {
@@ -16,8 +17,15 @@ class ImageController extends Controller
 
     public function storeGalleryImage (Request $request, $galleryId)
     {
-        dd('storeGalleryImage', $galleryId, $request);
-        $gallery = Gallery::findOrFail($galleryId);
-        return view('admin.galleries.add_image', compact('gallery'));
+        $this->validate($request, [
+            'image' => 'required|image|max:2000'
+        ]);
+
+        $imageAtributes['image'] = $request->file('image')->store('uploads', 'public');
+        $imageAtributes['imageable_id'] = $galleryId;
+        $imageAtributes['imageable_type'] = 'App\Models\Gallery';
+        Image::create($imageAtributes);
+
+        return redirect('admin/galleries/'.$galleryId)->with('flash_message', 'Image added!');
     }
 }

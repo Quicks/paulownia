@@ -1,14 +1,11 @@
 <a href="{{ url('/admin/news') }}" title="Back">
-    <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left"
-                                              aria-hidden="true"></i>
+    <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left" aria-hidden="true"></i>
         Back
     </button>
 </a>
 
-
 <br>
 <br>
-
 
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="main-form" role="tabpanel"
@@ -59,7 +56,7 @@
                     <label for="{{$locale.'[title]'}}" class="control-label">
                         {{ 'Title ('.$locale.')'}}
                     </label>
-                    <input class="form-control valid" @if($locale == 'ar') dir="rtl" class="text-right" @endif
+                    <input class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
                     name="{{$locale.'[title]'}}" type="text"
                            id="{{$locale.'[title]'}}"
                            value="{{ isset($news) && isset($news->translate($locale)->title) ? $news->translate($locale)->title : ''}}"
@@ -69,7 +66,7 @@
 
                 <div class="form-group {{ $errors->has($locale.'[text]') ? 'has-error' : ''}}">
                     <label for="{{$locale.'[text]'}}" class="control-label">{{ 'Text ('.$locale.')'}}</label>
-                    <textarea class="form-control valid" @if($locale == 'ar') dir="rtl" class="text-right" @endif
+                    <textarea class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
                     name="{{$locale.'[text]'}}"
                               id="{{$locale.'[text]'}}" rows="3"
                     >{{isset($news) && isset($news->translate($locale)->text) ? $news->translate($locale)->text : ''}}</textarea>

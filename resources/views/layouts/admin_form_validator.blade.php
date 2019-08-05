@@ -7,8 +7,7 @@
         function validForm() {
             var isOneLanguagefilled = false;
             $('.part-form').each(function () {
-                var empty = $(this).find(@foreach(config('translatable.locales') as $locale)[name^="{{$locale}}"],
-                    @endforeach).filter(function () {
+                var empty = $(this).find('@foreach(config('translatable.locales') as $locale)[name^={{$locale}}]@if(!$loop->last),@endif @endforeach').filter(function () {
                     return $(this).val().trim() === "";
                 });
                 if (!empty.length) {

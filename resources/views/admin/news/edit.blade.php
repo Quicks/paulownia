@@ -14,8 +14,7 @@
                                 <div class="col-md-10">
 
                                     <form method="POST" action="{{ url('/admin/news/' . $news->id) }}"
-                                          accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data"
-                                          id="validForm">
+                                          accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" id="validForm">
                                         {{ method_field('PATCH') }}
                                         {{ csrf_field() }}
                                         @include ('admin.news.form', ['formMode' => 'edit'])
@@ -37,5 +36,5 @@
 @push('scripts')
     <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
     <script src="{{ asset('js/tinymce.js') }}"></script>
-    <script src="{{ asset('js/admin-form-validate.js') }}"></script>
+    @include ('layouts.admin_form_validator')
 @endpush

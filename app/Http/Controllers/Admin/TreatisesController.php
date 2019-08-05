@@ -22,7 +22,6 @@ class TreatisesController extends Controller
 
         if (!empty($keyword)) {
             $treatises = Treatise::where('name', 'LIKE', "%$keyword%")
-                ->orWhere('text', 'LIKE', "%$keyword%")
                 ->orWhere('active', 'LIKE', "%$keyword%")
                 ->orWhere('publish_date', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);

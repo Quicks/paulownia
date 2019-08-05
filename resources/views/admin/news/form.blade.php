@@ -1,14 +1,11 @@
 <a href="{{ url('/admin/news') }}" title="Back">
-    <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left"
-                                              aria-hidden="true"></i>
+    <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left" aria-hidden="true"></i>
         Back
     </button>
 </a>
 
-
 <br>
 <br>
-
 
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="main-form" role="tabpanel"
@@ -54,7 +51,7 @@
 
         <div class="tab-pane fade" id={{$locale}} role="tabpanel"
              aria-labelledby={{$locale}}>
-            <div class="border p-4 mb-4 bg-light rounded">
+            <div class="border p-4 mb-4 bg-light rounded part-form">
                 <div class="form-group {{ $errors->has($locale.'[title]') ? 'has-error' : ''}}">
                     <label for="{{$locale.'[title]'}}" class="control-label">
                         {{ 'Title ('.$locale.')'}}

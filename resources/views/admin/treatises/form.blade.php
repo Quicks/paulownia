@@ -6,17 +6,16 @@
 <div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">
     <label for="active" class="control-label">{{ 'Active' }}</label>
     <div class="radio">
-    <label><input name="active" type="radio" value="1" {{ (isset($treatise) && 1 == $treatise->active) ? 'checked' : '' }}> Yes</label>
-</div>
-<div class="radio">
-    <label><input name="active" type="radio" value="0" @if (isset($treatise)) {{ (0 == $treatise->active) ? 'checked' : '' }} @else {{ 'checked' }} @endif> No</label>
-</div>
+        <label><input name="active" type="radio" value="1" {{ (isset($treatise) && 1 == $treatise->active) ? 'checked' : '' }}> Yes</label>
+    </div>
+    <div class="radio">
+        <label><input name="active" type="radio" value="0" @if (isset($treatise)) {{ (0 == $treatise->active) ? 'checked' : '' }} @else {{ 'checked' }} @endif> No</label>
+    </div>
     {!! $errors->first('active', '<p class="help-block">:message</p>') !!}
 </div>
 
 @foreach(config('translatable.locales') as $locale)
-
-    <div class="border p-4 mb-4 bg-light rounded">
+    <div class="border p-4 mb-4 bg-light rounded part-form">
         <div class="form-group {{ $errors->has($locale.'[title]') ? 'has-error' : ''}}">
             <label for="{{$locale.'[title]'}}" class="control-label">
                 {{ 'Title ('.$locale.')'}}

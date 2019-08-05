@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     function validForm() {
         var isOneLanguagefilled = false;
-        $(".part-form").each(function () {
+        $('.part-form').each(function () {
             var empty = $(this).find(".valid").filter(function () {
                 return $(this).val().trim() === "";
             });

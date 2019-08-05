@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Http\Request;
 use App\Models\Gallery;
 use App\Models\Image;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GalleriesController extends Controller
 {
@@ -112,11 +112,18 @@ class GalleriesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'name' => 'required|max:90',
-			'active' => 'required|boolean'
-		]);
+            'name' => 'required|max:90',
+            'active' => 'required|boolean'
+        ]);
         $gallery = Gallery::findOrFail($id);
-        $gallery->update($request->all());
+
+        $gallery->update($request->except(['image_atr','image']));
+
+        foreach ($request->image_atr as $image_id => $image_atr) {
+            $image = Image::find($image_id);
+            $image->fill($image_atr);
+            $image->save();
+        }
 
         return redirect('admin/galleries')->with('flash_message', 'Gallery updated!');
     }
@@ -130,8 +137,13 @@ class GalleriesController extends Controller
      */
     public function destroy($id)
     {
-        Gallery::destroy($id);
+        $gallery = Gallery::findOrFail($id);
 
+        foreach ($gallery->images()->get() as $image) {
+            Storage::delete($image->image);
+            $image->delete();
+        }
+        $gallery->delete();
         return redirect('admin/galleries')->with('flash_message', 'Gallery deleted!');
     }
 }

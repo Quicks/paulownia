@@ -52,6 +52,7 @@ Route::group(['middleware' => ['web']], function () {
                 'App\Http\Controllers\Admin\ImageController@createGalleryImage');
             Route::post('/galleries/image_save/{galleryId}', 
                 'App\Http\Controllers\Admin\ImageController@storeGalleryImage');
+            Route::delete('/galleries/image_del/{imageId}', 'App\Http\Controllers\Admin\ImageController@delete');
         });
     });
 });

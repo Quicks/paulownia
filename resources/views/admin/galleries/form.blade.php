@@ -30,9 +30,9 @@
     </div>
 @endforeach
 
-@include ('admin.galleries.add_image_form')
-
+@includeWhen ($formMode === 'create', 'admin.galleries.add_image_form')
+@includeWhen ($formMode === 'edit', 'admin.galleries.edit_image_form')
 
 <div class="form-group">
-    <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
+    <input class="btn btn-primary" form="gallery-form" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
 </div>

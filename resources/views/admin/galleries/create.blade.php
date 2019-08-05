@@ -21,7 +21,7 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/galleries') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/admin/galleries') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" id="gallery-form">
                             {{ csrf_field() }}
 
                             @include ('admin.galleries.form', ['formMode' => 'create'])

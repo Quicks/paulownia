@@ -44,7 +44,7 @@
 
                                             <a href="{{ url('/admin/galleries/image_add/' . $item->id ) }}" 
                                                 title="Add Image">
-                                                <button class="btn btn-warning btn-sm">
+                                                <button class="btn btn-primary btn-sm">
                                                     <i class="fa fa-picture-o" aria-hidden="true"></i>
                                                      Add image
                                                  </button>

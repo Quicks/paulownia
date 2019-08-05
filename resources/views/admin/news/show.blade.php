@@ -75,32 +75,32 @@
                                      aria-labelledby={{$locale}}>
 
 
-                                            <div class="container">
+                                    <div class="container">
 
-                                                <div class="row">
-                                                    <div class="mt-3 bg-light rounded pt-3">
-                                                    @isset($news->translate($locale)->title)
-                                                    <div class="col-md-3"><h4><b>Title({{$locale}})</b></h4> </div>
+                                        <div class="row">
+                                            <div class="mt-3 bg-light rounded pt-3">
+                                                @isset($news->translate($locale)->title)
+                                                    <div class="col-md-3"><h4><b>Title({{$locale}})</b></h4></div>
                                                     <div class="col">
                                                         <h4 @if($locale == 'ar') dir="rtl"
-                                                                         class="text-right" @endif>
+                                                            class="text-right" @endif>
                                                             {{ $news->translate($locale)->title }}
                                                         </h4>
                                                     </div>
-                                                    @endisset
-                                                        <hr>
-                                                    <div class="w-100"></div>
-                                                        @isset($news->translate($locale)->text)
+                                                @endisset
+                                                <hr>
+                                                <div class="w-100"></div>
+                                                @isset($news->translate($locale)->text)
                                                     <div class="col-md-3"><h4><b>Text ({{$locale}})</b></h4></div>
                                                     <div class="col">
                                                         <p @if($locale == 'ar') dir="rtl" class="text-right" @endif>
                                                             {!! $news->translate($locale)->text !!}
                                                         </p>
                                                     </div>
-                                                        @endisset
-                                                </div>
-                                                </div>
+                                                @endisset
                                             </div>
+                                        </div>
+                                    </div>
 
                                 </div>
                             @endforeach

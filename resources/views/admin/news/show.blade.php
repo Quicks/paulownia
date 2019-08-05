@@ -5,59 +5,117 @@
         <div class="row">
             @include('admin.sidebar')
 
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">News {{ $news->id }}</div>
                     <div class="card-body">
 
-                        <a href="{{ url('/admin/news') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <a href="{{ url('/admin/news/' . $news->id . '/edit') }}" title="Edit News"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                        <a href="{{ url('/admin/news') }}" title="Back">
+                            <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                Back
+                            </button>
+                        </a>
+                        <a href="{{ url('/admin/news/' . $news->id . '/edit') }}" title="Edit News">
+                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"
+                                                                      aria-hidden="true"></i> Edit
+                            </button>
+                        </a>
 
-                        <form method="POST" action="{{ url('admin/news' . '/' . $news->id) }}" accept-charset="UTF-8" style="display:inline">
+                        <form method="POST" action="{{ url('admin/news' . '/' . $news->id) }}" accept-charset="UTF-8"
+                              style="display:inline">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-danger btn-sm" title="Delete News" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm" title="Delete News"
+                                    onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o"
+                                                                                             aria-hidden="true"></i>
+                                Delete
+                            </button>
                         </form>
+
                         <br/>
                         <br/>
 
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <th>ID</th><td>{{ $news->id }}</td>
-                                    </tr>
-                                    <tr><th> Name </th><td> {{ $news->name }} </td></tr>
-                                    <tr><th> Active </th><td> {{ $news->active }} </td></tr>
-                                    <tr><th> Publish Date </th><td> {{ $news->publish_date }} </td></tr>
-                                    @foreach(config('translatable.locales') as $locale)
-                                        <tbody class="bg-light">
-                                            @isset($news->translate($locale)->title)
-                                                <tr>
-                                                    <th> Title ({{$locale}}) </th>
-                                                    <td @if($locale == 'ar') dir="rtl" class="text-right" @endif>
-                                                        {{ $news->translate($locale)->title }}
-                                                    </td>
-                                                </tr>
-                                            @endisset
-                                            @isset($news->translate($locale)->text)
-                                                <tr>
-                                                    <th> Text ({{$locale}}) </th>
-                                                    <td @if($locale == 'ar') dir="rtl" class="text-right" @endif>
-                                                        {{!! $news->translate($locale)->text !!}}
-                                                    </td>
-                                                </tr>
-                                            @endisset
+                        <div class="tab-content" id="nav-tabContent">
+
+                            <div class="tab-pane fade show active" id="main-form" role="tabpanel"
+                                 aria-labelledby="main-form">
+
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr>
+                                            <th>ID</th>
+                                            <td>{{ $news->id }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th> Name</th>
+                                            <td> {{ $news->name }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th> Active</th>
+                                            <td> {{ $news->active }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th> Publish Date</th>
+                                            <td> {{ $news->publish_date }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <td></td>
+                                        </tr>
                                         </tbody>
-                                        <tr class="m-4 p-4"><td></td><td></td></tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                                    </table>
+                                </div>
+                            </div>
 
+                            @foreach(config('translatable.locales') as $locale)
+
+                                <div class="tab-pane fade" id={{$locale}} role="tabpanel"
+                                     aria-labelledby={{$locale}}>
+
+
+                                    <div class="container">
+
+                                        <div class="row">
+                                            <div class="mt-3 bg-light rounded pt-3">
+                                                @isset($news->translate($locale)->title)
+                                                    <div class="col-md-3"><h4><b>Title({{$locale}})</b></h4></div>
+                                                    <div class="col">
+                                                        <h4 @if($locale == 'ar') dir="rtl"
+                                                            class="text-right" @endif>
+                                                            {{ $news->translate($locale)->title }}
+                                                        </h4>
+                                                    </div>
+                                                @endisset
+                                                <hr>
+                                                <div class="w-100"></div>
+                                                @isset($news->translate($locale)->text)
+                                                    <div class="col-md-3"><h4><b>Text ({{$locale}})</b></h4></div>
+                                                    <div class="col">
+                                                        <p @if($locale == 'ar') dir="rtl" class="text-right" @endif>
+                                                            {!! $news->translate($locale)->text !!}
+                                                        </p>
+                                                    </div>
+                                                @endisset
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
+
                 </div>
             </div>
+            @include('admin.langPanel')
         </div>
     </div>
 @endsection
+
+
+
+
+
+

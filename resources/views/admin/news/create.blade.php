@@ -5,13 +5,11 @@
         <div class="row">
             @include('admin.sidebar')
 
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Create New News</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/news') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
+
 
                         @if ($errors->any())
                             <ul class="alert alert-danger">
@@ -21,7 +19,8 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/news') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" id="validForm">
+                        <form method="POST" action="{{ url('/admin/news') }}" accept-charset="UTF-8"
+                              class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             @include ('admin.news.form', ['formMode' => 'create'])
@@ -31,6 +30,7 @@
                     </div>
                 </div>
             </div>
+            @include('admin.langPanel')
         </div>
     </div>
 @endsection
@@ -38,6 +38,17 @@
 
 @push('scripts')
     <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
-    <script src="{{ asset('js/tinymce.js') }}"></script>
-    <script src="{{ asset('js/admin-form-validate.js') }}"></script>
+
+    <script>
+        $(document).ready(function () {
+            tinymce.init({
+                selector: 'textarea',
+                height: 200,
+                width: "100%",
+                plugins: 'image imagetools media wordcount save fullscreen code',
+                toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent  | removeformat | code',
+                image_advtab: true
+            });
+        });
+    </script>
 @endpush

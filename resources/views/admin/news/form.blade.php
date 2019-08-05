@@ -1,39 +1,95 @@
-<div>
-    <a href="{{ url('/admin/news') }}" title="Back">
-        <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left"
-                                                  aria-hidden="true"></i>
-            Back
-        </button>
-    </a>
-</div>
-<br>
-<div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
-    <label for="name" class="control-label">{{ 'Name' }}</label>
-    <input class="form-control" name="name" type="text" id="name"
-           value="{{ isset($news->name) ? $news->name : ''}}" required>
-    {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
-</div>
-<div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">
-    <label for="active" class="control-label">{{ 'Active' }}</label>
-    <div class="radio">
-        <label><input name="active" type="radio"
-                      value="1" {{ (isset($news) && 1 == $news->active) ? 'checked' : '' }}> Yes</label>
+
+
+
+        <a href="{{ url('/admin/news') }}" title="Back">
+            <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left"
+                                                      aria-hidden="true"></i>
+                Back
+            </button>
+        </a>
+
+
+
+        <br>
+        <br>
+
+
+
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+            <label for="v-pills-tab">Main</label>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Show</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Hide</a>
+
+        </div>
+
+
+
+<div class="tab-content" id="v-pills-tabContent">
+
+    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"></div>
+
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+
+
+
+        <div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
+            <label for="name" class="control-label">{{ 'Name' }}</label>
+            <input class="form-control" name="name" type="text" id="name"
+                   value="{{ isset($news->name) ? $news->name : ''}}" required>
+            {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
+        </div>
+
+
+
+        <div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">
+            <label for="active" class="control-label">{{ 'Active' }}</label>
+            <div class="radio">
+                <label><input name="active" type="radio"
+                              value="1" {{ (isset($news) && 1 == $news->active) ? 'checked' : '' }}> Yes</label>
+            </div>
+            <div class="radio">
+                <label><input name="active" type="radio"
+                              value="0" @if (isset($news)) {{ (0 == $news->active) ? 'checked' : '' }} @else {{ 'checked' }} @endif>
+                    No</label>
+            </div>
+            {!! $errors->first('active', '<p class="help-block">:message</p>') !!}
+
+        </div>
+
+
+
+
+        <div class="form-group {{ $errors->has('publish_date') ? 'has-error' : ''}}">
+            <label for="publish_date" class="control-label">{{ 'Publish Date' }}</label>
+            <input class="form-control" name="publish_date" type="date" id="publish_date"
+                   value="{{ isset($news->publish_date) ? $news->publish_date : ''}}" required>
+            {!! $errors->first('publish_date', '<p class="help-block">:message</p>') !!}
+        </div>
+
+
+
+
+
     </div>
-    <div class="radio">
-        <label><input name="active" type="radio"
-                      value="0" @if (isset($news)) {{ (0 == $news->active) ? 'checked' : '' }} @else {{ 'checked' }} @endif>
-            No</label>
-    </div>
-    {!! $errors->first('active', '<p class="help-block">:message</p>') !!}
 
 </div>
 
-<div class="form-group {{ $errors->has('publish_date') ? 'has-error' : ''}}">
-    <label for="publish_date" class="control-label">{{ 'Publish Date' }}</label>
-    <input class="form-control" name="publish_date" type="date" id="publish_date"
-           value="{{ isset($news->publish_date) ? $news->publish_date : ''}}" required>
-    {!! $errors->first('publish_date', '<p class="help-block">:message</p>') !!}
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="tab-content" id="nav-tabContent">
     @foreach(config('translatable.locales') as $locale)

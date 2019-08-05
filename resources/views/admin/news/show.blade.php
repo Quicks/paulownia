@@ -23,13 +23,7 @@
                         <br/>
                         <br/>
 
-
-
-
                         <div class="tab-content" id="nav-tabContent">
-
-
-
 
                             <div class="tab-pane fade show active" id="main-form" role="tabpanel"
                                  aria-labelledby="main-form">
@@ -48,15 +42,11 @@
                                         </tbody>
                                     </table>
                                 </div>
-
-
                             </div>
-
-
 
                         @foreach(config('translatable.locales') as $locale)
 
-                            <div class="tab-pane fade @if ($loop->first)show active @endif" id={{$locale}} role="tabpanel"
+                            <div class="tab-pane fade" id={{$locale}} role="tabpanel"
                                  aria-labelledby={{$locale}}>
 
 
@@ -98,13 +88,11 @@
 
                     </div>
                 </div>
-
-
             @include('admin.langPanel')
-
         </div>
-@endsection
     </div>
+@endsection
+
 
 
 

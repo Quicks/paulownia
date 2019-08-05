@@ -1,36 +1,18 @@
+<a href="{{ url('/admin/news') }}" title="Back">
+    <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left"
+                                              aria-hidden="true"></i>
+        Back
+    </button>
+</a>
 
 
-
-        <a href="{{ url('/admin/news') }}" title="Back">
-            <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left"
-                                                      aria-hidden="true"></i>
-                Back
-            </button>
-        </a>
+<br>
+<br>
 
 
-
-        <br>
-        <br>
-
-
-
-        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
-            <label for="v-pills-tab">Main</label>
-            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Show</a>
-            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Hide</a>
-
-        </div>
-
-
-
-<div class="tab-content" id="v-pills-tabContent">
-
-    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"></div>
-
-    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-
-
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="main-form" role="tabpanel"
+         aria-labelledby="main-form">
 
 
         <div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
@@ -39,7 +21,6 @@
                    value="{{ isset($news->name) ? $news->name : ''}}" required>
             {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
         </div>
-
 
 
         <div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">
@@ -58,8 +39,6 @@
         </div>
 
 
-
-
         <div class="form-group {{ $errors->has('publish_date') ? 'has-error' : ''}}">
             <label for="publish_date" class="control-label">{{ 'Publish Date' }}</label>
             <input class="form-control" name="publish_date" type="date" id="publish_date"
@@ -68,33 +47,12 @@
         </div>
 
 
-
-
-
     </div>
 
-</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="tab-content" id="nav-tabContent">
     @foreach(config('translatable.locales') as $locale)
 
-        <div class="tab-pane fade @if ($loop->first)show active @endif" id={{$locale}} role="tabpanel"
+        <div class="tab-pane fade" id={{$locale}} role="tabpanel"
              aria-labelledby={{$locale}}>
             <div class="border p-4 mb-4 bg-light rounded">
                 <div class="form-group {{ $errors->has($locale.'[title]') ? 'has-error' : ''}}">

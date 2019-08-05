@@ -106,12 +106,6 @@
                     <div class="card-header">News {{ $news->id }}</div>
                     <div class="card-body">
 
-
-
-
-
-
-
                         <a href="{{ url('/admin/news') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <a href="{{ url('/admin/news/' . $news->id . '/edit') }}" title="Edit News"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
@@ -130,11 +124,6 @@
                                 <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Show</a>
                                 <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Hide</a>
                         </div>
-
-
-
-
-
 
 
                         <div class="tab-content" id="v-pills-tabContent">
@@ -159,8 +148,6 @@
                         </div>
 
                         </div>
-
-
 
 
                         <div class="tab-content" id="nav-tabContent">
@@ -205,9 +192,9 @@
 
             @include('admin.langPanel')
 
-
+        </div>
 @endsection
-
+    </div>
 
 
 

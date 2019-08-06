@@ -9,6 +9,14 @@
                 <div class="card">
                     <div class="card-header">Edit News #{{ $news->id }}</div>
                     <div class="card-body">
+                        <a href="{{ url('/admin/news') }}" title="Back">
+                            <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                Back
+                            </button>
+                        </a>
+                        <br>
+                        <br>
+
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-10">

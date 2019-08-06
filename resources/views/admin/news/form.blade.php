@@ -1,12 +1,3 @@
-<a href="{{ url('/admin/news') }}" title="Back">
-    <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left" aria-hidden="true"></i>
-        Back
-    </button>
-</a>
-
-<br>
-<br>
-
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="main-form" role="tabpanel"
          aria-labelledby="main-form">

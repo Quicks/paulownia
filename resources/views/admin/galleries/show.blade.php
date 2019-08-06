@@ -5,7 +5,7 @@
         <div class="row">
             @include('admin.sidebar')
 
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Gallery {{ $gallery->id }}</div>
                     <div class="card-body">
@@ -26,58 +26,77 @@
                         </form>
                         <br/>
                         <br/>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="table-responsive tab-pane fade show active" id="main-form" 
+                                role="tabpanel" aria-labelledby="main-form">
+                                <table class="table">
+                                    <tbody>
+                                        <tr><th>ID</th><td>{{ $gallery->id }}</td></tr>
+                                        <tr><th> Name </th><td> {{ $gallery->name }} </td></tr>
+                                        <tr><th> Active </th><td> {{ $gallery->active }} </td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tbody>
-                                    <tr><th>ID</th><td>{{ $gallery->id }}</td></tr>
-                                    <tr><th> Name </th><td> {{ $gallery->name }} </td></tr>
-                                    <tr><th> Active </th><td> {{ $gallery->active }} </td></tr>
+                            @foreach(config('translatable.locales') as $locale)
+                                <div class="tab-pane fade" id="{{$locale}}" role="tabpanel" 
+                                    aria-labelledby="{{$locale}}">
+                                    @isset($gallery->translate($locale)->title)
+                                        <div class="row  m-1 pt-2 border-top">
+                                            <div class="col-md-3 font-weight-bold"> Title ({{$locale}}) </div>
+                                            <div class="col-md-9"> {{ $gallery->translate($locale)->title }} </div>
+                                        </div>
+                                    @endisset
+                                    @isset($gallery->translate($locale)->desc)
+                                        <div class="row  m-1 pt-2 border-top">
+                                            <div class="col-md-3 font-weight-bold"> Description ({{$locale}}) </div>
+                                            <div  class="col-md-9"> 
+                                                {!! $gallery->translate($locale)->desc !!} 
+                                            </div>
+                                        </div>
+                                    @endisset
+                                </div>
+                            @endforeach
 
-                                    @foreach(config('translatable.locales') as $locale)
-                                        <tbody class="bg-light">
-                                            @isset($gallery->translate($locale)->title)
-                                                <tr><th> Title ({{$locale}}) </th><td> {{ $gallery->translate($locale)->title }} </td></tr>
+                            @foreach ($gallery->images as $image)
+                                <div class="row m-1 pt-2 border-top border-dark">
+                                    <div class="col-md-3 font-weight-bold"> Image {{$loop->iteration}} </div>
+                                    <div class="col-md-9 text-center">
+                                        <img class="img-thumbnail w-50" 
+                                            src="{{asset('storage/'.$image->image)}}">
+                                    </div>
+                                </div>
+                                @foreach(config('translatable.locales') as $locale)
+                                    <div class="tab-pane fade" id="{{$locale}}1" role="tabpanel" 
+                                                    aria-labelledby="{{$locale}}">
+                                        <div class="row m-1 pt-2 border-top">
+                                            @isset($image->translate($locale)->title)
+                                                <div class="col-md-3 font-weight-bold">
+                                                    Image title ({{$locale}})
+                                                </div>
+                                                <div class="col-md-9">
+                                                    {{$image->translate($locale)->title}}
+                                                </div>
                                             @endisset
-                                            @isset($gallery->translate($locale)->desc)
-                                                <tr><th> Description ({{$locale}}) </th><td> {!! $gallery->translate($locale)->desc !!} </td></tr>
+                                        </div>
+                                        <div class="row m-1 pt-2 border-top">
+                                            @isset($image->translate($locale)->desc)
+                                                <div class="col-md-3 font-weight-bold">
+                                                    Image description ({{$locale}})
+                                                </div>
+                                                <div class="col-md-9">
+                                                    {!!$image->translate($locale)->desc!!}
+                                                </div>
                                             @endisset
-                                        </tbody>
-                                        <tr class="m-4 p-4"><td></td><td></td></tr>
-                                    @endforeach
-
-                                    @foreach ($gallery->images as $image)
-                                        <tbody class="bg-light">
-                                            <tr>
-                                                <th> Image {{$loop->iteration}} </th>
-                                                <td>
-                                                    <img class="img-thumbnail w-25" src="{{asset('storage/'.$image->image)}}">
-                                                </td>
-                                            </tr>
-                                            @foreach(config('translatable.locales') as $locale)
-                                                <tr>
-                                                    @isset($image->translate($locale)->title)
-                                                        <th>Image title ({{$locale}})</th>
-                                                        <td>{{$image->translate($locale)->title}}</td>
-                                                    @endisset
-                                                </tr>
-                                                <tr>
-                                                    @isset($image->translate($locale)->desc)
-                                                        <th>Image description ({{$locale}})</th>
-                                                        <td>{!!$image->translate($locale)->desc!!}</td>
-                                                    @endisset
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    @endforeach
-                                </tbody>
-
-                            </table>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endforeach
                         </div>
-
                     </div>
                 </div>
             </div>
+            @include('admin.langPanel')
         </div>
     </div>
 @endsection

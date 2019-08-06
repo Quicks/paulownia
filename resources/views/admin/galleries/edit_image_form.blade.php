@@ -1,5 +1,5 @@
 @foreach ($gallery->images as $image)
-    <h3> Image {{$loop->iteration}}</h3>
+    <h4> Image {{$loop->iteration}}</h4>
     <img class="img-thumbnail w-25 mx-auto d-block" src="{{asset('storage/'.$image->image)}}">
     <div class="text-center m-1">
         <form method="POST" action="{{ url('/admin/galleries/image_del/' . $image->id) }}" accept-charset="UTF-8" id="del-img{{$image->id}}">
@@ -14,6 +14,7 @@
 
 
     @foreach(config('translatable.locales') as $locale)
+    <div class="tab-pane fade" id="{{$locale}}2" role="tabpanel" aria-labelledby="{{$locale}}">
         <div class="form-group {{ $errors->has('image_atr['.$image->id.']['.$locale.'][title]') ? 'has-error' : ''}}">
             <label for="{{'image_atr['.$image->id.']['.$locale.'][title]'}}" class="control-label">{{ 'Image title ('.$locale.')' }}</label>
             <input class="form-control" name="{{'image_atr['.$image->id.']['.$locale.'][title]'}}" type="text" 
@@ -29,6 +30,7 @@
             </textarea>
             {!! $errors->first('image_atr['.$image->id.']['.$locale.'][desc]', '<p class="help-block">:message</p>') !!}
         </div>
+    </div>
     @endforeach
 
 @endforeach

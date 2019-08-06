@@ -5,7 +5,7 @@
         <div class="row">
             @include('admin.sidebar')
 
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Create New Gallery</div>
                     <div class="card-body">
@@ -31,6 +31,7 @@
                     </div>
                 </div>
             </div>
+            @include('admin.langPanel')
         </div>
     </div>
 @endsection

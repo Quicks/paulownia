@@ -19,8 +19,7 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/news') }}" accept-charset="UTF-8"
-                              class="form-horizontal" enctype="multipart/form-data" id="validForm">
+                        <form method="POST" action="{{ url('/admin/news') }}" accept-charset="UTF-8"  class="form-horizontal" enctype="multipart/form-data" id="validForm">
                             {{ csrf_field() }}
 
                             @include ('admin.news.form', ['formMode' => 'create'])

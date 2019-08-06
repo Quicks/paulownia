@@ -5,30 +5,34 @@
         <div class="row">
             @include('admin.sidebar')
 
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">Edit Treatise #{{ $treatise->id }}</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/treatises') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-10">
 
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+                                    @if ($errors->any())
+                                        <ul class="alert alert-danger">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
 
-                        <form method="POST" action="{{ url('/admin/treatises/' . $treatise->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" id="validForm">
-                            {{ method_field('PATCH') }}
-                            {{ csrf_field() }}
+                                    <form method="POST" action="{{ url('/admin/treatises/' . $treatise->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" id="validForm">
+                                        {{ method_field('PATCH') }}
+                                        {{ csrf_field() }}
 
-                            @include ('admin.treatises.form', ['formMode' => 'edit'])
+                                        @include ('admin.treatises.form', ['formMode' => 'edit'])
 
-                        </form>
+                                    </form>
+                                </div>
+                                @include('admin.langPanel')
 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

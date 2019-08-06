@@ -13,7 +13,16 @@
                 </li>
                 <li class="nav-item"><a class="nav-link" href="{{route('admin.dashboard.index')}}">Shop</a></li>
                 <li class="nav-item"><a class="nav-link {{Request::is('admin/news*') ? "active" : ""}}" href="{{route('news.index')}}">News</a></li>
-                <li class="nav-item"><a class="nav-link {{Request::is('admin/treatises*') ? "active" : ""}}" href="{{route('treatises.index')}}">Treatises</a></li>
+                <li class="nav-item">
+                    <a class="nav-link {{Request::is('admin/galleries*') ? "active" : ""}}" href="{{route('galleries.index')}}">
+                        Galleries
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{Request::is('admin/treatises*') ? "active" : ""}}" href="{{route('treatises.index')}}">
+                        Treatises
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

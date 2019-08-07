@@ -34,6 +34,6 @@ class ImageController extends Controller
         $image = Image::findOrFail($imageId);
         Storage::delete($image->image);
         $image->delete();
-        return back();
+        return back()->with('flash_message', 'Image deleted!');;
     }
 }

@@ -69,7 +69,6 @@ class GalleriesController extends Controller
             Image::create($imageAtributes);
         }
 
-
         return redirect('admin/galleries')->with('flash_message', 'Gallery added!');
     }
 

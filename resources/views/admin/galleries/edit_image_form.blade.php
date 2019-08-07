@@ -2,14 +2,10 @@
     <h4> Image {{$loop->iteration}}</h4>
     <img class="img-thumbnail w-25 mx-auto d-block" src="{{asset('storage/'.$image->image)}}">
     <div class="text-center m-1">
-        <form method="POST" action="{{ url('/admin/galleries/image_del/' . $image->id) }}" accept-charset="UTF-8" id="del-img{{$image->id}}">
-            <input type="hidden" name="_method" value="DELETE" form="del-img{{$image->id}}">
-            {{ csrf_field() }}
-            <button type="submit" class="btn btn-danger btn-sm" title="Delete image" form="del-img{{$image->id}}" onclick="return confirm(&quot;Confirm delete?&quot;)">
-                <i class="fa fa-trash-o" aria-hidden="true"></i> 
-                Delete image
-            </button>
-        </form>
+        <button type="button" class="btn btn-danger btn-sm" title="Delete image" onclick="deleteImage({{$image->id}});" >
+            <i class="fa fa-trash-o" aria-hidden="true"></i> 
+            Delete image
+        </button>
     </div>
 
 
@@ -34,3 +30,16 @@
     @endforeach
 
 @endforeach
+
+@push('scripts')
+    <script type="text/javascript">
+    //delete image form creates here because otherwise it becomes nested in gallery form (html prohibits nested forms)
+        function deleteImage (imageId) {
+            if (confirm('Confirm image delete?')) {
+                var formImgDelHTML = '<form method="POST" action="{{url('/admin/galleries/image_del/')}}/'+imageId+'" accept-charset="UTF-8">{!! method_field('DELETE') . csrf_field() !!}</form>';
+
+                $(formImgDelHTML).appendTo('body').submit();
+            }
+        };
+    </script>
+@endpush

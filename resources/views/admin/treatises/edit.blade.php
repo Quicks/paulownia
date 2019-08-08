@@ -10,7 +10,7 @@
                     <div class="card-header">Edit Treatise #{{ $treatise->id }}</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/treatises') }}" title="Back">
-                            <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>
                                 Back
                             </button>
                         </a>

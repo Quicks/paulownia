@@ -116,8 +116,7 @@ class NewsController extends Controller
 			'active' => 'required|boolean',
 			'publish_date' => 'required|date'
 		]);
-//        $requestData = $request->all();
-        
+
         $news = News::findOrFail($id);
         $news->update($request->except(['image_atr','image']));
 

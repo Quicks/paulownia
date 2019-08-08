@@ -7,16 +7,12 @@
 
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Create New Treatise</div>
+                    <div class="card-header">Add image to news "{{$news->name}}"</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/treatises') }}" title="Back">
-                            <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>
-                                Back
-                            </button>
-                        </a>
+                        <a href="{{ url('/admin/news') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <br />
+                        <br />
 
-                        <br>
-                        <br>
                         @if ($errors->any())
                             <ul class="alert alert-danger">
                                 @foreach ($errors->all() as $error)
@@ -25,10 +21,14 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/treatises') }}" accept-charset="UTF-8" class="form-horizontal validForm" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/admin/news/image_save/'.$news->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('admin.treatises.form', ['formMode' => 'create'])
+                            @include ('admin.news.add_image_form')
+
+                            <div class="form-group">
+                                <input class="btn btn-primary" type="submit" value="Add image">
+                            </div>
 
                         </form>
 
@@ -43,5 +43,4 @@
 @push('scripts')
     <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
     <script src="{{ asset('js/tinymce.js') }}"></script>
-    @include ('layouts.admin_form_validator')
 @endpush

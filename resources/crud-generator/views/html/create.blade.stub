@@ -21,7 +21,7 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/%%routeGroup%%%%viewName%%') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" #validForm>
+                        <form method="POST" action="{{ url('/%%routeGroup%%%%viewName%%') }}" accept-charset="UTF-8" class="form-horizontal validForm" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             @include ('%%viewTemplateDir%%.form', ['formMode' => 'create'])

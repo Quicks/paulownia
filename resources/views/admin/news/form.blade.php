@@ -1,16 +1,11 @@
 <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="main-form" role="tabpanel"
-         aria-labelledby="main-form">
-
-
+    <div class="tab-pane fade show active" id="main-form" role="tabpanel" aria-labelledby="main-form">
         <div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
             <label for="name" class="control-label">{{ 'Name' }}</label>
             <input class="form-control" name="name" type="text" id="name"
                    value="{{ isset($news->name) ? $news->name : ''}}" required>
             {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
         </div>
-
-
         <div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">
             <label for="active" class="control-label">{{ 'Active' }}</label>
             <div class="radio">
@@ -23,23 +18,17 @@
                     No</label>
             </div>
             {!! $errors->first('active', '<p class="help-block">:message</p>') !!}
-
         </div>
-
-
         <div class="form-group {{ $errors->has('publish_date') ? 'has-error' : ''}}">
             <label for="publish_date" class="control-label">{{ 'Publish Date' }}</label>
             <input class="form-control" name="publish_date" type="date" id="publish_date"
                    value="{{ isset($news->publish_date) ? $news->publish_date : ''}}" required>
             {!! $errors->first('publish_date', '<p class="help-block">:message</p>') !!}
         </div>
-
-
     </div>
 
 
     @foreach(config('translatable.locales') as $locale)
-
         <div class="tab-pane fade" id={{$locale}} role="tabpanel"
              aria-labelledby={{$locale}}>
             <div class="border p-4 mb-4 bg-light rounded part-form">
@@ -65,12 +54,11 @@
                 </div>
             </div>
         </div>
-
-
     @endforeach
+    @includeWhen ($formMode === 'create', 'admin.news.add_image_form')
+    @includeWhen ($formMode === 'edit', 'admin.news.edit_image_form')
 </div>
 
-
 <div class="form-group">
-    <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
+    <input class="btn btn-primary" form="news-form" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
 </div>

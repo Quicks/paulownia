@@ -10,7 +10,7 @@
                     <div class="card-header">Create New News</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/news') }}" title="Back">
-                            <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>
                                 Back
                             </button>
                         </a>
@@ -26,7 +26,7 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/news') }}" accept-charset="UTF-8"  class="form-horizontal" enctype="multipart/form-data" id="validForm">
+                        <form method="POST" action="{{ url('/admin/news') }}" accept-charset="UTF-8"  class="form-horizontal validForm" enctype="multipart/form-data" id="news-form">
                             {{ csrf_field() }}
 
                             @include ('admin.news.form', ['formMode' => 'create'])

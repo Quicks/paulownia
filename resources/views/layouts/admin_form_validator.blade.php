@@ -1,6 +1,6 @@
 <script>
     $(document).ready(function () {
-        $('#validForm').on('submit', function (event) {
+        $('.validForm').on('submit', function (event) {
             validForm();
         });
 

@@ -41,6 +41,13 @@
                                         <td>
                                             <a href="{{ url('/admin/news/' . $item->id) }}" title="View News"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/admin/news/' . $item->id . '/edit') }}" title="Edit News"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <a href="{{ url('/admin/news/image_add/' . $item->id ) }}"
+                                               title="Add Image">
+                                                <button class="btn btn-primary btn-sm">
+                                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                                    Add image
+                                                </button>
+                                            </a>
 
                                             <form method="POST" action="{{ url('/admin/news' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}

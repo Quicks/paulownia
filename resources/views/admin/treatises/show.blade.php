@@ -34,68 +34,36 @@
                         <br/>
                         <br/>
                         <div class="tab-content" id="nav-tabContent">
-
-                            <div class="tab-pane fade show active" id="main-form" role="tabpanel"
-                                 aria-labelledby="main-form">
-
-
+                            <div class="tab-pane fade show active" id="main-form" role="tabpanel" aria-labelledby="main-form">
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
-                                        <tr>
-                                            <th>ID</th>
-                                            <td>{{ $treatise->id }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th> Name</th>
-                                            <td> {{ $treatise->name }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th> Active</th>
-                                            <td> {{ $treatise->active }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th> Publish Date</th>
-                                            <td> {{ $treatise->publish_date }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th></th>
-                                            <td></td>
-                                        </tr>
+                                        <tr><th>ID</th><td>{{ $treatise->id }}</td></tr>
+                                        <tr><th> Name</th><td> {{ $treatise->name }} </td></tr>
+                                        <tr><th> Active</th><td> {{ $treatise->active }} </td></tr>
+                                        <tr><th> Publish Date</th><td> {{ $treatise->publish_date }} </td></tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
 
                             @foreach(config('translatable.locales') as $locale)
-
-                                <div class="tab-pane fade" id={{$locale}} role="tabpanel"
-                                     aria-labelledby={{$locale}}>
-
-
-                                    <div class="container">
-                                        <div class="row mt-3 bg-light rounded pt-3">
-                                            @isset($treatise->translate($locale)->title)
-                                                <div class="col-md-3"><h4><b>Title({{$locale}})</b></h4></div>
-                                                <div class="col">
-                                                    <h4 @if($locale == 'ar') dir="rtl"
-                                                        class="text-right" @endif>
-                                                        {{ $treatise->translate($locale)->title }}
-                                                    </h4>
-                                                </div>
-                                            @endisset
-                                            <div class="w-100"></div>
-                                            <hr>
-                                            @isset($treatise->translate($locale)->text)
-                                                <div class="col-md-3"><h4><b>Text ({{$locale}})</b></h4></div>
-                                                <div class="col">
-                                                    <p @if($locale == 'ar') dir="rtl" class="text-right" @endif>
-                                                        {!! $treatise->translate($locale)->text !!}
-                                                    </p>
-                                                </div>
-                                            @endisset
+                                <div class="tab-pane fade" id="{{$locale}}" role="tabpanel"
+                                     aria-labelledby="{{$locale}}">
+                                    @isset($treatise->translate($locale)->title)
+                                        <div class="row  m-1 pt-2 border-top">
+                                            <div class="col-md-3 font-weight-bold"> Title ({{$locale}}) </div>
+                                            <div class="col-md-9"> {{ $treatise->translate($locale)->title }} </div>
                                         </div>
-                                    </div>
+                                    @endisset
+                                    @isset($treatise->translate($locale)->text)
+                                        <div class="row  m-1 pt-2 border-top">
+                                            <div class="col-md-3 font-weight-bold"> Text ({{$locale}}) </div>
+                                            <div  class="col-md-9">
+                                                {!! $treatise->translate($locale)->text !!}
+                                            </div>
+                                        </div>
+                                    @endisset
                                 </div>
                             @endforeach
                         </div>

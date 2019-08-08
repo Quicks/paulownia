@@ -32,5 +32,8 @@ class News extends Model
      */
     protected $fillable = ['name', 'active', 'publish_date'];
 
-    
+    public function images()
+    {
+        return $this->morphMany('App\Models\Image', 'imageable');
+    }
 }

@@ -5,38 +5,40 @@
         <div class="row">
             @include('admin.sidebar')
 
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Edit News #{{ $news->id }}</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/news') }}" title="Back">
-                            <button class="btn btn-warning btn-md"><i class="fa fa-arrow-left" aria-hidden="true"></i>
-                                Back
+                        <a href="{{ url('/admin/news') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</button></a>
+                        <a href="{{ url('/admin/news/image_add/' . $news->id ) }}"
+                           title="Add Image">
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                Add image
                             </button>
                         </a>
                         <br>
                         <br>
 
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-10">
+                        @if ($errors->any())
+                            <ul class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
 
-                                    <form method="POST" action="{{ url('/admin/news/' . $news->id) }}"
-                                          accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" id="validForm">
-                                        {{ method_field('PATCH') }}
-                                        {{ csrf_field() }}
-                                        @include ('admin.news.form', ['formMode' => 'edit'])
-                                    </form>
+                        <form method="POST" action="{{ url('/admin/news/' . $news->id) }}" accept-charset="UTF-8" class="form-horizontal validForm" enctype="multipart/form-data" id="news-form">
+                            {{ method_field('PATCH') }}
+                            {{ csrf_field() }}
 
-                                </div>
+                            @include ('admin.news.form', ['formMode' => 'edit'])
 
-                                @include('admin.langPanel')
-
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
+            @include('admin.langPanel')
         </div>
     </div>
 @endsection

@@ -6,14 +6,18 @@
 
         function validForm() {
             var isOneLanguagefilled = false;
-            $('.part-form').each(function () {
-                var empty = $(this).find('@foreach(config('translatable.locales') as $locale)[name^={{$locale}}]@if(!$loop->last),@endif @endforeach').filter(function () {
-                    return $(this).val().trim() === "";
+            var allLangArr = {!!json_encode(config('translatable.locales'))!!};
+            $.each(allLangArr, function (index, value) {
+                var currentLang = value;
+                $("div#" + currentLang).each(function () {
+                    var empty = $(this).find('@foreach(config('translatable.locales') as $locale)[name^={{$locale}}]@if(!$loop->last),@endif @endforeach').filter(function () {
+                        return $(this).val().trim() === "";
+                    });
+                    if (!empty.length) {
+                        isOneLanguagefilled = true;
+                        return false;
+                    }
                 });
-                if (!empty.length) {
-                    isOneLanguagefilled = true;
-                    return false;
-                }
             });
             if (!isOneLanguagefilled) {
                 event.preventDefault();

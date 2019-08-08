@@ -31,7 +31,7 @@
     @foreach(config('translatable.locales') as $locale)
         <div class="tab-pane fade" id={{$locale}} role="tabpanel"
              aria-labelledby={{$locale}}>
-            <div class="border p-4 mb-4 bg-light rounded part-form">
+            <div class="border p-4 mb-4 bg-light rounded">
                 <div class="form-group {{ $errors->has($locale.'[title]') ? 'has-error' : ''}}">
                     <label for="{{$locale.'[title]'}}" class="control-label">
                         {{ 'Title ('.$locale.')'}}

@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\News;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -53,11 +54,21 @@ class NewsController extends Controller
         $this->validate($request, [
 			'name' => 'required|max:90',
 			'active' => 'required|boolean',
-			'publish_date' => 'required|date'
+			'publish_date' => 'required|date',
+            'image' => 'required|image|max:2000'
 		]);
         $requestData = $request->all();
         
-        News::create($requestData);
+        $news = News::create($requestData);
+
+        if ($request->hasFile('image')) {
+            $imageAtributes = $request->image_atr;
+            $imageAtributes['image'] = $request->file('image')->store('uploads', 'public');
+            $imageAtributes['imageable_id'] = $news->id;
+            $imageAtributes['imageable_type'] = 'App\Models\News';
+            Image::create($imageAtributes);
+        }
+
 
         return redirect('admin/news')->with('flash_message', 'News added!');
     }
@@ -105,10 +116,16 @@ class NewsController extends Controller
 			'active' => 'required|boolean',
 			'publish_date' => 'required|date'
 		]);
-        $requestData = $request->all();
+//        $requestData = $request->all();
         
         $news = News::findOrFail($id);
-        $news->update($requestData);
+        $news->update($request->except(['image_atr','image']));
+
+        foreach ($request->image_atr as $image_id => $image_atr) {
+            $image = Image::find($image_id);
+            $image->fill($image_atr);
+            $image->save();
+        }
 
         return redirect('admin/news')->with('flash_message', 'News updated!');
     }

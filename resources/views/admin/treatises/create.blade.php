@@ -25,7 +25,7 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/treatises') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" id="validForm">
+                        <form method="POST" action="{{ url('/admin/treatises') }}" accept-charset="UTF-8" class="form-horizontal validForm" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             @include ('admin.treatises.form', ['formMode' => 'create'])

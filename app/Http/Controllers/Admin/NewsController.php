@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\News;
 use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
@@ -138,7 +139,13 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        News::destroy($id);
+        $news = News::findOrFail($id);
+
+        foreach ($news->images()->get() as $image) {
+            Storage::delete($image->image);
+            $image->delete();
+        }
+        $news->delete();
 
         return redirect('admin/news')->with('flash_message', 'News deleted!');
     }

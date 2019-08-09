@@ -56,7 +56,7 @@ class NewsController extends Controller
 			'name' => 'required|max:90',
 			'active' => 'required|boolean',
 			'publish_date' => 'required|date',
-            'image' => 'required|image|max:2000'
+            'image' => 'image|max:2000'
 		]);
         $requestData = $request->all();
         

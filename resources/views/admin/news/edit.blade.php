@@ -46,5 +46,5 @@
 @push('scripts')
     <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
     <script src="{{ asset('js/tinymce.js') }}"></script>
-    @include ('layouts.admin_form_validator')
+    <script src="{{ asset('js/admin-form-validator.js') }}"></script>
 @endpush

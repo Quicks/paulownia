@@ -69,3 +69,40 @@
     letter-spacing: -0.26px;
     font: normal normal 500 normal 14px / 19px Montserrat, sans-serif;
 }
+
+.custom-status {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 100;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 15.36px 0.64px, rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+    display: inline-block;
+    background: rgb(76, 175, 80) none repeat scroll 0% 0% / auto padding-box border-box;
+    border-radius: 3px 3px 3px 3px;
+    margin: 0px 0px 10px;
+    padding: 15px;
+}
+
+.custom-icon {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    right: 10px;
+    text-align: left;
+    text-decoration: none solid rgb(58, 58, 58);
+    top: 10px;
+    background-image: url("../images/Icon-Sm-Cross-White.svg");
+    width: 18px;
+    height: 18px;
+}
+
+.status-text {
+    color: rgb(255, 255, 255);
+    letter-spacing: -0.26px;
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    width: 270px;
+    font: normal normal 500 normal 15px / 19px Montserrat, sans-serif;
+    margin: 0px;
+}
+

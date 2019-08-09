@@ -17,6 +17,12 @@
 </head>
 <body>
     <div id="app">
+        @if (session('status'))
+            <div class="custom-status">
+                <span class="custom-icon"></span>
+                <p class="status-text"> {{ session('status') }} </p>
+            </div>
+        @endif
         @include ('layouts.nav_top')
 
         <main class="py-4">
@@ -28,6 +34,13 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
         var allLangArr = {!!json_encode(config('translatable.locales'))!!};
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.custom-icon').on('click', function () {
+                $('.custom-status').remove()
+            });
+        });
     </script>
     @stack('scripts')
     

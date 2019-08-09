@@ -26,6 +26,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        var allLangArr = {!!json_encode(config('translatable.locales'))!!};
+    </script>
     @stack('scripts')
     
 </body>

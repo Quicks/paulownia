@@ -33,7 +33,7 @@ class ImageController extends Controller
         $imageAtributes['imageable_id'] = $galleryId;
         $imageAtributes['imageable_type'] = 'App\Models\Gallery';
         Image::create($imageAtributes);
-        return redirect('admin/galleries/'.$galleryId)->with('status', 'Image added!');
+        return redirect('admin/galleries/'.$galleryId)->with('flash_message', 'Image added!');
     }
 
     public function storeNewsImage (Request $request, $newsId)
@@ -46,7 +46,7 @@ class ImageController extends Controller
         $imageAtributes['imageable_id'] = $newsId;
         $imageAtributes['imageable_type'] = 'App\Models\News';
         Image::create($imageAtributes);
-        return redirect('admin/news/'.$newsId)->with('status', 'Image added!');
+        return redirect('admin/news/'.$newsId)->with('flash_message', 'Image added!');
     }
 
     public function delete (Request $request, $imageId)
@@ -54,6 +54,6 @@ class ImageController extends Controller
         $image = Image::findOrFail($imageId);
         Storage::delete($image->image);
         $image->delete();
-        return back()->with('status', 'Image deleted!');;
+        return back()->with('flash_message', 'Image deleted!');;
     }
 }

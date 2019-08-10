@@ -17,10 +17,10 @@
 </head>
 <body>
     <div id="app">
-        @if (session('status'))
+        @if (session('flash_message'))
             <div class="custom-status">
                 <span class="custom-icon"></span>
-                <p class="status-text"> {{ session('status') }} </p>
+                <p class="status-text"> {{ session('flash_message') }} </p>
             </div>
         @endif
         @include ('layouts.nav_top')
@@ -37,6 +37,10 @@
     </script>
     <script>
         $(document).ready(function () {
+            setTimeout(function(){
+                $('.custom-status').hide(100);
+            }, 5000);
+
             $('.custom-icon').on('click', function () {
                 $('.custom-status').remove()
             });

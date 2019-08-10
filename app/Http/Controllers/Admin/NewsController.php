@@ -71,7 +71,7 @@ class NewsController extends Controller
         }
 
 
-        return redirect('admin/news')->with('status', 'News added!');
+        return redirect('admin/news')->with('flash_message', 'News added!');
     }
 
     /**
@@ -129,7 +129,7 @@ class NewsController extends Controller
             }
         }
 
-        return redirect('admin/news')->with('status', 'News updated!');
+        return redirect('admin/news')->with('flash_message', 'News updated!');
     }
 
     /**
@@ -149,6 +149,6 @@ class NewsController extends Controller
         }
         $news->delete();
 
-        return redirect('admin/news')->with('status', 'News deleted!');
+        return redirect('admin/news')->with('flash_message', 'News deleted!');
     }
 }

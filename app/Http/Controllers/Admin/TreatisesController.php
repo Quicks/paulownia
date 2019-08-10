@@ -60,7 +60,7 @@ class TreatisesController extends Controller
         
         Treatise::create($requestData);
 
-        return redirect('admin/treatises')->with('status', 'Treatise added!');
+        return redirect('admin/treatises')->with('flash_message', 'Treatise added!');
     }
 
     /**
@@ -111,7 +111,7 @@ class TreatisesController extends Controller
         $treatise = Treatise::findOrFail($id);
         $treatise->update($requestData);
 
-        return redirect('admin/treatises')->with('status', 'Treatise updated!');
+        return redirect('admin/treatises')->with('flash_message', 'Treatise updated!');
     }
 
     /**
@@ -125,6 +125,6 @@ class TreatisesController extends Controller
     {
         Treatise::destroy($id);
 
-        return redirect('admin/treatises')->with('status', 'Treatise deleted!');
+        return redirect('admin/treatises')->with('flash_message', 'Treatise deleted!');
     }
 }

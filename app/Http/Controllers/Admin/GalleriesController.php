@@ -69,7 +69,7 @@ class GalleriesController extends Controller
             Image::create($imageAtributes);
         }
 
-        return redirect('admin/galleries')->with('status', 'Gallery added!');
+        return redirect('admin/galleries')->with('flash_message', 'Gallery added!');
     }
 
     /**
@@ -124,7 +124,7 @@ class GalleriesController extends Controller
             $image->save();
         }
 
-        return redirect('admin/galleries')->with('status', 'Gallery updated!');
+        return redirect('admin/galleries')->with('flash_message', 'Gallery updated!');
     }
 
     /**
@@ -143,6 +143,6 @@ class GalleriesController extends Controller
             $image->delete();
         }
         $gallery->delete();
-        return redirect('admin/galleries')->with('status', 'Gallery deleted!');
+        return redirect('admin/galleries')->with('flash_message', 'Gallery deleted!');
     }
 }

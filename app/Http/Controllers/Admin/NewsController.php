@@ -121,10 +121,12 @@ class NewsController extends Controller
         $news = News::findOrFail($id);
         $news->update($request->except(['image_atr','image']));
 
-        foreach ($request->image_atr as $image_id => $image_atr) {
-            $image = Image::find($image_id);
-            $image->fill($image_atr);
-            $image->save();
+        if ($request->hasFile('image')) {
+            foreach ($request->image_atr as $image_id => $image_atr) {
+                $image = Image::find($image_id);
+                $image->fill($image_atr);
+                $image->save();
+            }
         }
 
         return redirect('admin/news')->with('flash_message', 'News updated!');

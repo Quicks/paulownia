@@ -48,16 +48,9 @@ Route::group(['middleware' => ['web']], function () {
             Route::resource('news', 'App\Http\Controllers\Admin\\NewsController');
             Route::resource('galleries', 'App\Http\Controllers\Admin\\GalleriesController');
             Route::resource('treatises', 'App\Http\Controllers\Admin\\TreatisesController');
-            Route::get('/galleries/image_add/{galleryId}', 
-                'App\Http\Controllers\Admin\ImageController@createGalleryImage');
-            Route::post('/galleries/image_save/{galleryId}', 
-                'App\Http\Controllers\Admin\ImageController@storeGalleryImage');
-            Route::delete('/galleries/image_del/{imageId}', 'App\Http\Controllers\Admin\ImageController@delete');
-            Route::get('/news/image_add/{newsId}',
-                'App\Http\Controllers\Admin\ImageController@createNewsImage');
-            Route::post('/news/image_save/{newsId}',
-                'App\Http\Controllers\Admin\ImageController@storeNewsImage');
-            Route::delete('/news/image_del/{imageId}', 'App\Http\Controllers\Admin\ImageController@delete');
+            Route::get('/image_add', 'App\Http\Controllers\Admin\ImageController@createImage');
+            Route::post('/image_save/{id}', 'App\Http\Controllers\Admin\ImageController@storeImage');
+            Route::delete('/image_del/{imageId}', 'App\Http\Controllers\Admin\ImageController@delete');
         });
     });
 });

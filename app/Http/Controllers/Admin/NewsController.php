@@ -120,8 +120,7 @@ class NewsController extends Controller
 
         $news = News::findOrFail($id);
         $news->update($request->except(['image_atr','image']));
-
-        if ($request->hasFile('image')) {
+        if ($request->image_atr) {
             foreach ($request->image_atr as $image_id => $image_atr) {
                 $image = Image::find($image_id);
                 $image->fill($image_atr);

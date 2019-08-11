@@ -3,7 +3,7 @@
 
         <div class="form-group {{ $errors->has('image') ? 'has-error' : ''}}">
             <label for="image" class="control-label">Image</label>
-            <input class="form-control" name="image" type="file" id="image" value="">
+             <input class="form-control" name="image" type="file" id="image" value="">
 
             {!! $errors->first('image', '<p class="help-block">:message</p>') !!}
         </div>
@@ -13,8 +13,7 @@
         <div class="tab-pane fade" id="{{$locale}}2" role="tabpanel" aria-labelledby="{{$locale}}">
             <div class="form-group {{ $errors->has('image_atr['.$locale.'][title]') ? 'has-error' : ''}}">
                 <label for="{{'image_atr['.$locale.'][title]'}}" class="control-label">{{ 'Image title ('.$locale.')' }}</label>
-                <input class="form-control" name="{{'image_atr['.$locale.'][title]'}}" type="text" id="{{'image_atr['.$locale.'][title]'}}"
-                       value="">
+                <input class="form-control" name="{{'image_atr['.$locale.'][title]'}}" type="text" id="{{'image_atr['.$locale.'][title]'}}" value="">
                 {!! $errors->first('image_atr['.$locale.'][title]', '<p class="help-block">:message</p>') !!}
             </div>
             <div class="form-group {{ $errors->has('image_atr['.$locale.'][desc]') ? 'has-error' : ''}}">

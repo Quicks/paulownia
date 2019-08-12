@@ -4,49 +4,31 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Gallery;
 use App\Models\Image;
-use App\Models\News;
 use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
-     public function createGalleryImage (Request $request, $galleryId)
+
+    public function createImage(Request $request)
     {
-        $gallery = Gallery::findOrFail($galleryId);
-        return view('admin.galleries.add_image', compact('gallery'));
+        $imageable_id = $request->imageable_id;
+        $imageable_type = $request->imageable_type;
+        $redirect_route = $request->redirect_route;
+        return view('admin.add-images.add_image', compact('imageable_id', 'imageable_type', 'redirect_route'));
     }
 
-    public function createNewsImage (Request $request, $newsId)
-    {
-        $news = News::findOrFail($newsId);
-        return view('admin.news.add_image', compact('news'));
-    }
-
-    public function storeGalleryImage (Request $request, $galleryId)
+    public function storeImage (Request $request, $id)
     {
         $this->validate($request, [
             'image' => 'required|image|max:2000'
         ]);
         $imageAtributes = $request->image_atr;
         $imageAtributes['image'] = $request->file('image')->store('uploads', 'public');
-        $imageAtributes['imageable_id'] = $galleryId;
-        $imageAtributes['imageable_type'] = 'App\Models\Gallery';
+        $imageAtributes['imageable_id'] = $id;
+        $imageAtributes['imageable_type'] = $request->imageable_type;
         Image::create($imageAtributes);
-        return redirect('admin/galleries/'.$galleryId)->with('flash_message', 'Image added!');
-    }
-
-    public function storeNewsImage (Request $request, $newsId)
-    {
-        $this->validate($request, [
-            'image' => 'required|image|max:2000'
-        ]);
-        $imageAtributes = $request->image_atr;
-        $imageAtributes['image'] = $request->file('image')->store('uploads', 'public');
-        $imageAtributes['imageable_id'] = $newsId;
-        $imageAtributes['imageable_type'] = 'App\Models\News';
-        Image::create($imageAtributes);
-        return redirect('admin/news/'.$newsId)->with('flash_message', 'Image added!');
+        return redirect($request->redirect_route)->with('flash_message', 'Image added!');
     }
 
     public function delete (Request $request, $imageId)
@@ -54,6 +36,6 @@ class ImageController extends Controller
         $image = Image::findOrFail($imageId);
         Storage::delete($image->image);
         $image->delete();
-        return back()->with('flash_message', 'Image deleted!');;
+        return back()->with('flash_message', 'Image deleted!');
     }
 }

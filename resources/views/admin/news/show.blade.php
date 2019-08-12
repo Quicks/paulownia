@@ -16,6 +16,13 @@
                         <a href="{{ url('/admin/news/' . $news->id . '/edit') }}" title="Edit News">
                             <button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
                         </a>
+                        <a href="{{ url('/admin/image_add/?imageable_id=' . $news->id . '&imageable_type=' . get_class($news) . '&redirect_route='.route('news.show', $news->id) )  }}"
+                           title="Add Image">
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                Add image
+                            </button>
+                        </a>
 
                         <form method="POST" action="{{ url('admin/news' . '/' . $news->id) }}" accept-charset="UTF-8" style="display:inline">
                             {{ method_field('DELETE') }}

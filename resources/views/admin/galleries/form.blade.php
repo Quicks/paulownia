@@ -36,10 +36,23 @@
     </div>
 @endforeach
 
+    @includeWhen ($formMode === 'create', 'admin.add-images.add_image_form')
 
-@includeWhen ($formMode === 'create', 'admin.galleries.add_image_form')
-@includeWhen ($formMode === 'edit', 'admin.galleries.edit_image_form')
+    @if($formMode === 'edit')
+        @foreach ($gallery->images as $image)
+            <h4> Image {{$loop->iteration}}</h4>
+            <img class="img-thumbnail w-25 mx-auto d-block" src="{{asset('storage/'.$image->image)}}">
+            <div class="text-center m-1">
+                <button type="button" class="btn btn-danger btn-sm" title="Delete image" onclick="deleteImage({{$image->id}});" >
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    Delete image
+                </button>
+            </div>
 
+            @include ('admin.add-images.edit_image_form')
+
+        @endforeach
+    @endif
 </div>
 
 <div class="form-group">

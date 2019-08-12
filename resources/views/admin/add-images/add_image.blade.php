@@ -28,7 +28,7 @@
 
                             <div class="form-group">
                                 <input type="hidden" name="imageable_type" value="{{$imageable_type}}" />
-                                <input type="hidden" name="name" value="{{$name}}" />
+                                <input type="hidden" name="redirect_route" value="{{$redirect_route}}" />
                                 <input class="btn btn-primary" type="submit" value="Add image">
                             </div>
 

@@ -14,12 +14,8 @@ class ImageController extends Controller
     {
         $imageable_id = $request->imageable_id;
         $imageable_type = $request->imageable_type;
-        $name = $request->name;
-
-        return view('admin.add-images.add_image', ([
-                'imageable_id'=>$imageable_id,
-                'imageable_type'=>$imageable_type,
-                'name'=>$name]));
+        $redirect_route = $request->redirect_route;
+        return view('admin.add-images.add_image', compact('imageable_id', 'imageable_type', 'redirect_route'));
     }
 
     public function storeImage (Request $request, $id)
@@ -30,9 +26,9 @@ class ImageController extends Controller
         $imageAtributes = $request->image_atr;
         $imageAtributes['image'] = $request->file('image')->store('uploads', 'public');
         $imageAtributes['imageable_id'] = $id;
-        $imageAtributes['imageable_type'] = "App\Models\\" . $request->imageable_type;
+        $imageAtributes['imageable_type'] = $request->imageable_type;
         Image::create($imageAtributes);
-        return redirect('admin/'. $request->name . '/' .$id)->with('flash_message', 'Image added!');
+        return redirect($request->redirect_route)->with('flash_message', 'Image added!');
     }
 
     public function delete (Request $request, $imageId)

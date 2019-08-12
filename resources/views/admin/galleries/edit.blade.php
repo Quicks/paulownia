@@ -10,7 +10,7 @@
                     <div class="card-header">Edit Gallery #{{ $gallery->id }}</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/galleries') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <a href="{{ ('/admin/image_add/?imageable_id=' . $gallery->id . '&imageable_type=Gallery' . '&name=galleries' ) }}"
+                        <a href="{{url('/admin/image_add/?imageable_id=' . $gallery->id . '&imageable_type=' . get_class($gallery) . '&redirect_route='.route('galleries.show', $gallery->id) )}}"
                             title="Add Image">
                             <button class="btn btn-primary btn-sm">
                                 <i class="fa fa-picture-o" aria-hidden="true"></i>

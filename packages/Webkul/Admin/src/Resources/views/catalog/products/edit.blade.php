@@ -47,8 +47,17 @@
                     </div>
                 </div>
 
+                <script>
+                    function scrollToRequiredField() {
+                        let elements = document.getElementsByClassName('control-error');
+                        if (elements != undefined) {
+                            elements[0].scrollIntoView({block: "center", behavior: "smooth"});
+                        }
+                    }
+                </script>
+
                 <div class="page-action">
-                    <button type="submit" class="btn btn-lg btn-primary">
+                    <button type="submit" class="btn btn-lg btn-primary" onclick="scrollToRequiredField()">
                         {{ __('admin::app.catalog.products.save-btn-title') }}
                     </button>
                 </div>

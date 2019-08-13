@@ -75,6 +75,6 @@
     @endif
 </div>
 
-<div class="form-group">
+<div class="form-group text-right">
     <input class="btn btn-primary" form="news-form" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
 </div>

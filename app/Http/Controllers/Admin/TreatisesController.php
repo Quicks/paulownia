@@ -6,7 +6,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\Treatise;
+use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TreatisesController extends Controller
 {
@@ -54,11 +56,20 @@ class TreatisesController extends Controller
         $this->validate($request, [
 			'name' => 'required|max:90',
 			'active' => 'required|boolean',
-			'publish_date' => 'required|date'
+			'publish_date' => 'required|date',
+            'file' => 'required|file'
 		]);
         $requestData = $request->all();
         
-        Treatise::create($requestData);
+        $treatise = Treatise::create($requestData);
+
+        if ($request->hasFile('file')) {
+            $fileAtributes = $request->file_atr;
+            $fileAtributes['file'] = $request->file('file')->store('uploads', 'public');
+            $fileAtributes['fileable_id'] = $treatise->id;
+            $fileAtributes['fileable_type'] = 'App\Models\Treatise';
+            File::create($fileAtributes);
+        }
 
         return redirect('admin/treatises')->with('flash_message', 'Treatise added!');
     }
@@ -111,6 +122,14 @@ class TreatisesController extends Controller
         $treatise = Treatise::findOrFail($id);
         $treatise->update($requestData);
 
+        if ($request->file_atr) {
+            foreach ($request->file_atr as $file_id => $file_atr) {
+                $file = File::find($file_id);
+                $file->fill($file_atr);
+                $file->save();
+            }
+        }
+
         return redirect('admin/treatises')->with('flash_message', 'Treatise updated!');
     }
 
@@ -123,7 +142,13 @@ class TreatisesController extends Controller
      */
     public function destroy($id)
     {
-        Treatise::destroy($id);
+        $treatise = Treatise::findOrFail($id);
+
+        foreach ($treatise->files()->get() as $file) {
+            Storage::delete($file->file);
+            $file->delete();
+        }
+        $treatise->delete();
 
         return redirect('admin/treatises')->with('flash_message', 'Treatise deleted!');
     }

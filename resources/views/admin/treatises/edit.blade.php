@@ -14,6 +14,13 @@
                                 Back
                             </button>
                         </a>
+                        <a href="{{ url('/admin/file_add/?fileable_id=' . $treatise->id . '&fileable_type=' . get_class($treatise) . '&redirect_route='.route('treatises.show', $treatise->id) )  }}"
+                           title="Upload File">
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fa fa-file-o" aria-hidden="true"></i>
+                                Upload file
+                            </button>
+                        </a>
                         <br>
                         <br>
                             @if ($errors->any())

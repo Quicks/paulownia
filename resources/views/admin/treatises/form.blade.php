@@ -50,7 +50,26 @@
                 </div>
         </div>
     @endforeach
-    </div>
+
+    @includeWhen ($formMode === 'create', 'admin.upload-files.add_file_form')
+
+    @if($formMode === 'edit')
+        @foreach ($treatise->files as $file)
+            <div class="text-center m-1">
+                <a href="{{asset('storage/'.$file->file)}}" target="_blank">
+                    <h4> File {{$loop->iteration}}</h4>
+                </a>
+                <button type="button" class="btn btn-danger btn-sm" title="Delete file" onclick="deleteFile({{$file->id}});" >
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    Delete file
+                </button>
+            </div>
+
+            @include ('admin.upload-files.edit_file_form')
+
+        @endforeach
+    @endif
+</div>
 
 <div class="form-group text-right">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">

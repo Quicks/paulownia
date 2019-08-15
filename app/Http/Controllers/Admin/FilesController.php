@@ -20,7 +20,7 @@ class FilesController extends Controller
     public function storeFile (Request $request, $id)
     {
         $this->validate($request, [
-            'file' => 'file'
+            'file' => 'required|file'
         ]);
         $fileAtributes = $request->file_atr;
         $fileOriginalName = $request->file('file')->getClientOriginalName();

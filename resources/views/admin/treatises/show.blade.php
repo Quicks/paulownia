@@ -20,6 +20,13 @@
                                                                       aria-hidden="true"></i> Edit
                             </button>
                         </a>
+                        <a href="{{ url('/admin/file_add/?fileable_id=' . $treatise->id . '&fileable_type=' . get_class($treatise) . '&redirect_route='.route('treatises.show', $treatise->id) )  }}"
+                           title="Upload File">
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fa fa-file-o" aria-hidden="true"></i>
+                                Upload file
+                            </button>
+                        </a>
 
                         <form method="POST" action="{{ url('admin/treatises' . '/' . $treatise->id) }}"
                               accept-charset="UTF-8" style="display:inline">
@@ -65,6 +72,40 @@
                                         </div>
                                     @endisset
                                 </div>
+                            @endforeach
+                            @foreach ($treatise->files as $file)
+                                <div class="row m-1 pt-2 border-top border-dark">
+                                    <div class="col-md-3 font-weight-bold">
+                                        <a href="{{asset('storage/'.$file->file)}}" target="_blank">
+                                            <h4> File {{$loop->iteration}}</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                                @foreach(config('translatable.locales') as $locale)
+                                    <div class="tab-pane fade" id="{{$locale}}4" role="tabpanel"
+                                         aria-labelledby="{{$locale}}">
+                                        <div class="row m-1 pt-2 border-top">
+                                            @isset($file->translate($locale)->title)
+                                                <div class="col-md-3 font-weight-bold">
+                                                    File title ({{$locale}})
+                                                </div>
+                                                <div class="col-md-9">
+                                                    {{$file->translate($locale)->title}}
+                                                </div>
+                                            @endisset
+                                        </div>
+                                        <div class="row m-1 pt-2 border-top">
+                                            @isset($file->translate($locale)->desc)
+                                                <div class="col-md-3 font-weight-bold">
+                                                    File description ({{$locale}})
+                                                </div>
+                                                <div class="col-md-9">
+                                                    {!!$file->translate($locale)->desc!!}
+                                                </div>
+                                            @endisset
+                                        </div>
+                                    </div>
+                                @endforeach
                             @endforeach
                         </div>
                     </div>

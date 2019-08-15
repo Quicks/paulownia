@@ -41,6 +41,13 @@
                                         <td>
                                             <a href="{{ url('/admin/treatises/' . $item->id) }}" title="View Treatise"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/admin/treatises/' . $item->id . '/edit') }}" title="Edit Treatise"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <a href="{{ url('/admin/file_add/?fileable_id=' . $item->id . '&fileable_type=' . get_class($item) . '&redirect_route='.route('treatises.show', $item->id) )  }}"
+                                               title="Upload File">
+                                                <button class="btn btn-primary btn-sm">
+                                                    <i class="fa fa-file-o" aria-hidden="true"></i>
+                                                    Upload file
+                                                </button>
+                                            </a>
 
                                             <form method="POST" action="{{ url('/admin/treatises' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}

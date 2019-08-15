@@ -51,6 +51,9 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('/image_add', 'App\Http\Controllers\Admin\ImageController@createImage');
             Route::post('/image_save/{id}', 'App\Http\Controllers\Admin\ImageController@storeImage');
             Route::delete('/image_del/{imageId}', 'App\Http\Controllers\Admin\ImageController@delete');
+            Route::get('/file_add', 'App\Http\Controllers\Admin\FilesController@createFile');
+            Route::post('/file_save/{id}', 'App\Http\Controllers\Admin\FilesController@storeFile');
+            Route::delete('/file_del/{fileId}', 'App\Http\Controllers\Admin\FilesController@delete');
         });
     });
 });

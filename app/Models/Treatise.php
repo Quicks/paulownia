@@ -32,5 +32,8 @@ class Treatise extends Model
      */
     protected $fillable = ['name', 'active', 'publish_date'];
 
-    
+    public function files()
+    {
+        return $this->morphMany('App\Models\File', 'fileable');
+    }
 }

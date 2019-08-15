@@ -75,9 +75,10 @@
                             @endforeach
                             @foreach ($treatise->files as $file)
                                 <div class="row m-1 pt-2 border-top border-dark">
-                                    <div class="col-md-3 font-weight-bold">
+                                    <div class="col-md-3 font-weight-bold"> File {{$loop->iteration}} </div>
+                                    <div class="col-md-9 text-center">
                                         <a href="{{asset('storage/'.$file->file)}}" target="_blank">
-                                            <h4> File {{$loop->iteration}}</h4>
+                                            <h6> {{basename($file->file)}}</h6>
                                         </a>
                                     </div>
                                 </div>

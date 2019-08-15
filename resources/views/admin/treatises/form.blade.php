@@ -57,7 +57,7 @@
         @foreach ($treatise->files as $file)
             <div class="text-center m-1">
                 <a href="{{asset('storage/'.$file->file)}}" target="_blank">
-                    <h4> File {{$loop->iteration}}</h4>
+                    <h6> {{basename($file->file)}}</h6>
                 </a>
                 <button type="button" class="btn btn-danger btn-sm" title="Delete file" onclick="deleteFile({{$file->id}});" >
                     <i class="fa fa-trash-o" aria-hidden="true"></i>

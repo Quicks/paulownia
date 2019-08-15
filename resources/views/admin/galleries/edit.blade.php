@@ -28,7 +28,7 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/galleries/' . $gallery->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" id="gallery-form">
+                        <form method="POST" action="{{ url('/admin/galleries/' . $gallery->id) }}" accept-charset="UTF-8" class="form-horizontal validForm" enctype="multipart/form-data" id="gallery-form">
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
@@ -47,4 +47,5 @@
 @push('scripts')
     <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
     <script src="{{ asset('js/tinymce.js') }}"></script>
+    <script src="{{ asset('js/admin-form-validator.js') }}"></script>
 @endpush

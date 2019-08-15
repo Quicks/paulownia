@@ -21,7 +21,7 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/galleries') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" id="gallery-form">
+                        <form method="POST" action="{{ url('/admin/galleries') }}" accept-charset="UTF-8" class="form-horizontal validForm" enctype="multipart/form-data" id="gallery-form">
                             {{ csrf_field() }}
 
                             @include ('admin.galleries.form', ['formMode' => 'create'])
@@ -38,7 +38,6 @@
 
 @push('scripts')
     <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
-
     <script>
         $(document).ready(function () {
             tinymce.init({
@@ -51,4 +50,5 @@
             });
         });
     </script>
+    <script src="{{ asset('js/admin-form-validator.js') }}"></script>
 @endpush

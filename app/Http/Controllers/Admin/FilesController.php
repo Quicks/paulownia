@@ -20,10 +20,11 @@ class FilesController extends Controller
     public function storeFile (Request $request, $id)
     {
         $this->validate($request, [
-            'file' => 'required|file'
+            'file' => 'file'
         ]);
         $fileAtributes = $request->file_atr;
-        $fileAtributes['file'] = $request->file('file')->store('uploads', 'public');
+        $fileOriginalName = $request->file('file')->getClientOriginalName();
+        $fileAtributes['file'] = $request->file('file')->storeAs('uploads', $fileOriginalName, 'public');
         $fileAtributes['fileable_id'] = $id;
         $fileAtributes['fileable_type'] = $request->fileable_type;
         File::create($fileAtributes);

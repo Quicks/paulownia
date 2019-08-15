@@ -57,7 +57,7 @@ class TreatisesController extends Controller
 			'name' => 'required|max:90',
 			'active' => 'required|boolean',
 			'publish_date' => 'required|date',
-            'file' => 'required|file'
+            'file' => 'file'
 		]);
         $requestData = $request->all();
         

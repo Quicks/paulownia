@@ -58,7 +58,10 @@ class OfficesController extends Controller
         $this->validate($request, [
 			'name' => 'required|max:90',
 			'email' => 'required|email',
-            'image' => 'image|max:2000'
+            'image' => 'image|max:2000',
+            'phone'=>'string|max:190',
+            'posrcode'=>'string|max:190',
+            'website'=>'url'
 		]);
         $requestData = $request->all();
 
@@ -114,7 +117,10 @@ class OfficesController extends Controller
     {
         $this->validate($request, [
 			'name' => 'required|max:90',
-			'email' => 'required|email'
+			'email' => 'required|email',
+            'phone'=>'string|max:190',
+            'posrcode'=>'string|max:190',
+            'website'=>'url'
 		]);
 
         $office = Office::findOrFail($id);

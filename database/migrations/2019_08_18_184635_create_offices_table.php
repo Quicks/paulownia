@@ -44,6 +44,7 @@ class CreateOfficesTable extends Migration
      */
     public function down()
     {
+        Schema::drop('office_translations');
         Schema::drop('offices');
     }
 }

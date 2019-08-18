@@ -48,6 +48,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::resource('news', 'App\Http\Controllers\Admin\\NewsController');
             Route::resource('galleries', 'App\Http\Controllers\Admin\\GalleriesController');
             Route::resource('treatises', 'App\Http\Controllers\Admin\\TreatisesController');
+            Route::resource('offices', 'App\Http\Controllers\Admin\\OfficesController');
             Route::get('/image_add', 'App\Http\Controllers\Admin\ImageController@createImage');
             Route::post('/image_save/{id}', 'App\Http\Controllers\Admin\ImageController@storeImage');
             Route::delete('/image_del/{imageId}', 'App\Http\Controllers\Admin\ImageController@delete');

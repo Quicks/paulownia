@@ -23,6 +23,11 @@
                         Treatises
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{Request::is('admin/offices*') ? "active" : ""}}" href="{{route('offices.index')}}">
+                        Official Offices
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

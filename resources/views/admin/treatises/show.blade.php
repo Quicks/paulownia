@@ -71,6 +71,14 @@
                                             </div>
                                         </div>
                                     @endisset
+                                    @isset($treatise->translate($locale)->keywords)
+                                        <div class="row  m-1 pt-2 border-top">
+                                            <div class="col-md-3 font-weight-bold"> Keywords ({{$locale}}) </div>
+                                            <div  class="col-md-9">
+                                                {!! $treatise->translate($locale)->keywords !!}
+                                            </div>
+                                        </div>
+                                    @endisset
                                 </div>
                             @endforeach
                             @foreach ($treatise->files as $file)

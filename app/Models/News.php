@@ -10,7 +10,7 @@ class News extends Model
 
     public $translationModel = 'App\Models\Translations\NewsTranslation';
     
-    public $translatedAttributes = ['title', 'text'];
+    public $translatedAttributes = ['title', 'text', 'keywords'];
     /**
      * The database table used by the model.
      *

@@ -64,6 +64,14 @@
                                             </div>
                                         </div>
                                     @endisset
+                                    @isset($news->translate($locale)->keywords)
+                                        <div class="row  m-1 pt-2 border-top">
+                                            <div class="col-md-3 font-weight-bold"> Keywords ({{$locale}}) </div>
+                                            <div  class="col-md-9">
+                                                {!! $news->translate($locale)->keywords !!}
+                                            </div>
+                                        </div>
+                                    @endisset
                                 </div>
                             @endforeach
                             @foreach ($news->images as $image)

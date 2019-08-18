@@ -10,7 +10,7 @@ class Treatise extends Model
 
     public $translationModel = 'App\Models\Translations\TreatiseTranslation';
 
-    public $translatedAttributes = ['title', 'text'];
+    public $translatedAttributes = ['title', 'text', 'keywords'];
     /**
      * The database table used by the model.
      *

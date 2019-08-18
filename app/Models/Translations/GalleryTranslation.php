@@ -8,6 +8,6 @@ class GalleryTranslation extends Model {
 
     protected $table = 'galleries_translations';
     public $timestamps = true;
-    protected $fillable = ['title', 'desc'];
+    protected $fillable = ['title', 'desc', 'keywords'];
 
 }

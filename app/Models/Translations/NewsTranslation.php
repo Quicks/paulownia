@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class NewsTranslation extends Model {
 
     public $timestamps = false;
-    protected $fillable = ['title', 'text'];
+    protected $fillable = ['title', 'text', 'keywords'];
 
 }

@@ -33,6 +33,19 @@
             </textarea>
             {!! $errors->first($locale.'[desc]', '<p class="help-block">:message</p>') !!}
         </div>
+        <div class="form-group {{ $errors->has($locale.'[keywords]') ? 'has-error' : ''}}">
+            <label for="{{$locale.'[keywords]'}}" class="control-label">
+                {{ 'Keywords ('.$locale.').      '}}
+                <small>Set comma (,) after each word</small>
+            </label>
+            <input class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
+            name="{{$locale.'[keywords]'}}" type="text"
+                   id="{{$locale.'[keywords]'}}"
+                   placeholder="Set comma (,) after each word" 
+                   value="{{ isset($treatise) && isset($treatise->translate($locale)->keywords) ? $treatise->translate($locale)->keywords : ''}}"
+            >
+            {!! $errors->first($locale.'[keywords]', '<p class="help-block">:message</p>') !!}
+        </div>
     </div>
 @endforeach
 

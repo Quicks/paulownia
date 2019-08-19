@@ -33,7 +33,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
-        var allLangArr = {!!json_encode(config('translatable.locales'))!!};
+        var allLangArr = @json(config('translatable.locales'));
     </script>
     <script>
         $(document).ready(function () {

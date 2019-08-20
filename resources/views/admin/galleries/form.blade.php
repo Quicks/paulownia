@@ -20,32 +20,15 @@
 
 @foreach(config('translatable.locales') as $locale)
     <div class="tab-pane fade" id="{{$locale}}" role="tabpanel" aria-labelledby="{{$locale}}">
-        <div class="form-group {{ $errors->has($locale.'[title]') ? 'has-error' : ''}}">
-            <label for="{{$locale.'[title]'}}" class="control-label">{{ 'Galery title ('.$locale.')' }}</label>
-            <input class="form-control" name="{{$locale.'[title]'}}" type="text" id="{{$locale.'[title]'}}" 
-                value="{{ isset($gallery) && isset($gallery->translate($locale)->title) ? $gallery->translate($locale)->title : ''}}">
-            {!! $errors->first($locale.'[title]', '<p class="help-block">:message</p>') !!}
-        </div>
-        <div class="form-group {{ $errors->has($locale.'[desc]') ? 'has-error' : ''}}">
-            <label for="{{$locale.'[desc]'}}" class="control-label">{{ 'Galery description ('.$locale.')' }}</label>
-            <textarea class="form-control" rows="5" name="{{$locale.'[desc]'}}" type="textarea" id="{{$locale.'[desc]'}}" >
-                {{ isset($gallery) && isset($gallery->translate($locale)->desc) ? $gallery->translate($locale)->desc : ''}}
-            </textarea>
-            {!! $errors->first($locale.'[desc]', '<p class="help-block">:message</p>') !!}
-        </div>
-        <div class="form-group {{ $errors->has($locale.'[keywords]') ? 'has-error' : ''}}">
-            <label for="{{$locale.'[keywords]'}}" class="control-label">
-                {{ 'Keywords ('.$locale.').      '}}
-                <small>Set comma (,) after each word</small>
-            </label>
-            <input class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
-            name="{{$locale.'[keywords]'}}" type="text"
-                   id="{{$locale.'[keywords]'}}"
-                   placeholder="Set comma (,) after each word" 
-                   value="{{ isset($treatise) && isset($treatise->translate($locale)->keywords) ? $treatise->translate($locale)->keywords : ''}}"
-            >
-            {!! $errors->first($locale.'[keywords]', '<p class="help-block">:message</p>') !!}
-        </div>
+            @include('admin.multi_lang_inputs.text_input', [
+                    'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'title'])
+
+            @include('admin.multi_lang_inputs.text_area', [
+                    'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'desc'])
+
+            @include('admin.multi_lang_inputs.text_input', [
+                    'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'keywords',
+                    'placeholder' => 'set comma (,) after each word'])
     </div>
 @endforeach
 

@@ -30,52 +30,17 @@
         <div class="tab-pane fade" id={{$locale}} role="tabpanel"
              aria-labelledby={{$locale}}>
             <div class="border p-4 mb-4 bg-light rounded">
-                <div class="form-group {{ $errors->has($locale.'[title]') ? 'has-error' : ''}}">
-                    <label for="{{$locale.'[title]'}}" class="control-label">
-                        {{ 'Title ('.$locale.')'}}
-                    </label>
-                    <input class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
-                    name="{{$locale.'[title]'}}" type="text"
-                           id="{{$locale.'[title]'}}"
-                           value="{{ isset($office) && isset($office->translate($locale)->title) ? $office->translate($locale)->title : ''}}"
-                    >
-                    {!! $errors->first($locale.'[title]', '<p class="help-block">:message</p>') !!}
-                </div>
-                <div class="form-group {{ $errors->has($locale.'[address]') ? 'has-error' : ''}}">
-                    <label for="{{$locale.'[address]'}}" class="control-label">
-                        {{ 'Address ('.$locale.')'}}
-                    </label>
-                    <input class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
-                    name="{{$locale.'[address]'}}" type="text"
-                           id="{{$locale.'[address]'}}"
-                           value="{{ isset($office) && isset($office->translate($locale)->address) ? $office->translate($locale)->address : ''}}"
-                    >
-                    {!! $errors->first($locale.'[address]', '<p class="help-block">:message</p>') !!}
-                </div>
-                <div class="form-group {{ $errors->has($locale.'[city]') ? 'has-error' : ''}}">
-                    <label for="{{$locale.'[city]'}}" class="control-label">
-                        {{ 'City ('.$locale.')'}}
-                    </label>
-                    <input class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
-                    name="{{$locale.'[city]'}}" type="text"
-                           id="{{$locale.'[city]'}}"
-                           value="{{ isset($office) && isset($office->translate($locale)->city) ? $office->translate($locale)->city : ''}}"
-                    >
-                    {!! $errors->first($locale.'[city]', '<p class="help-block">:message</p>') !!}
-                </div>
-                <div class="form-group {{ $errors->has($locale.'[country]') ? 'has-error' : ''}}">
-                    <label for="{{$locale.'[country]'}}" class="control-label">
-                        {{ 'Country ('.$locale.')'}}
-                    </label>
-                    <input class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
-                    name="{{$locale.'[country]'}}" type="text"
-                           id="{{$locale.'[city]'}}"
-                           value="{{ isset($office) && isset($office->translate($locale)->city) ? $office->translate($locale)->city : ''}}"
-                    >
-                    {!! $errors->first($locale.'[country]', '<p class="help-block">:message</p>') !!}
-                </div>
+                @include('admin.multi_lang_inputs.text_input', [
+                        'item' => isset($office) ? $office : null, 'itemProperty' => 'title'])
 
+                @include('admin.multi_lang_inputs.text_input', [
+                        'item' => isset($office) ? $office : null, 'itemProperty' => 'address'])
 
+                @include('admin.multi_lang_inputs.text_input', [
+                        'item' => isset($office) ? $office : null, 'itemProperty' => 'city'])
+
+                @include('admin.multi_lang_inputs.text_input', [
+                        'item' => isset($office) ? $office : null, 'itemProperty' => 'country'])
             </div>
         </div>
     @endforeach

@@ -37,6 +37,7 @@
                                         <tr><th> Postcode </th><td> {{ $office->postcode }} </td></tr>
                                         <tr><th> Phone </th><td> {{ $office->phone }} </td></tr>
                                         <tr><th> Email </th><td> {{ $office->email }} </td></tr>
+                                        <tr><th> Website </th><td> {{ $office->website }} </td></tr>
                                         </tbody>
                                     </table>
                                 </div>

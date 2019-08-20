@@ -27,40 +27,15 @@
         <div class="tab-pane fade" id={{$locale}} role="tabpanel"
              aria-labelledby={{$locale}}>
                 <div class="border p-4 mb-4 bg-light rounded">
-                    <div class="form-group {{ $errors->has($locale.'[title]') ? 'has-error' : ''}}">
-                        <label for="{{$locale.'[title]'}}" class="control-label">
-                            {{ 'Title ('.$locale.')'}}
-                        </label>
-                        <input class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
-                        name="{{$locale.'[title]'}}" type="text"
-                               id="{{$locale.'[title]'}}"
-                               value="{{ isset($treatise) && isset($treatise->translate($locale)->title) ? $treatise->translate($locale)->title : ''}}"
-                        >
-                        {!! $errors->first($locale.'[title]', '<p class="help-block">:message</p>') !!}
-                    </div>
+                    @include('admin.multi_lang_inputs.text_input', [
+                       'item' => isset($treatise) ? $treatise : null, 'itemProperty' => 'title'])
 
-                    <div class="form-group {{ $errors->has($locale.'[text]') ? 'has-error' : ''}}">
-                        <label for="{{$locale.'[text]'}}" class="control-label">{{ 'Text ('.$locale.')'}}</label>
-                        <textarea class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
-                        name="{{$locale.'[text]'}}"
-                                  id="{{$locale.'[text]'}}" rows="3"
-                        >{{isset($treatise) && isset($treatise->translate($locale)->text) ? $treatise->translate($locale)->text : ''}}</textarea>
-                        {!! $errors->first($locale.'[text]', '<p class="help-block">:message</p>') !!}
-                    </div>
+                    @include('admin.multi_lang_inputs.text_area', [
+                            'item' => isset($treatise) ? $treatise : null, 'itemProperty' => 'text'])
 
-                    <div class="form-group {{ $errors->has($locale.'[keywords]') ? 'has-error' : ''}}">
-                        <label for="{{$locale.'[keywords]'}}" class="control-label">
-                            {{ 'Keywords ('.$locale.').      '}}
-                            <small>Set comma (,) after each word</small>
-                        </label>
-                        <input class="form-control" @if($locale == 'ar') dir="rtl" class="text-right" @endif
-                        name="{{$locale.'[keywords]'}}" type="text"
-                               id="{{$locale.'[keywords]'}}"
-                               placeholder="Set comma (,) after each word" 
-                               value="{{ isset($treatise) && isset($treatise->translate($locale)->keywords) ? $treatise->translate($locale)->keywords : ''}}"
-                        >
-                         {!! $errors->first($locale.'[keywords]', '<p class="help-block">:message</p>') !!}
-                    </div>
+                    @include('admin.multi_lang_inputs.text_input', [
+                            'item' => isset($treatise) ? $treatise : null, 'itemProperty' => 'keywords',
+                            'placeholder' => 'set comma (,) after each word'])
                 </div>
         </div>
     @endforeach

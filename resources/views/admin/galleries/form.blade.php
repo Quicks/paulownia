@@ -24,7 +24,7 @@
                     'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'title'])
 
             @include('admin.multi_lang_inputs.text_area', [
-                    'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'desc'])
+                    'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'desc', 'itemName' => 'Description'])
 
             @include('admin.multi_lang_inputs.text_input', [
                     'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'keywords',

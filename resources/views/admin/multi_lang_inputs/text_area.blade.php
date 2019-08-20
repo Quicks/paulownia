@@ -1,10 +1,8 @@
 <div class="form-group {{ $errors->has($locale.'['.$itemProperty.']') ? 'has-error' : ''}}">
     <label for="{{$locale.'['.$itemProperty.']'}}" class="control-label">
-        @if($itemProperty == 'desc')
-            {{ ucfirst($itemProperty).'ription' . ' ('.$locale.')'}}
-        @else
-            {{ ucfirst($itemProperty).' ('.$locale.')'}}
-        @endif
+
+        {{ isset($itemName) ? $itemName . ' ('.$locale.')' : ucfirst($itemProperty).' ('.$locale.')' }}
+
     </label>
     <textarea class="form-control" 
         @if($locale == 'ar') dir="rtl" class="text-right" @endif

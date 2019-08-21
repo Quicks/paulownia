@@ -88,7 +88,7 @@ return [
      *
      * Log must be enabled for this option to work.
      */
-    'log_sql_queries' => true,
+    'log_sql_queries' => false,
 
     /*
      * If you prefer to store Tracker data on a different database or connection,
@@ -124,7 +124,7 @@ return [
      *
      */
 
-    'geoip_database_path' => __DIR__.'/geoip', //storage_path('geoip'),
+    'geoip_database_path' => storage_path('geoip'),
 
     /*
      * Also log SQL query bindings?
@@ -163,7 +163,7 @@ return [
      */
     'do_not_log_events' => [
         'illuminate.log',
-        'eloquent.*',
+        //'eloquent.*',
         'router.*',
         'composing: *',
         'creating: *',
@@ -181,7 +181,7 @@ return [
      *     sudo apt-get purge php5-geoip
      *
      */
-    'log_geoip' => false,
+    'log_geoip' => true,
 
     /*
      * Do you wish to log the user agent?
@@ -237,7 +237,7 @@ return [
     /*
      * If you are storing cookies, you better change it to a name you of your own.
      */
-    'tracker_cookie_name' => 'please_change_this_cookie_name',
+    'tracker_cookie_name' => 'statistic_tracking_cookie',
 
     /*
      * Internal tracker session name.
@@ -363,7 +363,7 @@ return [
     /*
      * Stats Panel layout view
      */
-    'stats_layout' => 'pragmarx/tracker::layout',
+    'stats_layout' => 'layouts.stats',
 
     /*
      * Stats Panel controllers namespace

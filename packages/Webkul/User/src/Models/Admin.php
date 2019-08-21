@@ -63,4 +63,9 @@ class Admin extends Authenticatable implements AdminContract
 
         return in_array($permission, $this->role->permissions);
     }
+
+    public function getIsAdminAttribute()
+    {
+        return true;
+    }
 }

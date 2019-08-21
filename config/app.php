@@ -203,6 +203,7 @@ return [
          */
 
         Dimsav\Translatable\TranslatableServiceProvider::class,
+        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -303,5 +304,6 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Concord' => Konekt\Concord\Facades\Concord::class,
         'Helper'  => Konekt\Concord\Facades\Helper::class,
+        'Tracker' => 'PragmaRX\Tracker\Vendor\Laravel\Facade',
     ],
 ];

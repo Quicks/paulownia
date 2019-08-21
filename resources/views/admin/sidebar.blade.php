@@ -28,6 +28,11 @@
                         Official Offices
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{Request::is('stats*') ? "active" : ""}}" href="{{route('tracker.stats.index')}}">
+                        Tracking statistics
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

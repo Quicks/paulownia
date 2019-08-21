@@ -253,7 +253,7 @@ return [
      *      protected $connection = 'mysql';
      * ...
      */
-    'user_model' => 'Webkul\User\Models\Admin', //PragmaRX\Tracker\Vendor\Laravel\Models\User',
+    'user_model' => 'Webkul\Customer\Models\Customer', //PragmaRX\Tracker\Vendor\Laravel\Models\User',
 
     /*
      * You can use your own model for every single table Tracker has.

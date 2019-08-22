@@ -44,6 +44,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
         Route::group(['middleware' => ['admin']], function () {
+            Route::view('/factura', "admin.factura");
             Route::view('/welcome', 'admin.dashboard')->name('admin.welcome');
             Route::resource('news', 'App\Http\Controllers\Admin\\NewsController');
             Route::resource('galleries', 'App\Http\Controllers\Admin\\GalleriesController');

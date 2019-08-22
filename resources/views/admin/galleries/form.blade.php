@@ -39,6 +39,12 @@
             <h4> Image {{$loop->iteration}}</h4>
             <img class="img-thumbnail w-25 mx-auto d-block" src="{{asset('storage/'.$image->image)}}">
             <div class="text-center m-1">
+                <a href="{{ url('/admin/image_crop/' . $image->id) }}" title="Crop Image">
+                    <button type="button" class="btn btn-primary btn-sm">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                        Crop image 
+                    </button>
+                </a>
                 <button type="button" class="btn btn-danger btn-sm" title="Delete image" onclick="deleteImage({{$image->id}});" >
                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                     Delete image

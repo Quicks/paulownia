@@ -38,6 +38,19 @@ class ImageController extends Controller
         return redirect($request->redirect_route)->with('flash_message', 'Image added!');
     }
 
+    public function storeCrop (Request $request, $id)
+    {  
+        $this->validate($request, [
+            'croppedImage' => 'required|image|max:2000'
+        ]);
+        $image = Image::findOrFail($id);
+        Storage::delete($image->image);
+        $image->image = $request->file('croppedImage')->store('uploads', 'public');
+        $image->save();
+
+        return response('success', 200);
+    }
+
     public function delete (Request $request, $imageId)
     {
         $image = Image::findOrFail($imageId);

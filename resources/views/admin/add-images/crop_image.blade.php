@@ -7,15 +7,29 @@
 
             <div class="col-md-10">
                 <div class="card">
-                    <div>
-                        <img id="image" style="max-width:100%;" src="{{asset('storage/'.$image->image)}}">
+                    <div class="card-header">Crop Image {{ $image->title }}</div>
+                    <div class="card-body">
+                        <a href="{{url($redirect_route)}}" title="Back">
+                            <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
+                        </a>
+                        <div class="m-2">
+                            <img id="image" style="max-width:100%; min-height: 400px;" src="{{asset('storage/'.$image->image)}}">
+                        </div>
+                        <div class="text-center">
+                            <button id="rot1" class="btn btn-info"><i class="fa fa-rotate-right" aria-hidden="true"></i> 90&deg; </button>
+                            <button id="rot2" class="btn btn-info"><i class="fa fa-rotate-left" aria-hidden="true"></i> -90&deg; </button>
+                            <button id="rot3" class="btn btn-info"><i class="fa fa-rotate-right" aria-hidden="true"></i> 3&deg; </button>
+                            <button id="rot4" class="btn btn-info"><i class="fa fa-rotate-left" aria-hidden="true"></i> -3&deg; </button>
+                            <button id="scalex" class="btn btn-info"><i class="fa fa-arrows-h" aria-hidden="true"></i>  </button>
+                            <button id="scaley" class="btn btn-info"><i class="fa fa-arrows-v" aria-hidden="true"></i> </button>
+                            <button id="reset" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i> Reset </button>
+                        </div>
+                        <div class="form-group text-right">
+                            <button id="save" class="btn btn-primary" type="button"> Save </button>
+                        </div>
                     </div>
                 </div>
             </div>
-    </div>
-
-    <div class="form-group text-right">
-        <input class="btn btn-primary" type="button" value="Save">
     </div>
 @endsection
 
@@ -27,17 +41,36 @@
         const image = document.getElementById('image');
         const cropper = new Cropper(image, {
           aspectRatio: 1 / 1,
-          crop(event) {
-            console.log(event.detail.x);
-            console.log(event.detail.y);
-            console.log(event.detail.width);
-            console.log(event.detail.height);
-            console.log(event.detail.rotate);
-            console.log(event.detail.scaleX);
-            console.log(event.detail.scaleY);
-          },
         });
 
+        $('#rot1').click(function () {cropper.rotate(90);});
+        $('#rot2').click(function () {cropper.rotate(-90);});
+        $('#rot3').click(function () {cropper.rotate(3);});
+        $('#rot4').click(function () {cropper.rotate(-3);});
+        $('#scalex').click(function () {cropper.scaleX(-1);});
+        $('#scaley').click(function () {cropper.scaleY(-1);});
+        $('#reset').click(function () {cropper.reset();});
+
+        $('#save').click(function saveCrop () {
+            $.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')} });
+
+            cropper.getCroppedCanvas().toBlob((blob) => {
+              const formData = new FormData();
+              formData.append('croppedImage', blob);
+              $.ajax('/admin/image_save_crop/{{$image->id}}', {
+                method: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success() {
+                  window.location.replace('{{url($redirect_route)}}');
+                },
+                error() {
+                  console.log('Upload error');
+                },
+              });
+            });
+        });
     });
     </script>
 @endpush

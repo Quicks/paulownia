@@ -52,6 +52,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('/image_add', 'App\Http\Controllers\Admin\ImageController@createImage');
             Route::get('/image_crop/{id}', 'App\Http\Controllers\Admin\ImageController@cropImage');
             Route::post('/image_save/{id}', 'App\Http\Controllers\Admin\ImageController@storeImage');
+            Route::post('/image_save_crop/{id}', 'App\Http\Controllers\Admin\ImageController@storeCrop');
             Route::delete('/image_del/{imageId}', 'App\Http\Controllers\Admin\ImageController@delete');
             Route::get('/file_add', 'App\Http\Controllers\Admin\FilesController@createFile');
             Route::post('/file_save/{id}', 'App\Http\Controllers\Admin\FilesController@storeFile');

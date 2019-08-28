@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Office;
 use App\Models\Image;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use App\Helpers\ImageSaveHelper;
 
 class OfficesController extends Controller
 {
@@ -68,7 +68,7 @@ class OfficesController extends Controller
         $offices = Office::create($requestData);
         if ($request->hasFile('image')) {
             $imageAtributes = $request->image_atr;
-            $imageAtributes['image'] = $request->file('image')->store('uploads', 'public');
+            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'));
             $imageAtributes['imageable_id'] = $offices->id;
             $imageAtributes['imageable_type'] = 'App\Models\Office';
             Image::create($imageAtributes);
@@ -146,11 +146,7 @@ class OfficesController extends Controller
     public function destroy($id)
     {
         $office = Office::findOrFail($id);
-
-        foreach ($office->images()->get() as $image) {
-            Storage::delete($image->image);
-            $image->delete();
-        }
+        ImageSaveHelper::deleteAllModelImages($office);
         $office->delete();
 
         return redirect('admin/offices')->with('flash_message', 'Office deleted!');

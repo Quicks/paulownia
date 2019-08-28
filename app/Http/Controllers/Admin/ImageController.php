@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Image;
+use App\Helpers\ImageSaveHelper;
 use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
@@ -30,11 +31,13 @@ class ImageController extends Controller
         $this->validate($request, [
             'image' => 'required|image|max:2000'
         ]);
+
         $imageAtributes = $request->image_atr;
-        $imageAtributes['image'] = $request->file('image')->store('uploads', 'public');
+        $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'));
         $imageAtributes['imageable_id'] = $id;
         $imageAtributes['imageable_type'] = $request->imageable_type;
         Image::create($imageAtributes);
+
         return redirect($request->redirect_route)->with('flash_message', 'Image added!');
     }
 
@@ -45,7 +48,8 @@ class ImageController extends Controller
         ]);
         $image = Image::findOrFail($id);
         Storage::delete($image->image);
-        $image->image = $request->file('croppedImage')->store('uploads', 'public');
+        Storage::delete($image->thumbnail);
+        $image->image = ImageSaveHelper::saveImageWithThumbnail($request->file('croppedImage'));
         $image->save();
 
         return response('success', 200);
@@ -55,7 +59,9 @@ class ImageController extends Controller
     {
         $image = Image::findOrFail($imageId);
         Storage::delete($image->image);
+        Storage::delete($image->thumbnail);
         $image->delete();
         return back()->with('flash_message', 'Image deleted!');
     }
+
 }

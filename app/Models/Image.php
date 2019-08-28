@@ -37,4 +37,9 @@ class Image extends Model
         return $this->morphTo();
     }
 
+    public function getThumbnailAttribute()
+    {
+        return str_replace('.jpg', '-tmb.jpg', $this->image);
+    }
+
 }

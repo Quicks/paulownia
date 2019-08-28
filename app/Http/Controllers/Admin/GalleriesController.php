@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
 use App\Models\Image;
-use Illuminate\Support\Facades\Storage;
+use App\Helpers\ImageSaveHelper;
 
 class GalleriesController extends Controller
 {
@@ -63,7 +63,7 @@ class GalleriesController extends Controller
 
         if ($request->hasFile('image')) {
             $imageAtributes = $request->image_atr;
-            $imageAtributes['image'] = $request->file('image')->store('uploads', 'public');
+            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'));
             $imageAtributes['imageable_id'] = $newGalery->id;
             $imageAtributes['imageable_type'] = 'App\Models\Gallery';
             Image::create($imageAtributes);
@@ -137,11 +137,7 @@ class GalleriesController extends Controller
     public function destroy($id)
     {
         $gallery = Gallery::findOrFail($id);
-
-        foreach ($gallery->images()->get() as $image) {
-            Storage::delete($image->image);
-            $image->delete();
-        }
+        ImageSaveHelper::deleteAllModelImages($gallery);
         $gallery->delete();
         return redirect('admin/galleries')->with('flash_message', 'Gallery deleted!');
     }

@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\News;
 use App\Models\Image;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use App\Helpers\ImageSaveHelper;
 
 class NewsController extends Controller
 {
@@ -64,7 +64,7 @@ class NewsController extends Controller
 
         if ($request->hasFile('image')) {
             $imageAtributes = $request->image_atr;
-            $imageAtributes['image'] = $request->file('image')->store('uploads', 'public');
+            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'));
             $imageAtributes['imageable_id'] = $news->id;
             $imageAtributes['imageable_type'] = 'App\Models\News';
             Image::create($imageAtributes);
@@ -141,11 +141,7 @@ class NewsController extends Controller
     public function destroy($id)
     {
         $news = News::findOrFail($id);
-
-        foreach ($news->images()->get() as $image) {
-            Storage::delete($image->image);
-            $image->delete();
-        }
+        ImageSaveHelper::deleteAllModelImages($news);
         $news->delete();
 
         return redirect('admin/news')->with('flash_message', 'News deleted!');

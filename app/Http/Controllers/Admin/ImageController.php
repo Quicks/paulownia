@@ -31,11 +31,10 @@ class ImageController extends Controller
         $this->validate($request, [
             'image' => 'required|image|max:2000'
         ]);
-
         $imageAtributes = $request->image_atr;
         $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'));
         $imageAtributes['imageable_id'] = $id;
-        $imageAtributes['imageable_type'] = $request->imageable_type;
+        $imageAtributes['imageable_type'] = urldecode($request->imageable_type);
         Image::create($imageAtributes);
 
         return redirect($request->redirect_route)->with('flash_message', 'Image added!');

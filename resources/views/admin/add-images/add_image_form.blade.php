@@ -20,10 +20,8 @@
                 <button id="rot4" type="button" class="btn btn-info"><i class="fa fa-rotate-left" aria-hidden="true"></i> -3&deg; </button>
                 <button id="scalex" type="button" class="btn btn-info"><i class="fa fa-arrows-h" aria-hidden="true"></i>  </button>
                 <button id="scaley" type="button" class="btn btn-info"><i class="fa fa-arrows-v" aria-hidden="true"></i> </button>
+                <button id="aspect1" type="button" class="btn btn-info"><i class="fa fa-arrows-v" aria-hidden="true"></i> </button>
                 <button id="reset" type="button" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i> Reset </button>
-            </div>
-            <div class="form-group text-right">
-                <button id="save" class="btn btn-primary" type="button"> Save </button>
             </div>
         </div>
 
@@ -67,11 +65,13 @@
             $('#scaley').click(function () {cropper.scaleY(-1);});
             $('#reset').click(function () {cropper.reset();});
 
-            $('#save').click(function saveCrop () {
+            $('form').submit(function saveCrop (event) {
+                event.preventDefault();
                 $.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')} });
 
                 cropper.getCroppedCanvas().toBlob((blob) => {
-                  const formData = new FormData();
+                  var form = $('form')[0];
+                  const formData = new FormData(form);
                   formData.append('image', blob);
                   formData.append('imageable_type', '{{urlencode($imageable_type)}}');
                   $.ajax('/admin/image_save/{{$imageable_id}}', {

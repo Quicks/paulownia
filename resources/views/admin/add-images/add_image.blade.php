@@ -26,7 +26,7 @@
 
                             @include ('admin.add-images.add_image_form')
 
-                            <div class="form-group">
+                            <div class="form-group text-right">
                                 <input type="hidden" name="imageable_type" value="{{$imageable_type}}" />
                                 <input type="hidden" name="redirect_route" value="{{$redirect_route}}" />
                                 <input class="btn btn-primary" type="submit" value="Add image">

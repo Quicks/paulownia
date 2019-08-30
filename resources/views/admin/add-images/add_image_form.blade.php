@@ -21,6 +21,8 @@
                 <button id="scalex" type="button" class="btn btn-info"><i class="fa fa-arrows-h" aria-hidden="true"></i>  </button>
                 <button id="scaley" type="button" class="btn btn-info"><i class="fa fa-arrows-v" aria-hidden="true"></i> </button>
                 <button id="reset" type="button" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i> Reset </button>
+                <strong>  Add watermark  </strong>
+                <input type="checkbox" name="watermark">
             </div>
         </div>
 

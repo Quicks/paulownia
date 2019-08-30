@@ -16,13 +16,16 @@
                             <img id="image" style="max-width:100%; min-height: 400px;" src="{{asset('storage/'.$image->image)}}">
                         </div>
                         <div class="text-center">
-                            <button id="rot1" class="btn btn-info"><i class="fa fa-rotate-right" aria-hidden="true"></i> 90&deg; </button>
-                            <button id="rot2" class="btn btn-info"><i class="fa fa-rotate-left" aria-hidden="true"></i> -90&deg; </button>
-                            <button id="rot3" class="btn btn-info"><i class="fa fa-rotate-right" aria-hidden="true"></i> 3&deg; </button>
-                            <button id="rot4" class="btn btn-info"><i class="fa fa-rotate-left" aria-hidden="true"></i> -3&deg; </button>
-                            <button id="scalex" class="btn btn-info"><i class="fa fa-arrows-h" aria-hidden="true"></i>  </button>
-                            <button id="scaley" class="btn btn-info"><i class="fa fa-arrows-v" aria-hidden="true"></i> </button>
-                            <button id="reset" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i> Reset </button>
+                            <form>
+                                <button id="rot1" class="btn btn-info"><i class="fa fa-rotate-right" aria-hidden="true"></i> 90&deg; </button>
+                                <button id="rot2" class="btn btn-info"><i class="fa fa-rotate-left" aria-hidden="true"></i> -90&deg; </button>
+                                <button id="rot3" class="btn btn-info"><i class="fa fa-rotate-right" aria-hidden="true"></i> 3&deg; </button>
+                                <button id="rot4" class="btn btn-info"><i class="fa fa-rotate-left" aria-hidden="true"></i> -3&deg; </button>
+                                <button id="scalex" class="btn btn-info"><i class="fa fa-arrows-h" aria-hidden="true"></i>  </button>
+                                <button id="scaley" class="btn btn-info"><i class="fa fa-arrows-v" aria-hidden="true"></i> </button>
+                                <button id="reset" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i> Reset </button>
+                                <strong>  Add watermark  </strong><input type="checkbox" name="watermark">
+                            </form>
                         </div>
                         <div class="form-group text-right">
                             <button id="save" class="btn btn-primary" type="button"> Save </button>
@@ -54,8 +57,9 @@
         $('#save').click(function saveCrop () {
             $.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')} });
 
-            cropper.getCroppedCanvas().toBlob((blob) => {
-              const formData = new FormData();
+            cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toBlob((blob) => {
+              var form = $('form')[0];
+              const formData = new FormData(form);
               formData.append('croppedImage', blob);
               $.ajax('/admin/image_save_crop/{{$image->id}}', {
                 method: "POST",

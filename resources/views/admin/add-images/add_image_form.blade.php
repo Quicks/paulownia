@@ -67,13 +67,13 @@
 
             $('form').submit(function saveCrop (event) {
                 event.preventDefault();
-                $.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')} });
+                //$.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')} });
 
-                cropper.getCroppedCanvas().toBlob((blob) => {
+                cropper.getCroppedCanvas({maxWidth: 1200, maxHeight: 1200,}).toBlob((blob) => {
                   var form = $('form')[0];
                   const formData = new FormData(form);
-                  formData.append('image', blob);
                   formData.append('imageable_type', '{{urlencode($imageable_type)}}');
+                  formData.append('image', blob);
                   $.ajax('/admin/image_save/{{$imageable_id}}', {
                     method: "POST",
                     data: formData,

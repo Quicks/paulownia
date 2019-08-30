@@ -29,12 +29,12 @@ class ImageController extends Controller
     public function storeImage (Request $request, $id)
     {
         $this->validate($request, [
-            'image' => 'required|image|max:2000'
+            'image' => 'required|image|max:20000'
         ]);
         $imageAtributes = $request->image_atr;
         $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'));
         $imageAtributes['imageable_id'] = $id;
-        $imageAtributes['imageable_type'] = urldecode($request->imageable_type);
+        $imageAtributes['imageable_type'] = $request->imageable_type;
         Image::create($imageAtributes);
 
         return redirect($request->redirect_route)->with('flash_message', 'Image added!');
@@ -43,7 +43,7 @@ class ImageController extends Controller
     public function storeCrop (Request $request, $id)
     {  
         $this->validate($request, [
-            'croppedImage' => 'required|image|max:2000'
+            'croppedImage' => 'required|image|max:20000'
         ]);
         $image = Image::findOrFail($id);
         Storage::delete($image->image);

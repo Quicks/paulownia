@@ -20,7 +20,6 @@
                 <button id="rot4" type="button" class="btn btn-info"><i class="fa fa-rotate-left" aria-hidden="true"></i> -3&deg; </button>
                 <button id="scalex" type="button" class="btn btn-info"><i class="fa fa-arrows-h" aria-hidden="true"></i>  </button>
                 <button id="scaley" type="button" class="btn btn-info"><i class="fa fa-arrows-v" aria-hidden="true"></i> </button>
-                <button id="aspect1" type="button" class="btn btn-info"><i class="fa fa-arrows-v" aria-hidden="true"></i> </button>
                 <button id="reset" type="button" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i> Reset </button>
             </div>
         </div>
@@ -67,20 +66,17 @@
 
             $('form').submit(function saveCrop (event) {
                 event.preventDefault();
-                //$.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')} });
-
-                cropper.getCroppedCanvas({maxWidth: 1200, maxHeight: 1200,}).toBlob((blob) => {
+                cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toBlob((blob) => {
                   var form = $('form')[0];
                   const formData = new FormData(form);
-                  formData.append('imageable_type', '{{urlencode($imageable_type)}}');
                   formData.append('image', blob);
-                  $.ajax('/admin/image_save/{{$imageable_id}}', {
+                  $.ajax($('form').attr('action'), {
                     method: "POST",
                     data: formData,
                     processData: false,
                     contentType: false,
                     success() {
-                      window.location.replace('{{url($redirect_route)}}');
+                        history.back();
                     },
                     error() {
                       console.log('Upload error');
@@ -96,10 +92,10 @@
                 var output = document.getElementById('image-crop');
                 output.src = reader.result;
                 initCropper();
+                $('#cropper-div').removeClass('d-none');
             }
             reader.readAsDataURL(event.target.files[0]);
-            $('#cropper-div').removeClass('d-none');
-            $('#image-input-div').addClass('d-none');
+            $('#image-input-div').remove();
         });
 
     });

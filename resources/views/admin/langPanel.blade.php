@@ -22,7 +22,7 @@
 
 
 
-                    <br>
+                    
                     <a class="nav-link btn btn-outline-primary btn-sm mb-2 mt-2"
                        id={{$locale}} data-toggle="pill"
                        href="#{{$locale}}" role="tab"

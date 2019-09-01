@@ -13,8 +13,9 @@ class GenerateDocumentController extends Controller
 
     public function generateDocument ()
     {
-
         $phpWord = new \PhpOffice\PhpWord\PhpWord();
+        $phpWord->getSettings()->setHideGrammaticalErrors(true);
+        $phpWord->getSettings()->setHideSpellingErrors(true);
         $phpWord->setDefaultFontName('Arial');
         $sectionStyle = array(
             'orientation'=>'portrait',
@@ -169,9 +170,9 @@ class GenerateDocumentController extends Controller
                 'wrappingStyle'=> 'behind'
             ));
         $document = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-        $document->save(storage_path('factura.doc'));
+        $document->save(storage_path('factura.docx'));
 
-        return response()->download(storage_path('factura.doc'));
+        return response()->download(storage_path('factura.docx'));
 
     }
 }

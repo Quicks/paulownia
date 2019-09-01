@@ -56,14 +56,14 @@ class GalleriesController extends Controller
         $this->validate($request, [
 			'name' => 'required|max:90',
 			'active' => 'required|boolean',
-            'image' => 'required|image|max:2000'
+            'image' => 'required|image|max:20000'
 		]);
 
         $newGalery = Gallery::create($request->except(['image_atr','image']));
 
         if ($request->hasFile('image')) {
             $imageAtributes = $request->image_atr;
-            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'));
+            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'), $request->watermark);
             $imageAtributes['imageable_id'] = $newGalery->id;
             $imageAtributes['imageable_type'] = 'App\Models\Gallery';
             Image::create($imageAtributes);

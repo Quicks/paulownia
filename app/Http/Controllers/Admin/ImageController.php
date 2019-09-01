@@ -29,11 +29,10 @@ class ImageController extends Controller
     public function storeImage (Request $request, $id)
     {
         $this->validate($request, [
-            'image' => 'required|image|max:2000'
+            'image' => 'required|image|max:20000'
         ]);
-
         $imageAtributes = $request->image_atr;
-        $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'));
+        $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'), $request->watermark);
         $imageAtributes['imageable_id'] = $id;
         $imageAtributes['imageable_type'] = $request->imageable_type;
         Image::create($imageAtributes);
@@ -44,12 +43,12 @@ class ImageController extends Controller
     public function storeCrop (Request $request, $id)
     {  
         $this->validate($request, [
-            'croppedImage' => 'required|image|max:2000'
+            'croppedImage' => 'required|image|max:20000'
         ]);
         $image = Image::findOrFail($id);
         Storage::delete($image->image);
         Storage::delete($image->thumbnail);
-        $image->image = ImageSaveHelper::saveImageWithThumbnail($request->file('croppedImage'));
+        $image->image = ImageSaveHelper::saveImageWithThumbnail($request->file('croppedImage'), $request->watermark);
         $image->save();
 
         return response('success', 200);

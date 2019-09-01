@@ -58,7 +58,7 @@ class OfficesController extends Controller
         $this->validate($request, [
 			'name' => 'required|max:90',
 			'email' => 'required|email',
-            'image' => 'image|max:2000',
+            'image' => 'image|max:20000',
             'phone'=>'string|max:190',
             'posrcode'=>'string|max:190',
             'website'=>'url'
@@ -68,7 +68,7 @@ class OfficesController extends Controller
         $offices = Office::create($requestData);
         if ($request->hasFile('image')) {
             $imageAtributes = $request->image_atr;
-            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'));
+            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'), $request->watermark);
             $imageAtributes['imageable_id'] = $offices->id;
             $imageAtributes['imageable_type'] = 'App\Models\Office';
             Image::create($imageAtributes);

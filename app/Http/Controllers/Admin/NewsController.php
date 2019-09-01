@@ -56,7 +56,7 @@ class NewsController extends Controller
 			'name' => 'required|max:90',
 			'active' => 'required|boolean',
 			'publish_date' => 'required|date',
-            'image' => 'image|max:2000'
+            'image' => 'image|max:20000'
 		]);
         $requestData = $request->all();
         
@@ -64,7 +64,7 @@ class NewsController extends Controller
 
         if ($request->hasFile('image')) {
             $imageAtributes = $request->image_atr;
-            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'));
+            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'), $request->watermark);
             $imageAtributes['imageable_id'] = $news->id;
             $imageAtributes['imageable_type'] = 'App\Models\News';
             Image::create($imageAtributes);

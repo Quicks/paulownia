@@ -11,6 +11,8 @@
 |
 */
 
+// Route::get('/php', function () {phpinfo();}); //to check server php configuration
+
 Route::group(['middleware' => ['web']], function () {
     Route::prefix('admin')->group(function () {
 

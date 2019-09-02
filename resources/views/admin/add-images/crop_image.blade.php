@@ -17,14 +17,39 @@
                         </div>
                         <div class="text-center">
                             <form>
-                                <button id="rot1" class="btn btn-info"><i class="fa fa-rotate-right" aria-hidden="true"></i> 90&deg; </button>
-                                <button id="rot2" class="btn btn-info"><i class="fa fa-rotate-left" aria-hidden="true"></i> -90&deg; </button>
-                                <button id="rot3" class="btn btn-info"><i class="fa fa-rotate-right" aria-hidden="true"></i> 3&deg; </button>
-                                <button id="rot4" class="btn btn-info"><i class="fa fa-rotate-left" aria-hidden="true"></i> -3&deg; </button>
-                                <button id="scalex" class="btn btn-info"><i class="fa fa-arrows-h" aria-hidden="true"></i>  </button>
-                                <button id="scaley" class="btn btn-info"><i class="fa fa-arrows-v" aria-hidden="true"></i> </button>
-                                <button id="reset" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i> Reset </button>
-                                <strong>  Add watermark  </strong><input type="checkbox" name="watermark">
+                                <button id="rot1" class="btn btn-info" type="button">
+                                    <i class="fa fa-rotate-right" aria-hidden="true"></i>
+                                    90&deg; 
+                                </button>
+                                <button id="rot2" class="btn btn-info" type="button">
+                                    <i class="fa fa-rotate-left" aria-hidden="true"></i>
+                                    -90&deg; 
+                                </button>
+                                <button id="rot3" class="btn btn-info" type="button">
+                                    <i class="fa fa-rotate-right" aria-hidden="true"></i>
+                                    3&deg; 
+                                </button>
+                                <button id="rot4" class="btn btn-info" type="button">
+                                    <i class="fa fa-rotate-left" aria-hidden="true"></i>
+                                    -3&deg; 
+                                </button>
+                                <button id="scalex" class="btn btn-info" type="button">
+                                    <i class="fa fa-arrows-h" aria-hidden="true"></i>
+                                </button>
+                                <button id="scaley" class="btn btn-info" type="button">
+                                    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+                                </button>
+                                <button id="reset" class="btn btn-info ml-3" type="button">
+                                    <i class="fa fa-refresh" aria-hidden="true"></i> 
+                                    Reset
+                                </button>
+                                <button id="checkbtn" class="btn btn-outline-info ml-3" type="button">
+                                    <label class="m-0 p-0">
+                                        <input type="checkbox" name="watermark" 
+                                        onchange="$('#checkbtn').toggleClass('btn-info btn-outline-info')">
+                                        Add watermark
+                                    </label>
+                                </button>
                             </form>
                         </div>
                         <div class="form-group text-right">

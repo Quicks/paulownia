@@ -13,7 +13,7 @@
                 <img id="image-crop" style="max-width:100%; min-height: 400px; min-width: 400px;">
             </div>
         
-            <div class="text-center">
+            <div class="text-center m-3">
                 <button id="rot1" type="button" class="btn btn-info"><i class="fa fa-rotate-right" aria-hidden="true"></i> 90&deg; </button>
                 <button id="rot2" type="button" class="btn btn-info"><i class="fa fa-rotate-left" aria-hidden="true"></i> -90&deg; </button>
                 <button id="rot3" type="button" class="btn btn-info"><i class="fa fa-rotate-right" aria-hidden="true"></i> 3&deg; </button>
@@ -21,8 +21,13 @@
                 <button id="scalex" type="button" class="btn btn-info"><i class="fa fa-arrows-h" aria-hidden="true"></i>  </button>
                 <button id="scaley" type="button" class="btn btn-info"><i class="fa fa-arrows-v" aria-hidden="true"></i> </button>
                 <button id="reset" type="button" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i> Reset </button>
-                <strong>  Add watermark  </strong>
-                <input type="checkbox" name="watermark">
+                <button id="checkbtn" class="btn btn-outline-info ml-3" type="button">
+                    <label class="m-0 p-0">
+                        <input type="checkbox" name="watermark" 
+                        onchange="$('#checkbtn').toggleClass('btn-info btn-outline-info')">
+                        Add watermark
+                    </label>
+                </button>
             </div>
         </div>
 

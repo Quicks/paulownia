@@ -314,9 +314,9 @@ class InvoiceController extends Controller
                 'wrappingStyle'=> 'behind'
             ));
         $document = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-        $document->save(storage_path('factura-' . $invoice->id . '.doc'));
+        $document->save(storage_path('factura-' . $invoice->id . '.docx'));
 
-        return response()->download(storage_path('factura-' . $invoice->id . '.doc'))->deleteFileAfterSend(true);
+        return response()->download(storage_path('factura-' . $invoice->id . '.docx'))->deleteFileAfterSend(true);
 
     }
 

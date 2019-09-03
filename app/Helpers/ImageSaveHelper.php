@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Storage;
 
 class ImageSaveHelper
 {
-    public static function saveImageWithThumbnail ($requestImageFile, $watermark = false)
+    public static function saveImageWithThumbnail ($requestImageFile, $imageModelName, 
+        $imageModelId, $watermark = false)
     {   
         if($watermark) {
             $watermark = Image::make('images/watermark.png');
@@ -15,7 +16,7 @@ class ImageSaveHelper
              $preparedImage = Image::make($requestImageFile)->encode('jpg');
         }
         $thumbnail = Image::make($requestImageFile)->fit(150)->encode('jpg');
-        $fileName = 'uploads/'.now()->timestamp;
+        $fileName = 'uploads/'.$imageModelName.'/'.$imageModelId.'/'.now()->timestamp;
         Storage::put($fileName.'.jpg', $preparedImage->__toString());
         Storage::put($fileName.'-tmb.jpg', $thumbnail->__toString());
         return $fileName.'.jpg';

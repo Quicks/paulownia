@@ -63,7 +63,8 @@ class GalleriesController extends Controller
 
         if ($request->hasFile('image')) {
             $imageAtributes = $request->image_atr;
-            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'), $request->watermark);
+            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
+                $request->file('image'), 'Gallery', $newGalery->id, $request->watermark);
             $imageAtributes['imageable_id'] = $newGalery->id;
             $imageAtributes['imageable_type'] = 'App\Models\Gallery';
             Image::create($imageAtributes);

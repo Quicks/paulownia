@@ -32,7 +32,10 @@ class ImageController extends Controller
             'image' => 'required|image|max:20000'
         ]);
         $imageAtributes = $request->image_atr;
-        $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'), $request->watermark);
+        $tmp = explode("\\", $request->imageable_type);
+        $imageModelShortName = end($tmp);
+        $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
+            $request->file('image'), $imageModelShortName, $id, $request->watermark);
         $imageAtributes['imageable_id'] = $id;
         $imageAtributes['imageable_type'] = $request->imageable_type;
         Image::create($imageAtributes);
@@ -48,7 +51,10 @@ class ImageController extends Controller
         $image = Image::findOrFail($id);
         Storage::delete($image->image);
         Storage::delete($image->thumbnail);
-        $image->image = ImageSaveHelper::saveImageWithThumbnail($request->file('croppedImage'), $request->watermark);
+        $tmp = explode("\\", $image->imageable_type);
+        $imageModelShortName = end($tmp);
+        $image->image = ImageSaveHelper::saveImageWithThumbnail($request->file('croppedImage'), 
+            $imageModelShortName, $image->imageable_id, $request->watermark);
         $image->save();
 
         return response('success', 200);

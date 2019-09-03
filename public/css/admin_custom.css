@@ -4,3 +4,8 @@
     z-index: 4;
     background-color: #fff;
 }
+
+.export-doc {
+    position: fixed;
+    right: 125px;
+}

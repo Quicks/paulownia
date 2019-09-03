@@ -261,11 +261,11 @@ class InvoiceController extends Controller
         foreach ($invoice->items as $item)
         {
             $tableMain->addRow();
-            $tableMain->addCell(1300, $tableStyle)->addText($item->qty);
+            $tableMain->addCell(1300, $tableStyle)->addText($item->qty, [], [ 'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER]);
             $tableMain->addCell(4800, $tableStyle)->addText($item->name);
-            $tableMain->addCell(1300, $tableStyle)->addText($item->price);
-            $tableMain->addCell(1300, $tableStyle)->addText($item->discount_percent);
-            $tableMain->addCell(1300, $tableStyle)->addText($item->total);
+            $tableMain->addCell(1300, $tableStyle)->addText(number_format($item->price, 2), [], [ 'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER]);
+            $tableMain->addCell(1300, $tableStyle)->addText(number_format($item->discount_percent, 2), [], [ 'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER]);
+            $tableMain->addCell(1300, $tableStyle)->addText(number_format($item->total, 2), [], [ 'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER]);
         }
 
         $textPayment = 'NOMBRE: Paulownia Professional; BANCO: Caja Rural; IBAN: ES41 3080 0060 7622 4552 2319;
@@ -291,13 +291,13 @@ class InvoiceController extends Controller
         $childTable2 = $parentTableCell2->addTable();
         $childTable2->addRow();
         $childTable2->addCell(1600)->addText('Subtotal', array('size' => 14,'color'=> '808080'));
-        $childTable2->addCell(3000, $childTableStyle)->addText($invoice->sub_total);
+        $childTable2->addCell(3000, $childTableStyle)->addText(number_format($invoice->sub_total, 2), [], [ 'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER]);
         $childTable2->addRow();
         $childTable2->addCell(1600)->addText('I.V.A. 10%', array('size' => 14,'color'=> '808080'));
-        $childTable2->addCell(3000, $childTableStyle)->addText($invoice->tax_amount);
+        $childTable2->addCell(3000, $childTableStyle)->addText(number_format($invoice->tax_amount, 2), [], [ 'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER]);
         $childTable2->addRow();
         $childTable2->addCell(1600)->addText('TOTAL', array('bold'=>true, 'size' => 16,'color'=> '808080'));
-        $childTable2->addCell(3000, $childTableStyle)->addText($invoice->grand_total);
+        $childTable2->addCell(3000, $childTableStyle)->addText(number_format($invoice->grand_total, 2), [], [ 'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER]);
 
         $footer = $section->addFooter();
         $textFooter = 'La Empresa Vivero Paulownia Professional S.L. CIF:B44276491 inscrita en el Registro Oficial de Productores, Comerciantes e Importadores de Vegetales de la Comunidad Autónoma de Aragón conel número ES/02/44-0655 con dirección en Camino Estanca S/n apartado de correos 50, Alcañiz 44600, Teruel, España. Número de pasaporte fitosanitario CE: ES/02/44-0655.';
@@ -314,9 +314,9 @@ class InvoiceController extends Controller
                 'wrappingStyle'=> 'behind'
             ));
         $document = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-        $document->save(storage_path('factura.docx'));
+        $document->save(storage_path('factura-' . $invoice->id . '.doc'));
 
-        return response()->download(storage_path('factura.docx'));
+        return response()->download(storage_path('factura-' . $invoice->id . '.doc'))->deleteFileAfterSend(true);
 
     }
 

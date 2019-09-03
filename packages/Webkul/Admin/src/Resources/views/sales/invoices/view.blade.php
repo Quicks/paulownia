@@ -26,7 +26,7 @@
 
             <div class="export-doc">
                 <a href="{{route('factura', $invoice->id)}}" class="btn btn-lg btn-primary">
-                    Export as .doc
+                    Export as .docx
                 </a>
             </div>
         </div>

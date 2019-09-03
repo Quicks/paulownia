@@ -32,8 +32,7 @@ class ImageController extends Controller
             'image' => 'required|image|max:20000'
         ]);
         $imageAtributes = $request->image_atr;
-        $imageModelName = $request->imageable_type;
-        $tmp = explode("\\", $imageModelName);
+        $tmp = explode("\\", $request->imageable_type);
         $imageModelShortName = end($tmp);
         $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
             $request->file('image'), $imageModelShortName, $id, $request->watermark);

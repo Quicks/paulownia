@@ -64,7 +64,8 @@ class NewsController extends Controller
 
         if ($request->hasFile('image')) {
             $imageAtributes = $request->image_atr;
-            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail($request->file('image'), $request->watermark);
+            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
+                $request->file('image'), 'News', $news->id, $request->watermark);
             $imageAtributes['imageable_id'] = $news->id;
             $imageAtributes['imageable_type'] = 'App\Models\News';
             Image::create($imageAtributes);

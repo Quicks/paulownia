@@ -23,6 +23,12 @@
                     {{ __('admin::app.sales.invoices.print') }}
                 </a>
             </div>
+
+            <div class="export-doc">
+                <a href="{{route('factura', $invoice->id)}}" class="btn btn-lg btn-primary">
+                    Export as .docx
+                </a>
+            </div>
         </div>
 
         <div class="page-content">

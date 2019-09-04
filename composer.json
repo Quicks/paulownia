@@ -28,11 +28,11 @@
         "konekt/concord": "^1.2",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
-        "maatwebsite/excel": "3.1.x-dev",
+        "maatwebsite/excel": "3.1.x",
         "nwidart/laravel-modules": "^3.2",
         "phpoffice/phpword": "dev-master",
         "pragmarx/tracker": "^2.1@dev",
-        "prettus/l5-repository": "^2.6",
+        "prettus/l5-repository": "2.6.32",
         "spatie/laravel-cookie-consent": "^2.6",
         "tymon/jwt-auth": "dev-develop",
         "zendframework/zendframework": "^3.0@dev"

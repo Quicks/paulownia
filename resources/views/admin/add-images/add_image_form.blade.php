@@ -85,8 +85,20 @@
                     success() {
                         history.back();
                     },
-                    error() {
-                      console.log('Upload error');
+                    error(answer) {
+                        if(answer.status == 422){
+                            var errors = "";
+                            $.each(answer.responseJSON.errors, function(idx, val) {
+                                errors = errors +"<li>"+JSON.stringify(val[0])+"</li>";
+                            })
+                            $('.card-body > form').parent('.card-body').prepend('<ul class="alert alert-danger">'+errors+'</ul>');
+                            $([document.documentElement, document.body]).animate({
+                                scrollTop: $(".alert.alert-danger").offset().top
+                            }, 1000);
+                        } else {
+                            alert("Error");
+                            console.log(answer);
+                        }
                     },
                   });
                 });

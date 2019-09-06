@@ -29,7 +29,7 @@
                                     When you create or edit news, galleries, treatises etc - use "Lang panel" on a right page side.
                                 </p>
                                 <p class="m-0 ml-4">
-                                    The best - is to fill info on all languages, but to save it - all fields should be filled at least in one language.
+                                    The best - is to fill info in all languages, but to save it - all fields should be filled at least in one language.
                                 </p>
                             </li>
                         </ul>

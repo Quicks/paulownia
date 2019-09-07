@@ -57,7 +57,6 @@
     display: inline-block;
     height: 38px;
     vertical-align: middle;
-    /*margin: 0 25px 0 30px;*/
 }
 
 .user-name {
@@ -157,8 +156,3 @@
     height: 8px;
     color: black;
 }
-
-
-
-
-

@@ -25,6 +25,7 @@
                         </form>
 
                         <br/>
+<h1>{{$fullUrl}}</h1>
                         <br/>
                         <div class="table-responsive">
                             <table class="table">

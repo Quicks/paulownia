@@ -23,7 +23,7 @@
                 <p class="status-text"> {{ session('flash_message') }} </p>
             </div>
         @endif
-        @include ('layouts.nav_top')
+        @include ('admin.nav_top')
 
         <main class="py-4">
             @yield('content')

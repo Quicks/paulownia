@@ -7,7 +7,7 @@
 @section('body')
     <div id="wrapper">
         <div>
-            @include ('layouts.nav_top_bootstrap_3')
+            @include ('admin.nav_top_bootstrap_3')
         </div>
 	    <nav class="navbar navbar-default custom-navbar-bs3" role="navigation">
             <div class="navbar-header">

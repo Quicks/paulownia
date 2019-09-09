@@ -1,6 +1,6 @@
 @extends('pragmarx/tracker::html')
 
-@section('required-scripts-top')
+@section('required-scripts-bottom')
     <link href="{{asset('css/crud_custom.css')}}" rel="stylesheet">
 @endsection
 

@@ -3,11 +3,11 @@ $(document).ready(function () {
         selector: 'textarea',
         height: 200,
         width: "100%",
-        plugins: 'image imagetools media wordcount save fullscreen code',
-        toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent  | removeformat | code',
+        plugins: 'image imagetools media wordcount save fullscreen code directionality',
+        toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent  | removeformat | code | ltr rtl',
         image_advtab: true,
         setup: function (editor) {
-            editor.on("change keyup", function(e){
+            editor.on("change keyup", function (e) {
                 tinyMCE.triggerSave();
                 $(editor.getElement()).trigger('change');
             });

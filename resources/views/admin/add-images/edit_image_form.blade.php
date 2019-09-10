@@ -3,7 +3,7 @@
         <div class="form-group {{ $errors->has('image_atr['.$image->id.']['.$locale.'][title]') ? 'has-error' : ''}}">
             <label for="{{'image_atr['.$image->id.']['.$locale.'][title]'}}"
                    class="control-label">{{ 'Image title ('.$locale.')' }}</label>
-            <input class="form-control" name="{{'image_atr['.$image->id.']['.$locale.'][title]'}}" type="text"
+            <input @if($locale == 'ar') dir="rtl" @endif class="form-control" name="{{'image_atr['.$image->id.']['.$locale.'][title]'}}" type="text"
                    id="{{'image_atr['.$image->id.']['.$locale.'][title]'}}"
                    value="@isset($image->translate($locale)->title) {{$image->translate($locale)->title}} @endisset">
             {!! $errors->first('image_atr['.$image->id.']['.$locale.'][title]', '<p class="help-block">:message</p>') !!}
@@ -11,7 +11,7 @@
         <div class="form-group {{ $errors->has('image_atr['.$image->id.']['.$locale.'][desc]') ? 'has-error' : ''}}">
             <label for="{{'image_atr['.$image->id.']['.$locale.'][desc]'}}"
                    class="control-label">{{ 'Image description ('.$locale.')' }}</label>
-            <textarea class="form-control" rows="5" name="{{'image_atr['.$image->id.']['.$locale.'][desc]'}}"
+            <textarea @if($locale == 'ar') dir="rtl" @endif class="form-control" rows="5" name="{{'image_atr['.$image->id.']['.$locale.'][desc]'}}"
                       type="textarea" id="{{'image_atr['.$image->id.']['.$locale.'][desc]'}}">
                 @isset($image->translate($locale)->desc) {{$image->translate($locale)->desc}} @endisset
             </textarea>

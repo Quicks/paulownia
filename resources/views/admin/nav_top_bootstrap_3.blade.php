@@ -1,40 +1,31 @@
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+<nav class="navbar custom-nav-bs3" role="navigation">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url('/admin/welcome') }}">
+
+        <a class="navbar-brand custom-nav-link-bs3" href="{{ url('/admin/welcome') }}">
             <img src="{{ asset('images/logo.png') }}" width="112px" height="41px" alt="Paulownia"/>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
+        <div>
+            <ul class="navbar-nav navbar-right custom-list-ul">
                 <!-- Authentication Links -->
                 @if(!auth()->guard('admin')->check())
                     <li><a class="nav-link" href="{{ url('/admin/login') }}">Login</a></li>
                     <li><a class="nav-link" href="{{ url('/customer/register') }}">Register</a></li>
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        <a id="navbarDropdown" class="dropdown-toggle custom-link" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="custom-profile">
-                                        <span class="user-name">
-                                            {{ auth()->guard('admin')->user()->name }}
-                                        </span>
+                                <span class="user-name">
+                                    {{ auth()->guard('admin')->user()->name }}
+                                </span>
 
                                 <span class="user-role">
-                                            {{ auth()->guard('admin')->user()->role['name'] }}
-                                        </span>
+                                    {{ auth()->guard('admin')->user()->role['name'] }}
+                                </span>
                             </div>
+                            <i class="fa fa-caret-down fa-lg custom-drop-down-icon" aria-hidden="true"></i>
                         </a>
-                        <div class="dropdown-menu custom-drop-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu custom-drop-menu custom-drop-bs3" aria-labelledby="navbarDropdown">
                             <label class="drop-list-label">
                                 Account
                             </label>

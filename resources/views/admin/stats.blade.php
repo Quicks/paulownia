@@ -1,8 +1,15 @@
 @extends('pragmarx/tracker::html')
 
+@section('required-scripts-bottom')
+    <link href="{{asset('css/crud_custom.css')}}" rel="stylesheet">
+@endsection
+
 @section('body')
     <div id="wrapper">
-	    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div>
+            @include ('admin.nav_top_bootstrap_3')
+        </div>
+	    <nav class="navbar navbar-default custom-navbar-bs3" role="navigation">
             <div class="navbar-header">
 	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">@lang("tracker::tracker.toggle_navigation")</span>
@@ -13,7 +20,6 @@
                 <a class="navbar-brand" href="{{route('tracker.stats.index')}}">@lang("tracker::tracker.tracker_title")</a>
             </div>
             <!-- /.navbar-header -->
-
 		    <ul class="nav navbar-top-links navbar-right navbar-nav">
 				<li {{ Session::get('tracker.stats.days') == '0' ? 'class="active"' : '' }}>
 					<a href="{{route('tracker.stats.index')}}?days=0">@lang("tracker::tracker.today")</a>

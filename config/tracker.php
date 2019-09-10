@@ -363,7 +363,7 @@ return [
     /*
      * Stats Panel layout view
      */
-    'stats_layout' => 'layouts.stats',
+    'stats_layout' => 'admin.stats',
 
     /*
      * Stats Panel controllers namespace

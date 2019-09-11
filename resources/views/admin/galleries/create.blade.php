@@ -5,7 +5,7 @@
         <div class="row">
             @include('admin.sidebar')
 
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Create New Gallery</div>
                     <div class="card-body">
@@ -38,17 +38,6 @@
 
 @push('scripts')
     <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
-    <script>
-        $(document).ready(function () {
-            tinymce.init({
-                selector: 'textarea',
-                height: 200,
-                width: "100%",
-                plugins: 'image imagetools media wordcount save fullscreen code',
-                toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent  | removeformat | code',
-                image_advtab: true
-            });
-        });
-    </script>
+    <script src="{{ asset('js/tinymce.js') }}"></script>
     <script src="{{ asset('js/admin-form-validator.js') }}"></script>
 @endpush

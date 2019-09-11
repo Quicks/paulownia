@@ -5,7 +5,7 @@
         <div class="row">
             @include('admin.sidebar')
 
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Create New Office</div>
                     <div class="card-body">
@@ -41,5 +41,7 @@
 @endsection
 
 @push('scripts')
+    <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
+    <script src="{{ asset('js/tinymce.js') }}"></script>
     <script src="{{ asset('js/admin-form-validator.js') }}"></script>
 @endpush

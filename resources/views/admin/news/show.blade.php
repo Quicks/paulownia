@@ -53,13 +53,13 @@
                                     @isset($news->translate($locale)->title)
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> Title ({{$locale}}) </div>
-                                            <div class="col-md-9"> {{ $news->translate($locale)->title }} </div>
+                                            <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9"> {{ $news->translate($locale)->title }} </div>
                                         </div>
                                     @endisset
                                     @isset($news->translate($locale)->text)
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> Text ({{$locale}}) </div>
-                                            <div  class="col-md-9">
+                                            <div @if($locale == 'ar') class="col-md-9 text-right" @endif  class="col-md-9">
                                                 {!! $news->translate($locale)->text !!}
                                             </div>
                                         </div>
@@ -67,7 +67,7 @@
                                     @isset($news->translate($locale)->keywords)
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> Keywords ({{$locale}}) </div>
-                                            <div  class="col-md-9">
+                                            <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9">
                                                 {!! $news->translate($locale)->keywords !!}
                                             </div>
                                         </div>
@@ -90,7 +90,7 @@
                                                 <div class="col-md-3 font-weight-bold">
                                                     Image title ({{$locale}})
                                                 </div>
-                                                <div class="col-md-9">
+                                                <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9">
                                                     {{$image->translate($locale)->title}}
                                                 </div>
                                             @endisset
@@ -100,7 +100,7 @@
                                                 <div class="col-md-3 font-weight-bold">
                                                     Image description ({{$locale}})
                                                 </div>
-                                                <div class="col-md-9">
+                                                <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9">
                                                     {!!$image->translate($locale)->desc!!}
                                                 </div>
                                             @endisset

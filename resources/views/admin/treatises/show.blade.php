@@ -60,13 +60,13 @@
                                     @isset($treatise->translate($locale)->title)
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> Title ({{$locale}}) </div>
-                                            <div class="col-md-9"> {{ $treatise->translate($locale)->title }} </div>
+                                            <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9"> {{ $treatise->translate($locale)->title }} </div>
                                         </div>
                                     @endisset
                                     @isset($treatise->translate($locale)->text)
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> Text ({{$locale}}) </div>
-                                            <div  class="col-md-9">
+                                            <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9">
                                                 {!! $treatise->translate($locale)->text !!}
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@
                                     @isset($treatise->translate($locale)->keywords)
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> Keywords ({{$locale}}) </div>
-                                            <div  class="col-md-9">
+                                            <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9">
                                                 {!! $treatise->translate($locale)->keywords !!}
                                             </div>
                                         </div>
@@ -84,7 +84,7 @@
                             @foreach ($treatise->files as $file)
                                 <div class="row m-1 pt-2 border-top border-dark">
                                     <div class="col-md-3 font-weight-bold"> File {{$loop->iteration}} </div>
-                                    <div class="col-md-9 text-center">
+                                    <div  class="col-md-9 text-center">
                                         <a href="{{asset('storage/'.$file->file)}}" target="_blank">
                                             <h6> {{basename($file->file)}}</h6>
                                         </a>
@@ -98,7 +98,7 @@
                                                 <div class="col-md-3 font-weight-bold">
                                                     File title ({{$locale}})
                                                 </div>
-                                                <div class="col-md-9">
+                                                <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9">
                                                     {{$file->translate($locale)->title}}
                                                 </div>
                                             @endisset
@@ -108,7 +108,7 @@
                                                 <div class="col-md-3 font-weight-bold">
                                                     File description ({{$locale}})
                                                 </div>
-                                                <div class="col-md-9">
+                                                <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9">
                                                     {!!$file->translate($locale)->desc!!}
                                                 </div>
                                             @endisset

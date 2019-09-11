@@ -48,25 +48,25 @@
                                     @isset($office->translate($locale)->title)
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> Title ({{$locale}})</div>
-                                            <div class="col-md-9"> {{ $office->translate($locale)->title }} </div>
+                                            <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9"> {{ $office->translate($locale)->title }} </div>
                                         </div>
                                     @endisset
                                     @isset($office->translate($locale)->address)
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> Address ({{$locale}})</div>
-                                            <div class="col-md-9"> {{ $office->translate($locale)->address }} </div>
+                                            <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9"> {{ $office->translate($locale)->address }} </div>
                                         </div>
                                     @endisset
                                     @isset($office->translate($locale)->city)
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> City ({{$locale}})</div>
-                                            <div class="col-md-9"> {{ $office->translate($locale)->city }} </div>
+                                            <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9"> {{ $office->translate($locale)->city }} </div>
                                         </div>
                                     @endisset
                                     @isset($office->translate($locale)->country)
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> Country ({{$locale}})</div>
-                                            <div class="col-md-9"> {{ $office->translate($locale)->country }} </div>
+                                            <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9"> {{ $office->translate($locale)->country }} </div>
                                         </div>
                                     @endisset
                                 </div>
@@ -87,7 +87,7 @@
                                                 <div class="col-md-3 font-weight-bold">
                                                     Image title ({{$locale}})
                                                 </div>
-                                                <div class="col-md-9">
+                                                <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9">
                                                     {{$image->translate($locale)->title}}
                                                 </div>
                                             @endisset
@@ -97,7 +97,7 @@
                                                 <div class="col-md-3 font-weight-bold">
                                                     Image description ({{$locale}})
                                                 </div>
-                                                <div class="col-md-9">
+                                                <div @if($locale == 'ar') class="col-md-9 text-right" @endif class="col-md-9">
                                                     {!!$image->translate($locale)->desc!!}
                                                 </div>
                                             @endisset

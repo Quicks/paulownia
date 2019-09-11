@@ -13,12 +13,12 @@
         <div class="tab-pane fade" id="{{$locale}}4" role="tabpanel" aria-labelledby="{{$locale}}">
             <div class="form-group {{ $errors->has('file_atr['.$locale.'][title]') ? 'has-error' : ''}}">
                 <label for="{{'file_atr['.$locale.'][title]'}}" class="control-label">{{ 'File title ('.$locale.')' }}</label>
-                <input class="form-control" name="{{'file_atr['.$locale.'][title]'}}" type="text" id="{{'file_atr['.$locale.'][title]'}}" value="">
+                <input @if($locale == 'ar') dir="rtl" @endif class="form-control" name="{{'file_atr['.$locale.'][title]'}}" type="text" id="{{'file_atr['.$locale.'][title]'}}" value="">
                 {!! $errors->first('file_atr['.$locale.'][title]', '<p class="help-block">:message</p>') !!}
             </div>
             <div class="form-group {{ $errors->has('file_atr['.$locale.'][desc]') ? 'has-error' : ''}}">
                 <label for="{{'file_atr['.$locale.'][desc]'}}" class="control-label">{{ 'File description ('.$locale.')' }}</label>
-                <textarea class="form-control" rows="5" name="{{'file_atr['.$locale.'][desc]'}}" type="textarea" id="{{'file_atr['.$locale.'][desc]'}}" >
+                <textarea @if($locale == 'ar') dir="rtl" @endif class="form-control" rows="5" name="{{'file_atr['.$locale.'][desc]'}}" type="textarea" id="{{'file_atr['.$locale.'][desc]'}}" >
 
                 </textarea>
                 {!! $errors->first('file_atr['.$locale.'][desc]', '<p class="help-block">:message</p>') !!}

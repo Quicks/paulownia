@@ -3,7 +3,7 @@
         <div class="form-group {{ $errors->has('file_atr['.$file->id.']['.$locale.'][title]') ? 'has-error' : ''}}">
             <label for="{{'file_atr['.$file->id.']['.$locale.'][title]'}}"
                    class="control-label">{{ 'File title ('.$locale.')' }}</label>
-            <input class="form-control" name="{{'file_atr['.$file->id.']['.$locale.'][title]'}}" type="text"
+            <input @if($locale == 'ar') dir="rtl" @endif class="form-control" name="{{'file_atr['.$file->id.']['.$locale.'][title]'}}" type="text"
                    id="{{'file_atr['.$file->id.']['.$locale.'][title]'}}"
                    value="@isset($file->translate($locale)->title) {{$file->translate($locale)->title}} @endisset">
             {!! $errors->first('file_atr['.$file->id.']['.$locale.'][title]', '<p class="help-block">:message</p>') !!}
@@ -11,7 +11,7 @@
         <div class="form-group {{ $errors->has('file_atr['.$file->id.']['.$locale.'][desc]') ? 'has-error' : ''}}">
             <label for="{{'file_atr['.$file->id.']['.$locale.'][desc]'}}"
                    class="control-label">{{ 'File description ('.$locale.')' }}</label>
-            <textarea class="form-control" rows="5" name="{{'file_atr['.$file->id.']['.$locale.'][desc]'}}"
+            <textarea @if($locale == 'ar') dir="rtl" @endif class="form-control" rows="5" name="{{'file_atr['.$file->id.']['.$locale.'][desc]'}}"
                       type="textarea" id="{{'file_atr['.$file->id.']['.$locale.'][desc]'}}">
                 @isset($file->translate($locale)->desc) {{$file->translate($locale)->desc}} @endisset
             </textarea>

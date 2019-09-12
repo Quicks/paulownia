@@ -73,6 +73,9 @@
 
             $('form').submit(function saveCrop (event) {
                 event.preventDefault();
+                if(!document.validForm()) {
+                    return;
+                }
                 cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toBlob((blob) => {
                   var form = $('form')[0];
                   const formData = new FormData(form);

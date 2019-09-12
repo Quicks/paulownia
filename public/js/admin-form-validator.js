@@ -1,9 +1,12 @@
 $(document).ready(function () {
     $('.validForm').on('submit', function (event) {
-        validForm();
+        if(!document.validForm()) {
+            event.preventDefault();
+            alert('All fields must be filled in at least one language!');
+        }
     });
 
-    function validForm() {
+    document.validForm = function validForm() {
         var isOneLanguagefilled = false;
         $.each(allLangArr, function (index, value) {
             var empty = $('[name^='+ value +']').filter(function () {
@@ -14,9 +17,6 @@ $(document).ready(function () {
                 return false;
             }
         });
-        if (!isOneLanguagefilled) {
-            event.preventDefault();
-            alert('All fields must be filled in at least one language!');
-        }
+        return isOneLanguagefilled;
     };
 });

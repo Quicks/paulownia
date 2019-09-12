@@ -73,6 +73,9 @@
 
             $('form').submit(function saveCrop (event) {
                 event.preventDefault();
+                if(!document.validForm()) {
+                    return;
+                }
                 cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toBlob((blob) => {
                   var form = $('form')[0];
                   const formData = new FormData(form);
@@ -116,6 +119,20 @@
             reader.readAsDataURL(event.target.files[0]);
             $('#image-input-div').remove();
         });
+
+        // function validForm() {
+        //     var isOneLanguagefilled = false;
+        //     $.each(allLangArr, function (index, value) {
+        //         var empty = $('[name^='+ value +']').filter(function () {
+        //             return $(this).val().trim() === "";
+        //         });
+        //         if (!empty.length) {
+        //             isOneLanguagefilled = true;
+        //             return false;
+        //         }
+        //     });
+        //     return isOneLanguagefilled;
+        // };
 
     });
 </script>

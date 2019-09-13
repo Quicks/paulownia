@@ -65,7 +65,8 @@ class TreatisesController extends Controller
 
         if ($request->hasFile('file')) {
             $fileAtributes = $request->file_atr;
-            $fileAtributes['file'] = $request->file('file')->store('uploads', 'public');
+            $fileOriginalName = $request->file('file')->getClientOriginalName();
+            $fileAtributes['file'] = $request->file('file')->storeAs('uploads', $fileOriginalName, 'public');
             $fileAtributes['fileable_id'] = $treatise->id;
             $fileAtributes['fileable_type'] = 'App\Models\Treatise';
             File::create($fileAtributes);

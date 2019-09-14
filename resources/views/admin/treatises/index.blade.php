@@ -5,7 +5,7 @@
         <div class="row">
             @include('admin.sidebar')
 
-            <div class="col-md-11">
+            <div class="col">
                 <div class="card">
                     <div class="card-header">Treatises</div>
                     <div class="card-body">

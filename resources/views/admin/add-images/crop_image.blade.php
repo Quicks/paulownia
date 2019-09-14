@@ -5,7 +5,7 @@
         <div class="row">
             @include('admin.sidebar')
 
-            <div class="col-md-10">
+            <div class="col">
                 <div class="card">
                     <div class="card-header">Crop Image {{ $image->title }}</div>
                     <div class="card-body">

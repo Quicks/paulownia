@@ -30,8 +30,7 @@ class NewsController extends Controller
         } else {
             $news = News::latest()->paginate($perPage);
         }
-$fullUrl = $request->fullUrl();
-        return view('admin.news.index', compact('news','fullUrl'));
+        return view('admin.news.index', compact('news'));
     }
 
     /**

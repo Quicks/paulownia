@@ -24,12 +24,6 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-        $url = \Request::url();
-        $check = strstr($url,"http://");
-        if($check && env('HTTPS')) {
-            $newUrl = str_replace("http","https",$url);
-            header("Location:".$newUrl);
-        }
     }
 
     /**

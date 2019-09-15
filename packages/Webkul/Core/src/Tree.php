@@ -46,7 +46,7 @@ class Tree {
      * @return void
      */
 	public function __construct() {
-		$this->current = Request::url();
+		$this->current = env('HTTPS') ? str_replace("http","https", Request::url()) : Request::url();
 	}
 
 	/**

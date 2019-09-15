@@ -32,6 +32,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \PragmaRX\Tracker\Vendor\Laravel\Middlewares\Tracker::class,
+            \App\Http\Middleware\ForceSSL::class,
         ],
 
         'api' => [

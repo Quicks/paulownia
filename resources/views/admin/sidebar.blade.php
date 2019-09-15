@@ -7,9 +7,6 @@
             </a>
         </li>
         <li>
-            <a href="{{route('admin.dashboard.index')}}"><i class="fa fa-shopping-cart fa-3x"></i><span>Shop</span></a>
-        </li>
-        <li>
             <a class="{{Request::is('admin/news*') ? "custom-admin-sidebar-a-active" : ""}}"
                href="{{route('news.index')}}">
                 <i class="fa fa-newspaper-o fa-3x"></i><span>News</span>
@@ -31,6 +28,48 @@
             <a class="{{Request::is('admin/offices*') ? "custom-admin-sidebar-a-active" : ""}}"
                href="{{route('offices.index')}}">
                 <i class="fa fa-university fa-3x"></i><span>Official Offices</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('admin.dashboard.index')}}">
+                <i class="menu-properties icon dashboard-icon"></i>
+                    <span>Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('admin.sales.orders.index')}}">
+                <i class="menu-properties icon sales-icon"></i>
+                    <span>Sales</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('admin.catalog.products.index')}}">
+                <i class="menu-properties icon catalog-icon"></i>
+                    <span>Catalog</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('admin.customer.index')}}">
+                <i class="menu-properties icon customer-icon"></i>
+                <span>Customers</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('admin.cart-rule.index')}}">
+                <i class="menu-properties icon promotions-icon"></i>
+                <span>Promotions</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('admin.locales.index')}}">
+                <i class="menu-properties icon settings-icon"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('admin.configuration.index')}}">
+                <i class="menu-properties icon configuration-icon"></i>
+                <span>Configure</span>
             </a>
         </li>
         <li>

@@ -178,9 +178,11 @@ class InvoiceController extends Controller
                 'posHorizontal' => 'absolute',
                 'posVertical' => 'absolute',
             ));
-        $section->addTextBreak(5);
 
         $table1 = $section->addTable();
+        $table1->addRow(2700);
+        $table1->addCell(5700);
+        $table1->addCell();
         $table1->addRow();
         $table1->addCell(5700);
         $fecha = 'Fecha:25/07/2019 <w:br/>№ 2019_07130';
@@ -288,9 +290,9 @@ class InvoiceController extends Controller
                 'wrappingStyle'=> 'behind'
             ));
         $document = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-        $document->save(storage_path('factura-' . $invoice->id . '.doc'));
+        $document->save(storage_path('factura-' . $invoice->id . '.docx'));
 
-        return response()->download(storage_path('factura-' . $invoice->id . '.doc'))->deleteFileAfterSend(true);
+        return response()->download(storage_path('factura-' . $invoice->id . '.docx'))->deleteFileAfterSend(true);
 
     }
 

@@ -169,46 +169,22 @@ class InvoiceController extends Controller
         );
         $section = $phpWord->addSection($sectionStyle);
         $header = $section->addHeader();
-        $header->addImage('images/factura_header.png',
+        $header->addImage('images/header-factura.png',
             array(
                 'width'=>600,
-                'height'=>72,
+                'height'=>150,
                 'marginLeft' => -75,
                 'positioning'=>'absolute',
-                'wrappingStyle'=> 'behind',
                 'posHorizontal' => 'absolute',
                 'posVertical' => 'absolute',
             ));
 
         $table1 = $section->addTable();
-        $table1->addRow();
-        $table1->addCell(5500)->addImage('images/factura_logo.png',
-            array(
-                'width'=>205,
-                'height'=>117,
-                'positioning'=>'relative',
-                'wrappingStyle'=> 'infront',
-                'marginTop'=>283,
-                'marginLeft'=>500
-            ));
-        $table1->addRow();
-        $table1->addCell(5500);
-        $table1->addRow();
-        $table1->addCell(5500);
-        $table1->addCell()->addText('Factura', array(
-            'bold' => true,
-            'color'=> '92D050',
-            'size' => 36,
-        ));
-        $table1->addRow();
+        $table1->addRow(2700);
+        $table1->addCell(5700);
         $table1->addCell();
         $table1->addRow();
-        $table1->addCell(5500)->addText('Venta de plántulas y árboles de Paulownia',
-            array(
-                'bold' => true,
-                'color'=> '92D050',
-                'size' => 12,
-            ));
+        $table1->addCell(5700);
         $fecha = 'Fecha:25/07/2019 <w:br/>№ 2019_07130';
         $table1->addCell()->addText($fecha,
             array(
@@ -216,13 +192,13 @@ class InvoiceController extends Controller
                 'size' => 12,
             ));
 
-        $textAddress1 = 'PAULOWNIA PROFESSIONAL S.L. <w:br/>C.I.F/N.I.F: B44276491 
-                        <w:br/>Camino Estanca S/N. Apdo. 50 
-                        <w:br/>Alcañiz (Teruel) 44600 
+        $textAddress1 = 'PAULOWNIA PROFESSIONAL S.L. <w:br/>C.I.F/N.I.F: B44276491
+                        <w:br/>Camino Estanca S/N. Apdo. 50
+                        <w:br/>Alcañiz (Teruel) 44600
                         <w:br/>M. (+34) 642787555';
 
-        $textAddress2 = 'M. Angeles Rodao de Diego <w:br/>D.N.I: 3452945R 
-                         <w:br/>C/Fernandez Caro 74 2A <w:br/>28027 Madrid 
+        $textAddress2 = 'M. Angeles Rodao de Diego <w:br/>D.N.I: 3452945R
+                         <w:br/>C/Fernandez Caro 74 2A <w:br/>28027 Madrid
                          <w:br/>(Madrid) <w:br/>M. (+34) 684208802';
 
         $textEmail1 = 'info@paulownia.pro';

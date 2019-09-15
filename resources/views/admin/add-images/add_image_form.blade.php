@@ -54,6 +54,7 @@
 @push('scripts')
 <link  href="{{asset('css/cropper.min.css')}}" rel="stylesheet">
 <script src="{{asset('js/cropper.min.js')}}"></script>
+<script src="{{ asset('js/admin-form-validator.js') }}"></script>
 <script type='text/javascript'>
     $(document).ready(function () {
 

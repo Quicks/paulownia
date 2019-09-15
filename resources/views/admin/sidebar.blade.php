@@ -7,12 +7,6 @@
             </a>
         </li>
         <li>
-            <a href="{{route('admin.dashboard.index')}}">
-                <i class="menu-properties icon dashboard-icon"></i>
-                    <span>Dashboard</span>
-            </a>
-        </li>
-        <li>
             <a class="{{Request::is('admin/news*') ? "custom-admin-sidebar-a-active" : ""}}"
                href="{{route('news.index')}}">
                 <i class="fa fa-newspaper-o fa-3x"></i><span>News</span>
@@ -34,6 +28,12 @@
             <a class="{{Request::is('admin/offices*') ? "custom-admin-sidebar-a-active" : ""}}"
                href="{{route('offices.index')}}">
                 <i class="fa fa-university fa-3x"></i><span>Official Offices</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('admin.dashboard.index')}}">
+                <i class="menu-properties icon dashboard-icon"></i>
+                    <span>Dashboard</span>
             </a>
         </li>
         <li>

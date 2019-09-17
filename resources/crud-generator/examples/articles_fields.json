@@ -1,0 +1,30 @@
+{
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "active",
+      "type": "boolean"
+    },
+    {
+      "name": "publish_date",
+      "type": "date"
+    }
+  ],
+  "validations": [
+    {
+      "field": "name",
+      "rules": "required|max:90"
+    },
+    {
+      "field": "active",
+      "rules": "required|boolean"
+    },
+    {
+      "field": "publish_date",
+      "rules": "required|date"
+    }
+  ]
+}

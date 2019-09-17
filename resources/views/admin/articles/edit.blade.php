@@ -7,9 +7,16 @@
 
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Add image</div>
+                    <div class="card-header">Edit Article #{{ $article->id }}</div>
                     <div class="card-body">
-                        <a href="{{ url()->previous() }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/articles') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/image_add/?imageable_id=' . $article->id . '&imageable_type=' . get_class($article) . '&redirect_route='.route('articles.show', $article->id) )  }}"
+                           title="Add Image">
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                Add image
+                            </button>
+                        </a>
                         <br />
                         <br />
 
@@ -21,16 +28,11 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/image_save/'.$imageable_id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/admin/articles/' . $article->id) }}" accept-charset="UTF-8" class="form-horizontal validForm" enctype="multipart/form-data">
+                            {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
-                            @include ('admin.add-images.add_image_form')
-
-                            <div class="form-group text-right">
-                                <input type="hidden" name="imageable_type" value="{{$imageable_type}}" />
-                                <input type="hidden" name="redirect_route" value="{{$redirect_route}}" />
-                                <input class="btn btn-primary" type="submit" value="Add image">
-                            </div>
+                            @include ('admin.articles.form', ['formMode' => 'edit'])
 
                         </form>
 

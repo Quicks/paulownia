@@ -7,11 +7,15 @@
 
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Add image</div>
+                    <div class="card-header">Create New Article</div>
                     <div class="card-body">
-                        <a href="{{ url()->previous() }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
+                        <a href="{{ url('/admin/articles') }}" title="Back">
+                            <button class="btn btn-warning btn-sm">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                            </button>
+                        </a>
+                        <br/>
+                        <br/>
 
                         @if ($errors->any())
                             <ul class="alert alert-danger">
@@ -21,16 +25,11 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/image_save/'.$imageable_id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/admin/articles') }}" accept-charset="UTF-8"
+                              class="form-horizontal validForm" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('admin.add-images.add_image_form')
-
-                            <div class="form-group text-right">
-                                <input type="hidden" name="imageable_type" value="{{$imageable_type}}" />
-                                <input type="hidden" name="redirect_route" value="{{$redirect_route}}" />
-                                <input class="btn btn-primary" type="submit" value="Add image">
-                            </div>
+                            @include ('admin.articles.form', ['formMode' => 'create'])
 
                         </form>
 

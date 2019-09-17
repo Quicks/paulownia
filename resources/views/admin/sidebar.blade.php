@@ -13,6 +13,12 @@
             </a>
         </li>
         <li>
+            <a class="{{Request::is('admin/articles*') ? "custom-admin-sidebar-a-active" : ""}}"
+               href="{{route('articles.index')}}">
+                <i class="fa fa-address-card-o fa-3x"></i><span>Articles</span>
+            </a>
+        </li>
+        <li>
             <a class="{{Request::is('admin/galleries*') ? "custom-admin-sidebar-a-active" : ""}}"
                href="{{route('galleries.index')}}">
                 <i class="fa fa-picture-o fa-3x"></i><span>Galleries</span>

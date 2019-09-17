@@ -200,7 +200,14 @@ return [
         'route' => 'news.index',
         'sort' => 1,
         'icon-class' => 'fa fa-newspaper-o fa-3x',
-    ],  [
+    ],[
+        'key' => 'articles',
+        'name' => 'Articles',
+        'route' => 'articles.index',
+        'sort' => 1,
+        'icon-class' => 'fa fa-address-card-o fa-3x',
+    ],
+    [
         'key' => 'galleries',
         'name' => 'Galleries',
         'route' => 'galleries.index',

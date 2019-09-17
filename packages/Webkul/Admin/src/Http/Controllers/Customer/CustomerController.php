@@ -9,7 +9,6 @@ use Webkul\Customer\Repositories\CustomerRepository as Customer;
 use Webkul\Customer\Repositories\CustomerGroupRepository as CustomerGroup;
 use Webkul\Core\Repositories\ChannelRepository as Channel;
 use Webkul\Sales\Repositories\OrderRepository as Order;
-use Webkul\Sales\Repositories\OrderItemRepository as Item;
 
 /**
  * Customer controlller
@@ -46,8 +45,9 @@ class CustomerController extends Controller
      * @var array
      */
     protected $channel;
+
     protected $order;
-    protected $orderItem;
+
     /**
      * Create a new controller instance.
      *
@@ -55,7 +55,7 @@ class CustomerController extends Controller
      * @param \Webkul\Customer\Repositories\CustomerGroupRepository $customerGroup
      * @param \Webkul\Core\Repositories\ChannelRepository $channel
      */
-    public function __construct(Customer $customer, CustomerGroup $customerGroup, Channel $channel, Order $order, Item $orderItem)
+    public function __construct(Customer $customer, CustomerGroup $customerGroup, Channel $channel, Order $order)
     {
         $this->_config = request('_config');
 
@@ -68,9 +68,6 @@ class CustomerController extends Controller
         $this->channel = $channel;
 
         $this->order = $order;
-
-        $this->orderItem = $orderItem;
-
     }
 
     /**

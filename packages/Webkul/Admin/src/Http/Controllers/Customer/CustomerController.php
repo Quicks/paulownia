@@ -8,6 +8,7 @@ use Webkul\Admin\Http\Controllers\Controller;
 use Webkul\Customer\Repositories\CustomerRepository as Customer;
 use Webkul\Customer\Repositories\CustomerGroupRepository as CustomerGroup;
 use Webkul\Core\Repositories\ChannelRepository as Channel;
+use Webkul\Sales\Repositories\OrderRepository as Order;
 
 /**
  * Customer controlller
@@ -45,6 +46,8 @@ class CustomerController extends Controller
      */
     protected $channel;
 
+    protected $order;
+
     /**
      * Create a new controller instance.
      *
@@ -52,7 +55,7 @@ class CustomerController extends Controller
      * @param \Webkul\Customer\Repositories\CustomerGroupRepository $customerGroup
      * @param \Webkul\Core\Repositories\ChannelRepository $channel
      */
-    public function __construct(Customer $customer, CustomerGroup $customerGroup, Channel $channel)
+    public function __construct(Customer $customer, CustomerGroup $customerGroup, Channel $channel, Order $order)
     {
         $this->_config = request('_config');
 
@@ -64,6 +67,7 @@ class CustomerController extends Controller
 
         $this->channel = $channel;
 
+        $this->order = $order;
     }
 
     /**
@@ -265,5 +269,12 @@ class CustomerController extends Controller
         session()->flash('success', trans('admin::app.customers.customers.mass-destroy-success'));
 
         return redirect()->back();
+    }
+
+    public function view($id)
+    {
+        $customer = $this->customer->findorFail($id);
+        $orders = $this->order->findWhere(['customer_id' => $customer->id]);
+        return view($this->_config['view'], compact('customer', 'orders'));
     }
 }

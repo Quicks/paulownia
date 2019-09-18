@@ -104,7 +104,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "laravel/dusk"
+            ]
         }
     },
     "scripts": {
@@ -124,13 +126,5 @@
         "sort-packages": true,
         "optimize-autoloader": true
     },
-    "minimum-stability": "dev",
-
-    "extra": {
-        "laravel": {
-            "dont-discover": [
-                "laravel/dusk"
-            ]
-        }
-    }
+    "minimum-stability": "dev"
 }

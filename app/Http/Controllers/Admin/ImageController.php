@@ -7,12 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Image;
 use App\Helpers\ImageSaveHelper;
 use Illuminate\Support\Facades\Storage;
-use function PHPSTORM_META\type;
 use Webkul\Product\Repositories\ProductImageRepository;
-
-
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
 
 class ImageController extends Controller
 {
@@ -87,16 +82,13 @@ class ImageController extends Controller
         $allTypes = array();
             foreach ($availableTypes as $availableType)
             {
-                $typeName = $availableType->imageable_type;
-                array_push($allTypes, $typeName);
+                array_push($allTypes, $availableType->imageable_type);
             }
             array_push($allTypes, 'App\Models\Product');
         $types = array_unique($allTypes);
 
         foreach($productImages as $productImage){
-            $prodImgs = $productImage;
-            $prodImgs->imageable_type = 'App\Models\Product';
-            $prodImgs->image = $productImage->path;
+            $productImage->imageable_type = 'App\Models\Product';
         }
 
         $images = $adminImages->concat($productImages);

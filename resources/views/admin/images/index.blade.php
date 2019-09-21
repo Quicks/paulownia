@@ -36,7 +36,7 @@
                                         style="margin: 2px">
                                     <img width="150px" height="150px"
                                         @if($img->imageable_type == 'App\Models\Product')
-                                        src="{{asset('cache/medium/'.$img->image)}}"
+                                        src="{{asset('cache/medium/'.$img->path)}}"
                                         @endif
                                         src="{{asset('storage/'.$img->image)}}">
                                 </button>

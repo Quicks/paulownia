@@ -7,10 +7,15 @@ use App\Http\Controllers\Controller;
 use App\Models\Image;
 use App\Helpers\ImageSaveHelper;
 use Illuminate\Support\Facades\Storage;
+use function PHPSTORM_META\type;
+use Webkul\Product\Repositories\ProductImageRepository;
+
+
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class ImageController extends Controller
 {
-
     public function createImage(Request $request)
     {
         $imageable_id = $request->imageable_id;
@@ -68,5 +73,40 @@ class ImageController extends Controller
         $image->delete();
         return back()->with('flash_message', 'Image deleted!');
     }
+
+    /**
+     * @param Request $request
+     * @param ProductImageRepository $productImg
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index(Request $request, ProductImageRepository $productImg)
+    {
+        $adminImages = Image::all();
+        $productImages = $productImg->all();
+        $availableTypes = Image::select('imageable_type')->get();
+        $allTypes = array();
+            foreach ($availableTypes as $availableType)
+            {
+                $typeName = $availableType->imageable_type;
+                array_push($allTypes, $typeName);
+            }
+            array_push($allTypes, 'App\Models\Product');
+        $types = array_unique($allTypes);
+
+        foreach($productImages as $productImage){
+            $prodImgs = $productImage;
+            $prodImgs->imageable_type = 'App\Models\Product';
+            $prodImgs->image = $productImage->path;
+        }
+
+        $images = $adminImages->concat($productImages);
+
+        if (!empty($request->get('type'))) {
+            $images = $images->where('imageable_type', $request->get('type'));
+        }
+
+        return view('admin.images.index', compact('images', 'types'));
+    }
+
 
 }

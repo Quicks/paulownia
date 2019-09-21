@@ -206,13 +206,18 @@ return [
         'route' => 'articles.index',
         'sort' => 1,
         'icon-class' => 'fa fa-address-card-o fa-3x',
-    ],
-    [
+    ], [
         'key' => 'galleries',
         'name' => 'Galleries',
         'route' => 'galleries.index',
         'sort' => 1,
         'icon-class' => 'fa fa-picture-o fa-3x',
+    ], [
+        'key' => 'images',
+        'name' => 'Images',
+        'route' => 'images.index',
+        'sort' => 1,
+        'icon-class' => 'fa fa-camera-retro fa-3x',
     ], [
         'key' => 'treatises',
         'name' => 'Treatises',

@@ -25,6 +25,12 @@
             </a>
         </li>
         <li>
+            <a class="{{Request::is('admin/images*') ? "custom-admin-sidebar-a-active" : ""}}"
+               href="{{route('images.index')}}">
+                <i class="fa fa-camera-retro fa-3x"></i><span>Images</span>
+            </a>
+        </li>
+        <li>
             <a class="{{Request::is('admin/treatises*') ? "custom-admin-sidebar-a-active" : ""}}"
                href="{{route('treatises.index')}}">
                 <i class="fa fa-book fa-3x"></i><span>Treatises</span>

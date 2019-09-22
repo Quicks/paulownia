@@ -52,81 +52,11 @@
                                             <td> {{asset('/storage/' . $img->image)}}</td>
                                             @endif
                                             <td>{{substr($img->imageable_type, 11)}}</td>
-
                                         </tr>
-
                                     @endforeach
                                  </tbody>
                             </table>
-
                         </div>
-
-
-
-
-
-
-
-
-                {{--@foreach($images as $img)--}}
-                                {{--<button type="button"--}}
-                                        {{--data-toggle="modal"--}}
-                                        {{--data-target="#exampleModal{{$loop->iteration}}"--}}
-                                        {{--class="img-thumbnail"--}}
-                                        {{--style="margin: 2px">--}}
-                                    {{--<img width="150px" height="150px"--}}
-                                        {{--@if($img->imageable_type == 'App\Models\Product')--}}
-                                        {{--src="{{asset('cache/medium/'.$img->path)}}"--}}
-                                        {{--@endif--}}
-                                        {{--src="{{asset('storage/'.$img->image)}}">--}}
-                                {{--</button>--}}
-                                {{--<div class="modal fade" id="exampleModal{{$loop->iteration}}" tabindex="-1"--}}
-                                     {{--role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
-                                    {{--<div class="modal-dialog modal-xl" role="document">--}}
-                                        {{--<div class="modal-content">--}}
-                                            {{--<div class="modal-header">--}}
-                                                {{--<h5 class="modal-title" id="exampleModalLabel">Image {{$img->id}}</h5>--}}
-                                            {{--</div>--}}
-                                            {{--<div class="modal-body">--}}
-                                                {{--<div class="table-responsive">--}}
-                                                    {{--<table class="table">--}}
-                                                        {{--<tbody>--}}
-                                                        {{--<tr>--}}
-                                                            {{--<th>Type</th>--}}
-                                                            {{--<td>{{substr($img->imageable_type, 11)}}</td>--}}
-                                                        {{--</tr>--}}
-                                                        {{--<tr>--}}
-                                                            {{--<th>{{substr($img->imageable_type, 11) . ' Id'}}</th>--}}
-                                                            {{--@if($img->imageable_type == 'App\Models\Product')--}}
-                                                                {{--<td>{{$img->product_id}}</td>--}}
-                                                            {{--@endif--}}
-                                                                {{--<td>{{$img->imageable_id}}</td>--}}
-                                                        {{--</tr>--}}
-                                                        {{--<tr>--}}
-                                                            {{--<th> URL</th>--}}
-                                                            {{--@if($img->imageable_type == 'App\Models\Product')--}}
-                                                                {{--<td>{{asset('cache/medium/'.$img->path)}}</td>--}}
-                                                            {{--@else--}}
-                                                                {{--<td> {{asset('/storage/' . $img->image)}}</td>--}}
-                                                            {{--@endif--}}
-                                                        {{--</tr>--}}
-                                                        {{--@if($img->imageable_type != 'App\Models\Product')--}}
-                                                        {{--<tr>--}}
-                                                            {{--<th> Created</th>--}}
-                                                            {{--<td> {{$img->created_at}}</td>--}}
-                                                        {{--</tr>--}}
-                                                        {{--@endif--}}
-                                                        {{--</tbody>--}}
-                                                    {{--</table>--}}
-                                                {{--</div>--}}
-                                            {{--</div>--}}
-                                            {{--<div class="modal-footer">--}}
-                                                {{--<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--@endforeach--}}
                     </div>
                 </div>
             </div>

@@ -9,23 +9,13 @@
                 <div class="card">
                     <div class="card-header">Images</div>
                     <div class="card-body">
-                        <button class="btn btn-info btn-sm dropdown dropdown-toggle float-right" type="button"
-                                id="dropdownMenuButton" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                            Filter
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item"
-                               href="{{ asset('/admin/images/')}}">
-                                All
-                            </a>
+                        <select onchange="window.location.href = this.value" class="custom-select">
+                            <option value="" selected disabled hidden>Filter</option>
+                            <option value="/admin/images/">All</option>
                             @foreach($types as $type)
-                                <a class="dropdown-item"
-                                   href="{{ asset('/admin/images/?type=') . $type}}">
-                                    {{substr($type, 11)}}
-                                </a>
+                                <option value="?type={{$type}}">{{substr($type, 11)}}</option>
                             @endforeach
-                        </div>
+                        </select>
                         <br/>
                         <br/>
 
@@ -44,7 +34,7 @@
                                                 <img width="100px" height="100px"
                                                      @if($img->imageable_type == 'App\Models\Product')
                                                      src="{{asset('cache/medium/'.$img->path)}}"
-                                                     @endif src="{{asset('storage/'.$img->image)}}">
+                                                     @else src="{{asset('storage/'.$img->thumbnail)}}" @endif>
                                             </td>
                                             @if($img->imageable_type == 'App\Models\Product')
                                             <td>{{asset('cache/medium/'.$img->path)}}</td>

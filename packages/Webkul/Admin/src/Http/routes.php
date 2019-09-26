@@ -201,6 +201,14 @@ Route::group(['middleware' => ['web']], function () {
                     'redirect' => 'admin.catalog.products.index'
                 ])->name('admin.catalog.products.update');
 
+                Route::get('products/view/{id}', 'Webkul\Product\Http\Controllers\ProductController@view')->defaults('_config', [
+                    'view' => 'admin::catalog.products.view'
+                ])->name('admin.catalog.products.view');
+
+
+
+
+
                 //product delete
                 Route::post('/products/delete/{id}', 'Webkul\Product\Http\Controllers\ProductController@destroy')->name('admin.catalog.products.delete');
 

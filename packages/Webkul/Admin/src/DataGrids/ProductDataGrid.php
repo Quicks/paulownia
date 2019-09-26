@@ -129,6 +129,13 @@ class ProductDataGrid extends DataGrid
 
     public function prepareActions() {
         $this->addAction([
+            'type' => 'View',
+            'method' => 'GET', // use GET request only for redirect purposes
+            'route' => 'admin.catalog.products.view',
+            'icon' => 'icon eye-icon'
+        ]);
+
+        $this->addAction([
             'type' => 'Edit',
             'method' => 'GET', // use GET request only for redirect purposes
             'route' => 'admin.catalog.products.edit',

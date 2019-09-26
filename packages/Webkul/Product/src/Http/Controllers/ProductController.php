@@ -12,6 +12,7 @@ use Webkul\Attribute\Repositories\AttributeFamilyRepository as AttributeFamily;
 use Webkul\Category\Repositories\CategoryRepository as Category;
 use Webkul\Inventory\Repositories\InventorySourceRepository as InventorySource;
 use Illuminate\Support\Facades\Storage;
+use DB;
 
 /**
  * Product controller
@@ -311,4 +312,28 @@ class ProductController extends Controller
 
         return Storage::download($productAttribute['text_value']);
     }
+
+    public function view($id)
+    {
+        $product = $this->product->findOrFail($id);
+        $product_flat = DB::table('product_flat')->where('id', $id)->get();
+        $product_img = DB::table('product_images')->where('product_id', $id)->get();
+        foreach ($product_img as $item)
+        {
+            $image = $item->path;
+        }
+        $categories = DB::table('product_categories')->where('product_id', $id)->get();
+        foreach ($categories as $item)
+        {
+            $category_id = $item->category_id;
+        }
+        if(!empty($category_id)) {
+            $categoryCol = DB::table('category_translations')->where('id', $category_id)->get();
+            foreach ($categoryCol as $item) {
+                $category = $item->name;
+            }
+        }
+        return view($this->_config['view'], compact('product', 'product_flat', 'image', 'category'));
+    }
+
 }

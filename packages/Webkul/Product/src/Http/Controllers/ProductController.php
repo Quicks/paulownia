@@ -317,11 +317,7 @@ class ProductController extends Controller
     {
         $product = $this->product->findOrFail($id);
         $product_flat = DB::table('product_flat')->where('id', $id)->get();
-        $product_img = DB::table('product_images')->where('product_id', $id)->get();
-        foreach ($product_img as $item)
-        {
-            $image = $item->path;
-        }
+        $product_imgs = DB::table('product_images')->where('product_id', $id)->get();
         $categories = DB::table('product_categories')->where('product_id', $id)->get();
         foreach ($categories as $item)
         {
@@ -333,7 +329,7 @@ class ProductController extends Controller
                 $category = $item->name;
             }
         }
-        return view($this->_config['view'], compact('product', 'product_flat', 'image', 'category'));
+        return view($this->_config['view'], compact('product', 'product_flat', 'product_imgs', 'category'));
     }
 
 }

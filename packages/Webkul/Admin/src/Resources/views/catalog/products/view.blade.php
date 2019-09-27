@@ -17,9 +17,11 @@
         </div>
         <div class="page-content">
             <div class="section-content-customers">
-                @if(!empty($image))
+                @if(!empty($product_imgs))
                     <div class="row">
-                        <img src="{{asset('cache/medium/'.$image)}}">
+                        @foreach($product_imgs as $item)
+                            <img src="{{asset('cache/small/'.$item->path)}}">
+                        @endforeach
                     </div>
                 @endif
 
@@ -42,7 +44,7 @@
                                     {{$key}}
                                 </span>
                                 <span class="value-customers-view">
-                                    {{$item}}
+                                    {!! $item !!}
                                 </span>
                             @endif
                         </div>

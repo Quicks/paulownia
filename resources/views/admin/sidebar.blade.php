@@ -43,6 +43,12 @@
             </a>
         </li>
         <li>
+            <a class="{{Request::is('admin/partners*') ? "custom-admin-sidebar-a-active" : ""}}"
+               href="{{route('partners.index')}}">
+                <i class="fa fa-user-plus fa-3x"></i><span>Partners</span>
+            </a>
+        </li>
+        <li>
             <a href="{{route('admin.dashboard.index')}}">
                 <i class="menu-properties icon dashboard-icon"></i>
                     <span>Dashboard</span>

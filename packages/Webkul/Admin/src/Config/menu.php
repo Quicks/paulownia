@@ -231,6 +231,12 @@ return [
         'sort' => 1,
         'icon-class' => 'fa fa-university fa-3x',
     ], [
+        'key' => 'partners',
+        'name' => 'Partners',
+        'route' => 'partners.index',
+        'sort' => 1,
+        'icon-class' => 'fa fa-user-plus fa-3x',
+    ], [
         'key' => 'tracking',
         'name' => 'Tracking statistics',
         'route' => 'tracker.stats.index',

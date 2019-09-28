@@ -10,10 +10,9 @@
                     <div class="card-header">Images</div>
                     <div class="card-body">
                         <select onchange="window.location.href = this.value" class="custom-select">
-                            <option value="" selected disabled hidden>Filter</option>
-                            <option value="/admin/images/">All</option>
+                            <option @if(Request::getRequestUri() == "/admin/images") selected @endif value="/admin/images/">All</option>
                             @foreach($types as $type)
-                                <option value="?type={{$type}}">{{substr($type, 11)}}</option>
+                                <option @if(Request::getRequestUri() =='/admin/images/?type=' . $type) selected @endif value="?type={{$type}}">{{substr($type, 11)}}</option>
                             @endforeach
                         </select>
                         <br/>
@@ -33,7 +32,7 @@
                                             <td>
                                                 <img width="100px" height="100px"
                                                      @if($img->imageable_type == 'App\Models\Product')
-                                                     src="{{asset('cache/medium/'.$img->path)}}"
+                                                     src="{{asset('cache/small/'.$img->path)}}"
                                                      @else src="{{asset('storage/'.$img->thumbnail)}}" @endif>
                                             </td>
                                             @if($img->imageable_type == 'App\Models\Product')

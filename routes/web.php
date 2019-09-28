@@ -52,6 +52,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::resource('galleries', 'App\Http\Controllers\Admin\\GalleriesController');
             Route::resource('treatises', 'App\Http\Controllers\Admin\\TreatisesController');
             Route::resource('offices', 'App\Http\Controllers\Admin\\OfficesController');
+            Route::resource('partners', 'App\Http\Controllers\Admin\\PartnersController');
             Route::resource('articles', 'App\Http\Controllers\Admin\\ArticlesController');
             Route::get('/image_add', 'App\Http\Controllers\Admin\ImageController@createImage');
             Route::get('/image_crop/{id}', 'App\Http\Controllers\Admin\ImageController@cropImage');

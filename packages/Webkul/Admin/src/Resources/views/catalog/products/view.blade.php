@@ -20,7 +20,7 @@
                 @if(!empty($product_imgs))
                     <div class="row">
                         @foreach($product_imgs as $item)
-                            <img src="{{asset('cache/small/'.$item->path)}}">
+                            <img src="{{asset('storage/'.$item->path)}}" width="120px">
                         @endforeach
                     </div>
                 @endif

@@ -20,7 +20,8 @@ class PartnersController extends Controller
 
         $partners = Partner::findOrFail($id);
         App::setLocale($request->locale);
+        $locale = App::getLocale();
 
-        return view('public.partners.view', compact('partners'));
+        return view('public.partners.view', compact('partners', 'locale'));
     }
 }

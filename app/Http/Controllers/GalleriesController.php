@@ -20,7 +20,8 @@ class GalleriesController extends Controller
 
         $galleries = Gallery::findOrFail($id);
         App::setLocale($request->locale);
+        $locale = App::getLocale();
 
-        return view('public.galleries.view', compact('galleries'));
+        return view('public.galleries.view', compact('galleries', 'locale'));
     }
 }

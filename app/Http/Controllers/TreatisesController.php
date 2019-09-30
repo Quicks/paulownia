@@ -20,7 +20,8 @@ class TreatisesController extends Controller
 
         $treatises = Treatise::findOrFail($id);
         App::setLocale($request->locale);
+        $locale = App::getLocale();
 
-        return view('public.treatises.view', compact('treatises'));
+        return view('public.treatises.view', compact('treatises', 'locale'));
     }
 }

@@ -20,7 +20,8 @@ class ArticlesController extends Controller
 
         $articles = Article::findOrFail($id);
         App::setLocale($request->locale);
+        $locale = App::getLocale();
 
-        return view('public.articles.view', compact('articles'));
+        return view('public.articles.view', compact('articles', 'locale'));
     }
 }

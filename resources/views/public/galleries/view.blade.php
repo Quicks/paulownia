@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header">Gallery {{ $galleries->id }}</div>
                     <div class="card-body">
-                        <a href="{{ url('/galleries') . '?locale=' . App::getLocale() }}" title="Back">
+                        <a href="{{ url('/galleries') . '?locale=' . $locale }}" title="Back">
                             <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back
                             </button>
                         </a>
@@ -34,26 +34,23 @@
                                     </table>
                                 </div>
                             </div>
-
-                            @foreach(config('translatable.locales') as $locale)
-                                @if(App::getLocale() == $locale)
-                                    @if(!empty($galleries->translate($locale)->title))
+                                    @empty(!($galleries->translate($locale)->title))
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> Title ({{$locale}})</div>
                                             <div @if($locale == 'ar') class="col-md-9 text-right"
                                                  @endif class="col-md-9"> {{ $galleries->translate($locale)->title }} </div>
                                         </div>
-                                    @endif
-                                    @if(!empty($galleries->translate($locale)->text))
+                                    @endempty
+                                    @empty(!($galleries->translate($locale)->desc))
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> Text ({{$locale}})</div>
                                             <div @if($locale == 'ar') class="col-md-9 text-right"
-                                                 @endif  class="col-md-9">
-                                                {!! $galleries->translate($locale)->text !!}
+                                                @endif  class="col-md-9">
+                                                {!! $galleries->translate($locale)->desc!!}
                                             </div>
                                         </div>
-                                    @endif
-                                    @if(!empty($galleries->translate($locale)->keywords))
+                                    @endempty
+                                    @empty(!($galleries->translate($locale)->keywords))
                                         <div class="row  m-1 pt-2 border-top">
                                             <div class="col-md-3 font-weight-bold"> Keywords ({{$locale}})</div>
                                             <div @if($locale == 'ar') class="col-md-9 text-right"
@@ -61,10 +58,7 @@
                                                 {!! $galleries->translate($locale)->keywords !!}
                                             </div>
                                         </div>
-                                    @endif
-                                @endif
-                            @endforeach
-
+                                    @endempty
                             @foreach ($galleries->images as $image)
                                 <div class="row m-1 pt-2 border-top border-dark">
                                     <div class="col-md-3 font-weight-bold"> Image {{$loop->iteration}} </div>
@@ -73,32 +67,29 @@
                                              src="{{asset('storage/'.$image->image)}}">
                                     </div>
                                 </div>
-                                @foreach(config('translatable.locales') as $locale)
-                                    @if(App::getLocale() == $locale)
-                                        @if(!empty($image->translate($locale)->title))
-                                            <div class="row m-1 pt-2 border-top">
-                                                <div class="col-md-3 font-weight-bold">
-                                                    Image title ({{$locale}})
-                                                </div>
-                                                <div @if($locale == 'ar') class="col-md-9 text-right"
-                                                     @endif class="col-md-9">
-                                                    {{$image->translate($locale)->title}}
-                                                </div>
-                                            </div>
-                                        @endif
-                                        @if(!empty($image->translate($locale)->desc))
-                                            <div class="row m-1 pt-2 border-top">
-                                                <div class="col-md-3 font-weight-bold">
-                                                    Image description ({{$locale}})
-                                                </div>
-                                                <div @if($locale == 'ar') class="col-md-9 text-right"
-                                                     @endif class="col-md-9">
-                                                    {!!$image->translate($locale)->desc!!}
-                                                </div>
-                                            </div>
-                                        @endif
-                                    @endif
-                                @endforeach
+
+                                @empty(!($image->translate($locale)->title))
+                                    <div class="row m-1 pt-2 border-top">
+                                        <div class="col-md-3 font-weight-bold">
+                                            Image title ({{$locale}})
+                                        </div>
+                                        <div @if($locale == 'ar') class="col-md-9 text-right"
+                                             @endif class="col-md-9">
+                                            {{$image->translate($locale)->title}}
+                                        </div>
+                                    </div>
+                                @endempty
+                                @empty(!($image->translate($locale)->desc))
+                                    <div class="row m-1 pt-2 border-top">
+                                        <div class="col-md-3 font-weight-bold">
+                                            Image description ({{$locale}})
+                                        </div>
+                                        <div @if($locale == 'ar') class="col-md-9 text-right"
+                                             @endif class="col-md-9">
+                                            {!!$image->translate($locale)->desc!!}
+                                        </div>
+                                    </div>
+                                @endempty
                             @endforeach
                         </div>
                     </div>

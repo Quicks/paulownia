@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header">Treatise {{ $treatises->id }}</div>
                     <div class="card-body">
-                        <a href="{{ url('/treatises') . '?locale=' . App::getLocale() }}" title="Back">
+                        <a href="{{ url('/treatises') . '?locale=' . $locale }}" title="Back">
                             <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back
                             </button>
                         </a>
@@ -38,37 +38,31 @@
                                     </table>
                                 </div>
                             </div>
-
-                            @foreach(config('translatable.locales') as $locale)
-                                @if(App::getLocale() == $locale)
-                                    @if(!empty($treatises->translate($locale)->title))
-                                        <div class="row  m-1 pt-2 border-top">
-                                            <div class="col-md-3 font-weight-bold"> Title ({{$locale}})</div>
-                                            <div @if($locale == 'ar') class="col-md-9 text-right"
-                                                 @endif class="col-md-9"> {{ $treatises->translate($locale)->title }} </div>
-                                        </div>
-                                    @endif
-                                    @if(!empty($treatises->translate($locale)->text))
-                                        <div class="row  m-1 pt-2 border-top">
-                                            <div class="col-md-3 font-weight-bold"> Text ({{$locale}})</div>
-                                            <div @if($locale == 'ar') class="col-md-9 text-right"
-                                                 @endif  class="col-md-9">
-                                                {!! $treatises->translate($locale)->text !!}
-                                            </div>
-                                        </div>
-                                    @endif
-                                    @if(!empty($treatises->translate($locale)->keywords))
-                                        <div class="row  m-1 pt-2 border-top">
-                                            <div class="col-md-3 font-weight-bold"> Keywords ({{$locale}})</div>
-                                            <div @if($locale == 'ar') class="col-md-9 text-right"
-                                                 @endif class="col-md-9">
-                                                {!! $treatises->translate($locale)->keywords !!}
-                                            </div>
-                                        </div>
-                                    @endif
-                                @endif
-                            @endforeach
-
+                            @empty(!($treatises->translate($locale)->title))
+                                <div class="row  m-1 pt-2 border-top">
+                                    <div class="col-md-3 font-weight-bold"> Title ({{$locale}})</div>
+                                    <div @if($locale == 'ar') class="col-md-9 text-right"
+                                         @endif class="col-md-9"> {{ $treatises->translate($locale)->title }} </div>
+                                </div>
+                            @endempty
+                            @empty(!($treatises->translate($locale)->text))
+                                <div class="row  m-1 pt-2 border-top">
+                                    <div class="col-md-3 font-weight-bold"> Text ({{$locale}})</div>
+                                    <div @if($locale == 'ar') class="col-md-9 text-right"
+                                         @endif  class="col-md-9">
+                                        {!! $treatises->translate($locale)->text !!}
+                                    </div>
+                                </div>
+                            @endempty
+                            @empty(!($treatises->translate($locale)->keywords))
+                                <div class="row  m-1 pt-2 border-top">
+                                    <div class="col-md-3 font-weight-bold"> Keywords ({{$locale}})</div>
+                                    <div @if($locale == 'ar') class="col-md-9 text-right"
+                                         @endif class="col-md-9">
+                                        {!! $treatises->translate($locale)->keywords !!}
+                                    </div>
+                                </div>
+                            @endempty
                             @foreach ($treatises->files as $file)
                                 <div class="row m-1 pt-2 border-top border-dark">
                                     <div class="col-md-3 font-weight-bold"> File {{$loop->iteration}} </div>
@@ -78,32 +72,28 @@
                                         </a>
                                     </div>
                                 </div>
-                                @foreach(config('translatable.locales') as $locale)
-                                    @if(App::getLocale() == $locale)
-                                        @if(!empty($file->translate($locale)->title))
-                                            <div class="row m-1 pt-2 border-top">
-                                                <div class="col-md-3 font-weight-bold">
-                                                    File title ({{$locale}})
-                                                </div>
-                                                <div @if($locale == 'ar') class="col-md-9 text-right"
-                                                     @endif class="col-md-9">
-                                                    {{$file->translate($locale)->title}}
-                                                </div>
-                                            </div>
-                                        @endif
-                                        @if(!empty($file->translate($locale)->desc))
-                                            <div class="row m-1 pt-2 border-top">
-                                                <div class="col-md-3 font-weight-bold">
-                                                    File description ({{$locale}})
-                                                </div>
-                                                <div @if($locale == 'ar') class="col-md-9 text-right"
-                                                     @endif class="col-md-9">
-                                                    {!!$file->translate($locale)->desc!!}
-                                                </div>
-                                            </div>
-                                        @endif
-                                    @endif
-                                @endforeach
+                                @empty(!($file->translate($locale)->title))
+                                    <div class="row m-1 pt-2 border-top">
+                                        <div class="col-md-3 font-weight-bold">
+                                            File title ({{$locale}})
+                                        </div>
+                                        <div @if($locale == 'ar') class="col-md-9 text-right"
+                                             @endif class="col-md-9">
+                                            {{$file->translate($locale)->title}}
+                                        </div>
+                                    </div>
+                                @endempty
+                                @empty(!($file->translate($locale)->desc))
+                                    <div class="row m-1 pt-2 border-top">
+                                        <div class="col-md-3 font-weight-bold">
+                                            File description ({{$locale}})
+                                        </div>
+                                        <div @if($locale == 'ar') class="col-md-9 text-right"
+                                             @endif class="col-md-9">
+                                            {!!$file->translate($locale)->desc!!}
+                                        </div>
+                                    </div>
+                                @endempty
                             @endforeach
                         </div>
                     </div>

@@ -20,7 +20,7 @@ class NewsController extends Controller
 
         $news = News::findOrFail($id);
         App::setLocale($request->locale);
-
-        return view('public.news.view', compact('news'));
+        $locale = App::getLocale();
+        return view('public.news.view', compact('news', 'locale'));
     }
 }

@@ -17,13 +17,13 @@
         </div>
         <div class="page-content">
             <div class="section-content-customers">
-                @if(!empty($product_imgs))
+                @isset($product_imgs)
                     <div class="row">
                         @foreach($product_imgs as $item)
                             <img src="{{asset('storage/'.$item->path)}}" width="120px">
                         @endforeach
                     </div>
-                @endif
+                @endisset
 
                     @if(!empty($category))
                         <div class="row">

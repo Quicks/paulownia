@@ -14,6 +14,7 @@ $(document).ready(function () {
             });
             if (!empty.length) {
                 isOneLanguagefilled = true;
+                $("input[type='submit']").attr("disabled", true);
                 return false;
             }
         });

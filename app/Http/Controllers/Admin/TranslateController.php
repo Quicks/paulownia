@@ -11,14 +11,26 @@ class TranslateController extends Controller
     public function translate(Request $request)
     {
         $translate = new TranslateClient([
-            'keyFile' => json_decode(file_get_contents(base_path(env('GOOGLE_APPLICATION_CREDENTIALS'))), true)
+           'keyFile' => json_decode(file_get_contents(base_path(env('GOOGLE_APPLICATION_CREDENTIALS'))), true)
         ]);
 
-        $result = $translate->translate($request->text, [
+        $answer = [];
+        foreach (config('translatable.locales') as $locale) {
+            if($locale == 'ru') {
+                continue;
+            }
+
+            $results = $translate->translateBatch($request->texts, [
                 'source' => 'ru',
-                'target' => 'en'
-        ]);
-        
-        return $result['text'];
+                'target' => $locale
+            ]);
+
+            $translatedTexts = [];
+            foreach ($results as $result) {
+                $translatedTexts[] = $result['text'];
+            }
+            $answer[$locale] = $translatedTexts;
+        }
+        return $answer;
     }
 }

@@ -42,6 +42,11 @@
                         'item' => isset($news) ? $news : null, 'itemProperty' => 'keywords', 
                         'placeholder' => 'set comma (,) after each word'])
             </div>
+            @if($locale == 'es')
+                <div class="text-center">
+                    <button id="translate" type="button" class="btn btn-warning mb-2">Translate from Spanish to rest of languages</button>
+                </div>
+            @endif
         </div>
     @endforeach
 
@@ -73,3 +78,32 @@
 <div class="form-group text-right">
     <input class="btn btn-primary" form="news-form" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
 </div>
+
+@push('scripts')
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#translate').click(function (event) {
+            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+            $.ajax("{{route('translate')}}", {
+                method: "POST",
+                data: {"texts":[
+                    "Мэр Киева Виталий Кличко и его брат, украинский боксер Владимир Кличко", 
+                    "Обходной мост будет работать до окончания ремонта"
+                    ]},
+                success(answer) {
+                    alert('success');
+                    console.log(answer);
+                },
+                error(answer) {
+                    alert("Error");
+                    console.log(answer);
+                }
+            });
+        });
+
+
+
+    });
+</script>
+@endpush

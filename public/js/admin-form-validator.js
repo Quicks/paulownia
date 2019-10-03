@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    $("input[type='submit']").on('click', function () {
+        let form = $('.validForm');
+        if(!form[0].checkValidity()){
+            $('#main-form-btn').click();
+        }
+    });
     $('.validForm').on('submit', function (event) {
         if(!document.validForm()) {
             event.preventDefault();

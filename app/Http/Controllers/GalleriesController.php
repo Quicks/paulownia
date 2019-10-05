@@ -11,15 +11,12 @@ class GalleriesController extends Controller
     public function index(Request $request)
     {
         $galleries = Gallery::where('active', true)->get();
-        App::setLocale($request->locale);
 
         return view('public.galleries.index', compact('galleries'));
     }
     public function show(Request $request, $id)
     {
-
         $galleries = Gallery::findOrFail($id);
-        App::setLocale($request->locale);
         $locale = App::getLocale();
 
         return view('public.galleries.view', compact('galleries', 'locale'));

@@ -11,7 +11,7 @@ class TranslateController extends Controller
     public function translate(Request $request)
     {
         $translate = new TranslateClient([
-           'keyFile' => json_decode(file_get_contents(base_path(env('GOOGLE_APPLICATION_CREDENTIALS'))), true)
+           'key' => 'AIzaSyBka8NI0ipWHV-_rKotvoXQmen-6q-pvcg'
         ]);
 
         $answer = [];

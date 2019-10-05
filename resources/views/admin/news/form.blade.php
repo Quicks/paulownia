@@ -84,6 +84,7 @@
     $(document).ready(function () {
 
         $('#translate').click(function (event) {
+            $(this).attr("disabled", true);
             var texts = [];
             $('input[id^="es"],textarea[id^="es"]').each(function() {
                 texts.push($(this).val());
@@ -94,20 +95,18 @@
                 method: "POST",
                 data: {"texts":texts},
                 success(answer) {
-                    alert('success');
-                    console.log(answer);
-
+                    alert("Translate successful, don't forget to save result.");
                     $.each(allLangArr, function (idx, locale) {
                         if(locale != 'es') {
-                           $('input[id^="'+locale+'"],textarea[id^="'+locale+'"]').each(function() {
-                                $(this).val('STEPAYKO-'+locale);
-                                tinymce.get(locale+'[text]').setContent('STEPAYKO-'+locale);
+                           $('input[id^="'+locale+'"],textarea[id^="'+locale+'"]').each(function(index ) {
+                                $(this).val(answer[locale][index]);
                             });
+                           tinymce.get(locale+'[text]').setContent(answer[locale][1]);
                         };
                     });
                 },
                 error(answer) {
-                    alert("Error");
+                    alert("Translate error, see console for details");
                     console.log(answer);
                 }
             });

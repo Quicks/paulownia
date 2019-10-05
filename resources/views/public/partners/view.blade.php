@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header">Partner {{ $partners->id }}</div>
                     <div class="card-body">
-                        <a href="{{ url(App\Http\Middleware\LocaleMiddleware::getLocale() . '/partners')}}" title="Back">
+                        <a href="{{ url(App::getLocale() . '/partners')}}" title="Back">
                             <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back
                             </button>
                         </a>

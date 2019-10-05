@@ -25,7 +25,7 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->active }}</td>
                                     <td>
-                                        <a href="{{ url(App\Http\Middleware\LocaleMiddleware::getLocale() . '/galleries/' . $item->id)}}" title="View Galleries">
+                                        <a href="{{ url(App::getLocale() . '/galleries/' . $item->id)}}" title="View Galleries">
                                             <button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button>
                                         </a>
                                     </td>

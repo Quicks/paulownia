@@ -27,7 +27,7 @@
                                     <td>{{ $item->phone }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>
-                                        <a href="{{ url(App\Http\Middleware\LocaleMiddleware::getLocale() . '/partners/' . $item->id)}}" title="View Partners">
+                                        <a href="{{ url(App::getLocale() . '/partners/' . $item->id)}}" title="View Partners">
                                             <button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button>
                                         </a>
                                     </td>

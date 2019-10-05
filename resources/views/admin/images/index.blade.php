@@ -36,9 +36,17 @@
                                                      @else src="{{asset('storage/'.$img->thumbnail)}}" @endif>
                                             </td>
                                             @if($img->imageable_type == 'App\Models\Product')
-                                            <td>{{asset('cache/medium/'.$img->path)}}</td>
+                                            <td>
+                                                <a href="{{asset('cache/medium/'.$img->path)}}" class="hyphenation" target="_blank">
+                                                    {{asset('cache/medium/'.$img->path)}}
+                                                </a>
+                                            </td>
                                             @else
-                                            <td> {{asset('/storage/' . $img->image)}}</td>
+                                            <td>
+                                                <a href="{{asset('/storage/' . $img->image)}}" class="hyphenation" target="_blank">
+                                                    {{asset('/storage/' . $img->image)}}
+                                                </a>
+                                            </td>
                                             @endif
                                             <td>{{substr($img->imageable_type, 11)}}</td>
                                         </tr>

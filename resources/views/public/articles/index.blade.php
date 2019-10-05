@@ -26,7 +26,7 @@
                                     <td>{{ $item->active }}</td>
                                     <td>{{ $item->publish_date }}</td>
                                     <td>
-                                        <a href="{{ url('/articles/' . $item->id) . '?locale=' . App::getLocale()}}" title="View Articles">
+                                        <a href="{{ url(App::getLocale() .'/articles/' . $item->id)}}" title="View Articles">
                                             <button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button>
                                         </a>
                                     </td>

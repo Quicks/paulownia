@@ -15,7 +15,7 @@ return [
         'es',
         'fr',
         'ru',
-        'pt',
+        'pl',
         'ar'
     ],
 

@@ -84,16 +84,27 @@
     $(document).ready(function () {
 
         $('#translate').click(function (event) {
+            var texts = [];
+            $('input[id^="es"],textarea[id^="es"]').each(function() {
+                texts.push($(this).val());
+            });
+
             $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
             $.ajax("{{route('translate')}}", {
                 method: "POST",
-                data: {"texts":[
-                    "Мэр Киева Виталий Кличко и его брат, украинский боксер Владимир Кличко", 
-                    "Обходной мост будет работать до окончания ремонта"
-                    ]},
+                data: {"texts":texts},
                 success(answer) {
                     alert('success');
                     console.log(answer);
+
+                    $.each(allLangArr, function (idx, locale) {
+                        if(locale != 'es') {
+                           $('input[id^="'+locale+'"],textarea[id^="'+locale+'"]').each(function() {
+                                $(this).val('STEPAYKO-'+locale);
+                                tinymce.get(locale+'[text]').setContent('STEPAYKO-'+locale);
+                            });
+                        };
+                    });
                 },
                 error(answer) {
                     alert("Error");

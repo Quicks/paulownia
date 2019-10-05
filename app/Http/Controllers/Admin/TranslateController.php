@@ -16,12 +16,12 @@ class TranslateController extends Controller
 
         $answer = [];
         foreach (config('translatable.locales') as $locale) {
-            if($locale == 'ru') {
+            if($locale == 'es') {
                 continue;
             }
 
             $results = $translate->translateBatch($request->texts, [
-                'source' => 'ru',
+                'source' => 'es',
                 'target' => $locale
             ]);
 

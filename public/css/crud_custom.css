@@ -226,3 +226,7 @@
 .configuration-icon {
     background-image: url("../images/Icon-Configure.svg");
 }
+
+.hyphenation {
+    word-break: break-all;
+}

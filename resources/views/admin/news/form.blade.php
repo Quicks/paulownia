@@ -99,7 +99,7 @@
                     $.each(allLangArr, function (idx, locale) {
                         if(locale != 'es') {
                            $('input[id^="'+locale+'"],textarea[id^="'+locale+'"]').each(function(index ) {
-                                $(this).val(answer[locale][index]);
+                                $(this).val(htmlDecode(answer[locale][index]));
                             });
                            tinymce.get(locale+'[text]').setContent(answer[locale][1]);
                         };
@@ -112,7 +112,11 @@
             });
         });
 
-
+        function htmlDecode(input){
+          var e = document.createElement('textarea');
+          e.innerHTML = input;
+          return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+        }
 
     });
 </script>

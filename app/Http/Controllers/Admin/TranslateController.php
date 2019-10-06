@@ -11,7 +11,7 @@ class TranslateController extends Controller
     public function translate(Request $request)
     {
         $translate = new TranslateClient([
-           'key' => 'AIzaSyBka8NI0ipWHV-_rKotvoXQmen-6q-pvcg'
+           'key' => env('GOOGLE_API_KEY')
         ]);
 
         $answer = [];

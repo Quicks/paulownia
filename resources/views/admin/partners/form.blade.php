@@ -42,6 +42,11 @@
                 @include('admin.multi_lang_inputs.text_input', [
                         'item' => isset($partner) ? $partner : null, 'itemProperty' => 'country'])
             </div>
+            @if($locale == 'es')
+                <div class="text-center">
+                    <button id="translate" type="button" class="btn btn-warning mb-2">Translate city and country names from Spanish to rest of languages</button>
+                </div>
+            @endif
         </div>
     @endforeach
 
@@ -73,4 +78,46 @@
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
 </div>
 
+@push('scripts')
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#translate').click(function (event) {
+            $(this).attr("disabled", true);
+            var texts = [];
+            $('input[id="es[city]"],input[id="es[country]"]').each(function() {
+                texts.push($(this).val());
+            });
+
+            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+            $.ajax("{{route('translate')}}", {
+                method: "POST",
+                data: {"texts":texts},
+                success(answer) {
+                    alert("Translate successful, don't forget to save result.");
+                    $.each(allLangArr, function (idx, locale) {
+                        if(locale != 'es') {
+                           $('input[id="'+locale+'[city]"],input[id="'+locale+'[country]"]').each(function(index ) {
+                                $(this).val(htmlDecode(answer[locale][index]));
+                            });
+                           // tinymce.get(locale+'[text]').setContent(answer[locale][1]);
+                        };
+                    });
+                },
+                error(answer) {
+                    alert("Translate error, see console for details");
+                    console.log(answer);
+                }
+            });
+        });
+
+        function htmlDecode(input){
+          var e = document.createElement('textarea');
+          e.innerHTML = input;
+          return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+        }
+
+    });
+</script>
+@endpush
 

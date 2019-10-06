@@ -29,6 +29,11 @@
             @include('admin.multi_lang_inputs.text_input', [
                     'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'keywords',
                     'placeholder' => 'set comma (,) after each word'])
+            @if($locale == 'es')
+                <div class="text-center">
+                    <button id="translate" type="button" class="btn btn-warning mb-2">Translate from Spanish to rest of languages</button>
+                </div>
+            @endif
     </div>
 @endforeach
 
@@ -60,3 +65,47 @@
 <div class="form-group text-right">
     <input class="btn btn-primary" form="gallery-form" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
 </div>
+
+
+@push('scripts')
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#translate').click(function (event) {
+            $(this).attr("disabled", true);
+            var texts = [];
+            $('input[id^="es"],textarea[id^="es"]').each(function() {
+                texts.push($(this).val());
+            });
+
+            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+            $.ajax("{{route('translate')}}", {
+                method: "POST",
+                data: {"texts":texts},
+                success(answer) {
+                    alert("Translate successful, don't forget to save result.");
+                    $.each(allLangArr, function (idx, locale) {
+                        if(locale != 'es') {
+                           $('input[id^="'+locale+'"],textarea[id^="'+locale+'"]').each(function(index ) {
+                                $(this).val(htmlDecode(answer[locale][index]));
+                            });
+                           tinymce.get(locale+'[desc]').setContent(answer[locale][1]);
+                        };
+                    });
+                },
+                error(answer) {
+                    alert("Translate error, see console for details");
+                    console.log(answer);
+                }
+            });
+        });
+
+        function htmlDecode(input){
+          var e = document.createElement('textarea');
+          e.innerHTML = input;
+          return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+        }
+
+    });
+</script>
+@endpush

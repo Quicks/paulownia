@@ -4,7 +4,7 @@
         {{ isset($itemName) ? $itemName . ' ('.$locale.')' : ucfirst($itemProperty).' ('.$locale.')' }}
 
     </label>
-    <textarea class="form-control" 
+    <textarea class="form-control @isset($translate) {{$translate}} @endisset" 
         @if($locale == 'ar') dir="rtl" class="text-right" @endif
         name="{{$locale.'['.$itemProperty.']'}}"
         id="{{$locale.'['.$itemProperty.']'}}" rows="3"

@@ -21,13 +21,13 @@
 @foreach(config('translatable.locales') as $locale)
     <div class="tab-pane fade" id="{{$locale}}" role="tabpanel" aria-labelledby="{{$locale}}">
             @include('admin.multi_lang_inputs.text_input', [
-                    'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'title'])
+                    'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'title', 'translate' => 'translate'])
 
             @include('admin.multi_lang_inputs.text_area', [
-                    'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'desc', 'itemName' => 'Description'])
+                    'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'desc', 'itemName' => 'Description', 'translate' => 'translate'])
 
             @include('admin.multi_lang_inputs.text_input', [
-                    'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'keywords',
+                    'item' => isset($gallery) ? $gallery : null, 'itemProperty' => 'keywords', 'translate' => 'translate',
                     'placeholder' => 'set comma (,) after each word'])
             @if($locale == 'es')
                 <div class="text-center">
@@ -68,44 +68,5 @@
 
 
 @push('scripts')
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        $('#translate').click(function (event) {
-            $(this).attr("disabled", true);
-            var texts = [];
-            $('input[id^="es"],textarea[id^="es"]').each(function() {
-                texts.push($(this).val());
-            });
-
-            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-            $.ajax("{{route('translate')}}", {
-                method: "POST",
-                data: {"texts":texts},
-                success(answer) {
-                    alert("Translate successful, don't forget to save result.");
-                    $.each(allLangArr, function (idx, locale) {
-                        if(locale != 'es') {
-                           $('input[id^="'+locale+'"],textarea[id^="'+locale+'"]').each(function(index ) {
-                                $(this).val(htmlDecode(answer[locale][index]));
-                            });
-                           tinymce.get(locale+'[desc]').setContent(answer[locale][1]);
-                        };
-                    });
-                },
-                error(answer) {
-                    alert("Translate error, see console for details");
-                    console.log(answer);
-                }
-            });
-        });
-
-        function htmlDecode(input){
-          var e = document.createElement('textarea');
-          e.innerHTML = input;
-          return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
-        }
-
-    });
-</script>
+   <script src="{{ asset('js/translate.js') }}"></script>
 @endpush

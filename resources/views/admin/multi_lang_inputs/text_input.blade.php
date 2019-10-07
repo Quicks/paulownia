@@ -3,7 +3,7 @@
         {{ ucfirst($itemProperty).' ('.$locale.')'}}
     </label>
 
-    <input class="form-control" 
+    <input class="form-control @isset($translate) {{$translate}} @endisset" 
         @if($locale == 'ar') 
             dir="rtl" 
             class="text-right" 

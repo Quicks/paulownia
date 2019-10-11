@@ -18,5 +18,23 @@ return [
         'active' => true,
         'default_rate' => '0',
         'class' => 'Webkul\Shipping\Carriers\Free',
+    ],
+
+    'paidUponReceipt' => [
+        'code' => 'paidUponReceipt',
+        'title' => 'Shipping to other countries (except Spain / Portugal)',
+        'description' => 'Shipping of goods paid by the customer upon receipt',
+        'active' => true,
+        'default_rate' => '0',
+        'class' => 'Webkul\Shipping\Carriers\PaidUponReceipt',
+    ],
+
+    'shippingToSpainPortugal' => [
+        'code' => 'shippingToSpainPortugal',
+        'title' => 'Shipping to Spain and Portugal',
+        'description' => 'The cost of 20 euros per package',
+        'active' => true,
+        'default_rate' => '20',
+        'class' => 'Webkul\Shipping\Carriers\ShippingToSpainPortugal',
     ]
 ];

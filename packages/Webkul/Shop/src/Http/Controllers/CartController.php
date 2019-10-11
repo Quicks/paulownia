@@ -11,6 +11,7 @@ use Webkul\Customer\Repositories\CustomerRepository;
 use Webkul\Customer\Repositories\WishlistRepository;
 use Illuminate\Support\Facades\Event;
 use Cart;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Cart controller for the customer and guest users for adding and
@@ -82,7 +83,16 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view($this->_config['view'])->with('cart', Cart::getCart());
+        $cart = Cart::getCart();
+        if(!empty($cart)){
+            foreach ($cart->items as $item) {
+                $productId = $item->product_id;
+                $product = DB::table('product_flat')->where('id', $productId)->get();
+                $minOrder = $product[0]->min_order_qty;
+                session()->flash('success', 'The minimum order for this product is ' . $minOrder);
+            }
+        }
+        return view($this->_config['view'], compact('cart', 'minOrder'));
     }
 
     /**

@@ -358,7 +358,7 @@ return [
      *    http://wwww.mysite.com/stats
      *
      */
-    'stats_base_uri' => 'stats',
+    'stats_base_uri' => 'admin/stats',
 
     /*
      * Stats Panel layout view

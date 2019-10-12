@@ -1,7 +1,8 @@
 @extends('pragmarx/tracker::html')
 
 @section('required-scripts-bottom')
-    <link href="{{asset('css/crud_custom.css')}}" rel="stylesheet">
+    <link href="{{asset('css/crud_custom.css')}}{{env('APP_ENV') != 'production' ? "?".now()->timestamp : ""}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endsection
 
 @section('body')
@@ -44,7 +45,10 @@
             <!-- /.navbar-top-links -->
 
 		    <div class="navbar-default sidebar" role="navigation">
-			    <div class="sidebar-nav navbar-collapse">
+			    <div class="sidebar-nav navbar-collapse left-sidebar">
+                    @include('admin.sidebar')
+                </div>
+                <div class="sidebar-nav navbar-collapse right-sidebar">
 				    <ul class="nav" id="side-menu">
                         <li>
                             <a href="{{route('tracker.stats.index')}}?page=visits" class="{{ Session::get('tracker.stats.page') =='visits' ? 'active' : '' }}" ><i class="fa fa-dashboard fa-fw"></i> @lang("tracker::tracker.visits") <span class="{{ Session::get('tracker.stats.page') =='visits' ? 'fa arrow' : '' }}"></span></a>

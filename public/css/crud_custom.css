@@ -230,3 +230,7 @@
 .hyphenation {
     word-break: break-all;
 }
+
+.sidebar ul li {
+    border: none !important;
+}

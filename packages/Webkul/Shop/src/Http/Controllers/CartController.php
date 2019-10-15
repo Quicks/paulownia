@@ -12,6 +12,7 @@ use Webkul\Customer\Repositories\WishlistRepository;
 use Illuminate\Support\Facades\Event;
 use Cart;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Cart controller for the customer and guest users for adding and
@@ -81,6 +82,7 @@ class CartController extends Controller
      *
      * @return Mixed
      */
+
     public function index()
     {
         $cart = Cart::getCart();
@@ -89,7 +91,7 @@ class CartController extends Controller
                 $productId = $item->product_id;
                 $product = DB::table('product_flat')->where('id', $productId)->get();
                 $minOrder = $product[0]->min_order_qty;
-                session()->flash('success', 'The minimum order for this product is ' . $minOrder);
+                $item->min = $minOrder;
             }
         }
         return view($this->_config['view'], compact('cart', 'minOrder'));

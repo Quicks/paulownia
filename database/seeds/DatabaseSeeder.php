@@ -13,5 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(BagistoDatabaseSeeder::class);
+        $this->call(AddAttributeTableSeeder::class);
+        $this->call(AddAttributeGroupTableSeeder::class);
     }
 }

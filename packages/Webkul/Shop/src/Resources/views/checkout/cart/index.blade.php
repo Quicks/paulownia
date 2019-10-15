@@ -75,6 +75,7 @@
                                                     <label for="qty[{{$item->id}}]">{{ __('shop::app.checkout.cart.quantity.quantity') }}</label>
 
                                                     <input class="control quantity-change" value="-" style="width: 35px; border-radius: 3px 0px 0px 3px;" onclick="updateCartQunatity('remove', {{$key}})" readonly>
+
                                                     <input type="text" class="control quantity-change" id="cart-quantity{{ $key}}"
                                                            v-validate="'required|numeric|min_value:{{$item->min}}'" name="qty[{{$item->id}}]"
                                                            value="{{ $item->quantity }}"
@@ -158,7 +159,7 @@
                 </p>
 
                 <p style="display: inline-block;">
-                    <a style=ute('shop.home.index') }}" class="btn btn-lg btn-primary">{{ __('shop::app.checkout.cart.continue-shopping') }}</a>
+                    <a style="display: inline-block;" href="{{ route('shop.home.index') }}" class="btn btn-lg btn-primary">{{ __('shop::app.checkout.cart.continue-shopping') }}</a>
                 </p>
             </div>
 

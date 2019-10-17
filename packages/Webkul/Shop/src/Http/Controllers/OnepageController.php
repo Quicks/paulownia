@@ -94,7 +94,7 @@ class OnepageController extends Controller
                 $productId = $item->product_id;
                 $product = DB::table('product_flat')->where('id', $productId)->get();
                 $minOrder = $product[0]->min_order_qty;
-                $data = ['qty[' . $item->id . ']' => $cart->items_qty];
+                $data = ['qty[' . $item->id . ']' => $item->quantity];
                 $messages = ['qty[' . $item->id . ']' => 'The minimum order for this product is ' . $minOrder,];
                 $validator = Validator::make($data, [
                     'qty[' . $item->id . ']' => 'required|numeric|min:' . $minOrder,

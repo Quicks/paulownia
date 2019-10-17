@@ -22,7 +22,6 @@ class LocaleMiddleware
         $languages = config('translatable.locales');
         $uri = Request::path();
         $segmentsURI = explode('/',$uri);
-
         if (!empty($segmentsURI[0]) && in_array($segmentsURI[0], $languages)) {
 
             return $segmentsURI[0];

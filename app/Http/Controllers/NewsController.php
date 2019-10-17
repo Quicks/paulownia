@@ -18,8 +18,8 @@ class NewsController extends Controller
     public function show(Request $request, $id)
     {
         $news = News::findOrFail($id);
-        SEOMeta::addKeyword([$news->keywords]);
         $locale = App::getLocale();
+        SEOMeta::addKeyword([$news->translate($locale)->keywords]);
 
         return view('public.news.view', compact('news', 'locale'));
     }

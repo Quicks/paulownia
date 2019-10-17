@@ -18,8 +18,9 @@ class ArticlesController extends Controller
     public function show(Request $request, $id)
     {
         $articles = Article::findOrFail($id);
-        SEOMeta::addKeyword([$articles->keywords]);
         $locale = App::getLocale();
+        SEOMeta::addKeyword([$articles->translate($locale)->keywords]);
+
 
         return view('public.articles.view', compact('articles', 'locale'));
     }

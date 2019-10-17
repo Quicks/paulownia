@@ -66,7 +66,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::post('/translate', 'App\Http\Controllers\Admin\TranslateController@translate')->name('translate');
         });
     });
-        Route::group(['middleware' => ['locale'], 'prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function () {
+        Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function () {
             Route::get('/news', 'App\Http\Controllers\NewsController@index')->name('public.news.index');
             Route::get('/news/{id}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');
             Route::get('/articles', 'App\Http\Controllers\ArticlesController@index')->name('public.articles.index');

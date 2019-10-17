@@ -18,8 +18,8 @@ class TreatisesController extends Controller
     public function show(Request $request, $id)
     {
         $treatises = Treatise::findOrFail($id);
-        SEOMeta::addKeyword([$treatises->keywords]);
         $locale = App::getLocale();
+        SEOMeta::addKeyword([$treatises->translate($locale)->keywords]);
 
         return view('public.treatises.view', compact('treatises', 'locale'));
     }

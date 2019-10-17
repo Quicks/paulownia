@@ -18,8 +18,8 @@ class PartnersController extends Controller
     public function show(Request $request, $id)
     {
         $partners = Partner::findOrFail($id);
-        SEOMeta::addKeyword([$partners->keywords]);
         $locale = App::getLocale();
+        SEOMeta::addKeyword([$partners->translate($locale)->keywords]);
 
         return view('public.partners.view', compact('partners', 'locale'));
     }

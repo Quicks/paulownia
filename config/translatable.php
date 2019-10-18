@@ -41,7 +41,7 @@ return [
     | you can specify what default should be used here.
     |
     */
-    'locale' => 'es',
+    'locale' => null,
 
     /*
     |--------------------------------------------------------------------------

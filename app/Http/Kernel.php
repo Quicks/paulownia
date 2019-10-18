@@ -18,7 +18,6 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
-
     ];
 
     /**
@@ -57,6 +56,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'locale' => \App\Http\Middleware\LocaleMiddleware::class,
+        'localize' => \App\Http\Middleware\LocaleMiddleware::class,
     ];
 }

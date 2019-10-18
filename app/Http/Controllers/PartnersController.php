@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Partner;
 use Illuminate\Support\Facades\App;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class PartnersController extends Controller
 {
@@ -18,6 +19,7 @@ class PartnersController extends Controller
     {
         $partners = Partner::findOrFail($id);
         $locale = App::getLocale();
+        SEOMeta::addKeyword([$partners->keywords]);
 
         return view('public.partners.view', compact('partners', 'locale'));
     }

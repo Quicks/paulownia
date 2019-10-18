@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Treatise;
 use Illuminate\Support\Facades\App;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class TreatisesController extends Controller
 {
@@ -18,6 +19,7 @@ class TreatisesController extends Controller
     {
         $treatises = Treatise::findOrFail($id);
         $locale = App::getLocale();
+        SEOMeta::addKeyword([$treatises->keywords]);
 
         return view('public.treatises.view', compact('treatises', 'locale'));
     }

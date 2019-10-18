@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\News;
 use Illuminate\Support\Facades\App;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class NewsController extends Controller
 {
@@ -18,6 +19,7 @@ class NewsController extends Controller
     {
         $news = News::findOrFail($id);
         $locale = App::getLocale();
+        SEOMeta::addKeyword([$news->keywords]);
 
         return view('public.news.view', compact('news', 'locale'));
     }

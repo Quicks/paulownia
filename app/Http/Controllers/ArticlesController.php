@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use Illuminate\Support\Facades\App;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class ArticlesController extends Controller
 {
@@ -18,6 +19,8 @@ class ArticlesController extends Controller
     {
         $articles = Article::findOrFail($id);
         $locale = App::getLocale();
+        SEOMeta::addKeyword([$articles->keywords]);
+
 
         return view('public.articles.view', compact('articles', 'locale'));
     }

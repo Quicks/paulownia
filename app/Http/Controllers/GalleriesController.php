@@ -19,7 +19,7 @@ class GalleriesController extends Controller
     {
         $galleries = Gallery::findOrFail($id);
         $locale = App::getLocale();
-        SEOMeta::addKeyword([$galleries->translate($locale)->keywords]);
+        SEOMeta::addKeyword([$galleries->keywords]);
 
         return view('public.galleries.view', compact('galleries', 'locale'));
     }

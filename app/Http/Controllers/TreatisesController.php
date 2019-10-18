@@ -19,7 +19,7 @@ class TreatisesController extends Controller
     {
         $treatises = Treatise::findOrFail($id);
         $locale = App::getLocale();
-        SEOMeta::addKeyword([$treatises->translate($locale)->keywords]);
+        SEOMeta::addKeyword([$treatises->keywords]);
 
         return view('public.treatises.view', compact('treatises', 'locale'));
     }

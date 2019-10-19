@@ -17,7 +17,7 @@ class AddAttributeTableSeeder extends Seeder
 
         DB::table('attributes')->insert([
             [
-                'id' => '25',
+                'id' => '100',
                 'code' => 'delivery_unit_qty',
                 'admin_name' => 'Delivery unit qty',
                 'type' => 'text',
@@ -34,7 +34,7 @@ class AddAttributeTableSeeder extends Seeder
                 'created_at' => $now,
                 'updated_at' => $now
             ], [
-                'id' => '26',
+                'id' => '101',
                 'code' => 'min_order_qty',
                 'admin_name' => 'Min order qty',
                 'type' => 'text',
@@ -54,15 +54,15 @@ class AddAttributeTableSeeder extends Seeder
         ]);
         DB::table('attribute_translations')->insert([
             [
-                'id' => '25',
+                'id' => '100',
                 'locale' => 'en',
                 'name' => 'Delivery unit qty',
-                'attribute_id' => '25'
+                'attribute_id' => '100'
             ], [
-                'id' => '26',
+                'id' => '101',
                 'locale' => 'en',
                 'name' => 'Min order qty',
-                'attribute_id' => '26'
+                'attribute_id' => '101'
             ]
         ]);
     }

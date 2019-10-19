@@ -33,19 +33,21 @@ class ShippingToSpainPortugal extends AbstractShipping
             return false;
 
         $cart = Cart::getCart();
-        $productId = $cart->items[0]->product_id;
-        $product = DB::table('product_flat')->where('product_id', $productId)->get();
-        $deliveryUnitQty = $product[0]->delivery_unit_qty;
+        $sum = 0;
+        foreach ($cart->items as $item) {
+            $productId = $item->product_id;
+            $product = DB::table('product_flat')->where('product_id', $productId)->first();
+            $deliveryUnitQty = $product->delivery_unit_qty;
+            $result = $item->quantity /$deliveryUnitQty;
+            $sum += ceil($result);
+        }
         $object = new CartShippingRate;
-
-
         $object->carrier = 'shippingToSpainPortugal';
         $object->carrier_title = $this->getConfigData('title');
         $object->method = 'shippingToSpainPortugal';
         $object->method_title = $this->getConfigData('title');
         $object->method_description = $this->getConfigData('description');
-        $result = $cart->items_qty /$deliveryUnitQty;
-        $qty_container = ceil($result);
+        $qty_container = $sum;
         $object->price = core()->convertPrice($this->getConfigData('default_rate')) * $qty_container;
         $object->base_price = $this->getConfigData('default_rate') * $qty_container;
 

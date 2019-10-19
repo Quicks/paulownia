@@ -76,9 +76,11 @@
 
                                                     <input class="control quantity-change" value="-" style="width: 35px; border-radius: 3px 0px 0px 3px;" onclick="updateCartQunatity('remove', {{$key}})" readonly>
 
-                                                    <input type="text" class="control quantity-change" id="cart-quantity{{ $key
-                                                    }}" v-validate="'required|numeric|min_value:1'" name="qty[{{$item->id}}]" value="{{ $item->quantity }}" data-vv-as="&quot;{{ __('shop::app.checkout.cart.quantity.quantity') }}&quot;" style="border-right: none; border-left: none; border-radius: 0px;" readonly>
-
+                                                    <input type="text" class="control quantity-change" id="cart-quantity{{ $key}}"
+                                                           v-validate="'required|numeric|min_value:{{$item->min}}'" name="qty[{{$item->id}}]"
+                                                           value="{{ $item->quantity }}"
+                                                           data-vv-as="&quot;{{ __('shop::app.checkout.cart.quantity.quantity') }}&quot;"
+                                                           style="border-right: none; border-left: none; border-radius: 0px;">
                                                     <input class="control quantity-change" value="+" style="width: 35px; padding: 0 12px; border-radius: 0px 3px 3px 0px;" onclick="updateCartQunatity('add', {{$key}})" readonly>
                                                 </div>
 

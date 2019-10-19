@@ -92,7 +92,7 @@ class OnepageController extends Controller
         $cart = Cart::getCart();
             foreach ($cart->items as $item) {
                 $productId = $item->product_id;
-                $product = DB::table('product_flat')->where('id', $productId)->get();
+                $product = DB::table('product_flat')->where('product_id', $productId)->get();
                 $minOrder = $product[0]->min_order_qty;
                 $data = ['qty[' . $item->id . ']' => $item->quantity];
                 $messages = ['qty[' . $item->id . ']' => 'The minimum order for this product is ' . $minOrder,];

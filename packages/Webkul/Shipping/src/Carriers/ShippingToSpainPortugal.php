@@ -34,7 +34,7 @@ class ShippingToSpainPortugal extends AbstractShipping
 
         $cart = Cart::getCart();
         $productId = $cart->items[0]->product_id;
-        $product = DB::table('product_flat')->where('id', $productId)->get();
+        $product = DB::table('product_flat')->where('product_id', $productId)->get();
         $deliveryUnitQty = $product[0]->delivery_unit_qty;
         $object = new CartShippingRate;
 

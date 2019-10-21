@@ -2,13 +2,28 @@
 
 @media only screen  and (max-width: 1224px) {
     body {
-        background-color: yellow;
         font-family: "Raleway", sans-serif;
         font-size: 0.75rem;
     }
     .fa-3x {
         font-size: 2em;
     }
+    .custom-admin-sidebar ul li {
+        padding: 5px 5px !important;
+    }
+    .custom-admin-sidebar ul li a span {
+        font-size: 0.9em;
+        display: block;
+        text-align: center;
+    }
+    .menu-properties {
+        width: 25px !important;
+        height: 25px !important;
+    }
+    .custom-admin-sidebar {
+        width: 80px !important;
+    }
+
 }
 
 .custom-nav-bs4 {

@@ -20,7 +20,8 @@ class ArticlesController extends Controller
         $articles = Article::findOrFail($id);
         $locale = App::getLocale();
         SEOMeta::addKeyword([$articles->keywords]);
-
+        SEOMeta::setTitle($articles->title);
+        SEOMeta::setDescription(substr(strip_tags($articles->text), 0, 159));
 
         return view('public.articles.view', compact('articles', 'locale'));
     }

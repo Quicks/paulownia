@@ -20,7 +20,7 @@ class TreatisesController extends Controller
         $treatises = Treatise::findOrFail($id);
         $locale = App::getLocale();
         SEOMeta::addKeyword([$treatises->keywords]);
-        SEOMeta::setTitle($treatises->title);
+        SEOMeta::setTitle($treatises->title ." - ".env('APP_NAME'));
         SEOMeta::setDescription(substr(strip_tags($treatises->text), 0, 159));
 
         return view('public.treatises.view', compact('treatises', 'locale'));

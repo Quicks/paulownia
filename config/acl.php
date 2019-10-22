@@ -2,6 +2,13 @@
 
 return [
     [
+        'key' => 'welcome',
+        'name' => 'Welcome',
+        'route' => 'admin.welcome',
+        'sort' => 1
+    ],
+
+    [
         'key' => 'news',
         'name' => 'News',
         'route' => 'news.index',
@@ -10,17 +17,17 @@ return [
     [
         'key' => 'news.add',
         'name' => 'Add',
-        'route' => 'news.create',
+        'route' => 'news.store',
         'sort' => 1
     ], [
-        'key' => 'news.edit',
+        'key' => 'news.update',
         'name' => 'Edit',
-        'route' => 'news.edit',
+        'route' => 'news.update',
         'sort' => 2
     ], [
-        'key' => 'news.delete',
+        'key' => 'news.destroy',
         'name' => 'Delete',
-        'route' => 'news.delete',
+        'route' => 'news.destroy',
         'sort' => 3
     ],
 
@@ -33,17 +40,17 @@ return [
     [
         'key' => 'articles.add',
         'name' => 'Add',
-        'route' => 'articles.create',
+        'route' => 'articles.store',
         'sort' => 1
     ], [
-        'key' => 'articles.edit',
+        'key' => 'articles.update',
         'name' => 'Edit',
-        'route' => 'articles.edit',
+        'route' => 'articles.update',
         'sort' => 2
     ], [
-        'key' => 'articles.delete',
+        'key' => 'articles.destroy',
         'name' => 'Delete',
-        'route' => 'articles.delete',
+        'route' => 'articles.destroy',
         'sort' => 3
     ],
 
@@ -56,17 +63,17 @@ return [
     [
         'key' => 'galleries.add',
         'name' => 'Add',
-        'route' => 'galleries.create',
+        'route' => 'galleries.store',
         'sort' => 1
     ], [
-        'key' => 'galleries.edit',
+        'key' => 'galleries.update',
         'name' => 'Edit',
-        'route' => 'galleries.edit',
+        'route' => 'galleries.update',
         'sort' => 2
     ], [
-        'key' => 'galleries.delete',
+        'key' => 'galleries.destroy',
         'name' => 'Delete',
-        'route' => 'galleries.delete',
+        'route' => 'galleries.destroy',
         'sort' => 3
     ],
 
@@ -86,17 +93,17 @@ return [
     [
         'key' => 'treatises.add',
         'name' => 'Add',
-        'route' => 'treatises.create',
+        'route' => 'treatises.store',
         'sort' => 1
     ], [
-        'key' => 'treatises.edit',
+        'key' => 'treatises.update',
         'name' => 'Edit',
-        'route' => 'treatises.edit',
+        'route' => 'treatises.update',
         'sort' => 2
     ], [
-        'key' => 'treatises.delete',
+        'key' => 'treatises.destroy',
         'name' => 'Delete',
-        'route' => 'treatises.delete',
+        'route' => 'treatises.destroy',
         'sort' => 3
     ],
 
@@ -109,17 +116,17 @@ return [
     [
         'key' => 'offices.add',
         'name' => 'Add',
-        'route' => 'offices.create',
+        'route' => 'offices.store',
         'sort' => 1
     ], [
-        'key' => 'offices.edit',
+        'key' => 'offices.update',
         'name' => 'Edit',
-        'route' => 'offices.edit',
+        'route' => 'offices.update',
         'sort' => 2
     ], [
-        'key' => 'offices.delete',
+        'key' => 'offices.destroy',
         'name' => 'Delete',
-        'route' => 'offices.delete',
+        'route' => 'offices.destroy',
         'sort' => 3
     ],
 
@@ -132,24 +139,24 @@ return [
     [
         'key' => 'partners.add',
         'name' => 'Add',
-        'route' => 'partners.create',
+        'route' => 'partners.store',
         'sort' => 1
     ], [
-        'key' => 'partners.edit',
+        'key' => 'partners.update',
         'name' => 'Edit',
-        'route' => 'partners.edit',
+        'route' => 'partners.update',
         'sort' => 2
     ], [
-        'key' => 'partners.delete',
+        'key' => 'partners.destroy',
         'name' => 'Delete',
-        'route' => 'partners.delete',
+        'route' => 'partners.destroy',
         'sort' => 3
     ],
 
     [
-        'key' => 'tracker',
+        'key' => 'tracking',
         'name' => 'Tracking statistic',
-        'route' => 'tracker',
+        'route' => 'tracker.stats.index',
         'sort' => 1
     ],
 ];

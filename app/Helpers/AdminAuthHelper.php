@@ -8,7 +8,7 @@ class AdminAuthHelper extends Model
 {
     public static function check()
     {
-        return auth()->guard('admin')->check();
+        return auth()->guard('admin')->check() && bouncer()->hasPermission('tracking');
     }
 
     public static function user()

@@ -4,7 +4,7 @@
 <head>
 
     {!! SEOMeta::generate() !!}
-    @if(empty(SEOMeta::generate()))
+    @if(empty(SEOMeta::getTitle()))
     <title>@yield('page_title')</title>
     @endif
     <meta charset="utf-8">

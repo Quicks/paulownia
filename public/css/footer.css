@@ -1,110 +1,20 @@
-@media screen and (max-width: 1024px) {
-    .footer { height: auto !important; }
-    .footer-content {
-        width: 100vw;
-        padding: 15px;
-    }
-    .title-text { position: inherit !important;}
-    .footer-line, .text-decoration, .networks {
-        position: inherit !important;
-        margin-top: 0px !important;
-    }
-}
-@media screen and (max-width: 480px) {
-    .footer-bottom-booklet a {
-        font-size: 10px !important;
-        left: 0 !important;
-    }
-}
-@media screen and (min-width: 900px) {
-    .footer-bottom-booklet a span {
-        margin-left: 16px !important;
-    }
-}
 
 .footer {
-    position: absolute;
     font-family: Century Gothic Regular;
     color: #FFFFFF;
     background-color: #2B2723;
-    height: 343px;
-    width: 100%;
-    bottom: 102px;
 }
 .title-text {
-    top: 37px;
     font-size: 14px;
     line-height: 38px;
-    position: absolute;
 }
 .text-decoration {
     font-size: 14px;
     line-height: 25px;
-    position: absolute;
-    margin-top: 90px;
-}
-.title-text-customers {
-    width: 95px;
-    left: 19.48%;
-    right: 75.94%;
-}
-.title-text-menu {
-    width: 40px;
-    left: 35%;
-    right: 62.92%;
-}
-
-.title-text-paulownia {
-    width: 71px;
-    left: 50.62%;
-    right: 45.68%;
-}
-.title-text-contacts {
-    width: 63px;
-    left: 66.25%;
-    right: 30.47%;
 }
 .footer-line {
-    position: absolute;
     top: 55px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-}
-.footer-line-1 {
-    left: 19.34%;
-    right: 66.63%;
-}
-.footer-line-2 {
-    left: 35.02%;
-    right: 50.95%
-}
-.footer-line-3 {
-    left: 50.65%;
-    right: 35.33%;
-}
-.footer-line-4 {
-    left: 66.22%;
-    right: 19.76%;
-}
-
-.text-decoration-customers {
-    width: 150px;
-    left: 19.38%;
-    right: 73.65%;
-}
-.text-decoration-menu {
-    width: 170px;
-    left: 35.05%;
-    right: 56.93%;
-}
-.text-decoration-paulownia {
-    width: 180px;
-    left: 50.68%;
-    right: 38.59%;
-}
-.text-decoration-contacts {
-    width: 250px;
-    left: 66.2%;
-    right: 16.77%;
 }
 
 .footer li a {
@@ -112,55 +22,32 @@
     color: #FFFFFF;
 }
 .networks {
-    position: absolute;
     margin-top: 212px;
 }
-.linkedin {
-    left: 66.2%;
-    right: 33.02%;
-}
-.facebook {
-    left: 67.76%;
-    right: 31.82%;
-}
-.instagram {
-    left: 68.96%;
-    right: 30.21%;
-}
+
 .footer-bottom {
-    position: absolute;
     background-color: #FBFAFA;
     width: 100%;
     height: 102px;
-    bottom: 0;
 }
 .footer-bottom-copy {
-    position: relative;
     font-family: Century Gothic Regular;
     font-size: 14px;
     line-height: 17px;
     color: #0F0E0E;
-    top:44px;
     text-align: center;
 }
 .footer-bottom-booklet {
     border: 1px solid #8CBD02;
-    box-sizing: border-box;
     border-radius: 75px;
-    position: relative;
-    top:25px;
-    max-width: 244px;
     height: 52px;
 }
 .footer-bottom-booklet a {
-    position: relative;
     text-decoration: none;
     font-family: Century Gothic Bold;
     font-size: 14px;
     line-height: 17px;
     color: #8CBD02;
-    left: 33px;
-    top: 14px;
 }
 
 

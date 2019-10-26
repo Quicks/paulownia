@@ -1,4 +1,3 @@
 @extends('layouts.public')
-@section('content')
-    @include('public.main.footer')
+    @section('content')
 @endsection

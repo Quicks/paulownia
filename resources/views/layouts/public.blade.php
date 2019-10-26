@@ -16,10 +16,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/public.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     @stack('css')
 </head>
 <body>
-<div id="app">
+<div id="app" class="container-fluid">
     @if (session('flash_message'))
         <div class="custom-status">
             <span class="custom-icon"></span>
@@ -27,9 +28,11 @@
         </div>
     @endif
 
-    <main class="container-fluid">
+    <main>
         @yield('content')
     </main>
+
+        @include('public.main.footer')
 </div>
 
 <!-- Scripts -->

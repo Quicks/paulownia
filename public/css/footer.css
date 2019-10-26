@@ -1,0 +1,35 @@
+.footer {
+    font-family: Century Gothic Regular;
+    color: #FFFFFF;
+    background-color: #2B2723;
+}
+.footer-content {
+    max-width: 1200px;
+}
+.footer-title {
+    font-size: 14px;
+    line-height: 38px;
+}
+.footer-line {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.text-list {
+    font-size: 14px;
+    line-height: 25px;
+}
+.text-list li {
+    list-style-type: none;
+}
+.text-list li a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.footer-bottom {
+    background-color: #FBFAFA;
+}
+.footer-bottom-copy {
+    font-family: Century Gothic Regular;
+    font-size: 14px;
+    line-height: 17px;
+    color: #0F0E0E;
+}

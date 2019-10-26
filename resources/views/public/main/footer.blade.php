@@ -57,10 +57,10 @@
     </div>
 </div>
 <div class="row footer-bottom text-center">
-    <div class="col-xl-6 col-md-6 col-sm-10 footer-bottom-copy py-5">
+    <div class="col-xl-6 col-md-6 col-sm-12 footer-bottom-copy py-5">
         <span>Copyright © by Paulownia.pro® 2019</span>
     </div>
-    <div class="col-xl-6 col-md-6 col-sm-10 py-4">
+    <div class="col-xl-6 col-md-6 col-sm-12 py-4">
         <a href="#">
             <img src="../../../images/download-booklet.svg">
         </a>

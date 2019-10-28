@@ -153,6 +153,28 @@ return [
         'sort' => 3
     ],
 
+        [
+        'key' => 'certificate',
+        'name' => 'Certificate',
+        'route' => 'certificate.index',
+        'sort' => 1
+    ], [
+        'key' => 'certificate.add',
+        'name' => 'Add Request for certificate',
+        'route' => 'certificate.store',
+        'sort' => 1
+    ], [
+        'key' => 'certificate.update',
+        'name' => 'Edit request and create certificate',
+        'route' => 'certificate.update',
+        'sort' => 2
+    ], [
+        'key' => 'certificate.destroy',
+        'name' => 'Delete certificate',
+        'route' => 'certificate.destroy',
+        'sort' => 3
+    ],
+
     [
         'key' => 'tracking',
         'name' => 'Tracking statistic',

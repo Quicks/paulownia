@@ -2,7 +2,7 @@
     <div class="footer-content row mx-auto">
         <div class="col-xl-3 col-md-6 col-sm-12">
             <p class="footer-title"> To customers </p>
-            <hr class="footer-line">
+            <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
                 <li><a href="#">Stocks</a></li>
                 <li><a href="#">Wholesale offers</a></li>
@@ -13,7 +13,7 @@
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">
             <p class="footer-title"> Menu </p>
-            <hr class="footer-line">
+            <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">News</a></li>
@@ -26,7 +26,7 @@
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">
             <p class="footer-title"> Paulownia </p>
-            <hr class="footer-line">
+            <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
                 <li><a href="#">Paulownia Shan Tong</a></li>
                 <li><a href="#">Paulownia Elongata</a></li>
@@ -38,7 +38,7 @@
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">
             <p class="footer-title"> Contacts </p>
-            <hr class="footer-line">
+            <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
                 <li>Phone: <a href="tel:+34642787555"> +34 642 787 555 </a></li>
                 <li>Email: <a href="mailto: info@paulownia.pro"> info@paulownia.pro</a></li>
@@ -47,9 +47,9 @@
                 <li>Mon.-Fri. from 09:00 before 18:00</li>
                 <ul class="text-list m-0 p-0">
                     <li>
-                        <a href="#"><img src="../../../images/linkedin.svg"></a>
-                        <a href="#" class="ml-2"><img src="../../../images/fb.svg"></a>
-                        <a href="#" class="ml-2"><img src="../../../images/instagram.svg"></a>
+                        <a href="#"><img src="{{asset('images/linkedin.svg')}}"></a>
+                        <a href="#" class="ml-2"><img src="{{asset('images/fb.svg')}}"></a>
+                        <a href="#" class="ml-2"><img src="{{asset('images/instagram.svg')}}"></a>
                     </li>
                 </ul>
             </ul>
@@ -62,7 +62,7 @@
     </div>
     <div class="col-xl-6 col-md-6 col-sm-12 py-4">
         <a href="#">
-            <img src="../../../images/download-booklet.svg">
+            <img src="{{asset('images/download-booklet.svg')}}">
         </a>
     </div>
 </div>

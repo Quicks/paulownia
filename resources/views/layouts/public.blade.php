@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/public.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     @stack('css')
 </head>
 <body>
@@ -27,6 +28,8 @@
             <p class="status-text"> {{ session('flash_message') }} </p>
         </div>
     @endif
+
+        @include('public.main.header')
 
     <main>
         @yield('content')

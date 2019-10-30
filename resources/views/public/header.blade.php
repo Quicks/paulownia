@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-xl-3 col-md-12 col-sm-12">
                         <div class="dropdown pl-xl-5">
-                            <button class="bottom-language" type="button" id="dropdownMenuButton"
+                            <button class="button-language" type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{(App::getLocale())}}
                                 <img src="{{asset('images/down-arrow.svg')}}">

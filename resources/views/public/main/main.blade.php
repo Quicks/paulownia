@@ -1,3 +1,4 @@
 @extends('layouts.public')
-    @section('content')
+@section('content')
+    @include('public.main.advantages')
 @endsection

@@ -16,3 +16,9 @@
     font-weight: normal;
     font-style: normal;
 }
+* {
+    font-family: Century Gothic Regular;
+}
+.main-background {
+    background:url('/images/main-background.jpg') no-repeat;
+}

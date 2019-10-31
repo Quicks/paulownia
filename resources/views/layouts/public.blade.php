@@ -30,10 +30,11 @@
     @endif
 
         @include('public.header')
-        
-    <main>
-        @yield('content')
-    </main>
+
+        <main class="main-background">
+            <div style="height: 3000px"></div>
+            @yield('content')
+        </main>
 
         @include('public.footer')
 </div>

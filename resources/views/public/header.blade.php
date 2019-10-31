@@ -12,7 +12,7 @@
                         <ul class="d-xl-inline-flex list-unstyled">
                             <li class="ml-4 mb-3">
                                 <a href="viber://chat?number=+34642787555">
-                                    <img src="{{asset('images/viber.svg')}}">
+                                    <img src="{{asset('images/viber-icon.svg')}}">
                                     +34 <b>642 787 555</b>
                                 </a>
                             </li>

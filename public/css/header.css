@@ -13,7 +13,13 @@
     text-decoration: none;
     color: #000000;
 }
-.bottom-link a:hover, .bottom-link a:focus {
-    color: #8CBD02;
+.bottom-link-activ {
+    color: #8CBD02 !important;
     font-family: Century Gothic Bold;
+}
+
+.button-language {
+    border: none;
+    background-color: #FFFFFF;
+    text-transform: uppercase;
 }

@@ -15,7 +15,7 @@
             <p class="footer-title"> Menu </p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
-                <li><a href="#">Home</a></li>
+                <li><a href="#">Main</a></li>
                 <li><a href="#">News</a></li>
                 <li><a href="#">Goods</a></li>
                 <li><a href="#">Profitability calculation</a></li>

@@ -29,13 +29,14 @@
         </div>
     @endif
 
-        @include('public.main.header')
+        @include('public.header')
 
-    <main>
-        @yield('content')
-    </main>
+        <main class="main-background">
+            <div style="height: 3000px"></div>
+            @yield('content')
+        </main>
 
-        @include('public.main.footer')
+        @include('public.footer')
 </div>
 
 <!-- Scripts -->

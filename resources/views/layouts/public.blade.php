@@ -32,7 +32,7 @@
         @include('public.header')
 
         <main class="main-background">
-            <div style="height: 3938px"></div>
+            <div style="height: 3000px"></div>
             @yield('content')
         </main>
 

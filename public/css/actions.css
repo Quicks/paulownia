@@ -1,7 +1,4 @@
-@font-face {
-    font-family:Century Gothic;
-    src: url("../fonts/CenturyGothic.ttf");
-}
+
 .mainAction{
     background: #092604;
 }
@@ -12,14 +9,14 @@
    }
 
 .discountInPercent {
-    font-family:Century Gothic;
+    font-family:"Century Gothic Regular";
     font-size: 78px;
     font-weight:bold;
     color: white;
     text-align: center;
 }
 .discountText{
-    font-family:Century Gothic;
+    font-family:"Century Gothic Regular";
     padding: 0 22px 32px 32px;
     font-size:14px;
     color: white;
@@ -28,14 +25,14 @@
 @media screen and (min-width: 992px) and (max-width: 1199px) {
 
     .discountInPercent {
-        font-family:Century Gothic;
+        font-family:"Century Gothic Regular";
         font-size: 58px;
         font-weight:bold;
         color: white;
         text-align: center;
     }
     .discountText{
-        font-family:Century Gothic;
+        font-family:"Century Gothic Regular";
         padding: 0 6px 16px 6px;
         font-size:80%;
         color: white;
@@ -48,14 +45,14 @@
 @media screen and (min-width: 768px) and (max-width: 991px) {
 
     .discountInPercent {
-        font-family:Century Gothic;
+        font-family:"Century Gothic Regular";
         font-size: 48px;
         font-weight:bold;
         color: white;
         text-align: center;
     }
     .discountText{
-        font-family:Century Gothic;
+        font-family:"Century Gothic Regular";
         padding:0 0 4px 4px;
         font-size:12px;
         color: white;
@@ -74,7 +71,7 @@
 @media screen and (max-width: 575px) {
 
     .discountInPercent {
-        font-family:Century Gothic;
+        font-family:"Century Gothic Regular";
         font-size: 36px;
         font-weight:bold;
         color: white;
@@ -82,7 +79,7 @@
         height: auto;
     }
     .discountText{
-        font-family:Century Gothic;
+        font-family:"Century Gothic Regular";
         padding:0 9px;
         font-size:10px;
         color: white;

@@ -1,6 +1,7 @@
 @push('css')
     <link rel="stylesheet" href="{{asset('css/actions.css') }}">
     <link rel="stylesheet" href="{{asset('css/main-slider.css') }}">
+    <link rel="stylesheet" href="{{asset('css/our-services.css') }}">
 @endpush
 
 <div class="bd-example">
@@ -12,7 +13,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/images/3.jpg" class="d-block w-100" alt="1">
+                <img src="/images/main-slider-1.jpg" class="d-block w-100" alt="1">
                 <div class="carousel-caption d-none d-md-block text-left">
                     <div class="carousel-name-Paulownia">Paulownia</div>
                     <div class="carousel-professional">professional </div>
@@ -20,7 +21,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="/images/4.jpg" class="d-block w-100" alt="2">
+                <img src="/images/main-slider-2.jpg" class="d-block w-100" alt="2">
                 <div class="carousel-caption d-none d-md-block text-left">
                     <div class="carousel-name-Paulownia">Paulownia</div>
                     <div class="carousel-professional">professional </div>
@@ -28,7 +29,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="/images/5.jpg" class="d-block w-100" alt="3">
+                <img src="/images/main-slider-3.jpg" class="d-block w-100" alt="3">
                 <div class="carousel-caption d-none d-md-block text-left">
                     <div class="carousel-name-Paulownia">Paulownia</div>
                     <div class="carousel-professional">professional </div>
@@ -90,9 +91,21 @@
     </div>
 </div>
 
-<div class="our-services">
+
+    {{--<div class="main-title">Our services</div>--}}
+        {{--<div class="d-flex justify-content-center">--}}
+            {{--<div class="main-container">--}}
+                {{--<img class="img-left" src="images/our-services-1.jpg" alt="image" width="536px" height="318px">--}}
+                {{--<span class="main-text-container">--}}
+                {{--<div class="title-right">Sale of seedlings and paulownia trees</div>--}}
+                {{--<div class="text-right"> Sale of seedlings and paulownia trees, Sale of seedlings and paulownia trees--}}
+                    {{--Sale of seedlings and paulownia trees Sale of seedlings and paulownia trees...</div>--}}
+                {{--<a href="#">Read more</a>--}}
+                {{--</span>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
 
-</div>
+
 
 

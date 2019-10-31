@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{ asset('css/advantages.css') }}">
 @endpush
 
-<div class="row text-center mx-auto" style="max-width:1200px; background-color: black">
+<div class="row text-center mx-auto" style="max-width:1200px;">
     <div class="col-12 pb-4">
         <p class="advantages-title">Our advantages</p>
     </div>

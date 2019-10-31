@@ -31,7 +31,8 @@
 
         @include('public.main.header')
 
-    <main>
+    <main class="main-background">
+        <div style="height: 3938px"></div>
         @yield('content')
     </main>
 

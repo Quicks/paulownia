@@ -1,0 +1,146 @@
+@font-face {
+    font-family:Century Gothic;
+    src: url("../fonts/CenturyGothic.ttf");
+}
+.carousel-name-Paulownia{
+    height: auto;
+    font-family: Century Gothic;
+    font-size: 144px;
+    line-height: 78px;
+    color: #FFFFFF;
+}
+.carousel-professional{
+    padding: 0 0 58px 0;
+    font-family: Century Gothic;
+    font-size: 48px;
+    line-height: 2;
+    letter-spacing: 0.2em;
+    color: white;
+    height: auto;
+}
+.carousel-text{
+    padding: 0 0 36px 0;
+    width: 537px;
+    font-family: Century Gothic;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    height: auto;
+}
+
+
+/* Стили для больших экранов (дисплей шириной от 992 пикселей до 1199 пикселей) */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .carousel-name-Paulownia{
+        font-family: Century Gothic;
+        font-size: 114px;
+        line-height: 62.4px;
+        color: #FFFFFF;
+        height: auto;
+    }
+    .carousel-professional{
+        padding: 0 0 46.4px 0;
+        font-family: Century Gothic;
+        font-size: 38px;
+        line-height: 1.6;
+        letter-spacing: 0.16em;
+        color: white;
+        height: auto;
+    }
+    .carousel-text{
+        padding: 0 0 28.8px 0;
+        width: 430px;
+        font-family: Century Gothic;
+        font-size: 12.8px;
+        line-height: 16px;
+        color: #FFFFFF;
+        height: auto;
+    }
+}
+
+
+/* Стили для очень больших экранов (дисплей минимум 1200 пикселей) */
+/*@media (min-width: 1200px) { ... }*/
+
+
+
+/* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .carousel-name-Paulownia{
+        font-family: Century Gothic;
+        font-size: 86.4px;
+        line-height: 46.8px;
+        color: #FFFFFF;
+        height: auto;
+    }
+    .carousel-professional{
+        padding: 0 0 34.8px 0;
+        font-family: Century Gothic;
+        font-size: 28.8px;
+        line-height: 1.2;
+        letter-spacing: 0.12em;
+        color: white;
+        height: auto;
+    }
+    .carousel-text{
+        padding: 0 0 21.6px 0;
+        width: 322px;
+        font-family: Century Gothic;
+        font-size: 9.6px;
+        line-height: 12px;
+        color: #FFFFFF;
+        height: auto;
+    }
+}
+/* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
+@media screen and  (min-width: 576px) and (max-width: 767px) {
+    .carousel-name-Paulownia{
+        font-family: Century Gothic;
+        font-size: 38px;
+        line-height: 22px;
+        color: #FFFFFF;
+    }
+    .carousel-professional{
+        padding: 0 0 14px 0;
+        font-family: Century Gothic;
+        font-size: 5px;
+        line-height: 0.16;
+        letter-spacing: 0.016em;
+        color: white;
+    }
+    .carousel-text{
+        padding: 0 0 7.2px 0;
+        width: 114px;
+        font-family: Century Gothic;
+        font-size: 3.4px;
+        line-height: 4px;
+        color: #FFFFFF;
+    } }
+
+/* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
+@media screen and (max-width: 575px) {
+
+    .carousel-name-Paulownia{
+
+        font-family: Century Gothic;
+        font-size: 18px;
+        line-height: 8px;
+        color: #FFFFFF;
+    }
+    .carousel-professional{
+        padding: 0 0 6px 0;
+        font-family: Century Gothic;
+        font-size: 5px;
+        line-height: 0.08;
+        letter-spacing: 0.06em;
+        color: white;
+    }
+    .carousel-text{
+        padding: 0 0 4px 0;
+        width: 68px;
+        font-family: Century Gothic;
+        font-size: 1.6px;
+        line-height: 2px;
+        color: #FFFFFF;
+    }
+}

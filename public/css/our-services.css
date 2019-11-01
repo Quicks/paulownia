@@ -1,7 +1,6 @@
 .main-title{
     margin:54px;
     text-align: center;
-    font-family: "Century Gothic Regular";
     font-size: 48px;
     line-height: 59px;
     letter-spacing: 0.3em;
@@ -9,7 +8,7 @@
 }
 
 .main-container{
-    position: relative;
+
     width: 1192px;
     height: 377px;
     left: 350px;
@@ -39,23 +38,39 @@
 
 .img-left{
 
+    float: left;
     border-radius: 5px;
-    margin:30px;
-    width: 40%;
+    margin: 30px;
 }
 
 .main-text-container{
-    position: absolute;
+
+    width: 550px;
+    float: left;
+    height: auto;
 }
 
 .title-right{
 
-    font-family:"Century Gothic Regular";
+    margin: 100px auto 23px;
+    float: left;
     font-size: 18px;
-    line-height: 30px;
     letter-spacing: 0.02em;
     color: #8CBD02;
 }
+.text-position-right{
 
+    float: left;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+
+}
+
+.read-more {
+    color: #8CBD02;
+    font-size: 18px;
+    text-decoration: underline;
+}
 
 

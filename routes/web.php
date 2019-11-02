@@ -67,19 +67,22 @@ Route::group(['middleware' => ['web']], function () {
             Route::resource('certificates', 'App\Http\Controllers\Admin\\CertificatesController');
         });
     });
-        Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function () {
-            Route::get('/', 'App\Http\Controllers\MainController@index');
-            Route::get('/news', 'App\Http\Controllers\NewsController@index')->name('public.news.index');
-            Route::get('/news/{id}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');
-            Route::get('/articles', 'App\Http\Controllers\ArticlesController@index')->name('public.articles.index');
-            Route::get('/articles/{id}', 'App\Http\Controllers\ArticlesController@show')->name('public.articles.show');
-            Route::get('/galleries', 'App\Http\Controllers\GalleriesController@index')->name('public.galleries.index');
-            Route::get('/galleries/{id}', 'App\Http\Controllers\GalleriesController@show')->name('public.galleries.show');
-            Route::get('/partners', 'App\Http\Controllers\PartnersController@index')->name('public.partners.index');
-            Route::get('/partners/{id}', 'App\Http\Controllers\PartnersController@show')->name('public.partners.show');
-            Route::get('/treatises', 'App\Http\Controllers\TreatisesController@index')->name('public.treatises.index');
-            Route::get('/treatises/{id}', 'App\Http\Controllers\TreatisesController@show')->name('public.treatises.show');
-        });
+
+    Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function () {
+        Route::get('/', 'App\Http\Controllers\MainController@index');
+        Route::get('/news', 'App\Http\Controllers\NewsController@index')->name('public.news.index');
+        Route::get('/news/{id}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');
+        Route::get('/articles', 'App\Http\Controllers\ArticlesController@index')->name('public.articles.index');
+        Route::get('/articles/{id}', 'App\Http\Controllers\ArticlesController@show')->name('public.articles.show');
+        Route::get('/galleries', 'App\Http\Controllers\GalleriesController@index')->name('public.galleries.index');
+        Route::get('/galleries/{id}', 'App\Http\Controllers\GalleriesController@show')->name('public.galleries.show');
+        Route::get('/partners', 'App\Http\Controllers\PartnersController@index')->name('public.partners.index');
+        Route::get('/partners/{id}', 'App\Http\Controllers\PartnersController@show')->name('public.partners.show');
+        Route::get('/treatises', 'App\Http\Controllers\TreatisesController@index')->name('public.treatises.index');
+        Route::get('/treatises/{id}', 'App\Http\Controllers\TreatisesController@show')->name('public.treatises.show');
+    });
+
+    Route::get('/certificate/{code}', 'App\Http\Controllers\CertificateController')->name('certificate');
 
 });
 

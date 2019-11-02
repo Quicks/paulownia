@@ -10,7 +10,7 @@
                     <div class="card-header">Certificates</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/certificates/create') }}" class="btn btn-success btn-sm" title="Add New Certificate">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                            <i class="fa fa-plus" aria-hidden="true"></i> Add new request for certificate
                         </a>
 
                         <form method="GET" action="{{ url('/admin/certificates') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
@@ -35,17 +35,20 @@
                                 </thead>
                                 <tbody>
                                 @foreach($certificates as $item)
-                                    <tr>
+                                    <tr @if($item->active) class="table-success" @endif>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->name }}</td><td>{{ $item->active }}</td><td>{{ $item->string1 }}</td>
                                         <td>
                                             <a href="{{ url('/admin/certificates/' . $item->id) }}" title="View Certificate"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/admin/certificates/' . $item->id . '/edit') }}" title="Edit Certificate"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-
-                                            <form method="POST" action="{{ url('/admin/certificates' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Certificate" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                            @if(bouncer()->hasPermission('certificates.update'))
+                                                <a href="{{ url('/admin/certificates/' . $item->id . '/edit') }}" title="Edit and Activate Certificate"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit and Activate</button></a>
+                                            @endif
+                                            @if(bouncer()->hasPermission('certificates.destroy'))
+                                                <form method="POST" action="{{ url('/admin/certificates' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                    {{ method_field('DELETE') }}
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete Certificate" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                            @endif
                                             </form>
                                         </td>
                                     </tr>

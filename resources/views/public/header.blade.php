@@ -43,12 +43,12 @@
                         <div class="col-xl-9">
                             <ul class="navbar-nav bottom-link ">
                                 <li class="nav-item">
-                                    <a class="{{Request::url() === route('main')  ? "bottom-link-activ" : ""}}" href="{{route('main')}}">
+                                    <a class="{{url()->current() === route('main')  ? "bottom-link-activ" : ""}}" href="{{route('main')}}">
                                         Main
                                     </a>
                                 </li>
                                 <li class="nav-item ml-xl-5">
-                                    <a class="{{Request::url() === route('public.news.index') ? "bottom-link-activ" : ""}}" href="{{route('public.news.index')}}">
+                                    <a class="{{url()->current() === route('public.news.index') ? "bottom-link-activ" : ""}}" href="{{route('public.news.index')}}">
                                         News
                                     </a>
                                 </li>
@@ -68,7 +68,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item ml-xl-5">
-                                    <a class="{{Request::url() === route('public.galleries.index') ? "bottom-link-activ" : ""}}" href="{{route('public.galleries.index')}}">
+                                    <a class="{{url()->current() === route('public.galleries.index') ? "bottom-link-activ" : ""}}" href="{{route('public.galleries.index')}}">
                                         Gallery
                                     </a>
                                 </li>

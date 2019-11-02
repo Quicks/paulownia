@@ -67,7 +67,7 @@ Route::group(['middleware' => ['web']], function () {
         });
     });
         Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function () {
-            Route::get('/', 'App\Http\Controllers\MainController@index');
+            Route::get('/', 'App\Http\Controllers\MainController@index')->name('main');
             Route::get('/news', 'App\Http\Controllers\NewsController@index')->name('public.news.index');
             Route::get('/news/{id}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');
             Route::get('/articles', 'App\Http\Controllers\ArticlesController@index')->name('public.articles.index');

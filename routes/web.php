@@ -64,7 +64,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::delete('/file_del/{fileId}', 'App\Http\Controllers\Admin\FilesController@delete');
             Route::get('/images', 'App\Http\Controllers\Admin\ImageController@index')->name('images.index');
             Route::post('/translate', 'App\Http\Controllers\Admin\TranslateController@translate')->name('translate');
-            Route::resource('certificate', 'App\Http\Controllers\Admin\CertificateController');
+            Route::resource('certificates', 'App\Http\Controllers\Admin\\CertificatesController');
         });
     });
         Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function () {
@@ -82,6 +82,4 @@ Route::group(['middleware' => ['web']], function () {
         });
 
 });
-
-
 

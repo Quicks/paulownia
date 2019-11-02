@@ -21,6 +21,10 @@
             "type": "string"
         },
         {
+            "name": "text",
+            "type": "text"
+        },
+        {
             "name": "date",
             "type": "date"
         }

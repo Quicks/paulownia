@@ -120,10 +120,10 @@
                 </a>
             </li>
         @endif
-        @if(bouncer()->hasPermission('certificate'))
+        @if(bouncer()->hasPermission('certificates'))
             <li>
-                <a class="{{Request::is('admin/certificate*') ? "custom-admin-sidebar-a-active" : ""}}"
-                   href="{{route('certificate.index')}}">
+                <a class="{{Request::is('admin/certificates*') ? "custom-admin-sidebar-a-active" : ""}}"
+                   href="{{route('certificates.index')}}">
                     <i class="fa fa-certificate fa-3x"></i><span>Certificates</span>
                 </a>
             </li>

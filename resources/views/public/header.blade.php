@@ -6,7 +6,7 @@
                     <img src="{{asset('images/logo.png')}}">
                 </a>
             </div>
-            <div class="col-xl-9 col-md-6 col-sm-6 mt-md-3 mt-sm-3">
+            <div class="col-xl-9 col-md-6 mt-md-3 mt-sm-3">
                 <nav class="navbar navbar-expand-xl navbar-light">
                     <div id="all-pages" class="navbar-collapse collapse row">
                         <div class="col-xl-9">
@@ -41,66 +41,66 @@
                             </div>
                         </div>
                         <div class="col-xl-9">
-                            <ul class="navbar-nav bottom-link ">
-                                <li class="nav-item">
-                                    <a class="{{url()->current() === route('main')  ? "bottom-link-activ" : ""}}" href="{{route('main')}}">
+                            <ul class="navbar-nav bottom-link" style="flex-wrap: wrap;">
+                                <li class="nav-item  mr-xl-5">
+                                    <a @if(url()->current() === route('main')) class="bottom-link-activ" @endif href="{{route('main')}}">
                                         Main
                                     </a>
                                 </li>
-                                <li class="nav-item ml-xl-5">
-                                    <a class="{{url()->current() === route('public.news.index') ? "bottom-link-activ" : ""}}" href="{{route('public.news.index')}}">
+                                <li class="nav-item mr-xl-5">
+                                    <a @if(url()->current() === route('public.news.index')) class="bottom-link-activ" @endif href="{{route('public.news.index')}}">
                                         News
                                     </a>
                                 </li>
-                                <li class="nav-item ml-xl-5">
-                                    <a class="{{Request::is('') ? "bottom-link-activ" : ""}}" href="#">
+                                <li class="nav-item mr-xl-5">
+                                    <a {{--@if(url()->current() === route('route-name')) class="bottom-link-activ" @endif --}}href="#">
                                         Paulownia
                                     </a>
                                 </li>
-                                <li class="nav-item ml-xl-5">
-                                    <a class="{{Request::is('') ? "bottom-link-activ" : ""}}" href="#">
+                                <li class="nav-item mr-xl-5">
+                                    <a {{--@if(url()->current() === route('route-name')) class="bottom-link-activ" @endif --}} href="#">
                                         Goods
                                     </a>
                                 </li>
-                                <li class="nav-item ml-xl-4">
-                                    <a class="{{Request::is('') ? "bottom-link-activ" : ""}}" href="#">
+                                <li class="nav-item mr-xl-4">
+                                    <a {{--@if(url()->current() === route('route-name')) class="bottom-link-activ" @endif --}} href="#">
                                         Profitability calculation
                                     </a>
                                 </li>
-                                <li class="nav-item ml-xl-5">
-                                    <a class="{{url()->current() === route('public.galleries.index') ? "bottom-link-activ" : ""}}" href="{{route('public.galleries.index')}}">
+                                <li class="nav-item mr-xl-5">
+                                    <a @if(url()->current() === route('public.galleries.index')) class="bottom-link-activ" @endif href="{{route('public.galleries.index')}}">
                                         Gallery
                                     </a>
                                 </li>
-                                <li class="nav-item ml-xl-5">
-                                    <a class="{{Request::is('') ? "bottom-link-activ" : ""}}" href="#">
+                                <li class="nav-item mr-xl-5">
+                                    <a {{--@if(url()->current() === route('route-name')) class="bottom-link-activ" @endif --}} href="#">
                                         FAQ
                                     </a>
                                 </li>
-                                <li class="nav-item ml-xl-5">
-                                    <a class="{{Request::is('') ? "bottom-link-activ" : ""}}" href="#">
+                                <li class="nav-item mr-xl-5">
+                                    <a {{--@if(url()->current() === route('route-name')) class="bottom-link-activ" @endif --}} href="#">
                                         About us
                                     </a>
                                 </li>
-                                <li class="nav-item ml-xl-5">
-                                    <a class="{{Request::is('') ? "bottom-link-activ" : ""}}" href="#">
+                                <li class="nav-item">
+                                    <a {{--@if(url()->current() === route('route-name')) class="bottom-link-activ" @endif --}}href="#">
                                         Contacts
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-xl-3">
-                            <ul class="list-inline">
-                                <li class="list-inline-item ml-xl-5">
+                            <ul class="navbar-nav">
+                                <li class="nav-item ml-xl-5">
                                     <img src="{{asset('images/line.svg')}}">
                                 </li>
-                                <li class="list-inline-item ml-3">
+                                <li class="nav-item ml-xl-3">
                                     <a href="#"><img src="{{asset('images/user.svg')}}"></a>
                                 </li>
-                                <li class="list-inline-item ml-3">
+                                <li class="nav-item ml-xl-3">
                                     <a href="#"><img src="{{asset('images/shopping-cart.svg')}}"></a>
                                 </li>
-                                <li class="list-inline-item ml-3">
+                                <li class="nav-item ml-xl-3">
                                     <a href="#"><img src="{{asset('images/favorite-heart-button.svg')}}"></a>
                                 </li>
                             </ul>

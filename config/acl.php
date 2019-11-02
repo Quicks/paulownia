@@ -154,24 +154,24 @@ return [
     ],
 
         [
-        'key' => 'certificate',
-        'name' => 'Certificate',
-        'route' => 'certificate.index',
+        'key' => 'certificates',
+        'name' => 'Certificates',
+        'route' => 'certificates.index',
         'sort' => 1
     ], [
-        'key' => 'certificate.add',
+        'key' => 'certificates.add',
         'name' => 'Add Request for certificate',
-        'route' => 'certificate.store',
+        'route' => 'certificates.store',
         'sort' => 1
     ], [
-        'key' => 'certificate.update',
+        'key' => 'certificates.update',
         'name' => 'Edit request and create certificate',
-        'route' => 'certificate.update',
+        'route' => 'certificates.update',
         'sort' => 2
     ], [
-        'key' => 'certificate.destroy',
+        'key' => 'certificates.destroy',
         'name' => 'Delete certificate',
-        'route' => 'certificate.destroy',
+        'route' => 'certificates.destroy',
         'sort' => 3
     ],
 

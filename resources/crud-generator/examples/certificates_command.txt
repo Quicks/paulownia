@@ -1,1 +1,1 @@
-php artisan crud:generate Certificates --fields_from_file="d:\OwnDoc\PRG\docker-php\www\paulownia\resources\crud-generator\certificates_fields.json " --view-path=admin --controller-namespace=Admin --route-group=admin --form-helper=html
+php artisan crud:generate Certificates --fields_from_file="c:\docker\www\paulownia\resources\crud-generator\examples\certificates_fields.json" --view-path=admin --controller-namespace=Admin --route-group=admin --form-helper=html

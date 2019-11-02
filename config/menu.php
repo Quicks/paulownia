@@ -51,9 +51,9 @@ return [
             'sort' => 1,
             'icon-class' => 'fa fa-user-plus fa-3x',
         ], [
-            'key' => 'certificate',
+            'key' => 'certificates',
             'name' => 'Certificates',
-            'route' => 'certificate.index',
+            'route' => 'certificates.index',
             'sort' => 98,
             'icon-class' => 'fa fa-certificate fa-3x',
         ], [

@@ -1,0 +1,25 @@
+.header {
+    background-color: #FFFFFF;
+    font-family: Century Gothic Regular;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+.header-content {
+    max-width: 1720px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #000000;
+}
+.bottom-link-activ {
+    color: #8CBD02 !important;
+    font-family: Century Gothic Bold;
+}
+
+.button-language {
+    border: none;
+    background-color: #FFFFFF;
+    text-transform: uppercase;
+}

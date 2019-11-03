@@ -120,6 +120,14 @@
                 </a>
             </li>
         @endif
+        @if(bouncer()->hasPermission('certificates'))
+            <li>
+                <a class="{{Request::is('admin/certificates*') ? "custom-admin-sidebar-a-active" : ""}}"
+                   href="{{route('certificates.index')}}">
+                    <i class="fa fa-certificate fa-3x"></i><span>Certificates</span>
+                </a>
+            </li>
+        @endif
         @if(bouncer()->hasPermission('tracking'))
             <li>
                 <a class="{{Request::is('stats*') ? "custom-admin-sidebar-a-active" : ""}}"

@@ -28,19 +28,47 @@
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <th>ID</th><td>{{ $certificate->id }}</td>
+                                        <th>ID</th>
+                                        <td>{{ $certificate->id }}</td>
                                     </tr>
-                                    <tr><th> Name </th><td> {{ $certificate->name }} </td></tr><tr><th> Active </th><td> {{ $certificate->active }} </td></tr><tr><th> String1 </th><td> {{ $certificate->string1 }} </td></tr>
-                                    <th> String2 </th><td> {{ $certificate->string2 }} </td></tr>
-                                    <th> String3 </th><td> {{ $certificate->string3 }} </td></tr>
-                                    <th> Text </th><td> {{ $certificate->text }} </td></tr>
-                                    <th> QR code link </th>
-                                        <td> 
-                                            <a href="{{$certificate->qrCode}}">
-                                                {{$certificate->qrCode}}
-                                            </a>
-                                        </td>
+                                    <tr>
+                                        <th> Name </th>
+                                        <td> {{ $certificate->name }} </td>
                                     </tr>
+                                    <tr>
+                                        <th> Active </th>
+                                        <td> {{ $certificate->active }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> String1 </th>
+                                        <td> {{ $certificate->string1 }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> String2 </th>
+                                        <td> {{ $certificate->string2 }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> String3 </th>
+                                        <td> {{ $certificate->string3 }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Text </th>
+                                        <td> {{ $certificate->text }} </td>
+                                    </tr>
+                                    @if($certificate->active)
+                                        <tr>
+                                            <th> QR code link </th>
+                                            <td> 
+                                                <a href="{{$certificate->qrCodeLink}}">
+                                                    {{$certificate->qrCodeLink}}
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th> QR code image </th>
+                                            <td><img src="{{asset('storage/'.$certificate->qrCodeImage)}}"></td>
+                                        </tr>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

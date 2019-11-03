@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Models\Certificate;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Support\Facades\Storage;
 
 class CertificatesController extends Controller
 {
@@ -79,8 +81,7 @@ class CertificatesController extends Controller
     public function show($id)
     {
         $certificate = Certificate::findOrFail($id);
-        $qrCode = $certificate->qrCode;
-        return view('admin.certificates.show', compact('certificate', 'qrCode'));
+        return view('admin.certificates.show', compact('certificate'));
     }
 
     /**
@@ -120,6 +121,12 @@ class CertificatesController extends Controller
         $certificate = Certificate::findOrFail($id);
         $certificate->update($requestData);
 
+        if($certificate->active && $certificate->wasChanged('active')) {
+            $qrImage = QrCode::format('png')->size(500)
+                 ->generate($certificate->qrCodeLink);
+            Storage::put('/qr-codes/'.$certificate->qrCode.'.png', $qrImage);
+        }
+
         return redirect('admin/certificates')->with('flash_message', 'Certificate updated!');
     }
 
@@ -132,8 +139,9 @@ class CertificatesController extends Controller
      */
     public function destroy($id)
     {
+        $certificate = Certificate::findOrFail($id);
+        Storage::delete($certificate->qrCodeImage);
         Certificate::destroy($id);
-
         return redirect('admin/certificates')->with('flash_message', 'Certificate deleted!');
     }
 }

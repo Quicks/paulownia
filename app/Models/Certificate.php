@@ -28,14 +28,15 @@ class Certificate extends Model
      */
     protected $fillable = ['name', 'active', 'string1', 'string2', 'string3', 'text', 'date'];
 
-    public function getQrCodeAttribute()
-    {
-        if($this->active) {
-            $qrCode = route('certificate', 
-                Carbon::parse($this->created_at)->timestamp + $this->id);
-        } else {
-            $qrCode = null;
-        }
-        return $qrCode;
+    public function getQrCodeAttribute() {
+        return Carbon::parse($this->created_at)->timestamp ."-". $this->id;
+    }
+
+    public function getQrCodeLinkAttribute() {
+        return route('certificate', $this->getQrCodeAttribute());
+    }
+
+    public function getQrCodeImageAttribute() {
+        return 'qr-codes/'.$this->getQrCodeAttribute().'.png';
     }
 }

@@ -14,11 +14,13 @@ class CertificateController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request, $code)
-    {
-        $id = explode("-", $code)[1];
-        $certificate = Certificate::find($id);
-        if($certificate && $certificate->active) {
-            return view('public.certificate.show', compact('certificate'));
+    {   
+        if (strpos($code,"-")) {
+            $id = explode("-", $code)[1];
+            $certificate = Certificate::find($id);
+            if($certificate && $certificate->active && $certificate->qrCode == $code) {
+                return view('public.certificate.show', compact('certificate'));
+            }
         }
         return "Such certificate does not exist.";
     }

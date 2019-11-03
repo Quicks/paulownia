@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Certificate;
 use Illuminate\Http\Request;
+use App\Models\Certificate;
 
 class CertificatesController extends Controller
 {
@@ -79,8 +79,8 @@ class CertificatesController extends Controller
     public function show($id)
     {
         $certificate = Certificate::findOrFail($id);
-
-        return view('admin.certificates.show', compact('certificate'));
+        $qrCode = $certificate->qrCode;
+        return view('admin.certificates.show', compact('certificate', 'qrCode'));
     }
 
     /**

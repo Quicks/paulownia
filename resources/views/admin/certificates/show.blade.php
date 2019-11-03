@@ -31,6 +31,16 @@
                                         <th>ID</th><td>{{ $certificate->id }}</td>
                                     </tr>
                                     <tr><th> Name </th><td> {{ $certificate->name }} </td></tr><tr><th> Active </th><td> {{ $certificate->active }} </td></tr><tr><th> String1 </th><td> {{ $certificate->string1 }} </td></tr>
+                                    <th> String2 </th><td> {{ $certificate->string2 }} </td></tr>
+                                    <th> String3 </th><td> {{ $certificate->string3 }} </td></tr>
+                                    <th> Text </th><td> {{ $certificate->text }} </td></tr>
+                                    <th> QR code link </th>
+                                        <td> 
+                                            <a href="{{$certificate->qrCode}}">
+                                                {{$certificate->qrCode}}
+                                            </a>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

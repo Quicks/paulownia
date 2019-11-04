@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{ asset('css/varieties.css') }}">
 @endpush
 
-<div class="row text-center mx-auto pt-xl-5" style="max-width:1200px;">
+<div class="row text-center mx-auto pt-xl-5 pb-xl-5" style="max-width:1200px;">
     <div class="col-12 mb-5">
         <p class="varieties-title">New varieties develop by us</p>
     </div>

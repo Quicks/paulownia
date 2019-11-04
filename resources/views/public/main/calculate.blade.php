@@ -8,7 +8,7 @@
     </div>
     <div class="col-xl-3">
         <select class="calc-select" id="view" name="view" onchange="getValueView()">
-            <option selected disabled>View of paulowna</option>
+            <option selected disabled hidden>View of paulowna</option>
             <option value="ZE">Paulownia ZE PRO®</option>
             <option value="TURBO">Paulownia TURBO PRO®</option>
             <option value="ShanTong">Paulownia ShanTong</option>
@@ -17,7 +17,7 @@
     </div>
     <div class="col-xl-3">
         <select class="calc-select" id="fitForm" name="fitForm">
-            <option selected disabled>Fit form</option>
+            <option id="fitFormSelected" selected disabled hidden>Fit form</option>
             <option id="form5*4" style="display: none" value="5*4">5x4 m</option>
             <option id="form5*5" style="display: none" value="5*5">5x5 m</option>
             <option id="form6*5" style="display: none" value="6*5">6x5 m</option>
@@ -74,6 +74,10 @@
                 formOption4.style.display = "block";
             }
         }
+        viewTree.addEventListener('click', function () {
+            let fitFormSelected = document.getElementById('fitFormSelected');
+            fitFormSelected.selected = true;
+        });
         function calculateGrowth() {
             let calcResult = document.getElementById('calcResult');
             let result;

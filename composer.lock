@@ -1981,9 +1981,9 @@
             "authors": [
                 {
                     "name": "Jeremy Lindblom",
-                    "role": "Developer",
                     "email": "jeremeamia@gmail.com",
-                    "homepage": "https://github.com/jeremeamia"
+                    "homepage": "https://github.com/jeremeamia",
+                    "role": "Developer"
                 }
             ],
             "description": "Serialize Closure objects, including their context and binding",
@@ -4209,8 +4209,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
@@ -4611,22 +4611,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/antonioribeiro/tracker.git",
-                "reference": "e1ec4926402958bdad565a61b65457238536aa12"
+                "reference": "76e8e7fa058c6b1c15fea4b2ffa5169ae087d6f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antonioribeiro/tracker/zipball/e1ec4926402958bdad565a61b65457238536aa12",
-                "reference": "e1ec4926402958bdad565a61b65457238536aa12",
+                "url": "https://api.github.com/repos/antonioribeiro/tracker/zipball/76e8e7fa058c6b1c15fea4b2ffa5169ae087d6f7",
+                "reference": "76e8e7fa058c6b1c15fea4b2ffa5169ae087d6f7",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "^2.6",
                 "jaybizzle/crawler-detect": "~1.0",
                 "jenssegers/agent": "~2.1",
-                "laravel/framework": "~4|~5",
+                "laravel/framework": "~4|~5|~6",
                 "php": ">=5.3.7",
-                "pragmarx/datatables": "1.4.11",
-                "pragmarx/support": "~0.6|~0.7",
+                "pragmarx/datatables": "^1.4.12",
+                "pragmarx/support": "~0.6|~0.7|~0.8|~0.9",
                 "psr/log": "~1.0",
                 "ramsey/uuid": "~3",
                 "snowplow/referer-parser": "~0.1",

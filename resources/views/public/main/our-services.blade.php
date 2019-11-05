@@ -8,6 +8,7 @@
             <div class="row">
                 <div class="col">
                     <div class="main-container">
+
                          <img class="img-left" src="images/our-services-1.jpg" alt="image" width="536px" height="318px">
                             <span class="main-text-container-right">
                                  <div class="title-right">Sale of seedlings and paulownia trees</div>
@@ -16,6 +17,7 @@
                                         <a class="read-more-right"href="#">Read more</a>
                                     </div>
                             </span>
+
                     </div>
                 </div>
             </div>

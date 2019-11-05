@@ -20,5 +20,6 @@
     font-family: Century Gothic Regular;
 }
 .main-background {
-    background:url('/images/main-background.jpg') no-repeat;
+    /*background:url('/images/main-background.jpg') no-repeat;*/
+    background: grey;
 }

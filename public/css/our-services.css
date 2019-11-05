@@ -10,7 +10,9 @@
 .container-width{
 
     margin-top: 50px;
+    overflow-x:hidden;
 }
+
 .main-container{
 
     width: 1192px;
@@ -25,6 +27,8 @@
     float: left;
     border-radius: 5px;
     margin: 30px;
+    /*width: initial;*/
+    /*height: -webkit-fill-available;*/
 }
 
 .main-text-container-right{
@@ -81,6 +85,7 @@
     color: #8CBD02;
 
 }
+
 .text-position-left{
 
     float: left;
@@ -96,5 +101,209 @@
     text-decoration: underline;
 }
 
+/* Стили для больших экранов (дисплей шириной от 992 пикселей до 1199 пикселей) */
+@media screen and (min-width: 992px) and (max-width: 1299px) {
 
+
+    .container-width{
+
+        margin-top: 30px;
+    }
+
+    .main-container{
+
+        width: 1002px;
+        height: 320px;
+        border-radius: 5px;
+    }
+
+    .img-left{
+
+        float: left;
+        border-radius: 5px;
+        margin: 30px;
+        width: 45%;
+        height: 80%;
+
+    }
+
+    .main-text-container-right{
+
+        width: 450px;
+        float: left;
+        height: auto;
+    }
+
+    .title-right{
+
+        margin: 60px auto 23px;
+        float: left;
+        font-size: 18px;
+        letter-spacing: 0.02em;
+        color: #8CBD02;
+    }
+    .text-position-right{
+
+        float: left;
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: 0.02em;
+
+    }
+
+    .read-more-right {
+        color: #8CBD02;
+        font-size: 18px;
+        text-decoration: underline;
+    }
+
+    .img-right{
+        width: 45%;
+        height: 80%;
+        float: right;
+        border-radius: 5px;
+        margin: 30px;
+
+    }
+
+    .main-text-container-left{
+
+        width: 450px;
+        float: right;
+        height: auto;
+    }
+
+    .title-left{
+
+        margin: 60px auto 23px;
+        float: left;
+        font-size: 18px;
+        letter-spacing: 0.02em;
+        color: #8CBD02;
+
+    }
+
+    .text-position-left{
+
+        float: left;
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: 0.02em;
+
+    }
+
+    .read-more-left {
+        color: #8CBD02;
+        font-size: 18px;
+        text-decoration: underline;
+    }
+}
+
+/* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    .container-width{
+
+        margin-top: 30px;
+    }
+
+    .main-container{
+
+        width: 692px;
+        height: 280px;
+        border-radius: 5px;
+    }
+
+    .img-left{
+
+        float: left;
+        border-radius: 5px;
+        margin: 30px;
+        width: 45%;
+        height: 80%;
+
+    }
+
+    .main-text-container-right{
+
+        width: 450px;
+        float: left;
+        height: auto;
+    }
+
+    .title-right{
+
+        margin: 60px auto 23px;
+        float: left;
+        font-size: 18px;
+        letter-spacing: 0.02em;
+        color: #8CBD02;
+    }
+    .text-position-right{
+
+        float: left;
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: 0.02em;
+
+    }
+
+    .read-more-right {
+        color: #8CBD02;
+        font-size: 18px;
+        text-decoration: underline;
+    }
+
+    .img-right{
+        width: 45%;
+        height: 80%;
+        float: right;
+        border-radius: 5px;
+        margin: 30px;
+
+    }
+
+    .main-text-container-left{
+
+        width: 450px;
+        float: right;
+        height: auto;
+    }
+
+    .title-left{
+
+        margin: 60px auto 23px;
+        float: left;
+        font-size: 18px;
+        letter-spacing: 0.02em;
+        color: #8CBD02;
+
+    }
+
+    .text-position-left{
+
+        float: left;
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: 0.02em;
+
+    }
+
+    .read-more-left {
+        color: #8CBD02;
+        font-size: 18px;
+        text-decoration: underline;
+    }
+
+
+}
+/* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
+@media screen and  (min-width: 576px) and (max-width: 767px) {
+
+}
+
+/* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
+@media screen and (max-width: 575px) {
+
+}
 

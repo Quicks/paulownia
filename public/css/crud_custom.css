@@ -8,11 +8,14 @@
     .fa-2x {
         font-size: 1.5em;
     }
+    .custom-admin-sidebar {
+        width: 60px !important;
+    }
     .custom-admin-sidebar ul li {
         padding: 0 5px !important;
     }
     .custom-admin-sidebar ul li a p {
-        font-size: 0.9em;
+        font-size: 0.6em;
         display: block;
         text-align: center;
         margin-bottom: 5px;

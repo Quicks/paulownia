@@ -14,7 +14,6 @@
     <meta http-equiv="content-language" content="{{ app()->getLocale() }}">
     <link rel="stylesheet" href="{{ bagisto_asset('css/shop.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/cookie_consent.css') }}">
 
     @if ($favicon = core()->getCurrentChannel()->favicon_url)
         <link rel="icon" sizes="16x16" href="{{ $favicon }}" />
@@ -112,7 +111,6 @@
     {!! view_render_event('bagisto.shop.layout.body.after') !!}
 
     <div class="modal-overlay"></div>
-    @include('cookieConsent::index')
 </body>
 
 </html>

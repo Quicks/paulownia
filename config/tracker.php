@@ -41,6 +41,8 @@ return [
      */
     'do_not_track_paths' => [
         'api/*',
+        'js/*',
+        'css/*',
     ],
 
     /*

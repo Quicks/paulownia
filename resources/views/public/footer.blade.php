@@ -21,7 +21,7 @@
                 <li><a href="{{route('public.calculations.index')}}">Profitability calculation</a></li>
                 <li><a href="{{route('public.galleries.index')}}">Gallery</a></li>
                 <li><a href="{{route('public.faq.index')}}">FAQ</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="{{route('public.about-us.index')}}">About Us</a></li>
             </ul>
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">

@@ -84,6 +84,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/faq', 'App\Http\Controllers\FAQController@index')->name('public.faq.index');
         Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('public.products.index');
         Route::get('/contacts', 'App\Http\Controllers\ContactsController@index')->name('public.contacts.index');
+        Route::get('/about-us', 'App\Http\Controllers\AboutUsController@index')->name('public.about-us.index');
     });
 
     Route::get('/certificate/{code}', 'App\Http\Controllers\CertificateController')->name('certificate');

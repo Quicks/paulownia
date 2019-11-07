@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="{{asset('css/actions.css') }}">
+@push('css')
+    <link rel="stylesheet" href="{{asset('css/actions.css') }}">
+@endpush
 
 <div class="mainAction">
     <div class="row">

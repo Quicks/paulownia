@@ -22,4 +22,8 @@
 .main-background {
     /*background:url('/images/main-background.jpg') no-repeat;*/
     background: grey;
+    /*!*min-height: ;*!*/
+    /*position: fixed; !* Фиксированное положение *!*/
+    /*left: 0; bottom: 0; !* Левый нижний угол *!*/
+    /*width: 100%; !* Ширина слоя *!*/
 }

@@ -78,6 +78,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('/partners/{id}', 'App\Http\Controllers\PartnersController@show')->name('public.partners.show');
             Route::get('/treatises', 'App\Http\Controllers\TreatisesController@index')->name('public.treatises.index');
             Route::get('/treatises/{id}', 'App\Http\Controllers\TreatisesController@show')->name('public.treatises.show');
+            Route::get('/about-us', 'App\Http\Controllers\AboutUsController@index')->name('public.about-us.index');
         });
 
 });

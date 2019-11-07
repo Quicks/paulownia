@@ -81,7 +81,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item ml-xl-5">
-                                        <a class="{{Request::is('') ? "bottom-link-activ" : ""}}" href="#">
+                                        <a class="{{Request::is('/about-us') ? "bottom-link-activ" : ""}}" href="{{route('public.about-us.index')}}">
                                             About us
                                         </a>
                                     </li>

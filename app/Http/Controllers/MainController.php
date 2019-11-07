@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Webkul\Shop\Http\Controllers\Controller;
+use Webkul\Core\Repositories\SliderRepository;
 
 class MainController extends Controller
 {
-    public function index()
+    public function index(SliderRepository $sliderRepository)
     {
-        return view('public.main.index');
+        $currentChannel = core()->getCurrentChannel();
+        $sliderData = $sliderRepository->findByField('channel_id', $currentChannel->id)->toArray();
+
+        return view('public.main.index', compact('sliderData'));
+
     }
 }

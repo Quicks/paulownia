@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94ea555373931d538480767c026cf7d6",
+    "content-hash": "82c46cf0202aaa7637219b9cd78db9b7",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -71,6 +71,52 @@
                 "webmaster"
             ],
             "time": "2018-04-19T20:48:13+00:00"
+        },
+        {
+            "name": "bacon/bacon-qr-code",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Bacon/BaconQrCode.git",
+                "reference": "5a91b62b9d37cee635bbf8d553f4546057250bee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/5a91b62b9d37cee635bbf8d553f4546057250bee",
+                "reference": "5a91b62b9d37cee635bbf8d553f4546057250bee",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "php": "^5.4|^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "suggest": {
+                "ext-gd": "to generate QR code images"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "BaconQrCode": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Scholzen 'DASPRiD'",
+                    "email": "mail@dasprids.de",
+                    "homepage": "http://www.dasprids.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "BaconQrCode is a QR code generator for PHP.",
+            "homepage": "https://github.com/Bacon/BaconQrCode",
+            "time": "2017-10-17T09:59:25+00:00"
         },
         {
             "name": "barryvdh/laravel-dompdf",
@@ -4565,22 +4611,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/antonioribeiro/tracker.git",
-                "reference": "e1ec4926402958bdad565a61b65457238536aa12"
+                "reference": "76e8e7fa058c6b1c15fea4b2ffa5169ae087d6f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antonioribeiro/tracker/zipball/e1ec4926402958bdad565a61b65457238536aa12",
-                "reference": "e1ec4926402958bdad565a61b65457238536aa12",
+                "url": "https://api.github.com/repos/antonioribeiro/tracker/zipball/76e8e7fa058c6b1c15fea4b2ffa5169ae087d6f7",
+                "reference": "76e8e7fa058c6b1c15fea4b2ffa5169ae087d6f7",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "^2.6",
                 "jaybizzle/crawler-detect": "~1.0",
                 "jenssegers/agent": "~2.1",
-                "laravel/framework": "~4|~5",
+                "laravel/framework": "~4|~5|~6",
                 "php": ">=5.3.7",
-                "pragmarx/datatables": "1.4.11",
-                "pragmarx/support": "~0.6|~0.7",
+                "pragmarx/datatables": "^1.4.12",
+                "pragmarx/support": "~0.6|~0.7|~0.8|~0.9",
                 "psr/log": "~1.0",
                 "ramsey/uuid": "~3",
                 "snowplow/referer-parser": "~0.1",
@@ -5828,6 +5874,67 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2016-10-03T07:35:21+00:00"
+        },
+        {
+            "name": "simplesoftwareio/simple-qrcode",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SimpleSoftwareIO/simple-qrcode.git",
+                "reference": "34ec68e84d0d430ed40a09416d80c0abd9de7321"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SimpleSoftwareIO/simple-qrcode/zipball/34ec68e84d0d430ed40a09416d80c0abd9de7321",
+                "reference": "34ec68e84d0d430ed40a09416d80c0abd9de7321",
+                "shasum": ""
+            },
+            "require": {
+                "bacon/bacon-qr-code": "1.0.*",
+                "ext-gd": "*",
+                "illuminate/support": ">=5.0.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "~6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider"
+                    ],
+                    "aliases": {
+                        "QrCode": "SimpleSoftwareIO\\QrCode\\Facades\\QrCode"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "SimpleSoftwareIO\\QrCode\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simple Software LLC",
+                    "email": "support@simplesoftware.io"
+                }
+            ],
+            "description": "Simple QrCode is a QR code generator made for Laravel.",
+            "homepage": "http://www.simplesoftware.io",
+            "keywords": [
+                "Simple",
+                "generator",
+                "laravel",
+                "qrcode",
+                "wrapper"
+            ],
+            "time": "2019-06-20T00:42:23+00:00"
         },
         {
             "name": "snowplow/referer-parser",
@@ -12421,6 +12528,7 @@
         "google/cloud-translate": 20,
         "phpoffice/phpword": 20,
         "pragmarx/tracker": 20,
+        "simplesoftwareio/simple-qrcode": 20,
         "tymon/jwt-auth": 20,
         "zendframework/zendframework": 20,
         "appzcoder/crud-generator": 20

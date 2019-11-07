@@ -34,6 +34,7 @@
         "phpoffice/phpword": "dev-master",
         "pragmarx/tracker": "^2.1@dev",
         "prettus/l5-repository": "2.6.32",
+        "simplesoftwareio/simple-qrcode": "dev-master",
         "spatie/laravel-cookie-consent": "^2.6",
         "tymon/jwt-auth": "dev-develop",
         "zendframework/zendframework": "^3.0@dev"
@@ -101,7 +102,8 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "files": ["app/VendorOverrides/PragmaRX/Tracker/Data/Repositories/Session.php"]
     },
     "extra": {
         "laravel": {

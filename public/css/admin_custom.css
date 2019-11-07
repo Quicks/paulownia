@@ -1,17 +1,31 @@
-@media only screen  and (max-width: 1224px) {
+@media only screen  and (max-width: 1370px) {
     body {
         font-size: 12px !important;
     }
-    .fa-3x {
-        font-size: 2.5em !important;
+    .fa-2x {
+        font-size: 2em !important;
     }
     .navbar-left ul.menubar li.menu-item{
         font-size: 9px;
-        padding: 5px 5px;
+        padding: 0 5px;
+        margin-bottom: 5px;
     }
     .icon {
         width: 25px;
         height: 25px;
+    }
+    .navbar-left ul.menubar li.menu-item span {
+        font-size: 7px;
+        line-height: 1 !important;
+    }
+    .navbar-left {
+        width: 60px !important;
+    }
+    .content-container {
+        padding-left: 60px;
+    }
+    .content-container .content-wrapper {
+        padding-left: 5px;
     }
 }
 
@@ -56,4 +70,14 @@
     color: #8E8E8E;
     padding: 15px 0;
     border-bottom: 1px solid #A2A2A2;
+}
+.icon {
+    width: 25px;
+    height: 25px;
+}
+.content-container .aside-nav {
+    width: 200px;
+}
+.content-container .content-wrapper {
+    margin-left: 225px;
 }

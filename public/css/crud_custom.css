@@ -1,29 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500");
 
-@media only screen  and (max-width: 1224px) {
+@media only screen  and (max-width: 1370px) {
     body {
         font-family: "Raleway", sans-serif;
         font-size: 0.75rem;
     }
-    .fa-3x {
-        font-size: 2em;
+    .fa-2x {
+        font-size: 1.5em;
+    }
+    .custom-admin-sidebar {
+        width: 60px !important;
     }
     .custom-admin-sidebar ul li {
-        padding: 5px 5px !important;
+        padding: 0 5px !important;
     }
-    .custom-admin-sidebar ul li a span {
-        font-size: 0.9em;
+    .custom-admin-sidebar ul li a p {
+        font-size: 0.6em;
         display: block;
         text-align: center;
+        margin-bottom: 5px;
+        line-height: 1.5;
     }
     .menu-properties {
         width: 25px !important;
         height: 25px !important;
     }
-    .custom-admin-sidebar {
-        width: 80px !important;
-    }
-
 }
 
 .custom-nav-bs4 {
@@ -199,7 +200,6 @@
 }
 
 .custom-admin-sidebar ul li {
-    padding: 10px 5px;
     list-style-type: none;
     letter-spacing: -0.26px;
     text-align: center;
@@ -222,8 +222,8 @@
 }
 
 .menu-properties {
-     width: 48px;
-     height: 48px;
+     width: 25px;
+     height: 25px;
      display: inline-block;
      background-size: cover;
  }

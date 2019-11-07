@@ -4,7 +4,7 @@
             <li>
                 <a class="{{Request::is('admin/welcome*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{ url('/admin/welcome') }}">
-                    <i class="fa fa-home fa-3x"></i><span>Welcome</span>
+                    <i class="fa fa-home fa-2x"></i><p>Welcome</p>
                 </a>
             </li>
         @endif
@@ -12,7 +12,7 @@
             <li>
                 <a class="{{Request::is('admin/news*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('news.index')}}">
-                    <i class="fa fa-newspaper-o fa-3x"></i><span>News</span>
+                    <i class="fa fa-newspaper-o fa-2x"></i><p>News</p>
                 </a>
             </li>
         @endif
@@ -20,7 +20,7 @@
             <li>
                 <a class="{{Request::is('admin/articles*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('articles.index')}}">
-                    <i class="fa fa-address-card-o fa-3x"></i><span>Articles</span>
+                    <i class="fa fa-address-card-o fa-2x"></i><p>Articles</p>
                 </a>
             </li>
         @endif
@@ -28,7 +28,7 @@
             <li>
                 <a class="{{Request::is('admin/galleries*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('galleries.index')}}">
-                    <i class="fa fa-picture-o fa-3x"></i><span>Galleries</span>
+                    <i class="fa fa-picture-o fa-2x"></i><p>Galleries</p>
                 </a>
             </li>
         @endif
@@ -36,7 +36,7 @@
             <li>
                 <a class="{{Request::is('admin/images*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('images.index')}}">
-                    <i class="fa fa-camera-retro fa-3x"></i><span>Images</span>
+                    <i class="fa fa-camera-retro fa-2x"></i><p>Images</p>
                 </a>
             </li>
         @endif
@@ -44,7 +44,7 @@
             <li>
                 <a class="{{Request::is('admin/treatises*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('treatises.index')}}">
-                    <i class="fa fa-book fa-3x"></i><span>Treatises</span>
+                    <i class="fa fa-book fa-2x"></i><p>Treatises</p>
                 </a>
             </li>
         @endif
@@ -52,7 +52,7 @@
             <li>
                 <a class="{{Request::is('admin/offices*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('offices.index')}}">
-                    <i class="fa fa-university fa-3x"></i><span>Official Offices</span>
+                    <i class="fa fa-university fa-2x"></i><p>Official Offices</p>
                 </a>
             </li>
         @endif
@@ -60,7 +60,7 @@
             <li>
                 <a class="{{Request::is('admin/partners*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('partners.index')}}">
-                    <i class="fa fa-user-plus fa-3x"></i><span>Partners</span>
+                    <i class="fa fa-user-plus fa-2x"></i><p>Partners</p>
                 </a>
             </li>
         @endif
@@ -68,7 +68,7 @@
             <li>
                 <a href="{{route('admin.dashboard.index')}}">
                     <i class="menu-properties icon dashboard-icon"></i>
-                        <span>Dashboard</span>
+                        <p>Dashboard</p>
                 </a>
             </li>
         @endif
@@ -76,7 +76,7 @@
             <li>
                 <a href="{{route('admin.sales.orders.index')}}">
                     <i class="menu-properties icon sales-icon"></i>
-                        <span>Sales</span>
+                        <p>Sales</p>
                 </a>
             </li>
         @endif
@@ -84,7 +84,7 @@
             <li>
                 <a href="{{route('admin.catalog.products.index')}}">
                     <i class="menu-properties icon catalog-icon"></i>
-                        <span>Catalog</span>
+                        <p>Catalog</p>
                 </a>
             </li>
         @endif
@@ -92,7 +92,7 @@
             <li>
                 <a href="{{route('admin.customer.index')}}">
                     <i class="menu-properties icon customer-icon"></i>
-                    <span>Customers</span>
+                    <p>Customers</p>
                 </a>
             </li>
         @endif
@@ -100,7 +100,7 @@
             <li>
                 <a href="{{route('admin.cart-rule.index')}}">
                     <i class="menu-properties icon promotions-icon"></i>
-                    <span>Promotions</span>
+                    <p>Promotions</p>
                 </a>
             </li>
         @endif
@@ -108,7 +108,7 @@
             <li>
                 <a href="{{route('admin.locales.index')}}">
                     <i class="menu-properties icon settings-icon"></i>
-                    <span>Settings</span>
+                    <p>Settings</p>
                 </a>
             </li>
         @endif
@@ -116,7 +116,15 @@
             <li>
                 <a href="{{route('admin.configuration.index')}}">
                     <i class="menu-properties icon configuration-icon"></i>
-                    <span>Configure</span>
+                    <p>Configure</p>
+                </a>
+            </li>
+        @endif
+        @if(bouncer()->hasPermission('certificates'))
+            <li>
+                <a class="{{Request::is('admin/certificates*') ? "custom-admin-sidebar-a-active" : ""}}"
+                   href="{{route('certificates.index')}}">
+                    <i class="fa fa-certificate fa-2x"></i><p>Certificates</p>
                 </a>
             </li>
         @endif
@@ -124,7 +132,7 @@
             <li>
                 <a class="{{Request::is('stats*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('tracker.stats.index')}}">
-                    <i class="fa fa-line-chart fa-3x"></i><span>Tracking statistics</span>
+                    <i class="fa fa-line-chart fa-2x"></i><p>Tracking statistics</p>
                 </a>
             </li>
         @endif

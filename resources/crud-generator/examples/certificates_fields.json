@@ -1,0 +1,58 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "active",
+            "type": "boolean"
+        },
+        {
+            "name": "string1",
+            "type": "string"
+        },
+        {
+            "name": "string2",
+            "type": "string"
+        },
+        {
+            "name": "string3",
+            "type": "string"
+        },
+        {
+            "name": "text",
+            "type": "text"
+        },
+        {
+            "name": "date",
+            "type": "date"
+        }
+    ],
+    "validations": [
+        {
+            "field": "name",
+            "rules": "required|max:90"
+        },
+        {
+            "field": "active",
+            "rules": "required|boolean"
+        },
+        {
+            "field": "string1",
+            "rules": "required|max:200"
+        },
+        {
+            "field": "string2",
+            "rules": "required|max:200"
+        },
+        {
+            "field": "string3",
+            "rules": "required|max:200"
+        },
+        {
+            "field": "date",
+            "rules": "required|date"
+        }
+    ]
+}

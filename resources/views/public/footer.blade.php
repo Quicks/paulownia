@@ -15,12 +15,12 @@
             <p class="footer-title"> Menu </p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
-                <li><a href="#">Main</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Goods</a></li>
-                <li><a href="#">Profitability calculation</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="{{route('main')}}">Main</a></li>
+                <li><a href="{{route('public.news.index')}}">News</a></li>
+                <li><a href="{{route('public.products.index')}}">Goods</a></li>
+                <li><a href="{{route('public.calculations.index')}}">Profitability calculation</a></li>
+                <li><a href="{{route('public.galleries.index')}}">Gallery</a></li>
+                <li><a href="{{route('public.faq.index')}}">FAQ</a></li>
                 <li><a href="{{route('public.about-us.index')}}">About Us</a></li>
             </ul>
         </div>

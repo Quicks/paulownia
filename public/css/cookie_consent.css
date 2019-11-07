@@ -1,6 +1,6 @@
 .js-cookie-consent{
-    position: absolute;
-    top: 0px;
+    position: fixed;
+    bottom: 0px;
     padding: 10px;
     text-align: center;
     z-index: 9999;

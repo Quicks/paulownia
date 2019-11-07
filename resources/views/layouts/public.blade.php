@@ -29,7 +29,6 @@
             <p class="status-text"> {{ session('flash_message') }} </p>
         </div>
     @endif
-
         @include('public.header')
 
         <main class="main-background">

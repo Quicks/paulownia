@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500");
 
-@media only screen  and (max-width: 1224px) {
+@media only screen  and (max-width: 1370px) {
     body {
         font-family: "Raleway", sans-serif;
         font-size: 0.75rem;
@@ -8,20 +8,23 @@
     .fa-2x {
         font-size: 1.5em;
     }
+    .custom-admin-sidebar {
+        width: 60px !important;
+    }
     .custom-admin-sidebar ul li {
         padding: 0 5px !important;
     }
     .custom-admin-sidebar ul li a p {
-        font-size: 0.9em;
+        font-size: 0.6em;
         display: block;
         text-align: center;
         margin-bottom: 5px;
+        line-height: 1.5;
     }
     .menu-properties {
         width: 25px !important;
         height: 25px !important;
     }
-
 }
 
 .custom-nav-bs4 {

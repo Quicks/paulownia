@@ -58,12 +58,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item mr-xl-5">
-                                    <a {{--@if(url()->current() === route('route-name')) class="bottom-link-activ" @endif --}} href="#">
+                                    <a @if(url()->current() === route('public.products.index')) class="bottom-link-activ" @endif  href="{{route('public.products.index')}}">
                                         Goods
                                     </a>
                                 </li>
                                 <li class="nav-item mr-xl-4">
-                                    <a {{--@if(url()->current() === route('route-name')) class="bottom-link-activ" @endif --}} href="#">
+                                    <a @if(url()->current() === route('public.calculations.index')) class="bottom-link-activ" @endif  href="{{route('public.calculations.index')}}">
                                         Profitability calculation
                                     </a>
                                 </li>
@@ -73,7 +73,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item mr-xl-5">
-                                    <a {{--@if(url()->current() === route('route-name')) class="bottom-link-activ" @endif --}} href="#">
+                                    <a @if(url()->current() === route('public.faq.index')) class="bottom-link-activ" @endif  href="{{route('public.faq.index')}}">
                                         FAQ
                                     </a>
                                 </li>
@@ -83,7 +83,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a {{--@if(url()->current() === route('route-name')) class="bottom-link-activ" @endif --}}href="#">
+                                    <a @if(url()->current() === route('public.contacts.index')) class="bottom-link-activ" @endif href="{{route('public.contacts.index')}}">
                                         Contacts
                                     </a>
                                 </li>

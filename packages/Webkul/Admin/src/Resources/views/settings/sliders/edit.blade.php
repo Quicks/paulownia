@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="control-group">
-                        <image-wrapper :button-label="'{{ __('admin::app.settings.sliders.image') }}'" input-name="image" :multiple="false" :images='"{{ url('storage/'.$slider->path) }}"' :required="true"></image-wrapper>
+                        <image-wrapper :button-label="'{{ __('admin::app.settings.sliders.image') }}'" input-name="image" :multiple="false" :images='"{{ url('storage/'.$slider->path) }}"'></image-wrapper>
                     </div>
 
                     <div class="control-group">

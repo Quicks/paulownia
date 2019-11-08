@@ -1,6 +1,6 @@
 @extends('layouts.public')
 @section('content')
-    <div>fhgljfg</div>
+   <h1>We Are A Super Team</h1>
 @endsection
 
 

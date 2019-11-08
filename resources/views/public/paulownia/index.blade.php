@@ -1,4 +1,4 @@
 @extends('layouts.public')
 @section('content')
-    <div>fhgljfg</div>
+  <h1>Interesting plant</h1>
 @endsection

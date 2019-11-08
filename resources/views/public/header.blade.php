@@ -53,7 +53,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item mr-xl-5">
-                                    <a {{--@if(url()->current() === route('route-name')) class="bottom-link-activ" @endif --}}href="#">
+                                    <a @if(url()->current() === route('public.paulownia.index')) class="bottom-link-activ" @endif href="{{route('public.paulownia.index')}}">
                                         Paulownia
                                     </a>
                                 </li>

@@ -80,7 +80,11 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/partners/{id}', 'App\Http\Controllers\PartnersController@show')->name('public.partners.show');
         Route::get('/treatises', 'App\Http\Controllers\TreatisesController@index')->name('public.treatises.index');
         Route::get('/treatises/{id}', 'App\Http\Controllers\TreatisesController@show')->name('public.treatises.show');
-
+        Route::get('/calculations', 'App\Http\Controllers\CalculationsController@index')->name('public.calculations.index');
+        Route::get('/faq', 'App\Http\Controllers\FAQController@index')->name('public.faq.index');
+        Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('public.products.index');
+        Route::get('/contacts', 'App\Http\Controllers\ContactsController@index')->name('public.contacts.index');
+        Route::get('/about-us', 'App\Http\Controllers\AboutUsController@index')->name('public.about-us.index');
     });
 
     Route::get('/certificate/{code}', 'App\Http\Controllers\CertificateController')->name('certificate');

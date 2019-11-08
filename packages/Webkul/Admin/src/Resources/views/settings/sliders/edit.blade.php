@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="control-group">
-                        <image-wrapper :button-label="'{{ __('admin::app.settings.sliders.image') }}'" input-name="image" :multiple="false" :images='"{{ url('storage/'.$slider->path) }}"' :required="true"></image-wrapper>
+                        <image-wrapper :button-label="'{{ __('admin::app.settings.sliders.image') }}'" input-name="image" :multiple="false" :images='"{{ url('storage/'.$slider->path) }}"'></image-wrapper>
                     </div>
 
                     <div class="control-group">
@@ -76,7 +76,7 @@
                 selector: 'textarea#tiny',
                 height: 200,
                 width: "100%",
-                plugins: 'image imagetools media wordcount save fullscreen code',
+                plugins: 'image imagetools media wordcount save fullscreen code textcolor',
                 toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | code',
                 image_advtab: true,
                 templates: [

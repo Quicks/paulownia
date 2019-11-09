@@ -1,27 +1,27 @@
 <div class="footer py-4">
     <div class="footer-content row mx-auto">
         <div class="col-xl-3 col-md-6 col-sm-12">
-            <p class="footer-title"> To customers </p>
+            <p class="footer-title">@lang('header-footer.to customers') </p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
-                <li><a href="#">Stocks</a></li>
-                <li><a href="#">Wholesale offers</a></li>
-                <li><a href="#">Terms of sale</a></li>
-                <li><a href="#">Terms of purchase</a></li>
-                <li><a href="#">Terms of use</a></li>
+                <li><a href="#">@lang('header-footer.stocks')</a></li>
+                <li><a href="#">@lang('header-footer.wholesale offers')</a></li>
+                <li><a href="#">@lang('header-footer.terms of sale')</a></li>
+                <li><a href="#">@lang('header-footer.terms of purchase')</a></li>
+                <li><a href="#">@lang('header-footer.terms of use')</a></li>
             </ul>
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">
-            <p class="footer-title"> Menu </p>
+            <p class="footer-title">@lang('header-footer.menu') </p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
-                <li><a href="{{route('main')}}">Main</a></li>
-                <li><a href="{{route('public.news.index')}}">News</a></li>
-                <li><a href="{{route('public.products.index')}}">Goods</a></li>
-                <li><a href="{{route('public.calculations.index')}}">Profitability calculation</a></li>
-                <li><a href="{{route('public.galleries.index')}}">Gallery</a></li>
-                <li><a href="{{route('public.faq.index')}}">FAQ</a></li>
-                <li><a href="{{route('public.about-us.index')}}">About Us</a></li>
+                <li><a href="{{route('main')}}">@lang('header-footer.main')</a></li>
+                <li><a href="{{route('public.news.index')}}">@lang('header-footer.news')</a></li>
+                <li><a href="{{route('public.products.index')}}">@lang('header-footer.goods')</a></li>
+                <li><a href="{{route('public.calculations.index')}}">@lang('header-footer.profitability calculation')</a></li>
+                <li><a href="{{route('public.galleries.index')}}">@lang('header-footer.gallery')</a></li>
+                <li><a href="{{route('public.faq.index')}}">@lang('header-footer.faq')</a></li>
+                <li><a href="{{route('public.about-us.index')}}">@lang('header-footer.about us')</a></li>
             </ul>
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">

@@ -32,15 +32,16 @@ return [
 
 //    ++++++++++++++++++++++++++++
 
-    'paulownia Shan Tong'=>'Paulownia Shan Tong',
-    'paulownia Elongata'=>'Paulownia Elongata',
-    'paulownia Tomentosa'=>'Paulownia Tomentosa',
-    'paulownia Kawakamii'=>'Paulownia Kawakamii',
-    'paulownia Turbo Pro'=>'Paulownia Turbo Pro',
-    'paulownia Ze Pro'=>'Paulownia Ze Pro',
+    'paulownia shan tong'=>'Paulownia Shan Tong',
+    'paulownia elongata'=>'Paulownia Elongata',
+    'paulownia tomentosa'=>'Paulownia Tomentosa',
+    'paulownia kawakamii'=>'Paulownia Kawakamii',
+    'paulownia turbo pro'=>'Paulownia Turbo Pro',
+    'paulownia ze pro'=>'Paulownia Ze Pro',
 
     //    ++++++++++++++++++++++++++++
 
-    'we work:'=>'Nosotros trabajamos'
+    'we work:'=>'Nosotros trabajamos:',
+    'mon.-fri. from 09:00 before 18:00'=>'Lunes a viernes de 09:00 a 18:00'
 
 ];

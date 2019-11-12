@@ -25,26 +25,26 @@
             </ul>
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">
-            <p class="footer-title"> Paulownia </p>
+            <p class="footer-title">  @lang('header-footer.paulownia') </p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
-                <li><a href="#">Paulownia Shan Tong</a></li>
-                <li><a href="#">Paulownia Elongata</a></li>
-                <li><a href="#">Paulownia Tomentosa</a></li>
-                <li><a href="#">Paulownia Kawakamii</a></li>
-                <li><a href="#">Paulownia Turbo Pro</a></li>
-                <li><a href="#">Paulownia Ze Pro</a></li>
+                <li><a href="#">@lang('header-footer.paulownia shan tong') </a></li>
+                <li><a href="#">@lang('header-footer.paulownia elongata')</a></li>
+                <li><a href="#">@lang('header-footer.paulownia tomentosa')</a></li>
+                <li><a href="#">@lang('header-footer.paulownia kawakamii')</a></li>
+                <li><a href="#">@lang('header-footer.paulownia turbo pro')</a></li>
+                <li><a href="#">@lang('header-footer.paulownia ze pro')</a></li>
             </ul>
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">
-            <p class="footer-title"> Contacts </p>
+            <p class="footer-title">@lang('header-footer.contacts')</p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
-                <li>Phone: <a href="tel:+34642787555"> +34 642 787 555 </a></li>
-                <li>Email: <a href="mailto: info@paulownia.pro"> info@paulownia.pro</a></li>
+                <li>@lang('header-footer.phone:') <a href="tel:+34642787555"> +34 642 787 555 </a></li>
+                <li>@lang('header-footer.email:') <a href="mailto: info@paulownia.pro"> info@paulownia.pro</a></li>
                 <li>Viber: <a href="viber://chat?number=+34642787555">+34 642 787 555</a></li>
-                <li>We work:</li>
-                <li>Mon.-Fri. from 09:00 before 18:00</li>
+                <li>@lang('header-footer.we work:')</li>
+                <li>@lang('header-footer.mon.-fri. from 09:00 before 18:00')</li>
                 <ul class="text-list m-0 p-0">
                     <li>
                         <a href="#"><img src="{{asset('images/linkedin.svg')}}"></a>

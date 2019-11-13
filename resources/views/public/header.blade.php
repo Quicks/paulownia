@@ -35,7 +35,9 @@
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     @foreach(config('translatable.locales') as $locale)
-                                        <a class="dropdown-item" href="{{$locale}}">{{strtoupper($locale)}}</a>
+                                        <a class="dropdown-item"
+                                           href="{{route('setlocale', ['lang'=>$locale])}}">
+                                            {{strtoupper($locale)}}</a>
                                     @endforeach
                                 </div>
                             </div>

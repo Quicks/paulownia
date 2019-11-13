@@ -44,47 +44,47 @@
                             <ul class="navbar-nav bottom-link" style="flex-wrap: wrap;">
                                 <li class="nav-item  mr-xl-5">
                                     <a @if(url()->current() === route('main')) class="bottom-link-activ" @endif href="{{route('main')}}">
-                                        Main
+                                        @lang('header-footer.main')
                                     </a>
                                 </li>
                                 <li class="nav-item mr-xl-5">
                                     <a @if(url()->current() === route('public.news.index')) class="bottom-link-activ" @endif href="{{route('public.news.index')}}">
-                                        News
+                                        @lang('header-footer.news')
                                     </a>
                                 </li>
                                 <li class="nav-item mr-xl-5">
                                     <a @if(url()->current() === route('public.paulownia.index')) class="bottom-link-activ" @endif href="{{route('public.paulownia.index')}}">
-                                        Paulownia
+                                        @lang('header-footer.paulownia')
                                     </a>
                                 </li>
                                 <li class="nav-item mr-xl-5">
                                     <a @if(url()->current() === route('public.products.index')) class="bottom-link-activ" @endif  href="{{route('public.products.index')}}">
-                                        Goods
+                                        @lang('header-footer.goods')
                                     </a>
                                 </li>
                                 <li class="nav-item mr-xl-4">
                                     <a @if(url()->current() === route('public.calculations.index')) class="bottom-link-activ" @endif  href="{{route('public.calculations.index')}}">
-                                        Profitability calculation
+                                        @lang('header-footer.profitability calculation')
                                     </a>
                                 </li>
                                 <li class="nav-item mr-xl-5">
                                     <a @if(url()->current() === route('public.galleries.index')) class="bottom-link-activ" @endif href="{{route('public.galleries.index')}}">
-                                        Gallery
+                                        @lang('header-footer.gallery')
                                     </a>
                                 </li>
                                 <li class="nav-item mr-xl-5">
                                     <a @if(url()->current() === route('public.faq.index')) class="bottom-link-activ" @endif  href="{{route('public.faq.index')}}">
-                                        FAQ
+                                        @lang('header-footer.faq')
                                     </a>
                                 </li>
                                 <li class="nav-item mr-xl-5">
                                     <a @if(url()->current() === route('public.about-us.index')) class="bottom-link-activ" @endif  href="{{route('public.about-us.index')}}">
-                                        About us
+                                        @lang('header-footer.about us')
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a @if(url()->current() === route('public.contacts.index')) class="bottom-link-activ" @endif href="{{route('public.contacts.index')}}">
-                                        Contacts
+                                        @lang('header-footer.contacts')
                                     </a>
                                 </li>
                             </ul>

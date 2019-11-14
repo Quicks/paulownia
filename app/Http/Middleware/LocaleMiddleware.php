@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use phpDocumentor\Reflection\Types\Self_;
 use Request;
 use Illuminate\Support\Facades\App;
 

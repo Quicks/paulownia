@@ -17,19 +17,18 @@ class LocaleMiddleware
      * @return mixed
      */
 
-    public static $mainLanguage = null;
-    public static $languages = ['en', 'es', 'fr', 'ru', 'pl', 'ar'];
-
     public static function getLocale()
     {
+        $mainLanguage = config('translatable.locale');
+        $languages = config('translatable.locales');
         $uri = Request::path();
         $segmentsURI = explode('/',$uri);
-        if (!empty($segmentsURI[0]) && in_array($segmentsURI[0], self::$languages)) {
+        if (!empty($segmentsURI[0]) && in_array($segmentsURI[0], $languages)) {
 
             return $segmentsURI[0];
 
         } else {
-            return  self::$mainLanguage;
+            return  $mainLanguage;
         }
     }
 

@@ -90,6 +90,5 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     Route::get('/certificate/{code}', 'App\Http\Controllers\CertificateController')->name('certificate');
-
 });
 

@@ -8,7 +8,7 @@ return [
     'main' => 'Главная',
     'news' => 'Новости' ,
     'paulownia'=>'Павлония',
-    'goods' => 'Груз' ,
+    'goods' => 'Товары' ,
     'profitability calculation'=>'Расчет рентабельности',
     'gallery'=>'Галерея',
     'faq'=>'Вопросы-Ответы',

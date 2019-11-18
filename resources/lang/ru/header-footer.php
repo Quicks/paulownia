@@ -19,7 +19,7 @@ return [
 
     'to customers'=>'Для клиентов',
 
-    'stocks'=>'Запасы',
+    'stocks'=>'Акции',
     'wholesale offers'=>'Оптовые предложения',
     'terms of sale'=>'Условия продажи',
     'terms of purchase'=>'Условия покупки',

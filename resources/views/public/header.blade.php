@@ -33,7 +33,6 @@
                                     {{(App::getLocale())}}
                                     <img src="{{asset('images/down-arrow.svg')}}">
                                 </button>
-                                {{strlen(env('APP_URL'))+1}}
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     @foreach(config('translatable.locales') as $locale)
                                         <a class="dropdown-item"

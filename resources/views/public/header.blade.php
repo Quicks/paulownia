@@ -33,13 +33,14 @@
                                     {{(App::getLocale())}}
                                     <img src="{{asset('images/down-arrow.svg')}}">
                                 </button>
+                                {{strlen(env('APP_URL'))+1}}
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     @foreach(config('translatable.locales') as $locale)
                                         <a class="dropdown-item"
                                            @if(!in_array(explode('/', Request::path())[0], config('translatable.locales')))
                                            href=" {{url($locale. '/' . Request::path())}}"
                                            @else
-                                           href="{{url(str_replace(Request::segment(1), $locale, Request::url()))}}
+                                           href="{{url(substr_replace(Request::url(), $locale, strlen(env('APP_URL'))+1, 2))}}
                                            @endif">
                                             {{strtoupper($locale)}}</a>
                                     @endforeach

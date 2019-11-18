@@ -46,14 +46,12 @@ class ShippingToSpainPortugal extends AbstractShipping
             }
             $delivery = new Delivery();
             $price =  $delivery->delivery($volume, $qty, $height);
-//            print_r($price);
             if($price == 0) {
                 $sum = 0;
                 break;
             }
             $sum += $price;
         }
-//        dd($sum);
         $object = new CartShippingRate;
         $object->carrier = 'shippingToSpainPortugal';
         $object->carrier_title = $this->getConfigData('title');

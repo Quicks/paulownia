@@ -36,12 +36,12 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     @foreach(config('translatable.locales') as $locale)
                                         <a class="dropdown-item"
-                                           @if(!in_array(explode('/', Request::path())[0], config('translatable.locales')))
-                                           href=" {{url($locale. '/' . Request::path())}}"
-                                           @else
-                                           href="{{url(str_replace(Request::segment(1), $locale, Request::url()))}}
-                                           @endif">
-                                            {{strtoupper($locale)}}</a>
+                                            @if(App::getLocale() != Request::segment(1))
+                                                href="{{url($locale. '/' . Request::path())}}"
+                                            @else
+                                                href="{{Request::root() .'/'. $locale . substr(Request::path(), 2)}}"
+                                            @endif">
+                                                {{strtoupper($locale)}}</a>
                                     @endforeach
                                 </div>
                             </div>

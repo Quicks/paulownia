@@ -32,12 +32,13 @@ return [
 
 //    ++++++++++++++++++++++++++++
 
-    'paulownia shan tong'=>'Павловния Шан Тонг',
-    'paulownia elongata'=>'Павловния Элонгата',
-    'paulownia tomentosa'=>'Павловния Томентоса',
-    'paulownia kawakamii'=>'Павловния Кавакамии',
-    'paulownia turbo pro'=>'Павловния Турбо Про',
-    'paulownia ze pro'=>'Павловния Зе Про',
+    'paulownia shan tong'=>'Павлония Shan Tong',
+    'paulownia elongata'=>'Павлония Elongata',
+    'paulownia tomentosa'=>'Павлония Tomentosa',
+    'paulownia kawakamii'=>'Павлония Kawakamii',
+    'paulownia turbo pro'=>'Павлония Turbo Pro',
+    'paulownia ze pro'=>'Павлония Ze Pro',
+
 
     //    ++++++++++++++++++++++++++++
 

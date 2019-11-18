@@ -54,12 +54,12 @@ class AddProductAttributeTableSeeder extends Seeder
         ]);
         DB::table('attribute_translations')->insert([
             [
-                'id' => '102',
+                'id' => '202',
                 'locale' => 'en',
                 'name' => 'Volume box',
                 'attribute_id' => '102'
             ], [
-                'id' => '103',
+                'id' => '203',
                 'locale' => 'en',
                 'name' => 'Height tree',
                 'attribute_id' => '103'

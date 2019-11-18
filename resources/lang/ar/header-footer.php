@@ -32,13 +32,14 @@ return [
 
 //    ++++++++++++++++++++++++++++
 
-    'paulownia shan tong'=>'بولونيا شان تونغ',
-    'paulownia elongata'=>'بولونيا إيلونجاتا',
-    'paulownia tomentosa'=>'بولونيا تومينتوسا',
-    'paulownia kawakamii'=>'بولونيا كاواكامي',
-    'paulownia turbo pro'=>'بولونيا توربو برو',
-    'paulownia ze pro'=>'بولونيا زي برو',
 
+
+    'paulownia shan tong'=>'Paulownia Shan Tong',
+    'paulownia elongata'=>'Paulownia Elongata',
+    'paulownia tomentosa'=>'Paulownia Tomentosa',
+    'paulownia kawakamii'=>'Paulownia Kawakamii',
+    'paulownia turbo pro'=>'Paulownia Turbo Pro',
+    'paulownia ze pro'=>'Paulownia Ze Pro',
 
     //    ++++++++++++++++++++++++++++
 

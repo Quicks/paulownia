@@ -32,9 +32,9 @@ return [
     'shippingToSpainPortugal' => [
         'code' => 'shippingToSpainPortugal',
         'title' => 'Shipping to Spain and Portugal',
-        'description' => 'The cost of 20 euros per package',
+        'description' => 'If the delivery amount is zero, then it is calculated individually',
         'active' => true,
-        'default_rate' => '20',
+        'default_rate' => '0',
         'class' => 'Webkul\Shipping\Carriers\ShippingToSpainPortugal',
     ]
 ];

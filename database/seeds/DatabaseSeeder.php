@@ -15,5 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(BagistoDatabaseSeeder::class);
         $this->call(AddAttributeTableSeeder::class);
         $this->call(AddAttributeGroupTableSeeder::class);
+        $this->call(AddProductAttributeTableSeeder::class);
+        $this->call(ProductAttributeTableSeeder::class);
     }
 }

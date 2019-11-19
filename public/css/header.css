@@ -1,25 +1,53 @@
 .header {
-    background-color: #FFFFFF;
-    font-family: Century Gothic Regular;
-    font-size: 14px;
-    line-height: 17px;
-    color: #000000;
+    background: url("/images/header-background.jpg") no-repeat #FFFFFF;
+    background-size: 100% 50%, 100% 50%;
 }
-.header-content {
-    max-width: 1720px;
-}
-
 .header a {
     text-decoration: none;
+}
+.list-unstyled li a:focus {
+    color: #FFFFFF ;
+}
+.list-unstyled li a:hover {
+    color: #FFFFFF ;
+}
+.nav-item a:focus {
+    color: #000000;
+}
+.nav-item a:hover {
     color: #000000;
 }
 .bottom-link-activ {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
     color: #8CBD02 !important;
-    font-family: Century Gothic Bold;
 }
 
 .button-language {
+    background: transparent;
     border: none;
-    background-color: #FFFFFF;
     text-transform: uppercase;
+}
+
+.info {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.info-lang {
+    font-family: Century Gothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.info-menu {
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
 }

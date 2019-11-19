@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/public.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}?v2">
-    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}?v2">
     <link rel="stylesheet" href="{{ asset('css/cookie_consent.css') }}">
     @stack('css')
 </head>

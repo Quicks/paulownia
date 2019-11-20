@@ -45,6 +45,13 @@ return [
     'phone:' =>'Telefon:',
     'email:'=>'E-mail:',
     'we work:'=>'Pracujemy:',
-    'mon.-fri. from 09:00 before 18:00'=>'Pon.-pt. od 09:00 przed 18:00'
+    'mon.-fri. from 09:00 before 18:00'=>'Pon.-pt. od 09:00 przed 18:00',
+
+
+    'our service' => 'Nasze Usługi',
+    'sale of seedlings'=>'Sprzedaż sadzonek',
+    'analysis and personal design'=>'Analiza i osobisty projekt',
+    'ROI calculation'=>'Obliczanie ROI',
+    'consultation during the cultivation'=>'Konsultacje podczas uprawy'
 
 ];

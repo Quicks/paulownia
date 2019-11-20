@@ -47,6 +47,14 @@ return [
     'phone:' =>'هاتف:',
     'email:'=>'البريد الإلكتروني:',
     'we work:'=>'نحن نعمل:',
-    'mon.-fri. from 09:00 before 18:00'=>'من الاثنين إلى جمعة من 09:00 قبل 18:00'
+    'mon.-fri. from 09:00 before 18:00'=>'من الاثنين إلى جمعة من 09:00 قبل 18:00',
+
+
+
+    'our service' => 'خدماتنا',
+    'sale of seedlings'=>'بيع الشتلات',
+    'analysis and personal design'=>'التحليل والتصميم الشخصي',
+    'ROI calculation'=>'حساب العائد على الاستثمار',
+    'consultation during the cultivation'=>'التشاور خلال الزراعة'
 
 ];

@@ -7,7 +7,7 @@
     <div class="col-xl-10 col-md-6 mt-md-3 mt-sm-3">
         <nav class="navbar navbar-expand-xl navbar-light">
             <div id="all-pages" class="navbar-collapse collapse row">
-                <div class="col-xl-9">
+                <div class="col-xl-10">
                     <ul class="d-xl-inline-flex list-unstyled">
                         <li class="mb-3">
                             <a class="info" href="viber://chat?number=+34642787555">
@@ -24,7 +24,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-xl-3">
+                <div class="col-xl-2">
                     <div class="dropdown pl-xl-5 mb-4">
                         <button class="button-language info-lang" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-9">
+                <div class="col-xl-10">
                     <ul class="navbar-nav bottom-link" style="flex-wrap: wrap;">
                         <li class="nav-item  mr-xl-5">
                             <a @if(url()->current() === route('main')) class="bottom-link-activ"
@@ -102,7 +102,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-xl-3">
+                <div class="col-xl-2">
                     <ul class="navbar-nav">
                         <li class="nav-item ml-xl-5">
                             <img width="20px" height="20px" src="{{asset('images/line.svg')}}">

@@ -10,17 +10,9 @@
         @endif
         @if(bouncer()->hasPermission('news'))
             <li>
-                <a class="{{Request::is('admin/news*') ? "custom-admin-sidebar-a-active" : ""}}"
+                <a class="{{Request::is('admin/news*') || Request::is('admin/articles*') || Request::is('admin/treatises*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('news.index')}}">
                     <i class="fa fa-newspaper-o fa-2x"></i><p>News</p>
-                </a>
-            </li>
-        @endif
-        @if(bouncer()->hasPermission('articles'))
-            <li>
-                <a class="{{Request::is('admin/articles*') ? "custom-admin-sidebar-a-active" : ""}}"
-                   href="{{route('articles.index')}}">
-                    <i class="fa fa-address-card-o fa-2x"></i><p>Articles</p>
                 </a>
             </li>
         @endif
@@ -37,14 +29,6 @@
                 <a class="{{Request::is('admin/images*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('images.index')}}">
                     <i class="fa fa-camera-retro fa-2x"></i><p>Images</p>
-                </a>
-            </li>
-        @endif
-        @if(bouncer()->hasPermission('treatises'))
-            <li>
-                <a class="{{Request::is('admin/treatises*') ? "custom-admin-sidebar-a-active" : ""}}"
-                   href="{{route('treatises.index')}}">
-                    <i class="fa fa-book fa-2x"></i><p>Treatises</p>
                 </a>
             </li>
         @endif

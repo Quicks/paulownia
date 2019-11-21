@@ -14,12 +14,6 @@ return [
             'route' => 'news.index',
             'sort' => 1,
             'icon-class' => 'fa fa-newspaper-o fa-2x',
-        ],[
-            'key' => 'articles',
-            'name' => 'Articles',
-            'route' => 'articles.index',
-            'sort' => 1,
-            'icon-class' => 'fa fa-address-card-o fa-2x',
         ], [
             'key' => 'galleries',
             'name' => 'Galleries',
@@ -32,13 +26,7 @@ return [
             'route' => 'images.index',
             'sort' => 1,
             'icon-class' => 'fa fa-camera-retro fa-2x',
-        ], [
-            'key' => 'treatises',
-            'name' => 'Treatises',
-            'route' => 'treatises.index',
-            'sort' => 1,
-            'icon-class' => 'fa fa-book fa-2x',
-        ], [
+        ],  [
             'key' => 'offices',
             'name' => 'Official Offices',
             'route' => 'offices.index',

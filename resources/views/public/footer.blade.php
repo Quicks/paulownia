@@ -1,13 +1,13 @@
 <div class="footer py-4">
     <div class="footer-content row mx-auto">
         <div class="col-xl-2 col-md-6 col-sm-12">
-            <p class="footer-title">  Our services </p>
+            <p class="footer-title">  @lang('header-footer.our service') </p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
-                <li><a href="#">Sale of seedlings </a></li>
-                <li><a href="#">Analysis and personal design</a></li>
-                <li><a href="#">ROI calculation</a></li>
-                <li><a href="#">Consultation during the cultivation</a></li>
+                <li><a href="#">@lang('header-footer.sale of seedlings') </a></li>
+                <li><a href="#">@lang('header-footer.analysis and personal design')</a></li>
+                <li><a href="#">@lang('header-footer.ROI calculation')</a></li>
+                <li><a href="#">@lang('header-footer.consultation during the cultivation')</a></li>
             </ul>
         </div>
         <div class="col-xl-2 col-md-6 col-sm-12">

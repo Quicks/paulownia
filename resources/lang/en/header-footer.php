@@ -44,6 +44,12 @@ return [
     'phone:'=>'Phone:',
     'email:'=>'Email:',
     'we work:'=>'We work:',
-    'mon.-fri. from 09:00 before 18:00'=>'Mon.-Fri. from 09:00 before 18:00'
+    'mon.-fri. from 09:00 before 18:00'=>'Mon.-Fri. from 09:00 before 18:00',
+
+    'our service' => 'Our services',
+    'sale of seedlings'=>'Sale of seedlings',
+    'analysis and personal design'=>'Analysis and personal design',
+    'ROI calculation'=>'ROI calculation',
+    'consultation during the cultivation'=>'Consultation during the cultivation',
 
 ];

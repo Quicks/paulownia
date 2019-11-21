@@ -42,6 +42,14 @@ return [
     //    ++++++++++++++++++++++++++++
 
     'we work:'=>'Nosotros trabajamos:',
-    'mon.-fri. from 09:00 before 18:00'=>'Lunes a viernes de 09:00 a 18:00'
+    'mon.-fri. from 09:00 before 18:00'=>'Lunes a viernes de 09:00 a 18:00',
+
+
+
+    'our service' => 'Nuestros servicios',
+    'sale of seedlings'=>'Venta de plántulas',
+    'analysis and personal design'=>'Análisis y diseño personal.',
+    'ROI calculation'=>'Cálculo de ROI',
+    'consultation during the cultivation'=>'Consulta durante el cultivo.'
 
 ];

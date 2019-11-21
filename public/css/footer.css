@@ -1,5 +1,4 @@
 .footer {
-    font-family: Raleway normal;
     color: #FFFFFF;
     background: url("/images/footer-background.jpg");
 }
@@ -31,9 +30,6 @@
     background-color: #FBFAFA;
 }
 .footer-bottom-copy {
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: normal;
     font-size: 18px;
     line-height: 21px;
     color: #0F0E0E;

@@ -16,8 +16,18 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/raleway/Raleway-Regular.eot');
+    src: local('../fonts/raleway/Raleway'), local('Raleway-Regular'),
+    url('../fonts/raleway/Raleway-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/raleway/Raleway-Regular.woff') format('woff'),
+    url('../fonts/raleway/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 * {
-    font-family: Century Gothic Regular;
+    font-family: Raleway;
 }
 .main-background {
 

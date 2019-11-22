@@ -42,7 +42,7 @@
                                         <td>
                                             <a href="{{ url('/admin/news/' . $item->id) }}" title="View News"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
 
-                                            @if(bouncer()->hasPermission('news.edit'))
+                                            @if(bouncer()->hasPermission('news.update') || $item->admin_id == auth()->guard('admin')->user()->id)
                                                 <a href="{{ url('/admin/news/' . $item->id . '/edit') }}" title="Edit News"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                                 <a href="{{ url('/admin/image_add/?imageable_id=' . $item->id . '&imageable_type=' . get_class($item) . '&redirect_route='.route('news.show', $item->id) )  }}"
                                                    title="Add Image">
@@ -52,7 +52,7 @@
                                                     </button>
                                                 </a>
                                             @endif
-                                            @if(bouncer()->hasPermission('news.destroy'))
+                                            @if(bouncer()->hasPermission('news.destroy') || $item->admin_id == auth()->guard('admin')->user()->id)
                                                 <form method="POST" action="{{ url('/admin/news' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                     {{ method_field('DELETE') }}
                                                     {{ csrf_field() }}

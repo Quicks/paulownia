@@ -59,6 +59,7 @@ class NewsController extends Controller
             'image' => 'image|max:20000'
 		]);
         $requestData = $request->all();
+        $requestData['admin_id'] = auth()->guard('admin')->user()->id;
         
         $news = News::create($requestData);
 

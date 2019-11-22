@@ -21,12 +21,12 @@ return [
         'sort' => 1
     ], [
         'key' => 'news.update',
-        'name' => 'Edit',
+        'name' => 'Edit any news (not just own)',
         'route' => 'news.update',
         'sort' => 2
     ], [
         'key' => 'news.destroy',
-        'name' => 'Delete',
+        'name' => 'Delete any news (not just own)',
         'route' => 'news.destroy',
         'sort' => 3
     ],

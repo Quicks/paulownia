@@ -5,6 +5,7 @@ namespace Webkul\User\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Models\News;
 
 class Bouncer
 {
@@ -29,17 +30,25 @@ class Bouncer
 
     public function checkIfAuthorized($request)
     {
-        if (! $role = auth()->guard('admin')->user()->role)
+        if (! $role = auth()->guard('admin')->user()->role) {
             abort(401, 'This action is unauthorized.');
+        }
 
         if ($role->permission_type == 'all') {
             return;
-        } else {
-            $acl = app('acl');
+        } 
 
-            if ($acl && isset($acl->roles[Route::currentRouteName()])) {
-                bouncer()->allow($acl->roles[Route::currentRouteName()]);
+        if (Route::currentRouteName() == 'news.update' || Route::currentRouteName() == 'news.destroy') {
+            $news = News::findOrFail($request->route('news'));
+            if ($news->admin_id == auth()->guard('admin')->user()->id) {
+                return;
             }
+        }
+
+        $acl = app('acl');
+
+        if ($acl && isset($acl->roles[Route::currentRouteName()])) {
+            bouncer()->allow($acl->roles[Route::currentRouteName()]);
         }
     }
 }

@@ -273,3 +273,38 @@
 .right-sidebar ul li {
     border-bottom: 1px solid #e7e7e7 !important;
 }
+
+.aside-news {
+    width: 120px;
+    margin-top: -20px;
+    border-right: 1px solid rgba(163, 163, 163, 0.2);
+}
+
+.aside-news ul {
+    padding: 0px;
+}
+
+.aside-news ul li {
+    list-style: outside none none;
+}
+
+.aside-news ul li a {
+    color: rgb(0, 3, 17);
+    display: block;
+    height: 49.9688px;
+    letter-spacing: -0.26px;
+    text-decoration: none solid rgb(0, 3, 17);
+    font: normal normal 500 normal 14px / 19px Montserrat, sans-serif;
+    padding: 15px;
+}
+
+.aside-icon {
+    float: right;
+    height: 16.9922px;
+    width: 16.9922px;
+    background: rgba(0, 0, 0, 0) url("/images/right.svg") repeat scroll 0% 0% / auto padding-box border-box;
+}
+.aside-news-active {
+    background-color: white;
+    border: 1px solid rgba(163, 163, 163, 0.2);
+}

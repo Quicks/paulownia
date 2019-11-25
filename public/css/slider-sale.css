@@ -1,0 +1,87 @@
+.back-image{
+
+    background:url("/images/background-actions.png") no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+    padding-top: 72px;
+
+}
+
+.line-sale{
+
+    max-width:100%;
+    height: 267.47px;
+    left: 3px;
+    top: 912px;
+    background:url("/images/line-for-action.png")no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+}
+
+.carousel-control-prev {
+    left: -90px;
+}
+.carousel-control-next {
+    right: -86px;
+}
+.text-for-actions ,.text-for-actions1 ,.text-for-actions2{
+    padding:6%;
+    background: rgba(140, 189, 2, 0.83);
+    color:black;
+    font-size: 20px;
+    line-height: 25px;
+
+}
+
+.text-for-actions{
+    border-radius: 0 0 0 25px;
+}
+.text-for-actions2{
+    border-radius: 0 0 25px 0;
+}
+
+.non{
+    padding-right:0;
+}
+
+.non1{
+    padding:0;
+}
+
+.non2{
+    padding-left: 0;
+}
+
+.rounding{
+    border-radius:25px ;
+}
+
+.procent-number1 ,.procent-number2{
+
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 26px;
+    color: #FFFFFF;
+    text-shadow: 5px 6px 4px rgba(0, 0, 0, 0.25);
+    padding: 10%;
+}
+
+.procent-number1{
+
+    background: url("/images/slider2-1-2.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.procent-number2{
+
+    background: url("/images/slider2-2-1.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+a:hover{
+    text-decoration: none;
+}

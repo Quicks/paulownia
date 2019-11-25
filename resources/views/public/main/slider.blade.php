@@ -114,7 +114,6 @@
 @endif
 
 
-
 @push('scripts')
     <script src="{{ asset('js/vertical-slider.js') }}"></script>
 @endpush

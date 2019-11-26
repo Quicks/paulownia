@@ -1,3 +1,59 @@
+.style-for-main-slider{
+    position:relative;
+}
+
+.line11{
+    background: url("/images/line-for-main-slider.png") no-repeat ;
+    max-width: 100%;
+    height: 212.11px;
+
+}
+.slide-circle .li-circle {
+
+    width: 10px;
+    height: 10px;
+    border: 0.5px solid lightgrey;
+    border-radius: 100%;
+    margin: 5px;
+}
+
+.slide-circle .active {
+
+    background-color: none;
+}
+
+.slider-png1{
+
+    position:absolute;
+    width: 30px;
+    height: 30px;
+    left: 100px;
+    top: 206px;
+    background-image: url("/images/tw 1.png")  ;
+    z-index: 1;
+
+}
+
+.slider-png2{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 100px;
+    top: 261px;
+    background-image: url("/images/youtb 1.png");
+    z-index: 1;
+}
+
+.slider-png3{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 100px;
+    top: 316px;
+    background-image: url("/images/fb 1.png");
+    z-index: 1;
+
+}
 
 .carousel-name-Paulownia{
     height: auto;
@@ -22,117 +78,10 @@
     height: auto;
 }
 
+#main-slider-line{
 
-/* Стили для больших экранов (дисплей шириной от 992 пикселей до 1199 пикселей) */
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-    .carousel-name-Paulownia{
-
-        font-size: 114px;
-        line-height: 62.4px;
-        color: #FFFFFF;
-        height: auto;
-    }
-    .carousel-professional{
-
-        padding: 0 0 46.4px 0;
-        font-size: 38px;
-        line-height: 1.6;
-        letter-spacing: 0.16em;
-        color: white;
-        height: auto;
-    }
-    .carousel-text{
-
-        padding: 0 0 28.8px 0;
-        width: 430px;
-        font-size: 12.8px;
-        line-height: 16px;
-        color: #FFFFFF;
-        height: auto;
-    }
-}
-
-
-/* Стили для очень больших экранов (дисплей минимум 1200 пикселей) */
-/*@media (min-width: 1200px) { ... }*/
-
-
-
-/* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    .carousel-name-Paulownia{
-
-        font-size: 86.4px;
-        line-height: 46.8px;
-        color: #FFFFFF;
-        height: auto;
-    }
-    .carousel-professional{
-
-        padding: 0 0 34.8px 0;
-        font-size: 28.8px;
-        line-height: 1.2;
-        letter-spacing: 0.12em;
-        color: white;
-        height: auto;
-    }
-    .carousel-text{
-        padding: 0 0 21.6px 0;
-        width: 322px;
-        font-size: 9.6px;
-        line-height: 12px;
-        color: #FFFFFF;
-        height: auto;
-    }
-}
-/* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
-@media screen and  (min-width: 576px) and (max-width: 767px) {
-    .carousel-name-Paulownia{
-
-        font-size: 38px;
-        line-height: 22px;
-        color: #FFFFFF;
-    }
-    .carousel-professional{
-
-        padding: 0 0 14px 0;
-        font-size: 5px;
-        line-height: 0.16;
-        letter-spacing: 0.016em;
-        color: white;
-    }
-    .carousel-text{
-
-        padding: 0 0 7.2px 0;
-        width: 114px;
-        font-size: 3.4px;
-        line-height: 4px;
-        color: #FFFFFF;
-    } }
-
-/* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
-@media screen and (max-width: 575px) {
-
-    .carousel-name-Paulownia{
-
-        font-size: 18px;
-        line-height: 8px;
-        color: #FFFFFF;
-    }
-    .carousel-professional{
-
-        padding: 0 0 6px 0;
-        font-size: 5px;
-        line-height: 0.08;
-        letter-spacing: 0.06em;
-        color: white;
-    }
-    .carousel-text{
-
-        padding: 0 0 4px 0;
-        width: 68px;
-        font-size: 1.6px;
-        line-height: 2px;
-        color: #FFFFFF;
-    }
+    position:absolute;
+    margin-top:-9.5%;
+    background-size: 100% 100%;
+    width:100%
 }

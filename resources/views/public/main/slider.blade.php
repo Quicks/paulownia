@@ -1,13 +1,101 @@
 @push('css')
     <link rel="stylesheet" href="{{asset('css/main-slider.css') }}">
+    <link rel="stylesheet" href="{{asset('css/vertical-slider.css') }}">
 @endpush
 
 @if(!empty($sliderData))
-    <div class="bd-example">
+    <div class="bd-example" style="position: relative">
+
+        <div class="row mw-100">
+            <div class="col">
+                <a href="#" class="slider-png1"></a>
+                <a href="#" class="slider-png2"></a>
+                <a href="#" class="slider-png3"></a>
+                <div class="vertical-carousel">
+
+                    <div id="spinner" >
+                        Loading...
+                    </div>
+
+
+                    <div class="buttons text-center">
+                        <div id="next">❮</div>
+                    </div>
+
+                        <div id="carousel">
+                                <span>
+                                    <img src="/images/slider-news-1.png" class="news-shadow">
+                                        <div class="title-text-news">
+                                            <div>Bred triple hybrid </div>
+                                                 <div class="text-news">Manufactured, selected and ...
+                                                      <a href="#" class="news-read-more" >Read more</a>
+                                                 </div>
+                                        </div>
+                                </span>
+
+                            <span>
+                                <img src="/images/slider-news-2.png" class="news-shadow">
+                                    <div class="title-text-news">
+                                        <div>Bred triple hybrid </div>
+                                             <div class="text-news">Manufactured, selected and ...
+                                                  <a href="#" class="news-read-more" >Read more</a>
+                                             </div>
+                                    </div>
+                            </span>
+
+                            <span >
+                                <img src="/images/slider-news-3.png" class="news-shadow">
+                                    <div class="title-text-news">
+                                        <div>Bred triple hybrid </div>
+                                             <div class="text-news">Manufactured, selected and ...
+                                                  <a href="#" class="news-read-more" >Read more</a>
+                                             </div>
+                                    </div>
+                            </span>
+                            <span >
+                                <img src="/images/slider-news-1.png" class="news-shadow">
+                                    <div class="title-text-news">
+                                        <div>Bred triple hybrid </div>
+                                             <div class="text-news">Manufactured, selected and ...
+                                                  <a href="#" class="news-read-more" >Read more</a>
+                                             </div>
+                                    </div>
+                            </span>
+
+                            <span >
+                                <img src="/images/slider-news-2.png" class="news-shadow">
+                                    <div class="title-text-news">
+                                        <div>Bred triple hybrid </div>
+                                             <div class="text-news">Manufactured, selected and ...
+                                                  <a href="#" class="news-read-more" >Read more</a>
+                                             </div>
+                                    </div>
+                            </span>
+
+                            <span >
+                                <img src="/images/slider-news-3.png" class="news-shadow">
+                                    <div class="title-text-news">
+                                        <div>Bred triple hybrid </div>
+                                             <div class="text-news">Manufactured, selected and ...
+                                                  <a href="#" class="news-read-more" >Read more</a>
+                                             </div>
+                                    </div>
+                            </span>
+                         </div>
+
+                    <div class="buttons text-center">
+                        <div id="prev">❮</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
+            <ol class="carousel-indicators slide-circle">
                 @foreach ($sliderData as $key=>$value)
-                    <li data-target="#carouselExampleCaptions" data-slide-to="{{$key}}" class="@if($key==0)active @endif"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="{{$key}}" class="@if($key==0)active @endif li-circle"></li>
                 @endforeach
             </ol>
             <div class="carousel-inner">
@@ -20,14 +108,12 @@
                     </div>
                 @endforeach
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
+        <div> <img id="main-slider-line" src="/images/line-for-main-slider.png" ></div>
     </div>
 @endif
+
+
+@push('scripts')
+    <script src="{{ asset('js/vertical-slider.js') }}"></script>
+@endpush

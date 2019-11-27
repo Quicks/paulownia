@@ -1,14 +1,26 @@
+.advantages{
+    background: url("/images/advantages-back.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
 .advantages-title {
-    font-family: Century Gothic Bold;
+    font-weight: bold;
     font-size: 48px;
-    line-height: 59px;
+    line-height: 56px;
     color: #8CBD02;
+}
+.advantages-line {
+    background: #8CBD02;
+    width: 178px;
+    height: 2px;
+    border-radius: 25px;
 }
 
 .advantages-text {
-    font-size: 18px;
+    font-weight: normal;
+    font-size: 20px;
     line-height: 30px;
     letter-spacing: 0.02em;
-    color: #FFFFFF;
-
+    text-align: center;
+    color: #000000;
 }

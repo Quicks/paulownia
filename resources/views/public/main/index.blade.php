@@ -7,4 +7,5 @@
     @include('public.main.advantages')
     @include('public.main.varieties')
     @include('public.main.calculate')
+    @include('public.main.our-paulownia')
 @endsection

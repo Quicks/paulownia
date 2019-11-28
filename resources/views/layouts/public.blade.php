@@ -30,6 +30,15 @@
     <link rel="stylesheet" href="{{ asset('css/header.css') }}?v3">
     <link rel="stylesheet" href="{{ asset('css/cookie_consent.css') }}">
     @stack('css')
+
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
 </head>
 <body>
 <div id="app" class="container-fluid">
@@ -48,30 +57,6 @@
         @include('public.footer')
 </div>
 @include('cookieConsent::index')
-
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-{{--<script src="{{ asset('js/slick.min.js') }}"></script>--}}
-{{--<script src="{{ asset('js/slick.js') }}"></script>--}}
-
-
-{{--<script type="text/javascript">--}}
-    {{--$(document).ready(function () {--}}
-        {{--$(document).on('ready', function () {--}}
-            {{--$(".vertical").slick({--}}
-
-                {{--vertical: true,--}}
-                {{--slidesToShow: 3,--}}
-                {{--slidesToScroll: 1,--}}
-                {{--autoplay: true--}}
-            {{--});--}}
-        {{--});--}}
-    {{--});--}}
-{{--</script>--}}
-
 @stack('scripts')
 
 </body>

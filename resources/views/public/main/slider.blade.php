@@ -7,13 +7,14 @@
 @endpush
 
 @if(!empty($sliderData))
-    <div class="style-for-main-slider">
+    <div class="bd-example" style="position: relative">
 
         <div class="row mw-100">
             <div class="col">
                 <a href="#" class="slider-png1"></a>
                 <a href="#" class="slider-png2"></a>
                 <a href="#" class="slider-png3"></a>
+
                 <div class="vertical-carousel">
 
                     <style type="text/css">
@@ -68,45 +69,45 @@
                         </section>
                     </div>
 
-
                 </div>
             </div>
 
-
-            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators slide-circle">
-                    @foreach ($sliderData as $key=>$value)
-                        <li data-target="#carouselExampleCaptions" data-slide-to="{{$key}}"
-                            class="@if($key==0)active @endif li-circle"></li>
-                    @endforeach
-                </ol>
-                <div class="carousel-inner">
-                    @foreach ($sliderData as $key=>$value)
-                        <div class="carousel-item @if($key === array_key_first($sliderData)) active @endif">
-                            <img src="{{asset('storage/' . $value['path'])}}" class="d-block w-100"
-                                 alt="{{$value['title']}}">
-                            <div class="carousel-caption d-none d-md-block text-left">
-                                <div>{!! $value['content'] !!}</div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-            <div><img id="main-slider-line" src="/images/line-for-main-slider.png"></div>
         </div>
-    </div>
-        @endif
 
-        @push('scripts')
-            <script>
-                $(document).ready(function () {
-                    $(".vertical").slick({
-                        vertical: true,
-                        verticalSwiping: true,
-                        slidesToShow: 3,
-                        opasity: 0
-                        // autoplay: true,
-                    });
-                });
-            </script>
-    @endpush
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators slide-circle">
+                @foreach ($sliderData as $key=>$value)
+                    <li data-target="#carouselExampleCaptions" data-slide-to="{{$key}}" class="@if($key==0)active @endif li-circle"></li>
+                @endforeach
+            </ol>
+            <div class="carousel-inner">
+                @foreach ($sliderData as $key=>$value)
+                    <div class="carousel-item @if($key === array_key_first($sliderData)) active @endif">
+                        <img src="{{asset('storage/' . $value['path'])}}" class="d-block w-100" alt="{{$value['title']}}">
+                        <div class="carousel-caption d-none d-md-block text-left">
+                            <div>{!! $value['content'] !!}</div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        <div> <img id="main-slider-line" src="/images/line-for-main-slider.png" ></div>
+    </div>
+@endif
+
+
+@push('scripts')
+    <script>
+        $(document).ready(function () {
+            $(".vertical").slick({
+                vertical: true,
+                verticalSwiping: true,
+                slidesToShow: 3,
+                opasity: 0
+                // autoplay: true,
+            });
+        });
+    </script>
+@endpush
+

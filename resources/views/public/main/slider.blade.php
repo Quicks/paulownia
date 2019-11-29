@@ -3,7 +3,6 @@
     <link rel="stylesheet" href="{{asset('css/12.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
-
 @endpush
 
 @if(!empty($sliderData))
@@ -42,29 +41,48 @@
                         <section class="vertical slider">
                             <div class="news-shadow">
                                 <img  src="/images/slider-news-1.png" class="img-rad">
-                                <p>khkshgkhgkxhg</p>
-                                <p>khkshgkhgkxhg</p>
-
+                                <div class="title-text-news">
+                                    <div>Bred triple hybrid </div>
+                                    <div class="text-news">Manufactured, selected and ...
+                                        <a href="#" class="news-read-more" >Read more</a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="news-shadow">
                                 <img src="/images/slider-news-2.png" class="img-rad">
-                                <p>khkshgkhgkxhg</p>
-                                <p>khkshgkhgkxhg</p>
+                                <div class="title-text-news">
+                                    <div>Bred triple hybrid </div>
+                                    <div class="text-news">Manufactured, selected and ...
+                                        <a href="#" class="news-read-more" >Read more</a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="news-shadow">
                                 <img src="/images/slider-news-3.png" class="img-rad">
-                                <p>khkshgkhgkxhg</p>
-                                <p>khkshgkhgkxhg</p>
+                                <div class="title-text-news">
+                                    <div>Bred triple hybrid </div>
+                                    <div class="text-news">Manufactured, selected and ...
+                                        <a href="#" class="news-read-more" >Read more</a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="news-shadow">
                                 <img src="/images/slider-news-1.png" class="img-rad">
-                                <p>khkshgkhgkxhg</p>
-                                <p>khkshgkhgkxhg</p>
+                                <div class="title-text-news">
+                                    <div>Bred triple hybrid </div>
+                                    <div class="text-news">Manufactured, selected and ...
+                                        <a href="#" class="news-read-more" >Read more</a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="news-shadow">
                                 <img src="/images/slider-news-1.png" class="img-rad">
-                                <p>khkshgkhgkxhg</p>
-                                <p>khkshgkhgkxhg</p>
+                                <div class="title-text-news">
+                                    <div>Bred triple hybrid </div>
+                                    <div class="text-news">Manufactured, selected and ...
+                                        <a href="#" class="news-read-more" >Read more</a>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </div>

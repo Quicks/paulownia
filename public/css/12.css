@@ -17,3 +17,29 @@
 
     border-radius: 5px 5px 0 0 ;
 }
+
+
+.title-text-news{
+    background-color: white;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    /* or 125% */
+    letter-spacing: 0.02em;
+    color: #8CBD02;
+    border-radius: 0 0 5px 5px;
+}
+
+.text-news{
+    font-size: 16px;
+    color: #000;
+    font-weight:normal;
+
+}
+
+.news-read-more, .news-read-more:hover{
+
+    color:#8CBD02 ;
+    text-decoration:underline;
+}
+

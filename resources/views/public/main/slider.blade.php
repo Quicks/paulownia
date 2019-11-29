@@ -1,97 +1,94 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/main-slider.css') }}">
-    <link rel="stylesheet" href="{{asset('css/12.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/12.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
 @endpush
 
 @if(!empty($sliderData))
-    <div class="bd-example" style="position: relative">
+    <div class="style-for-main-slider">
 
         <div class="row mw-100">
             <div class="col">
                 <a href="#" class="slider-png1"></a>
                 <a href="#" class="slider-png2"></a>
                 <a href="#" class="slider-png3"></a>
-
-                <div class="vertical-carousel">
-
-                    <style type="text/css">
-
-                        .slider {
-                            width: 80%;
-                            margin: 25px auto;
-                        }
-
-                        .slick-slide {
-                            margin: 10px;
-                        }
-
-                        .slick-slide img {
-                            width: 100%;
-                        }
-
-                        .slick-prev:before,
-                        .slick-next:before {
-                            color: black;
-                        }
-                    </style>
-
-                    <div style="width:345px;height:586px;float:right">
-                        <section class="vertical slider">
-                            <div class="news-shadow">
-                                <img  src="/images/slider-news-1.png" class="img-rad">
-                                <div class="title-text-news">
-                                    <div>Bred triple hybrid </div>
-                                    <div class="text-news">Manufactured, selected and ...
-                                        <a href="#" class="news-read-more" >Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="news-shadow">
-                                <img src="/images/slider-news-2.png" class="img-rad">
-                                <div class="title-text-news">
-                                    <div>Bred triple hybrid </div>
-                                    <div class="text-news">Manufactured, selected and ...
-                                        <a href="#" class="news-read-more" >Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="news-shadow">
-                                <img src="/images/slider-news-3.png" class="img-rad">
-                                <div class="title-text-news">
-                                    <div>Bred triple hybrid </div>
-                                    <div class="text-news">Manufactured, selected and ...
-                                        <a href="#" class="news-read-more" >Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="news-shadow">
-                                <img src="/images/slider-news-1.png" class="img-rad">
-                                <div class="title-text-news">
-                                    <div>Bred triple hybrid </div>
-                                    <div class="text-news">Manufactured, selected and ...
-                                        <a href="#" class="news-read-more" >Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="news-shadow">
-                                <img src="/images/slider-news-1.png" class="img-rad">
-                                <div class="title-text-news">
-                                    <div>Bred triple hybrid </div>
-                                    <div class="text-news">Manufactured, selected and ...
-                                        <a href="#" class="news-read-more" >Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-                </div>
             </div>
-
         </div>
 
+        <div class="vertical-carousel">
+
+            {{--<style type="text/css">--}}
+
+                {{--.slider {--}}
+                    {{--width: 50%;--}}
+                    {{--margin: 5px auto;--}}
+
+                {{--}--}}
+
+                {{--.slick-slide {--}}
+                    {{--margin: 10px;--}}
+                {{--}--}}
+
+                {{--/*.slick-slide img {*/--}}
+                {{--/*width: 100%;*/--}}
+                {{--/*}*/--}}
+
+                {{--.slick-prev:before,--}}
+                {{--.slick-next:before {--}}
+                    {{--color: black;--}}
+                {{--}--}}
+            {{--</style>--}}
+
+
+            <section class="vertical slider">
+                <div class="news-shadow">
+                    <img  src="/images/slider-news-1.png" class="img-rad">
+                    <div class="title-text-news">
+                        <div>Bred triple hybrid </div>
+                        <div class="text-news">Manufactured, selected and ...
+                            <a href="#" class="news-read-more" >Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-shadow">
+                    <img src="/images/slider-news-2.png" class="img-rad">
+                    <div class="title-text-news">
+                        <div>Bred triple hybrid </div>
+                        <div class="text-news">Manufactured, selected and ...
+                            <a href="#" class="news-read-more" >Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-shadow">
+                    <img src="/images/slider-news-3.png" class="img-rad">
+                    <div class="title-text-news">
+                        <div>Bred triple hybrid </div>
+                        <div class="text-news">Manufactured, selected and ...
+                            <a href="#" class="news-read-more" >Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-shadow">
+                    <img src="/images/slider-news-1.png" class="img-rad">
+                    <div class="title-text-news">
+                        <div>Bred triple hybrid </div>
+                        <div class="text-news">Manufactured, selected and ...
+                            <a href="#" class="news-read-more" >Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-shadow">
+                    <img src="/images/slider-news-1.png" class="img-rad">
+                    <div class="title-text-news">
+                        <div>Bred triple hybrid </div>
+                        <div class="text-news">Manufactured, selected and ...
+                            <a href="#" class="news-read-more" >Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators slide-circle">

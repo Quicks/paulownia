@@ -111,5 +111,21 @@
     font-weight: bold;
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+
+    .slick-prev {
+        left: 85px;
+    }
+
+    .slick-prev {
+        top: -25px;
+    }
+
+    .slick-next {
+        right: 60px;
+    }
+
+}
+
 
 

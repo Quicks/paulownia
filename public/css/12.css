@@ -1,7 +1,28 @@
+.slider {
+    width: 280px;
+    margin: 10px auto;
+    top: 14px;
+}
+
+.slick-slide {
+
+    margin:  0 12px 9px 9px;
+    /*margin-bottom: 8px;*/
+    /*margin-right: 10px;*/
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+
 .vertical-carousel{
     position: absolute;
     z-index: 1;
     right: 5%;
+    width:345px;
+    height:586px;
+    float:right;
 
 }
 
@@ -14,7 +35,7 @@
 }
 
 .img-rad{
-
+    width: 100%;
     border-radius: 5px 5px 0 0 ;
 }
 
@@ -23,7 +44,7 @@
     background-color: white;
     font-weight: bold;
     font-size: 20px;
-    line-height: 25px;
+    /*line-height: 25px;*/
     /* or 125% */
     letter-spacing: 0.02em;
     color: #8CBD02;
@@ -41,5 +62,146 @@
 
     color:#8CBD02 ;
     text-decoration:underline;
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1450px) {
+
+    .slider {
+        width: 145px;
+        margin: 10px auto;
+        top: 13px;
+    }
+
+    .slick-slide {
+
+        margin:  0 12px 9px 9px;
+        /*margin-bottom: 8px;*/
+        /*margin-right: 10px;*/
+    }
+
+    .vertical-carousel{
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        width:345px;
+        height:586px;
+        float:right
+
+    }
+
+    .title-text-news{
+
+        font-size: 10px;
+        color: #8CBD02;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .text-news{
+        font-size: 8px;
+        color: #000;
+        font-weight:normal;
+
+    }
+
+
+}
+
+
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+
+    .slider {
+        width: 155px;
+        margin: 10px auto;
+        top: 13px;
+    }
+
+    .slick-slide {
+
+        margin:  0 12px 9px 9px;
+        /*margin-bottom: 8px;*/
+        /*margin-right: 10px;*/
+    }
+
+    .vertical-carousel{
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        width:345px;
+        height:586px;
+        float:right
+
+    }
+
+    .title-text-news{
+
+        font-size: 10px;
+        color: #8CBD02;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .text-news{
+        font-size: 8px;
+        color: #000;
+        font-weight:normal;
+
+    }
+
+
+}
+
+/* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .slider {
+        width: 115px;
+        margin: 10px auto;
+        top: 13px;
+
+    }
+
+    .slick-slide {
+
+        margin:  0 12px 9px 9px;
+
+    }
+
+    .vertical-carousel{
+
+        width:302px;
+        height:356px;
+        float:right;
+        right: -5%;
+
+    }
+    .title-text-news{
+
+        font-size: 8px;
+        color: #8CBD02;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .text-news{
+        font-size: 6px;
+        color: #000;
+        font-weight:normal;
+
+    }
+    .img-rad{
+
+        border-radius: 5px 5px 0 0 ;
+    }
+}
+
+
+/* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
+@media screen and  (min-width: 576px) and (max-width: 767px) {
+
+
+}
+
+/* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
+@media screen and (max-width: 575px) {
+
+
 }
 

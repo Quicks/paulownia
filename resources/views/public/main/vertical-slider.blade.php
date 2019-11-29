@@ -7,7 +7,7 @@
 <style type="text/css">
 
     .slider {
-        width: 50%;
+        width: 80%;
         margin: 100px auto;
     }
 
@@ -40,31 +40,32 @@
 </style>
 
 
-<body>  <div style="width: 345px;height: 556px;background:rosybrown">
+
+<div style="width: 545px;height: 556px;">
     <section class="vertical slider">
         <div>
-            <img src="http://placehold.it/350x100?text=1">
+            <img src="/images/slider-news-1.png">
             <p>khkshgkhgkxhg</p>
             <p>khkshgkhgkxhg</p>
 
         </div>
         <div>
-            <img src="http://placehold.it/350x100?text=2">
+            <img src="/images/slider-news-2.png">
             <p>khkshgkhgkxhg</p>
             <p>khkshgkhgkxhg</p>
         </div>
         <div>
-            <img src="http://placehold.it/350x100?text=3">
+            <img src="/images/slider-news-3.png">
             <p>khkshgkhgkxhg</p>
             <p>khkshgkhgkxhg</p>
         </div>
         <div>
-            <img src="http://placehold.it/350x100?text=4">
+            <img src="/images/slider-news-1.png">
             <p>khkshgkhgkxhg</p>
             <p>khkshgkhgkxhg</p>
         </div>
         <div>
-            <img src="http://placehold.it/350x100?text=5">
+            <img src="/images/slider-news-1.png">
             <p>khkshgkhgkxhg</p>
             <p>khkshgkhgkxhg</p>
         </div>
@@ -92,9 +93,9 @@
         {
             $(".vertical").slick({
                 vertical: true,
+                verticalSwiping: true,
                 slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true
+                autoplay: true,
             });
         });
     </script>

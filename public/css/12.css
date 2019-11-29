@@ -1,0 +1,19 @@
+.vertical-carousel{
+    position: absolute;
+    z-index: 1;
+    right: 5%;
+
+}
+
+.news-shadow{
+
+    border-radius: 5px;
+    background: #d6d5d5;
+    box-shadow: 6px 6px #989898, 12px 12px #6c6666;
+
+}
+
+.img-rad{
+
+    border-radius: 5px 5px 0 0 ;
+}

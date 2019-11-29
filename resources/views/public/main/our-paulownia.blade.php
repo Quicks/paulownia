@@ -35,7 +35,7 @@
                 fit: 'contain',
                 clicktransition: "crossfade",
                 loop:"true",
-                // autoplay: "true",
+                autoplay: "true",
                 keyboard:'{"space": true, "home": true, "end": true, "up": true, "down": true}',
                 swipe:true,
                 thumbwidth: 350,

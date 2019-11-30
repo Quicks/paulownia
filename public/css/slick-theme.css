@@ -128,4 +128,28 @@
 }
 
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .slick-prev {
+        left: 55px;
+    }
+
+    .slick-prev {
+        top: -20px;
+    }
+
+    .slick-next {
+        right: 45px;
+    }
+
+    .slick-next {
+
+        bottom: -15px;
+    }
+
+}
+
+
+
+
 

@@ -6,11 +6,16 @@
 
 .slick-slide {
 
-    margin:  0 12px 9px 9px;
+    margin:  12px;
+    /*height: 100%;*/
     /*margin-bottom: 8px;*/
     /*margin-right: 10px;*/
 }
 
+.slice-list{
+    height: 100%;
+    display: none;
+}
 .slick-prev:before,
 .slick-next:before {
     color: black;
@@ -20,14 +25,14 @@
     position: absolute;
     z-index: 1;
     right: 5%;
-    width:345px;
-    height:586px;
+    /*width:30%;*/
+    /*height:586px;*/
     float:right;
 
 }
 
 .news-shadow{
-
+    display: none;
     border-radius: 5px;
     background: #d6d5d5;
     box-shadow: 6px 6px #989898, 12px 12px #6c6666;
@@ -35,6 +40,7 @@
 }
 
 .img-rad{
+
     width: 100%;
     border-radius: 5px 5px 0 0 ;
 }
@@ -67,7 +73,7 @@
 @media screen and (min-width: 1367px) and (max-width: 1450px) {
 
     .slider {
-        width: 145px;
+        width: 100%;
         margin: 10px auto;
         top: 13px;
     }
@@ -84,7 +90,6 @@
         z-index: 1;
         right: 0;
         width:345px;
-        height:586px;
         float:right
 
     }
@@ -118,8 +123,8 @@
     .slick-slide {
 
         margin:  0 12px 9px 9px;
-        /*margin-bottom: 8px;*/
-        /*margin-right: 10px;*/
+        margin-bottom: 8px;
+        margin-right: 10px;
     }
 
     .vertical-carousel{

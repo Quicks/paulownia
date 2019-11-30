@@ -17,30 +17,6 @@
         </div>
 
         <div class="vertical-carousel">
-
-            {{--<style type="text/css">--}}
-
-                {{--.slider {--}}
-                    {{--width: 50%;--}}
-                    {{--margin: 5px auto;--}}
-
-                {{--}--}}
-
-                {{--.slick-slide {--}}
-                    {{--margin: 10px;--}}
-                {{--}--}}
-
-                {{--/*.slick-slide img {*/--}}
-                {{--/*width: 100%;*/--}}
-                {{--/*}*/--}}
-
-                {{--.slick-prev:before,--}}
-                {{--.slick-next:before {--}}
-                    {{--color: black;--}}
-                {{--}--}}
-            {{--</style>--}}
-
-
             <section class="vertical slider">
                 <div class="news-shadow">
                     <img  src="/images/slider-news-1.png" class="img-rad">
@@ -115,12 +91,13 @@
 @push('scripts')
     <script>
         $(document).ready(function () {
+
             $(".vertical").slick({
                 vertical: true,
                 verticalSwiping: true,
                 slidesToShow: 3,
-                opasity: 0
                 // autoplay: true,
+                speed:500,
             });
         });
     </script>

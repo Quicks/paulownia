@@ -86,6 +86,58 @@
     width:100%
 }
 
+@media screen and (min-width: 1367px) {
+
+    .carousel-name-Paulownia {
+
+        font-size: 175px;
+        line-height: 206px;
+        color: #FFFFFF;
+        height: auto;
+    }
+
+    .carousel-professional {
+
+        padding: 0 0 46.4px 0;
+        font-size: 78px;
+        line-height: 1.6;
+        letter-spacing: 0.16em;
+        color: white;
+        height: auto;
+    }
+
+    .carousel-text {
+
+        padding: 0 0 28.8px 0;
+        width: 430px;
+        font-size: 18px;
+        line-height: 16px;
+        color: #FFFFFF;
+        height: auto;
+    }
+
+    .slider-png1 {
+
+        left: 80px;
+        top: 70px;
+    }
+
+    .slider-png2 {
+
+        left: 80px;
+        top: 125px;
+    }
+
+    .slider-png3 {
+
+        left: 80px;
+        top: 175px;
+
+    }
+
+
+}
+
 
 /* Стили для больших экранов (дисплей шириной от 992 пикселей до 1199 пикселей) */
 @media screen and (min-width: 1024px) and (max-width: 1366px) {

@@ -13,6 +13,7 @@ use Webkul\Category\Repositories\CategoryRepository as Category;
 use Webkul\Inventory\Repositories\InventorySourceRepository as InventorySource;
 use Illuminate\Support\Facades\Storage;
 use DB;
+use Webkul\Product\Contracts\ProductFlat;
 
 /**
  * Product controller
@@ -330,6 +331,23 @@ class ProductController extends Controller
             }
         }
         return view($this->_config['view'], compact('product', 'product_flat', 'product_imgs', 'category'));
+    }
+
+    public function copy($id) {
+        $product = $this->product->findOrFail($id);
+        $product_flat = DB::table('product_flat')->where('id', $id)->get();
+        $product_imgs = DB::table('product_images')->where('product_id', $id)->get();
+
+        $productCopy = $product->replicate();
+        $productCopy->sku = $productCopy->sku.'_copy_'.now()->timestamp;
+        $productCopy->save();
+
+        DB::statement('insert into product_flat (sku, name, description, product_id, channel, locale, parent_id)
+            select sku, name, description, '.$productCopy->id.', channel, locale, parent_id
+            from product_flat
+            where id = '.$id);
+
+        return redirect()->route('admin.catalog.products.index');
     }
 
 }

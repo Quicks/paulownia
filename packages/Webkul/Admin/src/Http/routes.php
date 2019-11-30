@@ -205,7 +205,9 @@ Route::group(['middleware' => ['web']], function () {
                     'view' => 'admin::catalog.products.view'
                 ])->name('admin.catalog.products.view');
 
-
+                Route::get('products/copy/{id}', 'Webkul\Product\Http\Controllers\ProductController@copy')->defaults('_config', [
+                    'copy' => 'admin::catalog.products.copy'
+                ])->name('admin.catalog.products.copy');
 
 
 

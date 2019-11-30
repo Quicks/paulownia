@@ -7,12 +7,27 @@
         line-height: 22px !important;
     }
 }
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+    .services-img-leaf-position {
+        position:absolute !important;
+        bottom: 0 !important;
+    }
+    .img-leaf {
+        width: 50% !important;
+        height: 50% !important;
+    }
+}
+
+
 .our-services {
-    background: url("/images/service-back.jpg") no-repeat;
-    -moz-background-size: 100%;
-    -webkit-background-size: 100%;
-    -o-background-size: 100%;
+    background: url("/images/service-back.png") no-repeat;
     background-size: 100% 100%;
+
+}
+.services-ident {
+    padding-bottom: 170px;
+    padding-top: 120px;
+    max-width: 1800px;
 }
 .services-title {
     font-weight: bold;
@@ -89,4 +104,12 @@
 .services-item-link:hover {
     color: #8CBD02;
     text-decoration: underline;
+}
+.services-img-leaf-position {
+    position:absolute;
+    bottom: -350px;
+}
+.img-leaf {
+    width: 100%;
+    height: 100%;
 }

@@ -5,6 +5,7 @@
 <div class="row mx-auto pt-xl-5 pb-xl-5" style="max-width:1200px;">
     <div class="col-12 mb-5 text-center">
         <p class="calculate-title">Calculate your income</p>
+        <hr class="calc-title-line">
     </div>
     <div class="col-xl-3">
         <select class="calc-select" id="view" name="view" onchange="getValueView()">
@@ -31,7 +32,7 @@
     </div>
     <div class="col-xl-3">
         <button class="button-calc" onclick="calculateGrowth()" data-toggle="modal"  data-target="#calcAnswer">
-            <img src="{{asset('/images/calculate-growth.svg')}}">
+            <img src="{{asset('/images/calculate.png')}}">
         </button>
     </div>
 </div>

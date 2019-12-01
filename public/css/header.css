@@ -1,3 +1,8 @@
+@media screen and (min-width: 1080px) and (max-width: 1920px) {
+    .bottom-link-activ, .info-menu, .info, .info-lang, .dropdown-item {
+        font-size: 14px !important;
+    }
+}
 .header {
     background: url("/images/header-background.jpg") no-repeat #FFFFFF;
     background-size: 100% 50%, 100% 50%;
@@ -48,4 +53,7 @@
     font-size: 20px;
     line-height: 23px;
     color: #000000;
+}
+.logo-width {
+    max-width: 140px;
 }

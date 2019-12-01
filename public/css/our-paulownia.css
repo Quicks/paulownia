@@ -1,0 +1,32 @@
+.our-paulownia {
+    background: url("/images/our-paulownia-back.png") no-repeat;
+    max-height: 1325px;
+}
+.our-paulownia-title {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    color: #FFFFFF;
+    margin-top: 15%;
+}
+.our-paulownia-line {
+    background: #FFFFFF;
+    width: 178px;
+    height: 2px;
+    border-radius: 25px;
+}
+.fotorama__arr--prev {
+background: url("/images/arrow-left.svg") no-repeat;
+}
+.fotorama__arr--next {
+    background: url("/images/arrow-right.svg") no-repeat;
+}
+.fotorama__img {
+    border-radius: 15px !important;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25) !important;
+    width: 100%;
+    height: 100%;
+}
+.fotorama__thumb {
+    border-radius: 25px !important;
+}

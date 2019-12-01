@@ -338,27 +338,28 @@ class ProductController extends Controller
     public function copy($id) {
         $product = $this->product->findOrFail($id);
         $product_flat = ProductFlat::where('product_id', $id)->first();
-        $product_attribute_values = ProductAttributeModel::where('product_id', $id)->get();
-        // $product_imgs = ProductImage::where('product_id', $id)->first();
-//dd($product->categories->all());
-        $product_copy = $product->replicate();
-        $product_copy->sku = $product_copy->sku.'_copy_'.now()->timestamp;
+        $name_ending = '-copy-'. now()->timestamp;
 
+        $product_copy = $product->replicate();
+        $product_copy->sku = $product_copy->sku . $name_ending;
         $product_copy->save();
 
         $product_flat_copy = $product_flat->replicate();
         $product_flat_copy->product_id = $product_copy->id;
         $product_flat_copy->sku = $product_copy->sku;
-        $product_flat_copy->name = $product_flat_copy->name.'_copy';
+        $product_flat_copy->name = $product_flat_copy->name . '-copy';
+        $product_flat_copy->url_key = $product_flat->url_key . $name_ending;
         $product_flat_copy->save();
 
-        foreach ($product_attribute_values as $attribute) {
-            $attribute_copy = $attribute->replicate();
-            $attribute_copy->product_id = $product_copy->id;
-            $attribute_copy->save();
-        }
+        $product_copy->categories()->saveMany($product->categories);
+        $product_copy->attribute_values()->createMany($product->attribute_values->toArray());
 
-        $product_copy->categories()->saveMany($product->categories->all());
+        $url_key_id = \Webkul\Attribute\Models\Attribute::where('code', 'url_key')->first()->id;
+        $url_key_attr_fix = $product_copy->attribute_values->where('attribute_id', $url_key_id)->first();
+        $url_key_attr_fix->text_value = $product_flat_copy->url_key;
+        $url_key_attr_fix->save();
+
+        // $product_copy->images()->createMany($product->images->toArray()); //add image file copying if needed
 
         return redirect()->route('admin.catalog.products.index');
     }

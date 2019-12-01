@@ -136,18 +136,18 @@ class ProductDataGrid extends DataGrid
         ]);
 
         $this->addAction([
-            'type' => 'Copy',
-            'method' => 'GET', // use GET request only for redirect purposes
-            'route' => 'admin.catalog.products.copy',
-            'confirm_text' => 'Are you sure to copy product?',
-            'icon' => 'fa fa-files-o fa-lg'
-        ]);
-
-        $this->addAction([
             'type' => 'Edit',
             'method' => 'GET', // use GET request only for redirect purposes
             'route' => 'admin.catalog.products.edit',
             'icon' => 'icon pencil-lg-icon'
+        ]);
+
+        $this->addAction([
+            'type' => 'Copy',
+            'method' => 'POST', // use GET request only for redirect purposes
+            'route' => 'admin.catalog.products.copy',
+            'confirm_text' => 'Are you sure to copy product?',
+            'icon' => 'fa fa-files-o fa-lg'
         ]);
 
         $this->addAction([

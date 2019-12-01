@@ -1,19 +1,31 @@
 .our-paulownia {
     background: url("/images/our-paulownia-back.png") no-repeat;
-    max-height: 1325px;
+    background-size: 100% 100%;
+    margin-top: -190px;
+    position: relative;
+}
+.our-paulownia-content {
+    padding-bottom: 100px;
+    padding-top: 220px;
+    max-width: 1700px;
 }
 .our-paulownia-title {
     font-weight: bold;
     font-size: 48px;
     line-height: 56px;
     color: #FFFFFF;
-    margin-top: 15%;
 }
 .our-paulownia-line {
     background: #FFFFFF;
     width: 178px;
     height: 2px;
     border-radius: 25px;
+    position: relative;
+}
+.our-paulownia-leaf {
+    position:absolute;
+    top:-80px;
+    right: 70px;
 }
 .fotorama__arr--prev {
 background: url("/images/arrow-left.svg") no-repeat;

@@ -4,8 +4,8 @@
     @include('public.main.slider-sale')
     @include('public.main.about-us')
     @include('public.main.advantages')
+    @include('public.main.grades')
     @include('public.main.services')
     @include('public.main.calculate')
-    @include('public.main.varieties')
     @include('public.main.our-paulownia')
 @endsection

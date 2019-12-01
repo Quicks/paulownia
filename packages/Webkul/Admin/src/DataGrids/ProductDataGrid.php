@@ -139,6 +139,7 @@ class ProductDataGrid extends DataGrid
             'type' => 'Copy',
             'method' => 'GET', // use GET request only for redirect purposes
             'route' => 'admin.catalog.products.copy',
+            'confirm_text' => 'Are you sure to copy product?',
             'icon' => 'fa fa-files-o fa-lg'
         ]);
 

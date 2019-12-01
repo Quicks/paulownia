@@ -13,7 +13,9 @@ use Webkul\Category\Repositories\CategoryRepository as Category;
 use Webkul\Inventory\Repositories\InventorySourceRepository as InventorySource;
 use Illuminate\Support\Facades\Storage;
 use DB;
-use Webkul\Product\Contracts\ProductFlat;
+use Webkul\Product\Models\ProductFlat;
+use Webkul\Product\Models\ProductImage;
+use Webkul\Product\Models\ProductAttributeValue as ProductAttributeModel;
 
 /**
  * Product controller
@@ -317,7 +319,7 @@ class ProductController extends Controller
     public function view($id)
     {
         $product = $this->product->findOrFail($id);
-        $product_flat = DB::table('product_flat')->where('id', $id)->get();
+        $product_flat = DB::table('product_flat')->where('product_id', $id)->get();
         $product_imgs = DB::table('product_images')->where('product_id', $id)->get();
         $categories = DB::table('product_categories')->where('product_id', $id)->get();
         foreach ($categories as $item)
@@ -335,17 +337,28 @@ class ProductController extends Controller
 
     public function copy($id) {
         $product = $this->product->findOrFail($id);
-        $product_flat = DB::table('product_flat')->where('id', $id)->get();
-        $product_imgs = DB::table('product_images')->where('product_id', $id)->get();
+        $product_flat = ProductFlat::where('product_id', $id)->first();
+        $product_attribute_values = ProductAttributeModel::where('product_id', $id)->get();
+        // $product_imgs = ProductImage::where('product_id', $id)->first();
+//dd($product->categories->all());
+        $product_copy = $product->replicate();
+        $product_copy->sku = $product_copy->sku.'_copy_'.now()->timestamp;
 
-        $productCopy = $product->replicate();
-        $productCopy->sku = $productCopy->sku.'_copy_'.now()->timestamp;
-        $productCopy->save();
+        $product_copy->save();
 
-        DB::statement('insert into product_flat (sku, name, description, product_id, channel, locale, parent_id)
-            select sku, name, description, '.$productCopy->id.', channel, locale, parent_id
-            from product_flat
-            where id = '.$id);
+        $product_flat_copy = $product_flat->replicate();
+        $product_flat_copy->product_id = $product_copy->id;
+        $product_flat_copy->sku = $product_copy->sku;
+        $product_flat_copy->name = $product_flat_copy->name.'_copy';
+        $product_flat_copy->save();
+
+        foreach ($product_attribute_values as $attribute) {
+            $attribute_copy = $attribute->replicate();
+            $attribute_copy->product_id = $product_copy->id;
+            $attribute_copy->save();
+        }
+
+        $product_copy->categories()->saveMany($product->categories->all());
 
         return redirect()->route('admin.catalog.products.index');
     }

@@ -22,11 +22,18 @@
     .grades-item-link {
         font-size: 12px !important;
     }
+    .grades-stamp {
+        margin-left: 85px !important;
+        margin-top: -20px !important;
+    }
 }
 @media screen and (min-width: 320px) and (max-width: 768px) {
     .grades-img-size {
         width: 320px !important;
         height: 438px !important;
+    }
+    .grades-stamp {
+        display: none;
     }
 }
 .grades-back {
@@ -90,4 +97,9 @@
 .grades-item-link:hover {
     color: #8CBD02;
     text-decoration: underline;
+}
+.grades-stamp {
+    position: absolute;
+    margin-left: 160px;
+    margin-top: 30px
 }

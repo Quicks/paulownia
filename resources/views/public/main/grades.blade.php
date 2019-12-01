@@ -22,10 +22,13 @@
                     <p class="text-left">
                         <a target="_blank" href="#" class="grades-item-link">Read more</a>
                     </p>
+                    <div class="grades-stamp">
+                        <img src="{{asset('/images/stamp-turbopro.png')}}">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-sm-12 mx-auto grades-item pb-3 mb-sm-4">
+        <div class="col-xl-6 col-sm-12 mx-auto grades-item pb-3 mb-sm-4" style="position: relative">
             <div class="row">
                 <div class="col-xl-8 col-sm-12 grades-imgs">
                     <img src="{{asset('/images/zepro-en.png')}}" class="grades-img-size">
@@ -38,11 +41,11 @@
                     <p class="text-left">
                         <a target="_blank" href="#" class="grades-item-link">Read more</a>
                     </p>
-
+                    <div class="grades-stamp">
+                        <img src="{{asset('/images/stamp-zepro.png')}}">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 </div>

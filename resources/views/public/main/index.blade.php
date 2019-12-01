@@ -7,6 +7,5 @@
     @include('public.main.grades')
     @include('public.main.services')
     @include('public.main.calculate')
-    @include('public.main.varieties')
     @include('public.main.our-paulownia')
 @endsection

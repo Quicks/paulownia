@@ -81,3 +81,8 @@
 .content-container .content-wrapper {
     margin-left: 225px;
 }
+
+.fa-files-o {
+    color:#979797;
+    cursor: pointer;
+}

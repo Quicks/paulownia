@@ -20,7 +20,7 @@
     {!! SEOMeta::generate() !!}
     @if(empty(SEOMeta::getTitle()))
         <title>{{ config('app.name', 'Laravel') }}</title>
-@endifgi
+@endif
 
 <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"

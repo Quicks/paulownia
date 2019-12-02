@@ -3,7 +3,8 @@
 
         <div id="image-input-div" class="form-group  {{ $errors->has('image') ? 'has-error' : ''}}">
             <label for="image" class="control-label">Image</label>
-             <input class="form-control" name="image" accept="image/*" type="file" id="image-input" value="">
+             <input class="form-control" name="image" accept="image/*" type="file" id="image-input" value="" 
+                @if(isset($image_required) && $image_required) required @endif>
 
             {!! $errors->first('image', '<p class="help-block">:message</p>') !!}
         </div>

@@ -24,7 +24,7 @@
                         <form method="POST" action="{{ url('/admin/galleries') }}" accept-charset="UTF-8" class="form-horizontal validForm" enctype="multipart/form-data" id="gallery-form">
                             {{ csrf_field() }}
 
-                            @include ('admin.galleries.form', ['formMode' => 'create'])
+                            @include ('admin.galleries.form', ['formMode' => 'create', 'image_required' => true])
 
                         </form>
 

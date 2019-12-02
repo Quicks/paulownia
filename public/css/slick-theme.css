@@ -118,14 +118,13 @@
 
         .slick-prev {
 
-            left: 52%;
-            top: -4%;
+            left: 32%;
+            top: -2%;
         }
 
         .slick-next {
-
-            bottom:-4%;
-            right: 33%;
+            bottom: -3%;
+            right: 62%;
         }
 
     }

@@ -96,7 +96,7 @@
                 vertical: true,
                 verticalSwiping: true,
                 slidesToShow: 3,
-                // autoplay: true,
+                autoplay: true,
                 speed:500,
             });
         });

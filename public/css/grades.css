@@ -1,0 +1,107 @@
+@media screen and (min-width: 1080px) and (max-width: 1920px) {
+    .grades-width {
+        max-width:1200px !important;
+    }
+    .grades-item {
+        max-width: 450px !important;
+    }
+    .grades-img-size {
+        width: 290px !important;
+        height: 358px !important;
+    }
+    .grades-item-title {
+        width: 140px !important;
+        font-size: 12px !important;
+
+    }
+    .grades-item-text {
+        width: 150px !important;
+        font-size: 12px !important;
+        line-height: 15px !important;
+    }
+    .grades-item-link {
+        font-size: 12px !important;
+    }
+    .grades-stamp {
+        margin-left: 85px !important;
+        margin-top: -20px !important;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .grades-img-size {
+        width: 320px !important;
+        height: 438px !important;
+    }
+    .grades-stamp {
+        display: none;
+    }
+}
+.grades-back {
+    background: url("/images/stem.jpg") no-repeat;
+    background-size: 100% 100%;
+    padding-top: 350px;
+    margin-top: -400px;
+}
+.grades-width {
+    max-width:1600px;
+    padding-bottom: 200px;
+}
+.grades-title {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    color: #8CBD02;
+}
+.grades-line {
+    background: #8CBD02;
+    width: 326px;
+    height: 3px;
+    border-radius: 25px;
+}
+.grades-item {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    max-width: 675px;
+}
+.grades-imgs {
+    margin-top: -15px;
+    margin-left: -40px;
+}
+.grades-img-size {
+    width: 420px;
+    height: 538px;
+}
+.grades-item-title {
+    width: 229px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #8CBD02;
+}
+.grades-item-text {
+    width: 232px;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #000000;
+}
+.grades-item-link {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 10px;
+    letter-spacing: 0.02em;
+    color: #8CBD02;
+    text-decoration: underline;
+}
+.grades-item-link:hover {
+    color: #8CBD02;
+    text-decoration: underline;
+}
+.grades-stamp {
+    position: absolute;
+    margin-left: 160px;
+    margin-top: 30px
+}

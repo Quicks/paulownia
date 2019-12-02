@@ -143,6 +143,14 @@ class ProductDataGrid extends DataGrid
         ]);
 
         $this->addAction([
+            'type' => 'Copy',
+            'method' => 'POST', // use GET request only for redirect purposes
+            'route' => 'admin.catalog.products.copy',
+            'confirm_text' => 'Are you sure to copy product?',
+            'icon' => 'fa fa-files-o fa-lg'
+        ]);
+
+        $this->addAction([
             'type' => 'Delete',
             'method' => 'POST', // use GET request only for redirect purposes
             'route' => 'admin.catalog.products.delete',

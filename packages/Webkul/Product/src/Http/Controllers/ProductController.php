@@ -13,6 +13,9 @@ use Webkul\Category\Repositories\CategoryRepository as Category;
 use Webkul\Inventory\Repositories\InventorySourceRepository as InventorySource;
 use Illuminate\Support\Facades\Storage;
 use DB;
+use Webkul\Product\Models\ProductFlat;
+use Webkul\Product\Models\ProductImage;
+use Webkul\Product\Models\ProductAttributeValue as ProductAttributeModel;
 
 /**
  * Product controller
@@ -316,7 +319,7 @@ class ProductController extends Controller
     public function view($id)
     {
         $product = $this->product->findOrFail($id);
-        $product_flat = DB::table('product_flat')->where('id', $id)->get();
+        $product_flat = DB::table('product_flat')->where('product_id', $id)->get();
         $product_imgs = DB::table('product_images')->where('product_id', $id)->get();
         $categories = DB::table('product_categories')->where('product_id', $id)->get();
         foreach ($categories as $item)
@@ -330,6 +333,35 @@ class ProductController extends Controller
             }
         }
         return view($this->_config['view'], compact('product', 'product_flat', 'product_imgs', 'category'));
+    }
+
+    public function copy($id) {
+        $product = $this->product->findOrFail($id);
+        $product_flat = ProductFlat::where('product_id', $id)->first();
+        $name_ending = '-copy-'. now()->timestamp;
+
+        $product_copy = $product->replicate();
+        $product_copy->sku = $product_copy->sku . $name_ending;
+        $product_copy->save();
+
+        $product_flat_copy = $product_flat->replicate();
+        $product_flat_copy->product_id = $product_copy->id;
+        $product_flat_copy->sku = $product_copy->sku;
+        $product_flat_copy->name = $product_flat_copy->name . '-copy';
+        $product_flat_copy->url_key = $product_flat->url_key . $name_ending;
+        $product_flat_copy->save();
+
+        $product_copy->categories()->saveMany($product->categories);
+        $product_copy->attribute_values()->createMany($product->attribute_values->toArray());
+
+        $url_key_id = \Webkul\Attribute\Models\Attribute::where('code', 'url_key')->first()->id;
+        $url_key_attr_fix = $product_copy->attribute_values->where('attribute_id', $url_key_id)->first();
+        $url_key_attr_fix->text_value = $product_flat_copy->url_key;
+        $url_key_attr_fix->save();
+
+        // $product_copy->images()->createMany($product->images->toArray()); //add image file copying if needed
+
+        return redirect()->route('admin.catalog.products.index');
     }
 
 }

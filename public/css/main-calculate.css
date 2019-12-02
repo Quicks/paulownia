@@ -1,8 +1,14 @@
 .calculate-title {
-    font-family: Century Gothic Bold;
+    font-weight: bold;
     font-size: 48px;
     line-height: 38px;
     color: #8CBD02;
+}
+.calc-title-line {
+    background: #8CBD02;
+    width: 273px;
+    height: 3px;
+    border-radius: 25px;
 }
 .button-calc {
     border: none;

@@ -1,0 +1,117 @@
+@media screen and (min-width: 1080px) and (max-width: 1920px) {
+    .services-item-width {
+        max-width: 300px !important;
+    }
+    .services-item-title {
+        font-size: 16px !important;
+        line-height: 22px !important;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+    .services-img-leaf-position {
+        position:absolute !important;
+        bottom: 0 !important;
+    }
+    .img-leaf {
+        width: 50% !important;
+        height: 50% !important;
+    }
+}
+
+
+.our-services {
+    background: url("/images/service-back.png") no-repeat;
+    background-size: 100% 100%;
+    margin-top: -250px;
+    padding-bottom: 150px;
+
+}
+.services-ident {
+    padding-bottom: 170px;
+    padding-top: 120px;
+    max-width: 1800px;
+}
+.services-title {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: 0.3em;
+    color: #FFFFFF;
+}
+.services-line {
+    background: #FFFFFF;
+    width: 178px;
+    height: 2px;
+    border-radius: 25px;
+}
+.services-1 {
+    background: url("/images/wave-item.png") no-repeat, url("/images/services1.png") no-repeat, #FFFFFF;
+    background-position: 50% 30%, top, bottom;
+    background-size: 100%;
+    height: 598px;
+    border-radius: 25px;
+}
+.services-2 {
+    background: url("/images/wave-item.png") no-repeat, url("/images/services2.png") no-repeat, #FFFFFF;
+    background-position: 50% 30%, top, bottom;
+    background-size: 100%;
+    height: 598px;
+    border-radius: 25px;
+}
+.services-3 {
+    background: url("/images/wave-item.png") no-repeat, url("/images/services3.png") no-repeat, #FFFFFF;
+    background-position: 50% 30%, top, bottom;
+    background-size: 100%;
+    height: 598px;
+    border-radius: 25px;
+}
+.services-4 {
+    background: url("/images/wave-item.png") no-repeat, url("/images/services4.png") no-repeat, #FFFFFF;
+    background-position: 50% 30%, top, bottom;
+    background-size: 100%;
+    height: 598px;
+    border-radius: 25px;
+}
+.services-item-width {
+    max-width: 407px;
+}
+.services-item-title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    margin-top: 180px;
+}
+.services-item-text {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin-top: 120px;
+}
+.services-item-text-width {
+    max-width: 353px;
+}
+.services-item-link {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #8CBD02;
+    text-decoration: underline;
+}
+.services-item-link:hover {
+    color: #8CBD02;
+    text-decoration: underline;
+}
+.services-img-leaf-position {
+    position:absolute;
+    bottom: -350px;
+}
+.img-leaf {
+    width: 100%;
+    height: 100%;
+}

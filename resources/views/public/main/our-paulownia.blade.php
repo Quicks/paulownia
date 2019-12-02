@@ -5,7 +5,10 @@
 
 
 <div class="our-paulownia">
-    <div class="row mx-auto" style="max-width: 1700px">
+    <div class="our-paulownia-leaf">
+        <img src="{{asset('/images/our-paulownia-leaf.png')}}">
+    </div>
+    <div class="row mx-auto our-paulownia-content">
         <div class="col-12 text-center">
             <p class="our-paulownia-title">Our paulownia</p>
             <hr class="our-paulownia-line">

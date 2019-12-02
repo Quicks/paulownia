@@ -1,14 +1,56 @@
+@media screen and (min-width: 1324px) and (max-width: 1920px) {
+    .advantages-leaf {
+        right: -340px !important;
+        top:-150px !important;
+    }
+    .advantages-width {
+        max-width:1200px !important;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 1080px) {
+    .advantages-leaf {
+        display: none;
+    }
+}
+
+.advantages{
+    background: url("/images/advantages-back.jpg") no-repeat;
+    background-size: 100% 100%;
+    padding-top: 100px;
+    padding-bottom: 250px;
+}
+.advantages-width {
+    max-width:1800px;
+    position: relative;
+}
+
 .advantages-title {
-    font-family: Century Gothic Bold;
+    font-weight: bold;
     font-size: 48px;
-    line-height: 59px;
+    line-height: 56px;
     color: #8CBD02;
+}
+.advantages-line {
+    background: #8CBD02;
+    width: 178px;
+    height: 2px;
+    border-radius: 25px;
 }
 
 .advantages-text {
-    font-size: 18px;
+    font-weight: normal;
+    font-size: 20px;
     line-height: 30px;
     letter-spacing: 0.02em;
-    color: #FFFFFF;
-
+    text-align: center;
+    color: #000000;
+}
+.advantages-leaf {
+    position: absolute;
+    right: 0px;
+    top:-160px;
+}
+.adv-leaf-img {
+    width: 100%;
+    height: 100%;
 }

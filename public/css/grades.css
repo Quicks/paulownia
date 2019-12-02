@@ -39,6 +39,8 @@
 .grades-back {
     background: url("/images/stem.jpg") no-repeat;
     background-size: 100% 100%;
+    padding-top: 350px;
+    margin-top: -400px;
 }
 .grades-width {
     max-width:1600px;

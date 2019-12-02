@@ -2,23 +2,26 @@
     width: 280px;
     margin: 10px auto;
     top: 14px;
+    float: right;
 }
 
 .slick-slide {
 
-    margin:  12px;
+    /*margin:  12px;*/
     /*height: 100%;*/
     /*margin-bottom: 8px;*/
     /*margin-right: 10px;*/
 }
 
 .slice-list{
+
     height: 100%;
     display: none;
 }
 .slick-prev:before,
 .slick-next:before {
-    color: black;
+
+    color: white;
 }
 
 .vertical-carousel{
@@ -36,17 +39,21 @@
     border-radius: 5px;
     background: #d6d5d5;
     box-shadow: 4px 4px rgba(230, 230, 230, 0.5) , 8px 8px rgba(242, 242, 242,0.3) ;
+    box-sizing: border-box;
+
 
 }
 
 .img-rad{
 
-    width: 100%;
+    max-width: 100%;
     border-radius: 5px 5px 0 0 ;
+
 }
 
 
 .title-text-news{
+    padding: 5px;
     background-color: white;
     font-weight: bold;
     font-size: 20px;
@@ -55,6 +62,7 @@
     letter-spacing: 0.02em;
     color: #8CBD02;
     border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
 }
 
 .text-news{
@@ -70,44 +78,44 @@
     text-decoration:underline;
 }
 
-@media screen and (min-width: 1367px) and (max-width: 1450px) {
+@media screen and (min-width: 1367px) {
+
 
     .slider {
-        width: 100%;
-        margin: 10px auto;
-        top: 13px;
+        width: 20%;
+        top:20%;
+        right: 0;
     }
 
     .slick-slide {
 
-        margin:  0 12px 9px 9px;
-        /*margin-bottom: 8px;*/
-        /*margin-right: 10px;*/
     }
 
     .vertical-carousel{
-        position: absolute;
-        z-index: 1;
-        right: 0;
-        width:345px;
-        float:right
+
+
 
     }
-
     .title-text-news{
 
-        font-size: 10px;
-        color: #8CBD02;
-        border-radius: 0 0 5px 5px;
+
     }
 
     .text-news{
-        font-size: 8px;
-        color: #000;
-        font-weight:normal;
+
+
+
+
+    }
+    .news-shadow{
+
 
     }
 
+    .img-rad{
+
+
+    }
 
 }
 
@@ -115,42 +123,44 @@
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
 
     .slider {
-        width: 155px;
-        margin: 10px auto;
-        top: 13px;
+        width: 20%;
+        top:20%;
+        right: 0;
     }
 
     .slick-slide {
-
-        margin:  0 12px 9px 9px;
-        margin-bottom: 8px;
-        margin-right: 10px;
+        margin: 3px ;
     }
 
     .vertical-carousel{
-        position: absolute;
-        z-index: 1;
-        right: 0;
-        width:345px;
-        height:586px;
-        float:right
+
+        width: 75%;
 
     }
-
     .title-text-news{
 
-        font-size: 10px;
-        color: #8CBD02;
-        border-radius: 0 0 5px 5px;
+        padding: 3px;
+        font-size: 12px;
+        box-sizing: border-box;
     }
 
     .text-news{
-        font-size: 8px;
-        color: #000;
-        font-weight:normal;
+
+        font-size: 10px;
+
+
+    }
+    .news-shadow{
+
+        border-radius: 5px;
+        box-shadow: 2px 2px rgba(230, 230, 230, 0.5) , 4px 4px rgba(242, 242, 242,0.3) ;
 
     }
 
+    .img-rad{
+
+        border-radius: 5px 5px 0 0 ;
+    }
 
 }
 
@@ -158,43 +168,39 @@
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 
     .slider {
-        width: 115px;
-        margin: 10px auto;
-        top: 13px;
-
+        width: 16%;
+        margin: 1px;
+        right: 0;
     }
 
     .slick-slide {
-
-        margin:  0 12px 9px 9px;
-
+        margin: 3px ;
     }
 
-    .vertical-carousel{
-
-        width:302px;
-        height:356px;
-        float:right;
-        right: -5%;
-
-    }
     .title-text-news{
 
+        padding: 2px;
         font-size: 8px;
-        color: #8CBD02;
-        border-radius: 0 0 5px 5px;
     }
 
     .text-news{
+
         font-size: 6px;
-        color: #000;
-        font-weight:normal;
+
 
     }
+    .news-shadow{
+
+        border-radius: 2px;
+        box-shadow: 2px 2px rgba(230, 230, 230, 0.5) , 4px 4px rgba(242, 242, 242,0.3) ;
+
+    }
+
     .img-rad{
 
-        border-radius: 5px 5px 0 0 ;
+        border-radius: 2px 2px 0 0 ;
     }
+
 }
 
 

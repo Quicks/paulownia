@@ -1,38 +1,71 @@
+.slider {
+    width: 280px;
+    margin: 10px auto;
+    top: 14px;
+    float: right;
+}
+
+.slick-slide {
+
+}
+
+.slice-list{
+
+    /*height: 100%;*/
+    display: none;
+}
+
+.slick-prev:before,
+.slick-next:before {
+
+    color: white;
+}
+
 .vertical-carousel{
+
     position: absolute;
     z-index: 1;
-    left: 1350px;
-    top: 6px;
+    right: 5%;
+    float:right;
+
 }
 
 .news-shadow{
+    display: none;
+    border-radius: 5px;
+    background: #d6d5d5;
+    box-shadow: 4px 4px rgba(230, 230, 230, 0.5) , 8px 8px rgba(242, 242, 242,0.3) ;
+    box-sizing: border-box;
 
-    border-radius: 5px 5px 0 0 ;
+
 }
 
+.img-rad{
+
+    max-width: 100%;
+    border-radius: 5px 5px 0 0 ;
+
+}
+
+
 .title-text-news{
+    padding: 5px;
     background-color: white;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 16px;
+    /*line-height: 25px;*/
     /* or 125% */
     letter-spacing: 0.02em;
     color: #8CBD02;
     border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
 }
 
 .text-news{
-    font-size: 16px;
+    font-size: 12px;
     color: #000;
     font-weight:normal;
-}
 
-.pictureFrame{
-    width: 281px;
-    margin: 0 41px 25px 4px;
-    background: #d6d5d5;
-    box-shadow: 6px 6px #989898, 12px 12px #6c6666;
-    border-radius: 5px;
 }
 
 .news-read-more, .news-read-more:hover{
@@ -40,22 +73,179 @@
     color:#8CBD02 ;
     text-decoration:underline;
 }
-#next{
-    transform: rotate(90deg);
-    color: rgba(255, 255, 255, 0.9);
+
+@media screen and (min-width: 1367px) {
+
+    .slider {
+
+        width: 25%;
+        top: 2%;
+
+    }
+
+    .slick-slide {
+
+        margin-top: 7px;
+        margin-bottom: 7px;
+
+    }
+
+    .vertical-carousel{
+
+        right: -5%;
+
+
+    }
+
+    .news-shadow{
+
+        width: 60% !important;
+
+    }
+    .img-rad{
+
+        border-radius: 5px 5px 0 0 ;
+    }
+
+
 }
 
-#prev{
-    transform: rotate(-90deg);
-    color: rgba(255, 255, 255, 0.9);
+
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+
+    .slider {
+        width: 20%;
+        top:20%;
+        right: 0;
+    }
+
+    .slick-slide {
+        margin: 3px ;
+    }
+
+    .vertical-carousel{
+
+        width: 75%;
+
+    }
+    .title-text-news{
+
+        padding: 3px;
+        font-size: 12px;
+        box-sizing: border-box;
+    }
+
+    .text-news{
+
+        font-size: 10px;
+
+
+    }
+    .news-shadow{
+
+        border-radius: 5px;
+        box-shadow: 2px 2px rgba(230, 230, 230, 0.5) , 4px 4px rgba(242, 242, 242,0.3) ;
+
+    }
+
+    .img-rad{
+
+        border-radius: 5px 5px 0 0 ;
+    }
+
 }
 
-#carouselWrapper {
-    position: relative;
-    overflow:hidden;
+/* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .slider {
+        width: 16%;
+        margin: 1px;
+        right: 0;
+    }
+
+    .slick-slide {
+        margin: 3px ;
+    }
+
+    .title-text-news{
+
+        padding: 2px;
+        font-size: 8px;
+    }
+
+    .text-news{
+
+        font-size: 6px;
+
+
+    }
+    .news-shadow{
+
+        border-radius: 2px;
+        box-shadow: 2px 2px rgba(230, 230, 230, 0.5) , 4px 4px rgba(242, 242, 242,0.3) ;
+
+    }
+
+    .img-rad{
+
+        border-radius: 2px 2px 0 0 ;
+    }
 
 }
-#carousel {
-    position: absolute;
-    visibility: hidden;
+
+
+/* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
+@media screen and  (max-width: 767px)  {
+
+    .slider {
+
+        right: 2%;
+        top:6%
+
+    }
+
+    .slick-slide {
+
+        margin: 5px;
+
+    }
+
+    .title-text-news{
+
+        padding: 5px;
+        font-size: 14px;
+    }
+
+
+    .vertical-carousel{
+
+        position: relative;
+
+    }
+    .text-news{
+
+        font-size: 12px;
+    }
+    .news-shadow{
+
+        width:65% !important;
+        border-radius: 5px;
+        box-shadow: 5px 5px rgba(230, 230, 230, 0.5) ,
+        5px 5px rgba(242, 242, 242,0.3);}
+
+    .img-rad{
+
+        border-radius: 5px 5px 0 0 ;
+    }
+
+
+
 }
+
+/*!* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) *!*/
+/*@media screen and (max-width: 575px) {*/
+
+
+/*}*/
+

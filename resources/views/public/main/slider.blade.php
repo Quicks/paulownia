@@ -1,96 +1,70 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/main-slider.css') }}">
-    <link rel="stylesheet" href="{{asset('css/vertical-slider.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/vertical-slider.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
 @endpush
 
 @if(!empty($sliderData))
-    <div class="bd-example" style="position: relative">
+    <div class="style-for-main-slider">
 
         <div class="row mw-100">
             <div class="col">
                 <a href="#" class="slider-png1"></a>
                 <a href="#" class="slider-png2"></a>
                 <a href="#" class="slider-png3"></a>
-                <div class="vertical-carousel">
-
-                    <div id="spinner" >
-                        Loading...
-                    </div>
-
-
-                    <div class="buttons text-center">
-                        <div id="next">❮</div>
-                    </div>
-
-                        <div id="carousel">
-                                <span>
-                                    <img src="/images/slider-news-1.png" class="news-shadow">
-                                        <div class="title-text-news">
-                                            <div>Bred triple hybrid </div>
-                                                 <div class="text-news">Manufactured, selected and ...
-                                                      <a href="#" class="news-read-more" >Read more</a>
-                                                 </div>
-                                        </div>
-                                </span>
-
-                            <span>
-                                <img src="/images/slider-news-2.png" class="news-shadow">
-                                    <div class="title-text-news">
-                                        <div>Bred triple hybrid </div>
-                                             <div class="text-news">Manufactured, selected and ...
-                                                  <a href="#" class="news-read-more" >Read more</a>
-                                             </div>
-                                    </div>
-                            </span>
-
-                            <span >
-                                <img src="/images/slider-news-3.png" class="news-shadow">
-                                    <div class="title-text-news">
-                                        <div>Bred triple hybrid </div>
-                                             <div class="text-news">Manufactured, selected and ...
-                                                  <a href="#" class="news-read-more" >Read more</a>
-                                             </div>
-                                    </div>
-                            </span>
-                            <span >
-                                <img src="/images/slider-news-1.png" class="news-shadow">
-                                    <div class="title-text-news">
-                                        <div>Bred triple hybrid </div>
-                                             <div class="text-news">Manufactured, selected and ...
-                                                  <a href="#" class="news-read-more" >Read more</a>
-                                             </div>
-                                    </div>
-                            </span>
-
-                            <span >
-                                <img src="/images/slider-news-2.png" class="news-shadow">
-                                    <div class="title-text-news">
-                                        <div>Bred triple hybrid </div>
-                                             <div class="text-news">Manufactured, selected and ...
-                                                  <a href="#" class="news-read-more" >Read more</a>
-                                             </div>
-                                    </div>
-                            </span>
-
-                            <span >
-                                <img src="/images/slider-news-3.png" class="news-shadow">
-                                    <div class="title-text-news">
-                                        <div>Bred triple hybrid </div>
-                                             <div class="text-news">Manufactured, selected and ...
-                                                  <a href="#" class="news-read-more" >Read more</a>
-                                             </div>
-                                    </div>
-                            </span>
-                         </div>
-
-                    <div class="buttons text-center">
-                        <div id="prev">❮</div>
-                    </div>
-
-                </div>
             </div>
         </div>
 
+        <div class="vertical-carousel">
+            <section class="vertical slider">
+                <div class="news-shadow">
+                    <img  src="/images/slider-news-1.png" class="img-rad">
+                    <div class="title-text-news">
+                        <div>Bred triple hybrid </div>
+                        <div class="text-news">Manufactured, selected and ...
+                            <a href="#" class="news-read-more" >Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-shadow">
+                    <img src="/images/slider-news-2.png" class="img-rad">
+                    <div class="title-text-news">
+                        <div>Bred triple hybrid </div>
+                        <div class="text-news">Manufactured, selected and ...
+                            <a href="#" class="news-read-more" >Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-shadow">
+                    <img src="/images/slider-news-3.png" class="img-rad">
+                    <div class="title-text-news">
+                        <div>Bred triple hybrid </div>
+                        <div class="text-news">Manufactured, selected and ...
+                            <a href="#" class="news-read-more" >Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-shadow">
+                    <img src="/images/slider-news-1.png" class="img-rad">
+                    <div class="title-text-news">
+                        <div>Bred triple hybrid </div>
+                        <div class="text-news">Manufactured, selected and ...
+                            <a href="#" class="news-read-more" >Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-shadow">
+                    <img src="/images/slider-news-1.png" class="img-rad">
+                    <div class="title-text-news">
+                        <div>Bred triple hybrid </div>
+                        <div class="text-news">Manufactured, selected and ...
+                            <a href="#" class="news-read-more" >Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators slide-circle">
@@ -115,5 +89,18 @@
 
 
 @push('scripts')
-    <script src="{{ asset('js/vertical-slider.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(".vertical").slick({
+                vertical: true,
+                verticalSwiping: true,
+                slidesToShow: 3,
+                autoplay: true,
+                speed:500,
+            });
+        });
+    </script>
 @endpush
+

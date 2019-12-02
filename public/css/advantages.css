@@ -1,10 +1,6 @@
-@media screen and (min-width: 1080px) and (max-width: 1920px) {
-    .adv-leaf-img{
-        width: 80% !important;
-        height: 80% !important;
-    }
+@media screen and (min-width: 1324px) and (max-width: 1920px) {
     .advantages-leaf {
-        right: -72px !important;
+        right: -340px !important;
         top:-150px !important;
     }
     .advantages-width {
@@ -51,7 +47,7 @@
 }
 .advantages-leaf {
     position: absolute;
-    right: -60px;
+    right: 0px;
     top:-160px;
 }
 .adv-leaf-img {

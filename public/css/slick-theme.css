@@ -1,9 +1,4 @@
 @charset 'UTF-8';
-/* Slider */
-.slick-loading .slick-list
-{
-    background: #fff url('./ajax-loader.gif') center center no-repeat;
-}
 
 /* Arrows */
 .slick-prev,
@@ -55,7 +50,6 @@
 .slick-prev:before,
 .slick-next:before
 {
-    font-family: 'slick';
     font-size: 20px;
     line-height: 1;
 

@@ -25,8 +25,6 @@
 </div>
 
 @push('scripts')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
     <script>
         $(document).ready(function () {
             $('.fotorama').fotorama({
@@ -37,7 +35,7 @@
                 fit: 'contain',
                 clicktransition: "crossfade",
                 loop:"true",
-                // autoplay: "true",
+                autoplay: "true",
                 keyboard:'{"space": true, "home": true, "end": true, "up": true, "down": true}',
                 swipe:true,
                 thumbwidth: 350,

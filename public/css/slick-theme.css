@@ -1,0 +1,157 @@
+@charset 'UTF-8';
+/* Slider */
+.slick-loading .slick-list
+{
+    background: #fff url('./ajax-loader.gif') center center no-repeat;
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(-50%, 0) rotate(90deg);
+    -ms-transform: translate(-50%, 0) rotate(90deg);
+    transform: translate(-50%, 0) rotate(90deg);
+
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.slick-prev {
+    top: -26px;
+}
+
+.slick-next {
+    top: auto;
+    bottom: -20px;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
+{
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+
+
+.slick-prev:before,
+.slick-next:before
+{
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+
+}
+
+.slick-prev
+{
+    left: 185px;
+}
+[dir='rtl'] .slick-prev
+{
+    right: -25px;
+    left: auto;
+    color: white;
+}
+.slick-prev:before
+{
+    content: '‹';
+    font-weight: bold;
+}
+[dir='rtl'] .slick-prev:before
+{
+    content: '‹';
+    font-weight: bold;
+}
+
+.slick-next
+{
+    right: 155px;
+    color: white;
+}
+[dir='rtl'] .slick-next
+{
+    right: auto;
+    left: -25px;
+}
+.slick-next:before
+{
+    content: '›';
+    font-weight: bold;
+}
+[dir='rtl'] .slick-next:before
+{
+    content: '›';
+    font-weight: bold;
+}
+
+
+    @media screen and (min-width: 1367px){
+
+        .slick-prev {
+
+            left: 32%;
+            top: -2%;
+        }
+
+        .slick-next {
+            bottom: -3%;
+            right: 62%;
+        }
+
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1366px) {
+
+    .slick-prev {
+
+        left: 52%;
+        top: -4%;
+    }
+
+    .slick-next {
+
+        bottom:-4%;
+        right: 33%;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .slick-prev {
+
+        left: 52%;
+        top: -6%;
+    }
+
+    .slick-next {
+
+        bottom:-5%;
+        right:30%;
+    }
+
+}
+
+
+
+
+

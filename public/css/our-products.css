@@ -1,0 +1,31 @@
+.main-content{
+    position: relative;
+    background:url("/images/our-products-background.png") no-repeat ;
+    background-size: 100% 100%;
+}
+
+.line-style{
+
+    position: absolute;
+    background-size: 100% 100%;
+    width: 100%;
+
+}
+
+.about-title{
+
+    color: white;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+
+}
+
+.line-for-about{
+
+    width: 91px;
+    height: 3px;
+    background: white;
+    border-radius: 25px;
+
+}

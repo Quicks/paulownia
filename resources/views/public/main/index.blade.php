@@ -3,6 +3,7 @@
     @include('public.main.slider')
     @include('public.main.slider-sale')
     @include('public.main.about-us')
+    @include('public.main.our-products')
 
 
     @include('public.main.advantages')

@@ -2,9 +2,13 @@
     <div class="tab-pane fade show active" id="main-form" role="tabpanel" aria-labelledby="main-form">
 
         <div id="image-input-div" class="form-group  {{ $errors->has('image') ? 'has-error' : ''}}">
-            <label for="image" class="control-label">Image</label>
-             <input class="form-control" name="image" accept="image/*" type="file" id="image-input" value="" 
+            <label for="image" class="control-label">One image with crop before upload</label>
+            <input class="form-control" name="image" accept="image/*" type="file" id="image-input" value="" 
                 @if(isset($image_required) && $image_required) required @endif>
+        </div>
+        <div id="images-input-div" class="form-group  {{ $errors->has('images') ? 'has-error' : ''}}">
+            <label for="images" class="control-label">Many images at once</label>
+            <input class="form-control" name="images[]" accept="image/*" type="file" id="images-input" value="" multiple >
 
             {!! $errors->first('image', '<p class="help-block">:message</p>') !!}
         </div>
@@ -120,6 +124,10 @@
             reader.readAsDataURL(event.target.files[0]);
             $('#image-input-div').remove();
         });
+
+        $('#images-input').change(function (event) {
+            $('#image-input-div').remove();
+        }); 
 
     });
 </script>

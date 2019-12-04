@@ -48,8 +48,6 @@
                 thumbmargin: 30,
                 thumbfit: 'cover',
                 thumbborderwidth: 0,
-                // transition:'dissolve'
-
             });
         });
     </script>

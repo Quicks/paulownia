@@ -13,7 +13,7 @@ class MainController extends Controller
         $currentChannel = core()->getCurrentChannel();
         $sliderData = $sliderRepository->findByField('channel_id', $currentChannel->id)->toArray();
 
-        $mainGallery = Gallery::find(1);
+        $mainGallery = Gallery::first();
 
         return view('public.main.index', compact('sliderData', 'mainGallery'));
     }

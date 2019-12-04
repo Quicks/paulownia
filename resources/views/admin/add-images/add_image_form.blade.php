@@ -66,7 +66,7 @@
         function initCropper() {
             const image = document.getElementById('image-crop');
             const cropper = new Cropper(image, {
-              aspectRatio: 1 / 1,
+              // aspectRatio: 1 / 1,
             });
 
             $('#rot1').click(function () {cropper.rotate(90);});

@@ -73,10 +73,13 @@ class GalleriesController extends Controller
 
         if ($request->hasFile('images')) {
             foreach ($request->images as $key => $image) {
-                $filename = $image->store('test_photos');
-                dump($filename);
+                $imageAtributes = $request->image_atr;
+                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
+                    $image, 'Gallery', $newGalery->id, $request->watermark, $key);
+                $imageAtributes['imageable_id'] = $newGalery->id;
+                $imageAtributes['imageable_type'] = 'App\Models\Gallery';
+                Image::create($imageAtributes);
             }
-            dd('finish');
         }
 
         return redirect('admin/galleries')->with('flash_message', 'Gallery added!');

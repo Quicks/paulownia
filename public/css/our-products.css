@@ -4,6 +4,7 @@
     background:url("/images/our-products-background.png") no-repeat ;
     background-size: 100% 100%;
 
+
 }
 
 /*.line-style-down .line-style-up{*/
@@ -45,13 +46,25 @@
 
 .back-ground-img{
 
-    background: url("/images/background-for-our-products.png") no-repeat center;
+    /*background: url("/images/background-for-our-products.png") no-repeat;*/
+    /*height: 34px;*/
+    background-color: white;
+    /*background-size: 80%;*/
+    border-radius: 10%;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 1%;
     /*background-size: 100% 100%;*/
 
 }
 
 .main-class{
-
+    margin:0;
+    /*margin-top: 1%;*/
+    /*margin-left: 2%;*/
+    /*margin-right: 2%;*/
+    /*margin-bottom: 1%;*/
     /*background-size: 100% 100%;*/
 }
 

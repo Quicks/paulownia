@@ -8,7 +8,8 @@
         </div>
         <div id="images-input-div" class="form-group  {{ $errors->has('images') ? 'has-error' : ''}}">
             <label for="images" class="control-label">Many images at once</label>
-            <input class="form-control" name="images[]" accept="image/*" type="file" id="images-input" value="" multiple >
+            <input class="form-control" name="images[]" accept="image/*" type="file" id="images-input" value="" multiple 
+                @if(isset($image_required) && $image_required) required @endif>
 
             {!! $errors->first('image', '<p class="help-block">:message</p>') !!}
         </div>
@@ -122,7 +123,7 @@
                 $('#cropper-div').removeClass('d-none');
             }
             reader.readAsDataURL(event.target.files[0]);
-            $('#image-input-div').remove();
+            $('#image-input-div, #images-input-div').remove();
         });
 
         $('#images-input').change(function (event) {

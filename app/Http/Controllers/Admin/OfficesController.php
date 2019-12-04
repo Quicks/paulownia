@@ -59,20 +59,29 @@ class OfficesController extends Controller
 			'name' => 'required|max:90',
 			'email' => 'required|email',
             'image' => 'image|max:20000',
+            'images.*' => 'image|max:20000',
             'phone'=>'string|max:190',
             'posrcode'=>'string|max:190',
             'website'=>'url'
 		]);
-        $requestData = $request->all();
 
-        $offices = Office::create($requestData);
+        $offices = Office::create($request->all());
+        $imageAtributes = $request->image_atr;
+        $imageAtributes['imageable_id'] = $offices->id;
+        $imageAtributes['imageable_type'] = 'App\Models\Office';
+
         if ($request->hasFile('image')) {
-            $imageAtributes = $request->image_atr;
             $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
                 $request->file('image'), 'Office', $offices->id, $request->watermark);
-            $imageAtributes['imageable_id'] = $offices->id;
-            $imageAtributes['imageable_type'] = 'App\Models\Office';
             Image::create($imageAtributes);
+        }
+
+        if ($request->hasFile('images')) {
+            foreach ($request->images as $key => $image) {
+                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
+                    $image, 'News', $offices->id, $request->watermark, $key);
+                Image::create($imageAtributes);
+            }
         }
 
         return redirect('admin/offices')->with('flash_message', 'Office added!');

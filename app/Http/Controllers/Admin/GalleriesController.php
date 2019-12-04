@@ -57,27 +57,24 @@ class GalleriesController extends Controller
 			'name' => 'required|max:90',
 			'active' => 'required|boolean',
             'image' => 'image|max:20000',
-            'images.*' => 'image',
+            'images.*' => 'image|max:20000',
 		]);
 
         $newGalery = Gallery::create($request->except(['image_atr','image']));
+        $imageAtributes = $request->image_atr;
+        $imageAtributes['imageable_id'] = $newGalery->id;
+        $imageAtributes['imageable_type'] = 'App\Models\Gallery';
 
         if ($request->hasFile('image')) {
-            $imageAtributes = $request->image_atr;
             $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
                 $request->file('image'), 'Gallery', $newGalery->id, $request->watermark);
-            $imageAtributes['imageable_id'] = $newGalery->id;
-            $imageAtributes['imageable_type'] = 'App\Models\Gallery';
             Image::create($imageAtributes);
         }
 
         if ($request->hasFile('images')) {
             foreach ($request->images as $key => $image) {
-                $imageAtributes = $request->image_atr;
                 $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
                     $image, 'Gallery', $newGalery->id, $request->watermark, $key);
-                $imageAtributes['imageable_id'] = $newGalery->id;
-                $imageAtributes['imageable_type'] = 'App\Models\Gallery';
                 Image::create($imageAtributes);
             }
         }

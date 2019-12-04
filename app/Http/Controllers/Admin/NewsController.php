@@ -56,22 +56,30 @@ class NewsController extends Controller
 			'name' => 'required|max:90',
 			'active' => 'required|boolean',
 			'publish_date' => 'required|date',
-            'image' => 'image|max:20000'
+            'image' => 'image|max:20000',
+            'images.*' => 'image|max:20000',
 		]);
         $requestData = $request->all();
         $requestData['admin_id'] = auth()->guard('admin')->user()->id;
         
         $news = News::create($requestData);
+        $imageAtributes = $request->image_atr;
+        $imageAtributes['imageable_id'] = $news->id;
+        $imageAtributes['imageable_type'] = 'App\Models\News';
 
         if ($request->hasFile('image')) {
-            $imageAtributes = $request->image_atr;
             $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
                 $request->file('image'), 'News', $news->id, $request->watermark);
-            $imageAtributes['imageable_id'] = $news->id;
-            $imageAtributes['imageable_type'] = 'App\Models\News';
             Image::create($imageAtributes);
         }
 
+        if ($request->hasFile('images')) {
+            foreach ($request->images as $key => $image) {
+                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
+                    $image, 'News', $news->id, $request->watermark, $key);
+                Image::create($imageAtributes);
+            }
+        }
 
         return redirect('admin/news')->with('flash_message', 'News added!');
     }

@@ -55,7 +55,7 @@
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">
             <div>
-                <img class="mb-4" src="{{asset('images/booklet_en.png')}}">
+                <img class="mb-4" style="border-radius: 25px" src="{{asset('images/booklet_en.jpg')}}">
             </div>
             <div>
                 <a href="#"><img width="310px" src="{{asset('images/download-booklet.svg')}}"></a>

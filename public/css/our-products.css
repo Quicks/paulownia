@@ -1,6 +1,6 @@
 .main-content{
 
-    position: relative;
+    /*position: relative;*/
     background:url("/images/our-products-background.png") no-repeat ;
     background-size: 100% 100%;
 
@@ -11,7 +11,7 @@
 
     /*position: absolute;*/
     /*background-size: 100% 100%;*/
-    /*width: 100%;*/
+    /*max-width: 100%;*/
 
 /*}*/
 
@@ -22,7 +22,7 @@
 
 /*.line-style-down{*/
 
-    /*margin-top: ;*/
+    /*margin-top:-9%;*/
 /*}*/
 
 .about-title{
@@ -46,25 +46,55 @@
 
 .back-ground-img{
 
-    /*background: url("/images/background-for-our-products.png") no-repeat;*/
-    /*height: 34px;*/
-    background-color: white;
-    /*background-size: 80%;*/
-    border-radius: 10%;
-    margin-top: 1%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 1%;
-    /*background-size: 100% 100%;*/
+    background:  url("/images/line-for-goods-in-card.png")no-repeat, url("/images/our-products-col-fon.png") no-repeat, white;
+    height: 434px;
+    border-radius: 25px;
+    background-size: 100%;
+    background-position: 50% 46% ,top ,bottom;
 
 }
 
-.main-class{
-    margin:0;
+/*.main-class{*/
+    /*!*margin:0;*!*/
     /*margin-top: 1%;*/
     /*margin-left: 2%;*/
     /*margin-right: 2%;*/
     /*margin-bottom: 1%;*/
-    /*background-size: 100% 100%;*/
+    /*!*background-size: 100% 100%;*!*/
+/*}*/
+
+.title-for-card, .price-for-card {
+
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    padding-left: 5%;
+    background-color: white;
+    box-sizing: border-box;
+    /* or 130% */
+    color: #8CBD02;
 }
 
+.title-for-card{
+
+    padding-top: 6%;
+}
+
+.text-card{
+    padding: 2% 2% 5% 5%;
+    width:396px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 26px;
+    box-sizing: border-box;
+    /* or 130% */
+    color: #000000;
+    border-radius: 5px;
+}
+
+.img-r{
+
+
+
+}

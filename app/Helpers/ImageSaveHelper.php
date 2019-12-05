@@ -8,7 +8,7 @@ class ImageSaveHelper
 {
     public static function saveImageWithThumbnail ($requestImageFile, $imageModelName, 
         $imageModelId, $watermark = false, $imgNum = 0)
-    {   
+    {
         if($watermark) {
             $height = Image::make($requestImageFile)->height();
             $width = Image::make($requestImageFile)->width();
@@ -22,6 +22,19 @@ class ImageSaveHelper
         Storage::put($fileName.'.jpg', $preparedImage->__toString());
         Storage::put($fileName.'-tmb.jpg', $thumbnail->__toString());
         return $fileName.'.jpg';
+    }
+
+    public static function saveImageWithThumbnailNotEncoded ($requestImageFile, $imageModelName, 
+        $imageModelId, $watermark = false, $imgNum = 0)
+    {
+        $thumbnail = Image::make($requestImageFile)->fit(150)->encode('jpg');
+        $fileDir = 'uploads/'.$imageModelName.'/'.$imageModelId.'/';
+        $fileName = now()->timestamp.$imgNum;
+        $extensionName = $requestImageFile->getClientOriginalExtension();
+
+        Storage::putFileAs($fileDir, $requestImageFile, $fileName.'.'.$extensionName);
+        Storage::put($fileDir.$fileName.'-tmb.jpg', $thumbnail->__toString());
+        return $fileDir.$fileName.'.'.$extensionName;
     }
 
         public static function deleteAllModelImages ($modelInstance)

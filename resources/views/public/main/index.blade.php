@@ -10,4 +10,5 @@
     @include('public.main.services')
     @include('public.main.grades')
     @include('public.main.our-paulownia')
+    @include('public.main.map')
 @endsection

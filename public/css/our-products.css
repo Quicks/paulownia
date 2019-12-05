@@ -1,28 +1,29 @@
 .main-content{
 
-    background:url("/images/our-products-background.png") no-repeat ;
+    background:url("/images/our-products-background.png");
     background-size: 100% 100%;
+
 
 
 }
 
-/*.line-style-down .line-style-up{*/
+.line-style-down .line-style-up{
 
-    /*position: absolute;*/
-    /*background-size: 100% 100%;*/
-    /*max-width: 100%;*/
+    position: absolute;
+    background-size: 100%;
+    max-width: 100%;
 
-/*}*/
+}
 
-/*.line-style-up{*/
+.line-style-up{
 
-    /*margin-top:-9%;*/
-/*}*/
+    margin-top:-9%;
+}
 
-/*.line-style-down{*/
+.line-style-down{
 
-    /*margin-top:-9%;*/
-/*}*/
+    margin-bottom: -6%;
+}
 
 .about-title{
 

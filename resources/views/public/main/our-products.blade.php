@@ -3,7 +3,7 @@
 @endpush
 
 <div class="main-content">
-    {{--<div> <img src="/images/our-products-line-up.png" class="line-style-up"> </div>--}}
+    <div><img src="/images/our-products-line-up.png" class="line-style-up"></div>
 
         <div >
             <h1 class="about-title font-weight-bold text-center">Our products</h1>
@@ -90,12 +90,9 @@
 
 
     </div>
+    <div> <img src="/images/our-products-line-down.png" class="line-style-down"> </div>
 
 
-
-
-
-    {{--<div> <img src="/images/our-products-line-down.png" class="line-style-down"> </div>--}}
 </div>
 
     {{--<div class="row main-class align-items-center">--}}

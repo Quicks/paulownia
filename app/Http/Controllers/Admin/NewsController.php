@@ -75,7 +75,7 @@ class NewsController extends Controller
 
         if ($request->hasFile('images')) {
             foreach ($request->images as $key => $image) {
-                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
+                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnailNotEncoded(
                     $image, 'News', $news->id, $request->watermark, $key);
                 Image::create($imageAtributes);
             }

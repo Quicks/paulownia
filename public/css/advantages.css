@@ -1,15 +1,18 @@
-@media screen and (min-width: 1324px) and (max-width: 1920px) {
-    .advantages-leaf {
-        right: -340px !important;
-        top:-150px !important;
-    }
-    .advantages-width {
-        max-width:1200px !important;
-    }
-}
-@media screen and (min-width: 320px) and (max-width: 1080px) {
+@media only screen and (min-width : 320px) and (max-width : 1223px) {
     .advantages-leaf {
         display: none;
+    }
+}
+@media only screen  and (min-width: 1224px) {
+    .advantages-leaf {
+        right: 0px !important;
+        top:-150px !important;
+    }
+}
+@media only screen  and (min-width: 1920px) {
+    .advantages-leaf {
+        right: -45px !important;
+        top:-150px !important;
     }
 }
 

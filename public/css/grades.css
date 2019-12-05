@@ -1,39 +1,38 @@
-@media screen and (min-width: 1080px) and (max-width: 1920px) {
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
     .grades-width {
-        max-width:1200px !important;
+        max-width: 1200px !important;
     }
-    .grades-item {
-        max-width: 450px !important;
-    }
-    .grades-img-size {
-        width: 290px !important;
-        height: 358px !important;
-    }
-    .grades-item-title {
-        width: 140px !important;
-        font-size: 12px !important;
 
+    .grades-item {
+        max-width: 550px !important;
+    }
+
+    .grades-img-size {
+        width: 300px !important;
+        height: 450px !important;
+    }
+
+    .grades-item-title {
+        width: 160px !important;
+        font-size: 14px !important;
     }
     .grades-item-text {
-        width: 150px !important;
-        font-size: 12px !important;
-        line-height: 15px !important;
+        width: 200px !important;
+        font-size: 14px !important;
     }
     .grades-item-link {
-        font-size: 12px !important;
+        font-size: 14px !important;
     }
     .grades-stamp {
-        margin-left: 85px !important;
-        margin-top: -20px !important;
+        margin-left: 120px !important;
+        margin-top: -60px !important;
     }
-}
-@media screen and (min-width: 320px) and (max-width: 768px) {
-    .grades-img-size {
-        width: 320px !important;
-        height: 438px !important;
+    .grades-imgs {
+        height: 458px !important;
     }
-    .grades-stamp {
-        display: none;
+    .grades-img-size:hover {
+        width: 575px !important;
+        height: 524px !important;
     }
 }
 .grades-back {
@@ -43,8 +42,8 @@
     margin-top: -400px;
 }
 .grades-width {
-    max-width:1600px;
-    padding-bottom: 200px;
+    max-width:1431px;
+    padding-bottom: 400px;
 }
 .grades-title {
     font-weight: bold;
@@ -67,9 +66,10 @@
 .grades-imgs {
     margin-top: -15px;
     margin-left: -40px;
+    height: 538px;
 }
 .grades-img-size {
-    width: 420px;
+    width: 422px;
     height: 538px;
 }
 .grades-item-title {
@@ -79,6 +79,7 @@
     line-height: 30px;
     letter-spacing: 0.02em;
     color: #8CBD02;
+    margin-top: 40px;
 }
 .grades-item-text {
     width: 232px;
@@ -87,6 +88,7 @@
     line-height: 30px;
     letter-spacing: 0.02em;
     color: #000000;
+    margin-top: 40px;
 }
 .grades-item-link {
     font-weight: normal;
@@ -103,5 +105,11 @@
 .grades-stamp {
     position: absolute;
     margin-left: 160px;
-    margin-top: 30px
+    margin-top: 10px
+}
+.grades-img-size:hover {
+    width: 700px;
+    height: 724px;
+    position: relative;
+    z-index:2;
 }

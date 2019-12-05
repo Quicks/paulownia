@@ -35,23 +35,20 @@ class ImageController extends Controller
 
         $tmp = explode("\\", $request->imageable_type);
         $imageModelShortName = end($tmp);
+        $imageAtributes = $request->image_atr;
+        $imageAtributes['imageable_id'] = $id;
+        $imageAtributes['imageable_type'] = $request->imageable_type;
 
         if ($request->hasFile('image')) {
-            $imageAtributes = $request->image_atr;
             $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
                 $request->file('image'), $imageModelShortName, $id, $request->watermark);
-            $imageAtributes['imageable_id'] = $id;
-            $imageAtributes['imageable_type'] = $request->imageable_type;
             Image::create($imageAtributes);
         }
 
         if ($request->hasFile('images')) {
             foreach ($request->images as $key => $image) {
-                $imageAtributes = $request->image_atr;
-                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
+                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnailNotEncoded(
                     $image, $imageModelShortName, $id, $request->watermark, $key);
-                $imageAtributes['imageable_id'] = $id;
-                $imageAtributes['imageable_type'] = $request->imageable_type;
                 Image::create($imageAtributes);
             }
         }

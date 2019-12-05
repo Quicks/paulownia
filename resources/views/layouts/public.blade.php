@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="{{ asset('css/public.css') }}?v2">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}?v2">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}?v3">
-    <link rel="stylesheet" href="{{ asset('css/cookie_consent.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cookie_consent.css') }}?v2">
 
     @stack('css')
 

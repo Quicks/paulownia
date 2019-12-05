@@ -13,7 +13,13 @@
 
         <div class="row m-3">
             <div class="col back-ground-img m-3">
-
+                <div style="margin-top:75%;">
+                    <div class="title-for-card">Seedling Turbo Pro</div>
+                    <div class="price-for-card">4.00 € </div>
+                    <div class="text-card">Description, description,
+                        description, description, description,
+                        description, description</div>
+                </div>
             </div>
             <div class="col border bg-light m-3">Пользовательская вставка столбцов</div>
             <div class="col border bg-light m-3">Пользовательская вставка столбцов</div>

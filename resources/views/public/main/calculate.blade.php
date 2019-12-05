@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v2">
 @endpush
 
 <div class="row mx-auto pt-xl-5 pb-xl-5" style="max-width:1200px;">

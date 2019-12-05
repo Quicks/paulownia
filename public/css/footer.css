@@ -42,4 +42,10 @@
 }
 .f-booklet-download {
     width: 294px;
+    background: transparent;
+}
+
+.f-booklet-download:hover {
+    -webkit-filter: drop-shadow(-2px -2px 20px #8CBD02);
+    filter: drop-shadow(-2px -2px 20px #8CBD02);
 }

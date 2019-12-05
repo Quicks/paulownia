@@ -46,9 +46,9 @@
                 <li>@lang('header-footer.mon.-fri. from 09:00 before 18:00')</li>
                 <ul class="text-list m-0 p-0">
                     <li>
-                        <a href="#"><img src="{{asset('images/linkedin.svg')}}"></a>
-                        <a href="#" class="ml-2"><img src="{{asset('images/fb.svg')}}"></a>
-                        <a href="#" class="ml-2"><img src="{{asset('images/instagram.svg')}}"></a>
+                        <a href="#"><img src="{{asset('images/footer-linkedin.svg')}}"></a>
+                        <a href="#" class="ml-2"><img src="{{asset('images/footer-fb.svg')}}"></a>
+                        <a href="#" class="ml-2"><img src="{{asset('images/footer-instagram.svg')}}"></a>
                     </li>
                 </ul>
             </ul>
@@ -64,7 +64,7 @@
     </div>
 </div>
 <div class="row footer-bottom text-center">
-    <div class="col-12 footer-bottom-copy py-5">
+    <div class="col-12 footer-bottom-copy py-4">
         <span>Copyright © by Paulownia.pro® 2019</span>
     </div>
 </div>

@@ -2,7 +2,7 @@
 
     background:url("/images/our-products-background.png");
     background-size: 100% 100%;
-    padding: 5% 0 3% 0;
+    padding: 5% 0 5% 0;
     position: relative;
 
 }
@@ -17,7 +17,7 @@
 
 .line-style-down{
 
-
+    margin-top: -2%;
     position: absolute;
     background-size: 100% 100%;
     width: 100%;

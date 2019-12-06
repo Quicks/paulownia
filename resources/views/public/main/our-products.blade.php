@@ -3,6 +3,7 @@
 @endpush
 
 <div class="main-content">
+
     <div><img src="/images/our-products-line-up.png" class="line-style-up"></div>
 
         <div>
@@ -131,6 +132,8 @@
 
 
             </div>
+
+        <button class="product-button"> All goods </button>
 
     <div> <img src="/images/our-products-line-down.png" class="line-style-down"> </div>
 

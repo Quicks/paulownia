@@ -9,85 +9,100 @@
             <div class="products-title font-weight-bold text-center">Our products</div>
             <hr class="line-for-products">
         </div>
+
         <div class="row m-3">
-            <div class="col back-ground-img m-3">
-                    <img src="/images/our-products-col-fon.png" >
-                    <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;">
+            <div class="col back-ground-img m-3 position-relative">
+                <div class="position-absolute product-sale">-3%</div>
+                    <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%" >
+                    <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
                     <div class="title-for-card">Seedling Turbo Pro</div>
                     <div class="price-for-card">4.00 € </div>
                     <div class="text-card">Description, description,
                         description, description, description,
                         description, description</div>
             </div>
+
+
             <div class="col back-ground-img m-3">
-                <div style="margin-top:75%;">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 € </div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description</div>
-                </div>
+                <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%" >
+                <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
+                <div class="title-for-card">Seedling Turbo Pro</div>
+                <div class="price-for-card">4.00 € </div>
+                <div class="text-card">Description, description,
+                    description, description, description,
+                    description, description</div>
             </div>
+
             <div class="col back-ground-img m-3">
-                <div style="margin-top:75%;">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 € </div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description</div>
-                </div>
+                <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%" >
+                <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
+                <div class="title-for-card">Seedling Turbo Pro</div>
+                <div class="price-for-card">4.00 € </div>
+                <div class="text-card">Description, description,
+                    description, description, description,
+                    description, description</div>
             </div>
+
             <div class="col back-ground-img m-3">
-                <div style="margin-top:75%;">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 € </div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description</div>
-                </div>
+                <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%" >
+                <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
+                <div class="title-for-card">Seedling Turbo Pro</div>
+                <div class="price-for-card">4.00 € </div>
+                <div class="text-card">Description, description,
+                    description, description, description,
+                    description, description</div>
             </div>
+
+
         </div>
 
         <div class="row m-3">
             <div class="col back-ground-img m-3">
-                <div style="margin-top:75%;">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 € </div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description</div>
-                </div>
-            </div>
-            <div class="col back-ground-img m-3">
-                <div style="margin-top:75%;">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 € </div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description</div>
-                </div>
-            </div>
-            <div class="col back-ground-img m-3">
-                <div style="margin-top:75%;">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 € </div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description</div>
-                </div>
-            </div>
-            <div class="col back-ground-img m-3">
-                <div style="margin-top:75%;">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 € </div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description</div>
-                </div>
+                <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%" >
+                <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
+                <div class="title-for-card">Seedling Turbo Pro</div>
+                <div class="price-for-card">4.00 € </div>
+                <div class="text-card">Description, description,
+                    description, description, description,
+                    description, description</div>
             </div>
 
 
-    </div>
+            <div class="col back-ground-img m-3">
+                <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%" >
+                <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
+                <div class="title-for-card">Seedling Turbo Pro</div>
+                <div class="price-for-card">4.00 € </div>
+                <div class="text-card">Description, description,
+                    description, description, description,
+                    description, description</div>
+            </div>
+
+            <div class="col back-ground-img m-3">
+                <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%" >
+                <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
+                <div class="title-for-card">Seedling Turbo Pro</div>
+                <div class="price-for-card">4.00 € </div>
+                <div class="text-card">Description, description,
+                    description, description, description,
+                    description, description</div>
+            </div>
+
+            <div class="col back-ground-img m-3">
+                <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%" >
+                <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
+                <div class="title-for-card">Seedling Turbo Pro</div>
+                <div class="price-for-card">4.00 € </div>
+                <div class="text-card">Description, description,
+                    description, description, description,
+                    description, description</div>
+            </div>
+
+
+        </div>
+
+
+
     <div> <img src="/images/our-products-line-down.png" class="line-style-down"> </div>
 
 

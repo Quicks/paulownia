@@ -46,34 +46,45 @@
     /*background-position: 50% 46% ,top ,bottom;*/
     /*background:  url("/images/line-for-goods-in-card.png")no-repeat, url("/images/our-products-col-fon.png") no-repeat, white;*/
     /*background-size: 100%;*/
-    height:445px;
+    /*height:445px;*/
     border-radius: 25px;
     background-color: white;
     padding: 0;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
+}
 
-
-
+.product-sale{
+    margin-top: 5%;
+    padding: 1% 6% 1% 2% ;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 26px;
+    text-align: center;
+    color: #8CBD02;
+    border-radius: 0 5px 5px 0;
+    background-color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .title-for-card, .price-for-card {
-
+    padding:0 4% 0 4%;
     font-weight: bold;
     font-size: 20px;
     line-height: 26px;
     box-sizing: border-box;
-    /* or 130% */
     color: #8CBD02;
 }
 
 
 .text-card{
-    margin-top: 6%;
+    padding:0 4% 0 4%;
+    margin: 5% 0 5% 0;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 26px;
     box-sizing: border-box;
-    /* or 130% */
     color: #000000;
     border-radius: 5px;
 }

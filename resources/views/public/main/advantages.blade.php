@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/advantages.css') }}?v3">
+    <link rel="stylesheet" href="{{ asset('css/advantages.css') }}?v4">
 @endpush
 
 <div class="advantages mt-5">

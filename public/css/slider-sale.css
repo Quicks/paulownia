@@ -1,25 +1,19 @@
 .back-image{
 
+    padding-top: 56px;
+    position: relative;
     background:url("/images/background-actions.png") no-repeat;
-    -moz-background-size: 100%; /* Firefox 3.6+ */
-    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-    -o-background-size: 100%; /* Opera 9.6+ */
-    background-size: 100%; /* Современные браузеры */
-    padding-top: 72px;
+    background-size: 100% 100% ;
 
 }
 
 .line-sale{
 
-    max-width:100%;
-    height: 267.47px;
-    left: 3px;
-    top: 912px;
-    background:url("/images/line-for-action.png")no-repeat;
-    -moz-background-size: 100%; /* Firefox 3.6+ */
-    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-    -o-background-size: 100%; /* Opera 9.6+ */
-    background-size: 100%; /* Современные браузеры */
+    position: absolute;
+    background-size: 100% 100%; /* Современные браузеры */
+    width: 100%;
+    margin-top:-13%;
+
 }
 
 .carousel-control-prev {

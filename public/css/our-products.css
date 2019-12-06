@@ -3,8 +3,6 @@
     background:url("/images/our-products-background.png");
     background-size: 100% 100%;
 
-
-
 }
 
 .line-style-down .line-style-up{
@@ -25,7 +23,7 @@
     margin-bottom: -6%;
 }
 
-.about-title{
+.products-title{
 
     color: white;
     font-weight: bold;
@@ -35,7 +33,7 @@
 
 }
 
-.line-for-about{
+.line-for-products{
 
     width: 15%;
     height: 3px;

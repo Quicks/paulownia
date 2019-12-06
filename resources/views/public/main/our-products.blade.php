@@ -5,12 +5,10 @@
 <div class="main-content">
     <div><img src="/images/our-products-line-up.png" class="line-style-up"></div>
 
-        <div >
-            <h1 class="about-title font-weight-bold text-center">Our products</h1>
-            <hr class="line-for-about">
+        <div>
+            <div class="products-title font-weight-bold text-center">Our products</div>
+            <hr class="line-for-products">
         </div>
-
-
         <div class="row m-3">
             <div class="col back-ground-img m-3">
                 <div style="margin-top:75%;">

@@ -43,12 +43,15 @@
 }
 
 .back-ground-img{
-
-    background:  url("/images/line-for-goods-in-card.png")no-repeat, url("/images/our-products-col-fon.png") no-repeat, white;
+    /*background-position: 50% 46% ,top ,bottom;*/
+    /*background:  url("/images/line-for-goods-in-card.png")no-repeat, url("/images/our-products-col-fon.png") no-repeat, white;*/
+    /*background-size: 100%;*/
     height:445px;
     border-radius: 25px;
-    background-size: 100%;
-    background-position: 50% 46% ,top ,bottom;
+    background-color: white;
+    padding: 0;
+
+
 
 }
 
@@ -75,8 +78,3 @@
     border-radius: 5px;
 }
 
-.img-r{
-
-
-
-}

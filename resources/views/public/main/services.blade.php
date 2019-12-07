@@ -109,14 +109,14 @@
                 </div>
             </div>
             <a class="carousel-control-prev services-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
-                <img claas="lazyload" data-src="{{asset('/images/arrow-left.svg')}}">
+                <img class="lazyload" data-src="{{asset('/images/arrow-left.svg')}}">
             </a>
             <a class="carousel-control-next services-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
-                <img claas="lazyload" data-src="{{asset('/images/arrow-right.svg')}}">
+                <img class="lazyload" data-src="{{asset('/images/arrow-right.svg')}}">
             </a>
         </div>
     </div>
     <div class="services-img-leaf-position">
-        <img claas="img-leaf lazyload" data-src="{{asset('/images/service-leaf-tree.png')}}">
+        <img class="img-leaf lazyload" data-src="{{asset('/images/service-leaf-tree.png')}}">
     </div>
 </div>

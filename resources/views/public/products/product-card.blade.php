@@ -2,7 +2,6 @@
     <link rel="stylesheet" href="{{asset('css/product-card.css') }}">
 @endpush
 
-
     <div class="col back-ground-img m-3 position-relative">
         <div class="position-absolute product-sale">-3%</div>
         <img src="{{asset('/images/our-products-box.png')}}" class="position-absolute box-product">

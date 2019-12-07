@@ -6,7 +6,7 @@
 @if(!empty($mainGallery))
     <div class="our-paulownia">
         <div class="our-paulownia-leaf">
-            <img src="{{asset('/images/our-paulownia-leaf.png')}}">
+            <img claas="lazyload" data-src="{{asset('/images/our-paulownia-leaf.png')}}">
         </div>
         <div class="row mx-auto our-paulownia-content">
             <div class="col-12 text-center">
@@ -17,7 +17,7 @@
                 <div class="fotorama">
                     @foreach($mainGallery->images as $image)
                         <a href="{{asset('storage/'.$image->image)}}">
-                            <img src="{{asset('storage/'.$image->image)}}">
+                            <img claas="lazyload" data-src="{{asset('storage/'.$image->image)}}">
                         </a>
                     @endforeach
                 </div>

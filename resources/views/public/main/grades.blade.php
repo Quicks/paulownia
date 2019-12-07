@@ -12,7 +12,7 @@
         <div class="col-xl-6 col-sm-12 mx-auto grades-item mr-5 pb-3 mb-sm-4">
             <div class="row">
                 <div class="col-xl-8 col-sm-12 grades-imgs">
-                    <img src="{{asset('/images/turbopro-en.png')}}" class="grades-img-size">
+                    <img class="grades-img-size lazyload" data-src="{{asset('/images/turbopro-en.png')}}">
                 </div>
                 <div class="col-xl-4 col-sm-12">
                     <p class="grades-item-title">Paulownia Turbo Pro ®</p>
@@ -23,7 +23,7 @@
                         <a target="_blank" href="#" class="grades-item-link">Read more</a>
                     </p>
                     <div class="grades-stamp">
-                        <img src="{{asset('/images/stamp-turbopro.png')}}">
+                        <img class="lazyload" data-src="{{asset('/images/stamp-turbopro.png')}}">
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
         <div class="col-xl-6 col-sm-12 mx-auto grades-item pb-3 mb-sm-4">
             <div class="row">
                 <div class="col-xl-8 col-sm-12 grades-imgs">
-                    <img src="{{asset('/images/zepro-en.png')}}" class="grades-img-size">
+                    <img class="grades-img-size lazyload" data-src="{{asset('/images/zepro-en.png')}}">
                 </div>
                 <div class="col-xl-4 col-sm-12">
                     <p class="grades-item-title">Paulownia Ze Pro ®</p>
@@ -42,7 +42,7 @@
                         <a target="_blank" href="#" class="grades-item-link">Read more</a>
                     </p>
                     <div class="grades-stamp">
-                        <img src="{{asset('/images/stamp-zepro.png')}}">
+                        <img class="lazyload" data-src="{{asset('/images/stamp-zepro.png')}}">
                     </div>
                 </div>
             </div>

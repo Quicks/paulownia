@@ -129,20 +129,6 @@
 }
 
 
-@media screen and (min-width: 1367px) {
-
-
-}
-
-
-/* Стили для больших экранов (дисплей шириной от 992 пикселей до 1199 пикселей) */
-@media screen and (min-width: 1025px) and (max-width: 1366px) {
-
-
-}
-
-
-
 /* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 

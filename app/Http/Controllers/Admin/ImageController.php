@@ -29,16 +29,29 @@ class ImageController extends Controller
     public function storeImage (Request $request, $id)
     {
         $this->validate($request, [
-            'image' => 'required|image|max:20000'
+            'image' => 'required_without:images|image|max:20000',
+            'images.*' => 'required_without:image|image|max:20000'
         ]);
-        $imageAtributes = $request->image_atr;
+
         $tmp = explode("\\", $request->imageable_type);
         $imageModelShortName = end($tmp);
-        $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
-            $request->file('image'), $imageModelShortName, $id, $request->watermark);
+        $imageAtributes = $request->image_atr;
         $imageAtributes['imageable_id'] = $id;
         $imageAtributes['imageable_type'] = $request->imageable_type;
-        Image::create($imageAtributes);
+
+        if ($request->hasFile('image')) {
+            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
+                $request->file('image'), $imageModelShortName, $id, $request->watermark);
+            Image::create($imageAtributes);
+        }
+
+        if ($request->hasFile('images')) {
+            foreach ($request->images as $key => $image) {
+                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnailNotEncoded(
+                    $image, $imageModelShortName, $id, $request->watermark, $key);
+                Image::create($imageAtributes);
+            }
+        }
 
         return redirect($request->redirect_route)->with('flash_message', 'Image added!');
     }

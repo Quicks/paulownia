@@ -59,20 +59,29 @@ class PartnersController extends Controller
 			'name' => 'required|max:90',
 			'email' => 'required|email',
             'image' => 'image|max:20000',
+            'images.*' => 'image|max:20000',
             'phone'=>'string|max:190',
             'posrcode'=>'string|max:190',
             'website'=>'url'
 		]);
-        $requestData = $request->all();
 
-        $partners = Partner::create($requestData);
+        $partners = Partner::create($request->all());
+        $imageAtributes = $request->image_atr;
+        $imageAtributes['imageable_id'] = $partners->id;
+        $imageAtributes['imageable_type'] = 'App\Models\Partner';
+
         if ($request->hasFile('image')) {
-            $imageAtributes = $request->image_atr;
             $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
                 $request->file('image'), 'Partner', $partners->id, $request->watermark);
-            $imageAtributes['imageable_id'] = $partners->id;
-            $imageAtributes['imageable_type'] = 'App\Models\Partner';
             Image::create($imageAtributes);
+        }
+
+        if ($request->hasFile('images')) {
+            foreach ($request->images as $key => $image) {
+                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnailNotEncoded(
+                    $image, 'Partner', $partners->id, $request->watermark, $key);
+                Image::create($imageAtributes);
+            }
         }
 
         return redirect('admin/partners')->with('flash_message', 'Partner added!');

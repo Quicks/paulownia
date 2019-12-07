@@ -56,18 +56,28 @@ class ArticlesController extends Controller
         $this->validate($request, [
 			'name' => 'required|max:90',
 			'active' => 'required|boolean',
-			'publish_date' => 'required|date'
+			'publish_date' => 'required|date',
+            'image' => 'image|max:20000',
+            'images.*' => 'image|max:20000',
 		]);
         $requestData = $request->all();
         $article = Article::create($requestData);
+        $imageAtributes = $request->image_atr;
+        $imageAtributes['imageable_id'] = $article->id;
+        $imageAtributes['imageable_type'] = 'App\Models\Article';
 
         if ($request->hasFile('image')) {
-            $imageAtributes = $request->image_atr;
             $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
                 $request->file('image'), 'Article', $article->id, $request->watermark);
-            $imageAtributes['imageable_id'] = $article->id;
-            $imageAtributes['imageable_type'] = 'App\Models\Article';
             Image::create($imageAtributes);
+        }
+
+        if ($request->hasFile('images')) {
+            foreach ($request->images as $key => $image) {
+                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnailNotEncoded(
+                    $image, 'Article', $article->id, $request->watermark, $key);
+                Image::create($imageAtributes);
+            }
         }
 
         return redirect('admin/articles')->with('flash_message', 'Article added!');

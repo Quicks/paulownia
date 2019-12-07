@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/grades.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/grades.css') }}?v2">
 @endpush
 
 <div class="grades-back">
@@ -14,7 +14,7 @@
                 <div class="col-xl-8 col-sm-12 grades-imgs">
                     <img src="{{asset('/images/turbopro-en.png')}}" class="grades-img-size">
                 </div>
-                <div class="col-xl-4 col-sm-12 mt-5">
+                <div class="col-xl-4 col-sm-12">
                     <p class="grades-item-title">Paulownia Turbo Pro ®</p>
                     <p class="grades-item-text text-left"> Ultrafast growth,temperatu re, resistant, adaptive, medi um / wide, cup,
                         productive,high quality, light, wood, estéril um / wide,
@@ -28,12 +28,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-sm-12 mx-auto grades-item pb-3 mb-sm-4" style="position: relative">
+        <div class="col-xl-6 col-sm-12 mx-auto grades-item pb-3 mb-sm-4">
             <div class="row">
                 <div class="col-xl-8 col-sm-12 grades-imgs">
                     <img src="{{asset('/images/zepro-en.png')}}" class="grades-img-size">
                 </div>
-                <div class="col-xl-4 col-sm-12 mt-5">
+                <div class="col-xl-4 col-sm-12">
                     <p class="grades-item-title">Paulownia Ze Pro ®</p>
                     <p class="grades-item-text text-left">Ultrafast growth,temperatu re, resistant, adaptive, medi um /
                         wide, cup, productive,high quality, light, wood, estéril um /

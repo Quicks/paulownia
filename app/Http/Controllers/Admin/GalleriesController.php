@@ -56,18 +56,27 @@ class GalleriesController extends Controller
         $this->validate($request, [
 			'name' => 'required|max:90',
 			'active' => 'required|boolean',
-            'image' => 'required|image|max:20000'
+            'image' => 'image|max:20000',
+            'images.*' => 'image|max:20000',
 		]);
 
         $newGalery = Gallery::create($request->except(['image_atr','image']));
+        $imageAtributes = $request->image_atr;
+        $imageAtributes['imageable_id'] = $newGalery->id;
+        $imageAtributes['imageable_type'] = 'App\Models\Gallery';
 
         if ($request->hasFile('image')) {
-            $imageAtributes = $request->image_atr;
             $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
                 $request->file('image'), 'Gallery', $newGalery->id, $request->watermark);
-            $imageAtributes['imageable_id'] = $newGalery->id;
-            $imageAtributes['imageable_type'] = 'App\Models\Gallery';
             Image::create($imageAtributes);
+        }
+
+        if ($request->hasFile('images')) {
+            foreach ($request->images as $key => $image) {
+                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnailNotEncoded(
+                    $image, 'Gallery', $newGalery->id, $request->watermark, $key);
+                Image::create($imageAtributes);
+            }
         }
 
         return redirect('admin/galleries')->with('flash_message', 'Gallery added!');

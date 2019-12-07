@@ -59,5 +59,10 @@
     line-height: 38px;
     letter-spacing: 0.05em;
     color: #FFFFFF;
+}
 
+
+.button-calc:hover {
+    -webkit-filter: drop-shadow(-2px -2px 20px #8CBD02);
+    filter: drop-shadow(-2px -2px 20px #8CBD02);
 }

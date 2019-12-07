@@ -68,10 +68,6 @@
     margin-left: -40px;
     height: 538px;
 }
-.grades-img-size {
-    width: 422px;
-    height: 538px;
-}
 .grades-item-title {
     width: 229px;
     font-weight: bold;
@@ -107,7 +103,14 @@
     margin-left: 160px;
     margin-top: 10px
 }
+.grades-img-size {
+    width: 422px;
+    height: 538px;
+}
 .grades-img-size:hover {
+    transition-property: width, height;
+    transition-duration: 2s;
+    transition-delay: 0.2s;
     width: 700px;
     height: 724px;
     position: relative;

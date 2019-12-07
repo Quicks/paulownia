@@ -1,0 +1,116 @@
+.back-ground-img {
+
+    border-radius: 25px;
+    background-color: white;
+    padding: 0;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+.back-ground-img:hover{
+
+
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+
+}
+.product-sale{
+    margin-top: 5%;
+    padding: 1% 6% 1% 2% ;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 26px;
+    text-align: center;
+    color: #8CBD02;
+    border-radius: 0 5px 5px 0;
+    background-color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.box-product{
+    margin: 67% 0 0 75%;
+}
+.like-product{
+    margin: 67% 0 0 85%;
+}
+
+.title-for-card, .price-for-card {
+    padding:0 4% 0 4%;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    box-sizing: border-box;
+    color: #8CBD02;
+
+}
+
+.title-for-card:hover{
+
+    color:#8CBD02 ;
+    text-decoration:underline;
+
+}
+
+.text-card{
+    padding:0 4% 0 4%;
+    margin: 5% 0 5% 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 26px;
+    box-sizing: border-box;
+    color: #000000;
+    border-radius: 5px;
+}
+
+/* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .product-sale {
+        margin-top: 9%;
+    }
+
+    .box-product {
+        margin: 80% 0 0 52%;
+    }
+
+    .like-product {
+        margin: 80% 0 0 70%;
+    }
+}
+
+
+
+/* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
+@media screen and  (min-width: 426px) and (max-width: 768px) {
+
+    .product-sale {
+        margin-top: 13%;
+    }
+
+    .box-product {
+        margin: 75% 0 0 65%;
+    }
+
+    .like-product {
+        margin: 100% 0 0 65%;
+    }
+
+}
+
+/* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
+@media screen and (min-width: 376px) and (max-width: 425px) {
+
+    .box-product {
+        margin: 75% 0 0 70%;
+    }
+
+    .product-sale {
+        margin-top: 14%;
+    }
+
+    .like-product {
+        margin: 98% 0 0 70%;
+    }
+
+}

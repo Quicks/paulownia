@@ -139,32 +139,3 @@
 
 </div>
 
-    {{--<div class="row main-class align-items-center">--}}
-        {{--<div class="col back-ground-img position-relative">--}}
-            {{--<img src="/images/our-products-col-fon.png" style="max-width:100%;position:relative;">--}}
-            {{--<div><img src="/images/line-for-goods-in-card.png" style="max-width:100%; margin-top:-9%;position: absolute;"></div>--}}
-
-
-        {{--</div>--}}
-
-        {{--<div class="col back-ground-img">--}}
-            {{--<img src="/images/our-products-col-fon.png" style="max-width:100%;">--}}
-            {{--<div><img src="/images/line-for-goods-in-card.png" style="max-width:100%; margin-top:-9%;position: absolute;"></div>--}}
-        {{--</div>--}}
-
-        {{--<div class="col back-ground-img">--}}
-            {{--<img src="/images/our-products-col-fon.png" style="max-width:100%">--}}
-            {{--<div><img src="/images/line-for-goods-in-card.png" style="max-width:100%; margin-top:-9%;position: absolute;"></div>--}}
-        {{--</div>--}}
-
-        {{--<div class="col back-ground-img">--}}
-            {{--<img src="/images/our-products-col-fon.png" style="max-width:100%">--}}
-            {{--<div><img src="/images/line-for-goods-in-card.png" style="max-width:100%; margin-top:-9%;position: absolute;"></div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
-    {{--</div>--}}
-
-
-
-{{--</div>--}}

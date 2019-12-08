@@ -1,6 +1,8 @@
 @push('css')
     <link rel="stylesheet" href="{{asset('css/about-us.css') }}?v2">
     <link rel="stylesheet" href="{{asset('css/slider-sale.css') }}?v2">
+    <link rel="stylesheet" href="{{asset('css/sl.css') }}?v2">
+
 @endpush
 <div class="fon">
     {{--slider-sale--}}
@@ -13,28 +15,40 @@
                         <div class="carousel-inner rounding">
                             <div class="carousel-item active">
                                 <div class="row">
-                                    <div class="col non">
+                                    <div class="col col-xl-3 cf p-0">
                                         <a href="#">
-                                            <div class="text-center procent-number1 font-weight-bold mw-100">3%</div>
-                                            <p class="text-for-actions text-center">Seedlings by 10 cm in high</p>
+                                            <img class="w-100 position-relative" src="/images/slider2-1-2.png">
+                                            <div class="image-fon text-center position-absolute">
+                                           3%
+                                        </div>
+                                        <p class="text-fon text-center">Seedlings by 10 cm in high</p>
                                         </a>
                                     </div>
-                                    <div class="col non1">
+                                    <div class="col col-xl-3 cf p-0">
                                         <a href="#">
-                                            <div class="text-center procent-number2 font-weight-bold mw-100">40%</div>
-                                            <p class="text-for-actions1 text-center">Seedlings by 10 cm in high</p>
+                                            <img class="w-100 position-relative" src="/images/slider2-2-1.png">
+                                            <div class="image-fon text-center position-absolute">
+                                                40%
+                                            </div>
+                                            <p class="text-fon text-center">Seedlings by 10 cm in high</p>
                                         </a>
                                     </div>
-                                    <div class="col non1">
+                                    <div class="col col-xl-3 cf p-0">
                                         <a href="#">
-                                            <div class="text-center procent-number2 font-weight-bold mw-100">40%</div>
-                                            <p class="text-for-actions1 text-center">Seedlings by 10 cm in high</p>
+                                            <img class="w-100 position-relative" src="/images/slider2-2-1.png">
+                                            <div class="image-fon text-center position-absolute">
+                                                40%
+                                            </div>
+                                            <p class="text-fon text-center">Seedlings by 10 cm in high</p>
                                         </a>
                                     </div>
-                                    <div class="col non2">
+                                    <div class="col col-xl-3 cf p-0">
                                         <a href="#">
-                                            <div class="text-center procent-number1 font-weight-bold mw-100">3%</div>
-                                            <p class="text-for-actions2 text-center">Seedlings by 10 cm in high</p>
+                                            <img class="w-100 position-relative" src="/images/slider2-1-2.png">
+                                            <div class="image-fon text-center position-absolute">
+                                                3%
+                                            </div>
+                                            <p class="text-fon text-center">Seedlings by 10 cm in high</p>
                                         </a>
                                     </div>
                                 </div>
@@ -42,35 +56,35 @@
                             </div>
                             <!--.item-->
 
-                            <div class="carousel-item rounding">
-                                <div class="row">
-                                    <div class="col non">
-                                        <a href="#">
-                                            <div class="text-center procent-number1 font-weight-bold mw-100">3%</div>
-                                            <p class="text-for-actions text-center">Seedlings by 10 cm in high</p>
-                                        </a>
-                                    </div>
-                                    <div class="col non1">
-                                        <a href="#">
-                                            <div class="text-center procent-number2 font-weight-bold mw-100">40%</div>
-                                            <p class="text-for-actions1 text-center">Seedlings by 10 cm in high</p>
-                                        </a>
-                                    </div>
-                                    <div class="col non1">
-                                        <a href="#">
-                                            <div class="text-center procent-number2 font-weight-bold mw-100">40%</div>
-                                            <p class="text-for-actions1 text-center">Seedlings by 10 cm in high</p>
-                                        </a>
-                                    </div>
-                                    <div class="col non2">
-                                        <a href="#">
-                                            <div class="text-center procent-number1 font-weight-bold mw-100">3%</div>
-                                            <p class="text-for-actions2 text-center">Seedlings by 10 cm in high</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!--.row-->
-                            </div>
+                            {{--<div class="carousel-item rounding">--}}
+                                {{--<div class="row">--}}
+                                    {{--<div class="col non">--}}
+                                        {{--<a href="#">--}}
+                                            {{--<div class="text-center procent-number1 font-weight-bold mw-100">3%</div>--}}
+                                            {{--<p class="text-for-actions text-center">Seedlings by 10 cm in high</p>--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col non1">--}}
+                                        {{--<a href="#">--}}
+                                            {{--<div class="text-center procent-number2 font-weight-bold mw-100">40%</div>--}}
+                                            {{--<p class="text-for-actions1 text-center">Seedlings by 10 cm in high</p>--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col non1">--}}
+                                        {{--<a href="#">--}}
+                                            {{--<div class="text-center procent-number2 font-weight-bold mw-100">40%</div>--}}
+                                            {{--<p class="text-for-actions1 text-center">Seedlings by 10 cm in high</p>--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col non2">--}}
+                                        {{--<a href="#">--}}
+                                            {{--<div class="text-center procent-number1 font-weight-bold mw-100">3%</div>--}}
+                                            {{--<p class="text-for-actions2 text-center">Seedlings by 10 cm in high</p>--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<!--.row-->--}}
+                            {{--</div>--}}
                         </div>
                         <!--.carousel-inner-->
                     </div>
@@ -86,7 +100,7 @@
                 </div>
             </div>
         </div>
-        <div><img class="line-sale lazyload" data-src="/images/line-for-action.png"></div>
+        {{--<div><img class="line-sale lazyload" data-src="/images/line-for-action.png"></div>--}}
     </div>
     {{--about-us--}}
         <div class="text-center" style="margin: 5% 0 3% 0;">

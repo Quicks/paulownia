@@ -1,7 +1,6 @@
 @push('css')
     <link rel="stylesheet" href="{{asset('css/about-us.css') }}?v2">
     <link rel="stylesheet" href="{{asset('css/slider-sale.css') }}?v2">
-    <link rel="stylesheet" href="{{asset('css/sl.css') }}?v2">
 
 @endpush
 <div class="fon">

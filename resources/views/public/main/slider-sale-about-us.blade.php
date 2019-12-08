@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-        <div><img claas="line-sale lazyload" data-src="/images/line-for-action.png"></div>
+        <div><img class="line-sale lazyload" data-src="/images/line-for-action.png"></div>
     </div>
     {{--about-us--}}
         <div class="text-center" style="margin: 5% 0 3% 0;">
@@ -98,7 +98,7 @@
 
                 <div class="col-xl-6 col-md-6 col-sm-12 back-ground-1 mx-auto" style="max-width:569px;">
 
-                    <img claas="lazyload" data-src="/images/logo.png" style="max-width:35%;margin-top: 3%">
+                    <img class="lazyload" data-src="/images/logo.png" style="max-width:35%;margin-top: 3%">
 
                     <p class="about-text">Paulownia Professional is a manufacturer of seedlings, popular species of Paulownia.
                         Our company has settled in Spain, the province of Aragon, whose production area is 2 hectares,
@@ -113,7 +113,7 @@
                 </div>
                     <div class="col-xl-6 col-md-6 col-sm-12 back-ground-2 mx-auto" style="max-width:569px;">
 
-                        <img claas="lazyload" data-src="/images/logo.png"  style="max-width:35%;float: right;margin:3% 2% 8% 50%;">
+                        <img class="lazyload" data-src="/images/logo.png"  style="max-width:35%;float: right;margin:3% 2% 8% 50%;">
 
                         <p class="about-text">Paulownia Professional is a manufacturer of seedlings, popular species of Paulownia.
                             Paulownia Professiona's goal is to contribute to the improvement of environmental conditions in Aragon,

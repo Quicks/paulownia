@@ -4,7 +4,7 @@
 
 <div class="main-content">
 
-    <div><img src="/images/our-products-line-up.png" class="line-style-up"></div>
+    <div><img data-src="{{asset('images/our-products-line-up.png') }}" class="line-style-up lazyload"></div>
 
         <div>
             <div class="products-title font-weight-bold text-center">Our products</div>

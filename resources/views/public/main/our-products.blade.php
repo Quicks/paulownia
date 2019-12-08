@@ -12,125 +12,17 @@
         </div>
 
             <div class="row m-3">
-
-                <div class="col back-ground-img m-3 position-relative">
-                    <div class="position-absolute product-sale">-3%</div>
-                    <img src="/images/our-products-box.png" class="position-absolute box-product">
-                    <img src="/images/our-products-like.png" class="position-absolute like-product">
-                    <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%">
-                    <img src="/images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 €</div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description
-                    </div>
-                </div>
-
-                <div class="col back-ground-img m-3 position-relative">
-                    <div class="position-absolute product-sale">-3%</div>
-                    <img src="/images/our-products-box.png" class="position-absolute box-product">
-                    <img src="/images/our-products-like.png" class="position-absolute like-product">
-                    <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%">
-                    <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 €</div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description
-                    </div>
-                </div>
-
-                <div class="col back-ground-img m-3 position-relative">
-                    <div class="position-absolute product-sale">-3%</div>
-                    <img src="/images/our-products-box.png" class="position-absolute box-product">
-                    <img src="/images/our-products-like.png" class="position-absolute like-product">
-                    <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%">
-                    <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 €</div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description
-                    </div>
-                </div>
-
-                <div class="col back-ground-img m-3 position-relative">
-                    <div class="position-absolute product-sale">-3%</div>
-                    <img src="/images/our-products-box.png" class="position-absolute box-product">
-                    <img src="/images/our-products-like.png" class="position-absolute like-product">
-                    <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%">
-                    <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 €</div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description
-                    </div>
-                </div>
-
-
+                @include('public.products.product-card')
+                @include('public.products.product-card')
+                @include('public.products.product-card')
+                @include('public.products.product-card')
             </div>
 
             <div class="row m-3">
-
-                <div class="col back-ground-img m-3 position-relative">
-                    <div class="position-absolute product-sale">-3%</div>
-                    <img src="/images/our-products-box.png" class="position-absolute box-product">
-                    <img src="/images/our-products-like.png" class="position-absolute like-product">
-                    <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%">
-                    <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 €</div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description
-                    </div>
-                </div>
-
-                <div class="col back-ground-img m-3 position-relative">
-                    <div class="position-absolute product-sale">-3%</div>
-                    <img src="/images/our-products-box.png" class="position-absolute box-product">
-                    <img src="/images/our-products-like.png" class="position-absolute like-product">
-                    <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%">
-                    <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 €</div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description
-                    </div>
-                </div>
-
-                <div class="col back-ground-img m-3 position-relative">
-                    <div class="position-absolute product-sale">-3%</div>
-                    <img src="/images/our-products-box.png" class="position-absolute box-product">
-                    <img src="/images/our-products-like.png" class="position-absolute like-product">
-                    <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%">
-                    <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 €</div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description
-                    </div>
-                </div>
-
-                <div class="col back-ground-img m-3 position-relative">
-                    <div class="position-absolute product-sale">-3%</div>
-                    <img src="/images/our-products-box.png" class="position-absolute box-product">
-                    <img src="/images/our-products-like.png" class="position-absolute like-product">
-                    <img src="/images/our-products-col-fon.png" style="border-radius: 25px 25px 0 0;max-width: 100%">
-                    <img src="images/line-for-goods-in-card.png" style="margin-top:-8%;max-width: 100%">
-                    <div class="title-for-card">Seedling Turbo Pro</div>
-                    <div class="price-for-card">4.00 €</div>
-                    <div class="text-card">Description, description,
-                        description, description, description,
-                        description, description
-                    </div>
-                </div>
-
-
+                @include('public.products.product-card')
+                @include('public.products.product-card')
+                @include('public.products.product-card')
+                @include('public.products.product-card')
             </div>
 
         <button class="product-button"> All goods </button>
@@ -138,4 +30,5 @@
     <div> <img src="/images/our-products-line-down.png" class="line-style-down"> </div>
 
 </div>
+
 

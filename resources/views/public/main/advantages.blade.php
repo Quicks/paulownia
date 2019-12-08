@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/advantages.css') }}?v4">
+    <link rel="stylesheet" href="{{ asset('css/advantages.css') }}?v5">
 @endpush
 
 <div class="advantages mt-5">
@@ -25,9 +25,6 @@
             <p class="advantages-text">
                 Individual approach to each client
             </p>
-        </div>
-        <div class="advantages-leaf">
-            <img data-src="{{asset('images/advantages-leaf.png')}}" class="adv-leaf-img lazyload">
         </div>
     </div>
 </div>

@@ -1,37 +1,36 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v2">
+    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v3">
+    <link rel="stylesheet" href="{{ asset('css/selectric.css') }}">
 @endpush
 
-<div class="row mx-auto pt-xl-5 pb-xl-5" style="max-width:1200px;">
+<div class="row mx-auto pt-xl-5 pb-xl-5" style="max-width:1400px;">
     <div class="col-12 mb-5 text-center">
         <p class="calculate-title">Calculate your income</p>
         <hr class="calc-title-line">
     </div>
     <div class="col-xl-3">
-        <select class="calc-select" id="view" name="view" onchange="getValueView()">
+        <select  id="view" name="view">
             <option selected disabled hidden>View of paulowna</option>
             <option value="ZE">Paulownia ZE PRO®</option>
             <option value="TURBO">Paulownia TURBO PRO®</option>
             <option value="ShanTong">Paulownia ShanTong</option>
         </select>
-        <hr class="calculate-line mt-n2">
     </div>
     <div class="col-xl-3">
-        <select class="calc-select" id="fitForm" name="fitForm">
-            <option id="fitFormSelected" selected disabled hidden>Fit form</option>
-            <option id="form5*4" style="display: none" value="5*4">5x4 m</option>
-            <option id="form5*5" style="display: none" value="5*5">5x5 m</option>
-            <option id="form6*5" style="display: none" value="6*5">6x5 m</option>
-            <option id="form6*6" style="display: none" value="6*6">6x6 m</option>
+        <select id="fitForm" name="fitForm">
+            <option class="formTitle" id="fitFormSelected" selected disabled hidden>Fit form</option>
+            <option class="fitForm form1" id="form1" value="5*4">5x4 m</option>
+            <option class="fitForm form2" id="form2" value="5*5">5x5 m</option>
+            <option class="fitForm form3" id="form3" value="6*5">6x5 m</option>
+            <option class="fitForm form4" id="form4" value="6*6">6x6 m</option>
         </select>
-        <hr class="calculate-line mt-n2">
     </div>
     <div class="col-xl-3">
-        <input class="calc-number calc-select" type="text" onkeyup="this.value = this.value.replace (/\D/, '')" id="numberTrees" name="numberTrees" placeholder="Number of trees">
-        <hr class="calculate-line mt-n2">
+        <input style="border-bottom: 1px solid rgb(255, 255, 255);" class="calc-number calc-select" type="text" onkeyup="this.value = this.value.replace (/\D/, '')"
+               id="numberTrees" name="numberTrees" placeholder="Number of trees">
     </div>
     <div class="col-xl-3">
-        <button class="button-calc" onclick="calculateGrowth()" data-toggle="modal"  data-target="#calcAnswer">
+        <button class="button-calc" data-toggle="modal"  data-target="#calcAnswer">
             <img class="lazyload" data-src="{{asset('/images/calculate.png')}}">
         </button>
     </div>
@@ -53,63 +52,74 @@
 </div>
 
 @push('scripts')
+    <script src="{{asset('js/jquery.selectric.min.js')}}"></script>
     <script>
-        let viewTree = document.getElementById('view');
-        let fitForm = document.getElementById('fitForm');
-        let formOption1 = document.getElementById("form5*4");
-        let formOption2 = document.getElementById("form5*5");
-        let formOption3 = document.getElementById("form6*5");
-        let formOption4 = document.getElementById("form6*6");
-        function getValueView() {
-            let valueOptionTree = viewTree.value;
-            if(valueOptionTree === "ZE" || valueOptionTree === "ShanTong") {
-                formOption1.style.display = "block";
-                formOption2.style.display = "block";
-                formOption3.style.display = "none";
-                formOption4.style.display = "none";
-            }
-            if(valueOptionTree === "TURBO") {
-                formOption1.style.display = "none";
-                formOption2.style.display = "none";
-                formOption3.style.display = "block";
-                formOption4.style.display = "block";
-            }
-        }
-        viewTree.addEventListener('click', function () {
-            let fitFormSelected = document.getElementById('fitFormSelected');
-            fitFormSelected.selected = true;
+        $(document).ready(function () {
+            $('select').selectric({
+                arrowButtonMarkup: '<img class="button" src="{{asset('/images/arrow-down.svg')}}">',
+                nativeOnMobile: true,
+            });
+            let viewTree = $('#view');
+            let valueOptionTree;
+            let fitForm = $('#fitForm');
+            let valueFitForm;
+            $('li.form1').addClass('disabled');
+            $('li.form2').addClass('disabled');
+            $('li.form3').addClass('disabled');
+            $('li.form4').addClass('disabled');
+            viewTree.on('change', function () {
+               valueOptionTree = $(this).val();
+                if(valueOptionTree === "ZE" || valueOptionTree === "ShanTong") {
+                    $('li.form1').removeClass('disabled');
+                    $('li.form2').removeClass('disabled');
+                    $('li.form3').addClass('disabled');
+                    $('li.form4').addClass('disabled');
+                }
+                if(valueOptionTree === "TURBO") {
+                    $('li.form1').addClass('disabled');
+                    $('li.form2').addClass('disabled');
+                    $('li.form3').removeClass('disabled');
+                    $('li.form4').removeClass('disabled');
+                }
+                setTimeout(function() {
+                    $('.selectric span').html('Fit form');
+                    viewTree.selectric('refresh');
+                }, 500);
+            });
+            fitForm.change(function () {
+                valueFitForm = $(this).val();
+            });
+            $('.button-calc').on('click', function () {
+                let numberThreeEl = parseInt($('#numberTrees').val());
+                let calcResult = $('#calcResult');
+                let result;
+                console.log(numberThreeEl);
+                if(valueOptionTree === "ZE"){
+                    if(valueFitForm === "5*4") {
+                        result = Math.floor(numberThreeEl * 0.58);
+                    }
+                    if(valueFitForm === "5*5") {
+                        result = Math.floor(numberThreeEl * 0.7);
+                    }
+                }
+                if(valueOptionTree === "ShanTong"){
+                    if(valueFitForm === "5*4") {
+                        result = Math.floor(numberThreeEl * 0.52);
+                    }
+                    if(valueFitForm === "5*5") {
+                        result = Math.floor(numberThreeEl * 0.65);
+                    }
+                }
+                if(valueOptionTree === "TURBO"){
+                    if(valueFitForm === "6*5") {
+                        result = Math.floor(numberThreeEl * 0.92);
+                    }
+                    if(valueFitForm === "6*6") {
+                        result = Math.floor(numberThreeEl * 1.12);
+                    }
+                }
+                calcResult.html("Growth: " + result + " m3");
+            });
         });
-        function calculateGrowth() {
-            let calcResult = document.getElementById('calcResult');
-            let result;
-            let valueOptionTree = viewTree.value;
-            let valueFitForm = fitForm.value;
-            let numberThreeEl = parseInt(document.getElementById('numberTrees').value);
-            if(valueOptionTree === "ZE"){
-                if(valueFitForm === "5*4") {
-                    result = Math.floor(numberThreeEl * 0.58);
-                }
-                if(valueFitForm === "5*5") {
-                    result = Math.floor(numberThreeEl * 0.7);
-                }
-            }
-            if(valueOptionTree === "ShanTong"){
-                if(valueFitForm === "5*4") {
-                    result = Math.floor(numberThreeEl * 0.52);
-                }
-                if(valueFitForm === "5*5") {
-                    result = Math.floor(numberThreeEl * 0.65);
-                }
-            }
-            if(valueOptionTree === "TURBO"){
-                if(valueFitForm === "6*5") {
-                    result = Math.floor(numberThreeEl * 0.92);
-                }
-                if(valueFitForm === "6*6") {
-                    result = Math.floor(numberThreeEl * 1.12);
-                }
-            }
-            calcResult.innerHTML = "Growth: " + result + " m3";
-        }
     </script>
 @endpush

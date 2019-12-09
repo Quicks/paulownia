@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{ asset('css/advantages.css') }}?v5">
 @endpush
 
-<div class="advantages mt-5">
+<div class="advantages">
     <div class="row text-center mx-auto advantages-width">
         <div class="col-12 pb-4">
             <p class="advantages-title mt-5">Our advantages</p>

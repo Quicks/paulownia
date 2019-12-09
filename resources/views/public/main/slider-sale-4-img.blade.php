@@ -117,7 +117,7 @@
 
 
     <div class="container from-768">
-        @include('public.main.slider-sale-2-img')
+        @include('public.main.slider-sale-1-img')
     </div>
 
     @include('public.main.about-us')

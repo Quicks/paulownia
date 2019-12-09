@@ -1,49 +1,61 @@
-@media screen and (min-width: 320px) and (max-width: 1223px) {
+@media screen and (min-width: 320px) and (max-width: 1024px) {
     .services-img-leaf-position {
         position:absolute !important;
         bottom: 0 !important;
     }
     .img-leaf {
-        width: 50% !important;
-        height: 50% !important;
-    }
-    .services-prev {
-        position: absolute !important;
-        left: 0 !important;
-    }
-    .services-next {
-        position: absolute !important;
-        right: 0 !important;
-    }
-    .services-prev img {
-        display: none !important;
-    }
-    .services-next img {
-        display: none !important;
+        width: 70% !important;
+        height: 70% !important;
     }
 }
-@media only screen  and (min-width: 1224px) and (max-width: 1823px) {
+@media only screen  and (min-width: 1224px) and (max-width: 1439px) {
     .services-1, .services-2, .services-3, .services-4 {
         background-position: 50% 30%, top, bottom !important;
         height: 500px !important;
     }
 
     .services-item-width {
-        max-width: 300px !important;
+        max-width: 250px !important;
     }
     .services-prev{
         position: absolute !important;
         left: 0 !important;
     }
-    .services-prev img {
-        display: none !important;
-    }
     .services-next {
         position: absolute !important;
         right: 0 !important;
     }
-    .services-next img {
-        display: none !important;
+    .services-item-title {
+        font-size: 16px !important;
+        margin-top: 140px !important;
+        max-width: 155px !important;
+    }
+    .services-item-text {
+        font-size: 16px !important;
+        margin-top: 50px !important;
+    }
+    .services-item-text-width {
+        max-width: 253px !important;
+    }
+    .services-item-link {
+        font-size: 16px !important;
+    }
+}
+@media only screen  and (min-width: 1440px) and (max-width: 1823px) {
+    .services-1, .services-2, .services-3, .services-4 {
+        background-position: 50% 30%, top, bottom !important;
+        height: 500px !important;
+    }
+    .services-item-width {
+        max-width: 330px !important;
+    }
+    .services-prev{
+        position: absolute !important;
+        left: -12px !important;
+    }
+    .services-next {
+        position: absolute !important;
+        right: -12px !important;
     }
     .services-item-title {
         font-size: 16px !important;

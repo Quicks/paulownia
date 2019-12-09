@@ -15,7 +15,7 @@
                                 <div class="row">
                                     <div class="col cf p-0">
                                         <a href="#">
-                                            <img class="w-100 position-relative" src="/images/slider2-1-2.png">
+                                            <img class="w-100 position-relative lazyload" data-src="{{asset('/images/slider2-1-2.png')}}">
                                             <div class="image-fon text-center position-absolute">
                                            3%
                                         </div>
@@ -24,7 +24,7 @@
                                     </div>
                                     <div class="col cf p-0">
                                         <a href="#">
-                                            <img class="w-100 position-relative" src="/images/slider2-2-1.png">
+                                            <img class="w-100 position-relative lazyload" data-src="{{asset('/images/slider2-2-1.png')}}">
                                             <div class="image-fon text-center position-absolute">
                                                 40%
                                             </div>
@@ -33,7 +33,7 @@
                                     </div>
                                     <div class="col cf p-0">
                                         <a href="#">
-                                            <img class="w-100 position-relative" src="/images/slider2-2-1.png">
+                                            <img class="w-100 position-relative lazyload" data-src="{{asset('/images/slider2-2-1.png')}}">
                                             <div class="image-fon text-center position-absolute">
                                                 40%
                                             </div>
@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="col  cf p-0">
                                         <a href="#">
-                                            <img class="w-100 position-relative" src="/images/slider2-1-2.png">
+                                            <img class="w-100 position-relative lazyload" data-src="{{asset('/images/slider2-1-2.png')}}">
                                             <div class="image-fon text-center position-absolute">
                                                 3%
                                             </div>
@@ -58,7 +58,7 @@
                                 <div class="row">
                                     <div class="col col-xl-3 cf p-0">
                                         <a href="#">
-                                            <img class="w-100 position-relative" src="/images/slider2-1-2.png">
+                                            <img class="w-100 position-relative lazyload" data-src="{{asset('/images/slider2-1-2.png')}}">
                                             <div class="image-fon text-center position-absolute">
                                                 3%
                                             </div>
@@ -67,7 +67,7 @@
                                     </div>
                                     <div class="col col-xl-3 cf p-0">
                                         <a href="#">
-                                            <img class="w-100 position-relative" src="/images/slider2-2-1.png">
+                                            <img class="w-100 position-relative lazyload"data-src="{{asset('/images/slider2-2-1.png')}}">
                                             <div class="image-fon text-center position-absolute">
                                                 40%
                                             </div>
@@ -76,7 +76,7 @@
                                     </div>
                                     <div class="col col-xl-3 cf p-0">
                                         <a href="#">
-                                            <img class="w-100 position-relative" src="/images/slider2-2-1.png">
+                                            <img class="w-100 position-relative lazyload" data-src="{{asset('/images/slider2-2-1.png')}}">
                                             <div class="image-fon text-center position-absolute">
                                                 40%
                                             </div>
@@ -85,7 +85,7 @@
                                     </div>
                                     <div class="col col-xl-3 cf p-0">
                                         <a href="#">
-                                            <img class="w-100 position-relative" src="/images/slider2-1-2.png">
+                                            <img class="w-100 position-relative lazyload" data-src="{{asset('/images/slider2-1-2.png')}}">
                                             <div class="image-fon text-center position-absolute">
                                                 3%
                                             </div>

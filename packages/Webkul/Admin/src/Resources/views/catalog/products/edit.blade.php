@@ -255,10 +255,14 @@
             $.modal.defaults = {clickClose: false, showClose: true, escapeClose: true};
 
             function initCropper() {
-                const image = document.getElementById('image-crop');
-                const cropper = new Cropper(image, {
-                   aspectRatio: 428 / 247,
-                });
+                var image = document.getElementById('image-crop');
+                if (window.cropper) {
+                    window.cropper.replace(image.src);
+                } else {
+                    window.cropper = new Cropper(image, {
+                       aspectRatio: 428 / 247,
+                    });
+                }
 
                 $('#rot1').click(function () {cropper.rotate(90);});
                 $('#rot2').click(function () {cropper.rotate(-90);});
@@ -271,7 +275,6 @@
                 $('#reset').click(function () {cropper.reset();});
 
                 $('#save').click(function saveCrop (event) {
-                    event.preventDefault();
                     cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toBlob((blob) => {
                         alert("What's next?");
                       // var form = $('form')[0];

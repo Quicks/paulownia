@@ -65,7 +65,35 @@
 
             <div class="page-content">
                 @csrf()
-
+                <div id="cropper-div" class="modal">
+                    <div>
+                        <img id="image-crop" style="max-width:100%; min-height: 450px; min-width: 450px;">
+                    </div>
+                    <div class="">
+                        <button id="rot1" type="button" class="btn btn-black" style="margin:4px"><i class="fa fa-rotate-right" aria-hidden="true"></i> 90&deg; </button>
+                        <button id="rot2" type="button" class="btn btn-black" style="margin:4px"><i class="fa fa-rotate-left" aria-hidden="true"></i> -90&deg; </button>
+                        <button id="rot3" type="button" class="btn btn-black" style="margin:4px"><i class="fa fa-rotate-right" aria-hidden="true"></i> 3&deg; </button>
+                        <button id="rot4" type="button" class="btn btn-black" style="margin:4px"><i class="fa fa-rotate-left" aria-hidden="true"></i> -3&deg; </button>
+                        <button id="scalex" type="button" class="btn btn-black" style="margin:4px"><i class="fa fa-arrows-h" aria-hidden="true"></i>  </button>
+                        <button id="scaley" type="button" class="btn btn-black" style="margin:4px"><i class="fa fa-arrows-v" aria-hidden="true"></i> </button>
+                        <br>
+                        <button id="zoom-in" type="button" class="btn btn-black" style="margin:4px"><i class="fa fa-search-plus" aria-hidden="true"></i> zoom in</button>
+                        <button id="zoom-out" type="button" class="btn btn-black" style="margin:4px"><i class="fa fa-search-minus" aria-hidden="true"></i> zoom-out</button>
+                        <button id="reset" type="button" class="btn btn-black" style="margin:4px"><i class="fa fa-refresh" aria-hidden="true"></i> Reset </button>
+                        <br>
+                        <button id="checkbtn" class="btn btn-black" type="button" style="margin:4px">
+                            <label class="">
+                                <input type="checkbox" name="watermark" 
+                                onchange="$('#checkbtn').toggleClass('btn-info btn-outline-info')">
+                                Add watermark
+                            </label>
+                        </button>
+                        <button id="save" type="button" class="btn btn-primary" style="float:right; margin:4px">
+                            <i class="fa fa-save" aria-hidden="true"></i> 
+                            Save 
+                        </button>
+                    </div>
+                </div>
                 <input name="_method" type="hidden" value="PUT">
 
                 @foreach ($product->attribute_family->attribute_groups as $attributeGroup)
@@ -200,6 +228,11 @@
 
 @push('scripts')
     <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
+    <link  href="{{asset('css/cropper.min.css')}}" rel="stylesheet">
+    <script src="{{asset('js/cropper.min.js')}}"></script>
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
     <script>
         $(document).ready(function () {
@@ -218,6 +251,88 @@
                 toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent  | removeformat | code',
                 image_advtab: true
             });
+
+            $.modal.defaults = {clickClose: false, showClose: true, escapeClose: true};
+
+            function initCropper() {
+                const image = document.getElementById('image-crop');
+                const cropper = new Cropper(image, {
+                   aspectRatio: 428 / 247,
+                });
+
+                $('#rot1').click(function () {cropper.rotate(90);});
+                $('#rot2').click(function () {cropper.rotate(-90);});
+                $('#rot3').click(function () {cropper.rotate(3);});
+                $('#rot4').click(function () {cropper.rotate(-3);});
+                $('#scalex').click(function () {cropper.scaleX(-1);});
+                $('#scaley').click(function () {cropper.scaleY(-1);});
+                $('#zoom-in').click(function () {cropper.zoom(0.1);});
+                $('#zoom-out').click(function () {cropper.zoom(-0.1);});
+                $('#reset').click(function () {cropper.reset();});
+
+                $('#save').click(function saveCrop (event) {
+                    event.preventDefault();
+                    cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toBlob((blob) => {
+                        alert("What's next?");
+                      // var form = $('form')[0];
+                      // const formData = new FormData(form);
+                      // formData.append('image', blob);
+
+                      // $.ajax($('form').attr('action'), {
+                      //   method: "POST",
+                      //   data: formData,
+                      //   processData: false,
+                      //   contentType: false,
+                      //   success() {
+                      //       history.back();
+                      //   },
+                      //   error(answer) {
+                      //       if(answer.status == 422){
+                      //           var errors = "";
+                      //           $.each(answer.responseJSON.errors, function(idx, val) {
+                      //               errors = errors +"<li>"+JSON.stringify(val[0])+"</li>";
+                      //           })
+                      //           $('.card-body > form').parent('.card-body').prepend('<ul class="alert alert-danger">'+errors+'</ul>');
+                      //           $([document.documentElement, document.body]).animate({
+                      //               scrollTop: $(".alert.alert-danger").offset().top
+                      //           }, 1000);
+                      //       } else {
+                      //           alert("Error");
+                      //           console.log(answer);
+                      //       }
+                      //   },
+                      // });
+                    });
+                });
+            };
+
+            // $('#image-input').change(function (event) {
+            //     var reader = new FileReader();
+            //     reader.onload = function() {
+            //         var output = document.getElementById('image-crop');
+            //         output.src = reader.result;
+            //         initCropper();
+            //         $('#cropper-div').removeClass('d-none');
+            //     }
+            //     reader.readAsDataURL(event.target.files[0]);
+            //     $('#image-input-div, #images-input-div').remove();
+            // });
+
+            $(document).on('change', '[name^="images"]', function(event) {
+                var reader = new FileReader();
+                reader.onload = function() {
+                    var output = document.getElementById('image-crop');
+                    output.src = reader.result;
+                    initCropper();
+                    $('#cropper-div').modal();
+                }
+                reader.readAsDataURL(event.target.files[0]);
+            }); 
+
+
+
+
+
         });
     </script>
 @endpush

@@ -22,7 +22,7 @@
                                         <p class="text-fon text-center">Seedlings by 10 cm in high</p>
                                         </a>
                                     </div>
-                                    <div class="col  cf p-0">
+                                    <div class="col cf p-0">
                                         <a href="#">
                                             <img class="w-100 position-relative" src="/images/slider2-2-1.png">
                                             <div class="image-fon text-center position-absolute">
@@ -51,8 +51,6 @@
                                     </div>
                                 </div>
                                 <!--.row-->
-
-
                             </div>
                             <!--.item-->
 

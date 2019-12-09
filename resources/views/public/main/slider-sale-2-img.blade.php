@@ -5,7 +5,7 @@
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active pr-5 pl-5 ">
-                               <a href="#" style="background:rgba(140, 189, 2, 0.83)">
+                               <a href="#">
                                    <img class="w-100 position-relative rounding-1" src="/images/slider2-1-2.png">
                                    <div class="image-fon-1 text-center position-absolute">
                                        3%
@@ -14,7 +14,16 @@
                                </a>
                         </div>
                         <div class="carousel-item pr-5 pl-5 ">
-                            <a href="#" style="background:rgba(140, 189, 2, 0.83)">
+                            <a href="#">
+                                <img class="w-100 position-relative rounding-1" src="/images/slider2-2-1.png">
+                                <div class="image-fon-1 text-center position-absolute">
+                                    3%
+                                </div>
+                                <p class="text-fon-1 text-center">Seedlings by 10 cm in high</p>
+                            </a>
+                        </div>
+                        <div class="carousel-item pr-5 pl-5 ">
+                            <a href="#">
                                 <img class="w-100 position-relative rounding-1" src="/images/slider2-1-2.png">
                                 <div class="image-fon-1 text-center position-absolute">
                                     3%
@@ -23,8 +32,8 @@
                             </a>
                         </div>
                         <div class="carousel-item pr-5 pl-5 ">
-                            <a href="#" style="background:rgba(140, 189, 2, 0.83)">
-                                <img class="w-100 position-relative rounding-1" src="/images/slider2-1-2.png">
+                            <a href="#">
+                                <img class="w-100 position-relative rounding-1" src="/images/slider2-2-1.png">
                                 <div class="image-fon-1 text-center position-absolute">
                                     3%
                                 </div>

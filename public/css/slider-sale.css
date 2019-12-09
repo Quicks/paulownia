@@ -4,16 +4,8 @@
     position: relative;
     background:url("/images/background-actions.png") no-repeat;
     background-size: 100% 100% ;
-    /*margin-top: -20px;*/
 
-}
-
-.line-sale{
-
-    position: absolute;
-    background-size: 100% 100%; /* Современные браузеры */
-    width: 100%;
-    margin-top:-13%;
+    height: 245px;
 
 }
 
@@ -57,8 +49,16 @@ a:hover{
     border-radius:25px ;
 }
 
+
+@media screen and (min-width:1025px){
+
+    .from-768{
+        display: none;
+    }
+}
 /* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+
 
     .carousel-control-next {
         right: 2px;
@@ -79,37 +79,18 @@ a:hover{
 
         font-size: 16px;
     }
+    .from-768{
+
+        display: none;
+    }
 }
 
 
 /* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
-@media screen and  (min-width: 426px) and (max-width: 768px) {
+@media screen and  (max-width: 768px) {
 
-    .carousel-control-next {
-        right: 2px;
-        width: 1%;
+    .to-769{
+        display: none;
     }
-
-    .carousel-control-prev {
-        left: 0;
-        width: 1%;
-    }
-
-    .image-fon {
-        margin: -22% 0 0 35%;
-        font-size: 45px;
-    }
-
-    .text-fon{
-
-        font-size: 12px;
-    }
-
 }
 
-/* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
-@media screen and (min-width: 376px) and (max-width: 425px) {
-
-
-
-}

@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('content')
     @include('public.main.slider')
-    @include('public.main.slider-sale-about-us')
+    @include('public.main.slider-sale-4-img')
     @include('public.main.our-products')
     @include('public.main.advantages')
     @include('public.main.services')

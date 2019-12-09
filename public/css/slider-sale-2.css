@@ -1,0 +1,96 @@
+.carousel-control-prev {
+    left: -9px;
+    width: 2%;
+
+}
+.carousel-control-next {
+    right: -8px;
+    width: 2%;
+}
+
+.image-fon-1{
+
+    margin: -15% 0 0 35%;
+    font-weight: bold;
+    font-size: 92px;
+    line-height: 26px;
+    color: #FFFFFF;
+    text-shadow: 5px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+.text-fon-1{
+
+    padding: 5%;
+    font-size: 20px;
+    color: black;
+    background:rgba(140, 189, 2, 0.83);
+    border-radius:0 0 25px 25px ;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.rounding-1{
+    border-radius:25px 25px 0 0;
+}
+
+@media screen and (min-width: 376px) and (max-width:475px) {
+
+    .rounding-1{
+        border-radius:15px 15px 0 0;
+    }
+
+    .text-fon-1{
+
+        border-radius:0 0 15px 15px ;
+    }
+    .image-fon-1{
+
+        margin: -15% 0 0 25%;
+        font-weight: bold;
+        font-size: 52px;
+
+    }
+
+}
+@media screen and (min-width: 321px) and (max-width:375px) {
+
+    .rounding-1{
+        border-radius: 10px 10px 0 0;
+    }
+
+    .text-fon-1{
+
+        border-radius:0 0 10px 10px ;
+    }
+    .image-fon-1{
+
+        margin: -15% 0 0 25%;
+        font-weight: bold;
+        font-size: 40px;
+
+    }
+
+}
+
+@media screen and  (max-width:320px) {
+
+    .rounding-1{
+        border-radius: 10px 10px 0 0;
+    }
+
+    .text-fon-1{
+
+        border-radius:0 0 10px 10px ;
+    }
+    .image-fon-1{
+
+        margin: -15% 0 0 20%;
+        font-weight: bold;
+        font-size: 35px;
+
+    }
+}
+
+

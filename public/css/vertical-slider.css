@@ -198,46 +198,48 @@
 /* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
 @media screen and  (max-width: 767px)  {
 
-    .slider {
-
-        right: 2%;
-        top:6%
-
-    }
-
-    .slick-slide {
-
-        margin: 5px;
-
-    }
-
-    .title-text-news{
-
-        padding: 5px;
-        font-size: 14px;
-    }
 
 
-    .vertical-carousel{
+    /*.slider {*/
 
-        position: relative;
+        /*right: 2%;*/
+        /*top:6%*/
 
-    }
-    .text-news{
+    /*}*/
 
-        font-size: 12px;
-    }
-    .news-shadow{
+    /*.slick-slide {*/
 
-        width:65% !important;
-        border-radius: 5px;
-        box-shadow: 5px 5px rgba(230, 230, 230, 0.5) ,
-        5px 5px rgba(242, 242, 242,0.3);}
+        /*margin: 5px;*/
 
-    .img-rad{
+    /*}*/
 
-        border-radius: 5px 5px 0 0 ;
-    }
+    /*.title-text-news{*/
+
+        /*padding: 5px;*/
+        /*font-size: 14px;*/
+    /*}*/
+
+
+    /*.vertical-carousel{*/
+
+        /*position: relative;*/
+
+    /*}*/
+    /*.text-news{*/
+
+        /*font-size: 12px;*/
+    /*}*/
+    /*.news-shadow{*/
+
+        /*width:65% !important;*/
+        /*border-radius: 5px;*/
+        /*box-shadow: 5px 5px rgba(230, 230, 230, 0.5) ,*/
+        /*5px 5px rgba(242, 242, 242,0.3);}*/
+
+    /*.img-rad{*/
+
+        /*border-radius: 5px 5px 0 0 ;*/
+    /*}*/
 
 
 

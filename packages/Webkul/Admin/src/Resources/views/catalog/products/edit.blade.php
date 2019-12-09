@@ -254,7 +254,7 @@
 
             $.modal.defaults = {clickClose: false, showClose: true, escapeClose: true};
 
-            function initCropper() {
+            function initCropper(inputName) {
                 var image = document.getElementById('image-crop');
                 if (window.cropper) {
                     window.cropper.replace(image.src);
@@ -275,36 +275,26 @@
                 $('#reset').click(function () {cropper.reset();});
 
                 $('#save').click(function saveCrop (event) {
+                    $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
                     cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toBlob((blob) => {
-                        alert("What's next?");
-                      // var form = $('form')[0];
-                      // const formData = new FormData(form);
-                      // formData.append('image', blob);
-
-                      // $.ajax($('form').attr('action'), {
-                      //   method: "POST",
-                      //   data: formData,
-                      //   processData: false,
-                      //   contentType: false,
-                      //   success() {
-                      //       history.back();
-                      //   },
-                      //   error(answer) {
-                      //       if(answer.status == 422){
-                      //           var errors = "";
-                      //           $.each(answer.responseJSON.errors, function(idx, val) {
-                      //               errors = errors +"<li>"+JSON.stringify(val[0])+"</li>";
-                      //           })
-                      //           $('.card-body > form').parent('.card-body').prepend('<ul class="alert alert-danger">'+errors+'</ul>');
-                      //           $([document.documentElement, document.body]).animate({
-                      //               scrollTop: $(".alert.alert-danger").offset().top
-                      //           }, 1000);
-                      //       } else {
-                      //           alert("Error");
-                      //           console.log(answer);
-                      //       }
-                      //   },
-                      // });
+                        // var form = $('form')[0];
+                        const formData = new FormData();
+                        formData.append('image', blob);
+// console.log();   
+                      $.ajax('{{route('updateProductImage', $product->id)}}', {
+                        method: "POST",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success(answer) {
+                            console.log(answer);
+                            // history.back();
+                        },
+                        error(answer) {
+                            alert("Error");
+                            console.log(answer);
+                        }
+                      });
                     });
                 });
             };
@@ -326,7 +316,8 @@
                 reader.onload = function() {
                     var output = document.getElementById('image-crop');
                     output.src = reader.result;
-                    initCropper();
+                    var inputName = event.target.name;
+                    initCropper(inputName);
                     $('#cropper-div').modal();
                 }
                 reader.readAsDataURL(event.target.files[0]);

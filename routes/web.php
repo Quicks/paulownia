@@ -65,6 +65,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('/images', 'App\Http\Controllers\Admin\ImageController@index')->name('images.index');
             Route::post('/translate', 'App\Http\Controllers\Admin\TranslateController@translate')->name('translate');
             Route::resource('certificates', 'App\Http\Controllers\Admin\\CertificatesController');
+            Route::post('/update_product_image/{id}', 'App\Http\Controllers\Admin\ImageController@updateProductImage')->name('updateProductImage');
         });
     });
 

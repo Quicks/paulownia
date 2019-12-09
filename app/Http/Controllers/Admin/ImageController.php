@@ -113,5 +113,8 @@ class ImageController extends Controller
         return view('admin.images.index', compact('images', 'types'));
     }
 
+    public function updateProductImage (Request $request, $id) {
+        return 'Hello SSJ';
+    }
 
 }

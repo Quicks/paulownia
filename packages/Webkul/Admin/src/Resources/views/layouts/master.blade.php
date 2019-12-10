@@ -10,7 +10,7 @@
 
         <link rel="stylesheet" href="{{ asset('vendor/webkul/admin/assets/css/admin.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}">
-        <link href="{{ asset('css/admin_custom.css') }}?v2" rel="stylesheet">
+        <link href="{{ asset('css/admin_custom.css') }}?v3" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         @yield('head')

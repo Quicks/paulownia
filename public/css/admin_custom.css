@@ -86,3 +86,7 @@
     color:#979797;
     cursor: pointer;
 }
+
+.blocker {
+    z-index: 10!important;
+}

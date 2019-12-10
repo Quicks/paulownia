@@ -114,8 +114,8 @@ class ImageController extends Controller
         return view('admin.images.index', compact('images', 'types'));
     }
 
-    public function updateProductImage (Request $request, $id) {
-
+    public function updateProductImage (Request $request, $id) 
+    {
         $image_id = $request->image_id;
         $productImage = ProductImage::where('product_id', $id)->where('id', $image_id)->first();
         if (!$productImage) {
@@ -125,8 +125,7 @@ class ImageController extends Controller
         Storage::delete($productImage->path);
         $productImage->path = ImageSaveHelper::saveProductImage($request->file('image'), $id, $request->watermark);
         $productImage->save();
-    //dd($image);
-        return 'Hello SSJ';
+        return 'Done';
     }
 
 }

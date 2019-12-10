@@ -83,7 +83,7 @@
                         <br>
                         <button id="checkbtn" class="btn btn-black" type="button" style="margin:4px">
                             <label class="">
-                                <input type="checkbox" name="watermark" 
+                                <input type="checkbox" name="watermark" id="watermark" 
                                 onchange="$('#checkbtn').toggleClass('btn-info btn-outline-info')">
                                 Add watermark
                             </label>
@@ -236,6 +236,9 @@
 
     <script>
         $(document).ready(function () {
+
+            $('.image-item').css('height', '100%');
+
             $('#channel-switcher, #locale-switcher').on('change', function (e) {
                 $('#channel-switcher').val()
                 var query = '?channel=' + $('#channel-switcher').val() + '&locale=' + $('#locale-switcher').val();
@@ -275,20 +278,23 @@
                 $('#reset').click(function () {cropper.reset();});
 
                 $('#save').click(function saveCrop (event) {
+                    $('#save, button').prop('disabled', true);
                     $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
                     cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toBlob((blob) => {
-                        // var form = $('form')[0];
+                        var image_id = inputName.substring(inputName.lastIndexOf("[") + 1, inputName.lastIndexOf("]") );
                         const formData = new FormData();
                         formData.append('image', blob);
-// console.log();   
+                        formData.append('image_id', image_id);
+                        if ($('#watermark').prop('checked')) {
+                            formData.append('watermark', true);
+                        }
                       $.ajax('{{route('updateProductImage', $product->id)}}', {
                         method: "POST",
                         data: formData,
                         processData: false,
                         contentType: false,
                         success(answer) {
-                            console.log(answer);
-                            // history.back();
+                            location.reload();
                         },
                         error(answer) {
                             alert("Error");
@@ -298,18 +304,6 @@
                     });
                 });
             };
-
-            // $('#image-input').change(function (event) {
-            //     var reader = new FileReader();
-            //     reader.onload = function() {
-            //         var output = document.getElementById('image-crop');
-            //         output.src = reader.result;
-            //         initCropper();
-            //         $('#cropper-div').removeClass('d-none');
-            //     }
-            //     reader.readAsDataURL(event.target.files[0]);
-            //     $('#image-input-div, #images-input-div').remove();
-            // });
 
             $(document).on('change', '[name^="images"]', function(event) {
                 var reader = new FileReader();

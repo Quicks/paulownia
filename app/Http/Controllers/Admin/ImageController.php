@@ -8,6 +8,7 @@ use App\Models\Image;
 use App\Helpers\ImageSaveHelper;
 use Illuminate\Support\Facades\Storage;
 use Webkul\Product\Repositories\ProductImageRepository;
+use Webkul\Product\Models\ProductImage;
 
 class ImageController extends Controller
 {
@@ -114,6 +115,17 @@ class ImageController extends Controller
     }
 
     public function updateProductImage (Request $request, $id) {
+
+        $image_id = $request->image_id;
+        $productImage = ProductImage::where('product_id', $id)->where('id', $image_id)->first();
+        if (!$productImage) {
+            $productImage = new ProductImage();
+            $productImage->product_id = $id;
+        }
+        Storage::delete($productImage->path);
+        $productImage->path = ImageSaveHelper::saveProductImage($request->file('image'), $id, $request->watermark);
+        $productImage->save();
+    //dd($image);
         return 'Hello SSJ';
     }
 

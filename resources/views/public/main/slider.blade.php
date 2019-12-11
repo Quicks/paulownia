@@ -1,11 +1,12 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v2">
+    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v3">
     <link rel="stylesheet" href="{{ asset('css/vertical-slider.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
 @endpush
 
 @if(!empty($sliderData))
+
     <div class="style-for-main-slider">
 
         <div class="row mw-100">

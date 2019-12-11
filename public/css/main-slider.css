@@ -250,79 +250,56 @@
 
 
 /* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
-@media screen and   (max-width: 768px) {
+@media screen  and (min-width: 426px)  and (max-width: 768px) {
 
-    .style-for-main-slider{
-        display: none;
+    .carousel-name-Paulownia{
+
+        font-size: 70px;
+        line-height: 22px;
+        color: #FFFFFF;
+    }
+
+    .carousel-professional {
+
+        font-size: 30px;
+        color: white;
+        padding: 0;
+    }
+
+    .carousel-text {
+        padding: 0;
+        width: 254px;
+        font-size: 10px;
+        color: #FFFFFF;
+    }
+
+    .slider-png1{
+
+        left: 30px;
+        top: 35px;
+    }
+
+    .slider-png2{
+
+        left: 30px;
+        top: 80px;
+    }
+
+    .slider-png3{
+
+        left: 30px;
+        top: 120px;
+
     }
 }
-    /*.carousel-name-Paulownia{*/
-
-        /*font-size: 38px;*/
-        /*line-height: 22px;*/
-        /*color: #FFFFFF;*/
-    /*}*/
-    /*.carousel-professional{*/
-
-        /*padding: 0 0 14px 0;*/
-        /*font-size: 5px;*/
-        /*line-height: 0.16;*/
-        /*letter-spacing: 0.016em;*/
-        /*color: white;*/
-    /*}*/
-    /*.carousel-text{*/
-
-        /*padding: 0 0 7.2px 0;*/
-        /*width: 114px;*/
-        /*font-size: 3.4px;*/
-        /*line-height: 4px;*/
-        /*color: #FFFFFF;*/
-    /*}*/
-    /*.slider-png1{*/
-
-        /*left: 30px;*/
-        /*top: 35px;*/
-    /*}*/
-
-    /*.slider-png2{*/
-
-        /*left: 30px;*/
-        /*top: 80px;*/
-    /*}*/
-
-    /*.slider-png3{*/
-
-        /*left: 30px;*/
-        /*top: 100px;*/
-
-    /*}*/
-
-
-/*}*/
 
 /* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 425px) {
 
-    /*.carousel-name-Paulownia{*/
+    .style-for-main-slider{
 
-        /*font-size: 18px;*/
-        /*line-height: 8px;*/
-        /*color: #FFFFFF;*/
-    /*}*/
-    /*.carousel-professional{*/
+        display: none;
+    }
 
-        /*padding: 0 0 6px 0;*/
-        /*font-size: 5px;*/
-        /*line-height: 0.08;*/
-        /*letter-spacing: 0.06em;*/
-        /*color: white;*/
-    /*}*/
-    /*.carousel-text{*/
 
-        /*padding: 0 0 4px 0;*/
-        /*width: 68px;*/
-        /*font-size: 1.6px;*/
-        /*line-height: 2px;*/
-        /*color: #FFFFFF;*/
-    /*}*/
 }

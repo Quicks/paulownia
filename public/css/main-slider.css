@@ -19,10 +19,11 @@
 
 }
 
-.slide-circle .active {
+.carousel-indicators li {
 
-    background-color: none;
+    background-color:transparent;
 }
+
 
 .slider-png1{
 

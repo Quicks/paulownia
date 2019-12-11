@@ -2,8 +2,8 @@
 @section('content')
 <div>Name: {{$product->name}}</div>
 <div>Description: {{strip_tags($product->description)}}</div>
-@if(!empty($category))
-    <div>Category: {{$category}}</div>
+@if(!empty($product->product()->first()->categories()->first()->name))
+    <div>Category: {{$product->product()->first()->categories()->first()->name}}</div>
 @endif
 <div>Price: {{number_format($product->price, 2)}}</div>
 @if($product->special_price != 0)
@@ -17,8 +17,8 @@
 <div>Quantity per box: {{$product->delivery_unit_qty}}</div>
 <div>Min order: {{$product->min_order_qty}}</div>
 <div>Short description: {{strip_tags($product->short_description)}}</div>
-@isset($product_imgs)
-        @foreach($product_imgs as $img)
+@isset($product->images)
+        @foreach($product->images as $img)
             <div>
                 Images:
                 <img src="{{asset('storage/'.$img->path)}}">

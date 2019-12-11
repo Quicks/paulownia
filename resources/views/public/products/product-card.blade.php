@@ -18,7 +18,7 @@
     @endif
 
     <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" style="margin-top:-8%;width:100%" class="lazyload">
-    <a href="#" class="title-for-card">{{$product->name}}</a>
+    <a href="{{url('/products/' . $product->product_id)}}" class="title-for-card">{{$product->name}}</a>
     @if($product->special_price != 0)
         <div class="price-for-card">{{number_format($product->special_price, 2)}} €</div>
     @else

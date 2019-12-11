@@ -33,6 +33,8 @@
     text-shadow: 5px 6px 4px rgba(0, 0, 0, 0.25);
 }
 
+
+
 .text-fon{
 
     padding: 5%;
@@ -40,6 +42,17 @@
     color: black;
 
 }
+
+.png-for-prev{
+
+    background: url("/images/prev-actions.png");
+}
+
+.cf:hover{
+
+     background: white;
+ }
+
 
 a:hover{
     text-decoration: none;
@@ -50,12 +63,12 @@ a:hover{
 }
 
 
-@media screen and (min-width:1025px){
+/*@media screen and (min-width:1025px){*/
 
-    .from-768{
-        display: none;
-    }
-}
+    /*.from-768{*/
+        /*display: none;*/
+    /*}*/
+/*}*/
 /* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
@@ -78,19 +91,20 @@ a:hover{
     .text-fon{
 
         font-size: 16px;
-    }
-    .from-768{
 
-        display: none;
     }
+
+    /*.from-768{*/
+
+        /*display: none;*/
+    /*}*/
 }
 
 
 /* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
 @media screen and  (max-width: 768px) {
 
-    .to-769{
-        display: none;
-    }
+
 }
+
 

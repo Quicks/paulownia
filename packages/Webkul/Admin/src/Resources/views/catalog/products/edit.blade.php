@@ -237,7 +237,7 @@
     <script>
         $(document).ready(function () {
 
-            $('.image-item').css('height', '100%');
+            $('.image-item').css({'height':'100%', 'min-height':'100px'});
 
             $('#channel-switcher, #locale-switcher').on('change', function (e) {
                 $('#channel-switcher').val()

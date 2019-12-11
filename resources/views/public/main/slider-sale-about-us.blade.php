@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/about-us.css') }}?v2">
+    <link rel="stylesheet" href="{{asset('css/about-us.css') }}?v3">
     <link rel="stylesheet" href="{{asset('css/slider-sale.css') }}?v2">
 @endpush
 <div class="fon">
@@ -94,11 +94,11 @@
             <hr class="line-about-under">
         </div>
 
-            <div class="row mx-auto back-ground-main pt-xl-5 pb-xl-5 p-3" style="max-width:1200px;">
+            <div class="row mx-auto back-ground-main pt-xl-5 pb-xl-5 p-3" style="max-width:1300px;">
 
-                <div class="col-xl-6 col-md-6 col-sm-12 back-ground-1 mx-auto" style="max-width:569px;">
+                <div class="col-xl-6 col-md-12 col-sm-12 back-ground-1 mx-auto mt-5 mb-5">
 
-                    <img class="lazyload" data-src="/images/logo.png" style="max-width:35%;margin-top: 3%">
+                    <img class="lazyload img-logo-1" data-src="/images/logo.png">
 
                     <p class="about-text">Paulownia Professional is a manufacturer of seedlings, popular species of Paulownia.
                         Our company has settled in Spain, the province of Aragon, whose production area is 2 hectares,
@@ -111,9 +111,10 @@
                     </p>
 
                 </div>
-                    <div class="col-xl-6 col-md-6 col-sm-12 back-ground-2 mx-auto" style="max-width:569px;">
 
-                        <img class="lazyload" data-src="/images/logo.png"  style="max-width:35%;float: right;margin:3% 2% 8% 50%;">
+                    <div class="col-xl-6 col-md-12 col-sm-12 back-ground-2 mx-auto mt-5 mb-5" >
+
+                        <img class="lazyload img-logo-2 " data-src="/images/logo.png">
 
                         <p class="about-text">Paulownia Professional is a manufacturer of seedlings, popular species of Paulownia.
                             Paulownia Professiona's goal is to contribute to the improvement of environmental conditions in Aragon,

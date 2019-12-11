@@ -132,14 +132,10 @@
     }
 
     .slider-png3 {
-
         left: 90px;
         top: 280px;
-
     }
 }
-
-
 /* Стили для больших экранов (дисплей шириной от 992 пикселей до 1199 пикселей) */
 @media screen and (min-width: 1025px) and (max-width: 1366px) {
     .carousel-name-Paulownia {
@@ -183,7 +179,6 @@
 
         left: 90px;
         top: 260px;
-
     }
 }
 
@@ -275,7 +270,6 @@
         left: 50px;
         top: 145px;
     }
-
 }
 
 @media screen and  (max-width: 426px)

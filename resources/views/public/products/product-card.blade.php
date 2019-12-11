@@ -9,8 +9,8 @@
     @endif
     <img data-src="{{asset('/images/our-products-box.png')}}" class="position-absolute box-product lazyload">
     <img data-src="{{asset('/images/our-products-like.png')}}" class="position-absolute like-product lazyload">
-    @if(!empty($product->img))
-        <img data-src="{{asset('/storage/'.$product->img)}}" style="border-radius: 25px 25px 0 0;width:100%"
+    @if(!empty($product->images[0]->path))
+        <img data-src="{{asset('/storage/'.$product->images[0]->path)}}" style="border-radius: 25px 25px 0 0;width:100%"
              class="lazyload">
     @else
         <img data-src="{{asset('/images/our-products-col-fon.png')}}" style="border-radius: 25px 25px 0 0;width:100%"

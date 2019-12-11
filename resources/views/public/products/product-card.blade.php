@@ -26,3 +26,5 @@
     @endif
     <div class="text-card">{{substr(strip_tags($product->short_description), 0, 90)}}</div>
 </div>
+
+

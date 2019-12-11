@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="vertical-carousel">
+        <div class="vertical-carousel ">
             <section class="vertical slider">
                 <div class="news-shadow">
                     <img  src="/images/slider-news-1.png" class="img-rad">

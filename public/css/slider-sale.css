@@ -4,79 +4,107 @@
     position: relative;
     background:url("/images/background-actions.png") no-repeat;
     background-size: 100% 100% ;
-    margin-top: -20px;
 
-}
-
-.line-sale{
-
-    position: absolute;
-    background-size: 100% 100%; /* Современные браузеры */
-    width: 100%;
-    margin-top:-13%;
+    height: 245px;
 
 }
 
 .carousel-control-prev {
-    left: -90px;
+    left: -9px;
+    width: 2%;
 }
 .carousel-control-next {
-    right: -86px;
+    right: -8px;
+    width: 2%;
 }
-.text-for-actions ,.text-for-actions1 ,.text-for-actions2{
-    padding:6%;
+
+.cf{
+
     background: rgba(140, 189, 2, 0.83);
-    color:black;
+}
+
+.image-fon{
+
+    margin: -20% 0 0 35%;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 26px;
+    color: #FFFFFF;
+    text-shadow: 5px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.text-fon{
+
+    padding: 5%;
     font-size: 20px;
-    line-height: 25px;
+    color: black;
 
 }
 
-.text-for-actions{
-    border-radius: 0 0 0 25px;
-}
-.text-for-actions2{
-    border-radius: 0 0 25px 0;
+.png-for-prev{
+
+    background: url("/images/prev-actions.png");
 }
 
-.non{
-    padding-right:0;
-}
+.cf:hover{
 
-.non1{
-    padding:0;
-}
+     background: white;
+ }
 
-.non2{
-    padding-left: 0;
+
+a:hover{
+    text-decoration: none;
 }
 
 .rounding{
     border-radius:25px ;
 }
 
-.procent-number1 ,.procent-number2{
 
-    font-weight: bold;
-    font-size: 72px;
-    line-height: 26px;
-    color: #FFFFFF;
-    text-shadow: 5px 6px 4px rgba(0, 0, 0, 0.25);
-    padding: 10%;
+/*@media screen and (min-width:1025px){*/
+
+    /*.from-768{*/
+        /*display: none;*/
+    /*}*/
+/*}*/
+/* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+
+    .carousel-control-next {
+        right: 2px;
+        width: 1%;
+    }
+
+    .carousel-control-prev {
+        left: 0;
+        width: 1%;
+    }
+
+    .image-fon {
+        margin: -20% 0 0 35%;
+        font-size: 55px;
+    }
+
+    .text-fon{
+
+        font-size: 16px;
+
+    }
+
+    /*.from-768{*/
+
+        /*display: none;*/
+    /*}*/
 }
 
-.procent-number1{
 
-    background: url("/images/slider2-1-2.png") no-repeat;
-    background-size: 100% 100%;
+/* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
+@media screen and  (max-width: 768px) {
+
+
 }
 
-.procent-number2{
 
-    background: url("/images/slider2-2-1.png") no-repeat;
-    background-size: 100% 100%;
-}
-
-a:hover{
-    text-decoration: none;
-}

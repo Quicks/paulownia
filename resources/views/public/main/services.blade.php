@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/services.css') }}?v3">
+    <link rel="stylesheet" href="{{asset('css/services.css') }}?v4">
 @endpush
 
 
@@ -13,7 +13,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row">
-                        <div class="col-xl-3 col-md-12 col-sm-12 services-1 mx-auto services-item-width mb-sm-2">
+                        <div class="col-xl-3 col-md-12 col-sm-12 services-1 mx-auto services-item-width mb-3">
                             <div class="mx-auto" style="max-width: 190px">
                                 <p class="services-item-title">Sale of seedlings and paulownia trees</p>
                             </div>
@@ -25,7 +25,7 @@
                                 <a class="services-item-link" href="#" target="_blank">Read more</a>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-12 col-sm-12 services-2 mx-auto services-item-width mb-sm-2">
+                        <div class="col-xl-3 col-md-12 col-sm-12 services-2 mx-auto services-item-width mb-3">
                             <div class="mx-auto" style="max-width: 190px">
                                 <p class="services-item-title">Analysis and personal design future plantations</p>
                             </div>
@@ -35,7 +35,7 @@
                                 <a class="services-item-link" href="#" target="_blank">Read more</a>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-12 col-sm-12 services-3 mx-auto services-item-width mb-sm-2">
+                        <div class="col-xl-3 col-md-12 col-sm-12 services-3 mx-auto services-item-width mb-3">
                             <div class="mx-auto pt-3" style="max-width: 190px">
                                 <p class="services-item-title">ROI calculation</p>
                             </div>
@@ -46,7 +46,7 @@
                                 <a class="services-item-link" href="#" target="_blank">Read more</a>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-12 col-sm-12 services-4 mx-auto services-item-width mb-sm-2">
+                        <div class="col-xl-3 col-md-12 col-sm-12 services-4 mx-auto services-item-width mb-3">
                             <div class="mx-auto" style="max-width: 190px">
                                 <p class="services-item-title">Consultation during the cultivation</p>
                             </div>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="row">
-                        <div class="col-xl-3 col-md-12 col-sm-12 services-1 mx-auto services-item-width mb-sm-2">
+                        <div class="col-xl-3 col-md-12 col-sm-12 services-1 mx-auto services-item-width mb-3">
                             <div class="mx-auto" style="max-width: 190px">
                                 <p class="services-item-title">Sale of seedlings and paulownia trees</p>
                             </div>
@@ -73,7 +73,7 @@
                                 <a class="services-item-link" href="#" target="_blank">Read more</a>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-12 col-sm-12 services-2 mx-auto services-item-width mb-sm-2">
+                        <div class="col-xl-3 col-md-12 col-sm-12 services-2 mx-auto services-item-width mb-3">
                             <div class="mx-auto" style="max-width: 190px">
                                 <p class="services-item-title">Analysis and personal design future plantations</p>
                             </div>
@@ -83,7 +83,7 @@
                                 <a class="services-item-link" href="#" target="_blank">Read more</a>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-12 col-sm-12 services-3 mx-auto services-item-width mb-sm-2">
+                        <div class="col-xl-3 col-md-12 col-sm-12 services-3 mx-auto services-item-width mb-3">
                             <div class="mx-auto pt-3" style="max-width: 190px">
                                 <p class="services-item-title">ROI calculation</p>
                             </div>
@@ -94,7 +94,7 @@
                                 <a class="services-item-link" href="#" target="_blank">Read more</a>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-12 col-sm-12 services-4 mx-auto services-item-width mb-sm-2">
+                        <div class="col-xl-3 col-md-12 col-sm-12 services-4 mx-auto services-item-width mb-3">
                             <div class="mx-auto" style="max-width: 190px">
                                 <p class="services-item-title">Consultation during the cultivation</p>
                             </div>

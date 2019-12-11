@@ -119,31 +119,31 @@
         height: auto;
     }
 
-    .slider-png1 {
+    /*.slider-png1 {*/
 
-        left: 80px;
-        top: 70px;
-    }
+        /*left: 80px;*/
+        /*top: 70px;*/
+    /*}*/
 
-    .slider-png2 {
+    /*.slider-png2 {*/
 
-        left: 80px;
-        top: 125px;
-    }
+        /*left: 80px;*/
+        /*top: 125px;*/
+    /*}*/
 
-    .slider-png3 {
+    /*.slider-png3 {*/
 
-        left: 80px;
-        top: 175px;
+        /*left: 80px;*/
+        /*top: 175px;*/
 
-    }
+    /*}*/
 
 
 }
 
 
 /* Стили для больших экранов (дисплей шириной от 992 пикселей до 1199 пикселей) */
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
     .carousel-name-Paulownia {
 
         font-size: 114px;
@@ -172,24 +172,24 @@
         height: auto;
     }
 
-    .slider-png1 {
+    /*.slider-png1 {*/
 
-        left: 80px;
-        top: 70px;
-    }
+        /*left: 80px;*/
+        /*top: 70px;*/
+    /*}*/
 
-    .slider-png2 {
+    /*.slider-png2 {*/
 
-        left: 80px;
-        top: 125px;
-    }
+        /*left: 80px;*/
+        /*top: 125px;*/
+    /*}*/
 
-    .slider-png3 {
+    /*.slider-png3 {*/
 
-        left: 80px;
-        top: 175px;
+        /*left: 80px;*/
+        /*top: 175px;*/
 
-    }
+    /*}*/
 }
 
 
@@ -199,7 +199,7 @@
 
 
 /* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
 
     .carousel-name-Paulownia{
 
@@ -227,31 +227,31 @@
         height: auto;
     }
 
-    .slider-png1{
+    /*.slider-png1{*/
 
-        left: 50px;
-        top: 45px;
-    }
+        /*left: 50px;*/
+        /*top: 45px;*/
+    /*}*/
 
-    .slider-png2{
+    /*.slider-png2{*/
 
-        left: 50px;
-        top: 105px;
-    }
+        /*left: 50px;*/
+        /*top: 105px;*/
+    /*}*/
 
-    .slider-png3{
+    /*.slider-png3{*/
 
-        left: 50px;
-        top: 160px;
+        /*left: 50px;*/
+        /*top: 160px;*/
 
-    }
+    /*}*/
 
 }
 
 
 
 /* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
-@media screen and  (min-width: 576px) and (max-width: 767px) {
+@media screen and  (min-width: 426px) and (max-width: 768px) {
     .carousel-name-Paulownia{
 
         font-size: 38px;
@@ -274,51 +274,28 @@
         line-height: 4px;
         color: #FFFFFF;
     }
-    .slider-png1{
+    /*.slider-png1{*/
 
-        left: 30px;
-        top: 35px;
-    }
+        /*left: 30px;*/
+        /*top: 35px;*/
+    /*}*/
 
-    .slider-png2{
+    /*.slider-png2{*/
 
-        left: 30px;
-        top: 80px;
-    }
+        /*left: 30px;*/
+        /*top: 80px;*/
+    /*}*/
 
-    .slider-png3{
+    /*.slider-png3{*/
 
-        left: 30px;
-        top: 100px;
+        /*left: 30px;*/
+        /*top: 100px;*/
 
-    }
-
+    /*}*/
 
 }
 
-/* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
-@media screen and (max-width: 575px) {
-
-    .carousel-name-Paulownia{
-
-        font-size: 18px;
-        line-height: 8px;
-        color: #FFFFFF;
-    }
-    .carousel-professional{
-
-        padding: 0 0 6px 0;
-        font-size: 5px;
-        line-height: 0.08;
-        letter-spacing: 0.06em;
-        color: white;
-    }
-    .carousel-text{
-
-        padding: 0 0 4px 0;
-        width: 68px;
-        font-size: 1.6px;
-        line-height: 2px;
-        color: #FFFFFF;
-    }
+@media screen and  (max-width: 426px)
+{
+    .app{display: none}
 }

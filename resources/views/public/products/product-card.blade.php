@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/product-card.css') }}">
+    <link rel="stylesheet" href="{{asset('css/product-card.css')}}?v3">
 @endpush
 
     <div class="col back-ground-img m-3 position-relative">

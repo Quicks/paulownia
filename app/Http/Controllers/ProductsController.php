@@ -11,7 +11,8 @@ class ProductsController extends Controller
     public function index()
     {
         $products = ProductFlat::where('status', 1)->where('locale', App::getLocale())->get()->sortByDesc('special_price');
-        return view('public.products.index', compact('products'));
+        $ticker = "Customer message that can be changed for example, that goods are sold seasonally";
+        return view('public.products.index', compact('products', 'ticker'));
     }
 
     public function show($id)

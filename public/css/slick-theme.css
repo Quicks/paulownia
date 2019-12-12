@@ -98,36 +98,32 @@
 }
 
 
-    @media screen and (min-width: 1367px){
+    @media screen and (min-width: 1301px){
 
         .slick-prev {
 
             left: 32%;
             top: -2%;
         }
-
         .slick-next {
             bottom: -3%;
             right: 62%;
         }
-
     }
 
-    @media screen and (min-width: 1024px) and (max-width: 1366px) {
+    @media screen and (min-width: 1024px) and (max-width: 1300px) {
 
     .slick-prev {
 
         left: 52%;
         top: -4%;
     }
-
     .slick-next {
 
         bottom:-4%;
         right: 33%;
     }
 }
-
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 
@@ -136,13 +132,11 @@
         left: 52%;
         top: -6%;
     }
-
     .slick-next {
 
         bottom:-5%;
         right:30%;
     }
-
 }
 
 

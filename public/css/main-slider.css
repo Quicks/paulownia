@@ -230,23 +230,22 @@
     }
 }
 
-
-
 /* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
 @media screen and  (min-width: 426px) and (max-width: 768px) {
+
     .carousel-name-Paulownia{
 
         font-size: 65px;
         line-height: 22px;
         color: #FFFFFF;
     }
+    .carousel-professional{
 
         padding: 0 0 3% 0;
         font-size: 35px;
         color: white;
-        padding: 0;
     }
-
+    .carousel-text{
         padding: 0;
         width: 300px;
         font-size:10px;
@@ -274,5 +273,5 @@
 
 @media screen and  (max-width: 426px)
 {
-    .app{display: none}
+    .style-for-main-slider{display: none}
 }

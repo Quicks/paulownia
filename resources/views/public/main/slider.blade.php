@@ -1,6 +1,6 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v3">
-    <link rel="stylesheet" href="{{ asset('css/vertical-slider.css') }}?v4">
+    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v5">
+    <link rel="stylesheet" href="{{ asset('css/vertical-slider.css')}}?v5">
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
 @endpush
@@ -9,13 +9,13 @@
 
     <div class="style-for-main-slider">
 
-        <div class="row mw-100">
-            <div class="col">
-                <a href="#" class="slider-png1"></a>
-                <a href="#" class="slider-png2"></a>
-                <a href="#" class="slider-png3"></a>
+            <div class="row app">
+                <div class="col">
+                    <a href="#" class="slider-png1"></a>
+                    <a href="#" class="slider-png2"></a>
+                    <a href="#" class="slider-png3"></a>
+                </div>
             </div>
-        </div>
 
         <div class="vertical-carousel ">
             <section class="vertical slider">

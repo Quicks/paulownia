@@ -98,7 +98,7 @@
 }
 
 
-    @media screen and (min-width: 1367px){
+    @media screen and (min-width: 1301px){
 
         .slick-prev {
 
@@ -113,7 +113,7 @@
 
     }
 
-    @media screen and (min-width: 1024px) and (max-width: 1366px) {
+    @media screen and (min-width: 1024px) and (max-width: 1300px) {
 
     .slick-prev {
 

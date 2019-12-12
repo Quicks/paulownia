@@ -240,19 +240,19 @@
         line-height: 22px;
         color: #FFFFFF;
     }
-    .carousel-professional{
 
         padding: 0 0 3% 0;
         font-size: 35px;
         color: white;
+        padding: 0;
     }
-    .carousel-text{
 
         padding: 0;
         width: 300px;
         font-size:10px;
         color: #FFFFFF;
     }
+
     .slider-png1{
 
         left: 50px;

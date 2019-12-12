@@ -1,22 +1,23 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v2">
-    <link rel="stylesheet" href="{{ asset('css/vertical-slider.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v5">
+    <link rel="stylesheet" href="{{ asset('css/vertical-slider.css')}}?v5">
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
 @endpush
 
 @if(!empty($sliderData))
+
     <div class="style-for-main-slider">
 
-        <div class="row mw-100">
-            <div class="col">
-                <a href="#" class="slider-png1"></a>
-                <a href="#" class="slider-png2"></a>
-                <a href="#" class="slider-png3"></a>
+            <div class="row app">
+                <div class="col">
+                    <a href="#" class="slider-png1"></a>
+                    <a href="#" class="slider-png2"></a>
+                    <a href="#" class="slider-png3"></a>
+                </div>
             </div>
-        </div>
 
-        <div class="vertical-carousel">
+        <div class="vertical-carousel ">
             <section class="vertical slider">
                 <div class="news-shadow">
                     <img  src="/images/slider-news-1.png" class="img-rad">

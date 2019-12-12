@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v6">
+    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v7">
     <link rel="stylesheet" href="{{ asset('css/vertical-slider.css')}}?v6">
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css')}}?v6">
@@ -8,7 +8,6 @@
 @if(!empty($sliderData))
 
     <div class="style-for-main-slider">
-
             <div class="row app">
                 <div class="col">
                     <a href="#" class="slider-png1"></a>
@@ -98,7 +97,7 @@
                 vertical: true,
                 verticalSwiping: true,
                 slidesToShow: 3,
-                // autoplay: true,
+                autoplay: true,
                 speed:500,
             });
         });

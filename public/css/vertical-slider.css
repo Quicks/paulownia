@@ -2,7 +2,6 @@
     width: 25%;
     margin-left: 75%;
     top: 14px;
-    /*float: right;*/
 }
 .slice-list {
     display: none;
@@ -16,8 +15,6 @@
 
     position: absolute;
     z-index: 1;
-    /*right: 5%;*/
-    /*float: right;*/
 }
 .news-shadow {
     display: none;
@@ -48,27 +45,20 @@
     color: #000;
     font-weight: normal;
 }
-
 .news-read-more, .news-read-more:hover {
     color: #8CBD02;
     text-decoration: underline;
 }
 
 @media screen and (min-width: 1301px) {
-
     .slider {
-
+        margin-top:-0.5%;
+        margin-bottom:-0.5%;
     }
-
     .slick-slide {
-        margin-top: 7px;
-        margin-bottom: 7px;
+        margin-top: 6px;
+        margin-bottom:6px;
     }
-
-    /*.vertical-carousel {*/
-        /*right: -1%;*/
-    /*}*/
-
     .news-shadow {
         width: 60% !important;
     }
@@ -81,15 +71,11 @@
 @media screen and (min-width: 1200px) and (max-width:1300px) {
 
     .slider {
-
         width: 20%;
-        /*right: 0;*/
     }
-
     .slick-slide {
         margin: 3px;
     }
-
     .title-text-news {
         padding: 3px;
         font-size: 12px;
@@ -116,9 +102,7 @@
 
     .slider {
         width: 20%;
-        top: 20%;
         margin-left: 105%;
-        /*right: 0;*/
     }
 
     .slick-slide {
@@ -151,12 +135,10 @@
 }
 
 /* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
 
     .slider {
         width: 16%;
-        /*margin: 1px;*/
-        /*right: 0;*/
     }
 
     .slick-slide {
@@ -185,7 +167,39 @@
 }
 
 /* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
-@media screen and  (max-width: 767px) {
+@media screen and  (min-width: 700px) and  (max-width: 768px) {
+
+    .slider {
+        width: 16%;
+        margin-top:-0.5%;
+    }
+
+    .slick-slide {
+        margin: 3px;
+    }
+
+    .title-text-news {
+
+        padding: 2px;
+        font-size: 8px;
+    }
+
+    .text-news {
+        font-size: 6px;
+    }
+
+    .news-shadow {
+        border-radius: 2px;
+        box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);
+    }
+
+    .img-rad {
+        border-radius: 2px 2px 0 0;
+    }
+
+}
+
+@media screen and  (max-width: 699px) {
 
     .vertical-carousel {
         display: none;

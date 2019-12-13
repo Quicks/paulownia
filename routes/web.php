@@ -66,6 +66,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::post('/translate', 'App\Http\Controllers\Admin\TranslateController@translate')->name('translate');
             Route::resource('certificates', 'App\Http\Controllers\Admin\\CertificatesController');
             Route::post('/update_product_image/{id}', 'App\Http\Controllers\Admin\ImageController@updateProductImage')->name('updateProductImage');
+            Route::resource('/contents', 'App\Http\Controllers\Admin\\ContentsController');
         });
     });
 
@@ -93,6 +94,3 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/certificate/{code}', 'App\Http\Controllers\CertificateController')->name('certificate');
 });
-
-
-

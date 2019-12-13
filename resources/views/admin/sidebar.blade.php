@@ -4,7 +4,8 @@
             <li>
                 <a class="{{Request::is('admin/welcome*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{ url('/admin/welcome') }}">
-                    <i class="fa fa-home fa-2x"></i><p>Welcome</p>
+                    <i class="fa fa-home fa-2x"></i>
+                    <p>Welcome</p>
                 </a>
             </li>
         @endif
@@ -12,7 +13,8 @@
             <li>
                 <a class="{{Request::is('admin/news*') || Request::is('admin/articles*') || Request::is('admin/treatises*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('news.index')}}">
-                    <i class="fa fa-newspaper-o fa-2x"></i><p>News</p>
+                    <i class="fa fa-newspaper-o fa-2x"></i>
+                    <p>News</p>
                 </a>
             </li>
         @endif
@@ -20,7 +22,8 @@
             <li>
                 <a class="{{Request::is('admin/galleries*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('galleries.index')}}">
-                    <i class="fa fa-picture-o fa-2x"></i><p>Galleries</p>
+                    <i class="fa fa-picture-o fa-2x"></i>
+                    <p>Galleries</p>
                 </a>
             </li>
         @endif
@@ -28,7 +31,8 @@
             <li>
                 <a class="{{Request::is('admin/images*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('images.index')}}">
-                    <i class="fa fa-camera-retro fa-2x"></i><p>Images</p>
+                    <i class="fa fa-camera-retro fa-2x"></i>
+                    <p>Images</p>
                 </a>
             </li>
         @endif
@@ -36,7 +40,8 @@
             <li>
                 <a class="{{Request::is('admin/offices*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('offices.index')}}">
-                    <i class="fa fa-university fa-2x"></i><p>Official Offices</p>
+                    <i class="fa fa-university fa-2x"></i>
+                    <p>Official Offices</p>
                 </a>
             </li>
         @endif
@@ -44,7 +49,8 @@
             <li>
                 <a class="{{Request::is('admin/partners*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('partners.index')}}">
-                    <i class="fa fa-user-plus fa-2x"></i><p>Partners</p>
+                    <i class="fa fa-user-plus fa-2x"></i>
+                    <p>Partners</p>
                 </a>
             </li>
         @endif
@@ -52,7 +58,7 @@
             <li>
                 <a href="{{route('admin.dashboard.index')}}">
                     <i class="menu-properties icon dashboard-icon"></i>
-                        <p>Dashboard</p>
+                    <p>Dashboard</p>
                 </a>
             </li>
         @endif
@@ -60,7 +66,7 @@
             <li>
                 <a href="{{route('admin.sales.orders.index')}}">
                     <i class="menu-properties icon sales-icon"></i>
-                        <p>Sales</p>
+                    <p>Sales</p>
                 </a>
             </li>
         @endif
@@ -68,7 +74,7 @@
             <li>
                 <a href="{{route('admin.catalog.products.index')}}">
                     <i class="menu-properties icon catalog-icon"></i>
-                        <p>Catalog</p>
+                    <p>Catalog</p>
                 </a>
             </li>
         @endif
@@ -108,7 +114,17 @@
             <li>
                 <a class="{{Request::is('admin/certificates*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('certificates.index')}}">
-                    <i class="fa fa-certificate fa-2x"></i><p>Certificates</p>
+                    <i class="fa fa-certificate fa-2x"></i>
+                    <p>Certificates</p>
+                </a>
+            </li>
+        @endif
+        @if(bouncer()->hasPermission('contents'))
+            <li>
+                <a class="{{Request::is('admin/contents*') ? "custom-admin-sidebar-a-active" : ""}}"
+                   href="{{route('contents.index')}}">
+                    <i class="fa fa-pencil-square-o fa-2x"></i>
+                    <p>Contents</p>
                 </a>
             </li>
         @endif
@@ -116,7 +132,8 @@
             <li>
                 <a class="{{Request::is('stats*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('tracker.stats.index')}}">
-                    <i class="fa fa-line-chart fa-2x"></i><p>Tracking statistics</p>
+                    <i class="fa fa-line-chart fa-2x"></i>
+                    <p>Tracking statistics</p>
                 </a>
             </li>
         @endif

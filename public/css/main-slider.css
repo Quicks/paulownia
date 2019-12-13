@@ -2,6 +2,10 @@
 
     position:relative;
 }
+.app{
+    position: fixed;
+    z-index: 101;
+}
 
 .line11{
     background: url("/images/line-for-main-slider.png") no-repeat ;

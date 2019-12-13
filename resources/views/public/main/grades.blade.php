@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/grades.css') }}?v3">
+    <link rel="stylesheet" href="{{ asset('css/grades.css') }}?v4">
 @endpush
 
 <div class="grades-back">
@@ -12,7 +12,7 @@
         <div class="col-xl-6 col-sm-12 mx-auto grades-item mr-5 pb-3 mb-sm-4">
             <div class="row">
                 <div class="col-xl-8 col-sm-12 grades-imgs">
-                    <img class="grades-img-size lazyload" data-src="{{asset('/images/turbopro-en.png')}}">
+                    <img class="grades-img-size lazyload" data-src="{{asset('/images/turbo-booklet.jpg')}}">
                 </div>
                 <div class="col-xl-4 col-sm-12">
                     <p class="grades-item-title">Paulownia Turbo Pro ®</p>
@@ -31,7 +31,7 @@
         <div class="col-xl-6 col-sm-12 mx-auto grades-item pb-3 mb-sm-4">
             <div class="row">
                 <div class="col-xl-8 col-sm-12 grades-imgs">
-                    <img class="grades-img-size lazyload" data-src="{{asset('/images/zepro-en.png')}}">
+                    <img class="grades-img-size lazyload" data-src="{{asset('/images/ze-booklet.jpg')}}">
                 </div>
                 <div class="col-xl-4 col-sm-12">
                     <p class="grades-item-title">Paulownia Ze Pro ®</p>

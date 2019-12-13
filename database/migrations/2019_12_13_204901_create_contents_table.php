@@ -37,6 +37,7 @@ class CreateContentsTable extends Migration
      */
     public function down()
     {
+        Schema::drop('content_translations');
         Schema::drop('contents');
     }
 }

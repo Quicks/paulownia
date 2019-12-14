@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v8">
+    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v9">
     <link rel="stylesheet" href="{{ asset('css/vertical-slider.css')}}?v6">
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css')}}?v6">

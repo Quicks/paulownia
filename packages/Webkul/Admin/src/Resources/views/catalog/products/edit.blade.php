@@ -294,7 +294,13 @@
                         processData: false,
                         contentType: false,
                         success(answer) {
-                            location.reload();
+                            $.modal.close();
+                            $('#save, button').prop('disabled', false);
+                            $('input[name="'+inputName+'"]').prop('name', 'images['+answer+']');
+                            $('input[type=file]').val('');
+                            $('input[name="images['+answer+']"] + img.preview')
+                                .prop('src', cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toDataURL());
+                            $('.image-item').css({'height':'100%', 'min-height':'100px'});
                         },
                         error(answer) {
                             alert("Error");

@@ -44,11 +44,19 @@ return [
             'route' => 'certificates.index',
             'sort' => 98,
             'icon-class' => 'fa fa-certificate fa-2x',
-        ], [
+        ],
+        [
+            'key' => 'contents',
+            'name' => 'Contents',
+            'route' => 'contents.index',
+            'sort' => 99,
+            'icon-class' => 'fa fa-pencil-square-o fa-2x',
+        ],
+        [
             'key' => 'tracking',
             'name' => 'Tracking statistics',
             'route' => 'tracker.stats.index',
-            'sort' => 99,
+            'sort' => 100,
             'icon-class' => 'fa fa-line-chart fa-2x',
         ], 
 

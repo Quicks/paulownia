@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Webkul\Product\Models\ProductFlat;
+use App\Models\Content;
 
 class ProductsController extends Controller
 {
     public function index()
     {
         $products = ProductFlat::where('status', 1)->where('locale', App::getLocale())->get()->sortByDesc('special_price');
-        $ticker = "Customer message that can be changed for example, that goods are sold seasonally";
+        $ticker = Content::where('name', 'products_ticker')->first();
         return view('public.products.index', compact('products', 'ticker'));
     }
 

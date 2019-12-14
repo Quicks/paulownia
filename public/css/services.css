@@ -7,15 +7,17 @@
         width: 70% !important;
         height: 70% !important;
     }
+    .our-services {
+        padding-bottom: 110px !important;
+    }
 }
 @media only screen  and (min-width: 1224px) and (max-width: 1439px) {
     .services-1, .services-2, .services-3, .services-4 {
         background-position: 50% 30%, top, bottom !important;
-        height: 500px !important;
+        height: 450px !important;
     }
-
     .services-item-width {
-        max-width: 250px !important;
+        max-width: 280px !important;
     }
     .services-prev{
         position: absolute !important;
@@ -27,8 +29,8 @@
     }
     .services-item-title {
         font-size: 16px !important;
-        margin-top: 140px !important;
-        max-width: 155px !important;
+        margin-top: 135px !important;
+        max-width: 170px !important;
     }
     .services-item-text {
         font-size: 16px !important;
@@ -39,6 +41,13 @@
     }
     .services-item-link {
         font-size: 16px !important;
+    }
+    .img-leaf {
+        width: 70% !important;
+        height: 70% !important;
+    }
+    .services-img-leaf-position {
+        bottom: -230px !important;
     }
 }
 @media only screen  and (min-width: 1440px) and (max-width: 1823px) {
@@ -78,7 +87,8 @@
     background: url("/images/service-back.png") no-repeat;
     background-size: 100% 100%;
     margin-top: -250px;
-    padding-bottom: 150px;
+    padding-bottom: 10px;
+    padding-top: 80px;
 
 }
 .services-ident {

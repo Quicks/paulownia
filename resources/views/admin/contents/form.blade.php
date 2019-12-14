@@ -2,7 +2,7 @@
     <div class="tab-pane fade show active" id="main-form" role="tabpanel" aria-labelledby="main-form">
         <div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
             <label for="name" class="control-label">{{ 'Name' }}</label>
-            <input class="form-control" name="name" type="text"
+            <input class="form-control" name="name" type="text" readonly
                    id="name" value="{{ isset($content->name) ? $content->name : ''}}" required>
             {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
         </div>

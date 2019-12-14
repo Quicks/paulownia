@@ -1,8 +1,16 @@
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+    .calc-width {
+        max-width:1200px !important;
+    }
+}
 .calculate-title {
     font-weight: bold;
     font-size: 48px;
     line-height: 38px;
     color: #8CBD02;
+}
+.calc-width {
+    max-width:1400px;
 }
 .calc-title-line {
     background: #8CBD02;

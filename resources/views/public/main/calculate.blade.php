@@ -1,9 +1,9 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v3">
+    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v4">
     <link rel="stylesheet" href="{{ asset('css/selectric.css') }}">
 @endpush
 
-<div class="row mx-auto pt-xl-5 pb-xl-5" style="max-width:1400px;">
+<div class="row mx-auto pt-xl-5 pb-xl-5 calc-width">
     <div class="col-12 mb-5 text-center">
         <p class="calculate-title">Calculate your income</p>
         <hr class="calc-title-line">

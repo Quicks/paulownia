@@ -125,7 +125,7 @@ class ImageController extends Controller
         Storage::delete($productImage->path);
         $productImage->path = ImageSaveHelper::saveProductImage($request->file('image'), $id, $request->watermark);
         $productImage->save();
-        return 'Done';
+        return $productImage->id;
     }
 
 }

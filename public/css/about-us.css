@@ -27,7 +27,6 @@
 }
 
 .about-text{
-
     padding: 2% 1% 4% 1%;
     font-size:18px;
 }
@@ -36,7 +35,6 @@
     background:url("/images/background-about.jpg") no-repeat;
     border-radius:25px;
     background-size: 100% 100%;
-
 }
 
 .back-ground-1{
@@ -46,7 +44,6 @@
     background-size: 100% 100%;
     max-width:500px;
     max-height:580px
-
 }
 
 .back-ground-2{
@@ -58,16 +55,13 @@
 }
 
 .img-logo-1{
-
     max-width:35%;
     margin-top:3%
 }
 
 .img-logo-2 {
-
     max-width:35%;
     margin:3% 2% 0 63%;
-
 }
 
 @media screen and (min-width: 1300px) and (max-width: 1400px) {
@@ -79,21 +73,14 @@
         max-width: 450px;
         max-height: 460px;
     }
-
     .about-text{
-
-        padding: 2% 1% 4% 1%;
         font-size:16px;
     }
-
 }
-
-
 
 @media screen and (min-width: 376px) and (max-width: 425px){
 
     .about-text{
-
         font-size:12px;
     }
 }
@@ -101,7 +88,6 @@
 @media screen and (max-width: 375px){
 
     .about-text{
-
         font-size:10px;
         padding: 5% 1% 4% 1%;
     }

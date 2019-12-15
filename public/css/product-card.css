@@ -80,7 +80,6 @@
         padding-left:0 !important;
     }
 }
-
 /* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
 @media screen and (max-width: 320px) {
 

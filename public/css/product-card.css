@@ -33,28 +33,14 @@
 }
 .box-product{
     border-radius: 50%;
-
-}
-.like-product{
-    cursor: pointer;
-    user-select: none;
-    border: none;
-    outline: none;
-    transition: background 9999999s;
-
- }
-
-.like-product:hover{
-    box-shadow: -2px -2px 20px #8CBD02, 2px 2px 10px rgba(0, 0, 0, 0.25);
-}
-
-.like-product:active{
-    background:url("/images/our-products-white-heart.png")no-repeat;
-    transition: background 0s;
 }
 
 .box-product:hover{
-    box-shadow: -2px -2px 20px #8CBD02, 2px 2px 10px rgba(0, 0, 0, 0.25);
+     box-shadow: -2px -2px 20px #8CBD02, 2px 2px 10px rgba(0, 0, 0, 0.25);
+ }
+
+.like-product:hover{
+      box-shadow: -2px -2px 20px #8CBD02, 2px 2px 10px rgba(0, 0, 0, 0.25);
 }
 
 .title-for-card, .price-for-card {

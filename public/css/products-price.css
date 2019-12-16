@@ -1,0 +1,45 @@
+@media screen and (min-width: 320px) and (max-width: 1223px) {
+    .price-img-leaf {
+        width:140px !important;
+        height: 115px !important;
+    }
+}
+@media only screen  and (min-width: 1224px) and (max-width: 1564px) {
+    .price-img-leaf {
+        width:200px !important;
+        height: 190px !important;
+    }
+    .price-text {
+        font-size: 16px !important;
+    }
+}
+@media only screen  and (min-width: 1565px) and (max-width: 1823px) {
+    .price-img-leaf {
+        width:317px !important;
+        height: 298px !important;
+    }
+}
+
+.price-background{
+    position: relative;
+    background: url("/images/price-background.png") no-repeat;
+    background-size: 100% 100%;
+    margin-top: -10px;
+}
+.price-img-leaf-position {
+    position:absolute;
+    top:-55px;
+    z-index: 999;
+}
+.price-img-leaf {
+    width:405px;
+    height: 386px;
+    transform: scale(-1, 1);
+}
+.price-text {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+    text-align: center;
+}

@@ -30,7 +30,7 @@
                 <div class="control-group" :class="[errors.has('subject') ? 'has-error' : '']">
                     <label for="title">Subject</label>
                     <input type="text" class="control" name="subject" v-validate="'required'" value="{{ old('subject') }}" required>
-                    <span class="control-error" v-if="errors.has('email')"> @{{ errors.first('subject') }}</span>
+                    <span class="control-error" v-if="errors.has('subject')"> @{{ errors.first('subject') }}</span>
                 </div>
                 <div class="control-group" class="[errors.has('text') ? 'has-error' : '']">
                     <label for="text">Message</label>

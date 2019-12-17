@@ -25,7 +25,7 @@
 
     <div class="price-background">
         <div class="row">
-            <div class="col-12" style="height: 220px">
+            <div class="col-12" style="height: 200px">
                 <div class="price-img-leaf-position">
                     <img class="price-img-leaf lazyload" data-src="{{asset('/images/service-leaf-tree.png')}}">
                 </div>
@@ -67,7 +67,6 @@
             <li class="text-type-prise">from 2 to 10</li>
             <li class="mb-5">
                 <section class="range-slider">
-                    <span class="rangeValues"></span>
                     <input value="2" min="2" max="10" step="1" type="range" class="slider" >
                     <input value="5" min="2" max="10" step="1" type="range" class="slider-1">
                 </section>

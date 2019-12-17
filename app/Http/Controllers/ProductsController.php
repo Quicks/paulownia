@@ -16,9 +16,9 @@ class ProductsController extends Controller
         return view('public.products.index', compact('products', 'ticker'));
     }
 
-    public function show($id)
+    public function show($url_key)
     {
-        $product = ProductFlat::where('product_id', $id)->where('locale', App::getLocale())->first();
+        $product = ProductFlat::where('url_key', $url_key)->where('locale', App::getLocale())->first();
         return view('public.products.show', compact('product'));
     }
 }

@@ -8,7 +8,7 @@
             <div class="col-12 fon-text pl-5 pt-4">
                 <a href="{{route('main')}}" class="fon-text">@lang('header-footer.main')</a>/
                 <a href="{{route('public.products.index')}}" class="fon-text">@lang('header-footer.goods')</a>/
-                <a href="{{route('public.products.show', $product->product_id)}}" class="fon-text">{{$product->name}}</a>
+                <a href="{{route('public.products.show', $product->url_key)}}" class="fon-text">{{$product->name}}</a>
             </div>
         </div>
         <div>Name: {{$product->name}}</div>

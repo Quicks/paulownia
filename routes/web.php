@@ -85,7 +85,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/calculations', 'App\Http\Controllers\CalculationsController@index')->name('public.calculations.index');
         Route::get('/faq', 'App\Http\Controllers\FAQController@index')->name('public.faq.index');
         Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('public.products.index');
-        Route::get('/products/{id}', 'App\Http\Controllers\ProductsController@show')->name('public.products.show');
+        Route::get('/products/{slug}', 'App\Http\Controllers\ProductsController@show')->name('public.products.show');
         Route::get('/contacts', 'App\Http\Controllers\ContactsController@index')->name('public.contacts.index');
         Route::get('/about-us', 'App\Http\Controllers\AboutUsController@index')->name('public.about-us.index');
         Route::get('/paulownia', 'App\Http\Controllers\PaulowniaController@index')->name('public.paulownia.index');

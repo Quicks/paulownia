@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/products-price.css') }}">
+    <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v2">
 @endpush
 
 <div class="price-background">

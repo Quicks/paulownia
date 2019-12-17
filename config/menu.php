@@ -59,9 +59,15 @@ return [
             'sort' => 100,
             'icon-class' => 'fa fa-line-chart fa-2x',
         ], 
-
+        [
+        'key' => 'customers.sendNewsLetter',
+        'name' => 'Send Newsletter',
+        'route' => 'sendNewsLetter.index',
+        'sort' => 14,
+        'icon-class' => '',
+        ],
     ],
-    
+
     'customer' => [
 
     ]

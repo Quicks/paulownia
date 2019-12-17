@@ -1,0 +1,10 @@
+.show-page-back {
+    background: url("/images/pages-wave.png") no-repeat, url("/images/pages-back.png") no-repeat;
+}
+.fon-text{
+    color: black;
+}
+.fon-text:hover{
+    color: black;
+    text-decoration:none;
+}

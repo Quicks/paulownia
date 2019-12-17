@@ -1,16 +1,12 @@
 @extends('layouts.public')
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/show-product.css') }}?v1">
+    <link rel="stylesheet" href="{{asset('css/show-product.css') }}?v2">
 @endpush
 @section('content')
     <div class="show-page-back">
-        <div class="row">
-            <div class="col-12 fon-text pl-5 pt-4">
-                <a href="{{route('main')}}" class="fon-text">@lang('header-footer.main')</a>/
-                <a href="{{route('public.products.index')}}" class="fon-text">@lang('header-footer.goods')</a>/
-                <a href="{{route('public.products.show', $product->product_id)}}" class="fon-text">{{$product->name}}</a>
-            </div>
-        </div>
+        @include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'header-footer.goods',
+        route('public.products.show', $product->url_key) => $product->name])
+
         <div>Name: {{$product->name}}</div>
         <div>Description: {{strip_tags($product->description)}}</div>
         @if(!empty($product->product()->first()->categories()->first()->name))

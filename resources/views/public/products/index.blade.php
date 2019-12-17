@@ -1,6 +1,6 @@
 @extends('layouts.public')
 @section('content')
-    @include('public.products.breadcrumbs')
+    @include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'header-footer.goods' ])
     @include('public.products.ticker')
     @include('public.products.download-price')
 

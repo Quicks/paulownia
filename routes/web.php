@@ -67,8 +67,8 @@ Route::group(['middleware' => ['web']], function () {
             Route::resource('certificates', 'App\Http\Controllers\Admin\\CertificatesController');
             Route::post('/update_product_image/{id}', 'App\Http\Controllers\Admin\ImageController@updateProductImage')->name('updateProductImage');
             Route::resource('/contents', 'App\Http\Controllers\Admin\\ContentsController');
-            Route::get('/shop/customers/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@index')->name('sendNewsLetter.index');
-            Route::post('/shop/customers/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@send')->name('sendNewsLetter.send');
+            Route::get('/shop/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@index')->name('sendNewsLetter.index');
+            Route::post('/shop/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@send')->name('sendNewsLetter.send');
         });
     });
 

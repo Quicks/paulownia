@@ -9,8 +9,13 @@ class SendNewsletterController extends Controller
 {
     public function index(Request $request)
     {
+        return view('admin.sendNewsletter.index');
+    }
+
+    public function send(Request $request)
+    {
        
-        return view('admin.sendNewsletter.index', ["message" => "Hi SSJ"]);
+        return dd($request);//view('admin.sendNewsletter.index', ["message" => "Hi SSJ"]);
     }
 
 }

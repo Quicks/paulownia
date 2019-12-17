@@ -27,8 +27,22 @@
             @csrf
 
             <div class="page-content">
-                <div style="height:500px; background-color:grey;"></div>
+                <div class="control-group" :class="[errors.has('subject') ? 'has-error' : '']">
+                    <label for="title">Subject</label>
+                    <input type="text" class="control" name="subject" v-validate="'required'" value="{{ old('subject') }}" required>
+                    <span class="control-error" v-if="errors.has('email')"> @{{ errors.first('subject') }}</span>
+                </div>
+                <div class="control-group" class="[errors.has('text') ? 'has-error' : '']">
+                    <label for="text">Message</label>
+                    <textarea v-validate="'required'" class="control" id="text" name="text" required>{{ old('text') }}</textarea>
+                    <span class="control-error" v-if="errors.has('text')"> @{{ errors.first('text') }}</span>
+                </div>
             </div>
         </form>
     </div>
 @stop
+
+@push('scripts')
+    <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
+    <script src="{{ asset('js/tinymce.js') }}"></script>
+@endpush

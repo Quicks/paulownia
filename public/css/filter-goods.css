@@ -77,7 +77,7 @@ select::-ms-expand {
 
 .slider {
     -webkit-appearance: none;
-    width:80%;
+    width:115%;
     height: 5px;
     border-radius: 5px;
     background: #d3d3d3;
@@ -86,7 +86,7 @@ select::-ms-expand {
 
 .slider-1{
     -webkit-appearance: none;
-    width:80%;
+    width:115%;
     height: 5px;
     border-radius: 5px;
     background:transparent;
@@ -141,7 +141,7 @@ section.range-slider input {
     position: absolute;
     left: 0;
     top: 15px;
-    width: 80%;
+    width: 115%;
     outline: none;
     height: 3px;
     margin: 0;

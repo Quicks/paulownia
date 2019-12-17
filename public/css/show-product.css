@@ -1,5 +1,5 @@
 .show-page-back {
-    background: url("/images/pages-wave.png") no-repeat, url("/images/pages-back.png") no-repeat;
+    background: url("/images/pages-wave.png") no-repeat, url("/images/pages-background.jpg") no-repeat;
 }
 .fon-text{
     color: black;

@@ -21,7 +21,7 @@
     <div class="product-information">
 
         <div class="product-name">
-            <a href="{{ url()->to('/').'/products/' . $product->url_key }}" title="{{ $product->name }}">
+            <a href="{{ url()->to('/').'/products_old/' . $product->url_key }}" title="{{ $product->name }}">
                 <span>
                     {{ $product->name }}
                 </span>

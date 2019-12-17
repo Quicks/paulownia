@@ -1,8 +1,8 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v6">
+    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v7">
 @endpush
 
-<div class="col-xl-3 col-md-6 col-sm-12 back-ground-img ml-3 mb-3 position-relative">
+<div class="@if(url()->current()===route('public.products.index') )col-xl-4 @else col-xl-3 @endif col-md-6 col-sm-12 back-ground-img ml-3 mb-3 position-relative">
     @if($product->special_price != 0)
         <div class="position-absolute product-sale">-{{round(100-($product->special_price / ($product->price/100)))}}%
         </div>
@@ -20,7 +20,7 @@
         <div class="row m-0">
 
             <a href="{{route('public.products.show', $product->product_id)}}" class="col-6 title-for-card">{{$product->name}}</a>
-            <a href="#" class="col-2 mt-1 ml-5 box-m">
+            <a href="#" class="col-2 mt-1 box-m">
                 <img data-src="{{asset('/images/our-products-box.png')}}" class="box-product lazyload">
             </a>
             <a href="#" class="col-2 mt-1 pl-0 like-m">

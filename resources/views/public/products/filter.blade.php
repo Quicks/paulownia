@@ -38,34 +38,34 @@
         <div class="row pb-5">
             <div class="col-sm-3">
                 <ul class="style-for-list-goods ml-3">
-                <li class="mt-4 mb-4 text-type">Seedlings</li>
-                <li class="mt-4 mb-4 text-type">Trees</li>
-                <li class="mt-4 mb-4 text-type">Wood</li>
-                <li class="mt-4 mb-4 text-type">Fragment herbs</li>
-                <li class="mt-4 mb-4 text-type">Exotic plants</li>
-                <li class="mt-4 mb-4 text-type">Other</li>
+                    <li class="mt-4 mb-4 text-type">Seedlings</li>
+                    <li class="mt-4 mb-4 text-type">Trees</li>
+                    <li class="mt-4 mb-4 text-type">Wood</li>
+                    <li class="mt-4 mb-4 text-type">Fragment herbs</li>
+                    <li class="mt-4 mb-4 text-type">Exotic plants</li>
+                    <li class="mt-4 mb-4 text-type">Other</li>
                 <li class="m-0">
-                <hr class="lile-between mt-5 mb-5 ml-0 mr-0">
+                     <hr class="lile-between mt-5 mb-5 ml-0 mr-0">
                 </li>
                 <li class="mt-4 mb-4 text-type-title">Discounts</li>
                 <li>
-                <form action="" method="">
-                <select name="type of paulownia" class="select-goods">
-                <option>type of paulownia</option>
-                <option value="1"> 1</option>
-                <option value="2"> 2</option>
-                <option value="3"> 3</option>
-                <option value="4"> 4</option>
-                </select>
-                </form>
+                    <form action="" method="">
+                        <select name="type of paulownia" class="select-goods">
+                            <option>type of paulownia</option>
+                            <option value="1"> 1</option>
+                            <option value="2"> 2</option>
+                            <option value="3"> 3</option>
+                            <option value="4"> 4</option>
+                        </select>
+                    </form>
                 </li>
                 <li class="mt-4 text-type-title">Price €</li>
                 <li class="text-type-prise">from 2 to 10</li>
                 <li class="mb-5">
-                <section class="range-slider">
-                <input value="2" min="2" max="10" step="1" type="range" class="slider">
-                <input value="5" min="2" max="10" step="1" type="range" class="slider-1">
-                </section>
+                    <section class="range-slider">
+                        <input value="2" min="2" max="10" step="1" type="range" class="slider">
+                        <input value="5" min="2" max="10" step="1" type="range" class="slider-1">
+                    </section>
                 </li>
                 <li class="mt-4 mb-4 text-type-rules">Purchase Rules</li>
                 <li class="mt-4 text-type-title">A popular practice of our time is the sale of young plants
@@ -73,7 +73,7 @@
                 Such plants have a closed type of root system ...
                 </li>
                 <li>
-                <a href="#" class="text-href">Read more</a>
+                    <a href="#" class="text-href">Read more</a>
                 </li>
                 </ul>
             </div>

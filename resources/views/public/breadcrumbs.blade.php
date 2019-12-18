@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/breadcrumbs.css') }}?v1">
+    <link rel="stylesheet" href="{{asset('css/breadcrumbs.css') }}?v2">
 @endpush
 
 <div class="row fon-text-title" >

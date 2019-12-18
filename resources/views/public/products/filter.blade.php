@@ -6,6 +6,7 @@
 @endpush
 
     <div class="row" style="background: white">
+
         @if(!empty($ticker->text))
                 <div class="col-12 pb-4 ticker-back">
                     <marquee class="ticker-text" @if(App::getLocale() == 'ar') direction="right" @endif>

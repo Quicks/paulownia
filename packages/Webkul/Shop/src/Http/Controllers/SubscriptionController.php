@@ -127,11 +127,8 @@ class SubscriptionController extends Controller
 
         if (isset($subscriber))
             if ($subscriber->count() > 0 && $subscriber->is_subscribed == 1 && $subscriber->update(['is_subscribed' => 0])) {
-                session()->flash('info', trans('shop::app.subscription.unsubscribed'));
-            } else {
-                session()->flash('info', trans('shop::app.subscription.already-unsub'));
+                return trans('shop::app.subscription.unsubscribed');
             }
-
-        return redirect()->route('shop.home.index');
+        return trans('shop::app.subscription.already-unsub');
     }
 }

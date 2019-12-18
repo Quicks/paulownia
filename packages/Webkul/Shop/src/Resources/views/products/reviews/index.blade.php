@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="product-name mt-20">
-                    <a href="{{ url()->to('/').'/products/'.$product->url_key }}" title="{{ $product->name }}">
+                    <a href="{{ url()->to('/').'/products_old/'.$product->url_key }}" title="{{ $product->name }}">
                         <span>{{ $product->name }}</span>
                     </a>
                 </div>

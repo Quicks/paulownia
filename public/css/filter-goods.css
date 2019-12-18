@@ -83,7 +83,6 @@ select::-ms-expand {
     background: #d3d3d3;
     outline: none;
 }
-
 .slider-1{
     -webkit-appearance: none;
     width:115%;
@@ -91,9 +90,7 @@ select::-ms-expand {
     border-radius: 5px;
     background:transparent;
     outline: none;
-
 }
-
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;

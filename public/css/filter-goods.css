@@ -1,0 +1,208 @@
+.fon-for-goods{
+    background:url("/images/fon-for-goods.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+.style-for-list-goods{
+    list-style-type: none;
+}
+
+.text-type{
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.text-type:hover{
+    color: #8CBD02;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lile-between{
+    width: 349px;
+    height: 1px;
+    background: rgba(140, 189, 2, 0.3);
+}
+
+.text-type-title{
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.select-goods{
+    background: url(/images/down-arrow-products.png) no-repeat 96% 50%;
+    width: 349px;
+    height: 35px;
+    color: black;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    background-color:transparent;
+    cursor:pointer;
+    margin: 0;
+    border-radius: 5px;
+    border:1px solid black;
+    border-image: initial;
+    outline: none;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 25px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none!important;
+}
+select::-ms-expand {
+    display: none;
+}
+.text-type-prise {
+    font-size: 14px;
+    line-height: 25px;
+}
+.text-type-rules{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    color: #8CBD02;
+}
+.text-href{
+    font-size: 20px;
+    line-height: 35px;
+    color: #8CBD02;
+    text-decoration:underline;
+}
+.text-href:hover {
+    color: #8CBD02;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width:115%;
+    height: 5px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+}
+.slider-1{
+    -webkit-appearance: none;
+    width:115%;
+    height: 5px;
+    border-radius: 5px;
+    background:transparent;
+    outline: none;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #8CBD02;;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background:#8CBD02;;
+    cursor: pointer;
+}
+
+.slider-1::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #8CBD02;;
+    cursor: pointer;
+}
+
+.slider-1::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background:#8CBD02;;
+    cursor: pointer;
+}
+
+section.range-slider {
+    position: relative;
+    text-align: center;
+    height: 15px;
+}
+
+section.range-slider input {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 115%;
+    outline: none;
+    height: 3px;
+    margin: 0;
+    padding: 0;
+}
+
+section.range-slider input::-webkit-slider-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+}
+
+section.range-slider input::-moz-range-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 10;
+    -moz-appearance: none;
+    width: 9px;
+}
+
+section.range-slider input::-moz-range-track {
+    position: relative;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 1);
+    border: 0;
+}
+section.range-slider input:last-of-type::-moz-range-track {
+    -moz-appearance: none;
+    background: none transparent;
+    border: 0;
+}
+section.range-slider input[type=range]::-moz-focus-outer {
+    border: 0;
+}
+.margin-for-products{
+    margin-left: 10% !important;
+}
+
+@media screen and (min-width: 1340px) and (max-width:1380px) {
+
+    .margin-for-products {
+        margin-left: 0 !important;
+    }
+
+    .lile-between, .select-goods, section.range-slider input {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width:1250px) {
+
+    .lile-between, .select-goods, section.range-slider input {
+        width:150%;
+    }
+}
+
+@media screen and (min-width:426px) and (max-width: 768px){
+
+    .margin-for-products{
+        margin-left: 30% !important;
+    }
+    .lile-between, .select-goods, section.range-slider input {
+        width: 220%;
+    }
+}
+

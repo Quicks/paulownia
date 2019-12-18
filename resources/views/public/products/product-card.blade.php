@@ -1,8 +1,8 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v6">
+    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v8">
 @endpush
 
-<div class="col-xl-3 col-md-6 col-sm-12 back-ground-img ml-3 mb-3 position-relative">
+<div class="@if(url()->current()===route('public.products.index') )col-xl-4 col-md-12 @else col-xl-3 col-md-6 @endif col-sm-12 back-ground-img ml-3 mb-3 position-relative">
     @if($product->special_price != 0)
         <div class="position-absolute product-sale">-{{round(100-($product->special_price / ($product->price/100)))}}%
         </div>
@@ -19,8 +19,8 @@
     <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" class="lazyload line-product-card">
         <div class="row m-0">
 
-            <a href="{{route('public.products.show', $product->url_key)}}" class="col-6 title-for-card">{{$product->name}}</a>
-            <a href="#" class="col-2 mt-1 ml-5 box-m">
+            <a href="{{route('public.products.show', $product->url_key)}}" class="col-6 title-for-card">{{$product-> name}}</a>
+            <a href="#" class="col-2 mt-1 box-m">
                 <img data-src="{{asset('/images/our-products-box.png')}}" class="box-product lazyload">
             </a>
             <a href="#" class="col-2 mt-1 pl-0 like-m">
@@ -34,6 +34,7 @@
             @endif
 
         </div>
+
     <div class="text-card">{{substr(strip_tags($product->short_description), 0, 90)}}</div>
 </div>
 

@@ -68,28 +68,40 @@
     border-radius: 5px;
 }
 
+.box-m{
+    margin-left: 15%;
+}
+
 @media screen and (min-width:1670px) {
 
-    .back-ground-img {
-        max-width: 507px !important;
-    }
     .box-m {
-        margin-left:15% !important;
+        margin-left:15%;
     }
     .like-m{
         padding-left:0 !important;
     }
 }
+
 /* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
-@media screen and (max-width: 320px) {
+
+@media screen and (max-width: 370px) and (min-width: 321px){
 
     .box-m {
-        margin-left:15% !important;
+        margin-left:10%;
     }
     .like-m{
         padding-left:2% !important;
     }
-
 }
+@media screen and (max-width: 320px) {
+
+    .box-m {
+        margin-left:10%;
+    }
+    .like-m{
+        padding-left:2% !important;
+    }
+}
+
 
 

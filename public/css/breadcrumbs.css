@@ -1,5 +1,8 @@
-.fon-text{
+.fon-text-title{
+    padding-left:3.5%;
     background-color: white;
+}
+.fon-text{
     color: black;
 }
 .fon-text:hover{

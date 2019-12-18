@@ -21,7 +21,7 @@ class NewsLetterEmail extends Mailable
      */
     public function build()
     {
-        return $this->to('sergstepjur@gmail.com')
+        return $this->to($this->newsData['email'])
             ->subject($this->newsData['subject'])
             ->view('emails.newsLetterEmail')->with('data', $this->newsData);
     }

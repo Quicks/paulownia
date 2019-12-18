@@ -28,14 +28,18 @@
 
             <div class="page-content">
                 <div class="control-group" :class="[errors.has('subject') ? 'has-error' : '']">
-                    <label for="title">Subject</label>
+                    <label for="subject" class="required">Subject</label>
                     <input type="text" class="control" name="subject" v-validate="'required'" value="{{ old('subject') }}" required>
                     <span class="control-error" v-if="errors.has('subject')"> @{{ errors.first('subject') }}</span>
                 </div>
                 <div class="control-group" class="[errors.has('text') ? 'has-error' : '']">
-                    <label for="text">Message</label>
-                    <textarea v-validate="'required'" class="control" id="text" name="text" required>{{ old('text') }}</textarea>
-                    <span class="control-error" v-if="errors.has('text')"> @{{ errors.first('text') }}</span>
+                    <label for="text" class="required">Text</label>
+                    <textarea class="control" id="text" name="text">
+                        {{ old('text') }}
+                    </textarea>
+                    <span class="control-error" style="{{$errors->has('text') ? 'display:block;' : 'display:none;'}} ">
+                        {{ $errors->first('text') }}
+                    </span>
                 </div>
             </div>
         </form>

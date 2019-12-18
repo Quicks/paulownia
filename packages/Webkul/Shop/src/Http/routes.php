@@ -96,7 +96,7 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
     Route::get('move/wishlist/{id}', 'Webkul\Shop\Http\Controllers\CartController@moveToWishlist')->name('shop.movetowishlist');
 
     //Show Product Details Page(For individually Viewable Product)
-    Route::get('/products/{slug}', 'Webkul\Shop\Http\Controllers\ProductController@index')->defaults('_config', [
+    Route::get('/products_old/{slug}', 'Webkul\Shop\Http\Controllers\ProductController@index')->defaults('_config', [
         'view' => 'shop::products.view'
     ])->name('shop.products.index');
 

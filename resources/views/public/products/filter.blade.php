@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v4">
+    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v3">
 
     <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v2">
     <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v2">
@@ -39,12 +39,12 @@
         <div class="row pb-5">
             <div class="col-sm-3">
                 <ul class="style-for-list-goods ml-3">
-                    @foreach($categories as $category)
-                        <a class="style-for-list-goods-link" href="{{route('public.products.index'). "?category=" . $category->slug}}">
-                            <li class="mt-4 mb-4 text-type">{{$category->name}}</li>
-                        </a>
-                    @endforeach
-
+                    <li class="mt-4 mb-4 text-type">Seedlings</li>
+                    <li class="mt-4 mb-4 text-type">Trees</li>
+                    <li class="mt-4 mb-4 text-type">Wood</li>
+                    <li class="mt-4 mb-4 text-type">Fragment herbs</li>
+                    <li class="mt-4 mb-4 text-type">Exotic plants</li>
+                    <li class="mt-4 mb-4 text-type">Other</li>
                 <li class="m-0">
                      <hr class="lile-between mt-5 mb-5 ml-0 mr-0">
                 </li>

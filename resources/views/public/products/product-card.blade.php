@@ -19,7 +19,7 @@
     <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" class="lazyload line-product-card">
         <div class="row m-0">
 
-            <a href="{{route('public.products.show', $product->product_id)}}" class="col-6 title-for-card">{{$product-> name}}</a>
+            <a href="{{route('public.products.show', $product->url_key)}}" class="col-6 title-for-card">{{$product-> name}}</a>
             <a href="#" class="col-2 mt-1 box-m">
                 <img data-src="{{asset('/images/our-products-box.png')}}" class="box-product lazyload">
             </a>

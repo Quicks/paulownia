@@ -1,15 +1,11 @@
 @push('css')
     <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v2">
-    <link rel="stylesheet" href="{{asset('css/breadcrumbs.css') }}?v2">
+
     <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v2">
     <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v2">
 @endpush
 
     <div class="row" style="background: white">
-        <div class="col-12 fon-text-title pt-4 pb-4">
-            <a href="{{route('main')}}" class="fon-text">@lang('header-footer.main')</a>/<a href="{{route('public.products.index')}}" class="fon-text">@lang('header-footer.goods')</a>
-        </div>
-
         @if(!empty($ticker->text))
                 <div class="col-12 pb-4 ticker-back">
                     <marquee class="ticker-text" @if(App::getLocale() == 'ar') direction="right" @endif>
@@ -18,7 +14,6 @@
                 </div>
         @endif
     </div>
-
 
             <div class="fon-for-goods">
 

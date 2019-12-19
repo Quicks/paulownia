@@ -31,6 +31,17 @@
     background-color: white;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
+.card-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.card-btn:active,.card-btn:focus {
+    outline: none;
+}
+.card-btn::-moz-focus-inner {
+    border: 0;
+}
 .box-product{
     border-radius: 50%;
 }

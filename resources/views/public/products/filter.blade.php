@@ -37,10 +37,11 @@
 <div class="row">
     <div class="col">
         <div class="row pb-5">
+            <h1>{{Request::input('category')}}</h1>
             <div class="col-sm-3">
                 <ul class="style-for-list-goods ml-3">
                     @foreach($categories as $category)
-                        <a @if(Request::fullUrl() === (route('public.products.index'). "?category=" . $category->slug))
+                        <a @if(Request::input('category') === $category->slug)
                            class="style-for-list-goods-link-active"
                            @else class="style-for-list-goods-link" @endif
                            href="{{route('public.products.index'). "?category=" . $category->slug}}">

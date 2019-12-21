@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\App;
 use Webkul\Product\Models\ProductFlat;
 use App\Models\Content;
 use Webkul\Category\Models\Category;
-use Webkul\Category\Models\CategoryTranslation;
 use Webkul\Product\Repositories\ProductRepository;
 
 class ProductsController extends Controller
@@ -18,7 +17,7 @@ class ProductsController extends Controller
         $ticker = Content::where('name', 'products_ticker')->first();
         $categories = Category::all();
         if($request->has('category')){
-            $category_id = CategoryTranslation::where('slug', $request->category)->first()->category_id;
+            $category_id = Category::whereTranslation('slug', $request->category)->first()->id;
             $products = $product->getAll($category_id)->sortByDesc('special_price');
         }
         return view('public.products.index', compact('products', 'ticker', 'categories'));

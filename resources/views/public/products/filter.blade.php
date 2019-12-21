@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v4">
+    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v5">
 
     <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v2">
     <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v2">
@@ -40,7 +40,10 @@
             <div class="col-sm-3">
                 <ul class="style-for-list-goods ml-3">
                     @foreach($categories as $category)
-                        <a class="style-for-list-goods-link" href="{{route('public.products.index'). "?category=" . $category->slug}}">
+                        <a @if(Request::fullUrl() === (route('public.products.index'). "?category=" . $category->slug))
+                           class="style-for-list-goods-link-active"
+                           @else class="style-for-list-goods-link" @endif
+                           href="{{route('public.products.index'). "?category=" . $category->slug}}">
                             <li class="mt-4 mb-4 text-type">{{$category->name}}</li>
                         </a>
                     @endforeach

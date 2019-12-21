@@ -25,7 +25,6 @@
                 @csrf
                 <input type="hidden" name="product" value="{{ $product->product_id }}">
                 <input type="hidden" name="quantity" value="1">
-                <input type="hidden" value="false" name="is_configurable">
                 <button class="card-btn col-2 mt-1 box-m" {{ $product->haveSufficientQuantity(1) ? '' : 'disabled' }}>
                     <img data-src="{{asset('/images/our-products-box.png')}}" class="box-product lazyload">
                 </button>

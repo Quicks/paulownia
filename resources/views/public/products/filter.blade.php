@@ -37,7 +37,6 @@
 <div class="row">
     <div class="col">
         <div class="row pb-5">
-            <h1>{{Request::input('category')}}</h1>
             <div class="col-sm-3">
                 <ul class="style-for-list-goods ml-3">
                     @foreach($categories as $category)

@@ -6,7 +6,22 @@
 .style-for-list-goods{
     list-style-type: none;
 }
-
+.style-for-list-goods-link{
+    color: #212529;
+    text-decoration: none;
+}
+.style-for-list-goods-link:hover{
+    text-decoration: none;
+}
+.style-for-list-goods-link-active {
+    font-weight: bold;
+    cursor: pointer;
+    color:#8CBD02;
+    text-decoration: none;
+}
+.style-for-list-goods-link-active:hover {
+    text-decoration: none;
+}
 .text-type{
     font-size: 20px;
     line-height: 25px;

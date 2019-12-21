@@ -19,6 +19,9 @@
     color:#8CBD02;
     text-decoration: none;
 }
+.style-for-list-goods-link-active:hover {
+    text-decoration: none;
+}
 .text-type{
     font-size: 20px;
     line-height: 25px;

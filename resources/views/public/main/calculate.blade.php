@@ -56,7 +56,7 @@
     <script>
         $(document).ready(function () {
             $('select').selectric({
-                arrowButtonMarkup: '<img class="button" src="{{asset('/images/arrow-down.svg')}}">',
+                arrowButtonMarkup: '<span class="button"> </span>',
                 nativeOnMobile: true,
             });
             let viewTree = $('#view');

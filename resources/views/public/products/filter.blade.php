@@ -76,7 +76,7 @@
                 Such plants have a closed type of root system ...
                 </li>
                 <li>
-                    <a href="#" class="text-href">Read more</a>
+                    <a href="{{route('public.terms-of-sale.index')}}" class="text-href">Read more</a>
                 </li>
                 </ul>
             </div>

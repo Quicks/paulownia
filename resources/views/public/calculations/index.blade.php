@@ -14,7 +14,6 @@
         .selectric-responsive {
             width: 100%;
         }
-
         .selectric {
             background:transparent;
             position: relative;
@@ -50,27 +49,19 @@
             right: 10px;
             top: 5px;
             color:black;
-            -moz-transform: rotate(90deg); /* Для Firefox */
-            -ms-transform: rotate(90deg); /* Для IE */
-            -webkit-transform: rotate(90deg); /* Для Safari, Chrome, iOS */
-            -o-transform: rotate(90deg); /* Для Opera */
             transform: rotate(90deg);
             font-weight:lighter;
             font-size: 58px;
         }
-
         .selectric-open {
             z-index: 9999;
         }
-
         .selectric-open .selectric {
             border-color: #c4c4c4;
         }
-
         .selectric-open .selectric-items {
             display: block;
         }
-
         .selectric-disabled {
             display: none;
             cursor: default;
@@ -272,13 +263,13 @@
             <div class="col-12 mt-5 mb-5 title-profitability-calculation text-center">Height and diameter</div>
 
             <div class="col-12 text-left text-for-name-table-calc pl-5 pb-3"> Ze pro</div>
-            <img src="/images/ze-pro-calc.png" class="justify-content-center mx-auto p-5 " style="max-width: 100%">
+            <img src="/images/ze-pro-calc.svg" class="justify-content-center mx-auto p-5 " style="max-width: 100%">
             <div class="col-12 text-left text-for-name-table-calc pl-5 pb-3 pt-3"> Turbo pro</div>
-            <img src="/images/ze-pro-calc.png" class="justify-content-center mx-auto p-5" style="max-width: 100%">
+            <img src="/images/turbo-pro-calc.svg" class="justify-content-center mx-auto p-5" style="max-width: 100%">
             <div class="col-12 text-left text-for-name-table-calc pl-5 pb-3 pt-3" > Elongata</div>
-            <img src="/images/turbo-pro-calc.png" class="justify-content-center mx-auto p-5" style="max-width: 100%">
+            <img src="/images/elongata-calc.svg" class="justify-content-center mx-auto p-5" style="max-width: 100%">
             <div class="col-12 text-left text-for-name-table-calc pl-5 pb-3 pt-3" > Shan Tong</div>
-            <img src="/images/shatong-calc.png" class="justify-content-center mx-auto p-5" style="max-width: 100%">
+            <img src="/images/shatong-calc.svg" class="justify-content-center mx-auto p-5" style="max-width: 100%">
 
         </div>
     </div>

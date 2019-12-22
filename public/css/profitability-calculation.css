@@ -1,9 +1,9 @@
 .fon-profitability-calculation{
-    background:url("/images/profitability-calculation-fon.png");
-    background-size: 100% 100%;
+    background:url("/images/profitability-calculation-fon.svg");
+    background-size: 100%;
 }
 .line-for-calc{
-    background:url("/images/line-for-calc.png") no-repeat;}
+    background:url("/images/line-for-calc.svg") no-repeat;}
 
 .text-profitability-calculation{
     text-indent: 10%;
@@ -33,6 +33,22 @@
     text-align: center;
 }
 
+@media screen and (max-width:768px){
+
+    .text-profitability-calculation{
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .title-profitability-calculation{
+        font-size: 28px;
+        line-height: 28px;
+    }
+    .text-for-name-table-calc{
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+}
 
 
 

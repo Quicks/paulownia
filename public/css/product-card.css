@@ -79,9 +79,7 @@
     border-radius: 5px;
 }
 
-.box-m{
-    margin-left: 15%;
-}
+
 
 @media screen and (min-width:1670px) {
 
@@ -97,18 +95,18 @@
 
 @media screen and (max-width: 370px) and (min-width: 321px){
 
-    .box-m {
-        margin-left:10%;
-    }
+    /*.box-m {*/
+        /*margin-left:10%;*/
+    /*}*/
     .like-m{
         padding-left:2% !important;
     }
 }
 @media screen and (max-width: 320px) {
 
-    .box-m {
-        margin-left:10%;
-    }
+    /*.box-m {*/
+        /*margin-left:10%;*/
+    /*}*/
     .like-m{
         padding-left:2% !important;
     }

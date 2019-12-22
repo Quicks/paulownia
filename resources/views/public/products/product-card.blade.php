@@ -19,7 +19,7 @@
     <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" class="lazyload line-product-card">
         <div class="row m-0">
 
-            <a href="{{route('public.products.show', $product->url_key)}}" class="col-6 title-for-card">{{$product-> name}}</a>
+            <a href="{{route('public.products.show', $product->url_key)}}" class="col-8 title-for-card">{{$product-> name}}</a>
 
             <form action="{{ route('cart.add', $product->product_id) }}" method="POST">
                 @csrf

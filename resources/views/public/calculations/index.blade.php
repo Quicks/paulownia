@@ -49,17 +49,12 @@
                 @include('public.breadcrumbs', $breadcrumbs = [route('public.calculations.index') => 'header-footer.profitability calculation' ])</div>
 
             <div class="col-12 pl-5 pr-5 text-profitability-calculation ">
-                You can calculate the profitability of your plantation using our income calculation system,
-                for this you need to fill out the form below by choosing one of the paulownia types.
-                You can calculate the profitability of your plantation using our income calculation system, for this you need to fill
-                out the form below by choosing one of the paulownia types. You can calculate the profitability of your plantation using our income
-                calculation system, for this you need to fill out the form below by choosing one of the paulownia types. You can calculate the profitability
-                of your plantation using our income calculation system, for this you need to fill out the form below by choosing one of the paulownia types.
+                @lang('profitability-calculation.text').
             </div>
 
             <div class="col-12 mt-5">@include('public.main.calculate')</div>
 
-            <div class="col-12 mt-5 mb-5 title-profitability-calculation text-center">Height and diameter</div>
+            <div class="col-12 mt-5 mb-5 title-profitability-calculation text-center">@lang('profitability-calculation.parametrs')</div>
 
             <div class="col-12 text-left text-for-name-table-calc pl-5 pb-3"> Ze pro</div>
             <img data-src="{{asset('/images/ze-pro-calc.svg')}}"  class="justify-content-center mx-auto p-5 lazyload" style="max-width: 100%">

@@ -82,13 +82,11 @@
 .box-m {
     margin-left:15%;
 }
-
 @media screen and (min-width:1670px) {
     .like-m{
         padding-left:2%!important;
     }
 }
-
 /* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
 
 @media screen and (max-width: 370px) and (min-width: 321px){

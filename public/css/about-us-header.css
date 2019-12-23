@@ -1,0 +1,40 @@
+.fon-for-about-us-header {
+    background:url("/images/line-for-about-us-header.png") no-repeat,url("/images/fon-for-about-us-header.jpg");
+    background-size: 100%;
+}
+
+.text-about-us-header{
+    font-size: 20px;
+    line-height: 30px;
+    color: black;
+}
+.read-m-about-header,.read-m-about-header:hover {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    text-decoration: underline;
+    color: rgba(140, 189, 2, 0.7);
+    cursor: pointer;
+}
+
+.title-our-service{
+    font-weight: bold;
+    font-size: 48px;
+    color: #8CBD02;
+}
+
+.title-our-servise-about-us-header{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #8CBD02;
+}
+.text-our-servise-about-us-header{
+    font-size: 20px;
+    line-height: 30px;
+    color: black;
+}
+.card-img-width-about{
+    padding-left: 30px;
+    padding-right: 30px;
+}

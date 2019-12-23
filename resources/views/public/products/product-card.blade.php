@@ -7,7 +7,7 @@
 
     @if($product->special_price != 0)
         <div class="position-absolute product-sale">-{{round(100-($product->special_price / ($product->price/100)))}}%
-        </div> @php dd($product->special_price) @endphp
+        </div>
     @endif
 
     @if(!empty($product->images[0]->path))

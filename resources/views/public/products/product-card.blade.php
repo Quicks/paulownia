@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v9">
+    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v11">
 @endpush
 
 <div class="@if(url()->current()===route('public.products.index') )col-xl-4 col-md-12 @else col-xl-3 col-md-6 @endif col-sm-12 back-ground-img ml-3 mb-3 position-relative">

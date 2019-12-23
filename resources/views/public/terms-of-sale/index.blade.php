@@ -2,7 +2,7 @@
 @section('content')
     @push('css')
         <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v2">
-        <link rel="stylesheet" href="{{asset('css/terms-of-sale.css') }}?v2">
+        <link rel="stylesheet" href="{{asset('css/terms-of-sale.css') }}?v3">
     @endpush
 
     @include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'header-footer.terms of sale' ])

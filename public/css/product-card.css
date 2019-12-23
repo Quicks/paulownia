@@ -55,7 +55,7 @@
 }
 
 .title-for-card, .price-for-card {
-    padding:0 4% 0 4%;
+    /*padding:0 4% 0 4%;*/
     font-weight: bold;
     font-size: 20px;
     line-height: 26px;
@@ -79,11 +79,18 @@
     border-radius: 5px;
 }
 
+.box-m{
+    margin-left: 3%;
+}
+
 @media screen and (min-width:1670px) {
 
-    .like-m{
-        padding-left:0 !important;
-    }
+    /*.box-m {*/
+        /*margin-left:15%;*/
+    /*}*/
+    /*.like-m{*/
+        /*padding-left:0 !important;*/
+    /*}*/
 }
 
 /* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
@@ -99,6 +106,9 @@
 }
 @media screen and (max-width: 320px) {
 
+    /*.box-m {*/
+        /*margin-left:10%;*/
+    /*}*/
     .like-m{
         padding-left:2% !important;
     }

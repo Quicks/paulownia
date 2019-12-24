@@ -85,7 +85,7 @@
 
                 <div class="botton-heigth">
                     <a href="#" >
-                        <button class="product-button-about-r"> See all </button>
+                        <button class="button-about-r-slider"> See all </button>
                     </a>
                 </div>
                 <div><img data-src="{{asset('/images/line-about-us-header-down.png')}}" class="lazyload line-style-down-about-h "></div>
@@ -93,17 +93,32 @@
 
         <div class="col-12 mt-5 pt-4 text-center title-our-service">Our partners </div>
 
-        <div class="row mx-auto pb-5">
-            <div class="col-xl-3 col-md-12 col-sm-12 partner-1">One more partner</div>
-            <div class="col-xl-6 col-md-12 col-sm-12 partner-2">LLC «OUR GREEN COUNTRY»</div>
-            <div class="col-xl-3 col-md-12 col-sm-12 partner-2">OXIZONA
+
+            <span class=" partner-1">One more partner</span>
+            <span class=" partner-2">LLC «OUR GREEN COUNTRY»</span>
+            <span class=" partner-3">OXIZONA
                 <img data-src="{{asset('/images/oxizonia-about-r.png')}}" class="lazyload">
-            </div>
+            </span>
+
+
+        <div class="col-12 botton-heigth text-center">
+
+            <a href="#" >
+                <button class="button-about-r-partners"> See all </button>
+            </a>
+        </div>
+
+        <div class="col-12 text-center title-our-service">Our clients </div>
+
+        <div class="col-12 mx-auto">
+            <img data-src="{{asset('/images/map-about-us-r.png')}}" class="lazyload mb-3">
+        </div>
+
         </div>
 
 
 
-        </div>
+
 
 
 

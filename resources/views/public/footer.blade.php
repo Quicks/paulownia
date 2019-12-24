@@ -11,7 +11,7 @@
             </ul>
         </div>
         <div class="col-xl-2 col-md-6 col-sm-12">
-            <p class="footer-title">@lang('header-footer.to customers') </p>
+            <p class="footer-title">@lang('header-footer.to customers')</p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
                 <li><a href="#">@lang('header-footer.stocks')</a></li>

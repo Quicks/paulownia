@@ -17,7 +17,7 @@
             <a href="#" class="read-m-about-header">Read more</a></div>
         <div class="col-12 title-our-service mt-5 text-center">Our service</div>
 
-            <div class="row mx-auto pt-4 pb-5">
+            <div class="row mx-auto our-services-img">
                 <div class=" col-xl-2 col-md-4 col-sm-6 card-img-width-about">
                     <div class="text-center"><img data-src="{{asset('/images/about-us-header-1.png')}}" class="lazyload"></div>
                     <div class="title-our-servise-about-us-header text-center">Sale</div>
@@ -83,7 +83,7 @@
                     </a>
                 </div>
 
-                <div class="botton-heigth">
+                <div class="botton-heigth-1">
                     <a href="#" >
                         <button class="button-about-r-slider"> See all </button>
                     </a>
@@ -101,17 +101,16 @@
             </span>
 
 
-        <div class="col-12 botton-heigth text-center">
-
-            <a href="#" >
+        <div class="col-12 botton-heigth-2 text-center">
+            <a href="#">
                 <button class="button-about-r-partners"> See all </button>
             </a>
         </div>
 
-        <div class="col-12 text-center title-our-service">Our clients </div>
+        <div class="col-12 text-center title-our-service">Our clients</div>
 
         <div class="col-12 mx-auto">
-            <img data-src="{{asset('/images/map-about-us-r.png')}}" class="lazyload mb-3">
+            <img data-src="{{asset('/images/map-about-us-r.png')}}" class="lazyload mb-4" style="max-width: 100%">
         </div>
 
         </div>

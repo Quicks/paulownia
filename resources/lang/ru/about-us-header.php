@@ -20,5 +20,4 @@ return [
     'button-1'=>'Увидеть все',
     'our-partners'=>'Наши партнеры',
     'our-clients'=>'Наши клиенты'
-
 ];

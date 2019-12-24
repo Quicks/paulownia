@@ -5,7 +5,7 @@
    @endpush
 
     <div class="row fon-for-about-us-header m-0">
-       <div class="col-12 "> @include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'header-footer.about us' ])</div>
+       <div class="col-12 ">@include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'header-footer.about us' ])</div>
         <div class="col-12 pl-5 pr-5 mt-5 text-about-us-header">Paulownia Professional is a manufacturer of seedlings,
             popular species of Paulownia. Our company has settled in Spain, the province of Aragon,
             whose production area is 2 hectares, which allows us to produce more than half
@@ -17,7 +17,7 @@
             <a href="#" class="read-m-about-header">Read more</a></div>
         <div class="col-12 title-our-service mt-5 text-center">Our service</div>
 
-            <div class="row mx-auto pt-4">
+            <div class="row mx-auto pt-4 pb-5">
                 <div class=" col-xl-2 col-md-4 col-sm-6 card-img-width-about">
                     <div class="text-center"><img data-src="{{asset('/images/about-us-header-1.png')}}" class="lazyload"></div>
                     <div class="title-our-servise-about-us-header text-center">Sale</div>
@@ -51,6 +51,55 @@
             </div>
 
 
+
+            <div class="col-12 fon-for-slider-about-us-header p-0 position-relative">
+
+                <div><img data-src="{{asset('/images/line-about-us-header-up.png')}}" class="lazyload line-style-up-about-h "></div>
+
+                <div class="col-12 mt-5 pt-4 text-center title-our-service ">Certificates and technical documentation</div>
+
+                <div id="carouselExampleControls" class="carousel slide pt-5 pb-5" data-ride="carousel">
+                    <div class="carousel-inner text-center ">
+                        <div class="carousel-item active">
+                            <img class="lazyload pl-2 pr-2 img-slider-about-r"  data-src="{{asset('/images/certificate-1-about-r.jpg')}}"  alt="First slide">
+                            <img class="lazyload pl-2 pr-2 img-slider-about-r"  data-src="{{asset('/images/certificate-2-about-r.jpg')}}"  alt="First slide">
+                            <img class="lazyload pl-2 pr-2 img-slider-about-r"  data-src="{{asset('/images/certificate-3-about-r.jpg')}}"  alt="First slide">
+                            <img class="lazyload pl-2 pr-2 img-slider-about-r"  data-src="{{asset('/images/certificate-4-about-r.jpg')}}"  alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="lazyload pl-2 pr-2 img-slider-about-r"  data-src="{{asset('/images/certificate-1-about-r.jpg')}}"  alt="First slide">
+                            <img class="lazyload pl-2 pr-2 img-slider-about-r"  data-src="{{asset('/images/certificate-2-about-r.jpg')}}"  alt="First slide">
+                            <img class="lazyload pl-2 pr-2 img-slider-about-r"  data-src="{{asset('/images/certificate-3-about-r.jpg')}}"  alt="First slide">
+                            <img class="lazyload pl-2 pr-2 img-slider-about-r"  data-src="{{asset('/images/certificate-4-about-r.jpg')}}"  alt="First slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <div class="botton-heigth">
+                    <a href="#" >
+                        <button class="product-button-about-r"> See all </button>
+                    </a>
+                </div>
+                <div><img data-src="{{asset('/images/line-about-us-header-down.png')}}" class="lazyload line-style-down-about-h "></div>
+            </div>
+
+        <div class="col-12 mt-5 pt-4 text-center title-our-service">Our partners </div>
+
+        <div class="row mx-auto pb-5">
+            <div class="col-xl-3 col-md-12 col-sm-12 partner-1">One more partner</div>
+            <div class="col-xl-6 col-md-12 col-sm-12 partner-2">LLC «OUR GREEN COUNTRY»</div>
+            <div class="col-xl-3 col-md-12 col-sm-12 partner-2">OXIZONA
+                <img data-src="{{asset('/images/oxizonia-about-r.png')}}" class="lazyload">
+            </div>
+        </div>
 
 
 

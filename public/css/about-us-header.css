@@ -38,3 +38,74 @@
     padding-left: 30px;
     padding-right: 30px;
 }
+
+.fon-for-slider-about-us-header{
+    background:url("/images/fon-for-certificat-about.png");
+    /*url("/images/line-about-us-header-up.png")*/
+    /*url("/images/line-about-us-header-down.png")*/
+
+}
+.line-style-up-about-h{
+    margin-top:-3.8%;
+    position: absolute;
+    background-size: 100% 100%;
+    width: 100%;
+}
+
+.line-style-down-about-h{
+    position: absolute;
+    background-size: 100% 100%;
+    width: 100%;
+    margin-top:-5.5%;
+}
+
+.img-slider-about-r{
+    max-width: 23%;
+    border-radius: 10%;
+}
+
+.botton-heigth{
+    padding-bottom:8%;
+}
+.product-button-about-r{
+
+    background: linear-gradient(203.84deg, #8CBD02 8.62%, #84B811 27.22%, #68A648 71.7%);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 60px;
+    border: 0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+    margin: 0 0 0 4%;
+    padding: 1% 8.8% 1% 8.8%;
+    outline: none;
+    cursor: pointer;
+}
+.product-button-about-r:hover{
+
+    background: linear-gradient(203.84deg, #8CBD02 8.62%, #84B811 27.22%, #68A648 71.7%);
+    box-shadow: -2px -2px 20px #8CBD02, 2px 2px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 60px;
+    outline: none;
+}
+
+.partner-1{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 15px;
+    color: rgba(166, 159, 140, 0.3);
+}
+
+.partner-2{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 15px;
+    color: #A69F8C;
+}
+.partner-3{
+
+}

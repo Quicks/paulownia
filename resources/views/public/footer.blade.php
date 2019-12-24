@@ -16,7 +16,7 @@
             <ul class="text-list m-0 p-0">
                 <li><a href="#">@lang('header-footer.stocks')</a></li>
                 <li><a href="#">@lang('header-footer.wholesale offers')</a></li>
-                <li><a href="#">@lang('header-footer.terms of sale')</a></li>
+                <li><a href="{{route('public.terms-of-sale.index')}}">@lang('header-footer.terms of sale')</a></li>
                 <li><a href="#">@lang('header-footer.terms of purchase')</a></li>
                 <li><a href="#">@lang('header-footer.terms of use')</a></li>
             </ul>

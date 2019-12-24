@@ -1,6 +1,5 @@
 @push('css')
     <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v5">
-
     <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v2">
     <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v2">
 @endpush
@@ -38,7 +37,7 @@
     <div class="col">
         <div class="row pb-5">
             <div class="col-sm-3">
-                <ul class="style-for-list-goods ml-3">
+                <ul class="style-for-list-goods ml-3 sticky-top">
                     @foreach($categories as $category)
                         <a @if(Request::input('category') === $category->slug)
                            class="style-for-list-goods-link-active"
@@ -76,7 +75,7 @@
                 Such plants have a closed type of root system ...
                 </li>
                 <li>
-                    <a href="#" class="text-href">Read more</a>
+                    <a href="{{route('public.terms-of-sale.index')}}" class="text-href">Read more</a>
                 </li>
                 </ul>
             </div>

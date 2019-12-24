@@ -33,15 +33,25 @@
   letter-spacing: 0.05em;
   color: #FFFFFF;
   padding-left: 10px;
-  border: none;
-  border-bottom: 1px solid rgb(255, 255, 255);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid white;
 }
 
 .selectric .button {
   display: block;
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 5px;
+  color:white;
+  -moz-transform: rotate(90deg); /* Для Firefox */
+  -ms-transform: rotate(90deg); /* Для IE */
+  -webkit-transform: rotate(90deg); /* Для Safari, Chrome, iOS */
+  -o-transform: rotate(90deg); /* Для Opera */
+  transform: rotate(90deg);
+  font-weight:lighter;
+  font-size: 58px;
 }
 
 .selectric-open {
@@ -117,7 +127,7 @@
   display: none;
   position: absolute;
   background: linear-gradient(9.94deg, #261F18 -3.14%, rgba(106, 88, 67, 0) 167.62%);
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   padding-top: 70px;
   padding-left: 10px;

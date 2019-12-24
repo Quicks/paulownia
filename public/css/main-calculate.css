@@ -38,8 +38,11 @@
     line-height: 38px;
     letter-spacing: 0.05em;
     color: #FFFFFF;
-    border: none;
     width: 100%;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid white;
 }
 .calc-select:active, .calc-select:hover, .calc-select:focus {
     outline: 0;

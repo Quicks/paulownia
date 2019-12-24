@@ -1,6 +1,5 @@
 @push('css')
     <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v5">
-
     <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v2">
     <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v2">
 @endpush
@@ -38,7 +37,7 @@
     <div class="col">
         <div class="row pb-5">
             <div class="col-sm-3">
-                <ul class="style-for-list-goods ml-3">
+                <ul class="style-for-list-goods ml-3 sticky-top">
                     @foreach($categories as $category)
                         <a @if(Request::input('category') === $category->slug)
                            class="style-for-list-goods-link-active"

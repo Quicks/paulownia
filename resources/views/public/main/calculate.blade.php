@@ -1,6 +1,6 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v4">
-    <link rel="stylesheet" href="{{ asset('css/selectric.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v5">
+    <link rel="stylesheet" href="{{ asset('css/selectric.css') }}?v1">
 @endpush
 
 <div class="row mx-auto pt-xl-5 pb-xl-5 calc-width">
@@ -26,7 +26,7 @@
         </select>
     </div>
     <div class="col-xl-3">
-        <input style="border-bottom: 1px solid rgb(255, 255, 255);" class="calc-number calc-select" type="text" onkeyup="this.value = this.value.replace (/\D/, '')"
+        <input class="calc-number calc-select" type="text" onkeyup="this.value = this.value.replace (/\D/, '')"
                id="numberTrees" name="numberTrees" placeholder="Number of trees">
     </div>
     <div class="col-xl-3">
@@ -56,7 +56,7 @@
     <script>
         $(document).ready(function () {
             $('select').selectric({
-                arrowButtonMarkup: '<img class="button" src="{{asset('/images/arrow-down.svg')}}">',
+                arrowButtonMarkup: '<p class="button">›</p>',
                 nativeOnMobile: true,
             });
             let viewTree = $('#view');

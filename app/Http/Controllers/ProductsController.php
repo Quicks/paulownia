@@ -23,9 +23,12 @@ class ProductsController extends Controller
         return view('public.products.index', compact('products', 'ticker', 'categories'));
     }
 
-    public function show($url_key)
+    public function show($url_key, ProductRepository $commodity)
     {
         $product = ProductFlat::where('url_key', $url_key)->where('locale', App::getLocale())->first();
-        return view('public.products.show', compact('product'));
+        $categoryName = $product->product()->first()->categories()->first()->name;
+        $categoryId = Category::whereTranslation('name', $categoryName)->first()->id;
+        $similarProducts = $commodity->getAll($categoryId)->sortByDesc('special_price')->take(4);
+        return view('public.products.show', compact('product', 'similarProducts'));
     }
 }

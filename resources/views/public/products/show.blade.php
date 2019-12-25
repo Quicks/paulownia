@@ -32,6 +32,12 @@
                 </div>
             @endforeach
         @endisset
+        <div>SIMILAR PRODUCTS:</div>
+        <div class="row m-3 justify-content-center">
+            @foreach($similarProducts as $product)
+                @include('public.products.product-card', ['product' => $product])
+            @endforeach
+        </div>
     </div>
 
 @endsection

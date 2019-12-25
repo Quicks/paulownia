@@ -1,0 +1,86 @@
+.fon-for-contacts{
+    background: url("/images/fon-for-contacts.png");
+    background-size: 100% 100%;
+}
+.line-for-contacts{
+    background:url("/images/line-for-about-us-header.png") no-repeat;
+    background-size: 100%;
+}
+
+.title-for-contacts{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.05em;
+    color: #8CBD02;
+}
+.text-for-contacts{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+    color: #0F0E0E;
+}
+.map-with-Archi{
+
+    max-width: 95%;
+    border-radius:25px;
+}
+.email-contacts{
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    font-style: italic;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: transparent;
+    -webkit-rtl-ordering: logical;
+    cursor: pointer;
+    margin: 0;
+    padding: 1px 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+}
+.button-contacts{
+    -webkit-appearance: button;
+    -webkit-writing-mode: horizontal-tb !important;
+    font-weight: bold;
+    text-rendering: auto;
+    color: white;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin: 0 0 0 5%;
+    padding: 0.7% 8%;
+    border: none;
+    background: linear-gradient(139.35deg, #8CBD02 20.58%, #68A648 71.47%);
+    border-radius: 60px;
+    outline: none !important;
+}
+
+.button-contacts:hover{
+    background: linear-gradient(203.84deg, #8CBD02 8.62%, #84B811 27.22%, #68A648 71.7%);
+    box-shadow: -2px -2px 20px #8CBD02, 2px 2px 10px rgba(0, 0, 0, 0.25);
+}
+/*@media screen and (min-width: 1340px){*/
+    /**/
+    /*margin: 0 0 0 3%;*/
+    /*padding: 0.7% 3%;*/
+/*}*/

@@ -12,8 +12,8 @@
         <div class="row m-0">
 
             <div class="col-xl-5 col-md-12 col-sm-12 pl-5 pr-0 pt-5 ">
-                <div class="title-for-contacts mb-5">Spain</div>
-                <div class="text-for-contacts mb-5 ">Our company has settled in Spain, the province of Aragon, whose production area is 2 hectares, which allows us to produce more than half a million seedlings per year. We offer an individual approach to each client, a large selection of advanced varieties.</div>
+                <div class="title-for-contacts mb-5">@lang('contacts.spain')</div>
+                <div class="text-for-contacts mb-5 ">@lang('contacts.text').</div>
                 <div class="title-for-contacts mb-5">PAULOWNIA PROFFESIONAL S.L.</div>
                 <div class="text-for-contacts">Phone : +34 642 787 555 </div>
                 <div class="text-for-contacts">Email: info@paulownia.pro </div>
@@ -41,12 +41,12 @@
         </div>
                     <div class="col-xl-12 col-md-12 col-sm-4 pl-5 m-0">
 
-                        <span class="title-for-contacts ">Write to us:</span>
+                        <span class="title-for-contacts ">@lang('contacts.write-to-us'):</span>
                         <input placeholder="Your name" class="email-contacts">
                         <input placeholder="Email" class="email-contacts ">
-                        <input placeholder="Your message" class="email-contacts ">
+                        <input placeholder="@lang('contacts.your-message')" class="email-contacts ">
 
-                        <button type="submit" class="button-contacts ">Send</button>
+                        <button type="submit" class="button-contacts ">@lang('contacts.send')</button>
 
                      </div>
     </div>

@@ -65,8 +65,8 @@
                 <li class="text-type-prise">from 2 to 10</li>
                 <li class="mb-5">
                     <section class="range-slider">
-                        <input value="2" min="2" max="10" step="1" type="range" class="slider">
-                        <input value="5" min="2" max="10" step="1" type="range" class="slider-1">
+                        <input value="2" min="2" max="10" step="1" type="range" class="slider mt-2">
+                        <input value="5" min="2" max="10" step="1" type="range" class="slider-1 mt-2">
                     </section>
                 </li>
                 <li class="mt-4 mb-4 text-type-rules">Purchase Rules</li>
@@ -95,6 +95,7 @@
 
 
 </div>
+
 @push('scripts')
     <link rel="stylesheet" href="{{asset('js/range-slider.js')}}">
 @endpush

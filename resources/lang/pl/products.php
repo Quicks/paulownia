@@ -2,5 +2,6 @@
 
 
 return [
-    'price-text' => 'Ceny obowiązują tylko dla Portugalii i Hiszpanii, dla innych krajów patrz cennik.'
+    'price-text' => 'Ceny obowiązują tylko dla Portugalii i Hiszpanii, dla innych krajów patrz cennik.',
+    'similar-products' => 'podobne produkty'
 ];

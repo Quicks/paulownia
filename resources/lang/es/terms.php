@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'terms' => 'Términos',
     'text-on-leaf' => 'Términos de venta, compra, reglas de uso',
     'title' => 'Términos de las reglas de ventas',
     'website-visitor'=>'Visitante del sitio web',

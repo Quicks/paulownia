@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'terms' => 'Terms',
     'text-on-leaf' => 'Terms of sales, purchase, use rules',
     'title' => 'Terms of sales rules',
     'website-visitor'=>'Website visitor',

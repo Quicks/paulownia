@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'terms' => 'Warunki',
     'text-on-leaf' => 'Warunki sprzedaży, zakupu, zasady użytkowania',
     'title' => 'Warunki sprzedaży',
     'website-visitor'=>'Odwiedzający stronę internetową',

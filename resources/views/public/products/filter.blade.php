@@ -82,9 +82,11 @@
 
             <div class="col-sm-9 ">
                 <div class="row margin-for-products">
-                @foreach($products as $product)
-                @include('public.products.product-card', ['product' => $product])
-                @endforeach
+                    @foreach($products as $product)
+                        <div class="col-xl-3 col-md-6 col-sm-12">
+                            @include('public.products.product-card', ['product' => $product])
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

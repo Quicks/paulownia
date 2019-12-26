@@ -12,13 +12,7 @@
         </div>
     @endif
 
-    @if(!empty($productBaseImage['medium_image_url']))
-        <img data-src="{{asset($productBaseImage['medium_image_url'])}}"
-             class="lazyload img-product">
-    @else
-        <img data-src="{{asset('/images/our-products-col-fon.png')}}"
-             class="lazyload img-product">
-    @endif
+    <img data-src="{{asset($productBaseImage['medium_image_url'])}}" class="lazyload img-product">
 
     <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" class="lazyload line-product-card">
     <div class="row m-0">

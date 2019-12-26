@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v12">
 @endpush
 
-<div class="back-ground-img ml-3 mb-3 position-relative">
+<div class="">
     @if($product->special_price != 0)
         <div class="position-absolute product-sale">-{{round(100-($product->special_price / ($product->price/100)))}}%
         </div>

@@ -13,7 +13,7 @@
 
         <div class="row m-3 justify-content-center">
             @foreach($products as $product)
-                <div class="col-xl-4 col-md-12 col-sm-12 ">
+                <div class="col-xl-3 col-md-6 col-sm-12 back-ground-img ml-3 mb-3 position-relative">
                     @include('public.products.product-card', ['product' => $product])
                 </div>
             @endforeach

@@ -32,6 +32,13 @@
                 </div>
             @endforeach
         @endisset
+        <div>@lang('products.similar-products')</div>
+        <div class="row m-3 justify-content-center">
+            @foreach($similarProducts as $similarProduct)
+                @if($product->id == $similarProduct->id) @continue @endif
+                @include('public.products.product-card', ['product' => $similarProduct])
+            @endforeach
+        </div>
     </div>
 
 @endsection

@@ -2,17 +2,19 @@
     <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v12">
 @endpush
 
-@inject ('productImageHelper', 'Webkul\Product\Helpers\ProductImage')
-
-<?php $productBaseImage = $productImageHelper->getProductBaseImage($product); ?>
-
 <div class="">
     @if($product->special_price != 0)
         <div class="position-absolute product-sale">-{{round(100-($product->special_price / ($product->price/100)))}}%
         </div>
     @endif
 
-    <img data-src="{{asset($productBaseImage['medium_image_url'])}}" class="lazyload img-product">
+    @if(!empty($product->images[0]->path))
+        <img data-src="{{asset('/storage/'.$product->images[0]->path)}}"
+             class="lazyload img-product">
+    @else
+        <img data-src="{{asset('/images/our-products-col-fon.png')}}"
+             class="lazyload img-product">
+    @endif
 
     <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" class="lazyload line-product-card">
     <div class="row m-0">

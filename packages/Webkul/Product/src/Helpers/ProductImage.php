@@ -34,10 +34,10 @@ class ProductImage extends AbstractProduct
 
         if (! $product->parent_id && ! count($images)) {
             $images[] = [
-                'small_image_url' => asset('/images/medium-product-placeholder.jpg'),
-                'medium_image_url' => asset('/images/medium-product-placeholder.jpg'),
-                'large_image_url' => asset('/images/medium-product-placeholder.jpg'),
-                'original_image_url' => asset('/images/medium-product-placeholder.jpg'),
+                'small_image_url' => asset('vendor/webkul/ui/assets/images/product/small-product-placeholder.png'),
+                'medium_image_url' => asset('vendor/webkul/ui/assets/images/product/meduim-product-placeholder.png'),
+                'large_image_url' => asset('vendor/webkul/ui/assets/images/product/large-product-placeholder.png'),
+                'original_image_url' => asset('vendor/webkul/ui/assets/images/product/large-product-placeholder.png')
             ];
         }
 
@@ -63,10 +63,10 @@ class ProductImage extends AbstractProduct
             ];
         } else {
             $image = [
-                'small_image_url' => asset('/images/medium-product-placeholder.jpg'),
-                'medium_image_url' => asset('/images/medium-product-placeholder.jpg'),
-                'large_image_url' => asset('/images/medium-product-placeholder.jpg'),
-                'original_image_url' => asset('/images/medium-product-placeholder.jpg'),
+                'small_image_url' => asset('vendor/webkul/ui/assets/images/product/small-product-placeholder.png'),
+                'medium_image_url' => asset('vendor/webkul/ui/assets/images/product/meduim-product-placeholder.png'),
+                'large_image_url' => asset('vendor/webkul/ui/assets/images/product/large-product-placeholder.png'),
+                'original_image_url' => asset('vendor/webkul/ui/assets/images/product/large-product-placeholder.png'),
             ];
         }
 

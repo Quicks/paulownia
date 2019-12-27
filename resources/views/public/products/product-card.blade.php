@@ -8,11 +8,11 @@
         </div>
     @endif
 
-    @if(!empty($product->images[0]->path))
-        <img data-src="{{asset('/storage/'.$product->images[0]->path)}}"
+    @if(!empty($product->images[0]->path_tmb) || !empty($product->images[0]->path))
+        <img data-src="{{asset('/storage/'. ($product->images[0]->path_tmb ? $product->images[0]->path_tmb : $product->images[0]->path))}}"
              class="lazyload img-product">
     @else
-        <img data-src="{{asset('/images/our-products-col-fon.png')}}"
+        <img data-src="{{asset('/images/product-card-placeholder.jpg')}}"
              class="lazyload img-product">
     @endif
 

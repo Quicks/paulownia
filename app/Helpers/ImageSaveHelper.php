@@ -49,7 +49,11 @@ class ImageSaveHelper
         }
         $fileName = 'product/'.$imageModelId.'/'.now()->timestamp;
         Storage::put($fileName.'.jpg', $preparedImage->__toString());
-        return $fileName.'.jpg';
+
+        $thumbnail = Image::make($requestImageFile)->fit(307, 177)->encode('jpg');
+        Storage::put($fileName.'-tmb.jpg', $thumbnail->__toString());
+
+        return ['image' => $fileName.'.jpg', 'thumbnail' => $fileName.'-tmb.jpg'];
     }
 
         public static function deleteAllModelImages ($modelInstance)

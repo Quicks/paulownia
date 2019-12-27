@@ -51,7 +51,7 @@ class ProductImageRepository extends Repository
 
                     if (request()->hasFile($file)) {
                         if ($imageModel = $this->find($imageId)) {
-                            Storage::delete($imageModel->path);
+                            Storage::delete([$imageModel->path, $imageModel->path_tmb]);
                         }
 
                         $this->update([
@@ -64,7 +64,7 @@ class ProductImageRepository extends Repository
 
         foreach ($previousImageIds as $imageId) {
             if ($imageModel = $this->find($imageId)) {
-                Storage::delete($imageModel->path);
+                Storage::delete([$imageModel->path, $imageModel->path_tmb]);
 
                 $this->delete($imageId);
             }

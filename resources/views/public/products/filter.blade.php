@@ -100,7 +100,6 @@
 </div>
 
 @push('scripts')
-    <script src="{{asset('js/range-slider.js')}}"></script>
     <script>
         $(document).ready(function(){
             let filterPrice = $("#filterPrice");
@@ -112,7 +111,7 @@
                 changeParam('type', valueType);
             });
             filterPrice.slider();
-            filterPrice.change(function () {
+            filterPrice.on('slideStop',function () {
                 valuePrice = filterPrice.val();
                 changeParam('price', valuePrice);
                 });

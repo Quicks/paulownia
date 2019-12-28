@@ -35,9 +35,9 @@
         </a>
 
         @if($product->special_price != 0)
-            <div class="price-for-card col-12">{{number_format($product->special_price, 2)}} €</div>
+            <div class="price-for-card col-12">{{number_format($product->special_price, 2)}} {{ core()->currencySymbol(core()->getBaseCurrencyCode()) }}</div>
         @else
-            <div class="price-for-card col-12">{{number_format($product->price, 2)}} €</div>
+            <div class="price-for-card col-12">{{number_format($product->price, 2)}} {{ core()->currencySymbol(core()->getBaseCurrencyCode()) }}</div>
         @endif
 
     </div>

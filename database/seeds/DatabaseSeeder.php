@@ -18,5 +18,9 @@ class DatabaseSeeder extends Seeder
         $this->call(AddProductAttributeTableSeeder::class);
         $this->call(ProductAttributeTableSeeder::class);
         $this->call(TickerContentsTableSeeder::class);
+        $this->call(AddAttributeFamilyTableSeeder::class);
+        $this->call(AddTypePaulowniaToAttributeTableSeeder::class);
+        $this->call(AddTypeOptionTableSeeder::class);
+        $this->call(AddPaulowniaAttributeGroupTableSeeder::class);
     }
 }

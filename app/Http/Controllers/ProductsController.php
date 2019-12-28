@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Webkul\Attribute\Models\AttributeOption;
+use Webkul\Attribute\Models\Attribute;
 use Webkul\Product\Models\ProductFlat;
 use App\Models\Content;
 use Webkul\Category\Models\Category;
@@ -17,7 +18,7 @@ class ProductsController extends Controller
         $products = $product->getAll()->sortByDesc('special_price');
         $ticker = Content::where('name', 'products_ticker')->first();
         $categories = Category::where('status', 1)->get();
-        $types = AttributeOption::where('attribute_id', 150)->get();
+        $types = Attribute::where('code', 'type_of_paulownia')->first()->options()->get();
         if($request->has('category')){
             $category_id = Category::whereTranslation('slug', $request->category)->first()->id;
             $products = $product->getAll($category_id)->sortByDesc('special_price');

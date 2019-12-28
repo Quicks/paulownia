@@ -49,10 +49,10 @@
                 <li class="m-0">
                      <hr class="lile-between mt-5 mb-5 ml-0 mr-0">
                 </li>
-                <li class="mt-4 mb-4 text-type-title">Discounts</li>
+                <li class="mt-4 mb-4 text-type-title">@lang('products.discounts')</li>
                 <li>
                     <select id="paulowniaType" class="select-goods">
-                        <option selected disabled hidden>Type of paulownia</option>
+                        <option selected disabled hidden>@lang('products.type-of-paulownia')</option>
                         @foreach($types as $type)
                             <option value="{{$type->admin_name}}"> {{$type->admin_name}}</option>
                         @endforeach

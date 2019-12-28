@@ -15,7 +15,9 @@ class ProductsController extends Controller
 {
     public function index(Request $request, ProductRepository $product)
     {
-        $products = $product->getAll()->sortByDesc('special_price');
+        if(!$request->has('category') && !$request->has('type')){
+            $products = $product->getAll()->sortByDesc('special_price');
+        }
         $ticker = Content::where('name', 'products_ticker')->first();
         $categories = Category::where('status', 1)->get();
         $types = Attribute::where('code', 'type_of_paulownia')->first()->options()->get();
@@ -26,9 +28,10 @@ class ProductsController extends Controller
         if($request->has('type')){
             if ($request->has('category')){
                 $category_id = Category::whereTranslation('slug', $request->category)->first()->id;
-            } else $category_id = null;
-            $type = AttributeOption::where('admin_name', $request->type)->first()->admin_name;
-            $products = $product->getAll($category_id)->where('type_of_paulownia_label', $type)->sortByDesc('special_price');
+            } else {
+                $category_id = null;
+            }
+            $products = $product->getAll($category_id)->where('type_of_paulownia_label', $request->type)->sortByDesc('special_price');
         }
         return view('public.products.index', compact('products', 'ticker', 'categories', 'types'));
     }

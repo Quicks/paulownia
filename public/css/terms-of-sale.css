@@ -1,3 +1,9 @@
+@media only screen  and (min-width: 1224px) and (max-width: 1564px) {
+    .price-img-leaf {
+        width:290px !important;
+        height: 298px !important;
+    }
+}
 .fon-for-terms{
     background: url("/images/fon-for-goods.jpg") no-repeat;
     height: 100%;
@@ -32,3 +38,4 @@
 .terms-img-leaf{
     left: 4%;
 }
+

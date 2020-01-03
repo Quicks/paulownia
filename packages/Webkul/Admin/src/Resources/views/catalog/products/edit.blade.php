@@ -256,8 +256,9 @@
             });
 
             $.modal.defaults = {clickClose: false, showClose: true, escapeClose: true};
+            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 
-            function initCropper(inputName) {
+            function initCropper() {
                 var image = document.getElementById('image-crop');
                 if (window.cropper) {
                     window.cropper.replace(image.src);
@@ -266,49 +267,6 @@
                        aspectRatio: 428 / 247,
                     });
                 }
-
-                $('#rot1').click(function () {cropper.rotate(90);});
-                $('#rot2').click(function () {cropper.rotate(-90);});
-                $('#rot3').click(function () {cropper.rotate(3);});
-                $('#rot4').click(function () {cropper.rotate(-3);});
-                $('#scalex').click(function () {cropper.scaleX(-1);});
-                $('#scaley').click(function () {cropper.scaleY(-1);});
-                $('#zoom-in').click(function () {cropper.zoom(0.1);});
-                $('#zoom-out').click(function () {cropper.zoom(-0.1);});
-                $('#reset').click(function () {cropper.reset();});
-
-                $('#save').click(function saveCrop (event) {
-                    $('#save, button').prop('disabled', true);
-                    $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-                    cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toBlob((blob) => {
-                        var image_id = inputName.substring(inputName.lastIndexOf("[") + 1, inputName.lastIndexOf("]") );
-                        const formData = new FormData();
-                        formData.append('image', blob);
-                        formData.append('image_id', image_id);
-                        if ($('#watermark').prop('checked')) {
-                            formData.append('watermark', true);
-                        }
-                      $.ajax('{{route('updateProductImage', $product->id)}}', {
-                        method: "POST",
-                        data: formData,
-                        processData: false,
-                        contentType: false,
-                        success(answer) {
-                            $.modal.close();
-                            $('#save, button').prop('disabled', false);
-                            $('input[name="'+inputName+'"]').prop('name', 'images['+answer+']');
-                            $('input[type=file]').val('');
-                            $('input[name="images['+answer+']"] + img.preview')
-                                .prop('src', cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toDataURL());
-                            $('.image-item').css({'height':'100%', 'min-height':'100px'});
-                        },
-                        error(answer) {
-                            alert("Error");
-                            console.log(answer);
-                        }
-                      });
-                    });
-                });
             };
 
             $(document).on('change', '[name^="images"]', function(event) {
@@ -316,12 +274,54 @@
                 reader.onload = function() {
                     var output = document.getElementById('image-crop');
                     output.src = reader.result;
-                    var inputName = event.target.name;
-                    initCropper(inputName);
+                    window.inputName = event.target.name;
+                    initCropper();
                     $('#cropper-div').modal();
                 }
                 reader.readAsDataURL(event.target.files[0]);
-            }); 
+            });
+
+            $('#rot1').click(function () {cropper.rotate(90);});
+            $('#rot2').click(function () {cropper.rotate(-90);});
+            $('#rot3').click(function () {cropper.rotate(3);});
+            $('#rot4').click(function () {cropper.rotate(-3);});
+            $('#scalex').click(function () {cropper.scaleX(-1);});
+            $('#scaley').click(function () {cropper.scaleY(-1);});
+            $('#zoom-in').click(function () {cropper.zoom(0.1);});
+            $('#zoom-out').click(function () {cropper.zoom(-0.1);});
+            $('#reset').click(function () {cropper.reset();});
+
+            $('#save').click(function (event) {
+                $('#save, button').prop('disabled', true);
+                cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toBlob((blob) => {
+                    var image_id = inputName.substring(inputName.lastIndexOf("[") + 1, inputName.lastIndexOf("]") );
+                    const formData = new FormData();
+                    formData.append('image', blob);
+                    formData.append('image_id', image_id);
+                    if ($('#watermark').prop('checked')) {
+                        formData.append('watermark', true);
+                    }
+                  $.ajax('{{route('updateProductImage', $product->id)}}', {
+                    method: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success(answer) {
+                        $.modal.close();
+                        $('#save, button').prop('disabled', false);
+                        $('input[name="'+inputName+'"]').prop('name', 'images['+answer+']');
+                        $('input[type=file]').val('');
+                        $('input[name="images['+answer+']"] + img.preview')
+                            .prop('src', cropper.getCroppedCanvas({maxWidth: 2100, maxHeight: 2100,}).toDataURL());
+                        $('.image-item').css({'height':'100%', 'min-height':'100px'});
+                    },
+                    error(answer) {
+                        alert("Error");
+                        console.log(answer);
+                    }
+                  });
+                });
+            });
 
         });
     </script>

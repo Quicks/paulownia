@@ -337,19 +337,21 @@ class ProductController extends Controller
 
     public function copy($id) {
         $product = $this->product->findOrFail($id);
-        $product_flat = ProductFlat::where('product_id', $id)->first();
+        $products_flat = ProductFlat::where('product_id', $id)->get();
         $name_ending = '-copy-'. now()->timestamp;
 
         $product_copy = $product->replicate();
         $product_copy->sku = $product_copy->sku . $name_ending;
         $product_copy->save();
 
-        $product_flat_copy = $product_flat->replicate();
-        $product_flat_copy->product_id = $product_copy->id;
-        $product_flat_copy->sku = $product_copy->sku;
-        $product_flat_copy->name = $product_flat_copy->name . '-copy';
-        $product_flat_copy->url_key = $product_flat->url_key . $name_ending;
-        $product_flat_copy->save();
+        foreach ($products_flat as $product_flat) {
+            $product_flat_copy = $product_flat->replicate();
+            $product_flat_copy->product_id = $product_copy->id;
+            $product_flat_copy->sku = $product_copy->sku;
+            $product_flat_copy->name = $product_flat_copy->name . '-copy';
+            $product_flat_copy->url_key = $product_flat->url_key . $name_ending;
+            $product_flat_copy->save();
+        }
 
         $product_copy->categories()->saveMany($product->categories);
         $product_copy->attribute_values()->createMany($product->attribute_values->toArray());

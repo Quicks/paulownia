@@ -11,11 +11,13 @@
             <hr class="line-for-products">
         </div>
 
-            <div class="row m-3 justify-content-center">
-                @foreach($products as $product)
+        <div class="row m-3 justify-content-center">
+            @foreach($products as $product)
+                <div class="col-xl-3 col-md-6 col-sm-12 back-ground-img ml-3 mb-3 position-relative">
                     @include('public.products.product-card', ['product' => $product])
-                @endforeach
-            </div>
+                </div>
+            @endforeach
+        </div>
 
     <a href="{{route('public.products.index')}}">
         <button class="product-button"> All goods </button>

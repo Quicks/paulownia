@@ -16,7 +16,7 @@
   position: relative;
   overflow: hidden;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 38px;
   letter-spacing: 0.05em;
   color: #FFFFFF;
@@ -28,7 +28,7 @@
   white-space: nowrap;
   overflow: hidden;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 38px;
   letter-spacing: 0.05em;
   color: #FFFFFF;
@@ -42,16 +42,8 @@
 .selectric .button {
   display: block;
   position: absolute;
-  right: 10px;
-  top: 5px;
-  color:white;
-  -moz-transform: rotate(90deg); /* Для Firefox */
-  -ms-transform: rotate(90deg); /* Для IE */
-  -webkit-transform: rotate(90deg); /* Для Safari, Chrome, iOS */
-  -o-transform: rotate(90deg); /* Для Opera */
-  transform: rotate(90deg);
-  font-weight:lighter;
-  font-size: 58px;
+  right: 0;
+  top: 10px;
 }
 
 .selectric-open {

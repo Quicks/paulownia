@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v5">
+    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v6">
     <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v2">
     <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v2">
 @endpush
@@ -49,25 +49,26 @@
                 <li class="m-0">
                      <hr class="lile-between mt-5 mb-5 ml-0 mr-0">
                 </li>
-                <li class="mt-4 mb-4 text-type-title">Discounts</li>
+                <li class="mt-4 mb-4 text-type-title">@lang('products.discounts')</li>
                 <li>
-                    <form action="" method="">
-                        <select name="type of paulownia" class="select-goods">
-                            <option>type of paulownia</option>
-                            <option value="1"> 1</option>
-                            <option value="2"> 2</option>
-                            <option value="3"> 3</option>
-                            <option value="4"> 4</option>
-                        </select>
-                    </form>
+                    <select id="paulowniaType" class="select-goods">
+                        <option selected disabled hidden>@lang('products.type-of-paulownia')</option>
+                        @foreach($types as $type)
+                            <option value="{{$type->admin_name}}"> {{$type->admin_name}}</option>
+                        @endforeach
+                    </select>
+
                 </li>
-                <li class="mt-4 text-type-title">Price €</li>
-                <li class="text-type-prise">from 2 to 10</li>
+                <li class="mt-4 text-type-title">Price {{ core()->currencySymbol(core()->getBaseCurrencyCode()) }}</li>
+                <li class="text-type-prise">
+                    from {{number_format($products->min('price'), 2)}}
+                    to {{number_format($products->max('price'), 2)}}
+                </li>
                 <li class="mb-5">
-                    <section class="range-slider">
-                        <input value="2" min="2" max="10" step="1" type="range" class="slider mt-2">
-                        <input value="5" min="2" max="10" step="1" type="range" class="slider-1 mt-2">
-                    </section>
+                    <input name="price" id="filterPrice" type="text" class="span2" value=""
+                           data-slider-min="{{$products->min('price')}}" data-slider-max="{{$products->max('price')}}"
+                           data-slider-step="5"
+                           data-slider-value="[{{$products->min('price')}}, {{$products->max('price')}}]"/>
                 </li>
                 <li class="mt-4 mb-4 text-type-rules">Purchase Rules</li>
                 <li class="mt-4 text-type-title">A popular practice of our time is the sale of young plants
@@ -82,9 +83,11 @@
 
             <div class="col-sm-9 ">
                 <div class="row margin-for-products">
-                @foreach($products as $product)
-                @include('public.products.product-card', ['product' => $product])
-                @endforeach
+                    @foreach($products as $product)
+                        <div class="col-xl-4 col-md-12 col-sm-12 back-ground-img ml-3 mb-3 position-relative">
+                            @include('public.products.product-card', ['product' => $product])
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -97,5 +100,31 @@
 </div>
 
 @push('scripts')
-    <link rel="stylesheet" href="{{asset('js/range-slider.js')}}">
+    <script>
+        $(document).ready(function(){
+            let filterPrice = $("#filterPrice");
+            let valuePrice;
+            let filterType = $("#paulowniaType");
+            let valueType;
+            filterType.change(function () {
+                valueType = filterType.val();
+                changeParam('type', valueType);
+            });
+            filterPrice.slider();
+            filterPrice.on('slideStop',function () {
+                valuePrice = filterPrice.val();
+                changeParam('price', valuePrice);
+                });
+
+            function changeParam(key, value) {
+                var url = new URL(document.location.href);
+                var query_string = url.search;
+                var search_params = new URLSearchParams(query_string);
+                search_params.set(key, value);
+                url.search = search_params.toString();
+                document.location = url.toString();
+            }
+        });
+
+    </script>
 @endpush

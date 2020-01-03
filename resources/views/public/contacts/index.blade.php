@@ -42,8 +42,6 @@
             </div>
 
         </div>
-
-
                     <div class="col-xl-12 col-md-12 col-sm-4 pl-5 mx-auto pb-5">
 
                         <span class="title-for-contacts name-contacts">@lang('contacts.write-to-us'):</span>
@@ -54,6 +52,5 @@
 
                     </div>
     </div>
-
 
 @endsection

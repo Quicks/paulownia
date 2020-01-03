@@ -94,7 +94,7 @@
 
 
         <div class="col-12 botton-heigth-2 text-center">
-            <a href="{{route('public.partners.index') }}">
+            <a href="#">
                 <button class="button-about-r-partners">@lang('about-us-header.button-1')</button>
             </a>
         </div>

@@ -20,7 +20,7 @@
         </div>
 
         <div class="row mx-auto">
-            <div class="col-xl-3 col-md-12 col-sm-12 position-relative pl-4">
+            <div class="col-xl-3 col-md-12 col-sm-12 position-relative pl-xl-4">
 
                 <div class="mt-3  text-md-center text-sm-center"><img data-src="{{asset('/images/cert-long-1.png')}}" class="lazyload img-cert-long "></div>
                 <div class="mt-3  text-md-center text-sm-center"><img data-src="{{asset('/images/cert-long-2.png')}}" class="lazyload img-cert-long "></div>
@@ -34,14 +34,14 @@
                 <div class="row mt-3">
 
                     <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left tetext-md-center text-sm-center mb-3 " ><img data-src="{{asset('/images/cert-small-1.png')}}" class="lazyload  img-cert-small"></div>
-                    <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center "  ><img data-src="{{asset('/images/cert-small-2.png')}}" class="lazyload  img-cert-small"></div>
-                    <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center " ><img data-src="{{asset('/images/cert-small-3.png')}}" class="lazyload  img-cert-small"></div>
+                    <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center pl-xl-0" ><img data-src="{{asset('/images/cert-small-2.png')}}" class="lazyload  img-cert-small"></div>
+                    <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center pl-xl-0" ><img data-src="{{asset('/images/cert-small-3.png')}}" class="lazyload  img-cert-small"></div>
                     <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center mb-3 " ><img data-src="{{asset('/images/cert-small-4.png')}}" class="lazyload  img-cert-small"></div>
-                    <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center " ><img data-src="{{asset('/images/cert-small-5.png')}}" class="lazyload  img-cert-small"></div>
-                    <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center " ><img data-src="{{asset('/images/cert-small-6.png')}}" class="lazyload  img-cert-small"></div>
+                    <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center pl-xl-0" ><img data-src="{{asset('/images/cert-small-5.png')}}" class="lazyload  img-cert-small"></div>
+                    <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center pl-xl-0" ><img data-src="{{asset('/images/cert-small-6.png')}}" class="lazyload  img-cert-small"></div>
                     <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center mb-3 " ><img data-src="{{asset('/images/cert-small-7.png')}}" class="lazyload  img-cert-small"></div>
-                    <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center " ><img data-src="{{asset('/images/cert-small-8.png')}}" class="lazyload  img-cert-small"></div>
-                    <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center " ><img data-src="{{asset('/images/cert-small-9.png')}}" class="lazyload  img-cert-small"></div>
+                    <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center pl-xl-0" ><img data-src="{{asset('/images/cert-small-8.png')}}" class="lazyload  img-cert-small"></div>
+                    <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center pl-xl-0" ><img data-src="{{asset('/images/cert-small-9.png')}}" class="lazyload  img-cert-small"></div>
 
                 </div>
 

@@ -21,11 +21,13 @@
 
         <div class="row mx-auto">
 
-            <div class="col-4">
-                <img data-src="" class="lazyload">
+            <div class="col-2">
+                <img data-src="{{asset('/images/cert-long-1.png')}}" class="lazyload img-cert-long mt-5">
+                <img data-src="{{asset('/images/cert-long-2.png')}}" class="lazyload img-cert-long mt-3">
+                <img data-src="{{asset('/images/cert-long-3.png')}}" class="lazyload img-cert-long mt-3">
             </div>
 
-            <div class="col-8"> </div>
+            <div class="col-10"> </div>
         </div>
     </div>
 @endsection

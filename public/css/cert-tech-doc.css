@@ -1,10 +1,7 @@
 .fon-for-partners{
-    background:url("/images/fon-for-about-us-header.jpg");
-    padding-bottom: 15%;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
+    background:url("/images/fon-for-goods.jpg") no-repeat;
+    background-size: 100% 100%;
+    padding-bottom: 10%;
 }
 .container-partners{
     background: radial-gradient(50% 50% at 50% 50%, rgba(104, 166, 72, 0) 0%, rgba(104, 166, 72, 0.04) 100%);
@@ -15,9 +12,14 @@
     max-width: 305px;
 }
 .img-cert-long{
-
-
+    border-radius: 25px;
+    width: 90%;
 }
+.img-cert-small{
+    border-radius: 25px;
+    width: 90%;
+}
+
 .partners-background{
     background: url("/images/price-background.png") no-repeat;
     background-size: 100% 100%;
@@ -27,6 +29,7 @@
     width: 25%;
     transform: scale(-1, 1);
     margin: -4% 0 0 6%;
+    z-index: 1;
 }
 .partner-text {
     font-weight: bold;
@@ -77,11 +80,13 @@
     }
     .partner-text {
         font-size: 20px;
-        padding: 2% 0 0 36%;
+        padding: 2% 0 0 32%;
     }
 }
 
 @media screen and (max-width:425px) {
+
+
 
     .partners-background{
         height: 60px;
@@ -92,8 +97,8 @@
         margin: -4% 0 0 6%;
     }
     .partner-text {
-        font-size: 15px;
-        padding: 2% 0 0 36%;
+        font-size: 10px;
+        padding: 2% 0 0 34%;
     }
     .container-partners{
         border-radius: 5px;

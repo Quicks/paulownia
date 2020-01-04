@@ -19,4 +19,5 @@ return [
     'button-1'=>'اظهار الكل',
     'our-partners'=>'شركاؤنا',
     'our-clients'=>'عملائنا',
+    'cert-tech-doc'=>'الشهادات والوثائق الفنية'
 ];

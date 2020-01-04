@@ -20,5 +20,6 @@ return [
     'button-1'=>'Ver todo',
     'our-partners'=>'Nuestros compañeros',
     'our-clients'=>'Nuestros clientes',
+    'cert-tech-doc'=>'Certificados y documentación técnica'
 
 ];

@@ -14,8 +14,7 @@
                 <img class="img-leaf lazyload position-absolute" data-src="{{asset('/images/service-leaf-tree.png')}}">
             </div>
             <div class="partner-text">
-                {{--@lang('about-us-header.our-partners')--}}
-                Certificates and technical documentation
+                @lang('about-us-header.cert-tech-doc')
             </div>
         </div>
 

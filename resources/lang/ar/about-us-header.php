@@ -20,7 +20,6 @@ return [
     'our-partners'=>'شركاؤنا',
     'our-clients'=>'عملائنا',
 
-
     'cart'=>'عربة التسوق',
     'make-an-order'=>'إصدار أمر',
     'price-for-1-item'=>'سعر البند 1',
@@ -28,5 +27,6 @@ return [
     'total'=>'مجموع',
     'total-excluding'=>'المجموع باستثناء',
 
+    'cert-tech-doc'=>'الشهادات والوثائق الفنية',
 
 ];

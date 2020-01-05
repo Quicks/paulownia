@@ -21,6 +21,7 @@ return [
     'our-partners'=>'Nos partenaires',
     'our-clients'=>'Nos clients',
 
+    'cert-tech-doc'=>'Certificats et documentation technique',
 
     'cart'=>'Chariot',
     'make-an-order'=>'Faire une commande',

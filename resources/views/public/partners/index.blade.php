@@ -1,43 +1,35 @@
-@extends('layouts.app')
+@extends('layouts.public')
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div class="card-header">Partners</div>
-                <div class="card-body">
-                    <a href="{{ url('/') }}" title="Back">
-                        <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back
-                        </button>
-                    </a>
-                    <br/>
-                    <br/>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>#</th><th>Name</th><th>Postcode</th><th>Phone</th><th>Email</th><th>Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($partners as $item)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->postcode }}</td>
-                                    <td>{{ $item->phone }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>
-                                        <a href="{{ url(App::getLocale() . '/partners/' . $item->id)}}" title="View Partners">
-                                            <button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+
+    @push('css')
+        <link rel="stylesheet" href="{{asset('css/partners.css') }}">
+    @endpush
+
+
+    <div class="col-12 mb-5">@include('public.breadcrumbs',$breadcrumbs = [route('public.about-us.index') => 'header-footer.about us',
+    route('public.partners.index') => 'about-us-header.our-partners'])</div>
+
+    <div class="row fon-for-partners m-0">
+
+        <div class="col-12 partners-background position-relative">
+            <div>
+                <img class="img-leaf lazyload position-absolute" data-src="{{asset('/images/service-leaf-tree.png')}}">
             </div>
+            <div class="partner-text">@lang('about-us-header.our-partners')</div>
         </div>
+
+            <div class="row mx-auto justify-content-center">
+                @foreach($partners as $item)
+                    <div class="col-xl-3 col-md-12 col-sm-12 text-center m-3 container-partners">
+                        <a href="#">
+                            <img 
+                                @if(!empty($item->images[0])) src="{{asset('storage/'.$item->images[0]->image)}}" 
+                                @else src="{{asset('vendor/webkul/ui/assets/images/product/meduim-product-placeholder.png')}}"
+                                @endif
+                                class="lazyload img-partners" style="max-width:50%">
+                        </a>
+                    </div>
+                @endforeach
+            </div>
     </div>
 @endsection

@@ -29,7 +29,7 @@
 .price-img-leaf-position {
     position:absolute;
     top:-55px;
-    z-index: 999;
+    z-index: 1;
 }
 .price-img-leaf {
     width:405px;

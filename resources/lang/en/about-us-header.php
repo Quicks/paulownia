@@ -21,6 +21,7 @@ return [
     'our-partners'=>'Our partners ',
     'our-clients'=>'Our clients',
 
+    'cert-tech-doc'=>'Certificates and technical documentation',
 
     'cart'=>'Cart',
     'make-an-order'=>'Make an order',

@@ -74,7 +74,7 @@
 
         <div class="col-12 text-right mt-3 text-right-pad"> VAT: 10% </div>
         <div class="col-12 text-right text-right-pad"> @lang('about-us-header.total-excluding') VAT: 12,60 €</div>
-        <div class="col-12 text-right font-weight-bold mt-3 text-right-pad text-prise "> @lang('about-us-header.total'):13,86 € </div>
+        <div class="col-12 text-right font-weight-bold mt-3 text-right-pad text-prise-all "> @lang('about-us-header.total'):13,86 € </div>
 
         <div class="col-12 text-right-pad text-right mt-5 ">
             <button type="submit" class="button-contacts mt-3 mb-5">

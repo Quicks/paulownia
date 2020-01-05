@@ -22,11 +22,4 @@ return [
     'our-clients'=>'Our clients',
 
     'cert-tech-doc'=>'Certificates and technical documentation',
-
-    'cart'=>'Cart',
-    'make-an-order'=>'Make an order',
-    'price-for-1-item'=>'Price for 1 item',
-    'amount'=>'Amount',
-    'total'=>'Total',
-    'total-excluding'=>'Total excluding',
     ];

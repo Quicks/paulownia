@@ -19,14 +19,6 @@ return [
     'button-1'=>'اظهار الكل',
     'our-partners'=>'شركاؤنا',
     'our-clients'=>'عملائنا',
-
-    'cart'=>'عربة التسوق',
-    'make-an-order'=>'إصدار أمر',
-    'price-for-1-item'=>'سعر البند 1',
-    'amount'=>'كمية',
-    'total'=>'مجموع',
-    'total-excluding'=>'المجموع باستثناء',
-
     'cert-tech-doc'=>'الشهادات والوثائق الفنية',
 
 ];

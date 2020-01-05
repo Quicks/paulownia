@@ -6,7 +6,7 @@
     @endpush
 
     <div class="row fon-cart mx-auto">
-        <div class="col-12 ">@include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'about-us-header.cart' ])</div>
+        <div class="col-12 ">@include('public.breadcrumbs', $breadcrumbs = [route('public.cart.index') => 'public-translations.cart' ])</div>
 
         <div class="col-6"></div>
         <div class="col-2 text-center text-title-cart mt-xl-3"> @lang('public-translations.price-for-1-item'):</div>

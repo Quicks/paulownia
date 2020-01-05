@@ -21,7 +21,13 @@
             <div class="row mx-auto justify-content-center">
                 @foreach($partners as $item)
                     <div class="col-xl-3 col-md-12 col-sm-12 text-center m-3 container-partners">
-                        <a href="#"><img src="{{asset('storage/'.$item->images[0]->image)}}" class="lazyload img-partners" style="max-width:50%"></a>
+                        <a href="#">
+                            <img 
+                                @if(!empty($item->images[0])) src="{{asset('storage/'.$item->images[0]->image)}}" 
+                                @else src="{{asset('vendor/webkul/ui/assets/images/product/meduim-product-placeholder.png')}}"
+                                @endif
+                                class="lazyload img-partners" style="max-width:50%">
+                        </a>
                     </div>
                 @endforeach
             </div>

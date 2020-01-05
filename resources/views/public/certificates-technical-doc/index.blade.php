@@ -6,7 +6,8 @@
     @endpush
 
 
-    <div class="col-12 mb-5">@include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') =>'header-footer.about us'])</div>
+    <div class="col-12 mb-5">@include('public.breadcrumbs',$breadcrumbs = [route('public.about-us.index') => 'header-footer.about us',
+route('public.certificates-technical-doc.index') => 'about-us-header.cert-tech-doc'])</div>
 
     <div class="row fon-for-partners m-0">
         <div class="col-12 partners-background position-relative">

@@ -20,5 +20,5 @@ return [
     'button-1'=>' See all ',
     'our-partners'=>'Our partners ',
     'our-clients'=>'Our clients',
-
+    'cart'=>'Cart'
     ];

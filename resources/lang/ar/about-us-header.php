@@ -19,4 +19,5 @@ return [
     'button-1'=>'اظهار الكل',
     'our-partners'=>'شركاؤنا',
     'our-clients'=>'عملائنا',
+    'cart'=>'عربة التسوق'
 ];

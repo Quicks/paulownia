@@ -112,7 +112,7 @@
                                 <a href="#"><img width="20px" height="20px" src="{{asset('images/user.svg')}}"></a>
                             </li>
                             <li class="list-inline-item ">
-                                <a href="#"><img width="20px" height="20px" src="{{asset('images/shopping-cart.svg')}}"></a>
+                                <a href="{{route('public.cart.index')}}"><img width="20px" height="20px" src="{{asset('images/shopping-cart.svg')}}"></a>
                             </li>
                             <li class="list-inline-item ">
                                 <a href="#"><img width="20px" height="20px"

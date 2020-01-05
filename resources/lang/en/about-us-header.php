@@ -20,6 +20,6 @@ return [
     'button-1'=>' See all ',
     'our-partners'=>'Our partners ',
     'our-clients'=>'Our clients',
-    'cert-tech-doc'=>'Certificates and technical documentation'
 
+    'cert-tech-doc'=>'Certificates and technical documentation',
     ];

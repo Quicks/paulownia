@@ -1,5 +1,10 @@
 .fon-service {
-    background:url("/images/fon-service.jpg")no-repeat,url("/images/fon-service-1.jpg")no-repeat;
+    background:url("/images/fon-service.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.fon-text-service{
+    background:url("/images/fon-service-1.jpg");
+    background-size: 100%;
 }
 .text-service-title{
     font-style: normal;
@@ -7,12 +12,13 @@
     line-height: 120px;
     letter-spacing: 0.02em;
     color: #FFFFFF;
-    padding:5% 10% 8% 15%;
+    padding:2% 10% 5% 15%;
 }
 .line-img{
-    margin-top:-8.5%;
+    margin-top: -9.3%;
     background-size: 100% 100%;
-    width:100%
+    width: 100%;
+    z-index: 7;
 }
 .text-service{
     text-indent:10%;
@@ -20,4 +26,38 @@
     font-size: 20px;
     line-height: 30px;
     letter-spacing: 0.02em;
+}
+
+@media screen and (max-width:1290px ) and (min-width:1025px){
+
+    .text-service-title{
+        font-size: 84px;
+        line-height: 80px;
+    }
+    .text-service{
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+@media screen and (max-width:1024px ) and (min-width:426px){
+
+    .text-service-title{
+        font-size: 64px;
+        line-height: 50px;
+    }
+    .text-service{
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+@media screen and (max-width:425px ){
+
+    .text-service-title{
+        font-size: 34px;
+        line-height: 30px;
+    }
+    .text-service{
+        font-size: 20px;
+        line-height: 30px;
+    }
 }

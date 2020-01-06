@@ -1,0 +1,23 @@
+.fon-service {
+    background:url("/images/fon-service.jpg")no-repeat,url("/images/fon-service-1.jpg")no-repeat;
+}
+.text-service-title{
+    font-style: normal;
+    font-size: 134px;
+    line-height: 120px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    padding:5% 10% 8% 15%;
+}
+.line-img{
+    margin-top:-8.5%;
+    background-size: 100% 100%;
+    width:100%
+}
+.text-service{
+    text-indent:10%;
+    padding: 5% 8% 12% 8%;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+}

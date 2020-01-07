@@ -127,7 +127,7 @@
 
             <div class="row mx-auto back-ground-main pt-xl-5 pb-xl-5 p-3 back-max-width ">
 
-                    <div class="col-xl-6 col-md-12 col-sm-12 back-ground-1 mx-auto mt-5 mb-5">
+                    <div class="col-xl-6 col-md-12 col-sm-12 back-ground-1 mx-auto mt-5 mb-5 ">
                         <img class="lazyload img-logo-1" data-src="/images/logo.png">
                         <p class="about-text">Paulownia Professional is a manufacturer of seedlings, popular species of Paulownia.
                             Our company has settled in Spain, the province of Aragon, whose production area is 2 hectares,

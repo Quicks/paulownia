@@ -54,6 +54,17 @@
     margin:3% 2% 0 63%;
 }
 
+
+@media screen and (min-width: 1900px) {
+
+    .back-ground-1 , .back-ground-2{
+        max-width: 700px;
+        max-height: 760px;
+    }
+}
+
+
+
 @media screen and (min-width: 1300px) and (max-width: 1400px) {
 
     .back-ground-1 , .back-ground-2{
@@ -89,6 +100,9 @@
 
     .back-ground-main {
         background:none;
+    }
+    .back-ground-1 , .back-ground-2{
+        max-width: 360px;
     }
 }
 

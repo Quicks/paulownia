@@ -28,10 +28,10 @@
 }
 * {
     font-family: Raleway;
+    font-size: 16px;
 }
-.main-background {
 
+.main-background {
     background: white;
     min-height: calc(100vh - 448px);
-
 }

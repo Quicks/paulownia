@@ -7,11 +7,12 @@
     max-width:80%;
 }
 .about-read-m,.about-read-m:hover{
+    font-size:0.885rem;
     color:#8CBD02 ;
     text-decoration:underline;
 }
 .about-title{
-     font-size: 3rem;
+     font-size: 4rem;
      line-height: 56px;
      color: #8CBD02 ;
  }
@@ -53,8 +54,6 @@
     max-width:35%;
     margin:3% 2% 0 63%;
 }
-
-
 @media screen and (min-width: 1900px) {
 
     .back-ground-1 , .back-ground-2{
@@ -62,8 +61,6 @@
         max-height: 760px;
     }
 }
-
-
 
 @media screen and (min-width: 1300px) and (max-width: 1400px) {
 

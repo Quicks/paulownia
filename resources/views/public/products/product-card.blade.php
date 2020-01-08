@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v12">
+    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v13">
 @endpush
 
 <div class="">
@@ -22,18 +22,21 @@
 
             <a href="{{route('public.products.show', $product->url_key)}}" class="col-8 title-for-card">{{$product-> name}}</a>
 
-            <form action="{{ route('cart.add', $product->product_id) }}" method="POST">
-                @csrf
-                <input type="hidden" name="product" value="{{ $product->product_id }}">
-                <input type="hidden" name="quantity" value="1">
-                <button class="card-btn p-0 col-2 mt-1 box-m" {{ $product->haveSufficientQuantity(1) ? '' : 'disabled' }}>
-                    <img data-src="{{asset('/images/our-products-box.png')}}" class="box-product lazyload">
-                </button>
-            </form>
+            <div class="col-4 text-center">
+                <form  action="{{ route('cart.add', $product->product_id) }}" method="POST" class="d-inline">
+                    @csrf
+                    <input type="hidden" name="product" value="{{ $product->product_id }}">
+                    <input type="hidden" name="quantity" value="1">
+                    <button class="card-btn p-0 mt-1 box-m" {{ $product->haveSufficientQuantity(1) ? '' : 'disabled' }}>
+                        <img data-src="{{asset('/images/our-products-box.png')}}" class="box-product lazyload">
+                    </button>
+                </form>
 
-            <a href="#" class="col-2 mt-1 like-m">
-                <img data-src="{{asset('/images/our-products-like.png')}}" class="like-product lazyload" style="border-radius:50%">
-            </a>
+                <a href="#" class="mt-1 like-m">
+                    <img data-src="{{asset('/images/our-products-like.png')}}" 
+                            class="like-product lazyload" style="border-radius:50%">
+                </a>
+            </div>
         </div>
         @if($product->special_price != 0)
             <div class="price-for-card col-12">{{number_format($product->special_price, 2)}} {{ core()->currencySymbol(core()->getBaseCurrencyCode()) }}</div>

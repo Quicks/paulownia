@@ -13,7 +13,7 @@
 
         <div class="row justify-content-center mx-1">
             @foreach($products as $product)
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 position-relative">
+                <div class="col-md-3 col-sm-6 col-xs-12 position-relative one-product">
                     @include('public.products.product-card', ['product' => $product])
                 </div>
             @endforeach
@@ -27,4 +27,16 @@
 
 </div>
 
+@push('scripts')
+<script>
+    $(document).ready(function () {
+        if(window.screen.width < 768) {
+            $('.one-product').slice(4, 10).remove(); //show only four products on small screens
+        }
+        if(window.screen.width < 576) {
+            $('.one-product').slice(2, 10).remove(); //show only two products on extra small screens
+        }
+    });
+</script>
+@endpush
 

@@ -21,7 +21,7 @@
                                     and paulownia
                                     trees
                                     Sale of seedlings and paulownia trees...</p>
-                                <a class="services-item-link" href="{{route('public.service.index')}} " target="_blank">Read more</a>
+                                <a class="services-item-link" href="{{route('public.service.index')}} ">Read more</a>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-12 col-sm-12 services-2 mx-auto services-item-width mb-3">
@@ -31,7 +31,7 @@
                             <div class="mx-auto services-item-text-width">
                                 <p class="services-item-text">Analysis and personal design of future plantations
                                     Analysis and personal design of future plantations...</p>
-                                <a class="services-item-link" href="#" target="_blank">Read more</a>
+                                <a class="services-item-link" href="#">Read more</a>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-12 col-sm-12 services-3 mx-auto services-item-width mb-3">
@@ -42,7 +42,7 @@
                                 <p class="services-item-text">Calculation of return on investment Calculation of return
                                     on
                                     investment Calculation of return on...</p>
-                                <a class="services-item-link" href="#" target="_blank">Read more</a>
+                                <a class="services-item-link" href="{{route('public.calculations.index')}}">Read more</a>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-12 col-sm-12 services-4 mx-auto services-item-width mb-3">
@@ -53,7 +53,7 @@
                                 <p class="services-item-text">Consultation during the cultivation Consultation during
                                     the
                                     cultivation Consultation during the...</p>
-                                <a class="services-item-link" href="#" target="_blank">Read more</a>
+                                <a class="services-item-link" href="#">Read more</a>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                                     and paulownia
                                     trees
                                     Sale of seedlings and paulownia trees...</p>
-                                <a class="services-item-link" href="#" target="_blank">Read more</a>
+                                <a class="services-item-link" href="{{route('public.service.index')}}">Read more</a>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-12 col-sm-12 services-2 mx-auto services-item-width mb-3">
@@ -79,7 +79,7 @@
                             <div class="mx-auto services-item-text-width">
                                 <p class="services-item-text">Analysis and personal design of future plantations
                                     Analysis and personal design of future plantations...</p>
-                                <a class="services-item-link" href="#" target="_blank">Read more</a>
+                                <a class="services-item-link" href="#">Read more</a>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-12 col-sm-12 services-3 mx-auto services-item-width mb-3">
@@ -90,7 +90,7 @@
                                 <p class="services-item-text">Calculation of return on investment Calculation of return
                                     on
                                     investment Calculation of return on...</p>
-                                <a class="services-item-link" href="#" target="_blank">Read more</a>
+                                <a class="services-item-link" href="{{route('public.calculations.index')}}">Read more</a>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-12 col-sm-12 services-4 mx-auto services-item-width mb-3">
@@ -101,7 +101,7 @@
                                 <p class="services-item-text">Consultation during the cultivation Consultation during
                                     the
                                     cultivation Consultation during the...</p>
-                                <a class="services-item-link" href="#" target="_blank">Read more</a>
+                                <a class="services-item-link" href="#">Read more</a>
                             </div>
                         </div>
                     </div>

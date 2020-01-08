@@ -22,7 +22,7 @@
                                     and paulownia
                                     trees
                                     Sale of seedlings and paulownia trees...</p>
-                                <a class="services-item-link" href="#" target="_blank">Read more</a>
+                                <a class="services-item-link" href="{{route('public.service.index')}} " target="_blank">Read more</a>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-12 col-sm-12 services-2 mx-auto services-item-width mb-3">

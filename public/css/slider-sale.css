@@ -1,5 +1,4 @@
 .back-image{
-
     padding-top: 56px;
     position: relative;
     background:url("/images/background-actions.png") no-repeat;
@@ -7,7 +6,6 @@
     height: 255px;
 
 }
-
 .carousel-control-prev {
     left: -9px;
     width: 2%;
@@ -18,83 +16,61 @@
 }
 
 .cf{
-
     background: rgba(140, 189, 2, 0.83);
 }
 
 .image-fon{
-
     margin: -20% 2% 2% 35%;
     font-weight: bold;
-    font-size: 62px;
-    line-height: 26px;
+    font-size: 2.875rem;
+    line-height: 2rem;
     color: #FFFFFF;
     text-shadow: 5px 6px 4px rgba(0, 0, 0, 0.25);
 }
-
-
-
 .text-fon{
-
     padding: 5%;
-    font-size: 18px;
+    font-size: 1rem;
     color: black;
-
 }
-
 .png-for-prev{
-
     background: url("/images/prev-actions.png");
 }
 
 .cf:hover{
-
      background: white;
- }
-
-
+}
 a:hover{
     text-decoration: none;
 }
-
 .rounding{
     border-radius:25px ;
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
-
     .carousel-control-next {
         right: 2px;
         width: 1%;
     }
-
     .carousel-control-prev {
         left: 0;
         width: 1%;
     }
 
     .image-fon {
-        margin: -20% 0 0 35%;
-        font-size: 55px;
+        margin: -24% 0 0 35%;
     }
 
     .text-fon{
-
-        font-size: 16px;
         padding: 5% 10% 5% 10%;
         margin-bottom: 0;
     }
 
     .rounding{
-
         border-radius:15px ;
-
     }
     .back-image{
-
         height: 225px;
-
     }
 }
 
@@ -103,60 +79,34 @@ a:hover{
 @media screen and  (min-width: 426px) and (max-width: 768px) {
 
     .image-fon {
-
-        margin: -25% 0 0 36%;
-        font-size: 35px;
-
+        margin: -28% 0 0 36%;
     }
-
     .text-fon{
-
-        font-size: 12px;
         padding: 5% 10% 5% 10%;
         margin-bottom: 0;
-
     }
-
     .rounding{
-
         border-radius:10px ;
-
     }
     .back-image{
-
         height: 205px;
-
     }
-
 }
 
 @media screen  and (max-width: 425px) {
 
     .image-fon {
-
         margin: -25% 0 0 36%;
-        font-size: 16px;
-
     }
-
-
     .text-fon{
-
-        font-size: 10px;
         margin-bottom: 0;
-
     }
 
     .rounding{
-
         border-radius:10px ;
-
     }
     .back-image{
-
         height: 155px;
-
     }
-
 }
 

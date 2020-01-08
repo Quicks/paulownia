@@ -1,12 +1,12 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/slider-sale.css') }}?v3">
+    <link rel="stylesheet" href="{{asset('css/slider-sale.css') }}?v4">
     <link rel="stylesheet" href="{{asset('css/about-us.css')}}?v4">
 @endpush
 
 <div class="fon">
     {{--slider-sale--}}
     <div class="back-image">
-        <div class="container">
+        <div class="container" style="width:80%">
             <div class="row ml-3 mr-3">
                 <div class="col">
                     <div id="sale-carousel" class="carousel slide " data-ride="carousel">

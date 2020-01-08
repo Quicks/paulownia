@@ -1,7 +1,6 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/services.css') }}?v5">
+    <link rel="stylesheet" href="{{asset('css/services.css') }}?v7">
 @endpush
-
 
 <div class="our-services" style="position: relative">
     <div class="row mx-auto services-ident">

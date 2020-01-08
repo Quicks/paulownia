@@ -41,7 +41,7 @@
 
 </head>
 <body>
-<div id="app" class="container-fluid">
+<div id="app" class="container-fluid px-0">
     @if (session('flash_message'))
         <div class="custom-status">
             <span class="custom-icon"></span>

@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/services.css') }}?v6">
+    <link rel="stylesheet" href="{{asset('css/services.css') }}?v7">
 @endpush
 
 <div class="our-services" style="position: relative">

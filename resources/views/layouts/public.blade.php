@@ -41,6 +41,7 @@
 
 </head>
 <body>
+
 <div id="app" class="container-fluid p-0">
     @if (session('flash_message'))
         <div class="custom-status">

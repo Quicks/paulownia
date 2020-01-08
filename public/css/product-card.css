@@ -1,5 +1,4 @@
 .back-ground-img {
-    max-width: 307px !important;
     border-radius: 25px;
     background-color: white;
     padding: 0;
@@ -65,7 +64,13 @@
     color:#8CBD02 ;
     text-decoration:underline;
 }
+.product-name {
+    height: 78px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .text-card{
+    height: 108px;
     padding:0 4% 0 4%;
     margin: 5% 0 5% 0;
     font-style: normal;
@@ -75,7 +80,10 @@
     box-sizing: border-box;
     color: #000000;
     border-radius: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
 /* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
 
 @media screen and (max-width: 370px) and (min-width: 321px){

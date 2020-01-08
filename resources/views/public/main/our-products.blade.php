@@ -11,9 +11,9 @@
             <hr class="line-for-products">
         </div>
 
-        <div class="row m-3 justify-content-center">
+        <div class="row justify-content-center mx-1">
             @foreach($products as $product)
-                <div class="col-xl-3 col-md-6 col-sm-12 back-ground-img ml-3 mb-3 position-relative">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 position-relative">
                     @include('public.products.product-card', ['product' => $product])
                 </div>
             @endforeach

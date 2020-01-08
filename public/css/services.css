@@ -28,20 +28,20 @@
         right: 0 !important;
     }
     .services-item-title {
-        font-size: 16px !important;
+        /*font-size: 16px !important;*/
         margin-top: 135px !important;
         max-width: 170px !important;
     }
     .services-item-text {
-        font-size: 16px !important;
+        /*font-size: 16px !important;*/
         margin-top: 50px !important;
     }
     .services-item-text-width {
         max-width: 253px !important;
     }
-    .services-item-link {
-        font-size: 16px !important;
-    }
+    /*.services-item-link {*/
+        /*font-size: 16px !important;*/
+    /*}*/
     .img-leaf {
         width: 70% !important;
         height: 70% !important;
@@ -67,20 +67,20 @@
         right: -12px !important;
     }
     .services-item-title {
-        font-size: 16px !important;
+        /*font-size: 16px !important;*/
         margin-top: 140px !important;
         max-width: 155px !important;
     }
     .services-item-text {
-        font-size: 16px !important;
+        /*font-size: 16px !important;*/
         margin-top: 50px !important;
     }
     .services-item-text-width {
         max-width: 253px !important;
     }
-    .services-item-link {
-        font-size: 16px !important;
-    }
+    /*.services-item-link {*/
+        /*font-size: 16px !important;*/
+    /*}*/
 }
 
 .our-services {
@@ -98,9 +98,9 @@
 }
 .services-title {
     font-weight: bold;
-    font-size: 48px;
-    line-height: 56px;
-    letter-spacing: 0.3em;
+    font-size:3rem;
+    line-height:3.1rem;
+    letter-spacing: 0.3rem;
     color: #FFFFFF;
 }
 .services-line {
@@ -142,18 +142,18 @@
 }
 .services-item-title {
     font-weight: bold;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.2rem;
+    line-height: 1rem;
     text-align: center;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.02rem;
     color: #FFFFFF;
     margin-top: 230px;
 }
 .services-item-text {
     font-weight: normal;
-    font-size: 20px;
-    line-height: 30px;
-    letter-spacing: 0.02em;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.02rem;
     color: #000000;
     margin-top: 110px;
     margin-bottom: -5px;
@@ -163,9 +163,9 @@
 }
 .services-item-link {
     font-weight: normal;
-    font-size: 20px;
-    line-height: 30px;
-    letter-spacing: 0.02em;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.02rem;
     color: #8CBD02;
     text-decoration: underline;
 }

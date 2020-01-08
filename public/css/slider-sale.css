@@ -1,5 +1,4 @@
 .back-image{
-
     padding-top: 56px;
     position: relative;
     background:url("/images/background-actions.png") no-repeat;
@@ -26,8 +25,8 @@
 
     margin: -20% 2% 2% 35%;
     font-weight: bold;
-    font-size: 62px;
-    line-height: 26px;
+    font-size: 2.875rem;
+    line-height: 2rem;
     color: #FFFFFF;
     text-shadow: 5px 6px 4px rgba(0, 0, 0, 0.25);
 }
@@ -37,7 +36,7 @@
 .text-fon{
 
     padding: 5%;
-    font-size: 18px;
+    font-size: 1rem;
     color: black;
 
 }
@@ -76,12 +75,12 @@ a:hover{
 
     .image-fon {
         margin: -20% 0 0 35%;
-        font-size: 55px;
+        /*font-size: 55px;*/
     }
 
     .text-fon{
 
-        font-size: 16px;
+        /*font-size: 16px;*/
         padding: 5% 10% 5% 10%;
         margin-bottom: 0;
     }
@@ -105,13 +104,13 @@ a:hover{
     .image-fon {
 
         margin: -25% 0 0 36%;
-        font-size: 35px;
+        /*font-size: 35px;*/
 
     }
 
     .text-fon{
 
-        font-size: 12px;
+        /*font-size: 12px;*/
         padding: 5% 10% 5% 10%;
         margin-bottom: 0;
 
@@ -135,14 +134,14 @@ a:hover{
     .image-fon {
 
         margin: -25% 0 0 36%;
-        font-size: 16px;
+        /*font-size: 16px;*/
 
     }
 
 
     .text-fon{
 
-        font-size: 10px;
+        /*font-size: 10px;*/
         margin-bottom: 0;
 
     }

@@ -50,17 +50,12 @@
     }
 }
 
-@media screen and (min-width: 376px) and (max-width: 425px){
+@media screen  and (max-width: 425px){
     html { 
-        font-size: 8px;
+        font-size: 10px;
     }
 }
 
-@media screen and (max-width: 375px){
-    html { 
-        font-size: 6px;
-    }
-}
 .main-background {
     background: white;
     min-height: calc(100vh - 448px);

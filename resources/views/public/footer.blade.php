@@ -55,7 +55,7 @@
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">
             <div>
-                <img class="mb-4 footer-booklet" src="{{asset('images/booklet_en.jpg')}}"s tyle="width:20%">
+                <img class="mb-4 footer-booklet" src="{{asset('images/booklet_en.jpg')}}">
             </div>
             <div>
                 <a href="#"><img class="f-booklet-download lazyload" data-src="{{asset('images/download-booklet.svg')}}" ></a>

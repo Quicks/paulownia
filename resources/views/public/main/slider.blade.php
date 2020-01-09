@@ -10,9 +10,9 @@
     <div class="style-for-main-slider">
             <div class="row app">
                 <div class="col">
-                    <a href="#" class="slider-png1"></a>
-                    <a href="#" class="slider-png2"></a>
-                    <a href="#" class="slider-png3"></a>
+                    <a href="#" class="slider-png1" ></a>
+                    <a href="#" class="slider-png2" ></a>
+                    <a href="#" class="slider-png3" ></a>
                 </div>
             </div>
  <div class="vertical-carousel">
@@ -97,7 +97,7 @@
                 vertical: true,
                 verticalSwiping: true,
                 slidesToShow: 3,
-                autoplay: true,
+                autoplay: false,
                 speed:500,
             });
         });

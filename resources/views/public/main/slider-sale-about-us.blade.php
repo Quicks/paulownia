@@ -6,7 +6,7 @@
 <div class="fon">
     {{--slider-sale--}}
     <div class="back-image">
-        <div class="container" style="width:80%">
+        <div class="container">
             <div class="row ml-3 mr-3">
                 <div class="col">
                     <div id="sale-carousel" class="carousel slide " data-ride="carousel">

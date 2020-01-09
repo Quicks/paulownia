@@ -1,8 +1,8 @@
 <div class="header pb-1">
     <div class="row">
         <div class="col-xl-2 col-md-6 d-flex align-items-end mt-md-3 mt-sm-3 mx-md-auto logo-width">
-            <a href="{{route('main')}}">
-                <img src="{{asset('images/logo.png')}}">
+            <a href="{{route('main')}}" >
+                <img data-src="{{asset('images/logo.png')}}" class="lazyload" style="width:135%">
             </a>
         </div>
         <div class="col-xl-10 col-md-6 mt-md-3 mt-sm-3">

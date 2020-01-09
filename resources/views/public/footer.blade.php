@@ -58,7 +58,7 @@
                 <img class="mb-4 footer-booklet" src="{{asset('images/booklet_en.jpg')}}">
             </div>
             <div>
-                <a href="#"><img class="f-booklet-download" src="{{asset('images/download-booklet.svg')}}"></a>
+                <a href="#"><img class="f-booklet-download lazyload" data-src="{{asset('images/download-booklet.svg')}}" ></a>
             </div>
         </div>
     </div>

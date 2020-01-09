@@ -35,6 +35,20 @@
     }
 }
 
+@media screen and (min-width:1001px) and (max-width: 1200px){
+    .services-item-title {
+        margin-top: 13.5rem !important;
+    }
+    .services-item-text-2{
+        margin-top: 8rem !important;
+    }
+    .services-item-text-1{
+        margin-top: 9rem !important;
+    }
+}
+
+
+
 @media only screen  and (min-width: 1200px) and (max-width: 1439px) {
     .services-1, .services-2, .services-3, .services-4 {
         background-position: 50% 30%, top, bottom !important;

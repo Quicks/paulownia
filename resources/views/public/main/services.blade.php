@@ -58,14 +58,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item ">
+                <div class="carousel-item">
                     <div class="row">
                         <div class="col-xl-3 col-md-12 col-sm-12 services-1 mx-auto services-item-width mb-3">
                             <div class="mx-auto" style="max-width: 190px">
                                 <p class="services-item-title">Sale of seedlings and paulownia trees</p>
                             </div>
                             <div class="mx-auto services-item-text-width">
-                                <p class="services-item-text-1-2">Sale of seedlings and paulownia trees, Sale of seedlings
+                                <p class="services-item-text-1">Sale of seedlings and paulownia trees, Sale of seedlings
                                     and paulownia
                                     trees
                                     Sale of seedlings and paulownia trees...</p>
@@ -77,7 +77,7 @@
                                 <p class="services-item-title">Analysis and personal design future plantations</p>
                             </div>
                             <div class="mx-auto services-item-text-width">
-                                <p class="services-item-text-1-2">Analysis and personal design of future plantations
+                                <p class="services-item-text-2">Analysis and personal design of future plantations
                                     Analysis and personal design of future plantations...</p>
                                 <a class="services-item-link" href="#">Read more</a>
                             </div>
@@ -87,7 +87,7 @@
                                 <p class="services-item-title">ROI calculation</p>
                             </div>
                             <div class="mx-auto services-item-text-width pt-3">
-                                <p class="services-item-text-3-4">Calculation of return on investment Calculation of return
+                                <p class="services-item-text-3">Calculation of return on investment Calculation of return
                                     on
                                     investment Calculation of return on...</p>
                                 <a class="services-item-link" href="{{route('public.calculations.index')}}">Read more</a>
@@ -98,7 +98,7 @@
                                 <p class="services-item-title">Consultation during the cultivation</p>
                             </div>
                             <div class="mx-auto services-item-text-width pt-2">
-                                <p class="services-item-text-3-4">Consultation during the cultivation Consultation during
+                                <p class="services-item-text-4">Consultation during the cultivation Consultation during
                                     the
                                     cultivation Consultation during the...</p>
                                 <a class="services-item-link" href="#">Read more</a>

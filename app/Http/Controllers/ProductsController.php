@@ -16,7 +16,7 @@ class ProductsController extends Controller
     {
         $request->request->add(['limit' => '1000']); //product pagination limit is set to 1000 products a page
         $ticker = Content::where('name', 'products_ticker')->first();
-        $categories = Category::where('status', 1)->get();
+        $categories = Category::where('status', 1)->orderBy('position', 'asc')->get();
         $types = Attribute::where('code', 'type_of_paulownia')->first()->options()->get();
         $category_id = null;
         if (!$request->has('category') && !$request->has('type')) {

@@ -39,11 +39,11 @@
     font-style: normal;
     font-weight: bold;
     font-size: 1.3rem;
-    line-height:1.2rem;
+    line-height: 2.5rem;
     color: #FFFFFF;
-    margin: 0 0 0 75.5%;
     padding: 2% 6% 2% 6%;
     outline: none;
+    cursor: pointer;
 }
 .product-button:hover{
 
@@ -78,7 +78,6 @@
 @media screen and (max-width: 425px) {
 
     .product-button {
-        margin: 0 0 0 35%;
         padding: 5% 8% 5% 8%;
     }
 }

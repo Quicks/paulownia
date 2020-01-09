@@ -1,10 +1,10 @@
 .fon{
     background:url("/images/about-us-fon.jpg") no-repeat;
     background-size: 100% 100%;
-    padding: 2% 0 15% 0;
+    padding: 0.5% 0 15% 0;
 }
 .back-max-width{
-    max-width:80%;
+    max-width:83%;
 }
 .about-read-m,.about-read-m:hover{
     font-size:0.885rem;
@@ -12,8 +12,8 @@
     text-decoration:underline;
 }
 .about-title{
-     font-size: 3rem;
-     line-height: 3rem;
+     font-size: 2.5rem;
+     line-height: 2rem;
      color: #8CBD02 ;
  }
 .line-about-under{

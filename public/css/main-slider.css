@@ -26,6 +26,7 @@
     top: 206px;
     background-image: url("/images/tw 1.png")  ;
     z-index: 1;
+    cursor: pointer;
 }
 .slider-png2{
     position: absolute;
@@ -35,6 +36,8 @@
     top: 261px;
     background-image: url("/images/youtb 1.png");
     z-index: 1;
+    cursor: pointer;
+
 }
 .slider-png3{
     position: absolute;
@@ -44,6 +47,7 @@
     top: 316px;
     background-image: url("/images/fb 1.png");
     z-index: 1;
+    cursor: pointer;
 }
 .carousel-name-Paulownia{
     height: auto;

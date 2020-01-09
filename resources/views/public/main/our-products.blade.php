@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/our-products.css') }}?v5">
+    <link rel="stylesheet" href="{{asset('css/our-products.css') }}?v6">
 @endpush
 
 <div class="main-content">
@@ -19,9 +19,13 @@
             @endforeach
         </div>
 
-    <a href="{{route('public.products.index')}}">
-        <button class="product-button"> All goods </button>
-    </a>
+        <div class="row justify-content-end mx-1">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="{{route('public.products.index')}}">
+                    <button class="product-button w-100"> All goods </button>
+                </a>
+            </div>
+        </div>
 
     <div> <img src="/images/our-products-line-down.png" class="line-style-down"> </div>
 

@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v13">
+    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v14">
 @endpush
 
 <div class="">

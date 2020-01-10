@@ -103,4 +103,22 @@
     }
 }
 
+.about-left.start {
+    animation-name: aboutleft;
+    animation-duration: 2s;
+}
 
+@keyframes aboutleft {
+    0% {transform: translateX(-33%);}
+    100% {transform: translateX(0);}
+}
+
+.about-right.start {
+    animation-name: aboutright;
+    animation-duration: 2s;
+}
+
+@keyframes aboutright {
+    0% {transform: translateX(33%);}
+    100% {transform: translateX(0);}
+}

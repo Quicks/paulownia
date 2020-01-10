@@ -23,13 +23,17 @@ $(document).ready(function () {
     }
 
     function checkAnimation() {
-        var $elem = $('.animated');
-        if (isElementInViewport($elem)) {
-            $elem.addClass('start');
-        } else {
-            $elem.removeClass('start');
-        }
+        var elem = $('.animated');
+        elem.each(function(idx) {
+            if (isElementInViewport(elem[idx])) {
+                $(elem[idx]).addClass('start');
+            } else {
+                $(elem[idx]).removeClass('start');
+            }
+        })
     }
+
+    checkAnimation();
 
     $(window).scroll(function(){
         checkAnimation();

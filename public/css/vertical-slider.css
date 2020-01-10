@@ -1,202 +1,73 @@
 .slider {
-    width: 25%;
-    margin-left: 75%;
-    top: 14px;
+    /*width: 25%;*/
+    /*margin-left: 65%;*/
+    /*top: 14px;*/
+    /*margin: 4% 5% 4% 35%;*/
 }
 .slice-list {
     display: none;
 }
 .slick-prev:before,
 .slick-next:before {
-
     color: white;
 }
 .vertical-carousel {
-
-    position: absolute;
+    position:absolute;
     z-index: 1;
 }
 .news-shadow {
+    max-width: 55%;
+    margin: 1.5% 0 1.5% 0 ;
     display: none;
     border-radius: 5px;
-    background: #d6d5d5;
-    box-shadow: 4px 4px rgba(230, 230, 230, 0.5), 8px 8px rgba(242, 242, 242, 0.3);
-    box-sizing: border-box;
+    background: transparent;
+    box-shadow: 4px 4px rgba(230, 230, 230, 0.4), 8px 8px rgba(242, 242, 242, 0.05);
 }
 
 .img-rad {
-    width: 100%;
+    max-width: 100%;
     border-radius: 5px 5px 0 0;
 }
 
-.title-text-news {
-    padding: 5px;
+ .news-box {
+     padding: 0.4em;
+     background-color: white;
+     box-sizing: border-box;
+     border-radius: 0 0 5px 5px;
+ }
+ .title-text-news{
     background-color: white;
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 0.02em;
     color: #8CBD02;
-    border-radius: 0 0 5px 5px;
-    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 0.02rem;
 }
 
 .text-news {
-    font-size: 12px;
+    font-size: 0.85rem;
     color: #000;
     font-weight: normal;
 }
 .news-read-more, .news-read-more:hover {
+    font-size: 0.85rem;
+    letter-spacing: 0.02rem;
     color: #8CBD02;
     text-decoration: underline;
 }
 
-@media screen and (min-width: 1301px) {
-    .slider {
-        margin-top:-0.5%;
-        margin-bottom:-0.5%;
-    }
-    .slick-slide {
-        margin-top: 6px;
-        margin-bottom:6px;
-    }
-    .news-shadow {
-        width: 60% !important;
-    }
 
-    .img-rad {
-        border-radius: 5px 5px 0 0;
-    }
-}
-
-@media screen and (min-width: 1200px) and (max-width:1300px) {
-
-    .slider {
-        width: 20%;
-    }
-    .slick-slide {
-        margin: 3px;
-    }
-    .title-text-news {
-        padding: 3px;
-        font-size: 12px;
-        box-sizing: border-box;
-    }
-
-    .text-news {
-        font-size: 10px;
-    }
-
-    .news-shadow {
-        border-radius: 5px;
-        box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);
-    }
-
-    .img-rad {
-        border-radius: 5px 5px 0 0;
-    }
-
-}
-
-
-@media screen and (min-width: 1024px) and (max-width: 1199px) {
-
-    .slider {
-        width: 20%;
-        margin-left: 105%;
-    }
-
-    .slick-slide {
-        margin: 3px;
-    }
+@media screen and  (min-width:1601px) {
 
     .vertical-carousel {
-        width: 75%;
+      margin: 7% 0 0 28%;
     }
-
-    .title-text-news {
-        padding: 3px;
-        font-size: 12px;
-        box-sizing: border-box;
-    }
-
-    .text-news {
-        font-size: 10px;
-    }
-
-    .news-shadow {
-        border-radius: 5px;
-        box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);
-    }
-
-    .img-rad {
-        border-radius: 5px 5px 0 0;
-    }
-
 }
 
-/* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
-@media screen and (min-width: 769px) and (max-width: 1023px) {
+@media screen and  (min-width:1200px) and  (max-width:1400px) {
 
-    .slider {
-        width: 16%;
+    .vertical-carousel {
+        margin-top: 9%;
     }
-
-    .slick-slide {
-        margin: 3px;
-    }
-
-    .title-text-news {
-
-        padding: 2px;
-        font-size: 8px;
-    }
-
-    .text-news {
-        font-size: 6px;
-    }
-
-    .news-shadow {
-        border-radius: 2px;
-        box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);
-    }
-
-    .img-rad {
-        border-radius: 2px 2px 0 0;
-    }
-
-}
-
-/* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
-@media screen and  (min-width: 700px) and  (max-width: 768px) {
-
-    .slider {
-        width: 16%;
-        margin-top:-0.5%;
-    }
-
-    .slick-slide {
-        margin: 3px;
-    }
-
-    .title-text-news {
-
-        padding: 2px;
-        font-size: 8px;
-    }
-
-    .text-news {
-        font-size: 6px;
-    }
-
-    .news-shadow {
-        border-radius: 2px;
-        box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);
-    }
-
-    .img-rad {
-        border-radius: 2px 2px 0 0;
-    }
-
 }
 
 @media screen and  (max-width: 699px) {
@@ -205,4 +76,126 @@
         display: none;
     }
 }
+
+
+/*@media screen and (min-width: 1301px) {*/
+    /*.slider {*/
+        /*margin-top:-0.5%;*/
+        /*margin-bottom:-0.5%;*/
+    /*}*/
+    /*.slick-slide {*/
+        /*margin-top: 6px;*/
+        /*margin-bottom:6px;*/
+    /*}*/
+    /*.news-shadow {*/
+        /*width: 60% !important;*/
+    /*}*/
+
+    /*.img-rad {*/
+        /*border-radius: 5px 5px 0 0;*/
+    /*}*/
+/*}*/
+
+/*@media screen and (min-width: 1200px) and (max-width:1300px) {*/
+
+    /*.slider {*/
+        /*width: 20%;*/
+    /*}*/
+    /*.slick-slide {*/
+        /*margin: 3px;*/
+    /*}*/
+    /*.title-text-news {*/
+        /*padding: 3px;*/
+    /*}*/
+    /*.news-shadow {*/
+        /*border-radius: 5px;*/
+        /*box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);*/
+    /*}*/
+    /*.img-rad {*/
+        /*border-radius: 5px 5px 0 0;*/
+    /*}*/
+
+/*}*/
+
+
+/*@media screen and (min-width: 1024px) and (max-width: 1199px) {*/
+
+    /*.slider {*/
+        /*width: 20%;*/
+        /*margin-left: 105%;*/
+    /*}*/
+
+    /*.slick-slide {*/
+        /*margin: 3px;*/
+    /*}*/
+
+    /*.vertical-carousel {*/
+        /*width: 75%;*/
+    /*}*/
+
+    /*.title-text-news {*/
+        /*padding: 3px;*/
+        /*box-sizing: border-box;*/
+    /*}*/
+
+    /*.news-shadow {*/
+        /*border-radius: 5px;*/
+        /*box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);*/
+    /*}*/
+
+    /*.img-rad {*/
+        /*border-radius: 5px 5px 0 0;*/
+    /*}*/
+
+/*}*/
+
+/*!* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) *!*/
+/*@media screen and (min-width: 769px) and (max-width: 1023px) {*/
+
+    /*.slider {*/
+        /*width: 16%;*/
+    /*}*/
+    /*.slick-slide {*/
+        /*margin: 3px;*/
+    /*}*/
+    /*.title-text-news {*/
+        /*padding: 2px;*/
+    /*}*/
+    /*.news-shadow {*/
+        /*border-radius: 2px;*/
+        /*box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);*/
+    /*}*/
+    /*.img-rad {*/
+        /*border-radius: 2px 2px 0 0;*/
+    /*}*/
+
+/*}*/
+
+/*!* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) *!*/
+/*@media screen and  (min-width: 700px) and  (max-width: 768px) {*/
+
+    /*.slider {*/
+        /*width: 16%;*/
+        /*margin-top:-0.5%;*/
+    /*}*/
+
+    /*.slick-slide {*/
+        /*margin: 3px;*/
+    /*}*/
+
+    /*.title-text-news {*/
+        /*padding: 2px;*/
+    /*}*/
+
+    /*.news-shadow {*/
+        /*border-radius: 2px;*/
+        /*box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);*/
+    /*}*/
+
+    /*.img-rad {*/
+        /*border-radius: 2px 2px 0 0;*/
+    /*}*/
+
+/*}*/
+
 

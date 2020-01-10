@@ -1,9 +1,4 @@
-.slider {
-    /*width: 25%;*/
-    /*margin-left: 65%;*/
-    /*top: 14px;*/
-    /*margin: 4% 5% 4% 35%;*/
-}
+
 .slice-list {
     display: none;
 }
@@ -55,147 +50,69 @@
     text-decoration: underline;
 }
 
-
-@media screen and  (min-width:1601px) {
+@media screen and  (min-width:1651px){
 
     .vertical-carousel {
-      margin: 7% 0 0 28%;
+        margin-top: 12%;
+    }
+    .news-shadow {
+        max-width: 68%;
+    }
+    .img-rad {
+        width:100%;
     }
 }
 
-@media screen and  (min-width:1200px) and  (max-width:1400px) {
+
+@media screen and  (min-width:1601px) and (max-width: 1650px){
+
+    .vertical-carousel {
+      margin-top: 12%;
+    }
+}
+
+@media screen and  (min-width:1440px) and  (max-width:1600px)  {
+
+    .vertical-carousel {
+        margin-top: 15%;
+    }
+}
+
+@media screen and  (min-width:1180px) and  (max-width:1439px) {
 
     .vertical-carousel {
         margin-top: 9%;
     }
 }
 
-@media screen and  (max-width: 699px) {
+@media screen and  (min-width:1025px) and  (max-width:1179px) {
+
+    .vertical-carousel {
+        margin-top: 5%;
+    }
+}
+
+@media screen and  (min-width:768px) and  (max-width:1134px) {
+
+    .news-box {
+    padding: 0.1em;
+    }
+}
+
+
+@media screen and  (min-width:876px) and  (max-width:1024px) {
+
+    .vertical-carousel {
+    margin-top: 6%;
+    }
+}
+
+@media screen and  (max-width: 875px) {
 
     .vertical-carousel {
         display: none;
     }
 }
 
-
-/*@media screen and (min-width: 1301px) {*/
-    /*.slider {*/
-        /*margin-top:-0.5%;*/
-        /*margin-bottom:-0.5%;*/
-    /*}*/
-    /*.slick-slide {*/
-        /*margin-top: 6px;*/
-        /*margin-bottom:6px;*/
-    /*}*/
-    /*.news-shadow {*/
-        /*width: 60% !important;*/
-    /*}*/
-
-    /*.img-rad {*/
-        /*border-radius: 5px 5px 0 0;*/
-    /*}*/
-/*}*/
-
-/*@media screen and (min-width: 1200px) and (max-width:1300px) {*/
-
-    /*.slider {*/
-        /*width: 20%;*/
-    /*}*/
-    /*.slick-slide {*/
-        /*margin: 3px;*/
-    /*}*/
-    /*.title-text-news {*/
-        /*padding: 3px;*/
-    /*}*/
-    /*.news-shadow {*/
-        /*border-radius: 5px;*/
-        /*box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);*/
-    /*}*/
-    /*.img-rad {*/
-        /*border-radius: 5px 5px 0 0;*/
-    /*}*/
-
-/*}*/
-
-
-/*@media screen and (min-width: 1024px) and (max-width: 1199px) {*/
-
-    /*.slider {*/
-        /*width: 20%;*/
-        /*margin-left: 105%;*/
-    /*}*/
-
-    /*.slick-slide {*/
-        /*margin: 3px;*/
-    /*}*/
-
-    /*.vertical-carousel {*/
-        /*width: 75%;*/
-    /*}*/
-
-    /*.title-text-news {*/
-        /*padding: 3px;*/
-        /*box-sizing: border-box;*/
-    /*}*/
-
-    /*.news-shadow {*/
-        /*border-radius: 5px;*/
-        /*box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);*/
-    /*}*/
-
-    /*.img-rad {*/
-        /*border-radius: 5px 5px 0 0;*/
-    /*}*/
-
-/*}*/
-
-/*!* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) *!*/
-/*@media screen and (min-width: 769px) and (max-width: 1023px) {*/
-
-    /*.slider {*/
-        /*width: 16%;*/
-    /*}*/
-    /*.slick-slide {*/
-        /*margin: 3px;*/
-    /*}*/
-    /*.title-text-news {*/
-        /*padding: 2px;*/
-    /*}*/
-    /*.news-shadow {*/
-        /*border-radius: 2px;*/
-        /*box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);*/
-    /*}*/
-    /*.img-rad {*/
-        /*border-radius: 2px 2px 0 0;*/
-    /*}*/
-
-/*}*/
-
-/*!* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) *!*/
-/*@media screen and  (min-width: 700px) and  (max-width: 768px) {*/
-
-    /*.slider {*/
-        /*width: 16%;*/
-        /*margin-top:-0.5%;*/
-    /*}*/
-
-    /*.slick-slide {*/
-        /*margin: 3px;*/
-    /*}*/
-
-    /*.title-text-news {*/
-        /*padding: 2px;*/
-    /*}*/
-
-    /*.news-shadow {*/
-        /*border-radius: 2px;*/
-        /*box-shadow: 2px 2px rgba(230, 230, 230, 0.5), 4px 4px rgba(242, 242, 242, 0.3);*/
-    /*}*/
-
-    /*.img-rad {*/
-        /*border-radius: 2px 2px 0 0;*/
-    /*}*/
-
-/*}*/
 
 

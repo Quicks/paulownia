@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/our-products.css') }}?v6">
+    <link rel="stylesheet" href="{{asset('css/our-products.css') }}?v7">
 @endpush
 
 <div class="main-content">
@@ -11,7 +11,7 @@
             <hr class="line-for-products">
         </div>
 
-        <div class="row justify-content-center mx-1">
+        <div class="row justify-content-center mx-1 products-animation animated">
             @foreach($products as $product)
                 <div class="col-md-3 col-sm-6 col-xs-12 position-relative one-product">
                     @include('public.products.product-card', ['product' => $product])

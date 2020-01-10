@@ -9,7 +9,7 @@
             <p class="grades-title">Paulownia grades produced by us </p>
             <hr class="grades-line">
         </div>
-        <div class="col-xl-6 col-sm-12 mx-auto grades-item mr-5 pb-3 mb-sm-4">
+        <div class="col-xl-6 col-sm-12 mx-auto grades-item mr-5 pb-3 mb-sm-4 about-left animated">
             <div class="row">
                 <div class="col-xl-8 col-sm-12 grades-imgs">
                     <img class="grades-img-size lazyload" data-src="{{asset('/images/turbo-booklet.jpg')}}">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-sm-12 mx-auto grades-item pb-3 mb-sm-4">
+        <div class="col-xl-6 col-sm-12 mx-auto grades-item pb-3 mb-sm-4 about-right animated">
             <div class="row">
                 <div class="col-xl-8 col-sm-12 grades-imgs">
                     <img class="grades-img-size lazyload" data-src="{{asset('/images/ze-booklet.jpg')}}">

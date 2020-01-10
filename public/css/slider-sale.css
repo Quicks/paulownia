@@ -110,3 +110,18 @@ a:hover{
     }
 }
 
+.sl-sale-anim.start {
+    animation-name: slsale;
+    animation-duration: 2s;
+}
+
+@keyframes slsale {
+    0% {
+        transform: translateY(50%);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -20,13 +20,13 @@
     }
     .grades-stamp {
         margin-left: 120px !important;
-        margin-top: -60px !important;
+        margin-top: 80px !important;
     }
     .grades-imgs {
         height: 458px !important;
     }
     .grades-img-size:hover {
-        width: 575px !important;
+        width: 374px !important;
         height: 524px !important;
     }
 }
@@ -96,7 +96,7 @@
 .grades-stamp {
     position: absolute;
     margin-left: 160px;
-    margin-top: 10px
+    margin-top: 140px
 }
 .grades-img-size {
     border-radius: 25px;
@@ -107,7 +107,7 @@
     transition-property: width, height;
     transition-duration: 2s;
     transition-delay: 0.2s;
-    width: 700px;
+    width: 574px;
     height: 724px;
     position: relative;
     z-index:2;

@@ -1,42 +1,131 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    .img-main-wrap {
+        display: none !important;
+    }
+    .downArrow {
+        left: 40px !important;
+        bottom: -40px !important;
+    }
+    .upArrow {
+        left: 40px !important;
+    }
+    .imgs-nav {
+        border-radius: 10px !important;
+        width: 90px !important;
+        height: 90px !important;
+    }
+    .quantity-arrow-minus {
+        left: 50px !important;
+        top: 30px !important;
+    }
+
+    .quantity-arrow-plus {
+        left: 50px !important;
+        top: 20px !important;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .img-main {
+        width: 210px !important;
+        height: 210px !important;
+    }
+    .quantity-arrow-minus {
+        top: 3px !important;
+    }
+
+    .quantity-arrow-plus {
+        top: -5px !important;
+    }
+    .slider-for {
+        margin-left: -20px !important;
+    }
+    .downArrow {
+        left: 15px !important;
+        bottom: -20px !important;
+    }
+    .upArrow {
+        left: 15px !important;
+        top: -25px !important;
+    }
+    .imgs-nav {
+        border-radius: 10px !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1221px) {
+    .img-main {
+        width: 310px !important;
+        height: 310px !important;
+    }
+    .slider-for {
+        margin-left: -20px !important;
+    }
+    .downArrow {
+        bottom: -20px !important;
+    }
+    .upArrow {
+        top: -25px !important;
+    }
+}
+@media only screen and (min-device-width: 1600px){
+    .quantity-arrow-minus {
+        left: 122px !important;
+        top: 17px !important;
+    }
+
+    .quantity-arrow-plus {
+        left: 122px !important;
+        top: 7px !important;
+    }
+}
+
 .show-page-back {
     background: url("/images/pages-wave.png") no-repeat, url("/images/pages-background.jpg") no-repeat;
+    color: #0F0E0E;
 }
-.title-for-cards-show-product{
+
+.title-for-cards-show-product {
     font-weight: bold;
-    font-size: 48px;
-    line-height: 15px;
+    font-size: 3.4rem;
+    line-height: 1rem;
+    color: #8CBD02;
+    margin-top: 100px !important;
+}
+
+.style-for-list-show {
+    list-style-type: none;
+}
+
+.text-title-for-show {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1rem;
     color: #8CBD02;
 }
 
-.style-for-list-show{
-    list-style-type: none;
-}
-.text-title-for-show{
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 15px;
-    color: #8CBD02;
-}
-.text-under-prise-show{
+.text-under-prise-show {
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 1rem;
+    line-height: 1.2rem;
     color: rgba(0, 0, 0, 0.5);
 }
 
-.text-red-show{
+.text-red-show {
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
     color: #F21E1E;
 }
 
-.show-read-m,.show-read-m:hover{
-    color:#8CBD02 ;
-    text-decoration:underline;
+.show-read-m, .show-read-m:hover {
+    color: #8CBD02;
+    text-decoration: underline;
     cursor: pointer;
 }
 
@@ -44,24 +133,152 @@
     margin-left: -40px;
 }
 
-.product-button{
-
+.product-button {
     background: linear-gradient(203.84deg, #8CBD02 8.62%, #84B811 27.22%, #68A648 71.7%);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 60px;
     border: 0;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 1.3rem;
     color: #FFFFFF;
-    padding: 2% 8.8% 2% 8.8%;
+    padding: 1% 6%;
     outline: none;
+    cursor: pointer;
 }
-.product-button:hover{
+
+.product-button:hover {
 
     background: linear-gradient(203.84deg, #8CBD02 8.62%, #84B811 27.22%, #68A648 71.7%);
     box-shadow: -2px -2px 20px #8CBD02, 2px 2px 10px rgba(0, 0, 0, 0.25);
     border-radius: 60px;
     outline: none;
+}
+
+.custom-tab {
+    border: none;
+    background: transparent;
+    color: #0F0E0E;
+    font-size: 1.2rem;
+}
+
+.custom-tab:hover {
+    border: none;
+    background: transparent;
+    color: #0F0E0E;
+}
+
+.custom-tab:focus {
+    border: none;
+    background: transparent;
+    color: #0F0E0E;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    border: none;
+    background: transparent;
+    color: #8CBD02;
+    font-weight: bold;
+    border-bottom: 3px solid #8CBD02;
+}
+
+.amount {
+    color: #0F0E0E;
+    font-size: 1.2rem;
+}
+
+.total {
+    color: #8CBD02;
+    font-weight: bold;
+}
+
+.amount-qty {
+    border: 1px solid #000000;
+    border-radius: 30px;
+    width: 48px;
+    padding-left: 17px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.quantity-arrow {
+    border: none;
+    background: transparent;
+}
+
+.quantity-arrow:active, .quantity-arrow:focus {
+    outline: none;
+}
+
+.quantity-arrow::-moz-focus-inner {
+    border: 0;
+}
+
+.img-rev {
+    -moz-transform: rotate(180deg); /* Для Firefox */
+    -ms-transform: rotate(180deg); /* Для IE */
+    -webkit-transform: rotate(180deg); /* Для Safari, Chrome, iOS */
+    -o-transform: rotate(180deg); /* Для Opera */
+    transform: rotate(180deg);
+}
+
+.quantity-arrow-minus {
+    position: absolute;
+    left: 115px;
+    top: 14px;
+    cursor: pointer;
+}
+
+.quantity-arrow-plus {
+    position: absolute;
+    left: 115px;
+    top: 4px;
+    cursor: pointer;
+}
+
+.total-sum {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8CBD02;
+}
+
+/*slider*/
+.upArrow {
+    position: absolute;
+    left: 30px;
+    top: -45px;
+    color: #8CBD02;
+}
+
+.downArrow {
+    position: absolute;
+    left: 30px;
+    bottom: -10px;
+    color: #8CBD02;
+}
+
+.imgs-nav {
+    border-radius: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.img-main {
+    border-radius: 25px;
+    width: 430px;
+    height: 430px;
+}
+
+.slider-for {
+    margin-left: -70px
 }

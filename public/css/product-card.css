@@ -1,7 +1,8 @@
 .back-ground-img {
     border-radius: 25px;
     background-color: white;
-    padding: 0;
+    padding: 0 0 2% 0;
+    margin-bottom: 5%;
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
 }
 .back-ground-img:hover{
@@ -55,7 +56,7 @@
 .title-for-card, .price-for-card {
     font-weight: bold;
     font-size: 1rem;
-    line-height: 1.25rem;
+    line-height: 1.3rem;
     color: #8CBD02;
 
 }
@@ -70,9 +71,9 @@
     text-overflow: ellipsis;
 }
 .text-card{
-    height: 4.9rem;
-    padding:0 4% 0 4%;
-    margin: 5% 0 5% 0;
+    height: 4.7rem;
+    padding:0 5% 0 5%;
+    margin-top: 5%;
     font-style: normal;
     font-weight: normal;
     font-size: 1.1rem;

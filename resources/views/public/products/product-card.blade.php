@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v15">
+    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v16">
 @endpush
 
 <div class="">
@@ -22,7 +22,7 @@
 
             <a href="{{route('public.products.show', $product->url_key)}}" class="col-8 title-for-card">{{$product-> name}}</a>
 
-            <div class="col-4 text-center">
+            <div class="col-4 text-center p-0">
                 <form  action="{{ route('cart.add', $product->product_id) }}" method="POST" class="d-inline">
                     @csrf
                     <input type="hidden" name="product" value="{{ $product->product_id }}">
@@ -39,7 +39,7 @@
             </div>
         </div>
         @if($product->special_price != 0)
-            <div class="price-for-card col-12">{{number_format($product->special_price, 2)}} {{ core()->currencySymbol(core()->getBaseCurrencyCode()) }}</div>
+            <div class="price-for-card col-12 mt-1">{{number_format($product->special_price, 2)}} {{ core()->currencySymbol(core()->getBaseCurrencyCode()) }}</div>
         @else
             <div class="price-for-card col-12">{{number_format($product->price, 2)}} {{ core()->currencySymbol(core()->getBaseCurrencyCode()) }}</div>
         @endif

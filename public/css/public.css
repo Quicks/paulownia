@@ -32,8 +32,9 @@
     font-size: 14px;
 }
 
-.container-fluid {
-   overflow-x: hidden;
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 @media screen and (min-width: 1601px) {

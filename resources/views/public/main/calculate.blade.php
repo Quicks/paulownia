@@ -31,7 +31,7 @@
     </div>
     <div class="col-xl-3">
         <button class="button-calc" data-toggle="modal"  data-target="#calcAnswer">
-            <img class="lazyload" data-src="{{asset('/images/calculate.png')}}">
+            <img class="lazyload w-100" data-src="{{asset('/images/calculate.png')}}">
         </button>
     </div>
 </div>

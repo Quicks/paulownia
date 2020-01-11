@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('content')
    @push('css')
-      <link rel="stylesheet" href="{{asset('css/about-us-header.css') }}?v2">
+      <link rel="stylesheet" href="{{asset('css/about-us-header.css') }}?v3">
    @endpush
 
     <div class="row fon-for-about-us-header m-0">
@@ -49,7 +49,7 @@
 
                 <div><img data-src="{{asset('/images/line-about-us-header-up.png')}}" class="lazyload line-style-up-about-h "></div>
 
-                <div class="col-12 mt-5 pt-4 text-center title-our-service ">@lang('about-us-header.title-1')</div>
+                <div class="col-12 mt-5 pt-4 text-center title-our-service">@lang('about-us-header.title-1')</div>
 
                 <div id="carouselExampleControls" class="carousel slide pt-5 pb-5" data-ride="carousel">
                     <div class="carousel-inner text-center ">
@@ -77,7 +77,7 @@
                 </div>
 
                 <div class="botton-heigth-1">
-                    <a href="#" >
+                    <a href="{{route('public.certificates-technical-doc.index')}}" >
                         <button class="button-about-r-slider">@lang('about-us-header.button-1')</button>
                     </a>
                 </div>
@@ -94,7 +94,7 @@
 
 
         <div class="col-12 botton-heigth-2 text-center">
-            <a href="#">
+            <a href="{{route('public.partners.index') }}">
                 <button class="button-about-r-partners">@lang('about-us-header.button-1')</button>
             </a>
         </div>

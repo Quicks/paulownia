@@ -57,4 +57,6 @@ return [
     'ROI calculation'=>'حساب العائد على الاستثمار',
     'consultation during the cultivation'=>'التشاور خلال الزراعة'
 
+
+
 ];

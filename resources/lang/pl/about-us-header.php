@@ -21,4 +21,6 @@ return [
     'our-partners'=>'Nasi partnerzy',
     'our-clients'=>'Nasi klienci',
 
+    'cert-tech-doc'=>'Certyfikaty i dokumentacja techniczna',
+
 ];

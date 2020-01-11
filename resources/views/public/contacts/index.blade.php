@@ -2,7 +2,7 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/contacts.css') }}">
+        <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v1">
     @endpush
 
     <div class="row m-0 fon-for-contacts position-relative">

@@ -1,10 +1,10 @@
 <div class="footer py-4">
-    <div class="footer-content row mx-auto">
+    <div class="footer-content row mx-auto pl-xl-5">
         <div class="col-xl-2 col-md-6 col-sm-12">
             <p class="footer-title">  @lang('header-footer.our service') </p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
-                <li><a href="#">@lang('header-footer.sale of seedlings') </a></li>
+                <li><a href="{{route('public.service.index')}}">@lang('header-footer.sale of seedlings') </a></li>
                 <li><a href="#">@lang('header-footer.analysis and personal design')</a></li>
                 <li><a href="#">@lang('header-footer.ROI calculation')</a></li>
                 <li><a href="#">@lang('header-footer.consultation during the cultivation')</a></li>
@@ -53,12 +53,12 @@
                 </ul>
             </ul>
         </div>
-        <div class="col-xl-3 col-md-6 col-sm-12">
+        <div class="col-xl-3 col-md-12 col-sm-12">
             <div>
-                <img class="mb-4 footer-booklet" src="{{asset('images/booklet_en.jpg')}}">
+                <img class="mt-4 ml-xl-4 mx-auto footer-booklet" src="{{asset('images/booklet_en.jpg')}}">
             </div>
             <div>
-                <a href="#"><img class="f-booklet-download" src="{{asset('images/download-booklet.svg')}}"></a>
+                <a href="#"><img class="f-booklet-download lazyload ml-xl-4 mt-4" data-src="{{asset('images/download-booklet.svg')}}" ></a>
             </div>
         </div>
     </div>

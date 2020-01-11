@@ -28,9 +28,9 @@
       crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
-    <link rel="stylesheet" href="{{ asset('css/public.css') }}?v2">
-    <link rel="stylesheet" href="{{ asset('css/footer.css') }}?v3">
-    <link rel="stylesheet" href="{{ asset('css/header.css') }}?v3">
+    <link rel="stylesheet" href="{{ asset('css/public.css') }}?v6">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}?v5">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}?v4">
     <link rel="stylesheet" href="{{ asset('css/cookie_consent.css') }}?v2">
 
     @stack('css')
@@ -41,7 +41,8 @@
 
 </head>
 <body>
-<div id="app" class="container-fluid">
+
+<div id="app" class="container-fluid p-0">
     @if (session('flash_message'))
         <div class="custom-status">
             <span class="custom-icon"></span>

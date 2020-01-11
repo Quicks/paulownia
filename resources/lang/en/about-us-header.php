@@ -21,4 +21,5 @@ return [
     'our-partners'=>'Our partners ',
     'our-clients'=>'Our clients',
 
+    'cert-tech-doc'=>'Certificates and technical documentation',
     ];

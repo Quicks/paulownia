@@ -1,42 +1,36 @@
 .fon{
     background:url("/images/about-us-fon.jpg") no-repeat;
     background-size: 100% 100%;
-    padding: 2% 0 15% 0;
+    padding: 0.5% 0 9% 0;
 }
-
 .back-max-width{
-    max-width:1300px;
+    max-width:83%;
 }
-
 .about-read-m,.about-read-m:hover{
+    font-size:0.885rem;
     color:#8CBD02 ;
     text-decoration:underline;
 }
-
 .about-title{
-     font-size: 48px;
-     line-height: 56px;
+     font-size: 2.5rem;
+     line-height: 2rem;
      color: #8CBD02 ;
  }
-
 .line-about-under{
     width: 91px;
     height: 3px;
     background: #8CBD02;
     border-radius: 25px;
 }
-
 .about-text{
     padding: 2% 1% 4% 1%;
-    font-size:18px;
+    font-size:0.885rem;
 }
-
 .back-ground-main {
     background:url("/images/background-about.jpg") no-repeat;
     border-radius:25px;
     background-size: 100% 100%;
 }
-
 .back-ground-1{
     border:none;
     border-radius: 35px;
@@ -45,7 +39,6 @@
     max-width:500px;
     max-height:580px
 }
-
 .back-ground-2{
     border-radius: 35px;
     background:url("/images/background-about-us2.jpg")no-repeat;
@@ -53,42 +46,79 @@
     max-width:500px;
     max-height:580px
 }
-
 .img-logo-1{
     max-width:35%;
     margin-top:3%
 }
-
 .img-logo-2 {
     max-width:35%;
     margin:3% 2% 0 63%;
 }
+@media screen and (min-width: 1900px) {
+
+    .back-ground-1 , .back-ground-2{
+        max-width: 700px;
+        max-height: 760px;
+    }
+}
 
 @media screen and (min-width: 1300px) and (max-width: 1400px) {
 
-    .back-max-width{
-        max-width:1100px;
-    }
     .back-ground-1 , .back-ground-2{
         max-width: 450px;
         max-height: 460px;
     }
-    .about-text{
-        font-size:16px;
+}
+
+@media screen and (min-width: 1171px) and (max-width: 1299px)  {
+
+    .back-ground-1 , .back-ground-2{
+        max-width: 400px;
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1170px)  {
+
+    .back-ground-1 , .back-ground-2{
+        max-width: 360px;
+        max-height: 380px;
     }
 }
 
 @media screen and (min-width: 376px) and (max-width: 425px){
 
-    .about-text{
-        font-size:12px;
+    .back-ground-main {
+        background:none;
     }
 }
 
 @media screen and (max-width: 375px){
 
-    .about-text{
-        font-size:10px;
-        padding: 5% 1% 4% 1%;
+    .back-ground-main {
+        background:none;
     }
+    .back-ground-1 , .back-ground-2{
+        max-width: 360px;
+    }
+}
+
+.about-left.start {
+    animation-name: aboutleft;
+    animation-duration: 2s;
+}
+
+@keyframes aboutleft {
+    0% {transform: translateX(-33%);}
+    100% {transform: translateX(0);}
+}
+
+.about-right.start {
+    animation-name: aboutright;
+    animation-duration: 2s;
+}
+
+@keyframes aboutright {
+    0% {transform: translateX(33%);}
+    100% {transform: translateX(0);}
 }

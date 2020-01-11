@@ -10,7 +10,7 @@
                 <div id="all-pages" class="navbar-collapse collapse row">
                     <div class="col-xl-10">
                         <ul class="d-xl-inline-flex list-unstyled">
-                            <li class=" ml-xl-5">
+                            <li class="mb-3 ml-xl-5">
                                 <a class="info" href="viber://chat?number=+34642787555">
                                     <img src="{{asset('images/viber-icon.svg')}}" width="14px" height="14px">
                                     +34 <b>642 787 555</b>

@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/grades.css') }}?v6">
+    <link rel="stylesheet" href="{{ asset('css/grades.css') }}?v7">
 @endpush
 
 <div class="grades-back">

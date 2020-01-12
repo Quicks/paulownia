@@ -39,6 +39,7 @@
 .grades-width {
     max-width:1431px;
     padding-bottom: 200px;
+    overflow: hidden;
 }
 .grades-title {
     font-weight: bold;

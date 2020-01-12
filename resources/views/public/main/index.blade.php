@@ -27,8 +27,6 @@ $(document).ready(function () {
         elem.each(function(idx) {
             if (isElementInViewport(elem[idx])) {
                 $(elem[idx]).addClass('start');
-            } else {
-                $(elem[idx]).removeClass('start');
             }
         })
     }

@@ -2,7 +2,7 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css')}}?v7">
-    <link rel="stylesheet" href="{{asset('css/show-product.css') }}?v2">
+    <link rel="stylesheet" href="{{asset('css/show-product.css') }}?v3">
 @endpush
 @section('content')
 
@@ -121,12 +121,14 @@
         </div>
 
         <div class="title-for-cards-show-product text-center mb-3">@lang('products.similar-products')</div>
-        @foreach($similarProducts as $similarProduct)
-            @if($product->id == $similarProduct->id) @continue @endif
-            <div class="col-xl-3 col-sm-12 position-relative">
-                @include('public.products.product-card', ['product' => $similarProduct])
-            </div>
-        @endforeach
+        <div class="row mt-2">
+            @foreach($similarProducts as $similarProduct)
+                @if($product->id == $similarProduct->id) @continue @endif
+                <div class="col-xl-3 col-sm-12 position-relative">
+                    @include('public.products.product-card', ['product' => $similarProduct])
+                </div>
+            @endforeach
+        </div>
         <div class="text-center pb-5">
             <a href="{{route('public.products.index')}}">
                 <button class="product-button"> All goods</button>

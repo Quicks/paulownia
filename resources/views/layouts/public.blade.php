@@ -28,7 +28,7 @@
       crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
-    <link rel="stylesheet" href="{{ asset('css/public.css') }}?v6">
+    <link rel="stylesheet" href="{{ asset('css/public.css') }}?v7">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}?v5">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}?v5">
     <link rel="stylesheet" href="{{ asset('css/cookie_consent.css') }}?v2">
@@ -43,10 +43,10 @@
 <body>
 
 <div id="app" class="container-fluid p-0">
-    @if (session('flash_message'))
-        <div class="custom-status">
-            <span class="custom-icon"></span>
-            <p class="status-text"> {{ session('flash_message') }} </p>
+    @if (session('success') || session('warning') || session('error') || session('info'))
+        <div id="flash-message" class="custom-status">
+            <span class="custom-icon" onclick="$('#flash-message').remove()"></span>
+            <p class="status-text"> {{ session('success').session('warning').session('error').session('info') }} </p>
         </div>
     @endif
         @include('public.header')

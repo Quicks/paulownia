@@ -27,6 +27,7 @@
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 30px;
+    vertical-align: bottom;
 }
 .text-right-pad{
     padding-right:6%;
@@ -61,23 +62,70 @@
     box-shadow: -2px -2px 20px #8CBD02, 2px 2px 10px rgba(0, 0, 0, 0.25);
 }
 
+.text-prise-cart{
+    width: 60%;
+    vertical-align: bottom;
+}
+
+.qty-input::-webkit-outer-spin-button, 
+.qty-input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+}
+
+.qty-input {
+    -moz-appearance:textfield;
+    text-align: center;
+    border: none;
+    background: transparent;
+    width: 100%
+}
+
+.qty-input:focus{
+    outline: none;
+}
+
 @media screen and (max-width:425px){
-
     .text-title-cart{
-
         font-size: 8px;
-
     }
     .text-name-cart{
-
         font-size: 10px;
     }
-
     .img-cart{
         border-radius: 5px;
     }
     .text-prise-cart{
-
         font-size: 10px;
     }
+}
+
+.quantity-arrow {
+    border: none;
+    background: transparent;
+    line-height: normal;
+}
+
+.quantity-arrow:active, .quantity-arrow:focus {
+    outline: none;
+}
+
+.quantity-arrow::-moz-focus-inner {
+    border: 0;
+}
+
+.img-rev {
+    -moz-transform: rotate(180deg); /* Для Firefox */
+    -ms-transform: rotate(180deg); /* Для IE */
+    -webkit-transform: rotate(180deg); /* Для Safari, Chrome, iOS */
+    -o-transform: rotate(180deg); /* Для Opera */
+    transform: rotate(180deg);
+}
+
+.quantity-arrow-minus {
+    cursor: pointer;
+}
+
+.quantity-arrow-plus {
+    cursor: pointer;
 }

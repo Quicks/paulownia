@@ -2,7 +2,7 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/cart.css')}}?v2">
+        <link rel="stylesheet" href="{{asset('css/cart.css')}}?v3">
     @endpush
 
     <div class="fon-cart mx-auto">
@@ -19,15 +19,19 @@
             @foreach ($cart->items as $item) 
             <div class="row align-items-center py-3">
                 <div class="col-2 text-center">
+                    <a href="{{route('public.products.show', $item->product->url_key)}}">
                     @if(!empty($item->product->images[0]->path_tmb) || !empty($item->product->images[0]->path))
                         <img style="width:170px" data-src="{{asset('/storage/'. ($item->product->images[0]->path_tmb ? $item->product->images[0]->path_tmb : $item->product->images[0]->path))}}"
                              class="lazyload img-cart">
                     @else
                         <img style="width:170px" data-src="{{asset('/images/product-card-placeholder.jpg')}}" class="lazyload img-cart">
                     @endif
+                    </a>
                 </div>
                 <div class="col-3">
-                    <div class="text-name-cart">{{$item->product_flat->name}}</div>
+                    <a class="text-name-cart" href="{{route('public.products.show', $item->product->url_key)}}">
+                        <div class="text-name-cart">{{$item->product_flat->name}}</div>
+                    </a>
                 </div>
                 <div class="col-2 text-center text-prise-cart">{{number_format($item->price, 2)}} {{$currency}}</div>
                 <div class="col-2 text-center text-prise-cart">

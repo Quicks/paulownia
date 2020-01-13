@@ -67,6 +67,24 @@
     vertical-align: bottom;
 }
 
+.qty-input::-webkit-outer-spin-button, 
+.qty-input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+}
+
+.qty-input {
+    -moz-appearance:textfield;
+    text-align: center;
+    border: none;
+    background: transparent;
+    width: 100%
+}
+
+.qty-input:focus{
+    outline: none;
+}
+
 @media screen and (max-width:425px){
     .text-title-cart{
         font-size: 8px;

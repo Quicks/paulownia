@@ -50,13 +50,13 @@
                         </div>
                         <div class="col-xl-3 col-md-6 col-sm-12 services-4 mx-auto services-item-width">
                             <div class="mx-auto services-item-wrap" style="max-width: 150px">
-                                <p class="services-item-title">Consultation during the cultivation</p>
+                                <p class="services-item-title">@lang('header-footer.consultation during the cultivation')</p>
                             </div>
                             <div class="services-text-wrap">
                                 <p class="services-item-text">Consultation during the cultivation Consultation during
                                     the
                                     cultivation Consultation during the...</p>
-                                <a class="services-item-link" href="#">Read more</a>
+                                <a class="services-item-link" href="{{route('public.consultation-during-the-cultivation.index')}}">Read more</a>
                             </div>
                         </div>
                     </div>
@@ -100,13 +100,13 @@
                         </div>
                         <div class="col-xl-3 col-md-6 col-sm-12 services-4 mx-auto services-item-width">
                             <div class="mx-auto services-item-wrap" style="max-width: 150px">
-                                <p class="services-item-title">Consultation during the cultivation</p>
+                                <p class="services-item-title">@lang('header-footer.consultation during the cultivation')</p>
                             </div>
                             <div class="services-text-wrap">
                                 <p class="services-item-text">Consultation during the cultivation Consultation during
                                     the
                                     cultivation Consultation during the...</p>
-                                <a class="services-item-link" href="#">Read more</a>
+                                <a class="services-item-link" href="{{route('public.consultation-during-the-cultivation.index')}}">Read more</a>
                             </div>
                         </div>
                     </div>

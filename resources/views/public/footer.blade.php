@@ -7,7 +7,7 @@
                 <li><a href="{{route('public.service.index')}}">@lang('header-footer.sale of seedlings') </a></li>
                 <li><a href="{{route('public.analysis-and-personal-design.index')}}">@lang('header-footer.analysis and personal design')</a></li>
                 <li><a href="#">@lang('header-footer.ROI calculation')</a></li>
-                <li><a href="#">@lang('header-footer.consultation during the cultivation')</a></li>
+                <li><a href="{{route('public.consultation-during-the-cultivation.index')}}">@lang('header-footer.consultation during the cultivation')</a></li>
             </ul>
         </div>
         <div class="col-xl-2 col-md-6 col-sm-12">

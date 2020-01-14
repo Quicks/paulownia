@@ -95,6 +95,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('public.cart.index');
         Route::get('/certificates-technical-doc', 'App\Http\Controllers\CertificatesTechnicalDocController@index')->name('public.certificates-technical-doc.index');
         Route::get('/service', 'App\Http\Controllers\ServiceController@index')->name('public.service.index');
+        Route::get('/consultation-during-the-cultivation', 'App\Http\Controllers\ConsultationDuringTheCultivationController@index')->name('public.consultation-during-the-cultivation.index');
 
     });
 

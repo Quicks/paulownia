@@ -24,8 +24,8 @@
 }
 .bottom-link-activ {
     font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 1rem;
+    line-height: 1.1rem;
     color: #8CBD02 !important;
 }
 
@@ -37,21 +37,20 @@
 
 .info {
     font-weight: bold;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 1rem;
     color: #FFFFFF;
 }
 
 .info-lang {
     font-family: Century Gothic Bold;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1rem;
+    line-height:1.2rem;
     color: #FFFFFF;
 }
 
 .info-menu {
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 1rem;
+    line-height: 1.2rem;
     color: #000000;
 }
 .logo-width {

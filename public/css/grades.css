@@ -2,7 +2,6 @@
     .grades-width {
         max-width: 1200px !important;
     }
-
     .grades-item {
         max-width: 550px !important;
     }
@@ -18,20 +17,16 @@
     }
     .grades-item-text {
         width: 200px !important;
-        font-size: 16px !important;
-    }
-    .grades-item-link {
-        font-size: 16px !important;
     }
     .grades-stamp {
         margin-left: 120px !important;
-        margin-top: -60px !important;
+        margin-top: 80px !important;
     }
     .grades-imgs {
         height: 458px !important;
     }
     .grades-img-size:hover {
-        width: 575px !important;
+        width: 374px !important;
         height: 524px !important;
     }
 }
@@ -44,11 +39,12 @@
 .grades-width {
     max-width:1431px;
     padding-bottom: 200px;
+    overflow: hidden;
 }
 .grades-title {
     font-weight: bold;
-    font-size: 48px;
-    line-height: 56px;
+    font-size: 3rem;
+    line-height: 3rem;
     color: #8CBD02;
 }
 .grades-line {
@@ -59,7 +55,7 @@
 }
 .grades-item {
     background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     max-width: 675px;
 }
@@ -71,25 +67,25 @@
 .grades-item-title {
     width: 229px;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 30px;
-    letter-spacing: 0.02em;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.02rem;
     color: #8CBD02;
-    margin-top: 40px;
+    margin-top:2.6rem;
 }
 .grades-item-text {
     width: 232px;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 30px;
-    letter-spacing: 0.02em;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.02rem;
     color: #000000;
-    margin-top: 40px;
+    margin-top: 2.6rem;
 }
 .grades-item-link {
     font-weight: normal;
-    font-size: 20px;
-    line-height: 10px;
+    font-size: 1rem;
+    line-height: 0.6rem;
     letter-spacing: 0.02em;
     color: #8CBD02;
     text-decoration: underline;
@@ -101,7 +97,7 @@
 .grades-stamp {
     position: absolute;
     margin-left: 160px;
-    margin-top: 10px
+    margin-top: 140px
 }
 .grades-img-size {
     border-radius: 25px;
@@ -112,7 +108,7 @@
     transition-property: width, height;
     transition-duration: 2s;
     transition-delay: 0.2s;
-    width: 700px;
+    width: 574px;
     height: 724px;
     position: relative;
     z-index:2;

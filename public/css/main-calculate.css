@@ -5,8 +5,8 @@
 }
 .calculate-title {
     font-weight: bold;
-    font-size: 48px;
-    line-height: 38px;
+    font-size: 3rem;
+    line-height: 2.6rem;
     color: #8CBD02;
 }
 .calc-width {
@@ -34,9 +34,9 @@
     appearance: none;
     background: transparent;
     font-weight: bold;
-    font-size: 18px;
-    line-height: 38px;
-    letter-spacing: 0.05em;
+    font-size: 1rem;
+    line-height: 2.6rem;
+    letter-spacing: 0.05rem;
     color: #FFFFFF;
     width: 100%;
     border-top: none;
@@ -58,9 +58,9 @@
 }
 .modal-content-calc {
     background: #2B2723;
-    font-size: 14px;
-    line-height: 38px;
-    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+    line-height: 2.6rem;
+    letter-spacing: 0.05rem;
     color: #FFFFFF;
 }
 .button-calc:hover {

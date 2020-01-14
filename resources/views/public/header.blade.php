@@ -1,8 +1,8 @@
 <div class="header pb-1">
     <div class="row">
         <div class="col-xl-2 col-md-6 d-flex align-items-end mt-md-3 mt-sm-3 mx-md-auto logo-width">
-            <a href="{{route('main')}}">
-                <img src="{{asset('images/logo.png')}}">
+            <a href="{{route('main')}}" >
+                <img data-src="{{asset('images/logo.png')}}" class="lazyload" style="width:135%">
             </a>
         </div>
         <div class="col-xl-10 col-md-6 mt-md-3 mt-sm-3">
@@ -12,7 +12,7 @@
                         <ul class="d-xl-inline-flex list-unstyled">
                             <li class="mb-3 ml-xl-5">
                                 <a class="info" href="viber://chat?number=+34642787555">
-                                    <img src="{{asset('images/viber-icon.svg')}}">
+                                    <img src="{{asset('images/viber-icon.svg')}}" width="14px" height="14px">
                                     +34 <b>642 787 555</b>
                                 </a>
                             </li>
@@ -20,13 +20,13 @@
                                 <a class="info" href="mailto: info@paulownia.pro">info@paulownia.pro</a>
                             </li>
                             <li class="ml-xl-4 mb-3 info">
-                                <img src="{{asset('images/hours-8.svg')}}">
+                                <img src="{{asset('images/hours-8.svg')}}" width="12px" height="12px">
                                 Mn. - Fr. 09:00 - 18:00
                             </li>
                         </ul>
                     </div>
                     <div class="col-xl-2">
-                        <div class="dropdown ml-xl-2 mb-4">
+                        <div class="dropdown ml-xl-4 mb-4">
                             <button class="button-language info-lang" type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{(App::getLocale())}}
@@ -105,7 +105,7 @@
                     </div>
                     <div class="col-xl-2">
                         <ul class="list-inline">
-                            <li class="list-inline-item ml-xl-2">
+                            <li class="list-inline-item">
                                 <img width="20px" height="20px" src="{{asset('images/line.svg')}}">
                             </li>
                             <li class="list-inline-item">

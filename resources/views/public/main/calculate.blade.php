@@ -1,6 +1,6 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v6">
-    <link rel="stylesheet" href="{{ asset('css/selectric.css') }}?v2">
+    <link rel="stylesheet" href="{{ asset('css/selectric.css') }}?v3">
 @endpush
 
 <div class="row mx-auto pt-xl-5 pb-xl-5 calc-width">
@@ -31,7 +31,7 @@
     </div>
     <div class="col-xl-3">
         <button class="button-calc" data-toggle="modal"  data-target="#calcAnswer">
-            <img class="lazyload" data-src="{{asset('/images/calculate.png')}}">
+            <img class="lazyload w-100" data-src="{{asset('/images/calculate.png')}}">
         </button>
     </div>
 </div>

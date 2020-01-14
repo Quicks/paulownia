@@ -9,3 +9,33 @@
     @include('public.main.our-paulownia')
     @include('public.main.map')
 @endsection
+
+@push('scripts')
+<script type="text/javascript">
+$(document).ready(function () {
+
+    function isElementInViewport(elem) {
+        var elementTop = $(elem).offset().top;
+        var elementBottom = elementTop + $(elem).outerHeight();
+        var viewportTop = $(window).scrollTop();
+        var viewportBottom = viewportTop + $(window).height();
+        return elementBottom > viewportTop && elementTop < viewportBottom;
+    }
+
+    function checkAnimation() {
+        var elem = $('.animated');
+        elem.each(function(idx) {
+            if (isElementInViewport(elem[idx])) {
+                $(elem[idx]).addClass('start');
+            }
+        })
+    }
+
+    checkAnimation();
+
+    $(window).scroll(function(){
+        checkAnimation();
+    });
+});
+</script>
+@endpush

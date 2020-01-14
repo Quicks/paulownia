@@ -5,7 +5,7 @@
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
                 <li><a href="{{route('public.service.index')}}">@lang('header-footer.sale of seedlings') </a></li>
-                <li><a href="#">@lang('header-footer.analysis and personal design')</a></li>
+                <li><a href="{{route('public.analysis-and-personal-design.index')}}">@lang('header-footer.analysis and personal design')</a></li>
                 <li><a href="#">@lang('header-footer.ROI calculation')</a></li>
                 <li><a href="{{route('public.consultation-during-the-cultivation.index')}}">@lang('header-footer.consultation during the cultivation')</a></li>
             </ul>

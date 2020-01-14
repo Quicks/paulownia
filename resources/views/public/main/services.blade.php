@@ -27,12 +27,12 @@
                         </div>
                         <div class="col-xl-3 col-md-6 col-sm-12 services-2 mx-auto services-item-width">
                             <div class="mx-auto services-item-wrap" style="max-width: 150px">
-                                <p class="services-item-title">Analysis and personal design future plantations</p>
+                                <p class="services-item-title">@lang('header-footer.analysis and personal design')</p>
                             </div>
                             <div class="services-text-wrap">
                                 <p class="services-item-text">Analysis and personal design of future plantations
                                     Analysis and personal design of future plantations...</p>
-                                <a class="services-item-link" href="#">Read more</a>
+                                <a class="services-item-link" href="{{route('public.analysis-and-personal-design.index')}}">Read more</a>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6 col-sm-12 services-3 mx-auto services-item-width">
@@ -77,12 +77,12 @@
                         </div>
                         <div class="col-xl-3 col-md-6 col-sm-12 services-2 mx-auto services-item-width">
                             <div class="mx-auto services-item-wrap" style="max-width: 150px">
-                                <p class="services-item-title">Analysis and personal design future plantations</p>
+                                <p class="services-item-title">@lang('header-footer.analysis and personal design')</p>
                             </div>
                             <div class="services-text-wrap">
                                 <p class="services-item-text">Analysis and personal design of future plantations
                                     Analysis and personal design of future plantations...</p>
-                                <a class="services-item-link" href="#">Read more</a>
+                                <a class="services-item-link" href="{{route('public.analysis-and-personal-design.index')}}">Read more</a>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6 col-sm-12 services-3 mx-auto services-item-width">

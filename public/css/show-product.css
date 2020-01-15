@@ -31,11 +31,11 @@
         height: 210px !important;
     }
     .quantity-arrow-minus {
-        top: 3px !important;
+        top: 9px !important;
     }
 
     .quantity-arrow-plus {
-        top: -5px !important;
+        top: -9px !important;
     }
     .slider-for {
         margin-left: -20px !important;
@@ -73,12 +73,12 @@
 @media only screen and (min-device-width: 1600px){
     .quantity-arrow-minus {
         left: 122px !important;
-        top: 17px !important;
+        top: 22px !important;
     }
 
     .quantity-arrow-plus {
         left: 122px !important;
-        top: 7px !important;
+        top: 4px !important;
     }
 }
 
@@ -235,14 +235,14 @@ input[type=number] {
 .quantity-arrow-minus {
     position: absolute;
     left: 115px;
-    top: 14px;
+    top: 17px;
     cursor: pointer;
 }
 
 .quantity-arrow-plus {
     position: absolute;
     left: 115px;
-    top: 4px;
+    top: 0px;
     cursor: pointer;
 }
 

@@ -2,7 +2,7 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css')}}?v7">
-    <link rel="stylesheet" href="{{asset('css/show-product.css') }}?v3">
+    <link rel="stylesheet" href="{{asset('css/show-product.css') }}?v4">
 @endpush
 @section('content')
 

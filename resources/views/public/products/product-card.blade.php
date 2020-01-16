@@ -21,7 +21,7 @@
         <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" class="lazyload line-product-card">
         <div class="row m-0 product-name">
 
-            <div class="col-8 title-for-card">{{$product-> name}}</div>
+            <a href="{{route('public.products.show', $product->url_key)}}" class="col-8 title-for-card">{{$product-> name}}</a>
 
             <div class="col-4 text-center p-0">
                 <form  action="{{ route('cart.add', $product->product_id) }}" method="POST" class="d-inline">

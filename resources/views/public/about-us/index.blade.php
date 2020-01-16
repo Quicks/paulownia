@@ -8,7 +8,9 @@
         <div class="col-12 ">@include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'header-footer.about us' ])</div>
         <div class="col-12 pl-5 pr-5 mt-5 text-about-us-header">@lang('about-us-header.text-about')
             <a href="#" class="read-m-about-header">@lang('about-us-header.read-more')</a></div>
-        <div class="col-12 title-our-service mt-5 text-center">@lang('about-us-header.our-service')</div>
+        <div class="col-12 title-our-service mt-5 text-center">@lang('about-us-header.our-service')
+        <hr class="about-us-line" style="width: 10%">
+        </div>
 
         <div class="row mx-auto our-services-img">
             <div class=" col-xl-2 col-md-4 col-sm-6 card-img-width-about">
@@ -55,7 +57,9 @@
             <div><img data-src="{{asset('/images/line-about-us-header-up.png')}}"
                       class="lazyload line-style-up-about-h "></div>
 
-            <div class="col-12 mt-5 pt-4 text-center title-our-service">@lang('about-us-header.title-1')</div>
+            <div class="col-12 mt-5 pt-4 text-center title-our-service">@lang('about-us-header.title-1')
+                <hr class="about-us-line" style="width: 40%">
+            </div>
 
             <div id="carouselExampleControls" class="carousel slide pt-5 pb-5" data-ride="carousel">
                 <div class="carousel-inner text-center ">
@@ -99,7 +103,9 @@
                       class="lazyload line-style-down-about-h "></div>
         </div>
 
-        <div class="col-12 mt-5 pt-4 text-center title-our-service">@lang('about-us-header.our-partners')</div>
+        <div class="col-12 mt-5 pt-4 text-center title-our-service">@lang('about-us-header.our-partners')
+            <hr class="about-us-line" style="width: 10%">
+        </div>
             @foreach($partners as $item)
                 <div class="col-xl-3 col-md-12 col-sm-12 text-center m-5">
                     <span class="partner-2">{{$item->name}}</span>
@@ -115,7 +121,9 @@
             </a>
         </div>
 
-        <div class="col-12 text-center title-our-service">@lang('about-us-header.our-clients')</div>
+        <div class="col-12 text-center title-our-service">@lang('about-us-header.our-clients')
+            <hr class="about-us-line" style="width: 10%">
+        </div>
 
         <div class="col-12 mx-auto">
             <img data-src="{{asset('/images/map-about-us-r.png')}}" class="lazyload mb-4" style="max-width: 100%">

@@ -111,8 +111,13 @@
                             <li class="list-inline-item">
                                 <a href="#"><img width="20px" height="20px" src="{{asset('images/user.svg')}}"></a>
                             </li>
-                            <li class="list-inline-item ">
-                                <a href="{{route('public.cart.index')}}"><img width="20px" height="20px" src="{{asset('images/shopping-cart.svg')}}"></a>
+                            <li class="list-inline-item position-relative">
+                                <a href="{{route('public.cart.index')}}">
+                                    <img width="20px" height="20px" src="{{asset('images/shopping-cart.svg')}}">
+                                    @if(Webkul\Checkout\Facades\Cart::getCart())
+                                        <div class="cart-not-empty"></div>
+                                    @endif
+                                </a>
                             </li>
                             <li class="list-inline-item ">
                                 <a href="#"><img width="20px" height="20px"

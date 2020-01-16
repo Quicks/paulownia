@@ -1,21 +1,22 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v17">
+    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v18">
 @endpush
 
 <div class="">
-    <div class="back-ground-img">
+    <div class="back-ground-img" onclick="location.href='{{route('public.products.show', $product->url_key)}}';">
         @if($product->special_price != 0)
             <div class="position-absolute product-sale">-{{round(100-($product->special_price / ($product->price/100)))}}%
             </div>
         @endif
 
-        @if(!empty($product->images[0]->path_tmb) || !empty($product->images[0]->path))
+{{--         @if(!empty($product->images[0]->path_tmb) || !empty($product->images[0]->path))
             <img data-src="{{asset('/storage/'. ($product->images[0]->path_tmb ? $product->images[0]->path_tmb : $product->images[0]->path))}}"
                  class="lazyload img-product">
         @else
             <img data-src="{{asset('/images/product-card-placeholder.jpg')}}"
                  class="lazyload img-product">
-        @endif
+        @endif --}}
+        <img data-src="{{asset('/images/product-card-1_4 asp-rat-placeholder.jpg')}}" class="lazyload img-product">
 
         <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" class="lazyload line-product-card">
         <div class="row m-0 product-name">

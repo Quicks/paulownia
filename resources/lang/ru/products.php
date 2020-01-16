@@ -10,7 +10,7 @@ return [
     'min-order' =>'Минимальный заказ 1 лоток',
     'pieces' => 'штук',
     'size' => 'Размер',
-    'product-information' => 'Информация о продукте',
+    'product-information' => 'О продукте',
     'characteristic' => 'Характеристика',
     'delivery' => 'Доставка',
     'height' => 'Общая высота',

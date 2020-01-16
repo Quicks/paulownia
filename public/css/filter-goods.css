@@ -23,8 +23,8 @@
     text-decoration: none;
 }
 .text-type{
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 1.2rem;
+    line-height: 0.3rem;
 }
 
 .text-type:hover{
@@ -34,19 +34,17 @@
 }
 
 .lile-between{
-    width: 349px;
     height: 1px;
     background: rgba(140, 189, 2, 0.3);
 }
 
 .text-type-title{
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 1rem;
+    line-height: 1rem;
 }
 
 .select-goods{
     background: url(/images/down-arrow-products.png) no-repeat 96% 50%;
-    width: 349px;
     height: 35px;
     color: black;
     box-sizing: border-box;
@@ -60,8 +58,8 @@
     border-image: initial;
     outline: none;
     font-style: italic;
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -71,18 +69,18 @@ select::-ms-expand {
     display: none;
 }
 .text-type-prise {
-    font-size: 14px;
-    line-height: 25px;
+    font-size: 1rem;
+    line-height: 1.8rem;
 }
 .text-type-rules{
     font-weight: bold;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     color: #8CBD02;
 }
 .text-href{
-    font-size: 20px;
-    line-height: 35px;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
     color: #8CBD02;
     text-decoration:underline;
 }

@@ -10,7 +10,7 @@
                 <div id="all-pages" class="navbar-collapse collapse row">
                     <div class="col-xl-10">
                         <ul class="d-xl-inline-flex list-unstyled">
-                            <li class="mb-3 ml-xl-5">
+                            <li class="mb-3">
                                 <a class="info" href="viber://chat?number=+34642787555">
                                     <img src="{{asset('images/viber-icon.svg')}}" width="14px" height="14px">
                                     +34 <b>642 787 555</b>
@@ -47,49 +47,49 @@
                     </div>
                     <div class="col-xl-10">
                         <ul class="navbar-nav bottom-link" style="flex-wrap: wrap;">
-                            <li class="nav-item  ml-xl-5 mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('main')) class="bottom-link-activ"
                                    @else class="info-menu" @endif href="{{route('main')}}">
                                     @lang('header-footer.main')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.news.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif href="{{route('public.news.index')}}">
                                     @lang('header-footer.news')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.paulownia.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif href="{{route('public.paulownia.index')}}">
                                     @lang('header-footer.paulownia')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.products.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif  href="{{route('public.products.index')}}">
                                     @lang('header-footer.goods')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.calculations.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif  href="{{route('public.calculations.index')}}">
                                     @lang('header-footer.profitability calculation')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.galleries.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif href="{{route('public.galleries.index')}}">
                                     @lang('header-footer.gallery')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.faq.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif  href="{{route('public.faq.index')}}">
                                     @lang('header-footer.faq')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.about-us.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif  href="{{route('public.about-us.index')}}">
                                     @lang('header-footer.about us')

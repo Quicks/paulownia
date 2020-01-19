@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
     <link rel="stylesheet" href="{{ asset('css/public.css') }}?v7">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}?v5">
-    <link rel="stylesheet" href="{{ asset('css/header.css') }}?v6">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}?v7">
     <link rel="stylesheet" href="{{ asset('css/cookie_consent.css') }}?v3">
 
     @stack('css')

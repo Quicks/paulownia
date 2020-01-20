@@ -1,3 +1,5 @@
+@include('public.auth-modal')
+
 <div class="header pb-1">
     <div class="row">
         <div class="col-xl-2 col-md-6 d-flex align-items-end mt-md-3 mt-sm-3 mx-md-auto logo-width">
@@ -109,7 +111,9 @@
                                 <img width="20px" height="20px" src="{{asset('images/line.svg')}}">
                             </li>
                             <li class="list-inline-item">
-                                <a href="#"><img width="20px" height="20px" src="{{asset('images/user.svg')}}"></a>
+                                <a href="#" data-toggle="modal" data-target="#AuthModal">
+                                    <img width="20px" height="20px" src="{{asset('images/user.svg')}}">
+                                </a>
                             </li>
                             <li class="list-inline-item position-relative">
                                 <a href="{{route('public.cart.index')}}">

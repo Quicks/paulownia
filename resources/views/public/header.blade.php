@@ -1,3 +1,5 @@
+@include('public.auth-modal')
+
 <div class="header pb-1">
     <div class="row">
         <div class="col-xl-2 col-md-6 d-flex align-items-end mt-md-3 mt-sm-3 mx-md-auto logo-width">
@@ -109,7 +111,30 @@
                                 <img width="20px" height="20px" src="{{asset('images/line.svg')}}">
                             </li>
                             <li class="list-inline-item">
-                                <a href="#"><img width="20px" height="20px" src="{{asset('images/user.svg')}}"></a>
+                                @guest('customer')
+                                    <a href="#" data-toggle="modal" data-target="#AuthModal">
+                                        <img width="20px" height="20px" src="{{asset('images/user.svg')}}">
+                                    </a>
+                                @endguest
+                                @auth('customer')
+                                    <a href="#" id="dropdownClientMenu" data-toggle="dropdown" 
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <img style="background-color: #8CBD02; border-radius: 10px;" width="20px" height="20px" 
+                                                src="{{asset('images/user.svg')}}">
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownClientMenu">
+                                        <li class="dropdown-item-text ml-3">
+                                            {{ auth()->guard('customer')->user()->first_name }}
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="{{ route('customer.profile.index') }}">{{ __('shop::app.header.profile') }}</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="{{ route('customer.session.destroy') }}">{{ __('shop::app.header.logout') }}</a>
+                                        </li>
+                                    </ul>
+                                @endauth
                             </li>
                             <li class="list-inline-item position-relative">
                                 <a href="{{route('public.cart.index')}}">
@@ -120,8 +145,9 @@
                                 </a>
                             </li>
                             <li class="list-inline-item ">
-                                <a href="#"><img width="20px" height="20px"
-                                                 src="{{asset('images/favorite-heart-button.svg')}}"></a>
+                                <a href="{{ route('customer.wishlist.index') }}">
+                                    <img width="20px" height="20px" src="{{asset('images/favorite-heart-button.svg')}}">
+                                </a>
                             </li>
                         </ul>
                     </div>

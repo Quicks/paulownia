@@ -80,7 +80,8 @@ class SessionController extends Controller
         //Event passed to prepare cart after login
         Event::fire('customer.after.login', $request->input('email'));
 
-        return redirect()->intended(route($this->_config['redirect']));
+        session()->flash('info', trans('shop::app.customer.sucess-login'));
+        return redirect()->back(); //redirect()->intended(route($this->_config['redirect']));
     }
 
     public function destroy($id)
@@ -89,6 +90,7 @@ class SessionController extends Controller
 
         Event::fire('customer.after.logout', $id);
 
-        return redirect()->route($this->_config['redirect']);
+        session()->flash('info', trans('shop::app.customer.sucess-logout'));
+        return redirect()->back(); //redirect()->route($this->_config['redirect']);
     }
 }

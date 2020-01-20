@@ -67,3 +67,13 @@
     opacity: 0.75;
     border-radius: 50%;
 }
+
+.has-error>input {
+    border-color: #ff5656;
+}
+
+.control-error {
+    display: block;
+    margin: -5px 0 10px 15px;
+    color: #ff5656;
+}

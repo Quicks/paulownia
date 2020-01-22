@@ -66,12 +66,12 @@
 }
 .slick-prev:before
 {
-    content: '‹';
+    content:url("/images/prev-actions.png");
     font-weight: bold;
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: '‹';
+    content:url("/images/prev-actions.png");
     font-weight: bold;
 }
 
@@ -87,17 +87,16 @@
 }
 .slick-next:before
 {
-    content: '›';
+    content: url("/images/next-actions.png");
     font-weight: bold;
 }
 [dir='rtl'] .slick-next:before
 {
-    content: '›';
+    content: url("/images/next-actions.png");
     font-weight: bold;
 }
 
-
-    @media screen and (min-width: 1651px){
+    @media screen and (min-width: 1621px){
 
         .slick-prev {
             left: 35%;
@@ -109,7 +108,7 @@
         }
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1650px) {
+    @media screen and (min-width: 1040px) and (max-width: 1620px) {
 
         .slick-prev {
             left: 28%;
@@ -120,7 +119,35 @@
             right:65%;
         }
     }
+    @media screen and (min-width: 895px) and (max-width: 1039px) {
 
+        .slick-next:before
+        {
+            content: '›';
+        }
+        [dir='rtl'] .slick-next:before
+        {
+            content: '›';
+        }
+
+        .slick-prev:before
+        {
+            content: '‹';
+        }
+        [dir='rtl'] .slick-prev:before
+        {
+            content: '‹';
+        }
+
+        .slick-prev {
+            left: 30%;
+            top: -4%;
+        }
+        .slick-next {
+            bottom:-5%;
+            right:62%;
+        }
+    }
 
 
 

@@ -46,6 +46,7 @@
 
 .fon-for-slider-about-us-header{
     background:url("/images/fon-for-certificat-about.jpg") no-repeat;
+    background-size: cover;
 
 }
 .line-style-up-about-h{
@@ -157,7 +158,6 @@
     width: 40%
 }
 
-
 .map-about-style{
     max-width:70%;
     margin:5% 0 1.5% 15% ;
@@ -170,7 +170,6 @@
         padding-right:50px;
     }
 }
-
 
 @media screen and (min-width: 1340px) and (max-width: 1500px){
 

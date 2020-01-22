@@ -1,8 +1,8 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v10">
-    <link rel="stylesheet" href="{{ asset('css/vertical-slider.css')}}?v7">
+    <link rel="stylesheet" href="{{ asset('css/vertical-slider.css')}}?v8">
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/slick-theme.css')}}?v7">
+    <link rel="stylesheet" href="{{ asset('css/slick-theme.css')}}?v8">
 @endpush
 
 @if(!empty($sliderData))

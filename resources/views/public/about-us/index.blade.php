@@ -1,56 +1,55 @@
 @extends('layouts.public')
 @section('content')
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/about-us-header.css') }}?v3">
+        <link rel="stylesheet" href="{{asset('css/about-us-header.css') }}?v4">
     @endpush
 
     <div class="row fon-for-about-us-header m-0">
-        <div class="col-12 ">@include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'header-footer.about us' ])</div>
-        <div class="col-12 pl-5 pr-5 mt-5 text-about-us-header">@lang('about-us-header.text-about')
+        <div class="col-12 line-bread pb-xl-5">@include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'header-footer.about us' ])</div>
+        <div class="col-11 mx-auto pt-3 text-about-us-header">@lang('about-us-header.text-about')
             <a href="#" class="read-m-about-header">@lang('about-us-header.read-more')</a></div>
         <div class="col-12 title-our-service mt-5 text-center">@lang('about-us-header.our-service')
-        <hr class="about-us-line" style="width: 10%">
+        <hr class="about-us-line-1">
         </div>
 
         <div class="row mx-auto our-services-img">
             <div class=" col-xl-2 col-md-4 col-sm-6 card-img-width-about">
-                <div class="text-center"><img data-src="{{asset('/images/about-us-header-1.png')}}" class="lazyload">
+                <div class="text-center"><img data-src="{{asset('/images/about-us-header-1.png')}}" class="lazyload img-servise-style">
                 </div>
                 <div class="title-our-servise-about-us-header text-center">@lang('about-us-header.sale')</div>
                 <div class="text-our-servise-about-us-header text-center">@lang('about-us-header.point-1')</div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6 card-img-width-about">
-                <div class="text-center"><img data-src="{{asset('/images/about-us-header-2.png')}}" class="lazyload">
+                <div class="text-center"><img data-src="{{asset('/images/about-us-header-2.png')}}" class="lazyload img-servise-style">
                 </div>
                 <div class="title-our-servise-about-us-header text-center">@lang('about-us-header.sale')</div>
                 <div class="text-our-servise-about-us-header text-center">@lang('about-us-header.wood')</div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6  card-img-width-about">
-                <div class="text-center"><img data-src="{{asset('/images/about-us-header-3.png')}}" class="lazyload">
+                <div class="text-center"><img data-src="{{asset('/images/about-us-header-3.png')}}" class="lazyload img-servise-style">
                 </div>
                 <div class="title-our-servise-about-us-header text-center">@lang('about-us-header.calculation') </div>
                 <div class="text-our-servise-about-us-header text-center">@lang('about-us-header.profitability-investment')</div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6  card-img-width-about">
-                <div class="text-center"><img data-src="{{asset('/images/about-us-header-4.png')}}" class="lazyload ">
+                <div class="text-center"><img data-src="{{asset('/images/about-us-header-4.png')}}" class="lazyload img-servise-style">
                 </div>
                 <div class="title-our-servise-about-us-header text-center">@lang('about-us-header.contracts')</div>
                 <div class="text-our-servise-about-us-header text-center">@lang('about-us-header.sale-wood')</div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6  card-img-width-about">
-                <div class="text-center"><img data-src="{{asset('/images/about-us-header-5.png')}}" class="lazyload">
+                <div class="text-center"><img data-src="{{asset('/images/about-us-header-5.png')}}" class="lazyload img-servise-style">
                 </div>
                 <div class="title-our-servise-about-us-header text-center">@lang('about-us-header.consultation') </div>
                 <div class="text-our-servise-about-us-header text-center">@lang('about-us-header.throughout-growing')</div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6  card-img-width-about">
-                <div class="text-center"><img data-src="{{asset('/images/about-us-header-6.png')}}" class="lazyload ">
+                <div class="text-center"><img data-src="{{asset('/images/about-us-header-6.png')}}" class="lazyload img-servise-style">
                 </div>
                 <div class="title-our-servise-about-us-header text-center">@lang('about-us-header.projection')</div>
                 <div class="text-our-servise-about-us-header text-center">@lang('about-us-header.future-plantations')</div>
             </div>
         </div>
-
 
         <div class="col-12 fon-for-slider-about-us-header p-0 position-relative">
 
@@ -58,7 +57,7 @@
                       class="lazyload line-style-up-about-h "></div>
 
             <div class="col-12 mt-5 pt-4 text-center title-our-service">@lang('about-us-header.title-1')
-                <hr class="about-us-line" style="width: 40%">
+                <hr class="about-us-line-2">
             </div>
 
             <div id="carouselExampleControls" class="carousel slide pt-5 pb-5" data-ride="carousel">
@@ -102,12 +101,14 @@
             <div><img data-src="{{asset('/images/line-about-us-header-down.png')}}"
                       class="lazyload line-style-down-about-h "></div>
         </div>
+    </div>
 
+        <div class="row fon-our-partners">
         <div class="col-12 mt-5 pt-4 text-center title-our-service">@lang('about-us-header.our-partners')
-            <hr class="about-us-line" style="width: 10%">
+            <hr class="about-us-line-1">
         </div>
             @foreach($partners as $item)
-                <div class="col-xl-3 col-md-12 col-sm-12 text-center m-5">
+                <div class="col-xl-3 col-md-12 col-sm-12 text-center m-xl-5 mt-md-5 mb-md-5">
                     <span class="partner-2">{{$item->name}}</span>
                     @if(!empty($item->images[0]))
                         <img data-src="{{asset('storage/'.$item->images[0]->image)}}"
@@ -122,11 +123,11 @@
         </div>
 
         <div class="col-12 text-center title-our-service">@lang('about-us-header.our-clients')
-            <hr class="about-us-line" style="width: 10%">
+            <hr class="about-us-line-1">
         </div>
 
-        <div class="col-12 mx-auto">
-            <img data-src="{{asset('/images/map-about-us-r.png')}}" class="lazyload mb-4" style="max-width: 100%">
+        <div class="col-12 ">
+            <img data-src="{{asset('/images/map-about-us-r.png')}}" class="lazyload map-about-style">
         </div>
 
     </div>

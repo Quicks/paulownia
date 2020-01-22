@@ -30,6 +30,10 @@
      box-sizing: border-box;
      border-radius: 0 0 5px 5px;
  }
+
+.news-shadow:hover {
+    box-shadow: 6px 6px 3px rgba(140, 189, 2, 0.6);
+}
  .title-text-news{
     background-color: white;
     color: #8CBD02;

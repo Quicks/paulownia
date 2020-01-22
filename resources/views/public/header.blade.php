@@ -119,7 +119,7 @@
                                 @auth('customer')
                                     <a href="#" id="dropdownClientMenu" data-toggle="dropdown" 
                                         aria-haspopup="true" aria-expanded="false">
-                                        <img style="background-color: #8CBD02; border-radius: 10px;" width="20px" height="20px" 
+                                        <img style="background-color: #8CBD02; border-radius: 10px;" width="20px" height="20px"
                                                 src="{{asset('images/user.svg')}}">
                                     </a>
 
@@ -138,7 +138,7 @@
                             </li>
                             <li class="list-inline-item position-relative">
                                 <a href="{{route('public.cart.index')}}">
-                                    <img width="20px" height="20px" src="{{asset('images/shopping-cart.svg')}}">
+                                    <img width="20px" height="20px" src="{{asset('images/shopping-cart.svg')}}" >
                                     @if(Webkul\Checkout\Facades\Cart::getCart())
                                         <div class="cart-not-empty"></div>
                                     @endif

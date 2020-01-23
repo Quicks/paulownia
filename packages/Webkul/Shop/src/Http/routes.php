@@ -174,7 +174,7 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
 
             //Customer logout
             Route::get('logout', 'Webkul\Customer\Http\Controllers\SessionController@destroy')->defaults('_config', [
-                'redirect' => 'customer.session.index'
+                'redirect' => 'main'
             ])->name('customer.session.destroy');
 
             //Customer Wishlist add

@@ -114,7 +114,7 @@ class CheckoutController extends Controller
 
         Cart::collectTotals();
 
-        return view('public.check-out.index');
+        return view('public.check-out.index')->with('cart', Cart::getCart());
     }
 
     /**

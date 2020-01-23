@@ -91,9 +91,16 @@
             </div>
 
             <div class="col-12 text-right-pad text-right mt-5 ">
-                <a class="button-contacts mt-3 mb-5" href="{{route('check-out.index')}}">
-                    @lang('public-translations.make-an-order')
-                </a>
+                @guest('customer')
+                    <a class="button-contacts mt-3 mb-5" href="#" onclick="$('#AuthModal').modal('show')">
+                        @lang('public-translations.auth-first')
+                    </a>
+                @endguest
+                @auth('customer')
+                    <a class="button-contacts mt-3 mb-5" href="{{route('check-out.index')}}">
+                        @lang('public-translations.make-an-order')
+                    </a>
+                @endauth
             </div>
         @endif
     </div>

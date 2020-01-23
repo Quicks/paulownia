@@ -48,6 +48,16 @@
                                         <tr><th> Name</th><td> {{ $news->name }} </td></tr>
                                         <tr><th> Active</th><td> {{ $news->active }} </td></tr>
                                         <tr><th> Publish Date</th><td> {{ $news->publish_date }} </td></tr>
+                                        <tr>
+                                            <th> Video</th>
+                                            <td>
+                                                <iframe width="560" height="315"
+                                                         src="{{ $news->video }}"
+                                                         frameborder="0"
+                                                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                         allowfullscreen></iframe>
+                                            </td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>

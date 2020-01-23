@@ -2,7 +2,7 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/cart.css')}}?v3">
+        <link rel="stylesheet" href="{{asset('css/cart.css')}}?v4">
     @endpush
 
     <div class="fon-cart mx-auto">
@@ -91,9 +91,9 @@
             </div>
 
             <div class="col-12 text-right-pad text-right mt-5 ">
-                <button type="submit" class="button-contacts mt-3 mb-5">
+                <a class="button-contacts mt-3 mb-5" href="{{route('check-out.index')}}">
                     @lang('public-translations.make-an-order')
-                </button>
+                </a>
             </div>
         @endif
     </div>

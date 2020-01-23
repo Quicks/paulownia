@@ -50,12 +50,6 @@
                     <div class="col-xl-10">
                         <ul class="navbar-nav bottom-link" style="flex-wrap: wrap;">
                             <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('main')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif href="{{route('main')}}">
-                                    @lang('header-footer.main')
-                                </a>
-                            </li>
-                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.news.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif href="{{route('public.news.index')}}">
                                     @lang('header-footer.news')

@@ -108,12 +108,8 @@
             <hr class="about-us-line-1">
         </div>
             @foreach($partners as $item)
-                <div class="col-xl-3 col-md-12 col-sm-12 text-center m-xl-5 mt-md-5 mb-md-5">
-                    <span class="partner-2">{{$item->name}}</span>
-                    @if(!empty($item->images[0]))
-                        <img data-src="{{asset('storage/'.$item->images[0]->image)}}"
-                             class="lazyload" width="100px" height="100px">
-                    @endif
+                <div class="col-xl-3 col-md-12 col-sm-12 justify-content-center mx-auto pb-xl-5 pt-xl-3">
+                    <div class="partner text-center pt-5 pb-5">{{$item->name}}</div>
                 </div>
             @endforeach
         <div class="col-12 botton-heigth-2 text-center">

@@ -18,51 +18,53 @@
                     </li>
                 </ul>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true"><img data-src="/images/button-close-modal.png" class="lazyload"></span>
                 </button>
             </div>
 
-            <div class="modal-body">
+            <div class="modal-body p-0">
 
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="sign" role="tabpanel" aria-labelledby="sign-tab">
                         <form method="post" action="{{ route('customer.register.create') }}">
                             {{ csrf_field() }}
-                            <div class="login-form">
+                            <div class="login-form mt-4">
                                 <div class="control-group @if($errors->has('first_name')) has-error @endif">
-                                    <label for="first_name" class="required">{{ __('shop::app.customer.signup-form.firstname') }}</label>
+                                    <label for="first_name" class="required first-last-name-modal">{{ __('shop::app.customer.signup-form.firstname') }}</label>:*
                                     <input type="text" class="control" name="first_name" required value="{{ old('first_name') }}">
                                     <span class="control-error">{{ $errors->first('first_name') }}</span>
                                 </div>
 
                                 <div class="control-group @if($errors->has('last_name')) has-error @endif">
-                                    <label for="last_name" class="required">{{ __('shop::app.customer.signup-form.lastname') }}</label>
+                                    <label for="last_name" class="required first-last-name-modal">{{ __('shop::app.customer.signup-form.lastname') }}</label>:*
                                     <input type="text" class="control" name="last_name" required value="{{ old('last_name') }}">
                                     <span class="control-error">{{ $errors->first('last_name') }}</span>
                                 </div>
 
                                 <div class="control-group @if($errors->has('email')) has-error @endif">
-                                    <label for="email" class="required">{{ __('shop::app.customer.signup-form.email') }}</label>
-                                    <input type="email" class="control" name="email" required value="{{ old('email') }}">
+                                    <label for="email" class="required width-email-sing-in">{{ __('shop::app.customer.signup-form.email') }}</label>:*
+                                    <input type="email" class="control " name="email" required value="{{ old('email') }}">
                                     <span class="control-error">{{ $errors->first('email') }}</span>
                                 </div>
 
                                 <div class="control-group @if($errors->has('password')) has-error @endif">
-                                    <label for="password" class="required">{{ __('shop::app.customer.signup-form.password') }}</label>
-                                    <input type="password" class="control" name="password" required minlength="6" value="{{ old('password') }}">
+                                    <label for="password" class="required width-password-sing-in">{{ __('shop::app.customer.signup-form.password') }}</label>:*
+                                    <input type="password" class="control-password" name="password" required minlength="6" value="{{ old('password') }}">
                                     <span class="control-error">{{ $errors->first('password') }}</span>
                                 </div>
 
-                                <div class="control-group @if($errors->has('password_confirmation')) has-error @endif">
-                                    <label for="password_confirmation" class="required">{{ __('shop::app.customer.signup-form.confirm_pass') }}</label>
-                                    <input type="password" class="control" name="password_confirmation"  required minlength="6">
+                                <div class="control-group mb-4 @if($errors->has('password_confirmation')) has-error @endif">
+                                    <label for="password_confirmation" class="required width-password-confirmation">{{ __('shop::app.customer.signup-form.confirm_pass') }}</label>:*
+                                    <input type="password" class="control-password" name="password_confirmation"  required minlength="6">
                                     <span class="control-error">{{ $errors->first('password_confirmation') }}</span>
                                 </div>
 
+                                <button class="button-modal" type="submit">
+                                    {{ __('shop::app.customer.signup-form.button_title') }}
+                                </button>
+
                                 <div class="modal-footer">
-                                    <button class="btn btn-primary btn-lg" type="submit">
-                                        {{ __('shop::app.customer.signup-form.button_title') }}
-                                    </button>
+
                                 </div>
                             </div>
                         </form>
@@ -72,23 +74,24 @@
                     <div class="tab-pane fade" id="log" role="tabpanel" aria-labelledby="log-tab">
                         <form method="POST" action="{{ route('customer.session.create') }}">
                             {{ csrf_field() }}
-                            <div class="login-form">
-                                <div class="control-group @if($errors->has('email')) has-error @endif">
-                                    <label for="email" class="required">{{ __('shop::app.customer.login-form.email') }}</label>
+                            <div class="login-form p-3 ">
+                                <div class="control-group mb-3 @if($errors->has('email')) has-error @endif">
+                                    <label for="email" class="required width-email">{{ __('shop::app.customer.login-form.email') }}</label>:*
                                     <input type="email" class="control" name="email" required value="{{ old('email') }}">
                                     <span class="control-error">{{ $errors->first('email') }}</span>
                                 </div>
 
-                                <div class="control-group @if($errors->has('password')) has-error @endif">
-                                    <label for="password" class="required">{{ __('shop::app.customer.login-form.password') }}</label>
-                                    <input type="password" class="control" name="password" required value="{{ old('password') }}" minlength="6">
+                                <div class="control-group mb-3 @if($errors->has('password')) has-error @endif">
+                                    <label for="password" class="required width-password">{{ __('shop::app.customer.login-form.password') }}</label>:*
+                                    <input type="password" class="control-password" name="password" required value="{{ old('password') }}" minlength="6">
                                     <span class="control-error">{{ $errors->first('password') }}</span>
+
                                 </div>
 
-                                <div class="forgot-password-link">
-                                    <a href="{{ route('customer.forgot-password.create') }}">
+                                <div class="forgot-password-link pt-3">
+                                    <a href="{{ route('customer.forgot-password.create') }}" class="pl-3 href-forgot">
                                         {{ __('shop::app.customer.login-form.forgot_pass') }}
-                                    </a>
+                                    </a><img data-src="/images/square-for-modal.png" class="lazyload">
 
                                     <div class="mt-10">
                                         @if (Cookie::has('enable-resend'))
@@ -100,9 +103,11 @@
                                 </div>
                             </div>
 
-                            <div class="modal-footer">
-                                <input class="btn btn-primary btn-lg" type="submit" 
-                                        value="{{ __('shop::app.customer.login-form.button_title') }}">
+                            <input class="button-modal" type="submit"
+                                   value="{{ __('shop::app.customer.login-form.button_title') }}">
+
+                            <div class="modal-footer p-0">
+
                             </div>
                         </form>
                     </div>

@@ -59,7 +59,7 @@
                                     <span class="control-error">{{ $errors->first('password_confirmation') }}</span>
                                 </div>
 
-                                <button class="button-modal" type="submit">
+                                <button class="button-modal-login" type="submit">
                                     {{ __('shop::app.customer.signup-form.button_title') }}
                                 </button>
 
@@ -103,7 +103,7 @@
                                 </div>
                             </div>
 
-                            <input class="button-modal" type="submit"
+                            <input class="button-modal-sing-in" type="submit"
                                    value="{{ __('shop::app.customer.login-form.button_title') }}">
 
                             <div class="modal-footer p-0">

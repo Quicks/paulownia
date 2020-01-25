@@ -132,11 +132,13 @@ class NewsController extends Controller
 			'publish_date' => 'required|date',
             'video' => 'url'
 		]);
-
         $news = News::findOrFail($id);
-        parse_str( parse_url( $request->video, PHP_URL_QUERY ), $videoId );
-        $data =  'https://www.youtube.com/embed/' . $videoId['v'];
-        $request->merge(['video' => $data]);
+        $urlVideoPath = explode("/", parse_url( $request->video, PHP_URL_PATH));
+        if($urlVideoPath[1] !== "embed"){
+            parse_str( parse_url( $request->video, PHP_URL_QUERY ), $videoId );
+            $data =  'https://www.youtube.com/embed/' . $videoId['v'];
+            $request->merge(['video' => $data]);
+        }
         $news->update($request->except(['image_atr','image']));
         if ($request->image_atr) {
             foreach ($request->image_atr as $image_id => $image_atr) {

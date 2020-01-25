@@ -28,7 +28,7 @@
         <div class="form-group {{ $errors->has('video') ? 'has-error' : ''}}">
             <label for="name" class="control-label">{{ 'Video' }}</label>
             <input class="form-control" name="video" type="url" id="video"
-                   value="{{ isset($news->video) ? $news->video : ''}}" required>
+                   value="{{ isset($news->video) ? $news->video : ''}}">
             {!! $errors->first('video', '<p class="help-block">:message</p>') !!}
         </div>
     </div>

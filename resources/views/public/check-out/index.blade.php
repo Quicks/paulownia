@@ -1,16 +1,26 @@
-@extends('shop::layouts.master') {{-- layouts.public --}}
+@extends('layouts.public')
 
 
 @push('css')
     <link rel="stylesheet" href="{{asset('css/checkout.css') }}">
 @endpush
 
-@section('content-wrapper') {{-- content --}}
+@section('content')
     <checkout></checkout>
 @endsection
 
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vee-validate/2.0.0-rc.26/vee-validate.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            Vue.use(VeeValidate);
+            Vue.prototype.$http = axios;
+            new Vue({ el: 'checkout' });
+        });
+    </script>
+
     <script type="text/x-template" id="checkout-template">
         <div id="checkout" class="checkout-process">
             <div class="col-main">
@@ -100,7 +110,6 @@
     </script>
 
     <script>
-    $(document).ready(function(){
         var shippingHtml = '';
         var paymentHtml = '';
         var reviewHtml = '';
@@ -563,7 +572,6 @@
                 }
             }
         })
-    });
     </script>
 
 @endpush

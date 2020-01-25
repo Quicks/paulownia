@@ -30,7 +30,7 @@ class News extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'active', 'publish_date', 'admin_id'];
+    protected $fillable = ['name', 'active', 'publish_date', 'admin_id', 'video'];
 
     public function images()
     {

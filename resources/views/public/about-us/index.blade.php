@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('content')
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/about-us-header.css') }}?v4">
+        <link rel="stylesheet" href="{{asset('css/about-us-header.css') }}?v5">
     @endpush
 
     <div class="row fon-for-about-us-header m-0">
@@ -108,12 +108,8 @@
             <hr class="about-us-line-1">
         </div>
             @foreach($partners as $item)
-                <div class="col-xl-3 col-md-12 col-sm-12 text-center m-xl-5 mt-md-5 mb-md-5">
-                    <span class="partner-2">{{$item->name}}</span>
-                    @if(!empty($item->images[0]))
-                        <img data-src="{{asset('storage/'.$item->images[0]->image)}}"
-                             class="lazyload" width="100px" height="100px">
-                    @endif
+                <div class="col-xl-3 col-md-12 col-sm-12 justify-content-center mx-auto pb-xl-5 pt-xl-3">
+                    <div class="partner text-center pt-5 pb-5">{{$item->name}}</div>
                 </div>
             @endforeach
         <div class="col-12 botton-heigth-2 text-center">
@@ -126,11 +122,21 @@
             <hr class="about-us-line-1">
         </div>
 
-        <div class="col-12 ">
-            <img data-src="{{asset('/images/map-about-us-r.png')}}" class="lazyload map-about-style">
-        </div>
+            <div class="col-12 ">
+                <img data-src="{{asset('/images/map-about-us-r.png')}}" class="lazyload map-about-style position-relative">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute america-1">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute america-2">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute europa-1">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute europa-2">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute europa-3">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute rus">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute africa-1">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute africa-2">
+
+            </div>
 
     </div>
 @endsection
+
 
 

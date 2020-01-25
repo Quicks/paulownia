@@ -19,6 +19,9 @@
     color: rgba(140, 189, 2, 0.7);
     cursor: pointer;
 }
+.close{
+    outline: none !important;
+}
 .title-our-service{
     font-weight: bold;
     font-size: 3rem;

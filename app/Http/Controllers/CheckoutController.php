@@ -100,7 +100,7 @@ class CheckoutController extends Controller
                     'qty[' . $item->id . ']' => 'required|numeric|min:' . $minOrder,
                 ]);
                 if ($validator->fails()) {
-                    return redirect()->route('shop.checkout.cart.index')
+                    return redirect()->route('public.cart.index')
                         ->withErrors($messages)
                         ->withInput();
                 }

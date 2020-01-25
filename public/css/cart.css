@@ -135,3 +135,14 @@
 .quantity-arrow-plus {
     cursor: pointer;
 }
+
+.cart-control-error {
+    color: red;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.cart-item-error {
+    background-color: rgba(255,0,0,0.1);
+}

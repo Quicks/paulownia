@@ -1,6 +1,6 @@
 .fon-faq {
     background: url("/images/fon-faq.jpg") no-repeat;
-    background-size: cover;
+    background-size: 100%;
 }
 
 .top-fon{
@@ -73,7 +73,7 @@ a,a:hover {
     margin-bottom: 0;
     background:rgba(104, 166, 72, 0.1); ;
     border-bottom: none;
-    transition: background  9999999s;
+    /*transition: background  9999999s;*/
     text-decoration: none !important;
 }
 
@@ -102,9 +102,9 @@ a,a:hover {
     /*background: green;*/
 /*}*/
 
-.no{
-    color: red;
-}
-.yes{
-    color: white;
-}
+/*.no{*/
+    /*color: red;*/
+/*}*/
+/*.yes{*/
+    /*color: white;*/
+/*}*/

@@ -122,9 +122,18 @@
             <hr class="about-us-line-1">
         </div>
 
-        <div class="col-12 ">
-            <img data-src="{{asset('/images/map-about-us-r.png')}}" class="lazyload map-about-style">
-        </div>
+            <div class="col-12 ">
+                <img data-src="{{asset('/images/map-about-us-r.png')}}" class="lazyload map-about-style position-relative">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute america-1">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute america-2">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute europa-1">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute europa-2">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute europa-3">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute rus">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute africa-1">
+                <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute africa-2">
+
+            </div>
 
     </div>
 @endsection

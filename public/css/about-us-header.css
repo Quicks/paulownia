@@ -169,3 +169,69 @@
          padding-right:10px;
     }
 }
+
+.america-1{
+    z-index: 500;
+    left: 29.5%;
+    top: 44%;
+    width: 1.8%;
+    height: 12%;
+}
+
+.america-2{
+    z-index: 500;
+    left: 36.5%;
+    top: 56%;
+    width: 1.8%;
+    height: 12%;
+}
+
+.europa-1
+{
+    z-index: 500;
+    left: 46.8%;
+    top: 33.5%;
+    width: 1.8%;
+    height: 12%;
+}
+
+.europa-2
+{
+    z-index: 500;
+    left: 48.5%;
+    top: 31.5%;
+    width: 1.8%;
+    height: 12%;
+}
+.europa-3
+{
+    z-index: 500;
+    left: 51.2%;
+    top: 31.5%;
+    width: 1.8%;
+    height: 12%;
+}
+.rus
+{
+    z-index: 500;
+    left: 55.8%;
+    top: 26.5%;
+    width: 1.8%;
+    height: 12%;
+}
+.africa-1
+{
+    z-index: 500;
+    left: 53.3%;
+    top: 38.5%;
+    width: 1.8%;
+    height: 12%;
+}
+.africa-2
+{
+    z-index: 500;
+    left: 49%;
+    top: 45.5%;
+    width: 1.8%;
+    height: 12%;
+}

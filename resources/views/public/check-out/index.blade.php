@@ -1,11 +1,11 @@
-@extends('layouts.public')
+@extends('shop::layouts.master') {{-- layouts.public --}}
 
 
 @push('css')
     <link rel="stylesheet" href="{{asset('css/checkout.css') }}">
 @endpush
 
-@section('content')
+@section('content-wrapper') {{-- content --}}
     <checkout></checkout>
 @endsection
 
@@ -100,6 +100,7 @@
     </script>
 
     <script>
+    $(document).ready(function(){
         var shippingHtml = '';
         var paymentHtml = '';
         var reviewHtml = '';
@@ -562,6 +563,7 @@
                 }
             }
         })
+    });
     </script>
 
 @endpush

@@ -108,7 +108,7 @@ class CheckoutController extends Controller
 
 
         if (Cart::hasError())
-            return redirect()->route('shop.checkout.cart.index');
+            return redirect()->route('public.cart.index');
 
         $this->nonCoupon->apply();
 
@@ -145,7 +145,7 @@ class CheckoutController extends Controller
         $data['shipping']['address1'] = implode(PHP_EOL, array_filter($data['shipping']['address1']));
 
         if (Cart::hasError() || !Cart::saveCustomerAddress($data) || ! $rates = Shipping::collectRates())
-            return response()->json(['redirect_url' => route('shop.checkout.cart.index')], 403);
+            return response()->json(['redirect_url' => route('public.cart.index')], 403);
 
         $this->nonCoupon->apply();
 
@@ -164,7 +164,7 @@ class CheckoutController extends Controller
         $shippingMethod = request()->get('shipping_method');
 
         if (Cart::hasError() || !$shippingMethod || !Cart::saveShippingMethod($shippingMethod))
-            return response()->json(['redirect_url' => route('shop.checkout.cart.index')], 403);
+            return response()->json(['redirect_url' => route('public.cart.index')], 403);
 
         $this->nonCoupon->apply();
 
@@ -183,7 +183,7 @@ class CheckoutController extends Controller
         $payment = request()->get('payment');
 
         if (Cart::hasError() || !$payment || !Cart::savePaymentMethod($payment))
-            return response()->json(['redirect_url' => route('shop.checkout.cart.index')], 403);
+            return response()->json(['redirect_url' => route('public.cart.index')], 403);
 
         $this->nonCoupon->apply();
 
@@ -195,7 +195,7 @@ class CheckoutController extends Controller
 
         return response()->json([
             'jump_to_section' => 'review',
-            'html' => view('shop::checkout.onepage.review', compact('cart'))->render()
+            'html' => view('public.check-out.review', compact('cart'))->render()
         ]);
     }
 
@@ -207,7 +207,7 @@ class CheckoutController extends Controller
     public function saveOrder()
     {
         if (Cart::hasError())
-            return response()->json(['redirect_url' => route('shop.checkout.cart.index')], 403);
+            return response()->json(['redirect_url' => route('public.cart.index')], 403);
 
         Cart::collectTotals();
 
@@ -241,9 +241,9 @@ class CheckoutController extends Controller
     public function success()
     {
         if (! $order = session('order'))
-            return redirect()->route('shop.checkout.cart.index');
+            return redirect()->route('public.cart.index');
 
-        return view($this->_config['view'], compact('order'));
+        return view('public.check-out.success', compact('order'));
     }
 
     /**

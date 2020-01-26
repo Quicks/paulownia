@@ -67,15 +67,16 @@
     <div class="cart-item-list mt-20">
         @foreach ($cart->items as $item)
 
-            <?php
-                $product = $item->product;
-
-                $productBaseImage = $productImageHelper->getProductBaseImage($product);
-            ?>
+            <?php $product = $item->product; ?>
 
             <div class="item mb-5" style="margin-bottom: 5px;">
                 <div class="item-image">
-                    <img src="{{ $productBaseImage['medium_image_url'] }}" />
+                    @if(!empty($item->product->images[0]->path_tmb) || !empty($item->product->images[0]->path))
+                        <img style="width:170px" data-src="{{asset('/storage/'. ($item->product->images[0]->path_tmb ? $item->product->images[0]->path_tmb : $item->product->images[0]->path))}}"
+                             class="lazyload img-cart">
+                    @else
+                        <img style="width:170px" data-src="{{asset('/images/product-card-placeholder.jpg')}}" class="lazyload img-cart">
+                    @endif
                 </div>
 
                 <div class="item-details">

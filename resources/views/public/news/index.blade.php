@@ -10,7 +10,7 @@
             <div class="d-inline p-2">
                 <button class="downArrowBtn" type="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
-                    <span class="newsFilterText">Choose month</span>
+                    <span class="newsFilterText">@lang('news.months')</span>
                     <i class="fa fa-angle-down downArrow" aria-hidden="true"></i>
                 </button>
                 <div class="dropdown-menu">
@@ -22,7 +22,7 @@
             <div class="d-inline p-2">
                 <button class="downArrowBtn" type="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
-                    <span class="newsFilterText">2019</span>
+                    <span class="newsFilterText">{{date("Y")}}</span>
                     <i class="fa fa-angle-down downArrow" aria-hidden="true"></i>
                 </button>
                 <div class="dropdown-menu">
@@ -34,13 +34,13 @@
             <div class="d-inline p-2">
                 <button class="downArrowBtn" type="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
-                    <span class="newsFilterText">Choose topic</span>
+                    <span class="newsFilterText">@lang('news.topic')</span>
                     <i class="fa fa-angle-down downArrow" aria-hidden="true"></i>
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">news</a>
-                    <a class="dropdown-item" href="#">articles</a>
-                    <a class="dropdown-item" href="#">treatises</a>
+                    <a class="dropdown-item" href="#">@lang('news.news')</a>
+                    <a class="dropdown-item" href="#">@lang('news.articles')</a>
+                    <a class="dropdown-item" href="#">@lang('news.treatises')</a>
                 </div>
             </div>
             <div>
@@ -48,12 +48,12 @@
             </div>
 
             <div class="col-12 mt-5 mb-5 mx-auto" id="post-data" style="max-width: 900px">
-            @include('public.news.newsData')
+                @include('public.news.newsData')
             </div>
         </div>
 
-        <div class="ajax-load" style="display:none">
-            <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">Loading...</p>
+        <div class="ajax-load d-flex justify-content-center" style="display:none">
+            <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">@lang('news.loading') ... </p>
         </div>
     </div>
 @endsection
@@ -66,19 +66,20 @@
                 loadMoreData(page);
             }
         });
+
         function loadMoreData(page) {
             $.ajax({
-                    url: '?page=' + page,
-                    type: "get",
-                    beforeSend: function () {
-                        $('.ajax-load').show();
-                    },
-                    cache: false
-                })
+                url: '?page=' + page,
+                type: "get",
+                beforeSend: function () {
+                    $('.ajax-load').show();
+                },
+                cache: false
+            })
                 .done(function (data) {
                     console.log(data);
                     if (data.html == "") {
-                        $('.ajax-load').html("No more records found");
+                        $('.ajax-load').html("This is all news");
                         return;
                     }
                     $('.ajax-load').hide();

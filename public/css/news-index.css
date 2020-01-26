@@ -1,7 +1,9 @@
 .back-news {
     background: url("/images/pages-wave-left.png") no-repeat, url("/images/background-news.jpg") no-repeat;
+    background-size: auto auto, 100% 100%;
     color: #0F0E0E;
     letter-spacing: 0.05rem;
+    line-height: 1.5rem;
 }
 
 .downArrowBtn {
@@ -44,14 +46,11 @@
     font-size: 2rem;
     letter-spacing: 0.05rem;
 }
-.important-news-text {
-    line-height: 1.5rem;
-}
 
 .news-title {
     color: #8CBD02;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 .player {
@@ -107,6 +106,22 @@
 
 .img-news-small {
     border-radius: 10px;
-    max-width: 200px;
-    max-height: 100px;
+    max-width: 250px;
+    max-height: 125px;
+}
+
+.news-date-small {
+    position: absolute;
+    width: 20px;
+    color: #8CBD02;
+    font-weight: bold;
+    font-size: 1.4rem;
+    left: 65%;
+}
+
+.important-news-date {
+    word-wrap: break-word;
+    color: #8CBD02;
+    font-weight: bold;
+    font-size: 2rem;
 }

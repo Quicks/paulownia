@@ -97,6 +97,15 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/service', 'App\Http\Controllers\ServiceController@index')->name('public.service.index');
         Route::get('/consultation-during-the-cultivation', 'App\Http\Controllers\ConsultationDuringTheCultivationController@index')->name('public.consultation-during-the-cultivation.index');
         Route::get('/analysis-and-personal-design', 'App\Http\Controllers\AnalysisAndPersonalDesignController@index')->name('public.analysis-and-personal-design.index');
+        Route::get('/check-out', 'App\Http\Controllers\CheckoutController@index')->name('check-out.index');
+        Route::get('/check-out/summary', 'App\Http\Controllers\CheckoutController@summary')->name('check-out.summary');
+        Route::post('/check-out/save-address', 'App\Http\Controllers\CheckoutController@saveAddress')->name('check-out.save-address');
+        Route::post('/check-out/save-shipping', 'App\Http\Controllers\CheckoutController@saveShipping')->name('check-out.save-shipping');
+        Route::post('/check-out/save-payment', 'App\Http\Controllers\CheckoutController@savePayment')->name('check-out.save-payment');
+        Route::post('/check-out/save-order', 'App\Http\Controllers\CheckoutController@saveOrder')->name('check-out.save-order');
+        Route::get('/check-out/success', 'App\Http\Controllers\CheckoutController@success')->name('check-out.success');
+
+        
 
     });
 

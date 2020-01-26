@@ -7,4 +7,5 @@ return [
     'amount'=>'Amount',
     'total'=>'Total',
     'total-excluding'=>'Total excluding',
+    'auth-first'=> 'To make order you should log in first',
 ];

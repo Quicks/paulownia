@@ -1,4 +1,6 @@
-@include('public.auth-modal')
+@guest('customer') 
+    @include('public.auth-modal')
+@endguest
 
 <div class="header pb-1">
     <div class="row">

@@ -91,6 +91,6 @@ class SessionController extends Controller
         Event::fire('customer.after.logout', $id);
 
         session()->flash('info', trans('shop::app.customer.sucess-logout'));
-        return redirect()->back(); //redirect()->route($this->_config['redirect']);
+        return redirect()->route($this->_config['redirect']);
     }
 }

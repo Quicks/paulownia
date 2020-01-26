@@ -6,25 +6,31 @@ use App\Models\Article;
 use App\Models\Treatise;
 use Illuminate\Http\Request;
 use App\Models\News;
-use Illuminate\Support\Facades\App;
 use Artesaos\SEOTools\Facades\SEOMeta;
 
 class NewsController extends Controller
 {
     public function index(Request $request)
     {
+        $months = range(1, 12);
+        $years = range(2019, date('Y'));
         $news = News::where('active', true)->get();
         $articles = Article::where('active', true)->get();
         $treatises = Treatise::where('active', true)->get();
-        $allNews = $news->concat($articles)->concat($treatises)->sortBy('created_at')->paginate(3);
+        $allNews = $news->concat($articles)->concat($treatises)->sortByDesc('created_at')->paginate(3);
+        if ($request->ajax()) {
+            $view = view('public.news.newsData',compact('allNews'))->render();
+            return response()->json(['html'=>$view]);
+        }
 
-        return view('public.news.index', compact('news', 'articles', 'treatises', 'allNews'));
+        return view('public.news.index', compact('news',
+            'articles', 'treatises', 'allNews', 'years', 'months'));
     }
     public function show(Request $request, $type, $id)
     {
-        if ($type = 'News') {
-            $news = News::findOrFail($id);
-        } elseif ($type = 'Article') {
+        if ($type == 'News') {
+            $news = News::find($id);
+        } elseif ($type == 'Article') {
             $news = Article::find($id);
         } else {
             $news = Treatise::find($id);

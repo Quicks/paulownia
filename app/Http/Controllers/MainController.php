@@ -22,7 +22,7 @@ class MainController extends Controller
         $news = News::where('active', true)->get();
         $articles = Article::where('active', true)->get();
         $treatises = Treatise::where('active', true)->get();
-        $allNews = $news->concat($articles)->concat($treatises)->sortBy('created_at');
+        $allNews = $news->concat($articles)->concat($treatises)->sortByDesc('created_at');
 
         return view('public.main.index', compact('sliderData', 'mainGallery', 'products', 'allNews'));
     }

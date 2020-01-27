@@ -17,6 +17,7 @@
 .modal-header .close {
     padding: 1rem 2rem 0 1rem;
     margin: -1rem -1rem -1rem auto;
+    z-index: 1;
 }
 .nav-tabs, .nav-link{
     border: none;
@@ -30,6 +31,11 @@
     color: #8CBD02;
     border:none;
     font-weight:bold;
+}
+.forgot-text {
+    color: #8CBD02;
+    font-weight:bold;
+    padding: 0rem 1rem 1rem 2rem;
 }
 
 .width-email ,.width-password,.first-last-name-modal,.width-email-sing-in,.width-password-sing-in ,.width-password-confirmation {
@@ -115,15 +121,16 @@ a:hover{
     color: #FFFFFF;
     outline: none;
     cursor: pointer;
+    float: right;
 }
 
 .button-modal-sing-in{
-    margin: 1rem 0 3rem 11.8rem;
+    margin: 1rem 1rem 3rem 11.8rem;
     padding: .5rem 4.2rem .5rem 4.2rem;
 }
 
 .button-modal-login{
-    margin: 1rem 0 3rem 11.3rem;
+    margin: 1rem 1rem 3rem 11.3rem;
     padding: .5rem 4.2rem .5rem 4.2rem;
 }
 
@@ -169,10 +176,6 @@ a:hover{
     .width-password {
         margin: 0 0 0 4.57rem;
     }
-    .button-modal-sing-in ,.button-modal-login{
-        margin: 1rem 0 3rem 12.5rem;
-        padding: .5rem 5.2rem .5rem 5.2rem;
-    }
 }
 
 @media screen and (min-width:376px) and (max-width:425px){
@@ -190,9 +193,6 @@ a:hover{
     .control-password {
         background-position: 16rem .6rem;
         width: 17.4rem;
-    }
-    .button-modal-sing-in,.button-modal-login  {
-        margin: 1rem 0 3rem 4rem;
     }
     .first-last-name-modal,.width-email-sing-in,.width-password-confirmation,.width-password-sing-in{
         margin: 0 0 0 1rem;
@@ -214,9 +214,6 @@ a:hover{
         background-position: 16rem .6rem;
         width: 17.4rem;
     }
-    .button-modal-sing-in,.button-modal-login  {
-        margin: 1rem 0 3rem 5rem;
-    }
     .first-last-name-modal,.width-email-sing-in,.width-password-confirmation,.width-password-sing-in{
         margin: 0 0 0 1rem;
     }
@@ -236,9 +233,6 @@ a:hover{
     .control-password {
         background-position: 16rem .6rem;
         width: 17.4rem;
-    }
-    .button-modal-sing-in,.button-modal-login  {
-        margin: 1rem 0 3rem 4rem;
     }
     .first-last-name-modal,.width-email-sing-in,.width-password-confirmation,.width-password-sing-in{
         margin: 0 0 0 1rem;

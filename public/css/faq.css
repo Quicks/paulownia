@@ -1,6 +1,6 @@
 .fon-faq {
     background: url("/images/fon-faq.jpg") no-repeat;
-    background-size: 100%;
+    background-size:cover;
 }
 
 .top-fon{
@@ -75,6 +75,8 @@ a,a:hover {
     border-bottom: none;
     /*transition: background  9999999s;*/
     text-decoration: none !important;
+    border-radius: 0.5rem !important;
+    /*height: 3.2rem;*/
 }
 
 /*.card-header:active,.btn:active ,.text-hover:active{*/
@@ -85,16 +87,17 @@ a,a:hover {
     /*cursor: pointer;*/
     /*transition: background 0s, color 0s;*/
 /*}*/
-
 .btn {
-    color:black;
+
     user-select: none;
     text-decoration: none !important;
     outline: none !important;
     display: block;
-    text-align:left;
-
+    padding: 0;
+    margin-left:75%;
 }
+
+
 /*.on-1 {*/
     /*background: red ;*/
 /*}*/
@@ -102,9 +105,10 @@ a,a:hover {
     /*background: green;*/
 /*}*/
 
-/*.no{*/
-    /*color: red;*/
-/*}*/
-/*.yes{*/
-    /*color: white;*/
-/*}*/
+.no{
+    color: red;
+}
+.yes{
+    color: white;
+}
+

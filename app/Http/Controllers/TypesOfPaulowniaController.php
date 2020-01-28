@@ -10,5 +10,4 @@ class TypesOfPaulowniaController extends Controller
     {
         return view('public.paulownia.show');
     }
-
 }

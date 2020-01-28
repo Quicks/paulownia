@@ -1,0 +1,9 @@
+.fon-for-title-1{
+    background: url("/images/line-for-type-of-paulownia.png") 0 0 no-repeat,
+    url("/images/fon-for-type-of-paulownia.jpg") -576px 100% no-repeat ;
+    background-position: bottom, center ;
+
+}
+.text-about-type{
+    text-indent: 7rem;
+}

@@ -62,6 +62,7 @@
                                    @else class="info-menu" @endif href="{{route('public.paulownia.index')}}">
                                     @lang('header-footer.paulownia')
                                 </a>
+
                             </li>
                             <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.products.index')) class="bottom-link-activ"

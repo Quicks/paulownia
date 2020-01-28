@@ -104,6 +104,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('/check-out/save-payment', 'App\Http\Controllers\CheckoutController@savePayment')->name('check-out.save-payment');
         Route::post('/check-out/save-order', 'App\Http\Controllers\CheckoutController@saveOrder')->name('check-out.save-order');
         Route::get('/check-out/success', 'App\Http\Controllers\CheckoutController@success')->name('check-out.success');
+        Route::get('/paulownia', 'App\Http\Controllers\TypesOfPaulowniaController@show')->name('public.paulownia.show');
 
         
 

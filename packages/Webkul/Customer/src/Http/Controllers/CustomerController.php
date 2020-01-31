@@ -102,7 +102,7 @@ class CustomerController extends Controller
             'oldpassword' => 'required_with:password',
             'password' => 'required_with:oldpassword|confirmed|min:6'
         ]);
-dd(request()->input());
+
         $data = collect(request()->input())->except('_token')->toArray();
 
         if ($data['date_of_birth'] == "") {

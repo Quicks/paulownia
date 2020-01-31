@@ -121,7 +121,7 @@ Route::group(['middleware' => ['web']], function () {
             'view' => 'public.customer.orders.index'
         ])->name('orders.index');
         Route::get('orders/view/{id}', 'Webkul\Shop\Http\Controllers\OrderController@view')->defaults('_config', [
-            'view' => 'public.customer.orders.view' //'shop::customers.account.orders.view' DO NOT WORK YET
+            'view' => 'public.customer.orders.view'
         ])->name('orders.view');
         Route::get('addresses', 'Webkul\Customer\Http\Controllers\AddressController@index')->defaults('_config', [
             'view' => 'public.customer.address.index'

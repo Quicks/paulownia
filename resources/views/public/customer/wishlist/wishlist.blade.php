@@ -1,5 +1,9 @@
 @extends('layouts.public')
 
+    @push('css')
+        <link rel="stylesheet" href="{{asset('css/customer-profile.css') }}?v1">
+    @endpush
+
 @section('content')
 
 <div class="account-content">
@@ -25,39 +29,24 @@
         <div class="account-items-list">
 
             @if ($items->count())
-            @foreach ($items as $item)
-                <div class="account-item-card mt-15 mb-15">
-                    <div class="media-info">
-                        @php
-                            $image = $productImageHelper->getProductBaseImage($item->product);
-                        @endphp
+            <div class="row justify-content-center mx-1 products-animation animated">
+                @foreach($items as $item)
+                    <div class="col-md-3 col-sm-6 col-xs-12 position-relative one-product">
+                        @include('public.products.product-card', ['product' => 
+                            Webkul\Product\Models\ProductFlat::where('product_id', $item->product_id)
+                                ->where('locale', app()->getLocale())->first()])
+                        <div class="operations text-center">
+                            <a class="btn btn-primary btn-md m-2" href="{{ route('customer.wishlist.remove', $item->id) }}">
+                                Delete from wishlist
+                            </a>
 
-                        <img class="media" src="{{ $image['small_image_url'] }}" />
-
-                        <div class="info">
-                            <div class="product-name">
-                                {{$item->product->name}}
-                            </div>
-
-                            @inject ('reviewHelper', 'Webkul\Product\Helpers\Review')
-
-                            <span class="stars" style="display: inline">
-                                @for($i=1;$i<=$reviewHelper->getAverageRating($item->product);$i++)
-                                    <span class="icon star-icon"></span>
-                                @endfor
-                            </span>
+                            <a href="{{ route('customer.wishlist.move', $item->id) }}" class="btn btn-primary btn-md m-2">
+                                {{ __('shop::app.wishlist.move-to-cart') }}
+                            </a>
                         </div>
                     </div>
-
-                    <div class="operations">
-                        <a class="mb-50" href="{{ route('customer.wishlist.remove', $item->id) }}"><span class="icon trash-icon"></span></a>
-
-                        <a href="{{ route('customer.wishlist.move', $item->id) }}" class="btn btn-primary btn-md">{{ __('shop::app.wishlist.move-to-cart') }}</a>
-                    </div>
-                </div>
-                <div class="horizontal-rule mb-10 mt-10"></div>
-            @endforeach
-
+                @endforeach
+            </div>
             @else
                 <div class="empty">
                     {{ __('customer::app.wishlist.empty') }}

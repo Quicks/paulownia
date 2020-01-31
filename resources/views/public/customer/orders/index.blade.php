@@ -1,5 +1,9 @@
 @extends('layouts.public')
 
+    @push('css')
+        <link rel="stylesheet" href="{{asset('css/customer-profile.css') }}?v1">
+    @endpush
+
 @section('content')
 
     <div class="account-content">

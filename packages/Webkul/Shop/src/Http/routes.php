@@ -258,7 +258,7 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
 
                 //Customer orders view summary and status
                 Route::get('orders/view/{id}', 'Webkul\Shop\Http\Controllers\OrderController@view')->defaults('_config', [
-                    'view' => 'public.customer.orders.view' //'shop::customers.account.orders.view'
+                    'view' => 'shop::customers.account.orders.view'
                 ])->name('customer.orders.view');
 
                 //Prints invoice
@@ -269,7 +269,7 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
                 /* Reviews route */
                 //Customer reviews
                 Route::get('reviews', 'Webkul\Customer\Http\Controllers\CustomerController@reviews')->defaults('_config', [
-                    'view' => 'public.customer.reviews.index'   //'shop::customers.account.reviews.index'
+                    'view' => 'shop::customers.account.reviews.index'
                 ])->name('customer.reviews.index');
 
                 //Customer review delete

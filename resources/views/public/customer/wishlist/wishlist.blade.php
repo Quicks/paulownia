@@ -24,8 +24,6 @@
             <div class="horizontal-rule"></div>
         </div>
 
-        {!! view_render_event('bagisto.shop.customers.account.wishlist.list.before', ['wishlist' => $items]) !!}
-
         <div class="account-items-list">
 
             @if ($items->count())
@@ -53,8 +51,6 @@
                 </div>
             @endif
         </div>
-
-        {!! view_render_event('bagisto.shop.customers.account.wishlist.list.after', ['wishlist' => $items]) !!}
 
     </div>
 </div>

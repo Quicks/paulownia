@@ -105,8 +105,40 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('/check-out/save-order', 'App\Http\Controllers\CheckoutController@saveOrder')->name('check-out.save-order');
         Route::get('/check-out/success', 'App\Http\Controllers\CheckoutController@success')->name('check-out.success');
 
-        
-
+        Route::get('/wishlist', 'Webkul\Customer\Http\Controllers\WishlistController@index')->defaults('_config', [
+            'view' => 'public.customer.wishlist.wishlist'
+        ])->name('wishlist.index');
+        Route::get('profile', 'Webkul\Customer\Http\Controllers\CustomerController@index')->defaults('_config', [
+            'view' => 'public.customer.profile.index'
+        ])->name('profile.index');
+        Route::get('profile/edit', 'Webkul\Customer\Http\Controllers\CustomerController@edit')->defaults('_config', [
+            'view' => 'public.customer.profile.edit'
+        ])->name('profile.edit');
+        Route::post('profile/edit', 'Webkul\Customer\Http\Controllers\CustomerController@update')->defaults('_config', [
+            'redirect' => 'profile.index'
+        ])->name('profile.edit');
+        Route::get('orders', 'Webkul\Shop\Http\Controllers\OrderController@index')->defaults('_config', [
+            'view' => 'public.customer.orders.index'
+        ])->name('orders.index');
+        Route::get('orders/view/{id}', 'Webkul\Shop\Http\Controllers\OrderController@view')->defaults('_config', [
+            'view' => 'public.customer.orders.view' //'shop::customers.account.orders.view' DO NOT WORK YET
+        ])->name('orders.view');
+        Route::get('addresses', 'Webkul\Customer\Http\Controllers\AddressController@index')->defaults('_config', [
+            'view' => 'public.customer.address.index'
+        ])->name('address.index');
+        Route::get('addresses/create', 'Webkul\Customer\Http\Controllers\AddressController@create')->defaults('_config', [
+            'view' => 'public.customer.address.create'
+        ])->name('address.create');
+        Route::post('addresses/create', 'Webkul\Customer\Http\Controllers\AddressController@store')->defaults('_config', [
+            'view' => 'public.customer.address.address',
+            'redirect' => 'address.index'
+        ])->name('address.create');
+        Route::get('addresses/edit/{id}', 'Webkul\Customer\Http\Controllers\AddressController@edit')->defaults('_config', [
+            'view' => 'public.customer.address.edit'
+        ])->name('address.edit');
+        Route::put('addresses/edit/{id}', 'Webkul\Customer\Http\Controllers\AddressController@update')->defaults('_config', [
+            'redirect' => 'address.index'
+        ])->name('address.edit');
     });
 
     Route::get('/certificate/{code}', 'App\Http\Controllers\CertificateController')->name('certificate');

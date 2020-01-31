@@ -14,22 +14,22 @@
     <div class="col-8">
         <ul class="nav nav-tabs float-right">
             <li class="nav-item">
-                <a class="nav-link @if($activeItem == 'wishlist') active @endif" href="{{route('customer.wishlist.index')}}">
+                <a class="nav-link @if($activeItem == 'wishlist') active @endif" href="{{route('wishlist.index')}}">
                     Favorite
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if($activeItem == 'orders') active @endif" href="{{route('customer.orders.index')}}">
+                <a class="nav-link @if($activeItem == 'orders') active @endif" href="{{route('orders.index')}}">
                     Story
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if($activeItem == 'profile') active @endif" href="{{route('customer.profile.index')}}">
+                <a class="nav-link @if($activeItem == 'profile') active @endif" href="{{route('profile.index')}}">
                     Profile
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if($activeItem == 'address') active @endif" href="{{route('customer.address.index')}}">
+                <a class="nav-link @if($activeItem == 'address') active @endif" href="{{route('address.index')}}">
                     Address
                 </a>
             </li>

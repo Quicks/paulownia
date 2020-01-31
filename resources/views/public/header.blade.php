@@ -126,7 +126,7 @@
                                             {{ auth()->guard('customer')->user()->first_name }}
                                         </li>
                                         <li class="dropdown-item">
-                                            <a href="{{ route('customer.profile.index') }}">{{ __('shop::app.header.profile') }}</a>
+                                            <a href="{{ route('profile.index') }}">{{ __('shop::app.header.profile') }}</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a href="{{ route('customer.session.destroy') }}">{{ __('shop::app.header.logout') }}</a>
@@ -143,7 +143,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item ">
-                                <a href="{{ route('customer.wishlist.index') }}">
+                                <a href="{{ route('wishlist.index') }}">
                                     <img width="20px" height="20px" src="{{asset('images/favorite-heart-button.svg')}}">
                                 </a>
                             </li>

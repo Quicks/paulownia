@@ -8,14 +8,14 @@
         <div class="account-layout">
 
             <div class="account-head mb-15">
-                <span class="back-icon"><a href="{{ route('customer.account.index') }}"><i class="icon icon-menu-back"></i></a></span>
+                <span class="back-icon"><a href="{{ route('profile.index') }}"><i class="icon icon-menu-back"></i></a></span>
                 <span class="account-heading">{{ __('shop::app.customer.account.address.edit.title') }}</span>
                 <span></span>
             </div>
 
             {!! view_render_event('bagisto.shop.customers.account.address.edit.before', ['address' => $address]) !!}
             
-            <form method="post" action="{{ route('customer.address.edit', $address->id) }}" @submit.prevent="onSubmit">
+            <form method="post" action="{{ route('address.edit', $address->id) }}" @submit.prevent="onSubmit">
 
                 <div class="account-table-content">
                     @method('PUT')

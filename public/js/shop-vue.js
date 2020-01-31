@@ -11,7 +11,7 @@ $(document).ready(function(){
         },
 
         mounted: function () {
-            // this.addServerErrors();
+            this.addServerErrors();
             // this.addFlashMessages();
         },
 

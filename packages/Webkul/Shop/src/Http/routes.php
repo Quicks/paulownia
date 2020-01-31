@@ -137,7 +137,7 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
 
         // Reset Password Form Store
         Route::post('/reset-password', 'Webkul\Customer\Http\Controllers\ResetPasswordController@store')->defaults('_config', [
-            'redirect' => 'customer.profile.index'
+            'redirect' => 'profile.index'  //'customer.profile.index'
         ])->name('customer.reset-password.store');
 
         // Login Routes
@@ -197,12 +197,12 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
 
                 //Customer Profile Show
                 Route::get('profile', 'Webkul\Customer\Http\Controllers\CustomerController@index')->defaults('_config', [
-                    'view' => 'public.customer.profile.index'   //'shop::customers.account.profile.index'
+                    'view' => 'shop::customers.account.profile.index'
                 ])->name('customer.profile.index');
 
                 //Customer Profile Edit Form Show
                 Route::get('profile/edit', 'Webkul\Customer\Http\Controllers\CustomerController@edit')->defaults('_config', [
-                    'view' => 'public.customer.profile.edit'    //'shop::customers.account.profile.edit'
+                    'view' => 'shop::customers.account.profile.edit'
                 ])->name('customer.profile.edit');
 
                 //Customer Profile Edit Form Store
@@ -214,23 +214,23 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
                 /*    Routes for Addresses   */
                 //Customer Address Show
                 Route::get('addresses', 'Webkul\Customer\Http\Controllers\AddressController@index')->defaults('_config', [
-                    'view' => 'public.customer.address.index'  //'shop::customers.account.address.index'
+                    'view' => 'shop::customers.account.address.index'
                 ])->name('customer.address.index');
 
                 //Customer Address Create Form Show
                 Route::get('addresses/create', 'Webkul\Customer\Http\Controllers\AddressController@create')->defaults('_config', [
-                    'view' => 'public.customer.address.create'  //'shop::customers.account.address.create'
+                    'view' => 'shop::customers.account.address.create'
                 ])->name('customer.address.create');
 
                 //Customer Address Create Form Store
                 Route::post('addresses/create', 'Webkul\Customer\Http\Controllers\AddressController@store')->defaults('_config', [
-                    'view' => 'public.customer.address.address', //'shop::customers.account.address.address'
+                    'view' => 'shop::customers.account.address.address',
                     'redirect' => 'customer.address.index'
                 ])->name('customer.address.create');
 
                 //Customer Address Edit Form Show
                 Route::get('addresses/edit/{id}', 'Webkul\Customer\Http\Controllers\AddressController@edit')->defaults('_config', [
-                    'view' => 'public.customer.address.edit' //'shop::customers.account.address.edit'
+                    'view' => 'shop::customers.account.address.edit'
                 ])->name('customer.address.edit');
 
                 //Customer Address Edit Form Store
@@ -247,13 +247,13 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
                 /* Wishlist route */
                 //Customer wishlist(listing)
                 Route::get('wishlist', 'Webkul\Customer\Http\Controllers\WishlistController@index')->defaults('_config', [
-                    'view' => 'public.customer.wishlist.wishlist'   //'shop::customers.account.wishlist.wishlist'
+                    'view' => 'shop::customers.account.wishlist.wishlist'
                 ])->name('customer.wishlist.index');
 
                 /* Orders route */
                 //Customer orders(listing)
                 Route::get('orders', 'Webkul\Shop\Http\Controllers\OrderController@index')->defaults('_config', [
-                    'view' => 'public.customer.orders.index'    //'shop::customers.account.orders.index'
+                    'view' => 'shop::customers.account.orders.index'
                 ])->name('customer.orders.index');
 
                 //Customer orders view summary and status

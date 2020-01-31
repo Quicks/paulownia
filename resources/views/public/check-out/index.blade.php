@@ -13,13 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vee-validate/2.0.0-rc.26/vee-validate.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            Vue.use(VeeValidate);
-            Vue.prototype.$http = axios;
-            new Vue({ el: 'checkout' });
-        });
-    </script>
+    <script src="{{asset('js/shop-vue.js')}}"></script>
 
     <script type="text/x-template" id="checkout-template">
         <div id="checkout" class="checkout-process">

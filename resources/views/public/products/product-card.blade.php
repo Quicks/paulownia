@@ -33,7 +33,7 @@
                     </button>
                 </form>
 
-                <a href="#" class="mt-1 like-m">
+                <a href="{{ route('customer.wishlist.add', $product->product_id) }}" class="mt-1 like-m">
                     <img data-src="{{asset('/images/our-products-like.png')}}" 
                             class="like-product lazyload" style="border-radius:50%">
                 </a>

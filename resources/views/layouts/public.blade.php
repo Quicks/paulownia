@@ -75,6 +75,14 @@
         crossorigin="anonymous"></script>
 <script src="{{ asset('js/lazysizes.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
+<script type="text/javascript">
+    window.serverErrors = [];
+    @if(isset($errors))
+        @if (count($errors))
+            window.serverErrors = @json($errors->getMessages());
+        @endif
+    @endif
+</script>
 
 @stack('scripts')
 

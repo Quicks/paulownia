@@ -137,7 +137,7 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
 
         // Reset Password Form Store
         Route::post('/reset-password', 'Webkul\Customer\Http\Controllers\ResetPasswordController@store')->defaults('_config', [
-            'redirect' => 'customer.profile.index'
+            'redirect' => 'profile.index'  //'customer.profile.index'
         ])->name('customer.reset-password.store');
 
         // Login Routes

@@ -26,7 +26,7 @@
                                 <div class="news-shadow">
                                     <img
                                             @if(!empty($news->images[0]))
-                                            data-src="{{asset('storage/'.$news->images[0]->image)}}"
+                                            data-src="{{asset('storage/'.$news->images[0]->thumbnail)}}"
                                             @else
                                             data-src="{{asset('/images/slider-news-1.png')}}"
                                             @endif

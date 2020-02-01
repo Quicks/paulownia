@@ -17,7 +17,7 @@ class NewsController extends Controller
         $news = News::where('active', true)->get();
         $articles = Article::where('active', true)->get();
         $treatises = Treatise::where('active', true)->get();
-        $allNews = $news->concat($articles)->concat($treatises)->sortByDesc('created_at')->paginate(3);
+        $allNews = $news->concat($articles)->concat($treatises)->sortByDesc('publish_date')->paginate(3);
         if ($request->ajax()) {
             $view = view('public.news.newsData',compact('allNews'))->render();
             return response()->json(['html'=>$view]);

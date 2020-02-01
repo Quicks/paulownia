@@ -53,19 +53,21 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'name' => 'required|max:90',
-			'active' => 'required|boolean',
-			'publish_date' => 'required|date',
+            'name' => 'required|max:90',
+            'active' => 'required|boolean',
+            'publish_date' => 'required|date',
             'image' => 'image|max:20000',
             'images.*' => 'image|max:20000',
             'video' => 'url'
-		]);
+        ]);
         $requestData = $request->all();
-        parse_str( parse_url( $request->video, PHP_URL_QUERY ), $videoId );
-        $requestData['video'] = 'https://www.youtube.com/embed/' . $videoId['v'];
+        if (!empty($request->video)) {
+            parse_str(parse_url($request->video, PHP_URL_QUERY), $videoId);
+            $requestData['video'] = 'https://www.youtube.com/embed/' . $videoId['v'];
+        }
 
         $requestData['admin_id'] = auth()->guard('admin')->user()->id;
-        
+
         $news = News::create($requestData);
         $imageAtributes = $request->image_atr;
         $imageAtributes['imageable_id'] = $news->id;
@@ -91,7 +93,7 @@ class NewsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\View\View
      */
@@ -105,7 +107,7 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\View\View
      */
@@ -120,28 +122,28 @@ class NewsController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'name' => 'required|max:90',
-			'active' => 'required|boolean',
-			'publish_date' => 'required|date',
+            'name' => 'required|max:90',
+            'active' => 'required|boolean',
+            'publish_date' => 'required|date',
             'video' => 'url'
-		]);
+        ]);
         $news = News::findOrFail($id);
-        if(!empty($request->video)){
-            $urlVideoPath = explode("/", parse_url( $request->video, PHP_URL_PATH));
-            if($urlVideoPath[1] !== "embed"){
-                parse_str( parse_url( $request->video, PHP_URL_QUERY ), $videoId );
-                $data =  'https://www.youtube.com/embed/' . $videoId['v'];
+        if (!empty($request->video)) {
+            $urlVideoPath = explode("/", parse_url($request->video, PHP_URL_PATH));
+            if ($urlVideoPath[1] !== "embed") {
+                parse_str(parse_url($request->video, PHP_URL_QUERY), $videoId);
+                $data = 'https://www.youtube.com/embed/' . $videoId['v'];
                 $request->merge(['video' => $data]);
             }
         }
-        $news->update($request->except(['image_atr','image']));
+        $news->update($request->except(['image_atr', 'image']));
         if ($request->image_atr) {
             foreach ($request->image_atr as $image_id => $image_atr) {
                 $image = Image::find($image_id);
@@ -156,7 +158,7 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */

@@ -60,10 +60,12 @@
 @push('scripts')
     <script type="text/javascript">
         var page = 1;
+        let wait = false;
         $(window).scroll(function () {
-            if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+            if ($(window).scrollTop() + $(window).height() >= $(document).height() - $('.footer').height() && wait == false) {
                 page++;
                 loadMoreData(page);
+                wait = true;
             }
         });
 
@@ -77,13 +79,13 @@
                 cache: false
             })
                 .done(function (data) {
-                    console.log(data);
                     if (data.html == "") {
                         $('.ajax-load').html("This is all news");
                         return;
                     }
                     $('.ajax-load').hide();
                     $("#post-data").append(data.html);
+                    wait = false;
                 })
                 .fail(function (jqXHR, ajaxOptions, thrownError) {
                     alert('server not responding...');

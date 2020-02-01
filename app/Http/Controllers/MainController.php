@@ -19,10 +19,10 @@ class MainController extends Controller
         $sliderData = $sliderRepository->findByField('channel_id', $currentChannel->id)->toArray();
         $mainGallery = Gallery::first();
         $products = ProductFlat::where('featured', 1)->where('status', 1)->where('locale', App::getLocale())->limit(8)->get()->sortByDesc('special_price');
-        $news = News::where('active', true)->get();
-        $articles = Article::where('active', true)->get();
-        $treatises = Treatise::where('active', true)->get();
-        $allNews = $news->concat($articles)->concat($treatises)->sortByDesc('created_at');
+        $news = News::where('active', true)->orderByDesc('publish_date')->limit(5)->get();
+        $articles = Article::where('active', true)->orderByDesc('publish_date')->limit(5)->get();
+        $treatises = Treatise::where('active', true)->orderByDesc('publish_date')->limit(5)->get();
+        $allNews = $news->concat($articles)->concat($treatises)->sortByDesc('publish_date');
 
         return view('public.main.index', compact('sliderData', 'mainGallery', 'products', 'allNews'));
     }

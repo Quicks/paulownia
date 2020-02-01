@@ -28,9 +28,9 @@
                         </div>
                     @endforeach
                 @elseif(!empty($news->images[0]))
-                    <img data-src="{{asset('storage/'.$news->images[0]->image)}}" class="img-rad lazyload">
+                    <img data-src="{{asset('storage/'.$news->images[0]->image)}}" class="player lazyload">
                 @else
-                    <img data-src="{{asset('/images/slider-news-1.png')}}" class="img-rad lazyload">
+                    <img data-src="{{asset('/images/slider-news-1.png')}}" class="player lazyload">
                 @endif
             </div>
         </div>

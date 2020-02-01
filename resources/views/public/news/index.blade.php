@@ -62,7 +62,7 @@
         var page = 1;
         let wait = false;
         $(window).scroll(function () {
-            if ($(window).scrollTop() + $(window).height() >= $(document).height() - $('.footer').height() && wait == false) {
+            if ($(window).scrollTop() + $(window).height() >= ($(document).height() - $('.footer').height())*0.9 && wait == false) {
                 page++;
                 loadMoreData(page);
                 wait = true;

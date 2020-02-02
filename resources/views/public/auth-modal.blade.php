@@ -162,8 +162,6 @@
         });
         function viewPassword() {
             let passwordInput = $('.control-password');
-            console.log(passwordInput);
-            console.log(passwordInput.type);
             if(passwordInput.attr('type') === 'password') {
                 passwordInput.attr('type', 'text');
             } else {

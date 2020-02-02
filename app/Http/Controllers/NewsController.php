@@ -28,9 +28,9 @@ class NewsController extends Controller
     }
     public function show(Request $request, $type, $id)
     {
-        if ($type == 'News') {
+        if ($type == 'news') {
             $news = News::find($id);
-        } elseif ($type == 'Article') {
+        } elseif ($type == 'article') {
             $news = Article::find($id);
         } else {
             $news = Treatise::find($id);

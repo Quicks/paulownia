@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}?v5">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}?v7">
     <link rel="stylesheet" href="{{ asset('css/cookie_consent.css') }}?v3">
-    <link rel="stylesheet" href="{{ asset('css/auth-modal.css') }}?v2">
+    <link rel="stylesheet" href="{{ asset('css/auth-modal.css') }}?v3">
 
     @stack('css')
 

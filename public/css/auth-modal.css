@@ -1,55 +1,65 @@
-.modal{
+.modal {
     background: rgba(0, 0, 0, 0.001);
 }
+
 .modal-content {
     width: 80%;
     background: #FFFFFF;
     box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.5);
     border-radius: 25px;
 }
-.close{
+
+.close {
     outline: none !important;
 }
-.modal-header{
+
+.modal-header {
     border: none;
     padding: 1rem 1rem 0 1rem;
 }
+
 .modal-header .close {
     padding: 1rem 2rem 0 1rem;
     margin: -1rem -1rem -1rem auto;
     z-index: 1;
 }
-.nav-tabs, .nav-link{
+
+.nav-tabs, .nav-link {
     border: none;
     color: rgba(0, 0, 0, 0.5);
 }
 
-.nav-tabs .nav-link:hover{
+.nav-tabs .nav-link:hover {
     border: none;
 }
+
 .nav-tabs .nav-link.active {
     color: #8CBD02;
-    border:none;
-    font-weight:bold;
+    border: none;
+    font-weight: bold;
 }
+
 .forgot-text {
     color: #8CBD02;
-    font-weight:bold;
+    font-weight: bold;
     padding: 0rem 1rem 1rem 2rem;
 }
 
-.width-email ,.width-password,.first-last-name-modal,.width-email-sing-in,.width-password-sing-in ,.width-password-confirmation {
+.width-email, .width-password, .first-last-name-modal, .width-email-sing-in, .width-password-sing-in, .width-password-confirmation {
     font-style: italic;
     display: inline-block;
     color: rgba(0, 0, 0, 0.5);
 }
+
 .width-password {
     margin: 0 0 0 4.9rem;
 }
+
 .width-email {
     margin: 0 0 0 6.8rem;
 }
-.first-last-name-modal{
+
+.first-last-name-modal {
     margin: 0 0 0 5.2rem;
 }
 
@@ -65,14 +75,14 @@
     margin: 0 0 0 1.9rem;
 }
 
-input.control, input.control-password{
+input.control, input.control-password {
     background-color: transparent !important;
     letter-spacing: normal;
     text-align: start;
     -webkit-appearance: textfield;
     -webkit-rtl-ordering: logical;
     cursor: text;
-    margin-left:2%;
+    margin-left: 2%;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -80,36 +90,47 @@ input.control, input.control-password{
     border-bottom: 1px solid #000000;
 }
 
-.control{
+.control {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.control-password{
-    color: #8CBD02;
-    background-image: url("/images/eye-for-password-modal.png") !important ;
-    background-repeat: no-repeat;
-    background-position: 11.4rem .6rem;
-    outline-color: transparent;
+.control-password {
     font-size: 2rem;
-    width:12.4rem;
+    width: 12.4rem;
     height: 2rem;
 }
-.modal-footer{
+
+.eye {
+    color: #8CBD02;
+    right: 14%;
+    outline-color: transparent;
     border: none;
-    background: url("/images/line-for-about-us-header.png") no-repeat,url("/images/fon-for-modal-footer.jpg");
+    background: transparent;
+    z-index: 888;
+    cursor: pointer;
+}
+
+.eye:active, .eye:focus {
+    outline: none;
+}
+
+.modal-footer {
+    border: none;
+    background: url("/images/line-for-about-us-header.png") no-repeat, url("/images/fon-for-modal-footer.jpg");
     background-size: 100%;
     border-radius: 0 0 25px 25px;
     height: 4rem;
 }
 
-.href-forgot{
+.href-forgot {
     color: rgba(0, 0, 0, 0.5);
 }
 
-a:hover{
+a:hover {
     color: #8CBD02;
 }
-.button-modal-sing-in,.button-modal-login{
+
+.button-modal-sing-in, .button-modal-login {
     background: linear-gradient(203.84deg, #8CBD02 8.62%, #84B811 27.22%, #68A648 71.7%);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 60px;
@@ -117,24 +138,24 @@ a:hover{
     font-style: normal;
     font-weight: bold;
     font-size: 1.2rem;
-    line-height:1.6rem;
+    line-height: 1.6rem;
     color: #FFFFFF;
     outline: none;
     cursor: pointer;
     float: right;
 }
 
-.button-modal-sing-in{
+.button-modal-sing-in {
     margin: 1rem 1rem 3rem 11.8rem;
     padding: .5rem 4.2rem .5rem 4.2rem;
 }
 
-.button-modal-login{
+.button-modal-login {
     margin: 1rem 1rem 3rem 11.3rem;
     padding: .5rem 4.2rem .5rem 4.2rem;
 }
 
-.button-modal-sing-in:hover,.button-modal-login:hover{
+.button-modal-sing-in:hover, .button-modal-login:hover {
     background: linear-gradient(203.84deg, #8CBD02 8.62%, #84B811 27.22%, #68A648 71.7%);
     box-shadow: -2px -2px 20px #8CBD02, 2px 2px 10px rgba(0, 0, 0, 0.25);
     border-radius: 60px;
@@ -153,7 +174,7 @@ a:hover{
     }
 }
 
-@media screen and (min-width: 426px) and (max-width: 768px){
+@media screen and (min-width: 426px) and (max-width: 768px) {
     .modal-dialog {
         margin: 0 0 0 16rem;
     }
@@ -161,80 +182,95 @@ a:hover{
     .width-email-sing-in {
         margin: 0 0 0 8.1rem;
     }
+
     .width-password-sing-in {
         margin: 0 0 0 5.9rem;
     }
+
     .control-password {
         background-position: 13rem .6rem;
         font-size: 2rem;
         width: 14.44rem;
         height: 2rem;
     }
+
     .width-password-confirmation {
         margin: 0 0 0 1.37rem;
     }
+
     .width-password {
         margin: 0 0 0 4.57rem;
     }
 }
 
-@media screen and (min-width:376px) and (max-width:425px){
+@media screen and (min-width: 376px) and (max-width: 425px) {
 
     .modal-dialog {
-        margin:  0 5rem 0 10rem;
-    ;
+        margin: 0 5rem 0 10rem;;
     }
-    .width-email,.width-password {
+
+    .width-email, .width-password {
         margin: 0 0 0 1rem;
     }
+
     input.control, input.control-password {
         margin-left: 1rem;
     }
+
     .control-password {
         background-position: 16rem .6rem;
         width: 17.4rem;
     }
-    .first-last-name-modal,.width-email-sing-in,.width-password-confirmation,.width-password-sing-in{
+
+    .first-last-name-modal, .width-email-sing-in, .width-password-confirmation, .width-password-sing-in {
         margin: 0 0 0 1rem;
     }
 }
 
-@media screen and (min-width:321px) and (max-width:375px){
+@media screen and (min-width: 321px) and (max-width: 375px) {
 
     .modal-dialog {
         margin: 0 0 0 8rem;
     }
-    .width-email,.width-password {
+
+    .width-email, .width-password {
         margin: 0 0 0 1rem;
     }
+
     input.control, input.control-password {
         margin-left: 4%;
     }
+
     .control-password {
         background-position: 16rem .6rem;
         width: 17.4rem;
     }
-    .first-last-name-modal,.width-email-sing-in,.width-password-confirmation,.width-password-sing-in{
+
+    .first-last-name-modal, .width-email-sing-in, .width-password-confirmation, .width-password-sing-in {
         margin: 0 0 0 1rem;
     }
 }
 
-@media screen and (max-width:320px){
+@media screen and (max-width: 320px) {
 
     .modal-dialog {
         margin: 0 0 0 6rem;
     }
-    .width-email,.width-password {
+
+    .width-email, .width-password {
         margin: 0 0 0 1rem;
     }
+
     input.control, input.control-password {
         margin-left: 4%;
     }
+
     .control-password {
         background-position: 16rem .6rem;
         width: 17.4rem;
     }
-    .first-last-name-modal,.width-email-sing-in,.width-password-confirmation,.width-password-sing-in{
+
+    .first-last-name-modal, .width-email-sing-in, .width-password-confirmation, .width-password-sing-in {
         margin: 0 0 0 1rem;
     }
 }

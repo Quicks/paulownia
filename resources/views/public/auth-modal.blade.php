@@ -11,7 +11,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="log-tab" data-toggle="tab" href="#log" role="tab" 
+                        <a class="nav-link" id="log-tab" data-toggle="tab" href="#log" role="tab"
                                 aria-controls="log" aria-selected="false">
                             Login
                         </a>
@@ -47,15 +47,17 @@
                                     <span class="control-error">{{ $errors->first('email') }}</span>
                                 </div>
 
-                                <div class="control-group @if($errors->has('password')) has-auth-error @endif">
+                                <div class="position-relative control-group @if($errors->has('password')) has-auth-error @endif">
                                     <label for="password" class="required width-password-sing-in">{{ __('shop::app.customer.signup-form.password') }}</label>:*
                                     <input type="password" class="control-password" name="password" required minlength="6" value="{{ old('password') }}">
+                                    <button type="button" class="position-absolute eye"><img src="{{asset("/images/eye-for-password-modal.png")}}"></button>
                                     <span class="control-error">{{ $errors->first('password') }}</span>
                                 </div>
 
                                 <div class="control-group mb-4 @if($errors->has('password_confirmation')) has-auth-error @endif">
                                     <label for="password_confirmation" class="required width-password-confirmation">{{ __('shop::app.customer.signup-form.confirm_pass') }}</label>:*
                                     <input type="password" class="control-password" name="password_confirmation"  required minlength="6">
+                                    <button type="button" class="position-absolute eye"><img src="{{asset("/images/eye-for-password-modal.png")}}"></button>
                                     <span class="control-error">{{ $errors->first('password_confirmation') }}</span>
                                 </div>
 
@@ -64,7 +66,7 @@
                                 </button>
                             </div>
                         </form>
-                        
+
                     </div>
 
                     <div class="tab-pane fade" id="log" role="tabpanel" aria-labelledby="log-tab">
@@ -80,12 +82,13 @@
                                 <div class="control-group mb-3 @if($errors->has('password')) has-auth-error @endif">
                                     <label for="password" class="required width-password">{{ __('shop::app.customer.login-form.password') }}</label>:*
                                     <input type="password" class="control-password" name="password" required value="{{ old('password') }}" minlength="6">
+                                    <button type="button" class="position-absolute eye"><img src="{{asset("/images/eye-for-password-modal.png")}}"></button>
                                     <span class="control-error">{{ $errors->first('password') }}</span>
 
                                 </div>
 
                                 <div class="forgot-password-link pt-3">
-                                    <a class="pl-3 href-forgot" href="#" 
+                                    <a class="pl-3 href-forgot" href="#"
                                         onclick="$('#forgot').show();$('#log, #myTab').hide();">
                                         {{ __('shop::app.customer.login-form.forgot_pass') }}
                                     </a>{{-- <img data-src="/images/square-for-modal.png" class="lazyload"> --}}
@@ -117,7 +120,7 @@
                                     <span class="control-error">{{ $errors->first('email') }}</span>
                                 </div>
                                 <div class="button-group">
-                                    <input class="button-modal-sing-in mb-1" type="submit" 
+                                    <input class="button-modal-sing-in mb-1" type="submit"
                                         value="{{ __('shop::app.customer.forgot-password.submit') }}">
                                 </div>
                                 <div class="control-group" style="margin-bottom: 0px;">
@@ -153,6 +156,19 @@
                 $('#log-tab').tab('show');
             }
         };
+        $('.eye').on('click', function (e) {
+            e.preventDefault();
+            viewPassword();
+        });
+        function viewPassword() {
+            let passwordInput = $('.control-password');
+            if(passwordInput.attr('type') === 'password') {
+                passwordInput.attr('type', 'text');
+            } else {
+                passwordInput.attr('type', 'password');
+            }
+        }
+
     });
 </script>
 @endpush

@@ -1,104 +1,86 @@
 @extends('layouts.public')
+@push('css')
+    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/news-show.css') }}?v1">
+@endpush
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-header">News {{ $news->id }}</div>
-                    <div class="card-body">
-                        <a href="{{ url(App::getLocale() .'/news')}}" title="Back">
-                            <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back
-                            </button>
-                        </a>
-                        <br/>
-                        <br/>
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="main-form" role="tabpanel"
-                                 aria-labelledby="main-form">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <tbody>
-                                        <tr>
-                                            <th>ID</th>
-                                            <td>{{ $news->id }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th> Name</th>
-                                            <td> {{ $news->name }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th> Active</th>
-                                            <td> {{ $news->active }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th> Publish Date</th>
-                                            <td> {{ $news->publish_date }} </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            @empty(!($news->translate($locale)->title))
-                                <div class="row  m-1 pt-2 border-top">
-                                    <div class="col-md-3 font-weight-bold"> Title ({{$locale}})</div>
-                                    <div @if($locale == 'ar') class="col-md-9 text-right"
-                                         @endif class="col-md-9"> {{ $news->translate($locale)->title }} </div>
-                                </div>
-                            @endempty
-                            @empty(!($news->translate($locale)->text))
-                                <div class="row  m-1 pt-2 border-top">
-                                    <div class="col-md-3 font-weight-bold"> Text ({{$locale}})</div>
-                                    <div @if($locale == 'ar') class="col-md-9 text-right"
-                                         @endif  class="col-md-9">
-                                        {!! $news->translate($locale)->text !!}
-                                    </div>
-                                </div>
-                            @endempty
-                            @empty(!($news->translate($locale)->keywords))
-                                <div class="row  m-1 pt-2 border-top">
-                                    <div class="col-md-3 font-weight-bold"> Keywords ({{$locale}})</div>
-                                    <div @if($locale == 'ar') class="col-md-9 text-right"
-                                         @endif class="col-md-9">
-                                        {!! $news->translate($locale)->keywords !!}
-                                    </div>
-                                </div>
-                            @endempty
+    <style>
+        .fon-text {
+            color: #ffffff;
+        }
 
+        .fon-text:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+    </style>
+    <div class="row m-0 position-relative">
+
+        <div class="col-12 p-0 background-title">
+            @include('public.breadcrumbs', $breadcrumbs = [route('public.news.index') => 'header-footer.news',
+                route('public.news.show', [mb_strtolower(class_basename($news)), $news->id]) => $news->title])
+
+            <div class="row mx-auto" style="max-width: 800px">
+                <div class="col-lg-2 col-sm-4 news-title-position">
+                    <span class="news-title-show">{{date("d.m", strtotime($news->publish_date))}} </span>
+                </div>
+                <div class="col-lg-10 col-sm-8 news-title-position">
+                    <span class="news-title-show">{{$news->title}}</span>
+                </div>
+            </div>
+            <img data-src="{{asset("/images/show-news-wave.png")}}" class="lazyload news-wave position-absolute">
+
+        </div>
+
+        <div class="col-12 background-main">
+            <div class="row">
+                @if(!empty($news->video))
+                    <div class="col-12 d-flex justify-content-center mb-5">
+                        <div class="player-show">
+                            <iframe src="{{ $news->video }}"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
+                @endif
+                <div class="col-12 news-text-show mb-5">{{str_replace("&nbsp;",'',strip_tags($news->text))}}</div>
+                @if(!empty($news->files))
+                    @foreach($news->files as $file)
+                        <div class="col-12 mb-3">
+                            <a href="{{asset('storage/'.$file->file)}}" target="_blank">
+                                <button class="news-file-button-show"> {{basename($file->file)}}</button>
+                            </a>
+                        </div>
+                    @endforeach
+                @endif
+                @if(!empty ($news->images))
+                    <div class="col-12 mb-5">
+                        <div class="news-show-slick">
                             @foreach ($news->images as $image)
-                                <div class="row m-1 pt-2 border-top border-dark">
-                                    <div class="col-md-3 font-weight-bold"> Image {{$loop->iteration}} </div>
-                                    <div class="col-md-9 text-center">
-                                        <img class="img-thumbnail w-50"
-                                             src="{{asset('storage/'.$image->image)}}">
-                                    </div>
+                                <div class="d-flex justify-content-center">
+                                    <img data-src="{{asset('storage/'.$image->image)}}" class="imgs-news lazyload">
                                 </div>
-                                @empty(!($image->translate($locale)->title))
-                                    <div class="row m-1 pt-2 border-top">
-                                        <div class="col-md-3 font-weight-bold">
-                                            Image title ({{$locale}})
-                                        </div>
-                                        <div @if($locale == 'ar') class="col-md-9 text-right"
-                                             @endif class="col-md-9">
-                                            {{$image->translate($locale)->title}}
-                                        </div>
-                                    </div>
-                                @endempty
-                                @empty(!($image->translate($locale)->desc))
-                                    <div class="row m-1 pt-2 border-top">
-                                        <div class="col-md-3 font-weight-bold">
-                                            Image description ({{$locale}})
-                                        </div>
-                                        <div @if($locale == 'ar') class="col-md-9 text-right"
-                                             @endif class="col-md-9">
-                                            {!!$image->translate($locale)->desc!!}
-                                        </div>
-                                    </div>
-                                @endempty
                             @endforeach
                         </div>
                     </div>
-                </div>
-
+                @endif
             </div>
         </div>
+    </div>
 @endsection
+@push('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+    <script>
+        $('.news-show-slick').slick({
+            arrows: false,
+            slidesToShow: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+    </script>
+@endpush

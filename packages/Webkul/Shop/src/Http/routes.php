@@ -132,13 +132,12 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
         Route::post('/forgot-password', 'Webkul\Customer\Http\Controllers\ForgotPasswordController@store')->name('customer.forgot-password.store');
 
         // Reset Password Form Show
-        Route::get('/reset-password/{token}', 'Webkul\Customer\Http\Controllers\ResetPasswordController@create')->defaults('_config', [
-            'view' => 'shop::customers.signup.reset-password'
+        Route::get('/reset-password/{token}', 'Webkul\Customer\Http\Controllers\ResetPasswordController@create')->defaults('_config', ['view' => 'public.reset-password.index'
         ])->name('customer.reset-password.create');
 
         // Reset Password Form Store
         Route::post('/reset-password', 'Webkul\Customer\Http\Controllers\ResetPasswordController@store')->defaults('_config', [
-            'redirect' => 'customer.profile.index'
+            'redirect' => 'profile.index'  //'customer.profile.index'
         ])->name('customer.reset-password.store');
 
         // Login Routes

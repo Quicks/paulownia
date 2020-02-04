@@ -30,7 +30,7 @@
                 <li><a href="{{route('public.paulownia.index')}}">Paulownia</a></li>
                 <li><a href="{{route('public.products.index')}}">@lang('header-footer.goods')</a></li>
                 <li><a href="{{route('public.calculations.index')}}">@lang('header-footer.profitability calculation')</a></li>
-                <li><a href="{{route('public.galleries.index')}}">@lang('header-footer.gallery')</a></li>
+{{--                <li><a href="{{route('public.galleries.index')}}">@lang('header-footer.gallery')</a></li>--}}
                 <li><a href="{{route('public.faq.index')}}">@lang('header-footer.faq')</a></li>
                 <li><a href="{{route('public.about-us.index')}}">@lang('header-footer.about us')</a></li>
             </ul>

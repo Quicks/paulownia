@@ -48,7 +48,7 @@
                     <li class="text-under-prise-show mb-3">@lang('products.without-VAT')</li>
                     <li class="text-red-show mb-4">Over 200 pieces discount: -5%</li>
                     @if(!empty($product->reservation))
-                        <li>{{$product->reservation}}</li>
+                        <li>{!! $product->reservation !!}</li>
                     @endif
                     <li>@lang('products.min-order') {{$product->min_order_qty}} @lang('products.pieces').</li>
                 </ul>
@@ -82,15 +82,15 @@
                         </ul>
                     </div>
                     <div class="tab-pane fade mt-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        {{strip_tags($product->short_description)}}
+                        {!! $product->short_description !!}
                     </div>
                     <div class="tab-pane fade mt-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                        {{strip_tags($product->description)}}
+                        {!! $product->description !!}
                     </div>
                     <div class="tab-pane fade mt-4" id="nav-contact-1" role="tabpanel"
                          aria-labelledby="nav-contact-tab-1">
                         @if(!empty($product->delivery))
-                            {{$product->delivery}}
+                            {!! $product->delivery !!}
                         @endif
                     </div>
                 </div>

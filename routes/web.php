@@ -105,8 +105,8 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('/check-out/save-order', 'App\Http\Controllers\CheckoutController@saveOrder')->name('check-out.save-order');
         Route::get('/check-out/success', 'App\Http\Controllers\CheckoutController@success')->name('check-out.success');
 
-        Route::get('/paulownia/type', 'App\Http\Controllers\TypesOfPaulowniaController@show')->name('public.paulownia.type');
-        Route::get('/paulownia/planting', 'App\Http\Controllers\PlantationCreationController@view')->name('public.paulownia.planting');
+        Route::get('/paulownia/type', 'App\Http\Controllers\PaulowniaController@type')->name('public.paulownia.type');
+        Route::get('/paulownia/planting', 'App\Http\Controllers\PaulowniaController@planting')->name('public.paulownia.planting');
 
         Route::get('/wishlist', 'Webkul\Customer\Http\Controllers\WishlistController@index')->defaults('_config', [
             'view' => 'public.customer.wishlist.wishlist'

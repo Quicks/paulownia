@@ -5,25 +5,18 @@
     font-size: 1rem;
     color:black;
 }
+.tyro{
+    text-decoration:none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #8CBD02 !important;
+}
 
-
-/*a:link { color: red; }*/
-/*a:visited { color: grey; }*/
-/*a:hover { color: blue; }*/
-/*a:active { background-color: yellow; }*/
-/*.text-href:active {*/
-    /*text-decoration: transparent;*/
-    /*font-weight: bold;*/
-    /*color: green;*/
-/*}*/
-
-/*.text-href:hover{*/
-    /*text-decoration: transparent;*/
-    /*font-weight: bold;*/
-    /*cursor: pointer;*/
-/*}*/
-
-
+.text-href:hover{
+    text-decoration:none;
+    font-weight: bold;
+    cursor: pointer;
+}
 .fon-for-title{
     background: url("/images/line-for-paulownia.png") 0 0 no-repeat,
                 url("/images/fon-for-title-paulownia.jpg") -576px 100% no-repeat;

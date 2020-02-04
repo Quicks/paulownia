@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <div class="ajax-load d-flex justify-content-center" style="display:none">
+        <div class="ajax-load mx-auto" style="display: none">
             <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">@lang('news.loading') ... </p>
         </div>
     </div>
@@ -80,7 +80,7 @@
             })
                 .done(function (data) {
                     if (data.html == "") {
-                        $('.ajax-load').html("This is all news");
+                        $('.ajax-load').html("");
                         return;
                     }
                     $('.ajax-load').hide();

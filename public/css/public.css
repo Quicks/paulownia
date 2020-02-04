@@ -114,3 +114,7 @@
     font-size: 1.5rem;
     margin: 0px;
 }
+
+.nav-tabs .nav-link {
+    border: none;
+}

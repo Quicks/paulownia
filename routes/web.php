@@ -90,7 +90,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/products/{slug}', 'App\Http\Controllers\ProductsController@show')->name('public.products.show');
         Route::get('/contacts', 'App\Http\Controllers\ContactsController@index')->name('public.contacts.index');
         Route::get('/about-us', 'App\Http\Controllers\AboutUsController@index')->name('public.about-us.index');
-        Route::get('/paulownia', 'App\Http\Controllers\PaulowniaController@index')->name('public.paulownia.index');
+        Route::get('/paulownia/about', 'App\Http\Controllers\PaulowniaController@index')->name('public.paulownia.about');
         Route::get('/term-of-sale', 'App\Http\Controllers\TermsOfSaleController@index')->name('public.terms-of-sale.index');
         Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('public.cart.index');
         Route::get('/certificates-technical-doc', 'App\Http\Controllers\CertificatesTechnicalDocController@index')->name('public.certificates-technical-doc.index');
@@ -104,6 +104,9 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('/check-out/save-payment', 'App\Http\Controllers\CheckoutController@savePayment')->name('check-out.save-payment');
         Route::post('/check-out/save-order', 'App\Http\Controllers\CheckoutController@saveOrder')->name('check-out.save-order');
         Route::get('/check-out/success', 'App\Http\Controllers\CheckoutController@success')->name('check-out.success');
+
+        Route::get('/paulownia/type', 'App\Http\Controllers\PaulowniaController@type')->name('public.paulownia.type');
+        Route::get('/paulownia/planting', 'App\Http\Controllers\PaulowniaController@planting')->name('public.paulownia.planting');
 
         Route::get('/wishlist', 'Webkul\Customer\Http\Controllers\WishlistController@index')->defaults('_config', [
             'view' => 'public.customer.wishlist.wishlist'
@@ -139,6 +142,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::put('addresses/edit/{id}', 'Webkul\Customer\Http\Controllers\AddressController@update')->defaults('_config', [
             'redirect' => 'address.index'
         ])->name('address.edit');
+
     });
 
     Route::get('/certificate/{code}', 'App\Http\Controllers\CertificateController')->name('certificate');

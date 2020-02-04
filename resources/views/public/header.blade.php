@@ -60,8 +60,10 @@
                                 </a>
                             </li>
                             <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.paulownia.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif href="{{route('public.paulownia.index')}}">
+                                <a @if(url()->current() === route('public.paulownia.about')||
+                                url()->current() === route('public.paulownia.type')||
+                                url()->current() === route('public.paulownia.planting')) class="bottom-link-activ"
+                                   @else class="info-menu" @endif href="{{route('public.paulownia.about')}}">
                                     @lang('header-footer.paulownia')
                                 </a>
                             </li>

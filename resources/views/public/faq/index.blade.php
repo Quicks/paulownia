@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v1">
     @endpush
 
-    <div class="row fon-faq">
+    <div class=" fon-faq">
 
         <div class="col-12 top-fon">@include('public.breadcrumbs', $breadcrumbs = [route('public.faq.index') => 'header-footer.faq' ])</div>
 

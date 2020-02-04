@@ -1,6 +1,6 @@
 @extends('layouts.public')
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/news-index.css') }}?v1">
+    <link rel="stylesheet" href="{{ asset('css/news-index.css') }}?v2">
 @endpush
 @section('content')
     <div class="back-news row">

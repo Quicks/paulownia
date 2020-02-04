@@ -6,7 +6,7 @@
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="important-news-title d-inline">{{$news->title}}</div>
-                <div class="important-news-text d-flex mt-3">{!! substr($news->text, 0, 200) !!}...</div>
+                <div class="important-news-text d-flex mt-3">{{html_entity_decode(substr(strip_tags($news->text), 0, 200))}}...</div>
                 <div>
                     <a class="news-link"
                        href="{{route('public.news.show', [mb_strtolower(class_basename($news)), $news->id])}}">

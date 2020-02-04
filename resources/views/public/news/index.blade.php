@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <div class="ajax-load mx-auto">
+        <div class="ajax-load mx-auto" style="display: none">
             <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">@lang('news.loading') ... </p>
         </div>
     </div>

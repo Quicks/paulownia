@@ -11,6 +11,7 @@ use Illuminate\Routing\Controller;
 use Webkul\Customer\Repositories\CustomerRepository;
 use Webkul\Customer\Repositories\CustomerGroupRepository;
 use Cookie;
+use Webkul\Core\Repositories\SubscribersListRepository as Subscription;
 
 /**
  * Registration controller
@@ -28,15 +29,17 @@ class RegistrationController extends Controller
     protected $_config;
     protected $customer;
     protected $customerGroup;
+    protected $subscription;
 
     /**
      * @param CustomerRepository object $customer
      */
-    public function __construct(CustomerRepository $customer, CustomerGroupRepository $customerGroup)
+    public function __construct(CustomerRepository $customer, CustomerGroupRepository $customerGroup, Subscription $subscription)
     {
         $this->_config = request('_config');
         $this->customer = $customer;
         $this->customerGroup = $customerGroup;
+        $this->subscription = $subscription;
     }
 
     /**

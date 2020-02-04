@@ -5,6 +5,11 @@
         <link rel="stylesheet" href="{{asset('css/faq.css') }}?v3">
         <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v1">
     @endpush
+    <style>
+        .fon-text{
+            padding-top: .5rem!important;
+        }
+    </style>
 
     <div class=" fon-faq">
 

@@ -1,35 +1,46 @@
 .fon-for-about-us-header {
-    background:url("/images/line-for-about-us-header.png") no-repeat,url("/images/fon-for-about-us-header.jpg");
+    background:url("/images/fon-for-about-us-header.jpg") no-repeat;
+    background-size: cover;
+}
+.line-bread{
+    background:url("/images/line-for-about-us-header.png") no-repeat;
     background-size: 100%;
 }
 .text-about-us-header{
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
     color: black;
 }
 .read-m-about-header,.read-m-about-header:hover {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
     letter-spacing: 0.02em;
     text-decoration: underline;
     color: rgba(140, 189, 2, 0.7);
     cursor: pointer;
 }
+.close{
+    outline: none !important;
+}
 .title-our-service{
     font-weight: bold;
-    font-size: 48px;
+    font-size: 3rem;
     color: #8CBD02;
 }
 .title-our-servise-about-us-header{
+    padding-top: 3rem;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.2rem;
+    line-height: 3rem;
     color: #8CBD02;
 }
 .text-our-servise-about-us-header{
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
     color: black;
+}
+
+.img-servise-style{
 }
 .card-img-width-about{
     padding-left: 30px;
@@ -37,7 +48,9 @@
 }
 
 .fon-for-slider-about-us-header{
-    background:url("/images/fon-for-certificat-about.jpg");
+    background:url("/images/fon-for-certificat-about.jpg") no-repeat;
+    background-size: cover;
+
 }
 .line-style-up-about-h{
     margin-top:-3.8%;
@@ -69,8 +82,8 @@
     border: 0;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 1.2rem;
+    line-height:1.6rem;
     color: #FFFFFF;
     margin: 0 0 0 4%;
     padding: 1% 8.8% 1% 8.8%;
@@ -84,26 +97,16 @@
     border-radius: 60px;
     outline: none;
 }
-.partner-1{
-    font-style: normal;
-    font-weight: bold;
-    font-size: 40px;
-    color: rgba(166, 159, 140, 0.3);
-    padding: 4%;
+
+.fon-our-partners{
+    background: url("/images/fon-for-about-us-header-2.jpg") no-repeat;
+    background-size: cover;
 }
-.partner-2{
+.partner{
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
-    color: #A69F8C;
-    padding: 4%;
-}
-.partner-3{
-    padding: 2.5% 4% 4% 4%;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 40px;
-    color: #A69F8C;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.3);
 }
 
 .button-about-r-partners{
@@ -113,8 +116,8 @@
     border: 0;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 1.2rem;
+    line-height:1.6rem;
     color: #FFFFFF;
     padding: 1% 8.8% 1% 8.8%;
     outline: none;
@@ -130,20 +133,105 @@
     padding: 2% 0 5% 0;
 }
 
-@media screen and (min-width: 1340px) and (max-width: 1500px){
-    .partner-1{
-        padding: 2%;
-    }
-    .partner-2{
-        padding: 2%;
-    }
-    .partner-3{
-        padding: 0.5% 2% 2% 2%;
+.about-us-line-1{
+    background: #8CBD02;
+    height: 2px;
+    border-radius: 25px;
+    width: 10%
+}
+.about-us-line-2{
+    background: #8CBD02;
+    height: 2px;
+    border-radius: 25px;
+    width: 40%
+}
+
+.map-about-style{
+    max-width:70%;
+    margin:5% 0 1.5% 15% ;
+}
+
+@media screen and (min-width: 1600px){
+
+    .card-img-width-about {
+        padding-left:50px;
+        padding-right:50px;
     }
 }
 
-@media screen and (max-width:767px){
-    .title-our-service{
-        font-size: 32px;
+@media screen and (min-width: 1200px) and (max-width: 1400px){
+
+    .img-servise-style{
+        width: 50%;
     }
+    .card-img-width-about {
+         padding-left:10px;
+         padding-right:10px;
+    }
+}
+
+.america-1{
+    z-index: 500;
+    left: 29.5%;
+    top: 44%;
+    width: 1.8%;
+    height: 12%;
+}
+
+.america-2{
+    z-index: 500;
+    left: 36.5%;
+    top: 56%;
+    width: 1.8%;
+    height: 12%;
+}
+
+.europa-1
+{
+    z-index: 500;
+    left: 46.8%;
+    top: 33.5%;
+    width: 1.8%;
+    height: 12%;
+}
+
+.europa-2
+{
+    z-index: 500;
+    left: 48.5%;
+    top: 31.5%;
+    width: 1.8%;
+    height: 12%;
+}
+.europa-3
+{
+    z-index: 500;
+    left: 51.2%;
+    top: 31.5%;
+    width: 1.8%;
+    height: 12%;
+}
+.rus
+{
+    z-index: 500;
+    left: 55.8%;
+    top: 26.5%;
+    width: 1.8%;
+    height: 12%;
+}
+.africa-1
+{
+    z-index: 500;
+    left: 53.3%;
+    top: 38.5%;
+    width: 1.8%;
+    height: 12%;
+}
+.africa-2
+{
+    z-index: 500;
+    left: 49%;
+    top: 45.5%;
+    width: 1.8%;
+    height: 12%;
 }

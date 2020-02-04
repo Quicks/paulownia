@@ -2,7 +2,7 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/partners.css') }}">
+        <link rel="stylesheet" href="{{asset('css/partners.css') }}?v1">
     @endpush
 
 
@@ -21,7 +21,7 @@
             <div class="row mx-auto justify-content-center">
                 @foreach($partners as $item)
                     <div class="col-xl-3 col-md-12 col-sm-12 text-center m-3 container-partners">
-                        <a href="#">
+                        <a href="{{$item->website}}">
                             <img 
                                 @if(!empty($item->images[0])) src="{{asset('storage/'.$item->images[0]->image)}}" 
                                 @else src="{{asset('vendor/webkul/ui/assets/images/product/meduim-product-placeholder.png')}}"

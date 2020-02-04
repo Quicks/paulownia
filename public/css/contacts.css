@@ -7,22 +7,22 @@
     background-size: 100%;
 }
 .leaf-for-contacts{
-    margin: -4% 0 0 82.8%;
+    margin: 0 0 0 85.8%;
     z-index: 1;
 }
 .title-for-contacts{
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     letter-spacing: 0.05em;
     color: #8CBD02;
 }
 .text-for-contacts{
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     color: #0F0E0E;
 }
 .map-with-Archi{
@@ -30,6 +30,31 @@
     border-radius:25px;
     background: #FFFFFF;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+.map-director {
+    position:absolute;
+    z-index: 500;
+    left: 19%;
+    top: 50%;
+    width: 24%;
+    height: 17%;
+}
+.map-point {
+    position:absolute;
+    z-index: 500;
+    right: 29%;
+    top: 5%;
+    width: 12%;
+    height: 12%;
+}
+.map-point-main {
+    position:absolute;
+    z-index: 500;
+    left: 10%;
+    top: 46%;
+    width: 12%;
+    height: 12%;
 }
 .email-contacts{
     -webkit-writing-mode: horizontal-tb !important;

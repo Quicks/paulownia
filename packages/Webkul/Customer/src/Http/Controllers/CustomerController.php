@@ -100,7 +100,7 @@ class CustomerController extends Controller
             'date_of_birth' => 'date|before:today',
             'email' => 'email|unique:customers,email,'.$id,
             'oldpassword' => 'required_with:password',
-            'password' => 'confirmed|min:6'
+            'password' => 'required_with:oldpassword|confirmed|min:6'
         ]);
 
         $data = collect(request()->input())->except('_token')->toArray();

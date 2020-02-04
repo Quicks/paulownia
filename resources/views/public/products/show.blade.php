@@ -2,7 +2,7 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css')}}?v7">
-    <link rel="stylesheet" href="{{asset('css/show-product.css') }}?v3">
+    <link rel="stylesheet" href="{{asset('css/show-product.css') }}?v6">
 @endpush
 @section('content')
 
@@ -94,16 +94,16 @@
                         @endif
                     </div>
                 </div>
-                <div class="mt-5 ml-4" style="position: relative">
+                <div class="mt-5 ml-4">
                     <label class="amount">@lang('products.amount'):</label>
-                    <input class="amount-qty mr-5" type="number" min="1" step="1" value="1">
+                    <input class="amount-qty position-relative" type="number" min="1" step="1" value="1">
                     <button class="quantity-arrow quantity-arrow-plus">
                         <img data-src="{{asset("/images/down-arrow-products.png")}}" class="img-rev lazyload">
                     </button>
                     <button class="quantity-arrow quantity-arrow-minus">
                         <img data-src="{{asset("/images/down-arrow-products.png")}}" class="lazyload">
                     </button>
-                    <span class="amount">@lang('products.total'):</span>
+                    <span class="ml-5 amount">@lang('products.total'):</span>
                     <span id="totalSum" class="total-sum">
                         @if($product->special_price != 0)
                             {{number_format($product->special_price, 2)}}

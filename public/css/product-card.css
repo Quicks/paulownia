@@ -4,6 +4,7 @@
     padding: 0 0 2% 0;
     margin-bottom: 5%;
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 .back-ground-img:hover{
     box-shadow: 15px 15px 10px rgba(140, 189, 2, 0.6);

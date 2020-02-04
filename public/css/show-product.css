@@ -15,13 +15,11 @@
         height: 90px !important;
     }
     .quantity-arrow-minus {
-        left: 50px !important;
-        top: 30px !important;
+        margin-top: 6px !important;
     }
 
     .quantity-arrow-plus {
-        left: 50px !important;
-        top: 20px !important;
+        margin-top: -6px !important;
     }
 }
 
@@ -31,11 +29,11 @@
         height: 210px !important;
     }
     .quantity-arrow-minus {
-        top: 3px !important;
+        margin-top: 9px !important;
     }
 
     .quantity-arrow-plus {
-        top: -5px !important;
+        margin-top: -9px !important;
     }
     .slider-for {
         margin-left: -20px !important;
@@ -69,16 +67,12 @@
     .upArrow {
         top: -25px !important;
     }
-}
-@media only screen and (min-device-width: 1600px){
     .quantity-arrow-minus {
-        left: 122px !important;
-        top: 17px !important;
+        margin-top: 12px !important;
     }
 
     .quantity-arrow-plus {
-        left: 122px !important;
-        top: 7px !important;
+        margin-top: -8px !important;
     }
 }
 
@@ -140,7 +134,7 @@
     border: 0;
     font-style: normal;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #FFFFFF;
     padding: 1% 6%;
     outline: none;
@@ -159,7 +153,7 @@
     border: none;
     background: transparent;
     color: #0F0E0E;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .custom-tab:hover {
@@ -172,6 +166,9 @@
     border: none;
     background: transparent;
     color: #0F0E0E;
+}
+.nav-tabs .nav-link {
+    border: none;
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
@@ -234,15 +231,13 @@ input[type=number] {
 
 .quantity-arrow-minus {
     position: absolute;
-    left: 115px;
-    top: 14px;
+    margin-top: 17px;
     cursor: pointer;
 }
 
 .quantity-arrow-plus {
     position: absolute;
-    left: 115px;
-    top: 4px;
+    margin-top: -4px;
     cursor: pointer;
 }
 

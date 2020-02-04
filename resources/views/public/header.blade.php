@@ -1,3 +1,7 @@
+@guest('customer') 
+    @include('public.auth-modal')
+@endguest
+
 <div class="header pb-1">
     <div class="row">
         <div class="col-xl-2 col-md-6 d-flex align-items-end mt-md-3 mt-sm-3 mx-md-auto logo-width">
@@ -10,7 +14,7 @@
                 <div id="all-pages" class="navbar-collapse collapse row">
                     <div class="col-xl-10">
                         <ul class="d-xl-inline-flex list-unstyled">
-                            <li class="mb-3 ml-xl-5">
+                            <li class="mb-3">
                                 <a class="info" href="viber://chat?number=+34642787555">
                                     <img src="{{asset('images/viber-icon.svg')}}" width="14px" height="14px">
                                     +34 <b>642 787 555</b>
@@ -35,61 +39,57 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 @foreach(config('translatable.locales') as $locale)
                                     <a class="dropdown-item"
-                                       @if(App::getLocale() != Request::segment(1))
-                                       href="{{url($locale. '/' . Request::path())}}"
-                                       @else
-                                       href="{{Request::root() .'/'. $locale . substr(Request::path(), 2)}}"
-                                    @endif">
-                                    {{strtoupper($locale)}}</a>
+                                        @if(App::getLocale() != Request::segment(1))
+                                            href="{{url($locale. '/' . Request::path())}}"
+                                        @else
+                                            href="{{Request::root() .'/'. $locale . substr(Request::path(), 2)}}"
+                                        @endif
+                                    >
+                                        {{strtoupper($locale)}}
+                                    </a>
                                 @endforeach
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-10">
                         <ul class="navbar-nav bottom-link" style="flex-wrap: wrap;">
-                            <li class="nav-item  ml-xl-5 mr-xl-4">
-                                <a @if(url()->current() === route('main')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif href="{{route('main')}}">
-                                    @lang('header-footer.main')
-                                </a>
-                            </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.news.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif href="{{route('public.news.index')}}">
                                     @lang('header-footer.news')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.paulownia.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif href="{{route('public.paulownia.index')}}">
                                     @lang('header-footer.paulownia')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.products.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif  href="{{route('public.products.index')}}">
                                     @lang('header-footer.goods')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.calculations.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif  href="{{route('public.calculations.index')}}">
                                     @lang('header-footer.profitability calculation')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.galleries.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif href="{{route('public.galleries.index')}}">
                                     @lang('header-footer.gallery')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.faq.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif  href="{{route('public.faq.index')}}">
                                     @lang('header-footer.faq')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-4">
+                            <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.about-us.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif  href="{{route('public.about-us.index')}}">
                                     @lang('header-footer.about us')
@@ -109,14 +109,43 @@
                                 <img width="20px" height="20px" src="{{asset('images/line.svg')}}">
                             </li>
                             <li class="list-inline-item">
-                                <a href="#"><img width="20px" height="20px" src="{{asset('images/user.svg')}}"></a>
+                                @guest('customer')
+                                    <a href="#" data-toggle="modal" data-target="#AuthModal">
+                                        <img width="20px" height="20px" src="{{asset('images/user.svg')}}">
+                                    </a>
+                                @endguest
+                                @auth('customer')
+                                    <a href="#" id="dropdownClientMenu" data-toggle="dropdown" 
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <img style="background-color: #8CBD02; border-radius: 10px;" width="20px" height="20px"
+                                                src="{{asset('images/user.svg')}}">
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownClientMenu">
+                                        <li class="dropdown-item-text ml-3">
+                                            {{ auth()->guard('customer')->user()->first_name }}
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="{{ route('profile.index') }}">{{ __('shop::app.header.profile') }}</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="{{ route('customer.session.destroy') }}">{{ __('shop::app.header.logout') }}</a>
+                                        </li>
+                                    </ul>
+                                @endauth
+                            </li>
+                            <li class="list-inline-item position-relative">
+                                <a href="{{route('public.cart.index')}}">
+                                    <img width="20px" height="20px" src="{{asset('images/shopping-cart.svg')}}" >
+                                    @if(Webkul\Checkout\Facades\Cart::getCart())
+                                        <div class="cart-not-empty"></div>
+                                    @endif
+                                </a>
                             </li>
                             <li class="list-inline-item ">
-                                <a href="{{route('public.cart.index')}}"><img width="20px" height="20px" src="{{asset('images/shopping-cart.svg')}}"></a>
-                            </li>
-                            <li class="list-inline-item ">
-                                <a href="#"><img width="20px" height="20px"
-                                                 src="{{asset('images/favorite-heart-button.svg')}}"></a>
+                                <a href="{{ route('wishlist.index') }}">
+                                    <img width="20px" height="20px" src="{{asset('images/favorite-heart-button.svg')}}">
+                                </a>
                             </li>
                         </ul>
                     </div>

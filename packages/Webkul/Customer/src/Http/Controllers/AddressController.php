@@ -147,13 +147,13 @@ class AddressController extends Controller
 
                 $this->address->update($data, $id);
 
-                return redirect()->route('customer.address.index');
+                return redirect()->route($this->_config['redirect']);
             }
         }
 
         session()->flash('warning', trans('shop::app.security-warning'));
 
-        return redirect()->route('customer.address.index');
+        return redirect()->route($this->_config['redirect']);
     }
 
     /**
@@ -197,6 +197,6 @@ class AddressController extends Controller
 
         session()->flash('success', trans('shop::app.customer.account.address.delete.success'));
 
-        return redirect()->route('customer.address.index');
+        return redirect()->back();
     }
 }

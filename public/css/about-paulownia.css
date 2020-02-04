@@ -5,14 +5,15 @@
     font-size: 1rem;
     color:black;
 }
-.text-href:active {
-    text-decoration: transparent;
+.tyro{
+    text-decoration:none;
     font-weight: bold;
-    color: green;
+    cursor: pointer;
+    color: #8CBD02 !important;
 }
 
 .text-href:hover{
-    text-decoration: transparent;
+    text-decoration:none;
     font-weight: bold;
     cursor: pointer;
 }

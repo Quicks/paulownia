@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class PaulowniaController extends Controller
 {
-    public function index(Request $request)
+    public function about(Request $request)
     {
-        return view('public.paulownia.index');
+        return view('public.paulownia.about');
     }
 
 }

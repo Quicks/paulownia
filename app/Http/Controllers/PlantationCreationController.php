@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class PlantationCreationController extends Controller
 {
-    public function view(Request $request)
+    public function planting(Request $request)
     {
-        return view('public.paulownia.view');
+        return view('public.paulownia.planting');
     }
 
 }

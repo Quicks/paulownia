@@ -90,7 +90,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/products/{slug}', 'App\Http\Controllers\ProductsController@show')->name('public.products.show');
         Route::get('/contacts', 'App\Http\Controllers\ContactsController@index')->name('public.contacts.index');
         Route::get('/about-us', 'App\Http\Controllers\AboutUsController@index')->name('public.about-us.index');
-        Route::get('/paulownia', 'App\Http\Controllers\PaulowniaController@index')->name('public.paulownia.index');
+        Route::get('/paulownia/about', 'App\Http\Controllers\PaulowniaController@index')->name('public.paulownia.about');
         Route::get('/term-of-sale', 'App\Http\Controllers\TermsOfSaleController@index')->name('public.terms-of-sale.index');
         Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('public.cart.index');
         Route::get('/certificates-technical-doc', 'App\Http\Controllers\CertificatesTechnicalDocController@index')->name('public.certificates-technical-doc.index');
@@ -105,8 +105,8 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('/check-out/save-order', 'App\Http\Controllers\CheckoutController@saveOrder')->name('check-out.save-order');
         Route::get('/check-out/success', 'App\Http\Controllers\CheckoutController@success')->name('check-out.success');
 
-        Route::get('/paulownia/type', 'App\Http\Controllers\TypesOfPaulowniaController@show')->name('public.paulownia.show');
-        Route::get('/paulownia/type1', 'App\Http\Controllers\PlantationCreationController@view')->name('public.paulownia.view');
+        Route::get('/paulownia/type', 'App\Http\Controllers\TypesOfPaulowniaController@show')->name('public.paulownia.type');
+        Route::get('/paulownia/planting', 'App\Http\Controllers\PlantationCreationController@view')->name('public.paulownia.planting');
 
         Route::get('/wishlist', 'Webkul\Customer\Http\Controllers\WishlistController@index')->defaults('_config', [
             'view' => 'public.customer.wishlist.wishlist'

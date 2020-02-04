@@ -33,26 +33,6 @@
     border-bottom: .15rem solid #8CBD02;
 }
 
-/*.button-up-down{*/
-    /*background: url("/images/button-faq-down.png") no-repeat;*/
-    /*width: 20px;*/
-    /*height: 10px;*/
-   /**/
-/*}*/
-
-/*.button-up-down:visited{*/
-    /*background: url("/images/button-faq-down.png") no-repeat;*/
-    /*width: 20px;*/
-    /*height: 10px;*/
-/*}*/
-
-/*.button-up-down:active{*/
-    /*background: url("/images/button-faq-up.png") no-repeat;*/
-    /*width: 20px;*/
-    /*height: 10px;*/
-    /*transition: background 0s;*/
-/*}*/
-
 a,a:hover {
     color: black;
     text-decoration:none !important;
@@ -73,20 +53,9 @@ a,a:hover {
     margin-bottom: 0;
     background:rgba(104, 166, 72, 0.1); ;
     border-bottom: none;
-    /*transition: background  9999999s;*/
     text-decoration: none !important;
     border-radius: 0.5rem !important;
-    /*height: 3.2rem;*/
 }
-
-/*.card-header:active,.btn:active ,.text-hover:active{*/
-    /*color: white;*/
-    /*text-decoration: none!important;*/
-    /*outline: none !important;*/
-    /*background: #68A648;*/
-    /*cursor: pointer;*/
-    /*transition: background 0s, color 0s;*/
-/*}*/
 .btn {
 
     user-select: none;
@@ -96,19 +65,3 @@ a,a:hover {
     padding: 0;
     margin-left:75%;
 }
-
-
-/*.on-1 {*/
-    /*background: red ;*/
-/*}*/
-/*.off-1{*/
-    /*background: green;*/
-/*}*/
-
-.no{
-    color: red;
-}
-.yes{
-    color: white;
-}
-

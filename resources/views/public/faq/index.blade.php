@@ -6,55 +6,6 @@
         <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v1">
     @endpush
 
-
-
-
-    {{--<script type="text/javascript">--}}
-        {{--$(function () {--}}
-            {{--if ($('.wpfp-link').attr('title') === '8'){--}}
-                {{--$('.fa-heart').css({color: '#333333'});--}}
-                {{--// $('.fa-heart').css({backgroundImage:'images/button-faq-down.png'});--}}
-                {{--$('.fa-heart').css({backgroundColor: '#987'});--}}
-                {{--// $('.wpfp-link').css({backgroundImage:'/images/button-faq-down.png'});--}}
-            {{--}else{--}}
-                {{--$('.fa-heart').css({color: '#f71e1e'});--}}
-                {{--$('.fa-heart').css({backgroundColor: '#587'});--}}
-                {{--// $('.fa-heart').css({backgroundImage:'/images/button-faq-up.png'});--}}
-
-            {{--}--}}
-            {{--// допустим это выполняется скрипт плагина--}}
-            {{--$('.wpfp-link').on('click', function (e) {--}}
-                {{--e.preventDefault();--}}
-                {{--if ($(this).attr('title') === '8') {--}}
-                    {{--$(this).attr('title', '2');--}}
-                    {{--$(this).text('2');--}}
-                    {{--$('.wpfp-link').css({backgroundImage:'/images/button-faq-down.png'});--}}
-                {{--} else {--}}
-                    {{--$(this).attr('title', '8');--}}
-                    {{--$(this).text('8');--}}
-                    {{--$('.wpfp-link').css({backgroundImage:'/images/button-faq-up.png'});--}}
-                {{--}--}}
-            {{--});--}}
-            {{--// а это заменм цвета--}}
-            {{--$('.wpfp-link').on('click', function (e) {--}}
-                {{--e.preventDefault();--}}
-                {{--if ($(this).attr('title') === '8') {--}}
-                    {{--$('.fa-heart').css({color: '#333333'});--}}
-                    {{--$('.fa-heart').css({backgroundColor: '#987'});--}}
-                    {{--// $('.fa-heart').css({backgroundImage:'/images/button-faq-down.png'});--}}
-
-                {{--} else {--}}
-                    {{--$('.fa-heart').css({color: '#f71e1e'});--}}
-                    {{--$('.fa-heart').css({backgroundColor: '#587'});--}}
-                    {{--// $('.fa-heart').css({backgroundImage:'/images/button-faq-up.png'});--}}
-                {{--}--}}
-            {{--});--}}
-        {{--});--}}
-    {{--</script>--}}
-
-    {{--<i class="fa fa-heart" aria-hidden="true">test of edit</i>--}}
-    {{--<a class="wpfp-link" href="#" title="8" rel="nofollow"><img data-src="/images/button-faq-down.png" class="lazyload"></a>--}}
-
     <div class="row fon-faq">
 
         <div class="col-12 top-fon">@include('public.breadcrumbs', $breadcrumbs = [route('public.faq.index') => 'header-footer.faq' ])</div>
@@ -193,30 +144,6 @@
     </div>
 
     <script>
-        {{--// function ChangeColor(Element) {--}}
-        {{--//     if (Element.style.background || Element.style.color ==='transparent'||'black' )--}}
-        {{--//--}}
-        {{--//     {Element.style.background  = 'red';--}}
-        {{--//      Element.style.color  = 'white'}--}}
-        {{--//--}}
-        {{--//     else{Element.style.background = 'transparent';--}}
-        {{--//         Element.style.color = 'black'}--}}
-        {{--//     return false;--}}
-        {{--// }--}}
-        {{--// ___________________________________--}}
-        {{--// function ChangeColor(Element) {--}}
-        {{--//     if (document.getElementsByClassName('no').src.indexOf('red')>0)--}}
-        {{--//--}}
-        {{--//     { document.getElementsByClassName('yes').src='white'}--}}
-
-        {{--// _____________________________________--}}
-
-            {{--// else{Element.style.background = 'transparent';--}}
-            {{--//     Element.style.color = 'black'}--}}
-        {{--//     return false;--}}
-        {{--// }--}}
-
-
 
         async function chg(id){
 
@@ -228,24 +155,5 @@
         }
     }
     </script>
-
-    {{--<script>--}}
-
-        {{--window.onload = function(){--}}
-
-            {{--document.body.onclick = function(e){--}}
-                {{--var el = e ? e.target:event.srcElement;--}}
-                {{--var cls = el.className;--}}
-                {{--if(!~cls.indexOf("btn")) return;--}}
-                {{--if(~cls.indexOf("on-1")) {--}}
-                    {{--el.className = "btn off-1";--}}
-
-                {{--} else {--}}
-                    {{--el.className = "btn on-1";--}}
-
-                {{--}--}}
-            {{--}--}}
-        {{--}</script>--}}
-
 
 @endsection

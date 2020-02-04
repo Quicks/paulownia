@@ -1,4 +1,4 @@
-@guest('customer') 
+@guest('customer')
     @include('public.auth-modal')
 @endguest
 
@@ -79,12 +79,12 @@
                                     @lang('header-footer.profitability calculation')
                                 </a>
                             </li>
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.galleries.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif href="{{route('public.galleries.index')}}">
-                                    @lang('header-footer.gallery')
-                                </a>
-                            </li>
+{{--                            <li class="nav-item mr-xl-3">--}}
+{{--                                <a @if(url()->current() === route('public.galleries.index')) class="bottom-link-activ"--}}
+{{--                                   @else class="info-menu" @endif href="{{route('public.galleries.index')}}">--}}
+{{--                                    @lang('header-footer.gallery')--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                             <li class="nav-item mr-xl-3">
                                 <a @if(url()->current() === route('public.faq.index')) class="bottom-link-activ"
                                    @else class="info-menu" @endif  href="{{route('public.faq.index')}}">
@@ -117,7 +117,7 @@
                                     </a>
                                 @endguest
                                 @auth('customer')
-                                    <a href="#" id="dropdownClientMenu" data-toggle="dropdown" 
+                                    <a href="#" id="dropdownClientMenu" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
                                         <img style="background-color: #8CBD02; border-radius: 10px;" width="20px" height="20px"
                                                 src="{{asset('images/user.svg')}}">

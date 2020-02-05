@@ -3,6 +3,7 @@
     <style>
         .fon-text{
             padding-top: 0 !important;
+            padding-buttom: 0 !important;
         }
     </style>
 

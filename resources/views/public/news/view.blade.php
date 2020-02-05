@@ -25,7 +25,7 @@
                     <span class="news-title-show">{{date("d.m", strtotime($news->publish_date))}} </span>
                 </div>
                 <div class="col-lg-10 col-sm-8 news-title-position">
-                    <span class="news-title-show">{{$news->title}}</span>
+                    <span class="news-title-show">{{($news->title)}}</span>
                 </div>
             </div>
             <img data-src="{{asset("/images/show-news-wave.png")}}" class="lazyload news-wave position-absolute">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 @endif
-                <div class="col-12 news-text-show mb-5">{{str_replace("&nbsp;",'',strip_tags($news->text))}}</div>
+                <div class="col-12 news-text-show mb-5">{!! $news->text  !!}</div>
                 @if(!empty($news->files))
                     @foreach($news->files as $file)
                         <div class="col-12 mb-3">

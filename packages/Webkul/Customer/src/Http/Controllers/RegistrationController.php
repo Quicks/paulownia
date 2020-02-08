@@ -11,6 +11,7 @@ use Illuminate\Routing\Controller;
 use Webkul\Customer\Repositories\CustomerRepository;
 use Webkul\Customer\Repositories\CustomerGroupRepository;
 use Cookie;
+use Webkul\Core\Repositories\SubscribersListRepository as Subscription;
 
 /**
  * Registration controller
@@ -28,15 +29,17 @@ class RegistrationController extends Controller
     protected $_config;
     protected $customer;
     protected $customerGroup;
+    protected $subscription;
 
     /**
      * @param CustomerRepository object $customer
      */
-    public function __construct(CustomerRepository $customer, CustomerGroupRepository $customerGroup)
+    public function __construct(CustomerRepository $customer, CustomerGroupRepository $customerGroup, Subscription $subscription)
     {
         $this->_config = request('_config');
         $this->customer = $customer;
         $this->customerGroup = $customerGroup;
+        $this->subscription = $subscription;
     }
 
     /**
@@ -100,6 +103,10 @@ class RegistrationController extends Controller
                 session()->flash('success', trans('shop::app.customer.signup-form.success'));
             }
 
+            if($request->has('subscribe')) {
+                $this->subscribe();
+            }
+
             return redirect()->back(); //redirect()->route($this->_config['redirect']);
         } else {
             session()->flash('error', trans('shop::app.customer.signup-form.failed'));
@@ -156,4 +163,38 @@ class RegistrationController extends Controller
 
         return redirect()->back();
     }
+
+    public function subscribe()
+    {
+        $email = request()->input('email');
+        $unique = 0;
+        $alreadySubscribed = $this->subscription->findWhere(['email' => $email]);
+
+        $unique = function () use ($alreadySubscribed) {
+            if ($alreadySubscribed->count() > 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        };
+
+        if ($unique()) {
+            $token = uniqid();
+            $result = false;
+
+            $result = $this->subscription->create([
+                'email' => $email,
+                'channel_id' => core()->getCurrentChannel()->id,
+                'is_subscribed' => 1,
+                'token' => $token
+            ]);
+
+            if (!$result) {
+                session()->flash('error', trans('shop::app.subscription.not-subscribed'));
+                return;
+            }
+        }
+        return;
+    }
+
 }

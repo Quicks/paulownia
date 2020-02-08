@@ -2523,7 +2523,9 @@ section.cart .cart-content .right-side {
 
 .checkout-process .col-main {
     width: 70%;
-    margin-right: 5%
+    margin-right: 5%;
+    background: green;
+
 }
 
 .checkout-process .col-main ul.checkout-steps {

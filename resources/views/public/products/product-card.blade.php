@@ -34,7 +34,7 @@
                 </form>
 
                 <a href="{{ route('customer.wishlist.add', $product->product_id) }}" class="mt-1 like-m">
-                    <img data-src="{{asset('/images/our-products-like.png')}}" 
+                    <img data-src="{{asset('/images/our-products-like.png')}}"
                             class="like-product lazyload" style="border-radius:50%">
                 </a>
             </div>
@@ -46,7 +46,7 @@
         @endif
 
 
-        <div class="text-card">{{substr(strip_tags($product->short_description), 0, 90)}}</div>
+        <div class="text-card">{{html_entity_decode(substr(strip_tags($product->short_description), 0, 90))}}</div>
     </div>
 </div>
 

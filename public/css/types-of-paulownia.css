@@ -1,0 +1,71 @@
+.fon-for-title-1{
+    background: url("/images/line-for-type-of-paulownia.png") 0 0 no-repeat,
+    url("/images/fon-for-type-of-paulownia.jpg") 100% no-repeat ;
+    background-position: bottom, center ;
+}
+.text-about-type{
+    text-indent: 7rem;
+}
+.products-title-1{
+    color: #8CBD02;
+    font-weight: bold;
+    font-size:3rem;
+    line-height: 3.1rem;
+}
+.line-for-products-1{
+    width: 15%;
+    height: 3px;
+    background:#8CBD02 ;
+    border-radius: 25px;
+}
+.margin-for-type{
+    margin:0 6.5rem 0 6.5rem;
+}
+
+@media all and (min-width: 1646px) and (max-width: 1840px) {
+    .margin-for-type{
+        margin:0 5.5rem 0 5.5rem;
+    }
+}
+
+@media all and (min-width: 1410px) and (max-width: 1645px) {
+    .margin-for-type{
+        margin:0 5rem 0 5rem;
+    }
+}
+
+@media all and (min-width: 1326px) and (max-width: 1409px) {
+    .margin-for-type{
+        margin:0 4.5rem 0 4.5rem;
+    }
+}
+
+@media all and (min-width: 1246px) and (max-width: 1325px) {
+    .margin-for-type{
+        margin:0 4rem 0 4rem;
+    }
+}
+
+@media all and (min-width: 1160px) and (max-width: 1245px) {
+    .margin-for-type{
+        margin:0 3.5rem 0 3.5rem;
+    }
+}
+
+@media all and (min-width: 1075px) and (max-width: 1159px) {
+    .margin-for-type{
+        margin:0 3rem 0 3rem;
+    }
+}
+@media all and (min-width: 905px) and (max-width: 1074px) {
+    .margin-for-type{
+        margin:0 2.5rem 0 2.5rem;
+    }
+}
+
+@media all and (max-width: 425px) {
+    .margin-for-type{
+        margin:0 2.5rem 0 2.5rem;
+    }
+}
+

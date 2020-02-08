@@ -10,7 +10,7 @@ return [
             'icon-class' => 'fa fa-home fa-2x',
         ], [
             'key' => 'news',
-            'name' => 'News',
+            'name' => 'News ',
             'route' => 'news.index',
             'sort' => 1,
             'icon-class' => 'fa fa-newspaper-o fa-2x',

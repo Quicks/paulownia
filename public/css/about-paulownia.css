@@ -1,0 +1,176 @@
+.border-up{
+    border-top: 1px solid rgba(0, 0, 0, 0.3); ;
+}
+.text-href{
+    font-size: 1rem;
+    color:black;
+}
+.tyro{
+    text-decoration:none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #8CBD02 !important;
+}
+
+.text-href:hover{
+    text-decoration:none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.fon-for-title{
+    background: url("/images/line-for-paulownia.png") 0 0 no-repeat,
+                url("/images/fon-for-title-paulownia.jpg") -576px 100% no-repeat;
+    background-position: bottom, center ;
+    height:450px;
+}
+.title-text , .text-under-title{
+    color: white;
+    font-weight: bold;
+}
+.title-text{
+    font-size: 6rem;
+}
+.text-under-title{
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.fon-for-paulownia-type{
+    background: url("/images/fon-for-type-of-pawl.jpg") no-repeat;
+    background-size: cover;
+}
+
+.nav-link, .nav-tabs{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.nav-tabs .nav-link.active {
+    background-color: transparent;
+    border-bottom:2px solid #8CBD02;
+}
+.margin-for-beggin{
+    margin: 0 2.5rem 0 5rem;
+}
+.margin-for-paulownia{
+    margin: 0 2.5rem 0 2.5rem;
+}
+.margin-for-end{
+    margin: 0 0 0 14rem;
+}
+
+.style-image-1,.style-image-2,.style-image-3,.style-image-4,
+.style-image-5,.style-image-6,.style-image-7,.style-image-8{
+
+    border-radius:1.5rem ;
+    color: white;
+    height: 8.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+.style-image-1
+{
+    background: url("/images/img-paulownia-1.jpg") no-repeat;
+    background-size: cover;
+}
+.style-image-2
+{
+    background: url("/images/img-paulownia-2.jpg") no-repeat;
+    background-size: cover;
+}
+.style-image-3
+{
+    background: url("/images/img-paulownia-3.jpg")no-repeat;
+    background-size: cover;
+}
+.style-image-4
+{
+    background: url("/images/img-paulownia-4.jpg") no-repeat;
+    background-size: cover;
+}
+.style-image-5
+{
+    background: url("/images/img-paulownia-5.jpg") no-repeat;
+    background-size: cover;
+}
+.style-image-6
+{
+    background: url("/images/img-paulownia-6.jpg") no-repeat;
+    background-size: cover;
+}
+.style-image-7
+{
+    background: url("/images/img-paulownia-7.jpg") no-repeat;
+    background-size: cover;
+}
+.style-image-8
+{
+    background: url("/images/img-paulownia-8.jpg") no-repeat;
+    background-size: cover;
+}
+
+.text-for-icons,.text-for-icons-1{
+    position: relative;
+    z-index: 5;
+    color: #fff;
+    text-align: center;
+    height: 8.5rem;
+
+}
+
+.text-for-icons{
+    padding-top: 3.5rem;
+}
+
+.text-for-icons-1{
+    padding-top: 1.5rem;
+}
+
+.style-image-1:hover:after,.style-image-2:hover:after,.style-image-3:hover:after,.style-image-4:hover:after,
+.style-image-5:hover:after,.style-image-6:hover:after,.style-image-7:hover:after,.style-image-8:hover:after{
+
+    content:'';
+    position: absolute;
+    box-shadow: 4px 4px 2px rgba(140, 189, 2, 0.6);
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 1;
+    border-radius:1.5rem ;
+    color:#8CBD02;
+    font-weight: bold;
+
+}
+
+.text-for-icons:hover,.text-for-icons-1:hover{
+    color:#8CBD02;
+    font-weight: bold;
+    cursor: pointer;
+}
+.text-about-paulownia{
+    text-indent: 5rem;
+}
+
+@media screen and (min-width:936px)and (max-width:1200px) {
+
+    .margin-for-end{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:935px) {
+    .margin-for-end{
+       display: none;
+    }
+}
+
+@media screen and (max-width:425px) {
+
+    .margin-for-beggin , .margin-for-paulownia{
+        margin: 0 4.5rem 0 4.5rem;
+    }
+}
+
+

@@ -17,7 +17,7 @@
 
     <script type="text/x-template" id="checkout-template">
         <div id="checkout" class="checkout-process">
-            <div class="col-main">
+            <div class="col-main ">
                 <ul class="checkout-steps">
                     <li class="active" :class="[completedStep >= 0 ? 'active' : '', completedStep > 0 ? 'completed' : '']" @click="navigateToStep(1)">
                         <div class="decorator address-info"></div>

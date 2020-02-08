@@ -1,0 +1,56 @@
+.fon-for-title-2{
+    background: url("/images/line-for-paulownia.png") 0 0 no-repeat,
+    url("/images/fon-plantation-creation.jpg") 100% no-repeat ;
+    background-position: bottom, center ;
+}
+.img-tree-planting-1, .img-tree-planting-2,.img-tree-planting-3, .img-tree-planting-4,.img-tree-planting-5{
+    border-radius:1.5rem ;
+    color: white;
+    height: 8.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+.img-tree-planting-1
+{
+    background: url("/images/img-tree-planting-1.jpg") no-repeat;
+    background-size: cover;
+}
+.img-tree-planting-2
+{
+    background: url("/images/img-tree-planting-2.jpg") no-repeat;
+    background-size: cover;
+}
+.img-tree-planting-3
+{
+    background: url("/images/img-tree-planting-3.jpg")no-repeat;
+    background-size: cover;
+}
+.img-tree-planting-4
+{
+    background: url("/images/img-tree-planting-4.jpg") no-repeat;
+    background-size: cover;
+}
+.img-tree-planting-5
+{
+    background: url("/images/img-tree-planting-5.jpg") no-repeat;
+    background-size: cover;
+}
+
+.img-tree-planting-1:hover:after, .img-tree-planting-2:hover:after,.img-tree-planting-3:hover:after,
+ .img-tree-planting-4:hover:after,.img-tree-planting-5:hover:after{
+    content:'';
+    position: absolute;
+    box-shadow: 4px 4px 2px rgba(140, 189, 2, 0.6);
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 1;
+    border-radius:1.5rem ;
+    color:#8CBD02;
+    font-weight: bold;
+ }
+

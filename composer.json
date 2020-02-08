@@ -15,6 +15,7 @@
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
         "ext-tokenizer": "*",
+        "appstract/laravel-blade-directives": "1.5",
         "artesaos/seotools": "0.12.0",
         "barryvdh/laravel-dompdf": "^0.8.0@dev",
         "dimsav/laravel-translatable": "^9.0",

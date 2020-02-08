@@ -61,6 +61,12 @@
                                     <span class="control-error">{{ $errors->first('password_confirmation') }}</span>
                                 </div>
 
+                                <div class="control-group @if($errors->has('subscribe')) has-auth-error @endif">
+                                    <label for="subscribe" class="first-last-name-modal">Subscribe newsletter</label>:
+                                    <input type="checkbox" class="" name="subscribe" checked>
+                                    <span class="control-error">{{ $errors->first('subscribe') }}</span>
+                                </div>
+
                                 <button class="button-modal-login" type="submit">
                                     {{ __('shop::app.customer.signup-form.button_title') }}
                                 </button>

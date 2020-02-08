@@ -56,7 +56,7 @@
 
                             <div class="control-error mb-10" v-if="error_message != null" style="color: #FF6472">* @{{ error_message }}</div>
 
-                            <button class="btn btn-lg btn-black" :disabled="couponChanged">{{ __('shop::app.checkout.onepage.apply-coupon') }}</button>
+                            <button class="product-button" :disabled="couponChanged">{{ __('shop::app.checkout.onepage.apply-coupon') }}</button>
                         </form>
                     </div>
                 </div>

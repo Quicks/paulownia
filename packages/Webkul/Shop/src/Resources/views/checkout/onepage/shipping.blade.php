@@ -26,7 +26,7 @@
                                 <b class="ship-rate method-label">{{ core()->currency($rate->base_price) }}</b>
                             </div>
 
-                            <div class="line-two mt-5">
+                            <div class="line-two mb-3 mt-2">
                                 <div class="method-summary">
                                     <b>{{ $rate->method_title }}</b> - {{ $rate->method_description }}
                                 </div>

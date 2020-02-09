@@ -1,4 +1,12 @@
-@media screen and (min-width: 320px) and (max-width: 1223px) {
+
+@media screen  and (max-width: 768px) {
+    .price-img-leaf {
+     display: none;
+    }
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1223px) {
     .price-img-leaf {
         width:140px !important;
         height: 115px !important;
@@ -28,7 +36,7 @@
 }
 .price-img-leaf-position {
     position:absolute;
-    top:-55px;
+    top:-35px;
     z-index: 1;
 }
 .price-img-leaf {

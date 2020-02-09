@@ -1,6 +1,6 @@
-@push('css')
+@pushonce('css:product-card')
     <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v18">
-@endpush
+@endpushonce
 
 <div class="">
     <div class="back-ground-img" onclick="location.href='{{route('public.products.show', $product->url_key)}}';">

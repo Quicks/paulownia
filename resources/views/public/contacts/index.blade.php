@@ -15,7 +15,7 @@
 
         <div class="row m-0 position-relative">
 
-            <div class="col-md-5 col-sm-12 pl-xl-5 pl-md-3 pl-sm-2 pr-xl-0 pr-md-1 pr-sm-1 pt-5 ">
+            <div class="col-xl-5 col-md-5 col-sm-12 padding-for-contacts ">
 
                 <div class="title-for-contacts mb-3">@lang('contacts.spain')</div>
                 <div class="text-for-contacts mb-3">@lang('contacts.text').</div>
@@ -38,7 +38,8 @@
 
             </div>
 
-            <div class="col-md-7 col-sm-12 pl-xl-5 pl-md-5 pl-sm-4 pt-5 pb-5">
+
+            <div class="col-xl-7 col-md-7 col-sm-12 pl-xl-5 pl-md-5 pl-sm-4 pt-5 pb-5">
                 <div style="position: sticky; top:0">
                     <img data-src="{{asset('/images/map-with-Archi.png')}}" class="lazyload map-with-Archi">
                     <img data-src="{{asset('/images/pointMap.svg')}}" class="lazyload map-point">
@@ -47,16 +48,35 @@
                 </div>
             </div>
 
-        </div>
-        <div class="col-xl-12 col-md-12 col-sm-4 pl-5 mx-auto pb-5">
-
-            <span class="title-for-contacts name-contacts">@lang('contacts.write-to-us'):</span>
-            <input placeholder="Your name" class="email-contacts ">
-            <input placeholder="Email" class="email-contacts">
-            <input placeholder="@lang('contacts.your-message')" class="email-contacts messege-contacts">
-            <button type="submit" class="button-contacts ">@lang('contacts.send')</button>
 
         </div>
+        <div class="col-12 p-0 mb-5">
+
+            <div class="row ">
+
+                <div class="title-for-contacts name-contacts col-xl-2 col-md-12 col-sm-12">@lang('contacts.write-to-us'):</div>
+                <div class="col-xl-2 col-md-12 col-sm-12 padding-1199 "><input placeholder="Your name" class="email-contacts "></div>
+                <div class="col-xl-2 col-md-12 col-sm-12 padding-1199 " ><input placeholder="Email" class="email-contacts" ></div>
+                <div class="col-xl-4 col-md-12 col-sm-12 padding-1199 "><input placeholder="@lang('contacts.your-message')" class="messege-contacts"></div>
+                <div class="col-xl-2 col-md-12 col-sm-12 text-center"><button type="submit" class="button-contacts ">@lang('contacts.send')</button></div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        {{--<div class="col-xl-12 col-md-12 col-sm-4 pl-5 mx-auto pb-5">--}}
+
+            {{--<span class="title-for-contacts name-contacts">@lang('contacts.write-to-us'):</span>--}}
+            {{--<input placeholder="Your name" class="email-contacts ">--}}
+            {{--<input placeholder="Email" class="email-contacts" >--}}
+            {{--<input placeholder="@lang('contacts.your-message')" class="messege-contacts">--}}
+            {{--<button type="submit" class="button-contacts ">@lang('contacts.send')</button>--}}
+
+        {{--</div>--}}
     </div>
 
 @endsection

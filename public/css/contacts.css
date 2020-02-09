@@ -13,16 +13,14 @@
 .title-for-contacts{
     font-style: normal;
     font-weight: bold;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 1rem;
     letter-spacing: 0.05em;
     color: #8CBD02;
 }
 .text-for-contacts{
     font-style: normal;
     font-weight: normal;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 1rem;
     color: #0F0E0E;
 }
 .map-with-Archi{
@@ -56,7 +54,7 @@
     width: 12%;
     height: 12%;
 }
-.email-contacts{
+.email-contacts , .messege-contacts{
     -webkit-writing-mode: horizontal-tb !important;
     text-rendering: auto;
     color: initial;
@@ -80,6 +78,10 @@
     border-bottom: 1px solid #000000;
     outline: none;
 }
+
+.messege-contacts{
+    width: 26rem;
+}
 .button-contacts{
     -webkit-appearance: button;
     -webkit-writing-mode: horizontal-tb !important;
@@ -96,8 +98,7 @@
     align-items: flex-start;
     cursor: pointer;
     box-sizing: border-box;
-    margin: 0 0 0 5%;
-    padding: 0.5% 4%;
+    padding: 6% 28%;
     border: none;
     background: linear-gradient(139.35deg, #8CBD02 20.58%, #68A648 71.47%);
     border-radius: 60px;
@@ -110,100 +111,64 @@
 }
 
 .name-contacts{
-    padding-right: 5%;
+    padding-left:5rem;
 }
-.messege-contacts{
-    padding-right: 20%;
+
+.padding-for-contacts{
+
+    padding: 3rem 0 3rem 5.2rem;
 }
 
 @media screen  and  (min-width: 1587px){
+
     .leaf-for-contacts{
         margin:0 0 0 90%;
         z-index: 1;
     }
 }
 
-@media screen and (min-width:1181px) and (max-width:1500px){
+@media screen  and  (min-width: 1440px){
 
-    .messege-contacts {
-        padding-right:13%;
+    .padding-for-contacts{
+
+        padding: 3rem 0 3rem 5.8rem;
     }
-    .button-contacts{
-        margin: 2%;
-    }
-}
-
-
-@media screen and (min-width:1146px) and (max-width:1180px){
-
-    .messege-contacts {
-        padding-right:13%;
-    }
-    .button-contacts{
-        margin: 2%
+    .name-contacts{
+        padding-left:5.8rem;
     }
 }
 
-
-
-@media screen and (min-width:1051px) and (max-width:1145px){
-
-    .messege-contacts {
-        padding-right:13%;
-    }
-    .button-contacts{
-       margin: 2.5% 0 0 45%;
-    }
-}
-
-@media screen and (min-width:1024px) and (max-width:1050px){
-
-    .messege-contacts {
-        margin-left: 19%;
-        padding-right: 31.5%;
-        margin-top: 4%;
-    }
-    .button-contacts{
-        margin: 5% 0 0 25%;
-        padding: 2.5% 15%;
-    }
-}
-
-@media screen and (min-width:768px) and (max-width:1023px){
+@media screen  and (max-width:1199px){
 
     .messege-contacts{
-        margin-left: 24%;
-        padding-right: 31.5%;
-        margin-top: 4%;
+        width: 36rem;
     }
     .button-contacts{
-        margin: 5% 0 0 25%;
-        padding: 2.5% 15%;
+        margin-top: 2rem;
+        padding: 2% 6%;
+    }
+    .padding-1199{
+        padding: 2rem 0 0 4rem;
     }
 }
 
-@media screen and (min-width:321px) and (max-width: 767px){
-
-    .button-contacts{
-        margin: 10% 0 0 25%;
-        padding: 2.5% 15%;
-    }
-}
-
-@media screen and (max-width: 320px){
+@media screen  and (max-width:425px){
 
     .messege-contacts{
-        padding-right: 0;
+        width: 26rem;
     }
 
-    .button-contacts{
-        margin: 10% 0 0 25%;
-        padding: 1% 12%;
-    }
+    .padding-for-contacts {
 
+        padding: 3rem 3rem 3rem 4.2rem;
+    }
     .map-with-Archi{
 
         max-width: 100%;
         border-radius:5px;
     }
 }
+
+
+
+

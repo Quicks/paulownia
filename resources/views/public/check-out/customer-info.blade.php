@@ -65,15 +65,15 @@
             <h1>{{ __('shop::app.checkout.onepage.billing-address') }}</h1>
 
             @guest('customer')
-                <a class="product-button" href="{{ route('customer.session.index') }}">
+                <div class="product-button" href="{{ route('customer.session.index') }}">
                     {{ __('shop::app.checkout.onepage.sign-in') }}
-                </a>
+                </div>
             @endguest
 
             @auth('customer')
-                <a class="product-button" @click = backToSavedBillingAddress()>
+                <div class="product-button" @click = backToSavedBillingAddress()>
                     {{ __('shop::app.checkout.onepage.back') }}
-                </a>
+                </div>
             @endauth
         </div>
 
@@ -154,8 +154,8 @@
 
             <select v-validate="'required'" class="control" id="billing[state]" name="billing[state]" v-model="address.billing.state" v-if="haveStates('billing')" data-vv-as="&quot;{{ __('shop::app.checkout.onepage.state') }}&quot;">
 
-                <option value="">{{ __('shop::app.checkout.onepage.select-state') }}</option>
 
+                <option value="">{{ __('shop::app.checkout.onepage.select-state') }}</option>
                 <option v-for='(state, index) in countryStates[address.billing.country]' :value="state.code">
                     @{{ state.default_name }}
                 </option>
@@ -298,10 +298,6 @@
                 </a>
             @endauth
         </div>
-
-
-{{-------------------------------------------------------------------------------------------------------------------------}}
-
 
         <div class="control-group" :class="[errors.has('address-form.shipping[first_name]') ? 'has-error' : '']">
             <label for="shipping[first_name]" class="required">

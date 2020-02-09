@@ -2386,7 +2386,7 @@ select.control{
     -webkit-rtl-ordering: logical;
     background-color: white;
     cursor: default;
-    margin-left: 1.3rem;
+    margin-left: 2%;
     font-size: 1rem;
     border-image: initial;
     border-bottom: 1px solid black;
@@ -2394,13 +2394,56 @@ select.control{
     border-right: none;
     border-left: none;
     outline: none !important;
-    width: 12.4rem;
+    width:12.4rem;
+}
+
+@media screen and (min-width: 1600px){
+
+    select.control{
+        width:11rem;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 426px){
+
+    select.control{
+       width: 14.4rem;
+    }
+}
+
+
+@media screen and (max-width:768px) and (min-width: 426px){
+
+    .control-group label {
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width: 425px) and (min-width: 321px){
+
+    .control-group label {
+        width: 10rem;
+    }
+    select.control {
+        width: 17.4rem;
+    }
+}
+
+@media screen and (max-width: 320px){
+
+    .control-group label {
+        width: 16rem;
+        text-align: -webkit-left;
+        margin: 2rem 0 2rem 0;
+    }
+    select.control{
+        width: 18rem;
+    }
 }
 
 label.radio-container{
     width:1.2rem !important;
 }
-
 
 .cart-item-list .item .item-details .misc .control-group .control {
     height: 38px;
@@ -2562,7 +2605,6 @@ label.radio-container{
 
 .checkout-process .col-main {
     width: 100%;
-    background:white;
 }
 .col-right{
     background:url("/images/line-for-order.png") no-repeat,url("/images/fon-for-order.jpg");
@@ -2600,7 +2642,6 @@ label.radio-container{
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    border: 1px solid #c7c7c7;
     background-repeat: no-repeat;
     background-position: 50%
 }
@@ -2788,7 +2829,8 @@ label.radio-container{
     padding: 0 0 4rem 0;
 }
 
-.product-button{
+.product-button-success,.product-button{
+
     background: linear-gradient(203.84deg, #8CBD02 8.62%, #84B811 27.22%, #68A648 71.7%);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 60px;
@@ -2797,13 +2839,17 @@ label.radio-container{
     font-weight: bold;
     font-size: 1rem;
     line-height: 2.5rem;
-    color: #FFFFFF !important;
-    padding: 1% 6% 1% 6%;
+    color: white!important;
+    padding: 1% 4% 1% 4%;
     outline: none;
     cursor: pointer;
     float: right;
 }
-.product-button:hover{
+
+.product-button{
+    min-width: 150px;
+}
+.product-button:hover ,.product-button-succes:hover{
 
     background: linear-gradient(203.84deg, #8CBD02 8.62%, #84B811 27.22%, #68A648 71.7%);
     box-shadow: -2px -2px 20px #8CBD02, 2px 2px 10px rgba(0, 0, 0, 0.25);
@@ -2812,10 +2858,7 @@ label.radio-container{
 }
 
 @media only screen and (max-width:770px) {
-    .checkout-process .col-main {
-        width: 100%;
-        padding-right: 0
-    }
+
     .checkout-process .col-main ul.checkout-steps {
         border-bottom: none;
         padding-bottom: 0
@@ -2833,9 +2876,6 @@ label.radio-container{
     }
     .checkout-process .step-content {
         padding-top: 0
-    }
-    .checkout-process .step-content .control-group .control {
-        width: 100%
     }
     .checkout-process .col-right {
         display: none
@@ -2887,7 +2927,7 @@ label.radio-container{
     position: absolute;
     top: 40px;
     left: 50%;
-    margin-left: -50px
+    margin-left: -50px;
 }
 
 .attached-products-wrapper .horizontal-rule {

@@ -2,7 +2,7 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v4">
+        <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v5">
     @endpush
 
     <div class="row m-0 fon-for-contacts position-relative">
@@ -63,20 +63,6 @@
             </div>
 
         </div>
-
-
-
-
-
-        {{--<div class="col-xl-12 col-md-12 col-sm-4 pl-5 mx-auto pb-5">--}}
-
-            {{--<span class="title-for-contacts name-contacts">@lang('contacts.write-to-us'):</span>--}}
-            {{--<input placeholder="Your name" class="email-contacts ">--}}
-            {{--<input placeholder="Email" class="email-contacts" >--}}
-            {{--<input placeholder="@lang('contacts.your-message')" class="messege-contacts">--}}
-            {{--<button type="submit" class="button-contacts ">@lang('contacts.send')</button>--}}
-
-        {{--</div>--}}
     </div>
 
 @endsection

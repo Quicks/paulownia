@@ -1,7 +1,6 @@
 .fon-faq {
     background: url("/images/fon-faq.jpg") no-repeat;
     background-size:cover;
-    min-height: calc(100vh - 448px);
 }
 
 .top-fon{

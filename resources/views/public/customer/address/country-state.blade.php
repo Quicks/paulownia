@@ -5,11 +5,11 @@
     <script type="text/x-template" id="country-state-template">
         <div>
             <div class="control-group" :class="[errors.has('country') ? 'has-error' : '']">
-                <label for="country" class="required">
-                    {{ __('shop::app.customer.account.address.create.country') }}
+                <label for="country" class="profile-item-edit required">
+                    @lang('profile.country'):
                 </label>
 
-                <select type="text" v-validate="'required'" class="control" id="country" name="country" v-model="country" data-vv-as="&quot;{{ __('shop::app.customer.account.address.create.country') }}&quot;">
+                <select type="text" v-validate="'required'" class="ml-4 profile-item-edit control" id="country" name="country" v-model="country" data-vv-as="&quot;{{ __('shop::app.customer.account.address.create.country') }}&quot;">
                     <option value=""></option>
                     @foreach (core()->countries() as $country)
                         <option value="{{ $country->code }}">{{ $country->name }}</option>
@@ -22,14 +22,14 @@
             </div>
 
             <div class="control-group" :class="[errors.has('state') ? 'has-error' : '']">
-                <label for="state" class="required">
-                    {{ __('shop::app.customer.account.address.create.state') }}
+                <label for="state" class="profile-item-edit required">
+                    @lang('profile.state'):
                 </label>
 
                 <input type="text" v-validate="'required'" class="control" id="state" name="state" v-model="state" v-if="!haveStates()" data-vv-as="&quot;{{ __('shop::app.customer.account.address.create.state') }}&quot;"/>
-                <select v-validate="'required'" class="control" id="state" name="state" v-model="state" v-if="haveStates()" data-vv-as="&quot;{{ __('shop::app.customer.account.address.create.state') }}&quot;">
+                <select v-validate="'required'" class="ml-4 profile-item-edit control" id="state" name="state" v-model="state" v-if="haveStates()" data-vv-as="&quot;{{ __('shop::app.customer.account.address.create.state') }}&quot;">
 
-                    <option value="">{{ __('shop::app.customer.account.address.create.select-state') }}</option>
+                    <option value="">@lang('profile.select-state')</option>
 
                     <option v-for='(state, index) in countryStates[country]' :value="state.code">
                         @{{ state.default_name }}

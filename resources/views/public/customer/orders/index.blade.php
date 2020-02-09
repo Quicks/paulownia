@@ -1,34 +1,29 @@
 @extends('layouts.public')
-
-    @push('css')
-        <link rel="stylesheet" href="{{asset('css/customer-profile.css') }}?v1">
-    @endpush
-
 @section('content')
 
-    <div class="account-content">
+    <div class="account-content pb-5">
         @include('public.customer.profile-header', ['activeItem' => 'orders'])
-
-        <div class="account-layout">
-
-            <div class="account-head mb-10">
-                <span class="back-icon"><a href="{{ route('profile.index') }}"><i class="icon icon-menu-back"></i></a></span>
-                <span class="account-heading">
-                    {{ __('shop::app.customer.account.order.index.title') }}
-                </span>
-
-                <div class="horizontal-rule"></div>
-            </div>
-
-            <div class="account-items-list">
-                <div class="account-table-content">
-                    @inject('order','Webkul\Shop\DataGrids\OrderDataGrid')
-                    {!! $order->render() !!}
-                </div>
-            </div>
-
+        <div class="pos-profile mr-5">
+            @if(!empty($orders))
+                @foreach($orders as $order)
+                    <table class="col-12 mb-3 profile-order-background table" width="100%" cellspacing="0" cellpadding="20">
+                        <tbody>
+                        <tr>
+                            <td width="25%" align="center">{{core()->formatDate($order->created_at, 'd.m.Y')}}</td>
+                            <td width="25%" align="center" class="order-status">{{$order->status}}</td>
+                            <td width="25%"
+                                align="center">{{core()->formatPrice($order->grand_total, $order->order_currency_code) }}</td>
+                            <td width="25%" align="center">
+                                <a href="{{route('orders.view', $order->id)}}" class="order-view">
+                                    <span><i class="fa fa-eye fa-2x" aria-hidden="true"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                @endforeach
+            @endif
         </div>
-
     </div>
 
 @endsection

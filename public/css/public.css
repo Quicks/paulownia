@@ -38,25 +38,25 @@
 }
 
 @media screen and (min-width: 1601px) {
-    html { 
+    html {
         font-size: 16px;
     }
 }
 
 @media screen and (min-width: 1001px) and (max-width: 1600px){
-    html { 
+    html {
         font-size: 14px;
     }
 }
 
 @media screen and (min-width: 426px) and (max-width: 1000px){
-    html { 
+    html {
         font-size: 12px;
     }
 }
 
 @media screen  and (max-width: 425px){
-    html { 
+    html {
         font-size: 10px;
     }
 }
@@ -111,7 +111,7 @@
     text-align: left;
     text-decoration: none solid rgb(255, 255, 255);
     width: 20rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 0px;
 }
 

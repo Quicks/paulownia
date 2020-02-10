@@ -2,7 +2,7 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/faq.css') }}?v3">
+        <link rel="stylesheet" href="{{asset('css/faq.css') }}?v4">
         <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v1">
     @endpush
     <style>
@@ -11,7 +11,7 @@
         }
     </style>
 
-    <div class=" fon-faq">
+    <div class=" fon-faq mb-5">
 
         <div class="col-12 top-fon">@include('public.breadcrumbs', $breadcrumbs = [route('public.faq.index') => 'header-footer.faq' ])</div>
 
@@ -137,13 +137,17 @@
     </div>
 
 
-        <div class="col-xl-11 col-md-11 col-sm-4 pl-5 mx-auto pb-5 pt-5">
+        <div class="col-12 p-0 mt-5">
 
-            <span class="title-for-contacts name-contacts">@lang('contacts.write-to-us'):</span>
-            <input placeholder="Your name" class="email-contacts ">
-            <input placeholder="Email"     class="email-contacts">
-            <input placeholder="@lang('contacts.your-message')" class="email-contacts messege-contacts">
-            <button type="submit" class="button-contacts ">@lang('contacts.send')</button>
+            <div class="row ">
+
+                <div class="title-for-contacts name-contacts col-xl-2 col-md-12 col-sm-12">@lang('contacts.write-to-us'):</div>
+                <div class="col-xl-2 col-md-12 col-sm-12 padding-1199 "><input placeholder="Your name" class="email-contacts "></div>
+                <div class="col-xl-2 col-md-12 col-sm-12 padding-1199 " ><input placeholder="Email" class="email-contacts" ></div>
+                <div class="col-xl-4 col-md-12 col-sm-12 padding-1199 "><input placeholder="@lang('contacts.your-message')" class="messege-contacts"></div>
+                <div class="col-xl-2 col-md-12 col-sm-12 text-center"><button type="submit" class="button-contacts ">@lang('contacts.send')</button></div>
+
+            </div>
 
         </div>
     </div>

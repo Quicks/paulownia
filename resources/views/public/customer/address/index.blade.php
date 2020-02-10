@@ -2,95 +2,73 @@
 
 @section('content')
 
-<div class="account-content">
+    <div class="account-content pb-5">
 
-    @include('public.customer.profile-header', ['activeItem' => 'address'])
+        @include('public.customer.profile-header', ['activeItem' => 'address'])
 
-    <div class="account-layout">
-
-        <div class="account-head">
-            <span class="back-icon"><a href="{{ route('profile.index') }}"><i class="icon icon-menu-back"></i></a></span>
-            <span class="account-heading">{{ __('shop::app.customer.account.address.index.title') }}</span>
-
-            @if (! $addresses->isEmpty())
-                <span class="account-action">
-                    <a href="{{ route('address.create') }}">{{ __('shop::app.customer.account.address.index.add') }}</a>
-                </span>
-            @else
-                <span></span>
-            @endif
-            <div class="horizontal-rule"></div>
-        </div>
-
-        {!! view_render_event('bagisto.shop.customers.account.address.list.before', ['addresses' => $addresses]) !!}
-
-        <div class="account-table-content">
+        <div class="pos-profile">
             @if ($addresses->isEmpty())
-                <div>{{ __('shop::app.customer.account.address.index.empty') }}</div>
+                <div>@lang('profile.empty-address')</div>
                 <br/>
-                <a href="{{ route('address.create') }}">{{ __('shop::app.customer.account.address.index.add') }}</a>
+                <a class="product-button" href="{{ route('address.create') }}">@lang('profile.add-address')</a>
             @else
-                <div class="address-holder">
+                <div class="pb-5 text-right mr-3">
+                    <a class="product-button" href="{{ route('address.create') }}">@lang('profile.add-address')</a>
+                </div>
+                <hr>
+                <div>
                     @foreach ($addresses as $address)
-                        <div class="address-card">
-                            <div class="details">
-                                <span class="bold">{{ auth()->guard('customer')->user()->name }}</span>
-                                <ul class="address-card-list">
-                                    <li class="mt-5">
-                                        {{ $address->name }}
-                                    </li>
+                        <table class="mt-3">
+                            <tbody>
+                            <tr>
+                                <td class="text-right item-address">@lang('profile.street-address'):</td>
+                                <td class="profile-table-info">{{ $address->address1 }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right item-address">@lang('profile.city'):</td>
+                                <td class="profile-table-info">{{ $address->city }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right item-address">@lang('profile.state'):</td>
+                                <td class="profile-table-info">{{ $address->state }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right item-address">@lang('profile.country'):</td>
+                                <td class="profile-table-info">{{core()->country_name($address->country)}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right item-address">@lang('profile.postcode'):</td>
+                                <td class="profile-table-info">{{$address->postcode}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right item-address">@lang('profile.phone'):</td>
+                                <td class="profile-table-info">{{$address->phone}}</td>
+                            </tr>
 
-                                    <li class="mt-5">
-                                        {{ $address->address1 }},
-                                    </li>
-
-                                    <li class="mt-5">
-                                        {{ $address->city }}
-                                    </li>
-
-                                    <li class="mt-5">
-                                        {{ $address->state }}
-                                    </li>
-
-                                    <li class="mt-5">
-                                        {{ core()->country_name($address->country) }} {{ $address->postcode }}
-                                    </li>
-
-                                    <li class="mt-10">
-                                        {{ __('shop::app.customer.account.address.index.contact') }} : {{ $address->phone }}
-                                    </li>
-                                </ul>
-
-                                <div class="control-links mt-20">
-                                    <span>
-                                        <a href="{{ route('address.edit', $address->id) }}">
-                                            {{ __('shop::app.customer.account.address.index.edit') }}
-                                        </a>
-                                    </span>
-
-                                    <span>
-                                        <a href="{{ route('address.delete', $address->id) }}" onclick="deleteAddress('{{ __('shop::app.customer.account.address.index.confirm-delete') }}')">
-                                            {{ __('shop::app.customer.account.address.index.delete') }}
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
+                            </tbody>
+                        </table>
+                        <div class="m-4">
+                            <a class="product-button mr-3" href="{{ route('address.edit', $address->id) }}">
+                                @lang('profile.edit')
+                            </a>
+                            <a class="product-button" href="{{ route('address.delete', $address->id) }}"
+                               onclick="deleteAddress('{{ __('shop::app.customer.account.address.index.confirm-delete') }}')">
+                                @lang('profile.delete')
+                            </a>
                         </div>
+                        <hr>
                     @endforeach
                 </div>
             @endif
         </div>
-
-        {!! view_render_event('bagisto.shop.customers.account.address.list.after', ['addresses' => $addresses]) !!}
     </div>
-</div>
 @endsection
 
 @push('scripts')
     <script>
         function deleteAddress(message) {
             if (!confirm(message))
-            event.preventDefault();
+                event.preventDefault();
         }
     </script>
 @endpush

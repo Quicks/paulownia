@@ -2,46 +2,41 @@
 
 @section('content')
 
-<div class="account-content">
+    <div class="account-content pb-5">
 
-@include('public.customer.profile-header', ['activeItem' => 'profile'])
+        @include('public.customer.profile-header', ['activeItem' => 'profile'])
 
-    <div class="account-layout">
-        <div class="account-head">
-            <span class="back-icon"><a href="{{ route('profile.index') }}"><i class="icon icon-menu-back"></i></a></span>
-            <span class="account-heading">{{ __('shop::app.customer.account.profile.index.title') }}</span>
-            <span class="account-action">
-                <a href="{{ route('profile.edit') }}">{{ __('shop::app.customer.account.profile.index.edit') }}</a>
-            </span>
-            <div class="horizontal-rule"></div>
-        </div>
+        <div class="pos-profile">
+            <div>
+                <span class="profile-profile-title">@lang('profile.basic')</span>
+            </div>
 
-        <div class="account-table-content" style="width: 50%;">
-            <table style="color: #5E5E5E;">
-                <tbody>
+            <div>
+                <table class="profile-table mt-3">
+                    <tbody>
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.fname') }}</td>
-                        <td>{{ $customer->first_name }}</td>
+                        <td class="profile-table-item">@lang('profile.fname'):</td>
+                        <td class="profile-table-info">{{ $customer->first_name }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.lname') }}</td>
-                        <td>{{ $customer->last_name }}</td>
+                        <td class="profile-table-item">@lang('profile.lname'):</td>
+                        <td class="profile-table-info">{{ $customer->last_name }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.gender') }}</td>
-                        <td>{{ $customer->gender }}</td>
+                        <td class="profile-table-item">@lang('profile.gender'):</td>
+                        <td class="profile-table-info">{{ $customer->gender }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.dob') }}</td>
-                        <td>{{ $customer->date_of_birth }}</td>
+                        <td class="profile-table-item">@lang('profile.dob'):</td>
+                        <td class="profile-table-info">{{ $customer->date_of_birth }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.email') }}</td>
-                        <td>{{ $customer->email }}</td>
+                        <td class="profile-table-item">Email:</td>
+                        <td class="profile-table-info">{{ $customer->email }}</td>
                     </tr>
 
                     {{-- @if ($customer->subscribed_to_news_letter == 1)
@@ -52,9 +47,12 @@
                             </td>
                         </tr>
                     @endif --}}
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+                <div class="pt-3 mt-3">
+                    <a class="product-button" href="{{ route('profile.edit') }}">@lang('profile.edit')</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 @endsection

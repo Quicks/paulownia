@@ -27,7 +27,7 @@
                             </span>
                         </div>
 
-                        <div class="line-two mt-5">
+                        <div class="line-two mt-2 mb-3">
                             <span class="method-summary">{{ $payment['description'] }}</span>
                         </div>
                     </div>

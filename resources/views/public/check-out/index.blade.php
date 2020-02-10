@@ -16,41 +16,36 @@
     <script src="{{asset('js/shop-vue.js')}}"></script>
 
     <script type="text/x-template" id="checkout-template">
-        <div id="checkout" class="checkout-process">
-            <div class="col-main ">
-                <ul class="checkout-steps">
-                    <li class="active" :class="[completedStep >= 0 ? 'active' : '', completedStep > 0 ? 'completed' : '']" @click="navigateToStep(1)">
+        <div id="checkout" class="checkout-process ">
+            <div class="col-main">
+
+                <ul class="checkout-steps pl-5 pb-3 nav">
+                    <li class="active nav-item" :class="[completedStep >= 0 ? 'active' : '', completedStep > 0 ? 'completed' : '']" @click="navigateToStep(1)">
                         <div class="decorator address-info"></div>
                         <span>{{ __('shop::app.checkout.onepage.information') }}</span>
                     </li>
 
-                    <div class="line mb-25"></div>
-
-                    <li :class="[currentStep == 2 || completedStep > 1 ? 'active' : '', completedStep > 1 ? 'completed' : '']" @click="navigateToStep(2)">
+                    <li class="nav-item" :class="[currentStep == 2 || completedStep > 1 ? 'active' : '', completedStep > 1 ? 'completed' : '']" @click="navigateToStep(2)">
                         <div class="decorator shipping"></div>
                         <span>{{ __('shop::app.checkout.onepage.shipping') }}</span>
                     </li>
 
-                    <div class="line mb-25"></div>
-
-                    <li :class="[currentStep == 3 || completedStep > 2 ? 'active' : '', completedStep > 2 ? 'completed' : '']" @click="navigateToStep(3)">
+                    <li class="nav-item" :class="[currentStep == 3 || completedStep > 2 ? 'active' : '', completedStep > 2 ? 'completed' : '']" @click="navigateToStep(3)">
                         <div class="decorator payment"></div>
                         <span>{{ __('shop::app.checkout.onepage.payment') }}</span>
                     </li>
 
-                    <div class="line mb-25"></div>
-
-                    <li :class="[currentStep == 4 ? 'active' : '']">
+                    <li class="nav-item" :class="[currentStep == 4 ? 'active' : '']">
                         <div class="decorator review"></div>
                         <span>{{ __('shop::app.checkout.onepage.complete') }}</span>
                     </li>
                 </ul>
 
-                <div class="step-content information" v-show="currentStep == 1" id="address-section">
+                <div class="step-content information pl-5" v-show="currentStep == 1" id="address-section">
                     @include('public.check-out.customer-info')
 
                     <div class="button-group">
-                        <button type="button" class="btn btn-lg btn-primary" @click="validateForm('address-form')" :disabled="disable_button" id="checkout-address-continue-button">
+                        <button type="button" class="product-button" @click="validateForm('address-form')" :disabled="disable_button" id="checkout-address-continue-button">
                             {{ __('shop::app.checkout.onepage.continue') }}
                         </button>
                     </div>
@@ -60,7 +55,7 @@
                     <shipping-section v-if="currentStep == 2" @onShippingMethodSelected="shippingMethodSelected($event)"></shipping-section>
 
                     <div class="button-group">
-                        <button type="button" class="btn btn-lg btn-primary" @click="validateForm('shipping-form')" :disabled="disable_button" id="checkout-shipping-continue-button">
+                        <button type="button" class="product-button" @click="validateForm('shipping-form')" :disabled="disable_button" id="checkout-shipping-continue-button">
                             {{ __('shop::app.checkout.onepage.continue') }}
                         </button>
 
@@ -71,7 +66,7 @@
                     <payment-section v-if="currentStep == 3" @onPaymentMethodSelected="paymentMethodSelected($event)"></payment-section>
 
                     <div class="button-group">
-                        <button type="button" class="btn btn-lg btn-primary" @click="validateForm('payment-form')" :disabled="disable_button" id="checkout-payment-continue-button">
+                        <button type="button" class="product-button " @click="validateForm('payment-form')" :disabled="disable_button" id="checkout-payment-continue-button">
                             {{ __('shop::app.checkout.onepage.continue') }}
                         </button>
                     </div>
@@ -90,14 +85,14 @@
                     </review-section>
 
                     <div class="button-group">
-                        <button type="button" class="btn btn-lg btn-primary" @click="placeOrder()" :disabled="disable_button" id="checkout-place-order-button">
+                        <button type="button" class="product-button " @click="placeOrder()" :disabled="disable_button" id="checkout-place-order-button ">
                             {{ __('shop::app.checkout.onepage.place-order') }}
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="col-right" v-show="currentStep != 4">
+            <div class="col-right " v-show="currentStep != 4">
                 <summary-section :key="summeryComponentKey"></summary-section>
             </div>
         </div>

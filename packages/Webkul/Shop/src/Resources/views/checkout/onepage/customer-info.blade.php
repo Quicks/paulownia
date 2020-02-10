@@ -4,7 +4,7 @@
         <div class="form-header mb-30">
             <span class="checkout-step-heading">{{ __('shop::app.checkout.onepage.billing-address') }}</span>
 
-            <a class="btn btn-lg btn-primary" @click = newBillingAddress()>
+            <a class="product-button" @click = newBillingAddress()>
                 {{ __('shop::app.checkout.onepage.new-address') }}
             </a>
         </div>
@@ -65,13 +65,13 @@
             <h1>{{ __('shop::app.checkout.onepage.billing-address') }}</h1>
 
             @guest('customer')
-                <a class="btn btn-lg btn-primary" href="{{ route('customer.session.index') }}">
+                <a class="" href="{{ route('customer.session.index') }}">
                     {{ __('shop::app.checkout.onepage.sign-in') }}
                 </a>
             @endguest
 
             @auth('customer')
-                <a class="btn btn-lg btn-primary" @click = backToSavedBillingAddress()>
+                <a class="product-button" @click = backToSavedBillingAddress()>
                     {{ __('shop::app.checkout.onepage.back') }}
                 </a>
             @endauth
@@ -236,7 +236,7 @@
         <div class="form-header mb-30">
             <span class="checkout-step-heading">{{ __('shop::app.checkout.onepage.shipping-address') }}</span>
 
-            <a class="btn btn-lg btn-primary" @click=newShippingAddress()>
+            <a class="product-button" @click=newShippingAddress()>
                 {{ __('shop::app.checkout.onepage.new-address') }}
             </a>
         </div>
@@ -293,7 +293,7 @@
             <h1>{{ __('shop::app.checkout.onepage.shipping-address') }}</h1>
 
             @auth('customer')
-                <a class="btn btn-lg btn-primary" @click = backToSavedShippingAddress()>
+                <a class="product-button" @click = backToSavedShippingAddress()>
                     {{ __('shop::app.checkout.onepage.back') }}
                 </a>
             @endauth

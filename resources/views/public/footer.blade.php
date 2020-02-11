@@ -68,3 +68,5 @@
         <span>Copyright © by Paulownia.pro® 2019</span>
     </div>
 </div>
+<script async src="https://cse.google.com/cse.js?cx=013231548468563012370:d5f5xfaqbek"></script>
+<div class="gcse-search"></div>

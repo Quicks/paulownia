@@ -142,6 +142,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::put('addresses/edit/{id}', 'Webkul\Customer\Http\Controllers\AddressController@update')->defaults('_config', [
             'redirect' => 'address.index'
         ])->name('address.edit');
+        Route::post('/write-to-us', 'App\Http\Controllers\WriteToUsController@send')->name('write-to-us');
 
     });
 

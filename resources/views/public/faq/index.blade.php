@@ -138,17 +138,7 @@
 
 
         <div class="col-12 p-0 mt-5">
-
-            <div class="row ">
-
-                <div class="title-for-contacts name-contacts col-xl-2 col-md-12 col-sm-12">@lang('contacts.write-to-us'):</div>
-                <div class="col-xl-2 col-md-12 col-sm-12 padding-1199 "><input placeholder="Your name" class="email-contacts "></div>
-                <div class="col-xl-2 col-md-12 col-sm-12 padding-1199 " ><input placeholder="Email" class="email-contacts" ></div>
-                <div class="col-xl-4 col-md-12 col-sm-12 padding-1199 "><input placeholder="@lang('contacts.your-message')" class="messege-contacts"></div>
-                <div class="col-xl-2 col-md-12 col-sm-12 text-center"><button type="submit" class="button-contacts ">@lang('contacts.send')</button></div>
-
-            </div>
-
+            @include('public.write-to-us')
         </div>
     </div>
 

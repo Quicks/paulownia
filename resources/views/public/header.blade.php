@@ -124,13 +124,13 @@
                                     </a>
 
                                     <ul class="dropdown-menu" aria-labelledby="dropdownClientMenu">
-                                        <li class="dropdown-item-text ml-3">
+                                        <li class="dropdown-client-list-name dropdown-item-text ml-3">
                                             {{ auth()->guard('customer')->user()->first_name }}
                                         </li>
-                                        <li class="dropdown-item">
+                                        <li class="dropdown-item dropdown-client-list">
                                             <a href="{{ route('profile.index') }}">{{ __('shop::app.header.profile') }}</a>
                                         </li>
-                                        <li class="dropdown-item">
+                                        <li class="dropdown-item dropdown-client-list">
                                             <a href="{{ route('customer.session.destroy') }}">{{ __('shop::app.header.logout') }}</a>
                                         </li>
                                     </ul>

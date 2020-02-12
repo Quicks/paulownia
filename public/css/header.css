@@ -59,7 +59,7 @@
 
 .cart-not-empty {
     position: absolute;
-    top:10px; 
+    top:10px;
     left:10px;
     height:12px;
     width:12px;
@@ -76,4 +76,21 @@
     display: block;
     margin: -5px 0 10px 15px;
     color: #ff5656;
+}
+
+.dropdown-client-list-name {
+    font-weight: bold;
+    color:#8CBD02;
+}
+
+.dropdown-client-list a {
+    color: #0F0E0E;
+}
+
+.dropdown-client-list a:hover, .dropdown-client-list a:focus {
+    color: #0F0E0E;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #8CBD02;
 }

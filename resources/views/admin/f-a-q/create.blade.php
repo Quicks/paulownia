@@ -8,9 +8,10 @@
 
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Edit Content #{{ $content->id }}</div>
+                    <div class="card-header">Create New Question</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/contents') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/f-a-q') }}" title="Back"><button class="btn btn-warning btn-sm">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
                         <br />
 
@@ -22,11 +23,11 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/contents/' . $content->id) }}" accept-charset="UTF-8" class="form-horizontal validForm" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
+                        <form method="POST" action="{{ url('/admin/f-a-q') }}" accept-charset="UTF-8"
+                              class="form-horizontal validForm" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('admin.contents.form', ['formMode' => 'edit'])
+                            @include ('admin.f-a-q.form', ['formMode' => 'create'])
 
                         </form>
 
@@ -37,6 +38,7 @@
         </div>
     </div>
 @endsection
+
 @push('scripts')
     <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
     <script src="{{ asset('js/tinymce.js') }}"></script>

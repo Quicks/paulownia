@@ -4,6 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             @include('admin.sidebar')
+            @include('admin.aside-contents')
 
             <div class="col">
                 <div class="card">
@@ -20,17 +21,6 @@
                                                                       aria-hidden="true"></i> Edit
                             </button>
                         </a>
-
-                        <form method="POST" action="{{ url('admin/contents' . '/' . $content->id) }}"
-                              accept-charset="UTF-8" style="display:inline">
-                            {{ method_field('DELETE') }}
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Content"
-                                    onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o"
-                                                                                             aria-hidden="true"></i>
-                                Delete
-                            </button>
-                        </form>
                         <br/>
                         <br/>
                         <div class="tab-content" id="nav-tabContent">

@@ -1,0 +1,22 @@
+{
+    "fields": [
+        {
+            "name": "question",
+            "type": "string"
+        },
+        {
+            "name": "answer",
+            "type": "boolean"
+        }
+    ],
+    "validations": [
+        {
+            "field": "question",
+            "rules": "required|max:200"
+        },
+        {
+            "field": "answer",
+            "rules": "required|max:2000"
+        }
+    ]
+}

@@ -16,7 +16,9 @@
     <script src="{{asset('js/shop-vue.js')}}"></script>
 
     <script type="text/x-template" id="checkout-template">
-        <div id="checkout" class="checkout-process ">
+
+        <div class="mb-5">
+        <div id="checkout" class="checkout-process mx-auto">
             <div class="col-main">
 
                 <ul class="checkout-steps pl-5 pb-3 nav">
@@ -96,7 +98,10 @@
                 <summary-section :key="summeryComponentKey"></summary-section>
             </div>
         </div>
+
+        </div>
     </script>
+
 
     <script>
         var shippingHtml = '';

@@ -1,3 +1,6 @@
+
+{{--order summary in complete(when show all info 4 step)--}}
+
 <div class="order-summary">
     <h3>{{ __('shop::app.checkout.total.order-summary') }}</h3>
 

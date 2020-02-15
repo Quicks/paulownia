@@ -1,7 +1,7 @@
 <form data-vv-scope="address-form">
 
     <div class="form-container" v-if="!this.new_billing_address">
-        <div class="form-header mb-30">
+        <div class="form-header-1">
             <span class="checkout-step-heading">{{ __('shop::app.checkout.onepage.billing-address') }}</span>
 
             <a class="product-button" @click = newBillingAddress()>

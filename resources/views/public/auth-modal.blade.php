@@ -5,13 +5,13 @@
             <div class="modal-header">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="sign-tab" data-toggle="tab" href="#sign" role="tab"
+                        <a class="nav-link color-link active" id="sign-tab" data-toggle="tab" href="#sign" role="tab"
                              aria-controls="sign" aria-selected="true">
                             Sign Up
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="log-tab" data-toggle="tab" href="#log" role="tab"
+                        <a class="nav-link color-link " id="log-tab" data-toggle="tab" href="#log" role="tab"
                                 aria-controls="log" aria-selected="false">
                             Login
                         </a>
@@ -57,7 +57,7 @@
                                 <div class="control-group mb-4 @if($errors->has('password_confirmation')) has-auth-error @endif">
                                     <label for="password_confirmation" class="required width-password-confirmation">{{ __('shop::app.customer.signup-form.confirm_pass') }}</label>:*
                                     <input type="password" class="control-password" name="password_confirmation"  required minlength="6">
-                                    <button type="button" class="position-absolute eye"><img src="{{asset("/images/eye-for-password-modal.png")}}"></button>
+                                    <button type="button" class="position-absolute eye-password"><img src="{{asset("/images/eye-for-password-modal.png")}}"></button>
                                     <span class="control-error">{{ $errors->first('password_confirmation') }}</span>
                                 </div>
 
@@ -129,7 +129,7 @@
                                     <input class="button-modal-sing-in mb-1" type="submit"
                                         value="{{ __('shop::app.customer.forgot-password.submit') }}">
                                 </div>
-                                <div class="control-group" style="margin-bottom: 0px;">
+                                <div class="control-group" style="margin-bottom: 0;">
                                     <a href="#" class="href-forgot pl-3" onclick="$('#forgot').hide();$('#log, #myTab').show();">
                                         Back to Sign In
                                     </a>

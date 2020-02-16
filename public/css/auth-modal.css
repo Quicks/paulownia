@@ -12,12 +12,10 @@
 .close {
     outline: none !important;
 }
-
 .modal-header {
     border: none;
     padding: 1rem 1rem 0 1rem;
 }
-
 .modal-header .close {
     padding: 1rem 2rem 0 1rem;
     margin: -1rem -1rem -1rem auto;
@@ -42,39 +40,16 @@
 .forgot-text {
     color: #8CBD02;
     font-weight: bold;
-    padding: 0rem 1rem 1rem 2rem;
+    padding: 0 1rem 1rem 2rem;
 }
 
 .width-email, .width-password, .first-last-name-modal, .width-email-sing-in, .width-password-sing-in, .width-password-confirmation {
     font-style: italic;
     display: inline-block;
     color: rgba(0, 0, 0, 0.5);
+    width: 35%;
+    text-align: right;
 }
-
-.width-password {
-    margin: 0 0 0 4.9rem;
-}
-
-.width-email {
-    margin: 0 0 0 6.8rem;
-}
-
-.first-last-name-modal {
-    margin: 0 0 0 5.2rem;
-}
-
-.width-email-sing-in {
-    margin: 0 0 0 7.7rem;
-}
-
-.width-password-sing-in {
-    margin: 0 0 0 5.8rem;
-}
-
-.width-password-confirmation {
-    margin: 0 0 0 1.9rem;
-}
-
 input.control, input.control-password {
     background-color: transparent !important;
     letter-spacing: normal;
@@ -88,6 +63,7 @@ input.control, input.control-password {
     border-right: none;
     outline-color: transparent;
     border-bottom: 1px solid #000000;
+    width: 50%;
 }
 
 .control {
@@ -100,7 +76,7 @@ input.control, input.control-password {
     height: 2rem;
 }
 
-.eye {
+.eye, .eye-password{
     color: #8CBD02;
     right: 14%;
     outline-color: transparent;
@@ -126,7 +102,7 @@ input.control, input.control-password {
     color: rgba(0, 0, 0, 0.5);
 }
 
-a:hover {
+.color-linc:hover {
     color: #8CBD02;
 }
 
@@ -178,100 +154,36 @@ a:hover {
     .modal-dialog {
         margin: 0 0 0 16rem;
     }
-
-    .width-email-sing-in {
-        margin: 0 0 0 8.1rem;
-    }
-
-    .width-password-sing-in {
-        margin: 0 0 0 5.9rem;
-    }
-
-    .control-password {
-        background-position: 13rem .6rem;
-        font-size: 2rem;
-        width: 14.44rem;
-        height: 2rem;
-    }
-
-    .width-password-confirmation {
-        margin: 0 0 0 1.37rem;
-    }
-
-    .width-password {
-        margin: 0 0 0 4.57rem;
-    }
 }
 
 @media screen and (min-width: 376px) and (max-width: 425px) {
 
     .modal-dialog {
-        margin: 0 5rem 0 10rem;;
+        margin: 0 1rem 0 1rem;;
     }
 
-    .width-email, .width-password {
-        margin: 0 0 0 1rem;
-    }
-
-    input.control, input.control-password {
-        margin-left: 1rem;
-    }
-
-    .control-password {
-        background-position: 16rem .6rem;
-        width: 17.4rem;
-    }
-
-    .first-last-name-modal, .width-email-sing-in, .width-password-confirmation, .width-password-sing-in {
-        margin: 0 0 0 1rem;
+    .modal-content {
+        width: 100%;
     }
 }
 
 @media screen and (min-width: 321px) and (max-width: 375px) {
-
-    .modal-dialog {
-        margin: 0 0 0 8rem;
-    }
-
-    .width-email, .width-password {
-        margin: 0 0 0 1rem;
-    }
-
-    input.control, input.control-password {
-        margin-left: 4%;
-    }
-
-    .control-password {
-        background-position: 16rem .6rem;
-        width: 17.4rem;
-    }
-
-    .first-last-name-modal, .width-email-sing-in, .width-password-confirmation, .width-password-sing-in {
-        margin: 0 0 0 1rem;
+    .modal-content {
+        width: 100%;
     }
 }
 
 @media screen and (max-width: 320px) {
 
-    .modal-dialog {
-        margin: 0 0 0 6rem;
+    .modal-content {
+        width: 100%;
     }
-
-    .width-email, .width-password {
-        margin: 0 0 0 1rem;
+    .eye{
+        right: 12%;
     }
-
-    input.control, input.control-password {
-        margin-left: 4%;
-    }
-
-    .control-password {
-        background-position: 16rem .6rem;
-        width: 17.4rem;
-    }
-
-    .first-last-name-modal, .width-email-sing-in, .width-password-confirmation, .width-password-sing-in {
-        margin: 0 0 0 1rem;
+    .eye-password{
+        top:51%;
+        right: 12%;
     }
 }
 

@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\Models\Content;
 use App\Models\FAQ;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class FAQController extends Controller
 {

@@ -2,7 +2,7 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/faq.css') }}?v4">
+        <link rel="stylesheet" href="{{asset('css/faq.css') }}?v5">
         <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v1">
     @endpush
     <style>
@@ -21,7 +21,8 @@
                 @foreach ($topics as $topic)
                     <li class="nav-item ">
                         <a class="nav-link" id="{{$topic->id}}-tab" data-toggle="tab" href="#home-{{$topic->id}}"
-                           role="tab" aria-controls="home" aria-selected="true">{{$topic->text}}</a>
+                           role="tab" aria-controls="home"
+                           aria-selected="true">{{html_entity_decode(strip_tags($topic->text))}}</a>
                     </li>
                 @endforeach
             </ul>
@@ -29,26 +30,25 @@
                 @foreach($topics as $topic)
                     <div class="tab-pane fade" id="home-{{$topic->id}}" role="tabpanel"
                          aria-labelledby="{{$topic->id}}-tab">
-                        <div class="accordion" id="accordionExample">
+                        <div class="accordion" id="accordionExample{{$topic->id}}">
                             @forelse($topic->faqs as $item)
                                 <div class="card">
-                                    <div class="card-header" id="headingOne">
+                                    <div class="card-header" id="heading{{$item->id}}">
                                         <div class="row">
                                             <div class="col-11">{{$item->question}}</div>
                                             <div class="col-1">
-                                                <button class="btn btn-link collapsed " type="button"
+                                                <button class="btn btn-link collapsed btn-faq" type="button"
                                                         data-toggle="collapse"
                                                         data-target="#collapse{{$item->id}}" aria-expanded="false"
                                                         aria-controls="collapse{{$item->id}}">
-                                                    <img data-src="/images/button-faq-down.png" class="lazyload "
-                                                         id="img-text-{{$item->id}}" onClick="chg(id)">
                                                 </button>
                                             </div>
 
                                         </div>
                                     </div>
-                                    <div id="collapse{{$item->id}}" class="collapse" aria-labelledby="headingOne"
-                                         data-parent="#accordionExample">
+                                    <div id="collapse{{$item->id}}" class="collapse"
+                                         aria-labelledby="heading{{$item->id}}"
+                                         data-parent="#accordionExample{{$topic->id}}">
                                         <div class="card-body">{{html_entity_decode(strip_tags($item->answer))}}</div>
                                     </div>
                                 </div>
@@ -65,13 +65,4 @@
         </div>
     </div>
 
-    <script>
-        async function chg(id) {
-            if (document.getElementById(id).src.indexOf("/images/button-faq-down.png") > 0) {
-                document.getElementById(id).src = "/images/button-faq-up.png"
-            } else {
-                document.getElementById(id).src = "/images/button-faq-down.png"
-            }
-        }
-    </script>
 @endsection

@@ -26,9 +26,9 @@
                             <table class="table">
                                 <tbody>
                                     <tr><th>ID</th><td>{{ $faq->id }}</td></tr>
-                                    <tr><th>Topic</th><td>{{ $faq->content->text }}</td></tr>
+                                    <tr><th>Topic</th><td>{{html_entity_decode(strip_tags($faq->content->text))}}</td></tr>
                                     <tr><th> Question </th><td> {{ $faq->question }} </td></tr>
-                                    <tr><th> Answer </th><td> {{ $faq->answer }} </td></tr>
+                                    <tr><th> Answer </th><td>{{html_entity_decode(strip_tags($faq->answer))}}</td></tr>
                                 </tbody>
                             </table>
                         </div>

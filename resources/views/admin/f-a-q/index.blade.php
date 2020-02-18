@@ -38,7 +38,7 @@
                                 @foreach($faq as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{$item->content->text}}</td>
+                                        <td>{{html_entity_decode(strip_tags($item->content->text))}}</td>
                                         <td>{{ $item->question }}</td>
                                         <td>
                                             <a href="{{ url('/admin/f-a-q/' . $item->id) }}" title="View FAQ"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>

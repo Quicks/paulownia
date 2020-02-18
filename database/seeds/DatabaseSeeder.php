@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AddPaulowniaAttributeGroupTableSeeder::class);
         $this->call(AddDeliveryReservationToAttributeTableSeeder::class);
         $this->call(AddDeliveryReservationToAttributeGroupMappingTableSeeder::class);
+        $this->call(AddFAQTopicsToContentTableSeeder::class);
     }
 }

@@ -4,19 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Content extends Model
+class FAQ extends Model
 {
     use \Dimsav\Translatable\Translatable;
 
-    public $translationModel = 'App\Models\Translations\ContentTranslation';
+    public $translationModel = 'App\Models\Translations\FAQTranslation';
 
-    public $translatedAttributes = ['text'];
+    public $translatedAttributes = ['question', 'answer'];
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'contents';
+    protected $table = 'f_a_qs';
 
     /**
     * The database primary key value.
@@ -30,12 +30,10 @@ class Content extends Model
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['content_id'];
 
-    public function faqs()
+    public function content()
     {
-        return $this->hasMany(FAQ::class);
+        return $this->belongsTo(Content::class);
     }
-
-
 }

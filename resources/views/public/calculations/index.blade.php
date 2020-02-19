@@ -2,7 +2,7 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/profitability-calculation.css')}}?v2">
+        <link rel="stylesheet" href="{{asset('css/profitability-calculation.css')}}?v3">
         <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v6">
     @endpush
 

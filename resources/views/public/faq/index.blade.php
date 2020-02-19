@@ -2,7 +2,7 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/faq.css') }}?v4">
+        <link rel="stylesheet" href="{{asset('css/faq.css') }}?v5">
         <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v1">
     @endpush
     <style>
@@ -11,34 +11,35 @@
         }
     </style>
 
-    <div class=" fon-faq mb-5">
+    <div class="fon-faq">
 
         <div class="col-12 top-fon">@include('public.breadcrumbs', $breadcrumbs = [route('public.faq.index') => 'header-footer.faq' ])</div>
 
-<div class="col-11 mx-auto">
+    <div class="col-11 mx-auto">
 
-    <div class="faq-text-list">FAQ</div>
+        <div class="faq-text-list">FAQ</div>
 
-    <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
-        <li class="nav-item ">
-            <a class="nav-link active" id="1-tab" data-toggle="tab" href="#home-1" role="tab" aria-controls="home" aria-selected="true">Topic 1</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="2-tab" data-toggle="tab" href="#home-2" role="tab" aria-controls="profile" aria-selected="false">Topic 2</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="3-tab" data-toggle="tab" href="#home-3" role="tab" aria-controls="contact" aria-selected="false">Topic 3</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="4-tab" data-toggle="tab" href="#home-4" role="tab" aria-controls="contact" aria-selected="false">Topic 4</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="other" data-toggle="tab" href="#home-5" role="tab" aria-controls="contact" aria-selected="false">Other
-                <img data-src="/images/button-faq-down.png" class="lazyload " id="img-menu" onClick="chg(id)">
-            </a>
-        </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
+        <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
+            <li class="nav-item ">
+                <a class="nav-link active" id="1-tab" data-toggle="tab" href="#home-1" role="tab" aria-controls="home" aria-selected="true">Topic 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="2-tab" data-toggle="tab" href="#home-2" role="tab" aria-controls="profile" aria-selected="false">Topic 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="3-tab" data-toggle="tab" href="#home-3" role="tab" aria-controls="contact" aria-selected="false">Topic 3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="4-tab" data-toggle="tab" href="#home-4" role="tab" aria-controls="contact" aria-selected="false">Topic 4</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="other" data-toggle="tab" href="#home-5" role="tab" aria-controls="contact" aria-selected="false">Other
+                    <img data-src="/images/button-faq-down.png" class="lazyload " id="img-menu" onClick="chg(id)">
+                </a>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home-1" role="tabpanel" aria-labelledby="1-tab">
             <div class="accordion" id="accordionExample">
 
@@ -137,7 +138,7 @@
     </div>
 
 
-        <div class="col-12 p-0 mt-5">
+        <div class="col-12 p-0 mt-5 pb-5">
             @include('public.write-to-us')
         </div>
     </div>

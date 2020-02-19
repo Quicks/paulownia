@@ -4,7 +4,6 @@
 }
 .ticker-text {
     font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 1rem;
     color: #8CBD02;
 }

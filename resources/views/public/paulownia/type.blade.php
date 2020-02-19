@@ -2,8 +2,8 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/types-of-paulownia.css')}}">
-        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}">
+        <link rel="stylesheet" href="{{asset('css/types-of-paulownia.css')}}?v1">
+        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}?v1">
         <link rel="stylesheet" href="{{asset('css/our-products.css') }}?v7">
     @endpush
 
@@ -11,20 +11,6 @@
             <div class="row">
                 <div class="col-12 border-up  p-sm-0">
                     @include('public.paulownia.nav-paulownia')
-
-                    {{--<div class="row mt-3 mb-3 ml-2">--}}
-                        {{--<div class="col-xl-2 col-md-0 col-sm-0"></div>--}}
-                        {{--<div class="col-xl-6 col-md-12 col-sm-12 pl-4">--}}
-
-                            {{--<a  @if(url()->current() === route('public.paulownia.about')) class="text-href p-xl-3 p-md-3 p-sm-0 tyro "--}}
-                                {{--@else class="text-href p-xl-3 p-md-3 p-sm-0" @endif href="{{route('public.paulownia.about')}}">@lang('about-paulownia.about-paulownia')</a>--}}
-
-
-                            {{--<a class="text-href p-xl-3 p-md-3 p-sm-1 " href="{{route('public.paulownia.type')}}">@lang('about-paulownia.types-of-paulownia')</a>--}}
-                            {{--<a class="text-href p-xl-3 p-md-3 p-sm-0 " href="{{route('public.paulownia.planting')}}">@lang('about-paulownia.plantation-creation')</a>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-xl-4 col-md-0 col-sm-0"></div>--}}
-                    {{--</div>--}}
                 </div>
                     <div class="col-12 fon-for-title-1 ">
                         <div class="row p-0 m-0 ">
@@ -37,7 +23,7 @@
                             </div>
                         </div>
                     </div>
-            </div>
+
         <div class="col-12 p-0 fon-for-paulownia-type">
             <nav>
                 <div class="nav nav-tabs justify-content-between px-4" id="nav-tab" role="tablist">

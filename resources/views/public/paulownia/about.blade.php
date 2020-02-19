@@ -2,24 +2,14 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}">
+        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}?v1">
 
     @endpush
 
     <div class="row position-relative">
 
         <div class="col-12 border-up p-sm-0">
-
             @include('public.paulownia.nav-paulownia')
-            {{--<div class="row mt-3 mb-3 ml-2">--}}
-                {{--<div class="col-xl-2 col-md-0 col-sm-0"></div>--}}
-                {{--<div class="col-xl-6 col-md-12 col-sm-12 pl-4">--}}
-                    {{--<a class="text-href p-xl-3 p-md-3 p-sm-0" href="#"> @lang('about-paulownia.about-paulownia')</a>--}}
-                    {{--<a class="text-href p-xl-3 p-md-3 p-sm-1" href="{{route('public.paulownia.type')}}">@lang('about-paulownia.types-of-paulownia')</a>--}}
-                    {{--<a class="text-href p-xl-3 p-md-3 p-sm-0" href="{{route('public.paulownia.planting')}}">@lang('about-paulownia.plantation-creation')</a>--}}
-                {{--</div>--}}
-                {{--<div class="col-xl-4 col-md-0 col-sm-0"></div>--}}
-            {{--</div>--}}
         </div>
 
 
@@ -28,16 +18,13 @@
                 <div class="col-xl-2 col-md-2 col-sm-0"></div>
                 <div class="col-9 mt-5 pt-5 mb-5 pb-5">
                     <div class="title-text mt-5 pt-5">@lang('about-paulownia.about-paulownia')</div>
-                    <div class="text-under-title mb-5 pb-5">@lang('about-paulownia.text')
+                    <div class="text-under-title">@lang('about-paulownia.text')
                     </div>
                     <div class="col-xl-1 col-md-1 col-sm-0"></div>
                 </div>
             </div>
-
-
-
         </div>
-        {{--<img data-src="/images/line-for-paulownia.png" class="lazyload line-paulownia">--}}
+
         <div class="col-12 p-0 fon-for-paulownia-type">
 
             <nav>

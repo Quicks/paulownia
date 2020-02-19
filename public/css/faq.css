@@ -70,3 +70,12 @@ a,a:hover {
     padding: 0;
     margin-left:75%;
 }
+
+.accordion .card-header .btn-faq:after {
+    content: url("/images/button-faq-up.png");
+    float: right;
+}
+
+.accordion .card-header .btn-faq.collapsed:after {
+    content: url("/images/button-faq-down.png");
+}

@@ -106,7 +106,7 @@ class RegistrationController extends Controller
             if($request->has('subscribe')) {
                 $this->subscribe();
             }
-
+            auth()->guard('customer')->attempt(request(['email', 'password']));  //THIS IS AUTOLOGIN
             return redirect()->back(); //redirect()->route($this->_config['redirect']);
         } else {
             session()->flash('error', trans('shop::app.customer.signup-form.failed'));

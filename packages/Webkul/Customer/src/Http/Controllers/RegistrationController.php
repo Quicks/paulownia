@@ -106,7 +106,7 @@ class RegistrationController extends Controller
             if($request->has('subscribe')) {
                 $this->subscribe();
             }
-
+            app('Webkul\Customer\Http\Controllers\SessionController')->create($request); //THIS IS AUTOLOGIN AFTER REGISTRATION
             return redirect()->back(); //redirect()->route($this->_config['redirect']);
         } else {
             session()->flash('error', trans('shop::app.customer.signup-form.failed'));

@@ -79,3 +79,10 @@ a,a:hover {
 .accordion .card-header .btn-faq.collapsed:after {
     content: url("/images/button-faq-down.png");
 }
+
+@media screen and (max-width: 425px) {
+
+    .faq-text-list{
+      display: none;
+    }
+}

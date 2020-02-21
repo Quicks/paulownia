@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/our-products.css') }}?v7">
+    <link rel="stylesheet" href="{{asset('css/our-products.css') }}?v8">
 @endpush
 
 <div class="main-content">
@@ -20,7 +20,7 @@
         </div>
 
         <div class="row justify-content-end mx-1">
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-md-3 col-sm-6 col-xs-12 margin-425">
                 <a href="{{route('public.products.index')}}">
                     <button class="product-button w-100"> All goods </button>
                 </a>

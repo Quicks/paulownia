@@ -2,8 +2,8 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/faq.css') }}?v5">
-        <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v1">
+        <link rel="stylesheet" href="{{asset('css/faq.css') }}?v6">
+        <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v2">
     @endpush
     <style>
         .fon-text {
@@ -11,7 +11,7 @@
         }
     </style>
 
-    <div class="fon-faq pb-5">
+    <div class="fon-faq">
 
         <div
             class="col-12 top-fon">@include('public.breadcrumbs', $breadcrumbs = [route('public.faq.index') => 'header-footer.faq' ])</div>
@@ -60,7 +60,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="col-12 p-0 mt-5">
+        <div class="col-12 pb-5 pt-5 mt-5 ">
             @include('public.write-to-us')
         </div>
     </div>

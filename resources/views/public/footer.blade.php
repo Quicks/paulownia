@@ -1,6 +1,6 @@
 <div class="footer py-4">
-    <div class="footer-content row mx-auto pl-xl-5">
-        <div class="col-xl-2 col-md-6 col-sm-12">
+    <div class="footer-content row mx-auto p-5">
+        <div class="col-xl-2 col-md-6 col-sm-12 mb-3">
             <p class="footer-title">  @lang('header-footer.our service') </p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
@@ -10,7 +10,7 @@
                 <li><a href="{{route('public.consultation-during-the-cultivation.index')}}">@lang('header-footer.consultation during the cultivation')</a></li>
             </ul>
         </div>
-        <div class="col-xl-2 col-md-6 col-sm-12">
+        <div class="col-xl-2 col-md-6 col-sm-12 mb-3">
             <p class="footer-title">@lang('header-footer.to customers')</p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
@@ -21,7 +21,7 @@
                 <li><a href="#">@lang('header-footer.terms of use')</a></li>
             </ul>
         </div>
-        <div class="col-xl-2 col-md-6 col-sm-12">
+        <div class="col-xl-2 col-md-6 col-sm-12 mb-3">
             <p class="footer-title">@lang('header-footer.menu') </p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
@@ -35,7 +35,7 @@
                 <li><a href="{{route('public.about-us.index')}}">@lang('header-footer.about us')</a></li>
             </ul>
         </div>
-        <div class="col-xl-3 col-md-6 col-sm-12">
+        <div class="col-xl-3 col-md-6 col-sm-12 mb-3">
             <p class="footer-title">@lang('header-footer.contacts')</p>
             <hr class="footer-line mt-n3">
             <ul class="text-list m-0 p-0">
@@ -53,7 +53,7 @@
                 </ul>
             </ul>
         </div>
-        <div class="col-xl-3 col-md-12 col-sm-12">
+        <div class="col-xl-3 col-md-12 col-sm-12 ">
             <div>
                 <img class="mt-4 ml-xl-4 mx-auto footer-booklet" src="{{asset('images/booklet_en.jpg')}}">
             </div>
@@ -64,9 +64,7 @@
     </div>
 </div>
 <div class="row footer-bottom text-center">
-    <div class="col-12 footer-bottom-copy py-4">
-        <span>Copyright © by Paulownia.pro® 2019</span>
-    </div>
+    <div class="col-12 footer-bottom-copy py-4">Copyright © by Paulownia.pro® 2019</div>
 </div>
 <script async src="https://cse.google.com/cse.js?cx=013231548468563012370:d5f5xfaqbek"></script>
 <div class="gcse-search"></div>

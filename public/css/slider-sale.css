@@ -76,7 +76,7 @@ a:hover{
 
 
 /* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
-@media screen and  (min-width: 426px) and (max-width: 768px) {
+@media screen and  (min-width: 601px) and (max-width: 768px) {
 
     .image-fon {
         margin: -28% 0 0 36%;
@@ -93,20 +93,9 @@ a:hover{
     }
 }
 
-@media screen  and (max-width: 425px) {
-
-    .image-fon {
-        margin: -25% 0 0 36%;
-    }
-    .text-fon{
-        margin-bottom: 0;
-    }
-
-    .rounding{
-        border-radius:10px ;
-    }
+@media screen  and (max-width: 600px) {
     .back-image{
-        height: 155px;
+        display: none;
     }
 }
 

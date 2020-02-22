@@ -17,37 +17,37 @@
                 <div class="text-center"><img data-src="{{asset('/images/about-us-header-1.png')}}" class="lazyload img-servise-style">
                 </div>
                 <div class="title-our-servise-about-us-header text-center">@lang('about-us-header.sale')</div>
-                <div class="text-our-servise-about-us-header text-center">@lang('about-us-header.point-1')</div>
+                <div class="text-our-servise-about-us-header text-center pb-5">@lang('about-us-header.point-1')</div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6 card-img-width-about">
                 <div class="text-center"><img data-src="{{asset('/images/about-us-header-2.png')}}" class="lazyload img-servise-style">
                 </div>
                 <div class="title-our-servise-about-us-header text-center">@lang('about-us-header.sale')</div>
-                <div class="text-our-servise-about-us-header text-center">@lang('about-us-header.wood')</div>
+                <div class="text-our-servise-about-us-header text-center pb-5">@lang('about-us-header.wood')</div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6  card-img-width-about">
                 <div class="text-center"><img data-src="{{asset('/images/about-us-header-3.png')}}" class="lazyload img-servise-style">
                 </div>
                 <div class="title-our-servise-about-us-header text-center">@lang('about-us-header.calculation') </div>
-                <div class="text-our-servise-about-us-header text-center">@lang('about-us-header.profitability-investment')</div>
+                <div class="text-our-servise-about-us-header text-center pb-5">@lang('about-us-header.profitability-investment')</div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6  card-img-width-about">
                 <div class="text-center"><img data-src="{{asset('/images/about-us-header-4.png')}}" class="lazyload img-servise-style">
                 </div>
                 <div class="title-our-servise-about-us-header text-center">@lang('about-us-header.contracts')</div>
-                <div class="text-our-servise-about-us-header text-center">@lang('about-us-header.sale-wood')</div>
+                <div class="text-our-servise-about-us-header text-center pb-5">@lang('about-us-header.sale-wood')</div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6  card-img-width-about">
                 <div class="text-center"><img data-src="{{asset('/images/about-us-header-5.png')}}" class="lazyload img-servise-style">
                 </div>
                 <div class="title-our-servise-about-us-header text-center">@lang('about-us-header.consultation') </div>
-                <div class="text-our-servise-about-us-header text-center">@lang('about-us-header.throughout-growing')</div>
+                <div class="text-our-servise-about-us-header text-center pb-5">@lang('about-us-header.throughout-growing')</div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6  card-img-width-about">
                 <div class="text-center"><img data-src="{{asset('/images/about-us-header-6.png')}}" class="lazyload img-servise-style">
                 </div>
                 <div class="title-our-servise-about-us-header text-center">@lang('about-us-header.projection')</div>
-                <div class="text-our-servise-about-us-header text-center">@lang('about-us-header.future-plantations')</div>
+                <div class="text-our-servise-about-us-header text-center pb-5">@lang('about-us-header.future-plantations')</div>
             </div>
         </div>
 
@@ -122,7 +122,7 @@
             <hr class="about-us-line-1">
         </div>
 
-            <div class="col-12 ">
+            <div class="col-12">
                 <img data-src="{{asset('/images/map-about-us-r.png')}}" class="lazyload map-about-style position-relative">
                 <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute america-1">
                 <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute america-2">
@@ -134,6 +134,7 @@
                 <img data-src="{{asset('images/pointMap.svg')}}" class="lazyload position-absolute africa-2">
 
             </div>
+            <div class="col-12 mb-5"></div>
 
     </div>
 @endsection

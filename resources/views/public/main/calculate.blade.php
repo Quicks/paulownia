@@ -1,6 +1,6 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v6">
-    <link rel="stylesheet" href="{{ asset('css/selectric.css') }}?v3">
+    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v7">
+    <link rel="stylesheet" href="{{ asset('css/selectric.css') }}?v4">
 @endpush
 
 <div class="row mx-auto pt-xl-5 pb-xl-5 calc-width">
@@ -29,7 +29,7 @@
         <input class="calc-number calc-select" type="text" onkeyup="this.value = this.value.replace (/\D/, '')"
                id="numberTrees" name="numberTrees" placeholder="Number of trees">
     </div>
-    <div class="col-xl-3">
+    <div class="col-xl-3 margin-425">
         <button class="button-calc" data-toggle="modal"  data-target="#calcAnswer">
             <img class="lazyload w-100" data-src="{{asset('/images/calculate.png')}}">
         </button>

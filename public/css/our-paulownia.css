@@ -42,3 +42,22 @@ background: url("/images/arrow-left.svg") no-repeat;
 .fotorama__thumb {
     border-radius: 25px !important;
 }
+
+@media screen and  (max-width:1024px) {
+
+    .fotorama__nav-wrap{
+        display: none !important;
+    }
+    .fotorama__arr--prev {
+        background:transparent;
+    }
+    .fotorama__arr--next {
+        background: transparent;
+    }
+}
+
+@media screen and  (max-width:320px) {
+    .our-paulownia-content {
+        padding-top: 250px;
+    }
+}

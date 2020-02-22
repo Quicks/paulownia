@@ -1,5 +1,5 @@
 @pushonce('css:product-card')
-    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v18">
+    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v19">
 @endpushonce
 
 <div class="">

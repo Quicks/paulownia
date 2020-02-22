@@ -80,6 +80,9 @@
     .product-button {
         padding: 5% 8% 5% 8%;
     }
+    .margin-425 {
+        margin-bottom: 10%;
+    }
 }
 
 .products-animation.start {

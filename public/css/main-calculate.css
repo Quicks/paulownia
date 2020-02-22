@@ -1,8 +1,3 @@
-@media screen and (min-width: 1200px) and (max-width: 1500px) {
-    .calc-width {
-        max-width:1200px !important;
-    }
-}
 .calculate-title {
     font-weight: bold;
     font-size: 3rem;
@@ -66,4 +61,19 @@
 .button-calc:hover {
     -webkit-filter: drop-shadow(-2px -2px 20px #8CBD02);
     filter: drop-shadow(-2px -2px 20px #8CBD02);
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+    .calc-width {
+        max-width:1200px;
+    }
+}
+
+@media screen  and (max-width: 425px) {
+    .margin-425 {
+       margin-top:10%;
+    }
+    .calc-width {
+        margin-top:15%;
+    }
 }

@@ -4,18 +4,15 @@
     <div class="container-fluid">
         <div class="row">
             @include('admin.sidebar')
+            @include('admin.aside-contents')
 
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Create New Content</div>
+                    <div class="card-header">Edit FAQ #{{ $faq->id }}</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/contents') }}" title="Back">
-                            <button class="btn btn-warning btn-sm">
-                                <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
-                            </button>
-                        </a>
-                        <br/>
-                        <br/>
+                        <a href="{{ url('/admin/f-a-q') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <br />
+                        <br />
 
                         @if ($errors->any())
                             <ul class="alert alert-danger">
@@ -25,12 +22,12 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/contents') }}" accept-charset="UTF-8"
-                              class="form-horizontal validForm"
-                              enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/admin/f-a-q/' . $faq->id) }}" accept-charset="UTF-8"
+                              class="form-horizontal validForm" enctype="multipart/form-data">
+                            {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
-                            @include ('admin.contents.form', ['formMode' => 'create'])
+                            @include ('admin.f-a-q.form', ['formMode' => 'edit'])
 
                         </form>
 
@@ -41,7 +38,6 @@
         </div>
     </div>
 @endsection
-
 @push('scripts')
     <script src="{{ asset('vendor/webkul/admin/assets/js/tinyMCE/tinymce.min.js') }}"></script>
     <script src="{{ asset('js/tinymce.js') }}"></script>

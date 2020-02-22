@@ -1,7 +1,7 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v7">
-    <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v2">
-    <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v2">
+    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v8">
+    <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v4">
+    <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v4">
 @endpush
 
 <div class="row" style="background: white">
@@ -17,26 +17,26 @@
 
 <div class="fon-for-goods">
 
-    <div class="price-background">
-        <div class="row">
-            <div class="col-12" style="height: 200px">
+
+        <div class="row price-background">
+            <div class="col-12 mt-5 mb-5">
                 <div class="price-img-leaf-position">
                     <img class="price-img-leaf lazyload"
                          data-src="{{asset('/images/service-leaf-tree.png')}}">
                 </div>
-                <div class="price-text mt-5">
+                <div class="price-text pb-5">
                     @lang('products.price-text')
                     <a href="#">
-                        <img src="{{asset('images/price-button.png')}}">
+                        <img src="{{asset('images/price-button.png')}}" class="image-width">
                     </a>
                 </div>
-            </div>
+
         </div>
     </div>
     <div class="row">
         <div class="col">
             <div class="row pb-5">
-                <div class="col-sm-3">
+                <div class="col-xl-3 col-md-3 col-sm-12">
                     <ul class="style-for-list-goods ml-3 sticky-top">
                         @foreach($categories as $category)
                             <a @if(Request::input('category') === $category->slug)
@@ -83,7 +83,7 @@
                     </ul>
                 </div>
 
-                <div class="col-sm-9 ">
+                <div class="col-xl-9 col-md-9 col-sm-12">
                     <div class="row margin-for-products mr-1">
                         @foreach($products as $product)
                             <div class="col-xl-4 col-sm-12 position-relative">

@@ -1,35 +1,3 @@
-@media screen and (min-width: 1200px) and (max-width: 1500px) {
-    .grades-width {
-        max-width: 1200px !important;
-    }
-    .grades-item {
-        max-width: 550px !important;
-    }
-
-    .grades-img-size {
-        width: 300px !important;
-        height: 450px !important;
-    }
-
-    .grades-item-title {
-        width: 180px !important;
-        font-size: 16px !important;
-    }
-    .grades-item-text {
-        width: 200px !important;
-    }
-    .grades-stamp {
-        margin-left: 120px !important;
-        margin-top: 80px !important;
-    }
-    .grades-imgs {
-        height: 458px !important;
-    }
-    .grades-img-size:hover {
-        width: 374px !important;
-        height: 524px !important;
-    }
-}
 .grades-back {
     background: url("/images/stem.jpg") no-repeat;
     background-size: 100% 100%;
@@ -112,4 +80,94 @@
     height: 724px;
     position: relative;
     z-index:2;
+}
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+    .grades-width {
+        max-width: 1200px ;
+    }
+    .grades-item {
+        max-width: 550px ;
+    }
+
+    .grades-img-size {
+        width: 300px ;
+        height: 450px ;
+    }
+
+    .grades-item-title {
+        width: 180px ;
+        font-size: 16px ;
+    }
+    .grades-item-text {
+        width: 200px ;
+    }
+    .grades-stamp {
+        margin-left: 120px ;
+        margin-top: 80px ;
+    }
+    .grades-imgs {
+        height: 458px ;
+    }
+    .grades-img-size:hover {
+        width: 374px ;
+        height: 524px ;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .grades-img-size {
+         width: 302px;
+    }
+    .grades-imgs {
+         margin-top: 0;
+         margin-left: 0;
+    }
+    .grades-item {
+         background:transparent;
+         box-shadow:none;
+         border-radius:0;
+    }
+
+    .grades-title {
+      padding-top: 3rem;
+    }
+
+    .grades-item-title, .grades-item-text{
+        width: 100%;
+    }
+    .grades-item-text{
+        color: white;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .grades-img-size {
+        width: 282px;
+    }
+    .grades-line {
+        width: 226px;
+    }
+    .grades-imgs {
+        margin-left: -10px;
+    }
+    .grades-item {
+        background:transparent;
+        box-shadow:none;
+        border-radius:0;
+    }
+
+    .grades-title {
+        padding-top: 3rem;
+    }
+
+    .grades-item-title, .grades-item-text{
+        width: 100%;
+    }
+    .grades-item-text{
+        color: white;
+        font-weight: bold;
+    }
 }

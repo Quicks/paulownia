@@ -1,13 +1,12 @@
 .footer {
     color: #FFFFFF;
-    background: url("/images/footer-background.jpg") no-repeat;
-    background-size: 100% 100%;
+    background: url("/images/footer-background.jpg");
 }
 .footer-content {
     max-width: 1500px;
 }
 .footer-title {
-    font-weight: 500;
+    font-weight: bold;
     font-size: 1rem;
     line-height: 2rem;
 }
@@ -22,10 +21,13 @@
 }
 .text-list li {
     list-style-type: none;
+    font-size: 1rem;
 }
 .text-list li a {
     text-decoration: none;
     color: #FFFFFF;
+    font-size: 1rem;
+
 }
 .footer-bottom {
     background-color: #FBFAFA;
@@ -47,4 +49,12 @@
 .f-booklet-download:hover {
     -webkit-filter: drop-shadow(-2px -2px 20px #8CBD02);
     filter: drop-shadow(-2px -2px 20px #8CBD02);
+}
+
+@media screen and (max-width: 1024px){
+
+    .footer {
+        background: url("/images/footer-320.jpg");
+        background-size: cover;
+    }
 }

@@ -11,15 +11,19 @@
     color:#8CBD02;
     font-weight: bold;
     margin-bottom:-3.5%!important;
+    font-size: 1rem;
 }
 
 .nav-tabs{
-    border-bottom: .05rem solid rgba(0, 0, 0, 0.3);;
+    border-bottom: .05rem solid rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+
 }
 .nav-link {
     display: block;
     margin: 0 1.3rem;
     padding: 2rem 0;
+    font-size: 1rem;
 }
 
 .nav-tabs .nav-link.active {
@@ -31,6 +35,8 @@
     border-right: none;
     border-left: none;
     border-bottom: .15rem solid #8CBD02;
+    font-size: 1rem;
+
 }
 
 a,a:hover {
@@ -57,11 +63,26 @@ a,a:hover {
     border-radius: 0.5rem !important;
 }
 .btn {
-
     user-select: none;
     text-decoration: none !important;
     outline: none !important;
     display: block;
     padding: 0;
     margin-left:75%;
+}
+
+.accordion .card-header .btn-faq:after {
+    content: url("/images/button-faq-up.png");
+    float: right;
+}
+
+.accordion .card-header .btn-faq.collapsed:after {
+    content: url("/images/button-faq-down.png");
+}
+
+@media screen and (max-width: 425px) {
+
+    .faq-text-list{
+      display: none;
+    }
 }

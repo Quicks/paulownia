@@ -1,9 +1,3 @@
-@media only screen and (min-width : 320px) and (max-width : 768px) {
-    .advantages{
-        background:url("/images/advantages-back.jpg") no-repeat !important;
-        background-size: 100% 100% !important;
-    }
-}
 .advantages{
     background:url("/images/advantages-leaf.png") no-repeat, url("/images/advantages-back.jpg") no-repeat;
     background-position: top right;
@@ -40,7 +34,7 @@
 }
 .advantages-leaf {
     position: absolute;
-    right: 0px;
+    right: 0;
     top:-160px;
 }
 .adv-leaf-img {
@@ -52,6 +46,16 @@
     animation-name: advscale;
     animation-duration: 2s;
 }
+
+@media screen and (max-width : 768px) {
+    .advantages{
+        background:url("/images/advantages-back.jpg") no-repeat;
+        background-size: 100% 100%;
+        padding-top:55px;
+        margin-top: 0;
+    }
+}
+
 
 @keyframes advscale {
     0% {

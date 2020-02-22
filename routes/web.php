@@ -68,6 +68,7 @@ Route::prefix('admin')->group(function () {
         Route::resource('/contents', 'App\Http\Controllers\Admin\\ContentsController');
         Route::get('/shop/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@index')->name('sendNewsLetter.index');
         Route::post('/shop/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@send')->name('sendNewsLetter.send');
+        Route::resource('/f-a-q', 'App\Http\Controllers\Admin\\FAQController');
     });
 });
 

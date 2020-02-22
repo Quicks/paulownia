@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\Models\Content;
+use App\Models\FAQ;
 use Illuminate\Http\Request;
 
-class ContentsController extends Controller
+class FAQController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,13 +20,14 @@ class ContentsController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $contents = Content::where('name', 'LIKE', "%$keyword%")
+            $faq = FAQ::where('question', 'LIKE', "%$keyword%")
+                ->orWhere('answer', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $contents = Content::latest()->paginate($perPage);
+            $faq = FAQ::latest()->paginate($perPage);
         }
 
-        return view('admin.contents.index', compact('contents'));
+        return view('admin.f-a-q.index', compact('faq'));
     }
 
     /**
@@ -35,10 +35,12 @@ class ContentsController extends Controller
      *
      * @return \Illuminate\View\View
      */
-//    public function create()
-//    {
-//        return view('admin.contents.create');
-//    }
+    public function create()
+    {
+        $topics = Content::where('name', 'like', '%topic%')->get();
+
+        return view('admin.f-a-q.create', compact('topics'));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -47,17 +49,17 @@ class ContentsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-//    public function store(Request $request)
-//    {
-//        $this->validate($request, [
-//			'name' => 'required|max:90'
-//		]);
-//        $requestData = $request->all();
-//
-//        Content::create($requestData);
-//
-//        return redirect('admin/contents')->with('flash_message', 'Content added!');
-//    }
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'content_id' => 'required'
+		]);
+        $requestData = $request->all();
+
+        FAQ::create($requestData);
+
+        return redirect('admin/f-a-q')->with('flash_message', 'FAQ added!');
+    }
 
     /**
      * Display the specified resource.
@@ -68,9 +70,9 @@ class ContentsController extends Controller
      */
     public function show($id)
     {
-        $content = Content::findOrFail($id);
+        $faq = FAQ::findOrFail($id);
 
-        return view('admin.contents.show', compact('content'));
+        return view('admin.f-a-q.show', compact('faq'));
     }
 
     /**
@@ -82,9 +84,10 @@ class ContentsController extends Controller
      */
     public function edit($id)
     {
-        $content = Content::findOrFail($id);
+        $topics = Content::where('name', 'like', '%topic%')->get();
+        $faq = FAQ::findOrFail($id);
 
-        return view('admin.contents.edit', compact('content'));
+        return view('admin.f-a-q.edit', compact('faq', 'topics'));
     }
 
     /**
@@ -98,14 +101,15 @@ class ContentsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'name' => 'required|max:90'
+            'content_id' => 'required'
 		]);
         $requestData = $request->all();
 
-        $content = Content::findOrFail($id);
-        $content->update($requestData);
+        $faq = FAQ::findOrFail($id);
 
-        return redirect('admin/contents')->with('flash_message', 'Content updated!');
+        $faq->update($requestData);
+
+        return redirect('admin/f-a-q')->with('flash_message', 'FAQ updated!');
     }
 
     /**
@@ -115,10 +119,10 @@ class ContentsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-//    public function destroy($id)
-//    {
-//        Content::destroy($id);
-//
-//        return redirect('admin/contents')->with('flash_message', 'Content deleted!');
-//    }
+    public function destroy($id)
+    {
+        FAQ::destroy($id);
+
+        return redirect('admin/f-a-q')->with('flash_message', 'FAQ deleted!');
+    }
 }

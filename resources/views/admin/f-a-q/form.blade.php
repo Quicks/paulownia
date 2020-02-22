@@ -4,7 +4,8 @@
             <div class="radio form-group {{ $errors->has('content_id') ? 'has-error' : ''}}">
                 <label for="content_id">
                     <input name="content_id" type="radio" value="{{$topic->id}}"
-                    @if(!empty($faq->content_id) && $faq->content_id == $topic->id) checked @endif> {{$topic->text}}
+                    @if(!empty($faq->content_id) && $faq->content_id == $topic->id) checked @endif>
+                    {{html_entity_decode(strip_tags($topic->text))}}
                 </label>
                 {!! $errors->first('content_id', '<p class="help-block">:message</p>') !!}
             </div>

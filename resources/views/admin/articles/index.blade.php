@@ -43,20 +43,23 @@
                                         <td>{{ $item->publish_date }}</td>
                                         <td>
                                             <a href="{{ url('/admin/articles/' . $item->id) }}" title="View Article"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/admin/articles/' . $item->id . '/edit') }}" title="Edit Article"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                            <a href="{{ url('/admin/image_add/?imageable_id=' . $item->id . '&imageable_type=' . get_class($item) . '&redirect_route='.route('articles.show', $item->id) )  }}"
-                                               title="Add Image">
-                                                <button class="btn btn-primary btn-sm">
-                                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
-                                                    Add image
-                                                </button>
-                                            </a>
-
-                                            <form method="POST" action="{{ url('/admin/articles' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Article" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                                            </form>
+                                            @if(bouncer()->hasPermission('articles.update'))
+                                                <a href="{{ url('/admin/articles/' . $item->id . '/edit') }}" title="Edit Article"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                                <a href="{{ url('/admin/image_add/?imageable_id=' . $item->id . '&imageable_type=' . get_class($item) . '&redirect_route='.route('articles.show', $item->id) )  }}"
+                                                   title="Add Image">
+                                                    <button class="btn btn-primary btn-sm">
+                                                        <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                                        Add image
+                                                    </button>
+                                                </a>
+                                            @endif
+                                            @if(bouncer()->hasPermission('articles.destroy'))
+                                                <form method="POST" action="{{ url('/admin/articles' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                    {{ method_field('DELETE') }}
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete Article" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                </form>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

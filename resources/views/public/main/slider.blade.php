@@ -32,11 +32,10 @@
                                             @endif
                                             class="img-rad lazyload">
                                     <div class="news-box">
-                                        <div class="title-text-news">{{$news->title}}</div>
-                                        <div class="text-news">{{substr(strip_tags($news->text), 0, 25)}}
-                                            <a href="{{route('public.news.show', [mb_strtolower(class_basename($news)), $news->id])}}"
-                                               class="news-read-more">Read more</a>
-                                        </div>
+                                        <div class="title-text-news">{{substr(strip_tags($news->title), 0, 25)}}</div>
+                                        <div class="text-news">{{substr(strip_tags($news->text), 0, 25)}}</div>
+                                        <a href="{{route('public.news.show', [mb_strtolower(class_basename($news)), $news->id])}}"
+                                           class="news-read-more">Read more</a>
                                     </div>
                                 </div>
                             @endforeach

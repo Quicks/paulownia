@@ -106,6 +106,7 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
     Route::get('/check-out/success', 'App\Http\Controllers\CheckoutController@success')->name('check-out.success');
 
     Route::get('/paulownia/type', 'App\Http\Controllers\PaulowniaController@type')->name('public.paulownia.type');
+    Route::get('/paulownia/productsType', 'App\Http\Controllers\PaulowniaController@getProductsType')->name('public.paulownia.productsType');
     Route::get('/paulownia/planting', 'App\Http\Controllers\PaulowniaController@planting')->name('public.paulownia.planting');
 
     Route::get('/wishlist', 'Webkul\Customer\Http\Controllers\WishlistController@index')->defaults('_config', [

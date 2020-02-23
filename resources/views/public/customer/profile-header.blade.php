@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/profile.css') }}?v1">
+    <link rel="stylesheet" href="{{ asset('css/profile.css') }}?v2">
 @endpush
 
 @push('scripts')

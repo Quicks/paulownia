@@ -31,7 +31,7 @@
                             </label>
                             <ul>
                                 <li>
-                                    <a href="{{ route('shop.home.index') }}"
+                                    <a href="{{ route('main') }}"
                                        target="_blank">{{ trans('admin::app.layouts.visit-shop') }}</a>
                                 </li>
                                 <li>

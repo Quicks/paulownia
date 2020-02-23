@@ -24,14 +24,16 @@
             <a href="{{route('public.products.show', $product->url_key)}}" class="col-8 title-for-card">{{$product-> name}}</a>
 
             <div class="col-4 text-center p-0">
-                <form  action="{{ route('cart.add', $product->product_id) }}" method="POST" class="d-inline">
-                    @csrf
-                    <input type="hidden" name="product" value="{{ $product->product_id }}">
-                    <input type="hidden" name="quantity" value="1">
-                    <button class="card-btn p-0 mt-1 box-m" {{ $product->haveSufficientQuantity(1) ? '' : 'disabled' }}>
-                        <img data-src="{{asset('/images/our-products-box.png')}}" class="box-product lazyload">
-                    </button>
-                </form>
+                @if($product->haveSufficientQuantity(1))
+                    <form  action="{{ route('cart.add', $product->product_id) }}" method="POST" class="d-inline">
+                        @csrf
+                        <input type="hidden" name="product" value="{{ $product->product_id }}">
+                        <input type="hidden" name="quantity" value="1">
+                        <button class="card-btn p-0 mt-1 box-m"}>
+                            <img data-src="{{asset('/images/our-products-box.png')}}" class="box-product lazyload">
+                        </button>
+                    </form>
+                @endif
 
                 <a href="{{ route('customer.wishlist.add', $product->product_id) }}" class="mt-1 like-m">
                     <img data-src="{{asset('/images/our-products-like.png')}}"

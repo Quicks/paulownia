@@ -1,7 +1,7 @@
-@media only screen  and (min-width: 1224px) and (max-width: 1564px) {
+@media only screen  and (min-width: 1224px) {
     .price-img-leaf {
         width:290px !important;
-        height: 298px !important;
+        height: 260px !important;
     }
 }
 .fon-for-terms{

@@ -1,9 +1,14 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/services.css') }}?v10">
+    <link rel="stylesheet" href="{{asset('css/services.css') }}?v11">
+
+
 @endpush
 
 <div class="our-services" style="position: relative">
-    <div class="row mx-auto services-ident">
+
+    <div><img data-src="{{asset('images/our-products-line-up.png') }}" class="line-style-up-service lazyload"></div>
+
+    <div class="row mx-auto services-ident position-relative">
         <div class="col-12">
             <p class="services-title text-center">Our services</p>
             <hr class="services-line">
@@ -125,4 +130,6 @@
     <div class="services-img-leaf-position">
         <img class="img-leaf lazyload" data-src="{{asset('/images/service-leaf-tree.png')}}">
     </div>
+
+    <div><img data-src="{{asset('images/our-products-line-up.png') }}" class="line-style-down-service lazyload"></div>
 </div>

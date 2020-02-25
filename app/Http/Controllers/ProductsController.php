@@ -29,7 +29,7 @@ class ProductsController extends Controller
             $products = $product->getAll($category_id)->sortByDesc('special_price');
         }
         if ($request->has('type')) {
-            $products = $product->getAll($category_id)->where('type_of_paulownia_label', $request->type)->sortByDesc('special_price');
+            $products = $product->getAll($category_id)->where('type_of_paulownia', $request->type)->sortByDesc('special_price');
         }
         return view('public.products.index', compact('products', 'ticker', 'categories', 'types'));
     }

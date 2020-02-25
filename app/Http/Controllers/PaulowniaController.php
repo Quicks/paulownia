@@ -22,7 +22,7 @@ class PaulowniaController extends Controller
     public function type(Request $request)
     {
         $types = Attribute::where('code', 'type_of_paulownia')->first()->options()->get();
-        $productsFirst = ProductFlat::where('status', 1)->where('type_of_paulownia_label', $types->first()->label)->where('locale', App::getLocale())->limit(4)->get()->sortByDesc('special_price');
+        $productsFirst = ProductFlat::where('status', 1)->where('type_of_paulownia', $types->first()->id)->where('locale', App::getLocale())->limit(4)->get()->sortByDesc('special_price');
 
         return view('public.paulownia.type', compact('types', 'productsFirst'));
 
@@ -30,7 +30,7 @@ class PaulowniaController extends Controller
 
     public function getProductsType (Request $request)
     {
-        $products = ProductFlat::where('status', 1)->where('type_of_paulownia_label', $request->type)->where('locale', App::getLocale())->limit(4)->get()->sortByDesc('special_price');
+        $products = ProductFlat::where('status', 1)->where('type_of_paulownia', $request->type)->where('locale', App::getLocale())->limit(4)->get()->sortByDesc('special_price');
         $view = view('public.paulownia.products-type',compact('products'))->render();
         return response()->json(['html'=>$view]);
     }

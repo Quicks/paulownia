@@ -32,9 +32,9 @@
                     @foreach($types as $type)
                         <a class="paulownia-type nav-item nav-link  pt-5 pb-5 @if($loop->first) active show @endif"
                            data-toggle="tab" role="tab"
-                           data-type="{{$type->admin_name}}"
-                           href="#nav-{{urlencode($type->admin_name)}}"
-                           aria-controls="nav-{{urlencode($type->admin_name)}}"
+                           data-type="{{$type->id}}"
+                           href="#nav-{{urlencode($type->id)}}"
+                           aria-controls="nav-{{urlencode($type->id)}}"
                            aria-selected="@if($loop->first) true @else false @endif"
                         >
                             {{$type->admin_name}}
@@ -47,8 +47,8 @@
 
                 @foreach($types as $type)
                     <div class="tab-pane fade @if($loop->first) active show @endif"
-                         id="nav-{{urlencode($type->admin_name)}}" role="tabpanel"
-                         aria-labelledby="nav-{{urlencode($type->admin_name)}}"
+                         id="nav-{{urlencode($type->id)}}" role="tabpanel"
+                         aria-labelledby="nav-{{urlencode($type->id)}}"
                     >
                         <div class="col-12 p-5 text-about-type">
                             {{$type->label}}
@@ -93,6 +93,8 @@
     <script>
         $(document).ready(function () {
             $('.paulownia-type').on('click', function () {
+                $("#firstType").remove();
+                $("#productsType").empty();
                 let $this = $(this);
                 let type = $this.data('type');
                 $.ajax({
@@ -101,8 +103,6 @@
                     data: {type: type}
                 })
                     .done(function (data) {
-                        $("#firstType").hide();
-                        $("#productsType").empty();
                         $("#productsType").append(data.html);
                     })
             })

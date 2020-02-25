@@ -54,7 +54,11 @@
                             <select id="paulowniaType" class="select-goods pl-2">
                                 <option selected disabled hidden> @lang('products.type-of-paulownia')</option>
                                 @foreach($types as $type)
-                                    <option value="{{$type->admin_name}}"> {{$type->admin_name}}</option>
+                                    <option
+                                        @if($selectedTypeId == $type->id)
+                                        selected
+                                        @endif
+                                        value="{{$type->id}}"> {{$type->admin_name}}</option>
                                 @endforeach
                             </select>
 

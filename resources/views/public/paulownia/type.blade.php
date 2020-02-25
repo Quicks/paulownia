@@ -32,12 +32,12 @@
                     @foreach($types as $type)
                         <a class="paulownia-type nav-item nav-link  pt-5 pb-5 @if($loop->first) active show @endif"
                            data-toggle="tab" role="tab"
-                           data-type="{{$type->admin_name}}"
-                           href="#nav-{{urlencode($type->admin_name)}}"
-                           aria-controls="nav-{{urlencode($type->admin_name)}}"
+                           data-type="{{$type->label}}"
+                           href="#nav-{{urlencode($type->label)}}"
+                           aria-controls="nav-{{urlencode($type->label)}}"
                            aria-selected="@if($loop->first) true @else false @endif"
                         >
-                            {{$type->admin_name}}
+                            {{$type->label}}
                         </a>
                     @endforeach
                 </div>
@@ -47,8 +47,8 @@
 
                 @foreach($types as $type)
                     <div class="tab-pane fade @if($loop->first) active show @endif"
-                         id="nav-{{urlencode($type->admin_name)}}" role="tabpanel"
-                         aria-labelledby="nav-{{urlencode($type->admin_name)}}"
+                         id="nav-{{urlencode($type->label)}}" role="tabpanel"
+                         aria-labelledby="nav-{{urlencode($type->label)}}"
                     >
                         <div class="col-12 p-5 text-about-type">
                             {{$type->label}}

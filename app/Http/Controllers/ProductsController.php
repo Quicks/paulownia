@@ -19,6 +19,7 @@ class ProductsController extends Controller
         $categories = Category::where('status', 1)->orderBy('position', 'asc')->get();
         $types = Attribute::where('code', 'type_of_paulownia')->first()->options()->get();
         $category_id = null;
+        $selectedTypeId = $request->type ?? false;
         if (!$request->has('category') && !$request->has('type')) {
             $products = $product->getAll()->sortByDesc('special_price');
         }
@@ -31,7 +32,7 @@ class ProductsController extends Controller
         if ($request->has('type')) {
             $products = $product->getAll($category_id)->where('type_of_paulownia', $request->type)->sortByDesc('special_price');
         }
-        return view('public.products.index', compact('products', 'ticker', 'categories', 'types'));
+        return view('public.products.index', compact('products', 'ticker', 'categories', 'types', 'selectedTypeId'));
     }
 
     public function show($url_key, ProductRepository $commodity)

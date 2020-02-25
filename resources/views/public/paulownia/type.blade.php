@@ -93,6 +93,8 @@
     <script>
         $(document).ready(function () {
             $('.paulownia-type').on('click', function () {
+                $("#firstType").remove();
+                $("#productsType").empty();
                 let $this = $(this);
                 let type = $this.data('type');
                 $.ajax({
@@ -101,8 +103,6 @@
                     data: {type: type}
                 })
                     .done(function (data) {
-                        $("#firstType").hide();
-                        $("#productsType").empty();
                         $("#productsType").append(data.html);
                     })
             })

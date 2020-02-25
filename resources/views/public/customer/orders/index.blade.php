@@ -22,7 +22,7 @@
                             @if($order->invoices->count())
                                 <td width="20%">
                                     @foreach($order->invoices as $invoice)
-                                        <div>
+                                        <div class="mt-1">
                                             <a href="{{ route('customer.orders.print', $invoice->id) }}" class="product-button">
                                                 @lang('profile.print')
                                             </a>

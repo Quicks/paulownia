@@ -33,7 +33,7 @@
                         <label for="gender" class="required profile-item-edit">@lang('profile.gender'):</label>
                         <select name="gender" class="control ml-4 select-edit" v-validate="'required'"
                                 data-vv-as="&quot;{{ __('shop::app.customer.account.profile.gender') }}&quot;">
-                            <option value="" hidden @if ($customer->gender == "") selected @endif></option>
+                            <option value="" hidden @if ($customer->gender == "") selected @endif>@lang('profile.gender')</option>
                             <option value="Other"
                                     @if ($customer->gender == "Other") selected @endif>@lang('profile.gender-other')</option>
                             <option value="Male"

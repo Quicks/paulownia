@@ -58,6 +58,13 @@ background: url("/images/arrow-left.svg") no-repeat;
 
 @media screen and  (max-width:320px) {
     .our-paulownia-content {
-        padding-top: 250px;
+        padding-top: 100px;
+        padding-bottom:0;
+    }
+    .our-paulownia-leaf {
+        display: none;
+    }
+    .margin-320{
+        margin-bottom: -15%;
     }
 }

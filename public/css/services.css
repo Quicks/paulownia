@@ -1,39 +1,14 @@
-@media screen and (min-width: 320px) and (max-width: 1024px) {
-    .services-img-leaf-position {
-        position: absolute !important;
-        bottom: 0 !important;
-    }
-
-    .img-leaf {
-        width: 70% !important;
-        height: 70% !important;
-    }
-
-    .our-services {
-        padding-bottom: 110px !important;
-    }
-}
-
-@media only screen  and (min-width: 1224px) and (max-width: 1439px) {
-    .img-leaf {
-        width: 70% !important;
-        height: 70% !important;
-    }
-
-    .services-img-leaf-position {
-        bottom: -230px !important;
-    }
-}
-
 .our-services {
     background: url("/images/service-back.png") no-repeat;
     background-size: 100% 100%;
     margin-top: -250px;
     padding-bottom: 10px;
     padding-top: 80px;
-
 }
 
+.line-style-up-service , .line-style-down-service {
+    display: none;
+}
 .services-ident {
     padding-bottom: 170px;
     padding-top: 120px;
@@ -150,3 +125,84 @@
     right: -35px;
     margin-right: 40px;
 }
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+    .services-img-leaf-position {
+        position: absolute ;
+        bottom: 0 ;
+    }
+
+    .img-leaf {
+        width: 70% ;
+        height: 70% ;
+    }
+
+    .our-services {
+        padding-bottom: 110px ;
+    }
+}
+
+@media only screen  and (min-width: 1224px) and (max-width: 1439px) {
+    .img-leaf {
+        width: 70% ;
+        height: 70% ;
+    }
+
+    .services-img-leaf-position {
+        bottom: -230px ;
+    }
+}
+
+
+@media only screen and (max-width: 425px) {
+
+    .our-services {
+        background:url("/images/footer-320.jpg");
+        background-size:cover;
+        margin-top: -250px;
+        padding-bottom: 10px;
+        padding-top: 80px;
+    }
+    .services-img-leaf-position {
+       display: none;
+    }
+    .services-ident {
+        padding-bottom: 40px;
+        padding-top: 0;
+    }
+    .services-item-width {
+        margin: 15px 15px !important;
+    }
+
+    .line-style-up-service{
+        display: inline-flex;
+        margin-top:-26%;
+        position: absolute;
+        background-size: 100% 100%;
+        width: 100%;
+    }
+    .line-style-down-service{
+        display: inline-flex;
+        margin-top:-4%;
+        position: absolute;
+        background-size: 100% 100%;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 375px) {
+
+    .line-style-up-service{
+        margin-top:-28%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    .line-style-up-service{
+        margin-top:-32%;
+    }
+}
+
+

@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v7">
+    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v8">
     <link rel="stylesheet" href="{{ asset('css/selectric.css') }}?v4">
 @endpush
 

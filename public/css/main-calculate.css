@@ -66,14 +66,20 @@
 @media screen and (min-width: 1200px) and (max-width: 1500px) {
     .calc-width {
         max-width:1200px;
+
+    }
+}
+
+@media screen  and (max-width: 1024px) {
+
+    .margin-425 {
+        text-align: center;
+        margin-top: 5%;
     }
 }
 
 @media screen and (min-width: 376px) and (max-width: 425px) {
-    .margin-425 {
-       margin-top:10%;
-        padding-left: 16%;
-    }
+
     .calc-width {
         margin-top:30%;
     }
@@ -93,10 +99,6 @@
     .calc-width {
         margin-top:30%;
     }
-    .margin-425 {
-        padding-left:10%;
-        margin-top:9%;
-    }
     .padding-425px-calc{
         padding-left: 9%;
     }
@@ -105,9 +107,6 @@
 
     .calc-select  {
         width: 100%;
-    }
-    .margin-425 {
-        margin-top:10%;
     }
     .calc-width {
         margin-top:30%;

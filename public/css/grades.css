@@ -114,6 +114,13 @@
     }
 }
 
+@media screen and (max-width: 1024px) {
+
+    .grades-back {
+        padding-top: 450px;
+    }
+}
+
 @media screen and (max-width: 425px) {
 
     .grades-img-size {

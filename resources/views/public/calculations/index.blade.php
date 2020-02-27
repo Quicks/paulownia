@@ -2,8 +2,8 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/profitability-calculation.css')}}?v3">
-        <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v6">
+        <link rel="stylesheet" href="{{asset('css/profitability-calculation.css')}}?v4">
+        <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v10">
     @endpush
 
     <style>
@@ -17,14 +17,19 @@
         .selectric .button {
             color:black;
         }
+        .selectric-items {
+            background: lightgrey;
+        }
         .selectric-items li {
-            color: black;
+            color: white;
         }
         .selectric-items li.selected{
-            color: #444;
+            color: white;
+            background:none;
         }
         .selectric-items li:hover {
-            color: #444;
+            color: black;
+            background: none;
         }
         .calc-select {
             color: black;
@@ -39,6 +44,17 @@
         .modal-content-calc {
             background: #2B2723;
             color: black;
+        }
+
+        @media screen and (max-width: 425px) and (min-width: 376px){
+            .calc-select {
+                width: 91.5%;
+            }
+        }
+        @media screen and (max-width: 375px) and (min-width: 321px){
+            .calc-select {
+                width: 98%;
+            }
         }
     </style>
 

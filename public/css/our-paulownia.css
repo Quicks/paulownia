@@ -55,8 +55,23 @@ background: url("/images/arrow-left.svg") no-repeat;
         background: transparent;
     }
 }
+@media screen and  (min-width:426px) and  (max-width:768px) {
+
+    .our-paulownia-content {
+        padding-top: 260px;
+    }
+}
+
+@media screen and  (min-width:321px)  and  (max-width:425px) {
+
+    .our-paulownia-content {
+        padding-bottom: 60px;
+        padding-top: 280px;
+    }
+}
 
 @media screen and  (max-width:320px) {
+
     .our-paulownia-content {
         padding-top: 100px;
         padding-bottom:0;

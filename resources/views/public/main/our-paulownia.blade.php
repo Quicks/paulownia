@@ -1,6 +1,6 @@
 @push('css')
     <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/our-paulownia.css') }}?v6">
+    <link rel="stylesheet" href="{{ asset('css/our-paulownia.css') }}?v8">
 @endpush
 
 @if(!empty($mainGallery))

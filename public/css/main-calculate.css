@@ -75,7 +75,7 @@
         padding-left: 16%;
     }
     .calc-width {
-        margin-top:35%;
+        margin-top:30%;
     }
     .calc-select  {
         width: 85%;
@@ -89,6 +89,9 @@
 
     .calc-select  {
         width: 90%;
+    }
+    .calc-width {
+        margin-top:30%;
     }
     .margin-425 {
         padding-left:10%;
@@ -105,5 +108,8 @@
     }
     .margin-425 {
         margin-top:10%;
+    }
+    .calc-width {
+        margin-top:30%;
     }
 }

@@ -204,6 +204,7 @@ return [
 
         Dimsav\Translatable\TranslatableServiceProvider::class,
         PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
+        Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -305,5 +306,6 @@ return [
         'Concord' => Konekt\Concord\Facades\Concord::class,
         'Helper'  => Konekt\Concord\Facades\Helper::class,
         'Tracker' => 'PragmaRX\Tracker\Vendor\Laravel\Facade',
+        'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
     ],
 ];

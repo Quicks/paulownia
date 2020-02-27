@@ -18,6 +18,7 @@
         "appstract/laravel-blade-directives": "1.5",
         "artesaos/seotools": "0.12.0",
         "barryvdh/laravel-dompdf": "^0.8.0@dev",
+        "biscolab/laravel-recaptcha": "2.0.4",
         "dimsav/laravel-translatable": "^9.0",
         "doctrine/dbal": "^2.9@dev",
         "fideloper/proxy": "^4.0",

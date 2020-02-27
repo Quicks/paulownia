@@ -15,12 +15,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
+<!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+<!-- SEOMeta -->
     {!! SEOMeta::generate() !!}
     @if(empty(SEOMeta::getTitle()))
         <title>{{ config('app.name', 'Laravel') }}</title>
     @endif
+    
+<!-- Google ReCAPTCHA v2 -->
+    {!! htmlScriptTagJsApi() !!}
 
 <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicons/apple-touch-icon.png') }}">

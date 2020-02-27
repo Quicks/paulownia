@@ -64,6 +64,7 @@ class RegistrationController extends Controller
             'last_name' => 'string|required',
             'email' => 'email|required|unique:customers,email',
             'password' => 'confirmed|min:6|required',
+            'g-recaptcha-response' => 'recaptcha',
         ]);
 
         $data = request()->input();

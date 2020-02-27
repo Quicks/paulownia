@@ -66,6 +66,15 @@
                                     <input type="checkbox" class="" name="subscribe" checked>
                                     <span class="control-error">{{ $errors->first('subscribe') }}</span>
                                 </div>
+                                <div class="d-flex justify-content-center 
+                                    @if($errors->has('g-recaptcha-response')) 
+                                        has-auth-error" style="border:2px solid red" 
+                                    @else"
+                                    @endif
+                                    >
+                                    {!! htmlFormSnippet() !!}
+                                </div>
+                                <span class="control-error">{{ $errors->first('g-recaptcha-response') }}</span>
 
                                 <button class="button-modal-login" type="submit">
                                     {{ __('shop::app.customer.signup-form.button_title') }}

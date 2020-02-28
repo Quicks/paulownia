@@ -2,26 +2,26 @@
     @include('public.auth-modal')
 @endguest
 
-<style>
-    input[type=text] {
-        width: 130px;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        background-color: white;
-        background-image: url('searchicon.png');
-        background-position: 10px 10px;
-        background-repeat: no-repeat;
-        padding: 12px 20px 12px 40px;
-        -webkit-transition: width 0.4s ease-in-out;
-        transition: width 0.4s ease-in-out;
-    }
+{{--<style>--}}
+    {{--input[type=text] {--}}
+        {{--width: 130px;--}}
+        {{--box-sizing: border-box;--}}
+        {{--border: 2px solid #ccc;--}}
+        {{--border-radius: 4px;--}}
+        {{--font-size: 16px;--}}
+        {{--background-color: white;--}}
+        {{--background-image: url('searchicon.png');--}}
+        {{--background-position: 10px 10px;--}}
+        {{--background-repeat: no-repeat;--}}
+        {{--padding: 12px 20px 12px 40px;--}}
+        {{---webkit-transition: width 0.4s ease-in-out;--}}
+        {{--transition: width 0.4s ease-in-out;--}}
+    {{--}--}}
 
-    input[type=text]:focus {
-        width: 100%;
-    }
-</style>
+    {{--input[type=text]:focus {--}}
+        {{--width: 100%;--}}
+    {{--}--}}
+{{--</style>--}}
 
 {{--<style>--}}
 
@@ -164,9 +164,9 @@
 
                     <div class="col-xl-3 p-0">
 
-                        <form>
-                            <input type="text" name="search" placeholder="Search..">
-                        </form>
+                        {{--<form>--}}
+                            {{--<input type="text" name="search" placeholder="Search..">--}}
+                        {{--</form>--}}
 
                         {{--<div class="topnav">--}}
                             {{--<div id="myForms">--}}

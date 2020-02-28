@@ -1,6 +1,12 @@
 .fon-for-contacts{
     background: url("/images/fon-for-contacts.jpg");
-    background-size: 100% 100%;
+    /*background-size: 100% 100%;*/
+    min-height: 500px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .line-for-contacts{
     background:url("/images/line-for-about-us-header.png") no-repeat;

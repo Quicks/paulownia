@@ -1,6 +1,12 @@
 .footer {
     color: #FFFFFF;
     background: url("/images/footer-background.jpg");
+    min-height: 500px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .footer-content {
     max-width: 1500px;
@@ -56,5 +62,10 @@
     .footer {
         background: url("/images/footer-320.jpg");
         background-size: cover;
+        min-height: 500px;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }

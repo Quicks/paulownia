@@ -1,6 +1,10 @@
 .fon-faq {
     background: url("/images/fon-faq.jpg") no-repeat;
     background-size:cover;
+    min-height: 500px;
+    /* Create the parallax scrolling effect */
+    /*background-attachment: fixed;*/
+    /*background-position: center;*/
 }
 
 .top-fon{

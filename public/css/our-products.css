@@ -1,8 +1,13 @@
 .main-content{
     background:url("/images/fon-for-products.jpg");
-    background-size: 100% 100%;
     padding: 5% 0 7% 0;
     position: relative;
+    min-height: 500px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .line-style-up{
     margin-top:-11.8%;

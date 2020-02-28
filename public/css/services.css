@@ -148,6 +148,9 @@
         padding-bottom: 110px ;
         background-size:cover;
     }
+    .services-item-width {
+        margin: 10px 10px !important;
+    }
 }
 
 @media only screen and (max-width: 425px) {

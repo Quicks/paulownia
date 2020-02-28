@@ -2,6 +2,61 @@
     @include('public.auth-modal')
 @endguest
 
+<style>
+    input[type=text] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+
+    input[type=text]:focus {
+        width: 100%;
+    }
+</style>
+
+{{--<style>--}}
+
+    {{--.topnav {--}}
+        {{--overflow: hidden;--}}
+        {{--background-color: transparent;--}}
+        {{--position: relative;--}}
+    {{--}--}}
+
+    {{--.topnav #myForm {--}}
+        {{--display: none;--}}
+    {{--}--}}
+
+    {{--.topnav #myForms {--}}
+        {{--display: none;--}}
+    {{--}--}}
+
+    {{--.topnav a {--}}
+        {{--float: left;--}}
+        {{--color: black;--}}
+        {{--padding: 14px 16px;--}}
+        {{--text-decoration: none;--}}
+        {{--font-size: 17px;--}}
+    {{--}--}}
+
+    {{--.topnav a.icon {--}}
+        {{--float: right;--}}
+    {{--}--}}
+
+    {{--.topnav a:hover {--}}
+        {{--color: black;--}}
+    {{--}--}}
+
+{{--</style>--}}
+
 <div class="header pb-1">
     <div class="row">
         <div class="col-xl-2 col-md-6 d-flex align-items-end mt-md-3 mt-sm-3 mx-md-auto logo-width">
@@ -51,59 +106,80 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-10">
-                        <ul class="navbar-nav bottom-link" style="flex-wrap: wrap;">
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.news.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif href="{{route('public.news.index')}}">
-                                    @lang('header-footer.news')
-                                </a>
-                            </li>
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.paulownia.about')||
+                    <div class="col-xl-7" id="myForm" >
+                            <ul class="navbar-nav bottom-link" style="flex-wrap: wrap;">
+                                <li class="nav-item mr-xl-3">
+                                    <a @if(url()->current() === route('public.news.index')) class="bottom-link-activ"
+                                       @else class="info-menu" @endif href="{{route('public.news.index')}}">
+                                        @lang('header-footer.news')
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-xl-3">
+                                    <a @if(url()->current() === route('public.paulownia.about')||
                                 url()->current() === route('public.paulownia.type')||
                                 url()->current() === route('public.paulownia.planting')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif href="{{route('public.paulownia.about')}}">
-                                    @lang('header-footer.paulownia')
-                                </a>
-                            </li>
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.products.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif  href="{{route('public.products.index')}}">
-                                    @lang('header-footer.goods')
-                                </a>
-                            </li>
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.calculations.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif  href="{{route('public.calculations.index')}}">
-                                    @lang('header-footer.profitability calculation')
-                                </a>
-                            </li>
-{{--                            <li class="nav-item mr-xl-3">--}}
-{{--                                <a @if(url()->current() === route('public.galleries.index')) class="bottom-link-activ"--}}
-{{--                                   @else class="info-menu" @endif href="{{route('public.galleries.index')}}">--}}
-{{--                                    @lang('header-footer.gallery')--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.faq.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif  href="{{route('public.faq.index')}}">
-                                    @lang('header-footer.faq')
-                                </a>
-                            </li>
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.about-us.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif  href="{{route('public.about-us.index')}}">
-                                    @lang('header-footer.about us')
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a @if(url()->current() === route('public.contacts.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif href="{{route('public.contacts.index')}}">
-                                    @lang('header-footer.contacts')
-                                </a>
-                            </li>
-                        </ul>
+                                       @else class="info-menu" @endif href="{{route('public.paulownia.about')}}">
+                                        @lang('header-footer.paulownia')
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-xl-3">
+                                    <a @if(url()->current() === route('public.products.index')) class="bottom-link-activ"
+                                       @else class="info-menu" @endif  href="{{route('public.products.index')}}">
+                                        @lang('header-footer.goods')
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-xl-3">
+                                    <a @if(url()->current() === route('public.calculations.index')) class="bottom-link-activ"
+                                       @else class="info-menu" @endif  href="{{route('public.calculations.index')}}">
+                                        @lang('header-footer.profitability calculation')
+                                    </a>
+                                </li>
+                                                            {{--<li class="nav-item mr-xl-3">--}}
+                                                                {{--<a @if(url()->current() === route('public.galleries.index')) class="bottom-link-activ"--}}
+                                                                   {{--@else class="info-menu" @endif href="{{route('public.galleries.index')}}">--}}
+                                                                    {{--@lang('header-footer.gallery')--}}
+                                                                {{--</a>--}}
+                                                            {{--</li>--}}
+                                <li class="nav-item mr-xl-3">
+                                    <a @if(url()->current() === route('public.faq.index')) class="bottom-link-activ"
+                                       @else class="info-menu" @endif  href="{{route('public.faq.index')}}">
+                                        @lang('header-footer.faq')
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-xl-3">
+                                    <a @if(url()->current() === route('public.about-us.index')) class="bottom-link-activ"
+                                       @else class="info-menu" @endif  href="{{route('public.about-us.index')}}">
+                                        @lang('header-footer.about us')
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a @if(url()->current() === route('public.contacts.index')) class="bottom-link-activ"
+                                       @else class="info-menu" @endif href="{{route('public.contacts.index')}}">
+                                        @lang('header-footer.contacts')
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    <div class="col-xl-3 p-0">
+
+                        <form>
+                            <input type="text" name="search" placeholder="Search..">
+                        </form>
+
+                        {{--<div class="topnav">--}}
+                            {{--<div id="myForms">--}}
+                                {{--<form action="">--}}
+                                    {{--<input type="text" placeholder="Search.." name="search">--}}
+                                    {{--<button type="submit"><i class="fa fa-search"></i></button>--}}
+                                {{--</form>--}}
+                            {{--</div>--}}
+                            {{--<a href="#" class="icon" onclick="myFunction(),myFunctions()">--}}
+                                {{--<button type="submit"><i class="fa fa-search"></i></button>--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
+
                     </div>
                     <div class="col-xl-2">
                         <ul class="list-inline">
@@ -160,3 +236,24 @@
         </div>
     </div>
 </div>
+
+{{--<script>--}}
+
+    {{--function myFunction() {--}}
+        {{--var x = document.getElementById("myForm");--}}
+        {{--if (x.style.display === "inline-block") {--}}
+            {{--x.style.display = "none";--}}
+        {{--} else {--}}
+            {{--x.style.display = "inline-block";--}}
+        {{--}--}}
+    {{--}--}}
+
+    {{--function myFunctions() {--}}
+        {{--var x = document.getElementById("myForms");--}}
+        {{--if (x.style.display === "none") {--}}
+            {{--x.style.display = "inline-block";--}}
+        {{--} else {--}}
+            {{--x.style.display = "none";--}}
+        {{--}--}}
+    {{--}--}}
+{{--</script>--}}

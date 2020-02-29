@@ -2,8 +2,6 @@
     background:url("/images/fon-for-about-us-header.jpg") no-repeat;
     background-size: cover;
     min-height: 500px;
-
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
 }
@@ -53,7 +51,6 @@
     background:url("/images/fon-for-certificat-about.jpg") no-repeat;
     background-size: cover;
     min-height: 500px;
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
 
@@ -108,11 +105,8 @@
     background: url("/images/fon-for-about-us-header-2.jpg") no-repeat;
     background-size: cover;
     min-height: 500px;
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
-    /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
 }
 .partner{
     font-style: normal;

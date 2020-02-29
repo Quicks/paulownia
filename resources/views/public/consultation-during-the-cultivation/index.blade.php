@@ -2,8 +2,22 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{ asset('css/service.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/service.css')}}?v1">
     @endpush
+
+    <style>
+
+        .fon-text{
+            color: white;
+        }
+        .fon-text:hover{
+            color:#8CBD02;;
+        }
+        .main-background {
+            min-height: calc(100vh - 1048px);
+        }
+
+    </style>
 
     <div class="row m-0 position-relative" >
 

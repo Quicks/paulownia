@@ -2,6 +2,8 @@
     @include('public.auth-modal')
 @endguest
 
+
+
 {{--<style>--}}
     {{--input[type=text] {--}}
         {{--width: 130px;--}}
@@ -162,7 +164,13 @@
 
                         </div>
 
-                    <div class="col-xl-3 p-0">
+                    <div class="col-xl-3 p-0" id="wrap">
+
+                            <form action="" autocomplete="on">
+                                <input id="search" class="firstUs" name="search" type="text" placeholder="What're we looking for ?">
+                                <input id="search_submit" class="firstDo" value="Rechercher" type="submit">
+                            </form>
+
 
                         {{--<form>--}}
                             {{--<input type="text" name="search" placeholder="Search..">--}}

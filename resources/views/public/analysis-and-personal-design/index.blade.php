@@ -9,9 +9,6 @@
         .fon-text:hover{
             color:#8CBD02;;
         }
-        .main-background {
-            min-height: calc(100vh - 1048px);
-        }
 
     </style>
 

@@ -63,7 +63,7 @@
 
 .main-background {
     background: white;
-    min-height: calc(100vh - 448px);
+    min-height: calc(100vh - 648px);
 }
 
 .custom-status {

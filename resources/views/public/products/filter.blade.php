@@ -4,12 +4,6 @@
     <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v4">
 @endpush
 
-<style>
-    .main-background {
-        min-height: calc(100vh - 648px);
-    }
-</style>
-
 <div class="row" style="background: white">
 
     @if(!empty($ticker->text))

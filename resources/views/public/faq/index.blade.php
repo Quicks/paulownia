@@ -13,10 +13,6 @@
         .fon-text-title {
             line-height: .2rem;
         }
-        .main-background {
-            min-height: calc(100vh - 648px);
-        }
-
         @media screen and (max-width:425px){
 
             .fon-text-title {

@@ -1,10 +1,24 @@
 @extends('layouts.public')
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/news-index.css') }}?v2">
+    <link rel="stylesheet" href="{{ asset('css/news-index.css') }}?v3">
 @endpush
 @section('content')
+
+    <style>
+        .fon-text-title {
+            line-height: .2rem;
+        }
+        @media screen and (max-width:425px){
+
+            .fon-text-title {
+                padding-left:0;
+            }
+        }
+    </style>
+
     <div class="back-news row">
-        @include('public.breadcrumbs', $breadcrumbs = [route('public.news.index') => 'header-footer.news' ])
+
+        <div class="col-12 line-for-news"> @include('public.breadcrumbs', $breadcrumbs = [route('public.news.index') => 'header-footer.news' ])</div>
 
         <div class="col-12 mt-5 newsFilter">
             <div class="d-inline p-2">

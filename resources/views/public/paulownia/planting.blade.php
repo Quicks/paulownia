@@ -3,7 +3,7 @@
 
     @push('css')
         <link rel="stylesheet" href="{{asset('css/plantation-creation.css')}}">
-        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}?v1">
+        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}?v2">
     @endpush
 
     <div class="row">

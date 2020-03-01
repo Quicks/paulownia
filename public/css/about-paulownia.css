@@ -38,6 +38,9 @@
 .fon-for-paulownia-type{
     background: url("/images/fon-for-type-of-pawl.jpg") no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 500px;
 }
 
 .nav-link, .nav-tabs{

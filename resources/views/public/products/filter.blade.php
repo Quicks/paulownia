@@ -1,8 +1,14 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v8">
+    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v9">
     <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v4">
     <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v4">
 @endpush
+
+<style>
+    .main-background {
+        min-height: calc(100vh - 648px);
+    }
+</style>
 
 <div class="row" style="background: white">
 

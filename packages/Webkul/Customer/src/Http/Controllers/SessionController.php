@@ -48,7 +48,8 @@ class SessionController extends Controller
     {
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
+            'g-recaptcha-response' => 'recaptcha',
         ]);
 
         if (! auth()->guard('customer')->attempt(request(['email', 'password']))) {

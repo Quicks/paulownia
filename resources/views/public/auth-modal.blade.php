@@ -102,6 +102,15 @@
 
                                 </div>
 
+                                <div class="d-flex justify-content-center 
+                                    @if($errors->has('g-recaptcha-response')) 
+                                        has-auth-error" style="border:2px solid red" 
+                                    @else"
+                                    @endif
+                                    >
+                                    {!! htmlFormSnippet() !!}
+                                </div>
+
                                 <div class="forgot-password-link pt-3">
                                     <a class="pl-3 href-forgot" href="#"
                                         onclick="$('#forgot').show();$('#log, #myTab').hide();">
@@ -133,6 +142,14 @@
                                     <input type="email" class="control" name="email" required>
                                     <input type="hidden" name="forgot-pass" value="forgot-pass">
                                     <span class="control-error">{{ $errors->first('email') }}</span>
+                                </div>
+                                <div class="d-flex justify-content-center 
+                                    @if($errors->has('g-recaptcha-response')) 
+                                        has-auth-error" style="border:2px solid red" 
+                                    @else"
+                                    @endif
+                                    >
+                                    {!! htmlFormSnippet() !!}
                                 </div>
                                 <div class="button-group">
                                     <input class="button-modal-sing-in mb-1" type="submit"

@@ -2,7 +2,7 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{ asset('css/service.css')}}?v1">
+        <link rel="stylesheet" href="{{ asset('css/service.css')}}?v2">
     @endpush
 
     <style>

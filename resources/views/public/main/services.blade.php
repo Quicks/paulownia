@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/services.css') }}?v14">
+    <link rel="stylesheet" href="{{asset('css/services.css') }}?v15">
 
 
 @endpush

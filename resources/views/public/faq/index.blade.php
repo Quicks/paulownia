@@ -2,8 +2,8 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/faq.css') }}?v7">
-        <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v2">
+        <link rel="stylesheet" href="{{asset('css/faq.css') }}?v8">
+        <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v3">
     @endpush
 
     <style>

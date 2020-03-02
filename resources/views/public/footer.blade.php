@@ -66,5 +66,43 @@
 <div class="row footer-bottom text-center">
     <div class="col-12 footer-bottom-copy py-4">Copyright © by Paulownia.pro® 2019</div>
 </div>
-<script async src="https://cse.google.com/cse.js?cx=013231548468563012370:d5f5xfaqbek"></script>
-<div class="gcse-search"></div>
+
+<div>
+    <input id="gcs-input" type="text" name="gcs">
+    <button onclick="gsearch($('#gcs-input').val())">Search</button>
+</div>
+<div id="results"></div>
+<script type="text/javascript">
+    function gsearch(searchText) {
+        $.ajax({
+            url: 'https://www.googleapis.com/customsearch/v1?key=AIzaSyBka8NI0ipWHV-_rKotvoXQmen-6q-pvcg&cx=013231548468563012370:d5f5xfaqbek&q='+encodeURI(searchText),
+            type: "get",
+        })
+            .done(function (response) {
+                console.log(response);
+                if(response.items) {
+                    response.items.forEach(item => {
+                       $('#results').append(
+                            $('<a/>', {'href': item.link, 'class':'gcs-results-link'})
+                            .append($('<h3/>').html(item.title))
+                            .append($('<b/>').html(item.link))
+                            .append($('<p/>').html(item.htmlSnippet))
+                        );
+                    })
+                } else {
+                    $('#results').append('No results for \"'+searchText+'\".');
+                }
+            })
+    }
+
+    $("#gcs-input").on('keyup', function (e) {
+        if (e.keyCode === 13) {
+            gsearch($('#gcs-input').val());
+        }
+    });
+</script>
+<style type="text/css">
+    #results>a{
+        color:green;
+    }
+</style>

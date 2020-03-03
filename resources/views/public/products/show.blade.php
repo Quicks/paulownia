@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6 mt-5">
+            <div class=" col-6 mt-5">
                 <ul class="style-for-list-show">
                     <li class="text-title-for-show mt-3 mb-3">{{$product->name}}</li>
                     <li class="text-title-for-show mb-3">

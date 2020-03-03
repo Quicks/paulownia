@@ -18,6 +18,11 @@
         <div class="col-11 mx-auto">
             <div class="faq-text-list">@lang('header-footer.faq')</div>
             <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
+                <li class="nav-item ">
+                    <a class="nav-link active" id="all-tab" data-toggle="tab" href="#home-all"
+                       role="tab" aria-controls="home"
+                       aria-selected="true">@lang('faq.all')</a>
+                </li>
                 @foreach ($topics as $topic)
                     <li class="nav-item ">
                         <a class="nav-link" id="{{$topic->id}}-tab" data-toggle="tab" href="#home-{{$topic->id}}"
@@ -27,6 +32,35 @@
                 @endforeach
             </ul>
             <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade active show" id="home-all" role="tabpanel"
+                     aria-labelledby="all-tab">
+                    <div class="accordion" id="accordionExampleAll">
+                        @forelse($faqs as $item)
+                            <div class="card">
+                                <div class="card-header" id="heading{{$item->id}}">
+                                    <div class="row">
+                                        <div class="col-11">{{$item->question}}</div>
+                                        <div class="col-1">
+                                            <button class="btn btn-link collapsed btn-faq" type="button"
+                                                    data-toggle="collapse"
+                                                    data-target="#collapse{{$item->id}}" aria-expanded="false"
+                                                    aria-controls="collapse{{$item->id}}">
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div id="collapse{{$item->id}}" class="collapse"
+                                     aria-labelledby="heading{{$item->id}}"
+                                     data-parent="#accordionExampleAll">
+                                    <div class="card-body">{{html_entity_decode(strip_tags($item->answer))}}</div>
+                                </div>
+                            </div>
+                        @empty
+                            <div>...</div>
+                        @endforelse
+                    </div>
+                </div>
                 @foreach($topics as $topic)
                     <div class="tab-pane fade" id="home-{{$topic->id}}" role="tabpanel"
                          aria-labelledby="{{$topic->id}}-tab">

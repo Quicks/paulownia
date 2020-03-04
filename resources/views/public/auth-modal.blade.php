@@ -66,6 +66,15 @@
                                     <input type="checkbox" class="" name="subscribe" checked>
                                     <span class="control-error">{{ $errors->first('subscribe') }}</span>
                                 </div>
+                                <div class="d-flex justify-content-center 
+                                    @if($errors->has('g-recaptcha-response')) 
+                                        has-auth-error" style="border:2px solid red" 
+                                    @else"
+                                    @endif
+                                    >
+                                    {!! htmlFormSnippet() !!}
+                                </div>
+                                <span class="control-error">{{ $errors->first('g-recaptcha-response') }}</span>
 
                                 <button class="button-modal-login" type="submit">
                                     {{ __('shop::app.customer.signup-form.button_title') }}
@@ -91,6 +100,15 @@
                                     <button type="button" class="position-absolute eye"><img src="{{asset("/images/eye-for-password-modal.png")}}"></button>
                                     <span class="control-error">{{ $errors->first('password') }}</span>
 
+                                </div>
+
+                                <div class="d-flex justify-content-center 
+                                    @if($errors->has('g-recaptcha-response')) 
+                                        has-auth-error" style="border:2px solid red" 
+                                    @else"
+                                    @endif
+                                    >
+                                    {!! htmlFormSnippet() !!}
                                 </div>
 
                                 <div class="forgot-password-link pt-3">
@@ -124,6 +142,14 @@
                                     <input type="email" class="control" name="email" required>
                                     <input type="hidden" name="forgot-pass" value="forgot-pass">
                                     <span class="control-error">{{ $errors->first('email') }}</span>
+                                </div>
+                                <div class="d-flex justify-content-center 
+                                    @if($errors->has('g-recaptcha-response')) 
+                                        has-auth-error" style="border:2px solid red" 
+                                    @else"
+                                    @endif
+                                    >
+                                    {!! htmlFormSnippet() !!}
                                 </div>
                                 <div class="button-group">
                                     <input class="button-modal-sing-in mb-1" type="submit"

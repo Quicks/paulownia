@@ -108,10 +108,11 @@
                         </div>
                     <div class="col-xl-2">
                         <ul class="list-inline">
+                            @include('public.site-search')
                             <li class="list-inline-item">
                                 <img width="20px" height="20px" src="{{asset('images/line.svg')}}">
                             </li>
-                            <li class="list-inline-item">
+                            <li class="list-inline-item header-icons-li">
                                 @guest('customer')
                                     <a href="#" data-toggle="modal" data-target="#AuthModal">
                                         <img width="20px" height="20px" src="{{asset('images/user.svg')}}">
@@ -137,7 +138,7 @@
                                     </ul>
                                 @endauth
                             </li>
-                            <li class="list-inline-item position-relative">
+                            <li class="list-inline-item position-relative header-icons-li">
                                 <a href="{{route('public.cart.index')}}">
                                     <img width="20px" height="20px" src="{{asset('images/shopping-cart.svg')}}" >
                                     @if(Webkul\Checkout\Facades\Cart::getCart())

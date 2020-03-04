@@ -12,6 +12,9 @@ use Webkul\Customer\Repositories\CustomerRepository;
 use Webkul\Customer\Repositories\CustomerGroupRepository;
 use Cookie;
 use Webkul\Core\Repositories\SubscribersListRepository as Subscription;
+use Webkul\Customer\Models\Customer;
+use Webkul\Customer\Http\Listeners\CustomerEventsHandler;
+use Cart;
 
 /**
  * Registration controller
@@ -64,6 +67,7 @@ class RegistrationController extends Controller
             'last_name' => 'string|required',
             'email' => 'email|required|unique:customers,email',
             'password' => 'confirmed|min:6|required',
+            'g-recaptcha-response' => 'recaptcha',
         ]);
 
         $data = request()->input();
@@ -106,7 +110,7 @@ class RegistrationController extends Controller
             if($request->has('subscribe')) {
                 $this->subscribe();
             }
-            app('Webkul\Customer\Http\Controllers\SessionController')->create($request); //THIS IS AUTOLOGIN AFTER REGISTRATION
+            $this->autoLogin($request); //THIS IS AUTOLOGIN AFTER REGISTRATION
             return redirect()->back(); //redirect()->route($this->_config['redirect']);
         } else {
             session()->flash('error', trans('shop::app.customer.signup-form.failed'));
@@ -195,6 +199,46 @@ class RegistrationController extends Controller
             }
         }
         return;
+    }
+
+    public function autoLogin(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if (! auth()->guard('customer')->attempt(request(['email', 'password']))) {
+            session()->flash('error', trans('shop::app.customer.login-form.invalid-creds'));
+
+            return redirect()->back();
+        }
+
+        if (auth()->guard('customer')->user()->status == 0) {
+            auth()->guard('customer')->logout();
+
+            session()->flash('warning', trans('shop::app.customer.login-form.not-activated'));
+
+            return redirect()->back();
+        }
+
+        if (auth()->guard('customer')->user()->is_verified == 0) {
+            session()->flash('info', trans('shop::app.customer.login-form.verify-first'));
+
+            Cookie::queue(Cookie::make('enable-resend', 'true', 1));
+
+            Cookie::queue(Cookie::make('email-for-resend', $request->input('email'), 1));
+
+            auth()->guard('customer')->logout();
+
+            return redirect()->back();
+        }
+
+        //Event passed to prepare cart after login
+        Event::fire('customer.after.login', $request->input('email'));
+
+        session()->flash('info', trans('shop::app.customer.sucess-login'));
+        return redirect()->back(); //redirect()->intended(route($this->_config['redirect']));
     }
 
 }

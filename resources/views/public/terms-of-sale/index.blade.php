@@ -1,8 +1,8 @@
 @extends('layouts.public')
 @section('content')
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v2">
-        <link rel="stylesheet" href="{{asset('css/terms-of-sale.css') }}?v5">
+        <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v3">
+        <link rel="stylesheet" href="{{asset('css/terms-of-sale.css') }}?v7">
     @endpush
 
     @include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'terms.terms' ])

@@ -1,11 +1,18 @@
 .back-news {
-    background: url("/images/pages-wave-left.png") no-repeat, url("/images/background-news.jpg") no-repeat;
-    background-size: auto auto, 100% 100%;
+    background: url("/images/background-news.jpg") no-repeat;
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #0F0E0E;
     letter-spacing: 0.05rem;
     line-height: 1.5rem;
 }
 
+.line-for-news{
+    background: url("/images/pages-wave-left.png") no-repeat;
+    background-size:100% 100%;
+    height: 70px;
+}
 .downArrowBtn {
     padding: 0;
     border: none;

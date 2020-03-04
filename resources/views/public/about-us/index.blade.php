@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('content')
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/about-us-header.css') }}?v5">
+        <link rel="stylesheet" href="{{asset('css/about-us-header.css') }}?v6">
     @endpush
 
     <div class="row fon-for-about-us-header m-0">

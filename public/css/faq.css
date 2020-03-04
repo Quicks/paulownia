@@ -1,9 +1,15 @@
 .fon-faq {
-    background: url("/images/fon-faq.jpg") no-repeat;
+    margin-top: 1%;
+    background:url("/images/profitability-calculation-fon.jpg") no-repeat;
     background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .top-fon{
+    height: 45px;
+    background:url("/images/pages-wave-left.png") no-repeat;
+    background-size:100% 100%;
     margin: -1.25% 0 3% 0;
 }
 

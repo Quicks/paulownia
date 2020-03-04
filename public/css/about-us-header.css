@@ -1,6 +1,9 @@
 .fon-for-about-us-header {
     background:url("/images/fon-for-about-us-header.jpg") no-repeat;
     background-size: cover;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
 }
 .line-bread{
     background:url("/images/line-for-about-us-header.png") no-repeat;
@@ -39,9 +42,6 @@
     line-height: 1.6rem;
     color: black;
 }
-
-.img-servise-style{
-}
 .card-img-width-about{
     padding-left: 30px;
     padding-right: 30px;
@@ -50,6 +50,9 @@
 .fon-for-slider-about-us-header{
     background:url("/images/fon-for-certificat-about.jpg") no-repeat;
     background-size: cover;
+    min-height: 200px;
+    background-attachment: fixed;
+    background-position: center;
 
 }
 .line-style-up-about-h{
@@ -101,6 +104,9 @@
 .fon-our-partners{
     background: url("/images/fon-for-about-us-header-2.jpg") no-repeat;
     background-size: cover;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
 }
 .partner{
     font-style: normal;

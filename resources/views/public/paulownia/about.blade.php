@@ -2,7 +2,7 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}?v1">
+        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}?v2">
 
     @endpush
 

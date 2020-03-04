@@ -2,19 +2,28 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/faq.css') }}?v6">
-        <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v2">
+        <link rel="stylesheet" href="{{asset('css/faq.css') }}?v8">
+        <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v3">
     @endpush
+
     <style>
         .fon-text {
             padding-top: .5rem !important;
+        }
+        .fon-text-title {
+            line-height: .2rem;
+        }
+        @media screen and (max-width:425px){
+
+            .fon-text-title {
+                padding-left:0;
+            }
         }
     </style>
 
     <div class="fon-faq">
 
-        <div
-            class="col-12 top-fon">@include('public.breadcrumbs', $breadcrumbs = [route('public.faq.index') => 'header-footer.faq' ])</div>
+        <div class="col-12 top-fon pt-2">@include('public.breadcrumbs', $breadcrumbs = [route('public.faq.index') => 'header-footer.faq' ])</div>
         <div class="col-11 mx-auto">
             <div class="faq-text-list">@lang('header-footer.faq')</div>
             <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">

@@ -2,8 +2,8 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/profitability-calculation.css')}}?v4">
-        <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v10">
+        <link rel="stylesheet" href="{{asset('css/profitability-calculation.css')}}?v5">
+        <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v11">
     @endpush
 
     <style>

@@ -1,20 +1,19 @@
-@media only screen  and (min-width: 1224px) {
-    .price-img-leaf {
-        width:290px !important;
-        height: 260px !important;
-    }
-}
+
 .fon-for-terms{
     background: url("/images/fon-for-goods.jpg") no-repeat;
     height: 100%;
     background-size:cover;
     margin: 0;
+    min-height: 500px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
 }
 .text-on-leaf{
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 1rem;
+    line-height: 2rem;
     letter-spacing: 0.02em;
     color: #FFFFFF;
     padding-left: 25%;
@@ -23,15 +22,15 @@
     list-style-type: none;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1rem;
+    line-height: 2rem;
     letter-spacing: 0.02em;
     color: #8CBD02;
 }
 .text-for-rules{
     font-weight: normal;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.2rem;
+    line-height: 2rem;
     letter-spacing: 0.02em;
     color: black;
 }
@@ -39,3 +38,9 @@
     left: 4%;
 }
 
+@media only screen  and (min-width: 1224px) {
+    .price-img-leaf {
+        width:290px;
+        height: 260px;
+    }
+}

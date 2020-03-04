@@ -1,15 +1,19 @@
 .fon-service {
     background:url("/images/fon-service.jpg") no-repeat;
     background-size: 100% 100%;
+
 }
 .fon-text-service{
     background:url("/images/fon-service-1.jpg");
-    background-size: 100%;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 .text-service-title{
     font-style: normal;
-    font-size: 134px;
-    line-height: 120px;
+    font-size: 6rem;
+    line-height:6rem;
     letter-spacing: 0.02em;
     color: #FFFFFF;
     padding:2% 10% 5% 15%;
@@ -23,41 +27,21 @@
 .text-service{
     text-indent:10%;
     padding: 5% 8% 12% 8%;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1rem;
+    line-height: 2rem;
     letter-spacing: 0.02em;
 }
 
-@media screen and (max-width:1290px ) and (min-width:1025px){
+@media screen and (min-width:1400px ){
 
-    .text-service-title{
-        font-size: 84px;
-        line-height: 80px;
-    }
-    .text-service{
-        font-size: 20px;
-        line-height: 20px;
+    .main-background {
+         min-height: calc(100vh - 448px);
     }
 }
-@media screen and (max-width:1024px ) and (min-width:426px){
 
-    .text-service-title{
-        font-size: 64px;
-        line-height: 50px;
-    }
-    .text-service{
-        font-size: 20px;
-        line-height: 30px;
-    }
-}
 @media screen and (max-width:425px ){
 
-    .text-service-title{
-        font-size: 34px;
-        line-height: 30px;
-    }
-    .text-service{
-        font-size: 20px;
-        line-height: 30px;
+    .text-service-title {
+        font-size: 4rem;
     }
 }

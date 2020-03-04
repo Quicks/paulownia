@@ -66,5 +66,3 @@
 <div class="row footer-bottom text-center">
     <div class="col-12 footer-bottom-copy py-4">Copyright © by Paulownia.pro® 2019</div>
 </div>
-<script async src="https://cse.google.com/cse.js?cx=013231548468563012370:d5f5xfaqbek"></script>
-<div class="gcse-search"></div>

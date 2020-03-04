@@ -107,6 +107,7 @@
                     </div>
                     <div class="col-xl-2">
                         <ul class="list-inline">
+                            @include('public.site-search')
                             <li class="list-inline-item">
                                 <img width="20px" height="20px" src="{{asset('images/line.svg')}}">
                             </li>

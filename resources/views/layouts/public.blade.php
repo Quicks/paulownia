@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="{{ asset('css/header.css') }}?v8">
     <link rel="stylesheet" href="{{ asset('css/cookie_consent.css') }}?v3">
     <link rel="stylesheet" href="{{ asset('css/auth-modal.css') }}?v4">
+    <link rel="stylesheet" href="{{asset('css/g-search.css') }}?v1">
 
     @stack('css')
 

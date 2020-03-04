@@ -1,0 +1,49 @@
+#searchResults a{
+    color:green;
+}
+
+#searchResults h4{
+    color: darkgreen;
+}
+
+#gcs-input {
+    position:absolute;
+    left: -300px;
+    width: 300px;
+    background-color: yellowgreen;
+    border: solid 1px green;
+    color: white;
+}
+
+.gcs-input-animate {
+    animation-name: gcs-input;
+    animation-duration: 1s;
+}
+
+@keyframes gcs-input {
+    from {
+        width: 0px;
+        left: 0px;
+    }
+    to {
+        width: 300px;
+        left: -300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #gcs-input {
+        top: 30px;
+        left: 12px;
+        width: 250px;
+    }
+
+    @keyframes gcs-input {
+        from {
+            width: 0px;
+        }
+        to {
+            width: 250px;
+        }
+    }
+}

@@ -5,20 +5,24 @@ function toggleSearchInput() {
         gcsInputClosed = false;
     } else {
         $("#gcs-input").removeClass('gcs-input-animate').addClass('d-none');
-        gsearch($('#gcs-input').val(), 1);
+        if($('#gcs-input').val() != "") {
+            gsearch($('#gcs-input').val(), 1);
+        }
         gcsInputClosed = true;
     }
 }
 
 var searchPage = 1;
+var onPage = 10;
 function gsearch(searchText, page) {
     let key = 'AIzaSyBka8NI0ipWHV-_rKotvoXQmen-6q-pvcg';
     let cx = '013231548468563012370:d5f5xfaqbek';
-    let onPage = 10;
     $.ajax({
         url: 'https://www.googleapis.com/customsearch/v1',
         type: "get",
-        data: {'key':key, 'cx':cx, 'q':encodeURI(searchText), 'start':page*onPage-onPage, 'num':onPage},
+        data: {'key':key, 'cx':cx, 'q':encodeURI(searchText), 'num':onPage, 
+            'start':page==1 ? 0 : page*onPage-onPage+1
+        },
         success: function (response) {
             parseResponceToHtml (response, searchText);
         },
@@ -45,12 +49,13 @@ function parseResponceToHtml (response, searchText) {
                 );
             })
     } else {
-        $('#results-body').html('No results for \"'+searchText+'\".');
+        $('#results-body').append('<h4>No results for \"'+searchText+'\".</h4>');
     }
 
+    $('#searchResultsLongTitle').text('Search Results for \"'+searchText+'\".');
     $('#searchResults').modal('show');
 
-    if(response.searchInformation.totalResults > searchPage*10) {
+    if(response.searchInformation.totalResults > searchPage*onPage) {
         searchPage++;
         $('#moreResults').removeClass('d-none');
     } else {
@@ -60,5 +65,6 @@ function parseResponceToHtml (response, searchText) {
 
 $('#searchResults').on('hidden.bs.modal', function (e) {
     $('#results-body').empty();
+    $('#searchResultsLongTitle').empty();
     searchPage = 1;
 })

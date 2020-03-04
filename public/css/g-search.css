@@ -6,6 +6,11 @@
     color: darkgreen;
 }
 
+#search-icon {
+    cursor: pointer;
+    
+}
+
 #gcs-input {
     position:absolute;
     left: -300px;

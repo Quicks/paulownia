@@ -10,9 +10,17 @@
     box-shadow: 15px 15px 10px rgba(140, 189, 2, 0.6);
     border-radius: 25px;
 }
+.product-image-wrapper{
+    position: relative;
+    padding-top: 71.43%;
+}
 .img-product{
-    border-radius: 25px 25px 0 0 !important; ;
+    border-radius: 25px 25px 0 0 !important;
     width: 100%!important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: auto;
 }
 .line-product-card{
     margin-top:-8%;
@@ -30,6 +38,7 @@
     border-radius: 2px 5px 5px 0;
     background-color: white;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1;
 }
 .card-btn {
     border: none;

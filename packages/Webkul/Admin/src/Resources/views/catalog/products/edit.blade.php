@@ -264,7 +264,7 @@
                     window.cropper.replace(image.src);
                 } else {
                     window.cropper = new Cropper(image, {
-                       aspectRatio: 428 / 247,
+                       aspectRatio: 1.4,
                     });
                 }
             };

@@ -63,7 +63,7 @@ class StandardController extends Controller
     {
         session()->flash('error', 'Paypal payment has been canceled.');
 
-        return redirect()->route('shop.checkout.cart.index');
+        return redirect()->route('public.cart.index');
     }
 
     /**
@@ -79,7 +79,7 @@ class StandardController extends Controller
 
         session()->flash('order', $order);
 
-        return redirect()->route('shop.checkout.success');
+        return redirect()->route('check-out.success');
     }
 
     /**

@@ -58,7 +58,7 @@
                 <img class="mt-4 ml-xl-4 mx-auto footer-booklet" src="{{asset('images/booklet_en.jpg')}}">
             </div>
             <div>
-                <a href="#"><img class="f-booklet-download lazyload ml-xl-4 mt-4" data-src="{{asset('images/download-booklet.svg')}}" ></a>
+                    <img class="f-booklet-download lazyload ml-xl-4 mt-4" data-src="{{asset('images/download-booklet.svg')}}" >
             </div>
         </div>
     </div>

@@ -64,42 +64,42 @@
                 <div class="carousel-inner text-center ">
                     <div class="carousel-item active">
 
-                        <a href="{{asset('/images/cerificates/certificate-1-about-r.jpg')}}" download>
+                        <a href="{{asset('/images/certificates/certificate-1-about-r.jpg')}}" download>
                             <img class="lazyload pl-2 pr-2 img-slider-about-r" data-src="{{asset('/images/certificate-1-about-r.jpg')}}" alt="First slide"></a>
 
 
-                        <a href="{{asset('/images/cerificates/certificate-2-about-r.jpg')}}" download>
+                        <a href="{{asset('/images/certificates/certificate-2-about-r.jpg')}}" download>
                         <img class="lazyload pl-2 pr-2 img-slider-about-r"
                              data-src="{{asset('/images/certificate-2-about-r.jpg')}}" alt="First slide"></a>
 
 
-                        <a href="{{asset('/images/cerificates/certificate-3-about-r.jpg')}}" download>
+                        <a href="{{asset('/images/certificates/certificate-3-about-r.jpg')}}" download>
                         <img class="lazyload pl-2 pr-2 img-slider-about-r"
                              data-src="{{asset('/images/certificate-3-about-r.jpg')}}" alt="First slide"></a>
 
 
-                        <a href="{{asset('/images/cerificates/certificate-4-about-r.jpg')}}"
+                        <a href="{{asset('/images/certificates/certificate-4-about-r.jpg')}}"
                            download><img class="lazyload pl-2 pr-2 img-slider-about-r" data-src="{{asset('/images/certificate-4-about-r.jpg')}}"
                                          alt="First slide"></a>
 
                     </div>
                     <div class="carousel-item">
-                        <a href="{{asset('/images/cerificates/certificate-1-about-r.jpg')}}" download>
+                        <a href="{{asset('/images/certificates/certificate-1-about-r.jpg')}}" download>
                         <img class="lazyload pl-2 pr-2 img-slider-about-r"
                              data-src="{{asset('/images/certificate-1-about-r.jpg')}}" alt="First slide">
                         </a>
 
-                        <a href="{{asset('/images/cerificates/certificate-2-about-r.jpg')}}" download>
+                        <a href="{{asset('/images/certificates/certificate-2-about-r.jpg')}}" download>
                         <img class="lazyload pl-2 pr-2 img-slider-about-r"
                              data-src="{{asset('/images/certificate-2-about-r.jpg')}}" alt="First slide">
                         </a>
 
-                        <a href="{{asset('/images/cerificates/certificate-3-about-r.jpg')}}" download>
+                        <a href="{{asset('/images/certificates/certificate-3-about-r.jpg')}}" download>
                         <img class="lazyload pl-2 pr-2 img-slider-about-r"
                              data-src="{{asset('/images/certificate-3-about-r.jpg')}}" alt="First slide">
                         </a>
 
-                        <a href="{{asset('/images/cerificates/certificate-4-about-r.jpg')}}" download>
+                        <a href="{{asset('/images/certificates/certificate-4-about-r.jpg')}}" download>
                         <img class="lazyload pl-2 pr-2 img-slider-about-r"
                              data-src="{{asset('/images/certificate-4-about-r.jpg')}}" alt="First slide">
                         </a>

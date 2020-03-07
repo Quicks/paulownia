@@ -53,7 +53,7 @@
             <div class="carousel-inner">
                 @foreach ($sliderData as $key=>$value)
                     <div class="carousel-item @if($key === array_key_first($sliderData)) active @endif">
-                        <img src="{{asset('storage/' . $value['path'])}}" class="d-block w-100 "  alt="{{$value['title']}}">
+                        <img src="{{asset('storage/' . $value['path'])}}" class="d-block w-100 " style="max-height:550px;" alt="{{$value['title']}}">
                         <div class="carousel-caption d-none d-md-block text-left">
                             <div>{!! $value['content'] !!}</div>
                         </div>

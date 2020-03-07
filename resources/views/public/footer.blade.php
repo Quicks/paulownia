@@ -58,7 +58,12 @@
                 <img class="mt-4 ml-xl-4 mx-auto footer-booklet" src="{{asset('images/booklet_en.jpg')}}">
             </div>
             <div>
-                <a href="#"><img class="f-booklet-download lazyload ml-xl-4 mt-4" data-src="{{asset('images/download-booklet.svg')}}" ></a>
+                <a @if(app()->getLocale() == 'fr' || app()->getLocale() == 'pl' || app()->getLocale() == 'ar')
+                   href="{{asset('/files/booklet_en.pdf')}}"
+                   @else href="{{asset('/files/booklet_' . app()->getLocale()  .  '.pdf')}}"
+                   @endif download >
+                    <img class="f-booklet-download lazyload ml-xl-4 mt-4" data-src="{{asset('images/download-booklet.svg')}}" >
+                </a>
             </div>
         </div>
     </div>

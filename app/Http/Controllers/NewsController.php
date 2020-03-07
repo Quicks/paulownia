@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Treatise;
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use App\Models\News;
 use Artesaos\SEOTools\Facades\SEOMeta;
-use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
 {
@@ -49,14 +46,13 @@ class NewsController extends Controller
     public function filter($request, $query)
     {
         if ($request->has('month')) {
-           return $query->whereMonth('publish_date', $request->month)->get();
+           $query->whereMonth('publish_date', $request->month)->get();
         }
         if ($request->has('year')) {
-            return $query->whereYear('publish_date', $request->year)->get();
+            $query->whereYear('publish_date', $request->year)->get();
         }
-        if(!$request->has('month') && !$request->has('year')) {
-            return $query->get();
-        }
+
+        return $query->get();
     }
 
 

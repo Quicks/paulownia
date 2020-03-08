@@ -84,6 +84,10 @@
                         <li>
                             <a href="{{route('public.terms-of-sale.index')}}" class="text-href">Read more</a>
                         </li>
+
+                            <li class="mt-5">
+                                <a href="{{route('public.faq.index')}}" class="text-type-rules FAQ-href">FAQ</a>
+                            </li>
                     </ul>
                 </div>
 

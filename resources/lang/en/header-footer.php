@@ -18,7 +18,6 @@ return [
     //footer
 
     'to customers'=>'To customers',
-
     'stocks'=>'Stocks',
     'wholesale offers'=>'Wholesale offers',
     'terms of sale'=>'Terms of sale',

@@ -38,6 +38,9 @@
             <div class="row pb-5">
                 <div class="col-xl-3 col-md-3 col-sm-12">
                     <ul class="style-for-list-goods ml-3 sticky-top">
+                        <li class="m-0">
+                            <hr class="lile-between ml-0 mr-0">
+                        </li>
                         @foreach($categories as $category)
                             <a @if(Request::input('category') === $category->slug)
                                class="style-for-list-goods-link-active"
@@ -63,6 +66,10 @@
                             </select>
 
                         </li>
+
+                        <li class="m-0">
+                            <hr class="lile-between ml-0 mr-0">
+                        </li>
                         <li class="mt-4 text-type-title">
                             Price {{ core()->currencySymbol(core()->getBaseCurrencyCode()) }}</li>
                         <li class="text-type-prise">
@@ -75,6 +82,9 @@
                                    data-slider-max="{{$products->max('price')}}"
                                    data-slider-step="5"
                                    data-slider-value="[{{$products->min('price')}}, {{$products->max('price')}}]"/>
+                        </li>
+                        <li class="m-0">
+                            <hr class="lile-between ml-0 mr-0">
                         </li>
                         <li class="mt-1 mb-4 text-type-rules">Purchase Rules</li>
                         <li class="mt-2 text-type-title">A popular practice of our time is the sale of young plants

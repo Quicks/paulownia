@@ -26,11 +26,10 @@
                 </div>
                 <div class="price-text pb-5">
                     @lang('products.price-text')
-                    <a href="{{asset('/fonts/price_list.pdf')}}" download>>
+                    <a href="{{asset('/price_list/price_list.pdf')}}" download>
                         <img src="{{asset('images/price-button.png')}}" class="image-width">
                     </a>
                 </div>
-
         </div>
     </div>
     <div class="row">

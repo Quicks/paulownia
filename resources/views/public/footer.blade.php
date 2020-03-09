@@ -17,8 +17,8 @@
                 <li><a href="#">@lang('header-footer.stocks')</a></li>
                 <li><a href="#">@lang('header-footer.wholesale offers')</a></li>
                 <li><a href="{{route('public.terms-of-sale.index')}}">@lang('header-footer.terms of sale')</a></li>
-                <li><a href="#">@lang('header-footer.terms of purchase')</a></li>
-                <li><a href="#">@lang('header-footer.terms of use')</a></li>
+                <li><a href="{{route('public.terms-of-sale.index')}}">@lang('header-footer.terms of purchase')</a></li>
+                <li><a href="{{route('public.terms-of-sale.index')}}">@lang('header-footer.terms of use')</a></li>
             </ul>
         </div>
         <div class="col-xl-2 col-md-6 col-sm-12 mb-3">

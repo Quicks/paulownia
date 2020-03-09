@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v10">
+    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v11">
     <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v4">
     <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v4">
 @endpush
@@ -94,6 +94,10 @@
                         <li>
                             <a href="{{route('public.terms-of-sale.index')}}" class="text-href">Read more</a>
                         </li>
+
+                            <li class="mt-5">
+                                <a href="{{route('public.faq.index')}}" class="text-type-rules FAQ-href">FAQ</a>
+                            </li>
                     </ul>
                 </div>
 

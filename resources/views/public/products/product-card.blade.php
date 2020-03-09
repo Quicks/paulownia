@@ -1,5 +1,5 @@
 @pushonce('css:product-card')
-    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v19">
+    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v20">
 @endpushonce
 
 <div class="">
@@ -9,16 +9,17 @@
             </div>
         @endif
 
-{{--         @if(!empty($product->images[0]->path_tmb) || !empty($product->images[0]->path))
-            <img data-src="{{asset('/storage/'. ($product->images[0]->path_tmb ? $product->images[0]->path_tmb : $product->images[0]->path))}}"
-                 class="lazyload img-product">
-        @else
-            <img data-src="{{asset('/images/product-card-placeholder.jpg')}}"
-                 class="lazyload img-product">
-        @endif --}}
-        <img data-src="{{asset('/images/product-card-1_4 asp-rat-placeholder.jpg')}}" class="lazyload img-product">
+        <div class="product-image-wrapper">  
+            @if(!empty($product->images[0]->path_tmb) || !empty($product->images[0]->path))
+                <img data-src="{{asset('/storage/'. ($product->images[0]->path_tmb ? $product->images[0]->path_tmb : $product->images[0]->path))}}"
+                     class="lazyload img-product">
+            @else
+                <img data-src="{{asset('/images/product-card-placeholder.png')}}"
+                     class="lazyload img-product">
+            @endif
+        </div>
 
-        <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" class="lazyload line-product-card">
+        <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" class="lazyload line-product-card position-relative">
         <div class="row m-0 product-name">
 
             <a href="{{route('public.products.show', $product->url_key)}}" class="col-8 title-for-card">{{$product-> name}}</a>

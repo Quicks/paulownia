@@ -18,12 +18,11 @@ return [
     //footer
 
     'to customers'=>'To customers',
-
     'stocks'=>'Stocks',
     'wholesale offers'=>'Wholesale offers',
     'terms of sale'=>'Terms of sale',
-    'terms of purchase'=>'terms of purchase',
-    'terms of use'=>'terms of use',
+    'terms of purchase'=>'Terms of purchase',
+    'terms of use'=>'Terms of use',
 
 //    ++++++++++++++++++++++++++++
 

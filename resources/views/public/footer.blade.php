@@ -17,8 +17,8 @@
                 <li><a href="#">@lang('header-footer.stocks')</a></li>
                 <li><a href="#">@lang('header-footer.wholesale offers')</a></li>
                 <li><a href="{{route('public.terms-of-sale.index')}}">@lang('header-footer.terms of sale')</a></li>
-                <li><a href="#">@lang('header-footer.terms of purchase')</a></li>
-                <li><a href="#">@lang('header-footer.terms of use')</a></li>
+                <li><a href="{{route('public.terms-of-sale.index')}}">@lang('header-footer.terms of purchase')</a></li>
+                <li><a href="{{route('public.terms-of-sale.index')}}">@lang('header-footer.terms of use')</a></li>
             </ul>
         </div>
         <div class="col-xl-2 col-md-6 col-sm-12 mb-3">
@@ -58,7 +58,6 @@
                 <img class="mt-4 ml-xl-4 mx-auto footer-booklet" src="{{asset('images/booklet_en.jpg')}}">
             </div>
             <div>
-
                 <a @if(app()->getLocale() == 'fr' || app()->getLocale() == 'pl' || app()->getLocale() == 'ar')
                    href="{{asset('/files/booklet_en.pdf')}}"
                    @else href="{{asset('/files/booklet_' . app()->getLocale()  .  '.pdf')}}"

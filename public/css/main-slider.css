@@ -84,8 +84,15 @@
 }
 
 .main-height{
-    height: 550px;
+    height: 600px;
     object-fit: cover;
+}
+
+@media screen and (min-width: 1600px) and (max-width:1850px) {
+
+    .main-height{
+        height: 550px;
+    }
 }
 
 @media screen and (min-width: 1367px) and (max-width:1599px) {
@@ -134,7 +141,6 @@
     .main-height{
         height: 500px;
     }
-
 }
 /* Стили для больших экранов (дисплей шириной от 992 пикселей до 1199 пикселей) */
 @media screen and (min-width: 1025px) and (max-width: 1366px) {

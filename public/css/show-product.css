@@ -1,86 +1,14 @@
-@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
-    .img-main-wrap {
-        display: none !important;
-    }
-    .downArrow {
-        left: 40px !important;
-        bottom: -40px !important;
-    }
-    .upArrow {
-        left: 40px !important;
-    }
-    .imgs-nav {
-        border-radius: 10px !important;
-        width: 90px !important;
-        height: 90px !important;
-    }
-    .quantity-arrow-minus {
-        margin-top: 6px !important;
-    }
-
-    .quantity-arrow-plus {
-        margin-top: -6px !important;
-    }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    .img-main {
-        width: 210px !important;
-        height: 210px !important;
-    }
-    .quantity-arrow-minus {
-        margin-top: 9px !important;
-    }
-
-    .quantity-arrow-plus {
-        margin-top: -9px !important;
-    }
-    .slider-for {
-        margin-left: -20px !important;
-    }
-    .downArrow {
-        left: 15px !important;
-        bottom: -20px !important;
-    }
-    .upArrow {
-        left: 15px !important;
-        top: -25px !important;
-    }
-    .imgs-nav {
-        border-radius: 10px !important;
-        width: 50px !important;
-        height: 50px !important;
-    }
-}
-
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1221px) {
-    .img-main {
-        width: 310px !important;
-        height: 310px !important;
-    }
-    .slider-for {
-        margin-left: -20px !important;
-    }
-    .downArrow {
-        bottom: -20px !important;
-    }
-    .upArrow {
-        top: -25px !important;
-    }
-    .quantity-arrow-minus {
-        margin-top: 12px !important;
-    }
-
-    .quantity-arrow-plus {
-        margin-top: -8px !important;
-    }
-}
-
 .show-page-back {
-    background: url("/images/pages-wave.png") no-repeat, url("/images/pages-background.jpg") no-repeat;
-    color: #0F0E0E;
+    background: url("/images/pages-background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
 }
 
+.line-for-goods{
+    background: url("/images/pages-wave.png") no-repeat;
+    background-size:100%;
+
+}
 .title-for-cards-show-product {
     font-weight: bold;
     font-size: 3.4rem;
@@ -116,7 +44,6 @@
     line-height: 1.7rem;
     color: #F21E1E;
 }
-
 .show-read-m, .show-read-m:hover {
     color: #8CBD02;
     text-decoration: underline;
@@ -277,3 +204,129 @@ input[type=number] {
 .slider-for {
     margin-left: -70px
 }
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1221px) {
+    .img-main {
+        width: 310px;
+        height: 310px ;
+    }
+    .slider-for {
+        margin-left: -20px;
+    }
+    .downArrow {
+        bottom: -20px;
+    }
+    .upArrow {
+        top: -25px;
+    }
+    .quantity-arrow-minus {
+        margin-top: 12px;
+    }
+
+    .quantity-arrow-plus {
+        margin-top: -8px;
+    }
+}
+
+@media only screen and (min-device-width: 769px) and (max-device-width: 1024px) {
+    .img-main {
+        width: 210px ;
+        height: 210px ;
+    }
+    .quantity-arrow-minus {
+        margin-top: 9px ;
+    }
+
+    .quantity-arrow-plus {
+        margin-top: -9px ;
+    }
+    .slider-for {
+        margin-left: -20px ;
+    }
+    .downArrow {
+        left: 15px;
+        bottom: -20px;
+    }
+    .upArrow {
+        left: 15px;
+        top: -25px;
+    }
+    .imgs-nav {
+        border-radius: 10px;
+        width: 50px;
+        height: 50px;
+    }
+}
+@media only screen and (max-device-width: 768px) {
+    .img-main-wrap {
+        display: none ;
+    }
+    .downArrow {
+        left: 40px;
+        bottom: -40px;
+    }
+    .upArrow {
+        left: 40px;
+    }
+    .imgs-nav {
+        border-radius: 10px;
+        width: 90px;
+        height: 90px;
+    }
+    .quantity-arrow-minus {
+        margin-top: 6px;
+    }
+
+    .quantity-arrow-plus {
+        margin-top: -6px;
+    }
+    .product-button {
+        padding: 1% 4%;
+    }
+}
+@media only screen and (max-device-width: 425px) {
+
+    .size-list {
+        margin-left: -20px;
+    }
+    .style-for-list-show {
+        padding: 7%;
+    }
+    .padding-right-text-container{
+        padding:0 2% 0 12%;
+    }
+    .custom-tab{
+        margin-right: 10%;
+    }
+    .product-button {
+        padding: 1% 4%;
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (max-device-width: 375px) {
+
+    .padding-right-text-container{
+        padding:0 2% 0 10% ;
+    }
+    .custom-tab{
+        margin-right: 8%;
+    }
+    .product-button {
+        padding: 1% 4%;
+        margin-left: 3%;
+    }
+}
+@media only screen and (max-device-width: 320px){
+
+    .style-for-list-show {
+        padding: 7%;
+    }
+    .padding-right-text-container{
+        padding:0 2% 0 5% ;
+    }
+    .custom-tab{
+        margin-right: 8%;
+    }
+}
+

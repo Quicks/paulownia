@@ -78,12 +78,12 @@
                         </a>
                     </div>
                     <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center pl-xl-0" >
-                        <a href="{{asset('/images/certificates/cert-small-1.png')}}" download>
+                        <a href="{{asset('/images/certificates/cert-small-8.png')}}" download>
                             <img data-src="{{asset('/images/cert-small-8.png')}}" class="lazyload  img-cert-small">
                         </a>
                     </div>
                     <div class="col-xl-4 col-md-12 col-sm-12 text-xl-left text-md-center text-sm-center pl-xl-0" >
-                        <a href="{{asset('/images/certificates/cert-small-1.png')}}" download>
+                        <a href="{{asset('/images/certificates/cert-small-9.png')}}" download>
                             <img data-src="{{asset('/images/cert-small-9.png')}}" class="lazyload  img-cert-small">
                         </a>
                     </div>

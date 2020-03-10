@@ -32,7 +32,12 @@
                     <a class="nav-item nav-link active pt-4 pb-3 pl-0 pr-0 margin-for-beggin" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">@lang('about-paulownia.soil-groundwater') </a>
                     <a class="nav-item nav-link margin-for-paulownia pt-4 pb-3 pl-0 pr-0" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">@lang('about-paulownia.site-preparation')</a>
                     <a class="nav-item nav-link margin-for-paulownia pt-4 pb-3 pl-0 pr-0 " id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">@lang('about-paulownia.tree-planting-care')</a>
-                    <a href="#"><img class="f-booklet-download lazyload margin-for-end pt-3 pb-3 pl-0 pr-0" data-src="{{asset('images/download-booklet.svg')}}" ></a>
+                    <a @if(app()->getLocale() == 'fr' || app()->getLocale() == 'pl' || app()->getLocale() == 'ar')
+                       href="{{asset('/files/booklet_en.pdf')}}"
+                       @else href="{{asset('/files/booklet_' . app()->getLocale()  .  '.pdf')}}"
+                       @endif download >
+                        <img class="f-booklet-download lazyload margin-for-end pt-3 pb-3 pl-0 pr-0" data-src="{{asset('images/download-booklet.svg')}}" >
+                    </a>
                 </div>
             </nav>
 

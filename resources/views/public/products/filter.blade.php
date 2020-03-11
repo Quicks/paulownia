@@ -1,7 +1,7 @@
 @push('css')
     <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v14">
     <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v4">
-    <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v4">
+    <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v6">
 @endpush
 
 <div class="row" style="background: white">

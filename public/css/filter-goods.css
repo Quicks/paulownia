@@ -74,6 +74,7 @@
 
 .select-goods{
     background: url(/images/down-arrow-products.png) no-repeat 96% 50%;
+    width: -webkit-fill-available;
     height: 35px;
     color: black;
     box-sizing: border-box;

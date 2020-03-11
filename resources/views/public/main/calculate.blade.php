@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v12">
+    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v13">
     <link rel="stylesheet" href="{{ asset('css/selectric.css') }}?v5">
 @endpush
 
@@ -30,9 +30,7 @@
                id="numberTrees" name="numberTrees" placeholder="Number of trees">
     </div>
     <div class="col-xl-3 col-md-12 col-sm-12 margin-425">
-        <button class="button-calc" data-toggle="modal"  data-target="#calcAnswer">
-            <img class="lazyload w-100" data-src="{{asset('/images/calculate.png')}}">
-        </button>
+            <button class="button-calc" data-toggle="modal" data-target="#calcAnswer">Calculate growth </button>
     </div>
 </div>
 <div class="modal fade" id="calcAnswer" tabindex="-1" role="dialog" aria-labelledby="calcResult" aria-hidden="true">

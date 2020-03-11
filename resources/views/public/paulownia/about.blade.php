@@ -2,7 +2,7 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}?v2">
+        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}?v3">
 
     @endpush
 
@@ -36,10 +36,9 @@
                        href="{{asset('/files/booklet_en.pdf')}}"
                        @else href="{{asset('/files/booklet_' . app()->getLocale()  .  '.pdf')}}"
                        @endif download >
-                            <img class="f-booklet-download lazyload margin-for-end pt-3 pb-3 pl-0 pr-0" data-src="{{asset('images/download-booklet.svg')}}" >
+                            <button class="button-booklet-paulownia mt-2 pr-3 pl-2 pt-1 pb-1 margin-for-end">
+                                 <img data-src="/images/booklet-footer.svg" class="lazyload booklet-img"> booklet of Paulownia</button>
                     </a>
-
-
                     <div class="collapse" id="collapseExample">
                         <div class="card card-body">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.

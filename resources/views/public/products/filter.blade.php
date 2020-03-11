@@ -1,5 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v11">
+    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v14">
     <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v4">
     <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v4">
 @endpush
@@ -16,8 +16,6 @@
 </div>
 
 <div class="fon-for-goods">
-
-
         <div class="row price-background">
             <div class="col-12 mt-5 mb-5">
                 <div class="price-img-leaf-position">
@@ -27,7 +25,8 @@
                 <div class="price-text pb-5">
                     @lang('products.price-text')
                     <a href="{{asset('/price_list/price_list.pdf')}}" download>
-                        <img src="{{asset('images/price-button.png')}}" class="image-width">
+                        <button class="price-list-button ml-xl-5 ml-md-3">
+                            <img data-src="/images/booklet-footer.svg" class="lazyload"> price list</button>
                     </a>
                 </div>
         </div>

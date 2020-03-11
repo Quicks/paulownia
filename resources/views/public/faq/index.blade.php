@@ -3,7 +3,7 @@
 
     @push('css')
         <link rel="stylesheet" href="{{asset('css/faq.css') }}?v8">
-        <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v3">
+        <link rel="stylesheet" href="{{asset('css/contacts.css') }}?v4">
     @endpush
 
     <style>

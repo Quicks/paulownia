@@ -19,6 +19,6 @@
         @haserror('message')<span class="control-error mt-1">{{$errors->first('message')}}</span>@endhaserror
     </div>
     <div class="col-xl-2 col-md-12 col-sm-12 text-center">
-        <button type="submit" class="button-contacts ">@lang('contacts.send')</button>
+        <button type="submit" class="button-contacts">@lang('contacts.send')</button>
     </div>
 </form>

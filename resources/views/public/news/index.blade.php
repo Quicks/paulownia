@@ -24,37 +24,45 @@
             <div class="d-inline p-2">
                 <button class="downArrowBtn" type="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
-                    <span class="newsFilterText">@lang('news.months')</span>
+                    <span class="newsFilterText">
+                         @if(\Request::get('month')) {{\Request::get('month')}} @else @lang('news.months') @endif
+                    </span>
                     <i class="fa fa-angle-down downArrow" aria-hidden="true"></i>
                 </button>
                 <div class="dropdown-menu">
                     @foreach($months as $month)
-                        <a class="dropdown-item" href="#">{{$month}}</a>
+                        <a class="dropdown-item" href="{{request()->fullUrlWithQuery(['month' => $month])}}">
+                            {{$month}}
+                        </a>
                     @endforeach
                 </div>
             </div>
             <div class="d-inline p-2">
                 <button class="downArrowBtn" type="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
-                    <span class="newsFilterText">{{date("Y")}}</span>
+                    <span class="newsFilterText">
+                        @if(\Request::get('year')) {{\Request::get('year')}} @else {{date("Y")}} @endif
+                    </span>
                     <i class="fa fa-angle-down downArrow" aria-hidden="true"></i>
                 </button>
                 <div class="dropdown-menu">
                     @foreach($years as $year)
-                        <a class="dropdown-item" href="#">{{$year}}</a>
+                        <a class="dropdown-item" href="{{request()->fullUrlWithQuery(['year' => $year])}}">{{$year}}</a>
                     @endforeach
                 </div>
             </div>
             <div class="d-inline p-2">
                 <button class="downArrowBtn" type="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
-                    <span class="newsFilterText">@lang('news.topic')</span>
+                    <span class="newsFilterText">
+                         @if(\Request::get('topic')) {{\Request::get('topic')}} @else @lang('news.topic') @endif
+                    </span>
                     <i class="fa fa-angle-down downArrow" aria-hidden="true"></i>
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">@lang('news.news')</a>
-                    <a class="dropdown-item" href="#">@lang('news.articles')</a>
-                    <a class="dropdown-item" href="#">@lang('news.treatises')</a>
+                    <a class="dropdown-item" href="{{request()->fullUrlWithQuery(['topic' => 'news'])}}">@lang('news.news')</a>
+                    <a class="dropdown-item" href="{{request()->fullUrlWithQuery(['topic' => 'articles'])}}">@lang('news.articles')</a>
+                    <a class="dropdown-item" href="{{request()->fullUrlWithQuery(['topic' => 'treatises'])}}">@lang('news.treatises')</a>
                 </div>
             </div>
             <div>
@@ -85,12 +93,13 @@
 
         function loadMoreData(page) {
             $.ajax({
-                url: '?page=' + page,
+                url: window.location.href,
                 type: "get",
                 beforeSend: function () {
                     $('.ajax-load').show();
                 },
-                cache: false
+                cache: false,
+                data: {'page': page}
             })
                 .done(function (data) {
                     if (data.html == "") {

@@ -10,8 +10,8 @@
     z-index: 1;
 }
 .price-img-leaf {
-    width:405px;
-    height: 386px;
+    width:50%;
+    height: auto;
     transform: scale(-1, 1);
 }
 .price-text {
@@ -25,33 +25,16 @@
     -webkit-filter: drop-shadow(-2px -2px 20px #8CBD02);
     filter: drop-shadow(-2px -2px 20px #8CBD02);
 }
-
-@media only screen  and (min-width: 1565px) and (max-width: 1823px) {
-
-    .price-img-leaf {
-        width:317px;
-        height: 298px;
-    }
-}
 @media only screen  and (min-width: 1224px) and (max-width: 1564px) {
 
     .price-img-leaf {
-        width:200px;
-        height: 190px;
+        width:40%;
     }
     .price-text {
         font-size: 16px;
     }
 }
-
-@media screen and (min-width: 769px) and (max-width: 1223px) {
-    .price-img-leaf {
-        width:140px ;
-        height: 115px ;
-    }
-}
-
-@media screen  and (max-width: 768px) {
+@media screen  and (max-width: 1024px) {
 
     .price-img-leaf {
         display: none;

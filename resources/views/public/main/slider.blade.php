@@ -1,8 +1,8 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v11">
-    <link rel="stylesheet" href="{{ asset('css/vertical-slider.css')}}?v9">
+    <link rel="stylesheet" href="{{ asset('css/main-slider.css') }}?v13">
+    <link rel="stylesheet" href="{{ asset('css/vertical-slider.css')}}?v10">
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/slick-theme.css')}}?v8">
+    <link rel="stylesheet" href="{{ asset('css/slick-theme.css')}}?v9">
 @endpush
 
 @if(!empty($sliderData))
@@ -53,7 +53,7 @@
             <div class="carousel-inner">
                 @foreach ($sliderData as $key=>$value)
                     <div class="carousel-item @if($key === array_key_first($sliderData)) active @endif">
-                        <img src="{{asset('storage/' . $value['path'])}}" class="d-block w-100 "  alt="{{$value['title']}}">
+                        <img src="{{asset('storage/' . $value['path'])}}" class="d-block w-100 main-height"  alt="{{$value['title']}}">
                         <div class="carousel-caption d-none d-md-block text-left">
                             <div>{!! $value['content'] !!}</div>
                         </div>

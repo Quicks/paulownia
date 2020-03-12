@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('content')
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/about-us-header.css') }}?v6">
+        <link rel="stylesheet" href="{{asset('css/about-us-header.css') }}?v7">
     @endpush
 
     <div class="row fon-for-about-us-header m-0">
@@ -63,24 +63,46 @@
             <div id="carouselExampleControls" class="carousel slide pt-5 pb-5" data-ride="carousel">
                 <div class="carousel-inner text-center ">
                     <div class="carousel-item active">
+
+                        <a href="{{asset('/images/certificates/certificate-1-about-r.jpg')}}" download>
+                            <img class="lazyload pl-2 pr-2 img-slider-about-r" data-src="{{asset('/images/certificate-1-about-r.jpg')}}" alt="First slide"></a>
+
+
+                        <a href="{{asset('/images/certificates/certificate-2-about-r.jpg')}}" download>
                         <img class="lazyload pl-2 pr-2 img-slider-about-r"
-                             data-src="{{asset('/images/certificate-1-about-r.jpg')}}" alt="First slide">
+                             data-src="{{asset('/images/certificate-2-about-r.jpg')}}" alt="First slide"></a>
+
+
+                        <a href="{{asset('/images/certificates/certificate-3-about-r.jpg')}}" download>
                         <img class="lazyload pl-2 pr-2 img-slider-about-r"
-                             data-src="{{asset('/images/certificate-2-about-r.jpg')}}" alt="First slide">
-                        <img class="lazyload pl-2 pr-2 img-slider-about-r"
-                             data-src="{{asset('/images/certificate-3-about-r.jpg')}}" alt="First slide">
-                        <img class="lazyload pl-2 pr-2 img-slider-about-r"
-                             data-src="{{asset('/images/certificate-4-about-r.jpg')}}" alt="First slide">
+                             data-src="{{asset('/images/certificate-3-about-r.jpg')}}" alt="First slide"></a>
+
+
+                        <a href="{{asset('/images/certificates/certificate-4-about-r.jpg')}}"
+                           download><img class="lazyload pl-2 pr-2 img-slider-about-r" data-src="{{asset('/images/certificate-4-about-r.jpg')}}"
+                                         alt="First slide"></a>
+
                     </div>
                     <div class="carousel-item">
+                        <a href="{{asset('/images/certificates/certificate-1-about-r.jpg')}}" download>
                         <img class="lazyload pl-2 pr-2 img-slider-about-r"
                              data-src="{{asset('/images/certificate-1-about-r.jpg')}}" alt="First slide">
+                        </a>
+
+                        <a href="{{asset('/images/certificates/certificate-2-about-r.jpg')}}" download>
                         <img class="lazyload pl-2 pr-2 img-slider-about-r"
                              data-src="{{asset('/images/certificate-2-about-r.jpg')}}" alt="First slide">
+                        </a>
+
+                        <a href="{{asset('/images/certificates/certificate-3-about-r.jpg')}}" download>
                         <img class="lazyload pl-2 pr-2 img-slider-about-r"
                              data-src="{{asset('/images/certificate-3-about-r.jpg')}}" alt="First slide">
+                        </a>
+
+                        <a href="{{asset('/images/certificates/certificate-4-about-r.jpg')}}" download>
                         <img class="lazyload pl-2 pr-2 img-slider-about-r"
                              data-src="{{asset('/images/certificate-4-about-r.jpg')}}" alt="First slide">
+                        </a>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

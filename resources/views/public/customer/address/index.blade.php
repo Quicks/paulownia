@@ -16,9 +16,12 @@
                     <a class="product-button" href="{{ route('address.create') }}">@lang('profile.add-address')</a>
                 </div>
                 <hr>
-                @foreach ($addresses as $address)
-                    <div style="margin-left: 10%">
-                        <table class="mt-3" style="border-collapse: separate; border-spacing:15px ">
+
+                    <div class="row">
+                        @foreach ($addresses as $address)
+                       <div class="col-6">
+                        <table class="mt-3 " style="border-collapse: separate; border-spacing:15px ">
+
                             <tbody>
                             <tr>
                                 <td class="text-right item-address">@lang('profile.street-address'):</td>
@@ -56,6 +59,7 @@
                                 @lang('profile.delete')
                             </a>
                         </div>
+                    </div>
                     </div>
                     <hr>
                 @endforeach

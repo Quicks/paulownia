@@ -125,13 +125,11 @@
 
             filterType.change(function () {
                 type = filterType.val();
-                console.log(price, type);
                 reloadProducts(price, type);
             });
             filterPrice.slider();
             filterPrice.on('slideStop', function () {
                 price = filterPrice.val();
-                console.log(price, type);
                 reloadProducts(price, type);
             });
 

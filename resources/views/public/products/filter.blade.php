@@ -104,7 +104,6 @@
                             </li>
                     </ul>
                 </div>
-
                 <div class="col-xl-9 col-md-9 col-sm-12">
                     <div class="row margin-for-products mr-1" id="products-data">
                         @include('public.products.productsData')
@@ -120,31 +119,27 @@
     <script>
         $(document).ready(function () {
             let filterPrice = $("#filterPrice");
-            let valuePrice;
             let filterType = $("#paulowniaType");
-            let valueType;
+            let price = {!! $minPrice  !!} + ',' + {!! $maxPrice !!};
+            let type = "all";
+
             filterType.change(function () {
-                valueType = filterType.val();
-                $.ajax({
-                    url: window.location.href,
-                    type: "get",
-                    data: {'type':valueType}
-                })
-                    .done(function (data) {
-                        $("#products-data").empty();
-                        $("#products-data").append(data.html);
-                    })
-                    .fail(function (jqXHR, ajaxOptions, thrownError) {
-                        alert('server not responding...');
-                    });
+                type = filterType.val();
+                console.log(price, type);
+                reloadProducts(price, type);
             });
             filterPrice.slider();
             filterPrice.on('slideStop', function () {
-                valuePrice= filterPrice.val();
+                price = filterPrice.val();
+                console.log(price, type);
+                reloadProducts(price, type);
+            });
+
+            function reloadProducts(price, type) {
                 $.ajax({
                     url: window.location.href,
                     type: "get",
-                    data: {'price':valuePrice}
+                    data: {'type':type, 'price':price}
                 })
                     .done(function (data) {
                         $("#products-data").empty();
@@ -153,7 +148,7 @@
                     .fail(function (jqXHR, ajaxOptions, thrownError) {
                         alert('server not responding...');
                     });
-            });
+            }
         });
 
     </script>

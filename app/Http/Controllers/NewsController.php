@@ -46,10 +46,10 @@ class NewsController extends Controller
     public function filter($request, $query)
     {
         if ($request->has('month')) {
-           $query->whereMonth('publish_date', $request->month)->get();
+           $query->whereMonth('publish_date', $request->month);
         }
         if ($request->has('year')) {
-            $query->whereYear('publish_date', $request->year)->get();
+            $query->whereYear('publish_date', $request->year);
         }
 
         return $query->get();

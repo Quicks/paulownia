@@ -30,9 +30,20 @@ class ProductsController extends Controller
             $products = $product->getAll($category_id)->sortByDesc('special_price');
         }
         if ($request->has('type')) {
-            $products = $product->getAll($category_id)->where('type_of_paulownia', $request->type)->sortByDesc('special_price');
+            if($request->type == 'all') {
+                $products = $product->getAll()->sortByDesc('special_price');
+            } else {
+                $products = $product->getAll($category_id)->where('type_of_paulownia', $request->type)->sortByDesc('special_price');
+            }
         }
-        return view('public.products.index', compact('products', 'ticker', 'categories', 'types', 'selectedTypeId'));
+        $minPrice = $product->all()->min('price');
+        $maxPrice = $product->all()->max('price');
+        if ($request->ajax()) {
+            $view = view('public.products.productsData', compact('products'))->render();
+            return response()->json(['html' => $view]);
+        }
+
+        return view('public.products.index', compact('products', 'ticker', 'categories', 'types', 'selectedTypeId', 'minPrice', 'maxPrice'));
     }
 
     public function show($url_key, ProductRepository $commodity)

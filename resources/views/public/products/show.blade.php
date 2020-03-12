@@ -134,7 +134,7 @@
         </div>
         <div class="text-center pb-5">
             <a href="{{route('public.products.index')}}">
-                <button class="product-button"> All goods</button>
+                <button class="product-button">@lang('products.all-goods')</button>
             </a>
         </div>
     </div>

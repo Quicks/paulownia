@@ -19,5 +19,6 @@ return [
     'units' => 'unités',
     'amount' => 'Montant',
     'total' => 'Total',
-    'add-cart' =>'Ajouter au chariot'
+    'add-cart' =>'Ajouter au chariot',
+    'all-goods' => 'Tout va bien'
 ];

@@ -1,5 +1,9 @@
 @extends('layouts.public')
 
+@push('css')
+    <link rel="stylesheet" href="{{ asset('css/reset-password.css') }}">
+@endpush
+
 @section('content')
 
     <div class="row mt-3 mb-5">

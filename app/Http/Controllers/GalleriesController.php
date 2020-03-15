@@ -13,8 +13,17 @@ class GalleriesController extends Controller
     {
         $galleries = Gallery::where('active', true)->get();
 
-        return view('public.galleries.index', compact('galleries'));
+        //$locale = App::getLocale();
+        if($galleries->count() > 0) {
+            $gallery = $galleries->first();
+            SEOMeta::addKeyword([$gallery->keywords]);
+            SEOMeta::setTitle($gallery->title ." - ".env('APP_NAME'));
+            SEOMeta::setDescription(substr(strip_tags($gallery->desc), 0, 159));
+        }
+
+        return view('public.galleries.index', compact('galleries', 'gallery'));
     }
+
     public function show(Request $request, $id)
     {
         $galleries = Gallery::findOrFail($id);

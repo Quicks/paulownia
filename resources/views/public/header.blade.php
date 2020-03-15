@@ -79,12 +79,12 @@
                                         @lang('header-footer.profitability calculation')
                                     </a>
                                 </li>
-                                                            {{--<li class="nav-item mr-xl-3">--}}
-                                                                {{--<a @if(url()->current() === route('public.galleries.index')) class="bottom-link-activ"--}}
-                                                                   {{--@else class="info-menu" @endif href="{{route('public.galleries.index')}}">--}}
-                                                                    {{--@lang('header-footer.gallery')--}}
-                                                                {{--</a>--}}
-                                                            {{--</li>--}}
+                                <li class="nav-item mr-xl-3">
+                                    <a @if(url()->current() === route('public.galleries.index')) class="bottom-link-activ"
+                                       @else class="info-menu" @endif href="{{route('public.galleries.index')}}">
+                                        @lang('header-footer.gallery')
+                                    </a>
+                                </li>
                                 <li class="nav-item mr-xl-3">
                                     <a @if(url()->current() === route('public.faq.index')) class="bottom-link-activ"
                                        @else class="info-menu" @endif  href="{{route('public.faq.index')}}">

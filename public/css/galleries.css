@@ -1,0 +1,82 @@
+.fon-for-title{
+    background: url("/images/galleries-wave.png") 0 130% no-repeat,
+                url("/images/Galleries-top-pic.jpg") 100% 0 no-repeat;
+}
+
+.fon-text {
+    color: white!important;
+}
+
+.title-text , .text-under-title{
+    color: white;
+    font-weight: bold;
+}
+.title-text{
+    font-size:6rem;
+}
+.text-under-title{
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.fon-for-galleries{
+    background: url("/images/galleries-background.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 500px;
+}
+
+.nav-link, .nav-tabs{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+}
+.nav-tabs .nav-link.active {
+    background-color: transparent;
+    border-bottom:2px solid #8CBD02;
+}
+.nav-link:hover{
+    color: #8CBD02;
+}
+
+.gallery-description-text{
+    text-indent: 10%;
+    font-size:1rem;
+    color: #0F0E0E;
+}
+
+.gallery-title {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 2.6rem;
+    color: #8CBD02;
+}
+
+.gallery-title-line {
+    background: #8CBD02;
+    width: 273px;
+    height: 3px;
+    border-radius: 25px;
+}
+
+.grid-img {
+    border-radius: 13px;
+}
+
+.gg-box {
+    grid-gap: 18px!important;
+    margin: 0!important;
+    padding: 2rem;
+}
+
+#app > main > div.col-12.p-0.fon-for-galleries > nav > div > li > a {
+    background-color: transparent!important;
+}
+
+#app > main > div.col-12.p-0.fon-for-galleries > nav > div > li > a:hover {
+    color: #8CBD02;
+}
+
+#app > main > div.col-12.p-0.fon-for-galleries > nav > div > li > div > a.dropdown-item.active {
+    background-color: green;
+}

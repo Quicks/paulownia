@@ -7,4 +7,8 @@ return [
     'amount'=>'Cantidad',
     'total'=>'Total',
     'total-excluding'=>'Total excluido',
+
+    'Our gallery'=>'Nuestra galeria',
+    'No galleries available'=>'No hay galerías disponibles.',
+    'Other'=>'Otras',
 ];

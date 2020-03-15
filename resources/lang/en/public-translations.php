@@ -9,4 +9,8 @@ return [
     'total-excluding'=>'Total excluding',
     'auth-first'=> 'To make order you should log in first',
     'auth-first-wishlist'=> 'To use wishlist you should log in first',
+
+    'Our gallery'=>'Our gallery',
+    'No galleries available'=>'No galleries available',
+    'Other'=>'Other',
 ];

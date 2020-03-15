@@ -34,15 +34,36 @@
     <nav>
         <div class="nav nav-tabs justify-content-around">
             @forelse($galleries as $item)
-                @if($loop->iteration < 4)
+                @if($loop->iteration < 5)
                     <a class="nav-item nav-link pt-4 pb-3 px-0 @if($item->id == $gallery->id) active @endif" 
                         href="{{route('public.galleries.index', $item->id)}}" 
                         >
                         {{html_entity_decode(substr(strip_tags($item->title), 0, 15))}}
                     </a>
                 @endif
+                @if($loop->iteration == 5)
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle pt-4 pb-3 px-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@lang('public-translations.Other')</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item @if($item->id == $gallery->id) active @endif" 
+                                    href="{{route('public.galleries.index', $item->id)}}" 
+                                    >
+                                    {{html_entity_decode(substr(strip_tags($item->title), 0, 15))}}
+                                </a>
+                @endif
+                @if($loop->iteration > 5)
+                                <a class="dropdown-item @if($item->id == $gallery->id) active @endif" 
+                                    href="{{route('public.galleries.index', $item->id)}}" 
+                                    >
+                                    {{html_entity_decode(substr(strip_tags($item->title), 0, 15))}}
+                                </a>
+                @endif
+                @if($loop->last)
+                        </div>
+                    </li>
+                @endif
             @empty
-                <h3>@lang('Our gallery')</h3>
+                <h3>@lang('public-translations.No galleries available')</h3>
             @endforelse
         </div>
     </nav>
@@ -64,7 +85,7 @@
         </div>
 </div>
 
-<script type="text/javascript">
+{{-- <script type="text/javascript">  //gridGallery customization
     $(document).ready(function() {
         gridGallery({
              selector: "#gallery-1", // gallery selector
@@ -75,6 +96,6 @@
              // columnWidth: 200 // column width
         });
     });
-</script>
+</script> --}}
 
 @endsection

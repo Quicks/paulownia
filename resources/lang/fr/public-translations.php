@@ -10,4 +10,5 @@ return [
 
     'Our gallery'=>'Notre galerie',
     'No galleries available'=>'Aucune galerie disponible',
+    'Other'=>'Autre',
 ];

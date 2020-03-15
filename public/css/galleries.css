@@ -68,3 +68,15 @@
     margin: 0!important;
     padding: 2rem;
 }
+
+#app > main > div.col-12.p-0.fon-for-galleries > nav > div > li > a {
+    background-color: transparent!important;
+}
+
+#app > main > div.col-12.p-0.fon-for-galleries > nav > div > li > a:hover {
+    color: #8CBD02;
+}
+
+#app > main > div.col-12.p-0.fon-for-galleries > nav > div > li > div > a.dropdown-item.active {
+    background-color: green;
+}

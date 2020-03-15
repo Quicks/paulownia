@@ -10,4 +10,5 @@ return [
 
     'Our gallery'=>'معرضنا',
     'No galleries available'=>'لا توجد معارض متاحة',
+    'Other'=>'آخر',
 ];

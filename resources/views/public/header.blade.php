@@ -80,8 +80,8 @@
                                     </a>
                                 </li>
                                 <li class="nav-item mr-xl-3">
-                                    <a @if(url()->current() === route('public.galleries.index')) class="bottom-link-activ"
-                                       @else class="info-menu" @endif href="{{route('public.galleries.index')}}">
+                                    <a @if(url()->current() === route('public.galleries.index', '*')) class="bottom-link-activ"
+                                       @else class="info-menu" @endif href="{{route('public.galleries.index', 0)}}">
                                         @lang('header-footer.gallery')
                                     </a>
                                 </li>

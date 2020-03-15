@@ -8,4 +8,6 @@ return [
     'total'=>'مجموع',
     'total-excluding'=>'المجموع باستثناء',
 
+    'Our gallery'=>'معرضنا',
+    'No galleries available'=>'لا توجد معارض متاحة',
 ];

@@ -9,4 +9,6 @@ return [
     'total'=>'Całkowity',
     'total-excluding'=>'Łącznie z wyłączeniem',
 
+    'Our gallery'=>'Nasza galeria',
+    'No galleries available'=>'Brak dostępnych galerii',
 ];

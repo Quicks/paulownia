@@ -3,6 +3,10 @@
                 url("/images/Galleries-top-pic.jpg") 100% 0 no-repeat;
 }
 
+.fon-text {
+    color: white!important;
+}
+
 .title-text , .text-under-title{
     color: white;
     font-weight: bold;
@@ -53,4 +57,14 @@
     width: 273px;
     height: 3px;
     border-radius: 25px;
+}
+
+.grid-img {
+    border-radius: 13px;
+}
+
+.gg-box {
+    grid-gap: 18px!important;
+    margin: 0!important;
+    padding: 2rem;
 }

@@ -9,4 +9,6 @@ return [
     'total'=>'Общее количество',
     'total-excluding'=>'Всего, кроме',
 
+    'Our gallery'=>'Наша галерея',
+    'No galleries available'=>'Нет доступных галерей',
 ];

@@ -16,8 +16,9 @@
         <div class="row">
             <div class="col-12 pt-2 gallery-breadcrumb">
                 @include('public.breadcrumbs', $breadcrumbs = [
-                        route('public.galleries.index', 0) => 'header-footer.gallery',
-                        route('public.galleries.index', $gallery->id) => html_entity_decode(substr(strip_tags($gallery->title), 0, 15)),
+                        route('public.galleries.index', 0) => 'header-footer.gallery', 
+                        $gallery ? route('public.galleries.index', $gallery->id) : route('public.galleries.index', 0) => 
+                        $gallery ? html_entity_decode(substr(strip_tags($gallery->title), 0, 15)) : __('public-translations.No galleries available'),
                     ])
             </div>
             <div class="col-xl-2 col-md-2 col-sm-0"></div>
@@ -58,7 +59,7 @@
                                     {{html_entity_decode(substr(strip_tags($item->title), 0, 15))}}
                                 </a>
                 @endif
-                @if($loop->last)
+                @if($loop->iteration >= 5 && $loop->last)
                         </div>
                     </li>
                 @endif
@@ -69,20 +70,24 @@
     </nav>
 
     <div class="col-12 mt-4 text-center">
-        <p class="gallery-title">{{html_entity_decode(strip_tags($gallery->title))}}</p>
+        <p class="gallery-title">{{$gallery ? html_entity_decode(strip_tags($gallery->title)) : __('public-translations.No galleries available')}}</p>
         <hr class="gallery-title-line">
     </div>
     
     <div class="pt-4 pl-5 pr-5 gallery-description-text">
-        {!! $gallery->desc !!}
+        {!! $gallery ? $gallery->desc : "" !!}
     </div>
 
     <div class="gg-container">
         <div class="gg-box" id="gallery-1">
-            @foreach($gallery->images as $image)
-                <img class="grid-img" src="{{asset('storage/'.$image->image)}}">
-            @endforeach
+            @if($gallery)
+                @forelse($gallery->images as $image)
+                    <img class="grid-img" src="{{asset('storage/'.$image->image)}}">
+                @empty
+                @endforelse
+            @endif
         </div>
+    </div>
 </div>
 
 {{-- <script type="text/javascript">  //gridGallery customization

@@ -1,7 +1,8 @@
 @extends('layouts.public')
 @push('css')
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/news-show.css') }}?v1">
+    <link rel="stylesheet" href="{{ asset('css/news-show.css') }}?v2">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
 @endpush
 @section('content')
     <style>
@@ -36,11 +37,8 @@
             <div class="row">
                 @if(!empty($news->video))
                     <div class="col-12 d-flex justify-content-center mb-5">
-                        <div class="player-show">
-                            <iframe src="{{ $news->video }}"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
+                        <div class="container">
+                            <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="{{substr($news->video, 30)}}"></div>
                         </div>
                     </div>
                 @endif
@@ -70,6 +68,7 @@
     </div>
 @endsection
 @push('scripts')
+    <script src="https://cdn.plyr.io/3.5.10/plyr.polyfilled.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
     <script>
         $('.news-show-slick').slick({
@@ -82,5 +81,8 @@
             fade: true,
             cssEase: 'linear'
         });
+
+        const player = new Plyr('#player', {});
+        window.player = player;
     </script>
 @endpush

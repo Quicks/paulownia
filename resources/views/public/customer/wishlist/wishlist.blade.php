@@ -4,10 +4,10 @@
     <div class="account-content">
         @inject ('productImageHelper', 'Webkul\Product\Helpers\ProductImage')
         @include('public.customer.profile-header', ['activeItem' => 'wishlist'])
-        <div class="account-head mb-5 ">
+        <div class="account-head mb-5 px-5">
 
             @if (count($items))
-                <div class="text-right mr-3">
+                <div class="text-right">
                     <a class="product-button"
                        href="{{ route('customer.wishlist.removeall') }}">@lang('profile.deleteall')</a>
                 </div>
@@ -16,7 +16,7 @@
 
         <div class="account-items-list pb-5">
             @if ($items->count())
-                <div class="row">
+                <div class="row px-5">
                     @foreach($items as $item)
                         <div class="col-md-3 col-sm-6 col-xs-12 position-relative one-product mt-3">
                             @include('public.products.product-card', ['product' =>

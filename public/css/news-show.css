@@ -49,6 +49,26 @@
     height: 315px;
     width: 70%;
 }
+.container {
+    margin: 20px auto;
+}
+
+.plyr__control--overlaid {
+    background-color: #8CBD02 !important;
+}
+
+.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded=true] {
+    background: #8CBD02 !important;
+    color: #fff;
+}
+
+.plyr--full-ui input[type=range] {
+    color: #8CBD02 !important;
+}
+
+.plyr {
+    border-radius: 25px;
+}
 
 .player-show iframe, .player-show object, .player-show embed {
     position:absolute;

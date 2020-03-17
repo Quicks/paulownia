@@ -1,11 +1,15 @@
 .main-content{
     background:url("/images/fon-for-products.jpg");
-    background-size: 100% 100%;
     padding: 5% 0 7% 0;
     position: relative;
+    min-height: 500px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .line-style-up{
-
     margin-top:-11.8%;
     position: absolute;
     background-size: 100% 100%;
@@ -44,13 +48,16 @@
     padding: 2% 6% 2% 6%;
     outline: none;
     cursor: pointer;
+    border: none;
 }
 .product-button:hover{
 
-    background: linear-gradient(203.84deg, #8CBD02 8.62%, #84B811 27.22%, #68A648 71.7%);
+    color:#8CBD02;
+    background: white;
     box-shadow: -2px -2px 20px #8CBD02, 2px 2px 10px rgba(0, 0, 0, 0.25);
     border-radius: 60px;
     outline: none;
+    border: none;
 }
 /* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
 @media screen and (min-width: 1025px) and (max-width: 1300px) {
@@ -63,7 +70,6 @@
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
     .product-button {
-
         padding: 2% 4.8% 2% 4.8%;
     }
 }
@@ -79,6 +85,9 @@
 
     .product-button {
         padding: 5% 8% 5% 8%;
+    }
+    .margin-425 {
+        margin-bottom: 10%;
     }
 }
 

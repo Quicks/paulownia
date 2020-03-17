@@ -3,23 +3,12 @@
 
     @push('css')
         <link rel="stylesheet" href="{{asset('css/plantation-creation.css')}}">
-        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}">
+        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}?v3">
     @endpush
 
     <div class="row">
         <div class="col-12 border-up  p-sm-0">
             @include('public.paulownia.nav-paulownia')
-
-                {{--<div class="row mt-3 mb-3 ml-2">--}}
-                    {{--<div class="col-xl-2 col-md-0 col-sm-0"></div>--}}
-                    {{--<div class="col-xl-6 col-md-12 col-sm-12 pl-4">--}}
-                        {{--<a class="text-href p-xl-3 p-md-3 p-sm-0" href="{{route('public.paulownia.about')}}">@lang('about-paulownia.about-paulownia')</a>--}}
-                        {{--<a class="text-href p-xl-3 p-md-3 p-sm-1" href="{{route('public.paulownia.type')}}">@lang('about-paulownia.types-of-paulownia')</a>--}}
-                        {{--<a class="text-href p-xl-3 p-md-3 p-sm-0" href="{{route('public.paulownia.planting')}}">@lang('about-paulownia.plantation-creation')</a>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-xl-4 col-md-0 col-sm-0"></div>--}}
-                {{--</div>--}}
-
         </div>
 
         <div class="col-12 fon-for-title-2">
@@ -43,7 +32,18 @@
                     <a class="nav-item nav-link active pt-4 pb-3 pl-0 pr-0 margin-for-beggin" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">@lang('about-paulownia.soil-groundwater') </a>
                     <a class="nav-item nav-link margin-for-paulownia pt-4 pb-3 pl-0 pr-0" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">@lang('about-paulownia.site-preparation')</a>
                     <a class="nav-item nav-link margin-for-paulownia pt-4 pb-3 pl-0 pr-0 " id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">@lang('about-paulownia.tree-planting-care')</a>
-                    <a href="#"><img class="f-booklet-download lazyload margin-for-end pt-3 pb-3 pl-0 pr-0" data-src="{{asset('images/download-booklet.svg')}}" ></a>
+                    <a @if(app()->getLocale() == 'fr' || app()->getLocale() == 'pl' || app()->getLocale() == 'ar') style="border: none"
+                       href="{{asset('/files/booklet_en.pdf')}}"
+                       @else href="{{asset('/files/booklet_' . app()->getLocale()  .  '.pdf')}}"
+                       @endif download >
+                        <button class="button-booklet-paulownia mt-2 pr-3 pl-2 pt-1 pb-1 margin-for-end">
+                            <img data-src="/images/booklet-footer.svg" class="lazyload booklet-img"> booklet of Paulownia</button>
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                        </div>
+                    </div>
                 </div>
             </nav>
 
@@ -102,16 +102,16 @@
 
                     <div class="row mx-auto justify-content-center">
 
-                        <div class="col-xl-1 col-md-2 col-sm-6  img-tree-planting-1  mr-xl-5 mr-md-2 mr-sm-2 mb-1 ">
+                        <div class="col-xl-1 col-md-2 col-sm-6  img-tree-planting-1  mr-xl-5 mr-md-3 mr-sm-2 mb-3 ">
                             <div class="text-for-icons">@lang('about-paulownia.seedlings')</div>
                         </div>
-                        <div class="col-xl-1 col-md-2 col-sm-6  img-tree-planting-2 ml-xl-5 mr-xl-5 ml-md-3 mr-md-3 ml-sm-2  ml-sm-2 mb-1">
+                        <div class="col-xl-1 col-md-2 col-sm-6  img-tree-planting-2 ml-xl-5 mr-xl-5 ml-md-3 mr-md-3 ml-sm-2  ml-sm-2 mb-3">
                             <div class="text-for-icons">@lang('about-paulownia.landing')</div>
                         </div>
-                        <div class="col-xl-1 col-md-2 col-sm-6  img-tree-planting-3  ml-xl-5 mr-xl-5 ml-md-3 mr-md-3 ml-sm-2  ml-sm-2 mb-1">
+                        <div class="col-xl-1 col-md-2 col-sm-6  img-tree-planting-3  ml-xl-5 mr-xl-5 ml-md-3 mr-md-3 ml-sm-2  ml-sm-2 mb-3">
                             <div class="text-for-icons">@lang('about-paulownia.watering')</div>
                         </div>
-                        <div class="col-xl-1 col-md-2 col-sm-6  img-tree-planting-4  ml-xl-5 mr-xl-5 ml-md-3 mr-md-3 ml-sm-2  ml-sm-2 mb-1">
+                        <div class="col-xl-1 col-md-2 col-sm-6  img-tree-planting-4  ml-xl-5 mr-xl-5 ml-md-3 mr-md-3 ml-sm-2  ml-sm-2 mb-3">
                             <div class="text-for-icons">@lang('about-paulownia.fight-weed')</div>
                         </div>
                         <div class="col-xl-1 col-md-2 col-sm-6  img-tree-planting-5 ml-xl-5 ml-md-3 ml-sm-2 ">

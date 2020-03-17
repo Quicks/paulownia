@@ -1,7 +1,7 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v7">
-    <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v2">
-    <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v2">
+    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v14">
+    <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v4">
+    <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v6">
 @endpush
 
 <div class="row" style="background: white">
@@ -16,28 +16,34 @@
 </div>
 
 <div class="fon-for-goods">
-
-    <div class="price-background">
-        <div class="row">
-            <div class="col-12" style="height: 200px">
+        <div class="row price-background">
+            <div class="col-12 mt-5 mb-5">
                 <div class="price-img-leaf-position">
                     <img class="price-img-leaf lazyload"
                          data-src="{{asset('/images/service-leaf-tree.png')}}">
                 </div>
-                <div class="price-text mt-5">
+                <div class="price-text pb-5">
                     @lang('products.price-text')
-                    <a href="#">
-                        <img src="{{asset('images/price-button.png')}}">
+                    <a href="{{asset('/price_list/price_list.pdf')}}" download>
+                        <button class="price-list-button ml-xl-5 ml-md-3">
+                            <img data-src="/images/booklet-footer.svg" class="lazyload"> price list</button>
                     </a>
                 </div>
-            </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
             <div class="row pb-5">
-                <div class="col-sm-3">
+                <div class="col-xl-3 col-md-3 col-sm-12">
                     <ul class="style-for-list-goods ml-3 sticky-top">
+                        <li class="m-0">
+                            <hr class="lile-between ml-0 mr-0">
+                        </li>
+                        <a href="{{route('public.products.index')}}"
+                           @if(empty(Request::input('category'))) class="style-for-list-goods-link-active"
+                           @else class="style-for-list-goods-link" @endif>
+                            <li class="mt-4 mb-4 text-type">@lang('products.all-goods')</li>
+                        </a>
                         @foreach($categories as $category)
                             <a @if(Request::input('category') === $category->slug)
                                class="style-for-list-goods-link-active"
@@ -53,24 +59,36 @@
                         <li>
                             <select id="paulowniaType" class="select-goods pl-2">
                                 <option selected disabled hidden> @lang('products.type-of-paulownia')</option>
+                                <option value="all">@lang('products.all-goods')</option>
                                 @foreach($types as $type)
-                                    <option value="{{$type->admin_name}}"> {{$type->admin_name}}</option>
+                                    <option
+                                        @if($selectedTypeId == $type->id)
+                                        selected
+                                        @endif
+                                        value="{{$type->id}}"> {{$type->admin_name}}</option>
                                 @endforeach
                             </select>
 
                         </li>
+
+                        <li class="m-0">
+                            <hr class="lile-between ml-0 mr-0">
+                        </li>
                         <li class="mt-4 text-type-title">
                             Price {{ core()->currencySymbol(core()->getBaseCurrencyCode()) }}</li>
                         <li class="text-type-prise">
-                            from {{number_format($products->min('price'), 2)}}
-                            to {{number_format($products->max('price'), 2)}}
+                            from {{number_format($minPrice, 2)}}
+                            to {{number_format($maxPrice, 2)}}
                         </li>
                         <li class="mb-5">
                             <input name="price" id="filterPrice" type="text" class="span2" value=""
-                                   data-slider-min="{{$products->min('price')}}"
-                                   data-slider-max="{{$products->max('price')}}"
+                                   data-slider-min="{{$minPrice}}"
+                                   data-slider-max="{{$maxPrice}}"
                                    data-slider-step="5"
-                                   data-slider-value="[{{$products->min('price')}}, {{$products->max('price')}}]"/>
+                                   data-slider-value="[{{$minPrice}}, {{$maxPrice}}]"/>
+                        </li>
+                        <li class="m-0">
+                            <hr class="lile-between ml-0 mr-0">
                         </li>
                         <li class="mt-1 mb-4 text-type-rules">Purchase Rules</li>
                         <li class="mt-2 text-type-title">A popular practice of our time is the sale of young plants
@@ -80,50 +98,54 @@
                         <li>
                             <a href="{{route('public.terms-of-sale.index')}}" class="text-href">Read more</a>
                         </li>
+
+                            <li class="mt-5">
+                                <a href="{{route('public.faq.index')}}" class="text-type-rules FAQ-href">FAQ</a>
+                            </li>
                     </ul>
                 </div>
-
-                <div class="col-sm-9 ">
-                    <div class="row margin-for-products mr-1">
-                        @foreach($products as $product)
-                            <div class="col-xl-4 col-sm-12 position-relative">
-                                @include('public.products.product-card', ['product' => $product])
-                            </div>
-                        @endforeach
+                <div class="col-xl-9 col-md-9 col-sm-12">
+                    <div class="row margin-for-products mr-1" id="products-data">
+                        @include('public.products.productsData')
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-
-
 </div>
 
 @push('scripts')
     <script>
         $(document).ready(function () {
             let filterPrice = $("#filterPrice");
-            let valuePrice;
             let filterType = $("#paulowniaType");
-            let valueType;
+            let price = {!! $minPrice  !!} + ',' + {!! $maxPrice !!};
+            let type = "all";
+
             filterType.change(function () {
-                valueType = filterType.val();
-                changeParam('type', valueType);
+                type = filterType.val();
+                reloadProducts(price, type);
             });
             filterPrice.slider();
             filterPrice.on('slideStop', function () {
-                valuePrice = filterPrice.val();
-                changeParam('price', valuePrice);
+                price = filterPrice.val();
+                reloadProducts(price, type);
             });
 
-            function changeParam(key, value) {
-                var url = new URL(document.location.href);
-                var query_string = url.search;
-                var search_params = new URLSearchParams(query_string);
-                search_params.set(key, value);
-                url.search = search_params.toString();
-                document.location = url.toString();
+            function reloadProducts(price, type) {
+                $.ajax({
+                    url: window.location.href,
+                    type: "get",
+                    data: {'type':type, 'price':price}
+                })
+                    .done(function (data) {
+                        $("#products-data").empty();
+                        $("#products-data").append(data.html);
+                    })
+                    .fail(function (jqXHR, ajaxOptions, thrownError) {
+                        alert('server not responding...');
+                    });
             }
         });
 

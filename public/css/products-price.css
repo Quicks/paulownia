@@ -1,33 +1,3 @@
-
-@media screen  and (max-width: 768px) {
-    .price-img-leaf {
-     display: none;
-    }
-}
-
-
-@media screen and (min-width: 769px) and (max-width: 1223px) {
-    .price-img-leaf {
-        width:140px !important;
-        height: 115px !important;
-    }
-}
-@media only screen  and (min-width: 1224px) and (max-width: 1564px) {
-    .price-img-leaf {
-        width:200px !important;
-        height: 190px !important;
-    }
-    .price-text {
-        font-size: 16px !important;
-    }
-}
-@media only screen  and (min-width: 1565px) and (max-width: 1823px) {
-    .price-img-leaf {
-        width:317px !important;
-        height: 298px !important;
-    }
-}
-
 .price-background{
     position: relative;
     background: url("/images/price-background.png") no-repeat;
@@ -40,19 +10,38 @@
     z-index: 1;
 }
 .price-img-leaf {
-    width:405px;
-    height: 386px;
+    width:50%;
+    height: auto;
     transform: scale(-1, 1);
 }
 .price-text {
     font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
     color: #FFFFFF;
     text-align: center;
+    font-size: 1rem;
 }
 
 .price-text a:hover {
     -webkit-filter: drop-shadow(-2px -2px 20px #8CBD02);
     filter: drop-shadow(-2px -2px 20px #8CBD02);
+}
+@media only screen  and (min-width: 1224px) and (max-width: 1564px) {
+
+    .price-img-leaf {
+        width:40%;
+    }
+    .price-text {
+        font-size: 16px;
+    }
+}
+@media screen  and (max-width: 1024px) {
+
+    .price-img-leaf {
+        display: none;
+    }
+    .price-text {
+        text-align: left;
+        font-size: 1rem;
+        padding-left: 3.9%;
+    }
 }

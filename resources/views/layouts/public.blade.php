@@ -15,12 +15,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
+<!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+<!-- SEOMeta -->
     {!! SEOMeta::generate() !!}
     @if(empty(SEOMeta::getTitle()))
         <title>{{ config('app.name', 'Laravel') }}</title>
     @endif
+    
+<!-- Google ReCAPTCHA v2 -->
+    {!! htmlScriptTagJsApi() !!}
 
 <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicons/apple-touch-icon.png') }}">
@@ -36,10 +41,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
     <link rel="stylesheet" href="{{ asset('css/public.css') }}?v9">
-    <link rel="stylesheet" href="{{ asset('css/footer.css') }}?v5">
-    <link rel="stylesheet" href="{{ asset('css/header.css') }}?v8">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}?v8">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}?v10">
     <link rel="stylesheet" href="{{ asset('css/cookie_consent.css') }}?v3">
-    <link rel="stylesheet" href="{{ asset('css/auth-modal.css') }}?v3">
+    <link rel="stylesheet" href="{{ asset('css/auth-modal.css') }}?v4">
+    <link rel="stylesheet" href="{{asset('css/g-search.css') }}?v1">
 
     @stack('css')
 
@@ -54,7 +60,7 @@
     @if (session('success') || session('warning') || session('error') || session('info'))
         <div id="flash-message" class="custom-status">
             <span class="custom-icon" onclick="$('#flash-message').remove()"></span>
-            <p class="status-text"> {{ session('success').session('warning').session('error').session('info') }} </p>
+            <p class="status-text"> {!! session('success').session('warning').session('error').session('info') !!} </p>
         </div>
     @endif
         @include('public.header')

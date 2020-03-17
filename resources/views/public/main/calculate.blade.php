@@ -1,6 +1,6 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v6">
-    <link rel="stylesheet" href="{{ asset('css/selectric.css') }}?v3">
+    <link rel="stylesheet" href="{{ asset('css/main-calculate.css') }}?v13">
+    <link rel="stylesheet" href="{{ asset('css/selectric.css') }}?v5">
 @endpush
 
 <div class="row mx-auto pt-xl-5 pb-xl-5 calc-width">
@@ -8,7 +8,7 @@
         <p class="calculate-title">Calculate your income</p>
         <hr class="calc-title-line">
     </div>
-    <div class="col-xl-3">
+    <div class="col-xl-3 col-md-4 col-sm-12 padding-425px-calc">
         <select  id="view" name="view">
             <option selected disabled hidden>View of paulowna</option>
             <option value="ZE">Paulownia ZE PRO®</option>
@@ -16,7 +16,7 @@
             <option value="ShanTong">Paulownia ShanTong</option>
         </select>
     </div>
-    <div class="col-xl-3">
+    <div class="col-xl-3 col-md-4 col-sm-12 padding-425px-calc">
         <select id="fitForm" name="fitForm">
             <option class="formTitle" id="fitFormSelected" selected disabled hidden>Fit form</option>
             <option class="fitForm form1" id="form1" value="5*4">5x4 m</option>
@@ -25,14 +25,12 @@
             <option class="fitForm form4" id="form4" value="6*6">6x6 m</option>
         </select>
     </div>
-    <div class="col-xl-3">
+    <div class="col-xl-3  col-md-4 col-sm-12 padding-425px-calc">
         <input class="calc-number calc-select" type="text" onkeyup="this.value = this.value.replace (/\D/, '')"
                id="numberTrees" name="numberTrees" placeholder="Number of trees">
     </div>
-    <div class="col-xl-3">
-        <button class="button-calc" data-toggle="modal"  data-target="#calcAnswer">
-            <img class="lazyload w-100" data-src="{{asset('/images/calculate.png')}}">
-        </button>
+    <div class="col-xl-3 col-md-12 col-sm-12 margin-425">
+            <button class="button-calc" data-toggle="modal" data-target="#calcAnswer">Calculate growth </button>
     </div>
 </div>
 <div class="modal fade" id="calcAnswer" tabindex="-1" role="dialog" aria-labelledby="calcResult" aria-hidden="true">

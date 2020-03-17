@@ -2,24 +2,14 @@
 @section('content')
 
     @push('css')
-        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}">
+        <link rel="stylesheet" href="{{asset('css/about-paulownia.css')}}?v3">
 
     @endpush
 
     <div class="row position-relative">
 
         <div class="col-12 border-up p-sm-0">
-
             @include('public.paulownia.nav-paulownia')
-            {{--<div class="row mt-3 mb-3 ml-2">--}}
-                {{--<div class="col-xl-2 col-md-0 col-sm-0"></div>--}}
-                {{--<div class="col-xl-6 col-md-12 col-sm-12 pl-4">--}}
-                    {{--<a class="text-href p-xl-3 p-md-3 p-sm-0" href="#"> @lang('about-paulownia.about-paulownia')</a>--}}
-                    {{--<a class="text-href p-xl-3 p-md-3 p-sm-1" href="{{route('public.paulownia.type')}}">@lang('about-paulownia.types-of-paulownia')</a>--}}
-                    {{--<a class="text-href p-xl-3 p-md-3 p-sm-0" href="{{route('public.paulownia.planting')}}">@lang('about-paulownia.plantation-creation')</a>--}}
-                {{--</div>--}}
-                {{--<div class="col-xl-4 col-md-0 col-sm-0"></div>--}}
-            {{--</div>--}}
         </div>
 
 
@@ -28,16 +18,13 @@
                 <div class="col-xl-2 col-md-2 col-sm-0"></div>
                 <div class="col-9 mt-5 pt-5 mb-5 pb-5">
                     <div class="title-text mt-5 pt-5">@lang('about-paulownia.about-paulownia')</div>
-                    <div class="text-under-title mb-5 pb-5">@lang('about-paulownia.text')
+                    <div class="text-under-title">@lang('about-paulownia.text')
                     </div>
                     <div class="col-xl-1 col-md-1 col-sm-0"></div>
                 </div>
             </div>
-
-
-
         </div>
-        {{--<img data-src="/images/line-for-paulownia.png" class="lazyload line-paulownia">--}}
+
         <div class="col-12 p-0 fon-for-paulownia-type">
 
             <nav>
@@ -45,9 +32,13 @@
                     <a class="nav-item nav-link active pt-4 pb-3 pl-0 pr-0 margin-for-beggin" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">@lang('about-paulownia.history') </a>
                     <a class="nav-item nav-link margin-for-paulownia pt-4 pb-3 pl-0 pr-0" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">@lang('about-paulownia.general-characteristics')</a>
                     <a class="nav-item nav-link margin-for-paulownia pt-4 pb-3 pl-0 pr-0 " id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">@lang('about-paulownia.benefits-and-application')</a>
-                    <a href="#"><img class="f-booklet-download lazyload margin-for-end pt-3 pb-3 pl-0 pr-0" data-src="{{asset('images/download-booklet.svg')}}" ></a>
-
-
+                    <a @if(app()->getLocale() == 'fr' || app()->getLocale() == 'pl' || app()->getLocale() == 'ar')
+                       href="{{asset('/files/booklet_en.pdf')}}"
+                       @else href="{{asset('/files/booklet_' . app()->getLocale()  .  '.pdf')}}"
+                       @endif download >
+                            <button class="button-booklet-paulownia mt-2 pr-3 pl-2 pt-1 pb-1 margin-for-end">
+                                 <img data-src="/images/booklet-footer.svg" class="lazyload booklet-img"> booklet of Paulownia</button>
+                    </a>
                     <div class="collapse" id="collapseExample">
                         <div class="card card-body">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.

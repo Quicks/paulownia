@@ -2,17 +2,20 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css')}}?v7">
-    <link rel="stylesheet" href="{{asset('css/show-product.css') }}?v6">
+    <link rel="stylesheet" href="{{asset('css/show-product.css') }}?v9">
 @endpush
 @section('content')
 
     <div class="show-page-back">
+        <div class="row line-for-goods">
+            <div class="col-12 mb-5">
+                @include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'header-footer.goods',route('public.products.show', $product->url_key) => $product->name])
+            </div>
+        </div>
 
-        @include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'header-footer.goods',
-         route('public.products.show', $product->url_key) => $product->name])
 
         <div class="row">
-            <div class="col-6 mt-5">
+            <div class="col-xl-6 col-md-6 col-sm-12">
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
                         <div class="slider-nav mt-5" style="position: relative">
@@ -32,8 +35,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6 mt-5">
-                <ul class="style-for-list-show">
+            <div class="col-xl-6 col-md-6 col-sm-12 padding-right-text-container">
+                <ul class="style-for-list-show p-0">
                     <li class="text-title-for-show mt-3 mb-3">{{$product->name}}</li>
                     <li class="text-title-for-show mb-3">
                         @if($product->special_price != 0)
@@ -52,25 +55,25 @@
                     @endif
                     <li>@lang('products.min-order') {{$product->min_order_qty}} @lang('products.pieces').</li>
                 </ul>
-                <nav class="ml-5">
+                <div>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <a class="nav-item nav-link custom-tab active mr-4" id="nav-home-tab" data-toggle="tab"
+                        <a class="nav-item nav-link custom-tab active p-0 mr-xl-5 mr-md-3 " id="nav-home-tab" data-toggle="tab"
                            href="#nav-home"
                            role="tab" aria-controls="nav-home" aria-selected="true">@lang('products.size')</a>
-                        <a class="nav-item nav-link custom-tab mr-4" id="nav-profile-tab" data-toggle="tab"
+                        <a class="nav-item nav-link custom-tab p-0 ml-xl-4 ml-md-3  mr-xl-5 mr-md-3 " id="nav-profile-tab" data-toggle="tab"
                            href="#nav-profile"
                            role="tab" aria-controls="nav-profile"
                            aria-selected="false">@lang('products.product-information')</a>
-                        <a class="nav-item nav-link custom-tab mr-4" id="nav-contact-tab" data-toggle="tab"
+                        <a class="nav-item nav-link custom-tab p-0 ml-xl-4 ml-md-3  mr-xl-5 mr-md-4 " id="nav-contact-tab" data-toggle="tab"
                            href="#nav-contact"
                            role="tab" aria-controls="nav-contact"
                            aria-selected="false">@lang('products.characteristic')</a>
-                        <a class="nav-item nav-link custom-tab" id="nav-contact-tab-1" data-toggle="tab"
+                        <a class="nav-item nav-link custom-tab p-0 ml-xl-5 ml-md-3  mr-0" id="nav-contact-tab-1" data-toggle="tab"
                            href="#nav-contact-1"
                            role="tab" aria-controls="nav-contact-1" aria-selected="false">@lang('products.delivery')</a>
                     </div>
-                </nav>
-                <div class="tab-content ml-4" id="nav-tabContent">
+                </div>
+                <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active mt-4" id="nav-home" role="tabpanel"
                          aria-labelledby="nav-home-tab">
                         <ul class="style-for-list-show mt-5">
@@ -94,7 +97,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="mt-5 ml-4">
+                <div class="mt-5">
                     <label class="amount">@lang('products.amount'):</label>
                     <input class="amount-qty position-relative" type="number" min="1" step="1" value="1">
                     <button class="quantity-arrow quantity-arrow-plus">
@@ -109,12 +112,12 @@
                             {{number_format($product->special_price, 2)}}
                         @else {{number_format($product->price, 2)}} @endif
                     </span>
-                    <span class="mr-5 total-sum">{{ core()->currencySymbol(core()->getBaseCurrencyCode()) }}</span>
+                    <span class="mr-xl-5 mr-md-3 mr-sm-2 total-sum">{{ core()->currencySymbol(core()->getBaseCurrencyCode()) }}</span>
                     <form action="{{ route('cart.add', $product->product_id) }}" method="POST" class="d-inline">
                         @csrf
                         <input type="hidden" name="product" value="{{ $product->product_id }}">
                         <input id="qtyAdd" type="hidden" name="quantity" value="1">
-                        <button class="product-button"> @lang('products.add-cart') </button>
+                        <button class="product-button ml-xl-5 ml-md-0 text-center"> @lang('products.add-cart') </button>
                     </form>
                 </div>
             </div>
@@ -131,7 +134,7 @@
         </div>
         <div class="text-center pb-5">
             <a href="{{route('public.products.index')}}">
-                <button class="product-button"> All goods</button>
+                <button class="product-button">@lang('products.all-goods')</button>
             </a>
         </div>
     </div>

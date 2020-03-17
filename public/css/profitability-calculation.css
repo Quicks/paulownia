@@ -1,13 +1,17 @@
 .fon-profitability-calculation{
     background:url("/images/profitability-calculation-fon.jpg");
     background-size: cover;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .line-for-calc{
     background:url("/images/line-for-calc.svg") no-repeat;}
 
 .text-profitability-calculation{
     text-indent: 10%;
-    font-size:1.3rem;
+    font-size:1rem;
     color: #0F0E0E;
 }
 
@@ -17,6 +21,7 @@
     color: #8CBD02;
 }
 .text-for-name-table-calc:hover {
+    color: #8CBD02;
     text-shadow: 5px 5px 20px #68A648;
     text-decoration: none !important;
 }

@@ -41,20 +41,24 @@
                                         <td>{{ $item->name }}</td><td>{{ $item->active }}</td><td>{{ $item->publish_date }}</td>
                                         <td>
                                             <a href="{{ url('/admin/treatises/' . $item->id) }}" title="View Treatise"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/admin/treatises/' . $item->id . '/edit') }}" title="Edit Treatise"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                            <a href="{{ url('/admin/file_add/?fileable_id=' . $item->id . '&fileable_type=' . get_class($item) . '&redirect_route='.route('treatises.show', $item->id) )  }}"
-                                               title="Upload File">
-                                                <button class="btn btn-primary btn-sm">
-                                                    <i class="fa fa-file-o" aria-hidden="true"></i>
-                                                    Upload file
-                                                </button>
-                                            </a>
+                                            @if(bouncer()->hasPermission('treatises.update'))
+                                                <a href="{{ url('/admin/treatises/' . $item->id . '/edit') }}" title="Edit Treatise"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                                <a href="{{ url('/admin/file_add/?fileable_id=' . $item->id . '&fileable_type=' . get_class($item) . '&redirect_route='.route('treatises.show', $item->id) )  }}"
+                                                   title="Upload File">
+                                                    <button class="btn btn-primary btn-sm">
+                                                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                                                        Upload file
+                                                    </button>
+                                                </a>
+                                            @endif
 
-                                            <form method="POST" action="{{ url('/admin/treatises' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Treatise" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                                            </form>
+                                            @if(bouncer()->hasPermission('treatises.destroy'))
+                                                <form method="POST" action="{{ url('/admin/treatises' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                    {{ method_field('DELETE') }}
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete Treatise" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                </form>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

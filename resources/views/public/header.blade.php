@@ -51,66 +51,66 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-10">
-                        <ul class="navbar-nav bottom-link" style="flex-wrap: wrap;">
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.news.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif href="{{route('public.news.index')}}">
-                                    @lang('header-footer.news')
-                                </a>
-                            </li>
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.paulownia.about')||
-                                url()->current() === route('public.paulownia.type')||
-                                url()->current() === route('public.paulownia.planting')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif href="{{route('public.paulownia.about')}}">
-                                    @lang('header-footer.paulownia')
-                                </a>
-                            </li>
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.products.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif  href="{{route('public.products.index')}}">
-                                    @lang('header-footer.goods')
-                                </a>
-                            </li>
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.calculations.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif  href="{{route('public.calculations.index')}}">
-                                    @lang('header-footer.profitability calculation')
-                                </a>
-                            </li>
-{{--                            <li class="nav-item mr-xl-3">--}}
-{{--                                <a @if(url()->current() === route('public.galleries.index')) class="bottom-link-activ"--}}
-{{--                                   @else class="info-menu" @endif href="{{route('public.galleries.index')}}">--}}
-{{--                                    @lang('header-footer.gallery')--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.faq.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif  href="{{route('public.faq.index')}}">
-                                    @lang('header-footer.faq')
-                                </a>
-                            </li>
-                            <li class="nav-item mr-xl-3">
-                                <a @if(url()->current() === route('public.about-us.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif  href="{{route('public.about-us.index')}}">
-                                    @lang('header-footer.about us')
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a @if(url()->current() === route('public.contacts.index')) class="bottom-link-activ"
-                                   @else class="info-menu" @endif href="{{route('public.contacts.index')}}">
-                                    @lang('header-footer.contacts')
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <div class="col-xl-10" >
+                            <ul class="navbar-nav bottom-link" style="flex-wrap: wrap;">
+                                <li class="nav-item mr-xl-3">
+                                    <a @routeis('public.news.*') class="bottom-link-activ"
+                                       @else class="info-menu" @endif href="{{route('public.news.index')}}">
+                                        @lang('header-footer.news')
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-xl-3">
+                                    <a @routeis('public.paulownia.*') class="bottom-link-activ"
+                                       @else class="info-menu" @endif href="{{route('public.paulownia.about')}}">
+                                        @lang('header-footer.paulownia')
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-xl-3">
+                                    <a @routeis('public.products.*') class="bottom-link-activ"
+                                       @else class="info-menu" @endif  href="{{route('public.products.index')}}">
+                                        @lang('header-footer.goods')
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-xl-3">
+                                    <a @if(url()->current() === route('public.calculations.index')) class="bottom-link-activ"
+                                       @else class="info-menu" @endif  href="{{route('public.calculations.index')}}">
+                                        @lang('header-footer.profitability calculation')
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-xl-3">
+                                    <a @routeis('public.galleries.*') class="bottom-link-activ"
+                                       @else class="info-menu" @endif href="{{route('public.galleries.index', 0)}}">
+                                        @lang('header-footer.gallery')
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-xl-3">
+                                    <a @if(url()->current() === route('public.faq.index')) class="bottom-link-activ"
+                                       @else class="info-menu" @endif  href="{{route('public.faq.index')}}">
+                                        @lang('header-footer.faq')
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-xl-3">
+                                    <a @if(url()->current() === route('public.about-us.index')) class="bottom-link-activ"
+                                       @else class="info-menu" @endif  href="{{route('public.about-us.index')}}">
+                                        @lang('header-footer.about us')
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a @if(url()->current() === route('public.contacts.index')) class="bottom-link-activ"
+                                       @else class="info-menu" @endif href="{{route('public.contacts.index')}}">
+                                        @lang('header-footer.contacts')
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
                     <div class="col-xl-2">
                         <ul class="list-inline">
+                            @include('public.site-search')
                             <li class="list-inline-item">
                                 <img width="20px" height="20px" src="{{asset('images/line.svg')}}">
                             </li>
-                            <li class="list-inline-item">
+                            <li class="list-inline-item header-icons-li">
                                 @guest('customer')
                                     <a href="#" data-toggle="modal" data-target="#AuthModal">
                                         <img width="20px" height="20px" src="{{asset('images/user.svg')}}">
@@ -136,7 +136,7 @@
                                     </ul>
                                 @endauth
                             </li>
-                            <li class="list-inline-item position-relative">
+                            <li class="list-inline-item position-relative header-icons-li">
                                 <a href="{{route('public.cart.index')}}">
                                     <img width="20px" height="20px" src="{{asset('images/shopping-cart.svg')}}" >
                                     @if(Webkul\Checkout\Facades\Cart::getCart())

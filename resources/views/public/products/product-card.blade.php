@@ -1,5 +1,5 @@
 @pushonce('css:product-card')
-    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v18">
+    <link rel="stylesheet" href="{{asset('css/product-card.css') }}?v20">
 @endpushonce
 
 <div class="">
@@ -9,29 +9,32 @@
             </div>
         @endif
 
-{{--         @if(!empty($product->images[0]->path_tmb) || !empty($product->images[0]->path))
-            <img data-src="{{asset('/storage/'. ($product->images[0]->path_tmb ? $product->images[0]->path_tmb : $product->images[0]->path))}}"
-                 class="lazyload img-product">
-        @else
-            <img data-src="{{asset('/images/product-card-placeholder.jpg')}}"
-                 class="lazyload img-product">
-        @endif --}}
-        <img data-src="{{asset('/images/product-card-1_4 asp-rat-placeholder.jpg')}}" class="lazyload img-product">
+        <div class="product-image-wrapper">  
+            @if(!empty($product->images[0]->path_tmb) || !empty($product->images[0]->path))
+                <img data-src="{{asset('/storage/'. ($product->images[0]->path_tmb ? $product->images[0]->path_tmb : $product->images[0]->path))}}"
+                     class="lazyload img-product">
+            @else
+                <img data-src="{{asset('/images/product-card-placeholder.png')}}"
+                     class="lazyload img-product">
+            @endif
+        </div>
 
-        <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" class="lazyload line-product-card">
+        <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" class="lazyload line-product-card position-relative">
         <div class="row m-0 product-name">
 
             <a href="{{route('public.products.show', $product->url_key)}}" class="col-8 title-for-card">{{$product-> name}}</a>
 
             <div class="col-4 text-center p-0">
-                <form  action="{{ route('cart.add', $product->product_id) }}" method="POST" class="d-inline">
-                    @csrf
-                    <input type="hidden" name="product" value="{{ $product->product_id }}">
-                    <input type="hidden" name="quantity" value="1">
-                    <button class="card-btn p-0 mt-1 box-m" {{ $product->haveSufficientQuantity(1) ? '' : 'disabled' }}>
-                        <img data-src="{{asset('/images/our-products-box.png')}}" class="box-product lazyload">
-                    </button>
-                </form>
+                @if($product->haveSufficientQuantity(1))
+                    <form  action="{{ route('cart.add', $product->product_id) }}" method="POST" class="d-inline">
+                        @csrf
+                        <input type="hidden" name="product" value="{{ $product->product_id }}">
+                        <input type="hidden" name="quantity" value="1">
+                        <button class="card-btn p-0 mt-1 box-m"}>
+                            <img data-src="{{asset('/images/our-products-box.png')}}" class="box-product lazyload">
+                        </button>
+                    </form>
+                @endif
 
                 <a href="{{ route('customer.wishlist.add', $product->product_id) }}" class="mt-1 like-m">
                     <img data-src="{{asset('/images/our-products-like.png')}}"

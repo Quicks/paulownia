@@ -50,7 +50,7 @@ class ImageSaveHelper
         $fileName = 'product/'.$imageModelId.'/'.now()->timestamp;
         Storage::put($fileName.'.jpg', $preparedImage->__toString());
 
-        $thumbnail = Image::make($requestImageFile)->fit(307, 177)->encode('jpg');
+        $thumbnail = Image::make($requestImageFile)->fit(443, 316)->encode('jpg');
         Storage::put($fileName.'-tmb.jpg', $thumbnail->__toString());
 
         return ['image' => $fileName.'.jpg', 'thumbnail' => $fileName.'-tmb.jpg'];

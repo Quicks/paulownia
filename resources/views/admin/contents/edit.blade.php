@@ -4,6 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             @include('admin.sidebar')
+            @include('admin.aside-contents')
 
             <div class="col">
                 <div class="card">

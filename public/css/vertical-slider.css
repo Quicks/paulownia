@@ -1,4 +1,3 @@
-
 .slice-list {
     display: none;
 }
@@ -12,7 +11,7 @@
 }
 .news-shadow {
     max-width: 55%;
-    margin: 1.5% 0 1.5% 0 ;
+    margin: 2% 0 2% 0 ;
     display: none;
     border-radius: 5px;
     background: transparent;
@@ -20,10 +19,10 @@
 }
 
 .img-rad {
-    max-width: 100%;
     width: 100%;
     height: 50px;
     border-radius: 5px 5px 0 0;
+    object-fit: cover;
 }
 
  .news-box {
@@ -57,41 +56,114 @@
     text-decoration: underline;
 }
 
-@media screen and  (min-width:1651px){
+
+@media screen and (min-width:2400px) {
 
     .vertical-carousel {
-        margin-top: 23%;
+        margin-top: 6%;
     }
     .news-shadow {
-        max-width: 70%;
+        width: 255px;
+        margin: 1.5% 0 1.5% 0;
     }
     .img-rad {
         width:100%;
+        height: 75px;
+    }
+    .news-box {
+        padding: 0.5rem;
+        height: 75px;
     }
 }
 
-
-@media screen and  (min-width:1601px) and (max-width: 1650px){
+@media screen and (min-width:2200px) and (max-width:2399px){
 
     .vertical-carousel {
-      margin-top: 15%;
+        margin-top: 5%;
     }
     .news-shadow {
-        max-width: 65%;
+        width: 265px;
+        margin: 1.5% 0 1.5% 0;
+    }
+    .img-rad {
+        width:100%;
+        height: 80px;
+    }
+    .news-box {
+        padding: 0.5rem;
+        height: 80px;
+    }
+}
+@media screen and (min-width:1900px) and (max-width:2199px){
+
+    .vertical-carousel {
+        margin-top:8%;
+    }
+    .news-shadow {
+        width: 265px;
+        margin: 1.5% 0 1.5% 0;
+    }
+    .img-rad {
+        width:100%;
+        height: 80px;
+    }
+    .news-box {
+        padding: 0.5rem;
+        height: 80px;
     }
 }
 
-@media screen and  (min-width:1440px) and  (max-width:1600px)  {
+
+@media screen and (min-width:1600px) and  (max-width:1899px) {
 
     .vertical-carousel {
-        margin-top: 20%;
+      margin-top: 7.5%;
+    }
+    .news-shadow {
+        width: 225px;
+    }
+    .img-rad {
+        width:100%;
+        height: 70px;
+    }
+    .news-box {
+        padding: 0.5rem;
+        height: 70px;
+    }
+}
+
+@media screen and  (min-width:1440px) and  (max-width:1599px)  {
+
+    .vertical-carousel {
+        margin-top: 8.5%;
+    }
+
+    .news-shadow {
+        width: 235px;
+    }
+    .img-rad {
+        height: 65px;
+    }
+
+    .news-box {
+        height: 65px;
     }
 }
 
 @media screen and  (min-width:1180px) and  (max-width:1439px) {
 
     .vertical-carousel {
-        margin-top: 15%;
+        margin-top: 7%;
+    }
+    .news-shadow {
+        width: 225px;
+    }
+    .img-rad {
+        height: 60px;
+    }
+
+    .news-box {
+        height: 60px;
     }
 }
 

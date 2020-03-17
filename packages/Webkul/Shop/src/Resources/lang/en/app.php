@@ -109,7 +109,7 @@ return [
             'conditions' => 'Conditions',
             'using' => 'by using this website',
             'agreement' => 'Agreement',
-            'success' => 'Account Created Successfully. Now you can LogIn!',
+            'success' => 'Account Created Successfully.<br>',
             'success-verify' => 'Account Created Successfully, an e-mail has been sent for verification.',
             'success-verify-email-unsent' => 'Account created successfully, but verification e-mail unsent',
             'failed' => 'Error! Cannot Create Your Account, Try Again Later',

@@ -68,6 +68,7 @@ Route::prefix('admin')->group(function () {
         Route::resource('/contents', 'App\Http\Controllers\Admin\\ContentsController');
         Route::get('/shop/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@index')->name('sendNewsLetter.index');
         Route::post('/shop/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@send')->name('sendNewsLetter.send');
+        Route::resource('/f-a-q', 'App\Http\Controllers\Admin\\FAQController');
     });
 });
 
@@ -77,8 +78,7 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
     Route::get('/show/{type}/{id}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');
     Route::get('/articles', 'App\Http\Controllers\ArticlesController@index')->name('public.articles.index');
     Route::get('/articles/{id}', 'App\Http\Controllers\ArticlesController@show')->name('public.articles.show');
-    Route::get('/galleries', 'App\Http\Controllers\GalleriesController@index')->name('public.galleries.index');
-    Route::get('/galleries/{id}', 'App\Http\Controllers\GalleriesController@show')->name('public.galleries.show');
+    Route::get('/galleries/{id}', 'App\Http\Controllers\GalleriesController@index')->name('public.galleries.index');
     Route::get('/partners', 'App\Http\Controllers\PartnersController@index')->name('public.partners.index');
     Route::get('/partners/{id}', 'App\Http\Controllers\PartnersController@show')->name('public.partners.show');
     Route::get('/treatises', 'App\Http\Controllers\TreatisesController@index')->name('public.treatises.index');
@@ -105,6 +105,7 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
     Route::get('/check-out/success', 'App\Http\Controllers\CheckoutController@success')->name('check-out.success');
 
     Route::get('/paulownia/type', 'App\Http\Controllers\PaulowniaController@type')->name('public.paulownia.type');
+    Route::get('/paulownia/productsType', 'App\Http\Controllers\PaulowniaController@getProductsType')->name('public.paulownia.productsType');
     Route::get('/paulownia/planting', 'App\Http\Controllers\PaulowniaController@planting')->name('public.paulownia.planting');
 
     Route::get('/wishlist', 'Webkul\Customer\Http\Controllers\WishlistController@index')->defaults('_config', [

@@ -53,13 +53,14 @@ class ForgotPasswordController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'g-recaptcha-response' => 'recaptcha',
         ]);
 
         $response = $this->broker()->sendResetLink(
             request(['email'])
         );
-        //dd($response);
+
         if ($response == Password::RESET_LINK_SENT) {
             session()->flash('success', trans($response));
 

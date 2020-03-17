@@ -10,7 +10,7 @@ class Gallery extends Model
 
     public $translationModel = 'App\Models\Translations\GalleryTranslation';
     
-    public $translatedAttributes = ['title', 'text', 'keywords'];
+    public $translatedAttributes = ['title', 'desc', 'keywords'];
     /**
      * The database table used by the model.
      *

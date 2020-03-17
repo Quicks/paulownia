@@ -5,6 +5,17 @@
         <link rel="stylesheet" href="{{ asset('css/service.css') }}">
     @endpush
 
+        <style>
+
+            .fon-text{
+                color: white;
+            }
+            .fon-text:hover{
+                color:#8CBD02;;
+            }
+        </style>
+
+
     <div class="row m-0 position-relative" >
 
         <div class="col-12 p-0 fon-service">@include('public.breadcrumbs', $breadcrumbs = [route('public.service.index') => 'service.service'])

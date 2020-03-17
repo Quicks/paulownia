@@ -32,5 +32,10 @@ class Content extends Model
      */
     protected $fillable = ['name'];
 
-    
+    public function faqs()
+    {
+        return $this->hasMany(FAQ::class);
+    }
+
+
 }

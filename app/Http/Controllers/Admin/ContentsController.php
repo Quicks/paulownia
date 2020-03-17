@@ -35,10 +35,10 @@ class ContentsController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
-    {
-        return view('admin.contents.create');
-    }
+//    public function create()
+//    {
+//        return view('admin.contents.create');
+//    }
 
     /**
      * Store a newly created resource in storage.
@@ -47,17 +47,17 @@ class ContentsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-			'name' => 'required|max:90'
-		]);
-        $requestData = $request->all();
-        
-        Content::create($requestData);
-
-        return redirect('admin/contents')->with('flash_message', 'Content added!');
-    }
+//    public function store(Request $request)
+//    {
+//        $this->validate($request, [
+//			'name' => 'required|max:90'
+//		]);
+//        $requestData = $request->all();
+//
+//        Content::create($requestData);
+//
+//        return redirect('admin/contents')->with('flash_message', 'Content added!');
+//    }
 
     /**
      * Display the specified resource.
@@ -101,7 +101,7 @@ class ContentsController extends Controller
 			'name' => 'required|max:90'
 		]);
         $requestData = $request->all();
-        
+
         $content = Content::findOrFail($id);
         $content->update($requestData);
 
@@ -115,10 +115,10 @@ class ContentsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
-    {
-        Content::destroy($id);
-
-        return redirect('admin/contents')->with('flash_message', 'Content deleted!');
-    }
+//    public function destroy($id)
+//    {
+//        Content::destroy($id);
+//
+//        return redirect('admin/contents')->with('flash_message', 'Content deleted!');
+//    }
 }

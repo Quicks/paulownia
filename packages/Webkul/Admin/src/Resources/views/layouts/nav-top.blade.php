@@ -31,7 +31,7 @@
                         <label>Account</label>
                         <ul>
                             <li>
-                                <a href="{{ route('shop.home.index') }}" target="_blank">{{ trans('admin::app.layouts.visit-shop') }}</a>
+                                <a href="{{ route('main') }}" target="_blank">{{ trans('admin::app.layouts.visit-shop') }}</a>
                             </li>
                             <li>
                                 <a href="{{ route('admin.account.edit') }}">{{ trans('admin::app.layouts.my-account') }}</a>

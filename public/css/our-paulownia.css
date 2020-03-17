@@ -42,3 +42,44 @@ background: url("/images/arrow-left.svg") no-repeat;
 .fotorama__thumb {
     border-radius: 25px !important;
 }
+
+@media screen and  (max-width:1024px) {
+
+    .fotorama__nav-wrap{
+        display: none !important;
+    }
+    .fotorama__arr--prev {
+        background:transparent;
+    }
+    .fotorama__arr--next {
+        background: transparent;
+    }
+}
+@media screen and  (min-width:426px) and  (max-width:768px) {
+
+    .our-paulownia-content {
+        padding-top: 260px;
+    }
+}
+
+@media screen and  (min-width:321px)  and  (max-width:425px) {
+
+    .our-paulownia-content {
+        padding-bottom: 60px;
+        padding-top: 280px;
+    }
+}
+
+@media screen and  (max-width:320px) {
+
+    .our-paulownia-content {
+        padding-top: 100px;
+        padding-bottom:0;
+    }
+    .our-paulownia-leaf {
+        display: none;
+    }
+    .margin-320{
+        margin-bottom: -15%;
+    }
+}

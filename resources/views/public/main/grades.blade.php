@@ -1,10 +1,10 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/grades.css') }}?v7">
+    <link rel="stylesheet" href="{{ asset('css/grades.css') }}?v10">
 @endpush
 
 <div class="grades-back">
     @include('public.main.calculate')
-    <div class="row text-center mx-auto pt-xl-5 grades-width">
+    <div class="row text-center mx-auto pt-xl-5 pt-md-5 grades-width">
         <div class="col-12 mb-5">
             <p class="grades-title">Paulownia grades produced by us </p>
             <hr class="grades-line">

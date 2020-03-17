@@ -12,15 +12,14 @@
                 <br/>
                 <a class="product-button" href="{{ route('address.create') }}">@lang('profile.add-address')</a>
             @else
-                <div class="pb-5 text-right mr-3">
+                <div class="pb-3 text-right mr-3 mt-4">
                     <a class="product-button" href="{{ route('address.create') }}">@lang('profile.add-address')</a>
+                    <hr class="mt-5">
                 </div>
-                <hr>
-
                     <div class="row">
                         @foreach ($addresses as $address)
-                       <div class="col-6">
-                        <table class="mt-3 " style="border-collapse: separate; border-spacing:15px ">
+                       <div class="col-xl-6 col-md-6 col-sm-12">
+                        <table class="mt-3" style="border-collapse: separate; border-spacing:15px ">
 
                             <tbody>
                             <tr>
@@ -60,9 +59,13 @@
                             </a>
                         </div>
                     </div>
+                        @endforeach
+
+
+
+
                     </div>
-                    <hr>
-                @endforeach
+                <hr>
             @endif
         </div>
     </div>

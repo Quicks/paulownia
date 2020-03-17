@@ -19,5 +19,6 @@ return [
     'units' => 'jednostki',
     'amount' => 'Ilość',
     'total' => 'Całkowity,',
-    'add-cart' =>'Dodaj do koszyka'
+    'add-cart' =>'Dodaj do koszyka',
+    'all-goods' => 'Wszystkie towary'
 ];

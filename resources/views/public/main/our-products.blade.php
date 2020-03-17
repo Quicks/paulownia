@@ -22,7 +22,7 @@
         <div class="row justify-content-end mx-1">
             <div class="col-md-3 col-sm-6 col-xs-12 margin-425">
                 <a href="{{route('public.products.index')}}">
-                    <button class="product-button w-100"> All goods </button>
+                    <button class="product-button w-100"> @lang('products.all-goods') </button>
                 </a>
             </div>
         </div>

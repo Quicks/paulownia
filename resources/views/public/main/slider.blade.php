@@ -76,8 +76,8 @@
                 vertical: true,
                 verticalSwiping: true,
                 slidesToShow: 3,
-                autoplay: false,
-                speed:500,
+                autoplay: true,
+                speed:1000,
             });
         });
     </script>

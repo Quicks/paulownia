@@ -12,7 +12,7 @@ return [
     ], [
         'key' => 'sales.carriers.free',
         'name' => 'admin::app.admin.system.free-shipping',
-        'sort' => 1,
+        'sort' => 3,
         'fields' => [
             [
                 'name' => 'title',
@@ -48,7 +48,7 @@ return [
     ], [
         'key' => 'sales.carriers.paidUponReceipt',
         'name' => 'Payment Upon Receipt',
-        'sort' => 3,
+        'sort' => 2,
         'fields' => [
             [
                 'name' => 'title',
@@ -84,7 +84,7 @@ return [
     ], [
         'key' => 'sales.carriers.shippingToSpainPortugal',
         'name' => 'Shipping to Spain and Portugal',
-        'sort' => 4,
+        'sort' => 1,
         'fields' => [
             [
                 'name' => 'title',
@@ -126,7 +126,7 @@ return [
     ], [
         'key' => 'sales.carriers.flatrate',
         'name' => 'admin::app.admin.system.flate-rate-shipping',
-        'sort' => 2,
+        'sort' => 4,
         'fields' => [
             [
                 'name' => 'title',

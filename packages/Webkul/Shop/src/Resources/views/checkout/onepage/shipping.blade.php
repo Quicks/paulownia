@@ -8,7 +8,7 @@
 
             <div class="control-group" :class="[errors.has('shipping-form.shipping_method') ? 'has-error' : '']">
 
-                @foreach ($shippingRateGroups as $rateGroup)
+                @foreach (array_reverse($shippingRateGroups) as $rateGroup)
                     {!! view_render_event('bagisto.shop.checkout.shipping-method.before', ['rateGroup' => $rateGroup]) !!}
 
                     <span class="carrier-title" id="carrier-title" style="font-size:18px; font-weight: bold;">

@@ -1,30 +1,30 @@
 <div class="form-container">
-    <div class="form-header mb-30">
-        <span class="checkout-step-heading">{{ __('shop::app.checkout.onepage.summary') }}</span>
+    <div class="form-header justify-content-center ">
+        <span class="checkout-step-heading text-shadow-address">{{ __('shop::app.checkout.onepage.summary') }}</span>
     </div>
 
-    <div class="address-summary">
+    <div class="address-summary justify-content-center  ">
         @if ($billingAddress = $cart->billing_address)
-            <div class="billing-address">
-                <div class="card-title mb-20">
-                    <b>{{ __('shop::app.checkout.onepage.billing-address') }}</b>
+            <div class="billing-address mb-5">
+                <div class="card-title mb-2">
+                    <b class="text-form-address">{{ __('shop::app.checkout.onepage.billing-address') }}</b>
                 </div>
 
                 <div class="card-content">
-                    <ul>
-                        <li class="mb-10">
+                    <ul class="p-0">
+                        <li class="mb-3">
                             {{ $billingAddress->name }}
                         </li>
-                        <li class="mb-10">
+                        <li class="mb-3">
                             {{ $billingAddress->address1 }},<br/> {{ $billingAddress->state }}
                         </li>
-                        <li class="mb-10">
+                        <li class="mb-3">
                             {{ core()->country_name($billingAddress->country) }} {{ $billingAddress->postcode }}
                         </li>
 
-                        <span class="horizontal-rule mb-15 mt-15"></span>
+                        <span class="horizontal-rule mb-1 mt-1"></span>
 
-                        <li class="mb-10">
+                        <li class="mb-1">
                             {{ __('shop::app.checkout.onepage.contact') }} : {{ $billingAddress->phone }}
                         </li>
                     </ul>
@@ -33,26 +33,26 @@
         @endif
 
         @if ($shippingAddress = $cart->shipping_address)
-            <div class="shipping-address">
-                <div class="card-title mb-20">
+            <div class="shipping-address mb-5">
+                <div class="card-title mb-2">
                     <b>{{ __('shop::app.checkout.onepage.shipping-address') }}</b>
                 </div>
 
                 <div class="card-content">
-                    <ul>
-                        <li class="mb-10">
+                    <ul class="p-0">
+                        <li class="mb-3">
                             {{ $shippingAddress->name }}
                         </li>
-                        <li class="mb-10">
+                        <li class="mb-3">
                             {{ $shippingAddress->address1 }},<br/> {{ $shippingAddress->state }}
                         </li>
-                        <li class="mb-10">
+                        <li class="mb-3">
                             {{ core()->country_name($shippingAddress->country) }} {{ $shippingAddress->postcode }}
                         </li>
 
-                        <span class="horizontal-rule mb-15 mt-15"></span>
+                        <span class="horizontal-rule mb-1 mt-1"></span>
 
-                        <li class="mb-10">
+                        <li class="mb-1">
                             {{ __('shop::app.checkout.onepage.contact') }} : {{ $shippingAddress->phone }}
                         </li>
                     </ul>
@@ -64,7 +64,7 @@
 
     @inject ('productImageHelper', 'Webkul\Product\Helpers\ProductImage')
 
-    <div class="cart-item-list mt-20">
+    <div class="cart-item-list mt-4 cart-item-list-margin">
         @foreach ($cart->items as $item)
 
             <?php $product = $item->product; ?>
@@ -127,8 +127,15 @@
         @endforeach
     </div>
 
-    <div class="order-description mt-20">
-        <div class="pull-left" style="width: 60%; float: left;">
+    <div class="order-description mt-2 mb-3">
+
+
+        <div class="pull-left pull-left-end mt-2">
+            <slot name="summary-section"></slot>
+        </div>
+
+
+        <div class="pull-right pull-right-end">
             <div class="shipping">
                 <div class="decorator">
                     <i class="icon shipping-icon"></i>
@@ -155,8 +162,7 @@
 
         </div>
 
-        <div class="pull-right" style="width: 40%; float: left;">
-            <slot name="summary-section"></slot>
-        </div>
+
+
     </div>
 </div>

@@ -35,9 +35,13 @@
                         </a>
                     </div>
                 @elseif(!empty($news->images[0]))
-                    <img data-src="{{asset('storage/'.$news->images[0]->image)}}" class="player lazyload">
+                    <a href="{{route('public.news.show', [mb_strtolower(class_basename($news)), $news->id])}}">
+                        <img data-src="{{asset('storage/'.$news->images[0]->image)}}" class="player lazyload">
+                    </a>
                 @else
-                    <img data-src="{{asset('/images/slider-news-1.png')}}" class="player lazyload">
+                    <a href="{{route('public.news.show', [mb_strtolower(class_basename($news)), $news->id])}}">
+                        <img data-src="{{asset('/images/slider-news-1.png')}}" class="player lazyload">
+                    </a>
                 @endif
             </div>
         </div>
@@ -88,9 +92,13 @@
                         </a>
                     </div>
                 @elseif(!empty($news->images[0]))
-                    <img data-src="{{asset('storage/'.$news->images[0]->image)}}" class="img-news-small lazyload">
+                    <a href="{{route('public.news.show', [mb_strtolower(class_basename($news)), $news->id])}}">
+                        <img data-src="{{asset('storage/'.$news->images[0]->image)}}" class="img-news-small lazyload">
+                    </a>
                 @else
-                    <img data-src="{{asset('/images/slider-news-1.png')}}" class="img-news-small lazyload">
+                    <a href="{{route('public.news.show', [mb_strtolower(class_basename($news)), $news->id])}}">
+                        <img data-src="{{asset('/images/slider-news-1.png')}}" class="img-news-small lazyload">
+                    </a>
                 @endif
             </div>
         </div>

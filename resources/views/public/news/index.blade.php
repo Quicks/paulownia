@@ -1,6 +1,6 @@
 @extends('layouts.public')
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/news-index.css') }}?v3">
+    <link rel="stylesheet" href="{{ asset('css/news-index.css') }}?v4">
 @endpush
 @section('content')
 

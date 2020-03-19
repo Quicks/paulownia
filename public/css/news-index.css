@@ -73,16 +73,16 @@
     border-radius: 10px;
     overflow: hidden;
     z-index: 1;
-    height: 150px;
-    width: 300px;
+    height: 200px;
+    width: 400px;
 }
 
 .player-small {
     border-radius: 10px;
     overflow: hidden;
     z-index: 1;
-    height: 100px;
-    width: 200px;
+    height: 200px;
+    width: 300px;
 }
 
 .news-link {
@@ -105,9 +105,9 @@
     border: 0;
     font-style: normal;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: #FFFFFF;
-    padding: 1% 6%;
+    padding: 2% 7%;
     outline: none;
     cursor: pointer;
 }
@@ -121,8 +121,8 @@
 
 .img-news-small {
     border-radius: 10px;
-    max-width: 250px;
-    max-height: 125px;
+    max-width: 300px;
+    height: 200px;
 }
 
 .news-date-small {

@@ -165,6 +165,12 @@
                     <div class="mb-3">
                         <span class="profile-profile-title">@lang('profile.individual-shipment') #{{$shipment->id}}</span>
                     </div>
+                    <div class="mb-3">
+                        <span class="profile-profile-title">@lang('profile.carrier_title'): {{$shipment->carrier_title}}</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="profile-profile-title">@lang('profile.track_number'): {{$shipment->track_number}}</span>
+                    </div>
                     <div>
                         <table class="col-12 mb-3 profile-order-background table" width="100%" cellspacing="0"
                                cellpadding="10">

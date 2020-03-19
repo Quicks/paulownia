@@ -58,5 +58,7 @@ return [
     'shipping-address' => 'عنوان الشحن',
     'billing-address' => 'عنوان وصول الفواتير',
     'shipping-method' => 'طريقة الشحن',
-    'payment-method' => 'طريقة الدفع او السداد'
+    'payment-method' => 'طريقة الدفع او السداد',
+    'carrier_title' => 'عنوان الناقل',
+    'track_number' => 'رقم الشاحنة'
 ];

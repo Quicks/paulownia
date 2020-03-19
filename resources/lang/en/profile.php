@@ -58,7 +58,7 @@ return [
     'shipping-address' => 'Shipping address',
     'billing-address' => 'Billing address',
     'shipping-method' => 'Shipping method',
-    'payment-method' => 'Payment method'
-
-
+    'payment-method' => 'Payment method',
+    'carrier_title' => 'Carrier title',
+    'track_number' => 'Track number'
 ];

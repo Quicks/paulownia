@@ -58,5 +58,7 @@ return [
     'shipping-address' => 'Adres wysyłki',
     'billing-address' => 'Adres rozliczeniowy',
     'shipping-method' => 'Sposób wysyłki',
-    'payment-method' => 'Metoda płatności'
+    'payment-method' => 'Metoda płatności',
+    'carrier_title' => 'Tytuł przewoźnika',
+    'track_number' => 'Numer utworu'
 ];

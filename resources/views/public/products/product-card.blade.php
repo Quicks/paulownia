@@ -9,7 +9,7 @@
             </div>
         @endif
 
-        <div class="product-image-wrapper">  
+        <div class="product-image-wrapper">
             @if(!empty($product->images[0]->path_tmb) || !empty($product->images[0]->path))
                 <img data-src="{{asset('/storage/'. ($product->images[0]->path_tmb ? $product->images[0]->path_tmb : $product->images[0]->path))}}"
                      class="lazyload img-product">
@@ -22,7 +22,7 @@
         <img data-src="{{asset('/images/line-for-goods-in-card.png')}}" class="lazyload line-product-card position-relative">
         <div class="row m-0 product-name">
 
-            <a href="{{route('public.products.show', $product->url_key)}}" class="col-8 title-for-card">{{$product-> name}}</a>
+            <a href="{{route('public.products.show', $product->url_key)}}" class="col-8 title-for-card">{{substr($product->name, 0, 45)}}</a>
 
             <div class="col-4 text-center p-0">
                 @if($product->haveSufficientQuantity(1))

@@ -58,5 +58,7 @@ return [
     'shipping-address' => 'Адрес доставки',
     'billing-address' => 'Платежный адрес',
     'shipping-method' => 'Способ доставки',
-    'payment-method' => 'Способ оплаты'
+    'payment-method' => 'Способ оплаты',
+    'carrier_title' => 'Название перевозчика',
+    'track_number' => 'Номер трека'
 ];

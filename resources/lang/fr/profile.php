@@ -58,5 +58,7 @@ return [
     'shipping-address' => 'Adresse de livraison',
     'billing-address' => 'Adresse de facturation',
     'shipping-method' => 'Mode de livraison',
-    'payment-method' => 'Mode de paiement'
+    'payment-method' => 'Mode de paiement',
+    'carrier_title' => 'Titre du transporteur',
+    'track_number' => 'Numéro de piste'
 ];

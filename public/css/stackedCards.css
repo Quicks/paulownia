@@ -1,0 +1,55 @@
+.stacked-cards {
+    position: relative;
+}
+.stacked-cards ul {
+    position: relative;
+    max-width: 60%;
+    margin: 0 auto;
+    padding-left: 0;
+}
+
+.stacked-cards li {
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 4%;
+    box-shadow: 0 3px 6px 0px #333;
+    list-style: none;
+    width: 65%;
+    position: absolute;
+    left: 50%;
+    transition: 0.5s ease transform;
+}
+
+.stacked-cards li:after {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.stacked-cards li.active:after {
+    display: none;
+}
+
+.stacked-cards li div {
+    position: relative;
+    padding-top: 71.43%;
+    overflow: hidden;
+    border-radius: 4%;
+}
+
+.stacked-cards li div img {
+    position: absolute;
+    top:0;
+    display: block;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    z-index: 4;
+}
+.stacked-cards li.active {
+    cursor: default;
+    box-shadow: 0 5px 10px 0px #333;
+    transition: 0.5s ease transform;
+}

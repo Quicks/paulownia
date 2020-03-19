@@ -6,7 +6,7 @@
     @include('public.main.advantages')
     @include('public.main.services')
     @include('public.main.grades')
-    @include('public.main.our-paulownia')
+    @include('public.main.our-paulownia-2')
     @include('public.main.map')
 @endsection
 

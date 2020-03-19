@@ -5,7 +5,7 @@
 
 @if(!empty($mainGallery))
     <div class="our-paulownia">
-        <img src="{{asset('images/Main-ourPaulownia-background.png')}}" class="our-paulownia-bg-pic">
+        <img data-src="{{asset('images/Main-ourPaulownia-background.png')}}" class="our-paulownia-bg-pic lazyload">
         <div class="our-paulownia-leaf">
             <img class="lazyload" data-src="{{asset('/images/our-paulownia-leaf.png')}}">
         </div>

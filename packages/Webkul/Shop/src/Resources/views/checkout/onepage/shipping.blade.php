@@ -7,8 +7,16 @@
         <div class="shipping-methods">
 
             <div class="control-group" :class="[errors.has('shipping-form.shipping_method') ? 'has-error' : '']">
+                <?php
+                $shippings = [];
+                $tmp1 = $shippingRateGroups['shippingToSpainPortugal'];
+                $tmp2 = $shippingRateGroups['paidUponReceipt'];
+                unset($shippingRateGroups['shippingToSpainPortugal']);
+                unset($shippingRateGroups['paidUponReceipt']);
+                $shippings = array_merge(array('shippingToSpainPortugal'=>$tmp1), array('paidUponReceipt'=>$tmp2), $shippingRateGroups)
+                ?>
+                @foreach ($shippings as $rateGroup)
 
-                @foreach ($shippingRateGroups as $rateGroup)
                     {!! view_render_event('bagisto.shop.checkout.shipping-method.before', ['rateGroup' => $rateGroup]) !!}
 
                     <span class="carrier-title" id="carrier-title" style="font-size:18px; font-weight: bold;">

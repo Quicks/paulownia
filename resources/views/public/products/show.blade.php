@@ -2,7 +2,7 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css')}}?v7">
-    <link rel="stylesheet" href="{{asset('css/show-product.css') }}?v9">
+    <link rel="stylesheet" href="{{asset('css/show-product.css') }}?v10">
 @endpush
 @section('content')
 
@@ -12,19 +12,17 @@
                 @include('public.breadcrumbs', $breadcrumbs = [route('public.products.index') => 'header-footer.goods',route('public.products.show', $product->url_key) => $product->name])
             </div>
         </div>
-
-
         <div class="row">
-            <div class="col-xl-6 col-md-6 col-sm-12">
+            <div class="col-xl-6 col-md-6 col-sm-12 pl-xl-5 pl-md-0">
                 <div class="row">
-                    <div class="col-md-4 col-sm-12">
-                        <div class="slider-nav mt-5" style="position: relative">
+                    <div class="col-xl-3 img-main-wrap pl-xl-4">
+                        <div class="slider-nav mt-5 pt-2" style="position: relative">
                             @foreach($product->images as $img)
                                 <div class="mb-xl-5"><img src="{{asset('storage/'.$img->path)}}" class="imgs-nav"></div>
                             @endforeach
                         </div>
                     </div>
-                    <div class="col-8 img-main-wrap">
+                    <div class="col-xl-8 col-md-12 col-sm-12 ml-md-4 ml-sm-2 ml-xl-0">
                         <div class="slider-for">
                             @foreach($product->images as $img)
                                 <div>
@@ -35,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-6 col-md-6 col-sm-12 padding-right-text-container">
+            <div class="col-xl-6 col-md-6 col-sm-12 padding-right-text-container mt-xl-4 mt-md-0 mt-sm-4">
                 <ul class="style-for-list-show p-0">
                     <li class="text-title-for-show mt-3 mb-3">{{$product->name}}</li>
                     <li class="text-title-for-show mb-3">
@@ -56,24 +54,24 @@
                     <li>@lang('products.min-order') {{$product->min_order_qty}} @lang('products.pieces').</li>
                 </ul>
                 <div>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <div class="nav nav-tabs mt-xl-5 mt-md-3 mt-sm-3" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link custom-tab active p-0 mr-xl-5 mr-md-3 " id="nav-home-tab" data-toggle="tab"
                            href="#nav-home"
                            role="tab" aria-controls="nav-home" aria-selected="true">@lang('products.size')</a>
-                        <a class="nav-item nav-link custom-tab p-0 ml-xl-4 ml-md-3  mr-xl-5 mr-md-3 " id="nav-profile-tab" data-toggle="tab"
+                        <a class="nav-item nav-link custom-tab nav-tabs-425 p-0 ml-xl-4 ml-md-3  mr-xl-5 mr-md-3 " id="nav-profile-tab" data-toggle="tab"
                            href="#nav-profile"
                            role="tab" aria-controls="nav-profile"
                            aria-selected="false">@lang('products.product-information')</a>
-                        <a class="nav-item nav-link custom-tab p-0 ml-xl-4 ml-md-3  mr-xl-5 mr-md-4 " id="nav-contact-tab" data-toggle="tab"
+                        <a class="nav-item nav-link custom-tab p-0 ml-xl-4 ml-md-3 nav-tabs-425  mr-xl-5 mr-md-4 " id="nav-contact-tab" data-toggle="tab"
                            href="#nav-contact"
                            role="tab" aria-controls="nav-contact"
                            aria-selected="false">@lang('products.characteristic')</a>
-                        <a class="nav-item nav-link custom-tab p-0 ml-xl-5 ml-md-3  mr-0" id="nav-contact-tab-1" data-toggle="tab"
+                        <a class="nav-item nav-link custom-tab p-0 ml-xl-5 ml-md-3 nav-tabs-425  mr-0" id="nav-contact-tab-1" data-toggle="tab"
                            href="#nav-contact-1"
                            role="tab" aria-controls="nav-contact-1" aria-selected="false">@lang('products.delivery')</a>
                     </div>
                 </div>
-                <div class="tab-content" id="nav-tabContent">
+                <div class="tab-content tab-content-425" id="nav-tabContent">
                     <div class="tab-pane fade show active mt-4" id="nav-home" role="tabpanel"
                          aria-labelledby="nav-home-tab">
                         <ul class="style-for-list-show mt-5">
@@ -97,7 +95,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="mt-5">
+                <div class="mt-5 tab-content-425">
                     <label class="amount">@lang('products.amount'):</label>
                     <input class="amount-qty position-relative" type="number" min="1" step="1" value="1">
                     <button class="quantity-arrow quantity-arrow-plus">
@@ -117,7 +115,7 @@
                         @csrf
                         <input type="hidden" name="product" value="{{ $product->product_id }}">
                         <input id="qtyAdd" type="hidden" name="quantity" value="1">
-                        <button class="product-button ml-xl-5 ml-md-0 text-center"> @lang('products.add-cart') </button>
+                        <button class="product-button ml-xl-5 ml-md-0 text-center margin-button-425"> @lang('products.add-cart') </button>
                     </form>
                 </div>
             </div>
@@ -182,7 +180,9 @@
             $('.slider-for').slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                arrows: false,
+                arrows: true,
+                nextArrow: '<i class="fa fa-angle-down downArrowHorisontal fa-2x" aria-hidden="true"></i>',
+                prevArrow: '<i class="fa fa-angle-up upArrowHorisontal fa-2x" aria-hidden="true"></i>',
                 // fade: true,
                 asNavFor: '.slider-nav',
                 mobileFirst: true
@@ -193,8 +193,8 @@
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 arrows: true,
-                nextArrow: '<i class="fa fa-angle-down downArrow fa-2x" aria-hidden="true"></i>',
-                prevArrow: '<i class="fa fa-angle-up upArrow fa-2x" aria-hidden="true"></i>',
+                nextArrow: '<i class="fa fa-angle-down downArrowVertical fa-2x" aria-hidden="true"></i>',
+                prevArrow: '<i class="fa fa-angle-up upArrowVertical fa-2x" aria-hidden="true"></i>',
                 asNavFor: '.slider-for',
                 dots: false,
                 centerMode: false,

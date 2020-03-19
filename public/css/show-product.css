@@ -7,14 +7,13 @@
 .line-for-goods{
     background: url("/images/pages-wave.png") no-repeat;
     background-size:100%;
-
 }
 .title-for-cards-show-product {
     font-weight: bold;
-    font-size: 3.4rem;
+    font-size: 3rem;
     line-height: 4rem;
     color: #8CBD02;
-    margin-top: 100px !important;
+    margin-top: 50px;
 }
 
 .style-for-list-show {
@@ -49,11 +48,9 @@
     text-decoration: underline;
     cursor: pointer;
 }
-
 .size-list {
     margin-left: -40px;
 }
-
 .product-button {
     background: linear-gradient(203.84deg, #8CBD02 8.62%, #84B811 27.22%, #68A648 71.7%);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
@@ -175,18 +172,21 @@ input[type=number] {
 }
 
 /*slider*/
-.upArrow {
+.upArrowVertical {
     position: absolute;
     left: 30px;
-    top: -45px;
+    top: -27px;
     color: #8CBD02;
 }
 
-.downArrow {
+.downArrowVertical {
     position: absolute;
     left: 30px;
-    bottom: -10px;
+    bottom: 9px;
     color: #8CBD02;
+}
+.upArrowHorisontal, .downArrowHorisontal{
+   visibility: hidden;
 }
 
 .imgs-nav {
@@ -194,139 +194,106 @@ input[type=number] {
     width: 80px;
     height: 80px;
 }
-
 .img-main {
     border-radius: 25px;
-    width: 430px;
-    height: 430px;
+    width: 500px;
+    height: 400px;
+}
+.slick-list{
+    border-radius: 25px;
 }
 
-.slider-for {
-    margin-left: -70px
-}
+    @media only screen and (max-device-width: 1200px) {
+        .img-main-wrap {
+            display: none ;
+        }
+        .slider-for {
+            margin-left: 0 ;
+        }
+        .img-main {
+            border-radius: 25px;
+            width: 400px;
+            height: 370px;
+        }
+        .upArrowHorisontal, .downArrowHorisontal{
+            visibility:visible;
+            position: absolute;
+            color: #8CBD02;
+            -moz-transform: rotate(270deg); /* Для Firefox */
+            -ms-transform: rotate(270deg); /* Для IE */
+            -webkit-transform: rotate(270deg); /* Для Safari, Chrome, iOS */
+            -o-transform: rotate(270deg); /* Для Opera */
+            transform: rotate(270deg);
+        }
+        .upArrowHorisontal{
+            left: -25px;
+            top: 175px;
+        }
+        .downArrowHorisontal{
+            left: 405px;
+            bottom: 175px;
+        }
+    }
+    @media only screen and (max-device-width: 930px) {
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1221px) {
-    .img-main {
-        width: 310px;
-        height: 310px ;
+        .downArrowHorisontal{
+            left: 400px;
+            bottom: 175px;
+        }
     }
-    .slider-for {
-        margin-left: -20px;
-    }
-    .downArrow {
-        bottom: -20px;
-    }
-    .upArrow {
-        top: -25px;
-    }
-    .quantity-arrow-minus {
-        margin-top: 12px;
-    }
+    @media only screen and (max-device-width: 768px) {
 
-    .quantity-arrow-plus {
-        margin-top: -8px;
-    }
-}
-
-@media only screen and (min-device-width: 769px) and (max-device-width: 1024px) {
-    .img-main {
-        width: 210px ;
-        height: 210px ;
-    }
-    .quantity-arrow-minus {
-        margin-top: 9px ;
-    }
-
-    .quantity-arrow-plus {
-        margin-top: -9px ;
-    }
-    .slider-for {
-        margin-left: -20px ;
-    }
-    .downArrow {
-        left: 15px;
-        bottom: -20px;
-    }
-    .upArrow {
-        left: 15px;
-        top: -25px;
-    }
-    .imgs-nav {
-        border-radius: 10px;
-        width: 50px;
-        height: 50px;
-    }
-}
-@media only screen and (max-device-width: 768px) {
-    .img-main-wrap {
-        display: none ;
-    }
-    .downArrow {
-        left: 40px;
-        bottom: -40px;
-    }
-    .upArrow {
-        left: 40px;
-    }
-    .imgs-nav {
-        border-radius: 10px;
-        width: 90px;
-        height: 90px;
-    }
-    .quantity-arrow-minus {
-        margin-top: 6px;
+        .img-main {
+            border-radius: 25px;
+            width: 330px;
+            height: 330px;
+        }
+        .upArrowHorisontal{
+            left: -23px;
+            top: 155px;
+        }
+        .downArrowHorisontal{
+            left: 330px;
+            bottom: 155px;
+        }
     }
 
-    .quantity-arrow-plus {
-        margin-top: -6px;
-    }
-    .product-button {
-        padding: 1% 4%;
-    }
-}
-@media only screen and (max-device-width: 425px) {
+    @media only screen and (max-device-width: 425px) {
 
-    .size-list {
-        margin-left: -20px;
-    }
-    .style-for-list-show {
-        padding: 7%;
-    }
-    .padding-right-text-container{
-        padding:0 2% 0 12%;
-    }
-    .custom-tab{
-        margin-right: 10%;
-    }
-    .product-button {
-        padding: 1% 4%;
-        margin-left: 10%;
-    }
-}
+        .downArrowHorisontal {
+            left: 335px;
+            bottom: 155px;
+        }
 
-@media only screen and (max-device-width: 375px) {
+        .padding-right-text-container{
+            margin: 8% 0 0 5%;
+        }
+        .nav-tabs-425{
+            margin-left:5%;
+        }
+        .margin-button-425{
+            margin:0 0 0 15% ;
+        }
+    }
 
-    .padding-right-text-container{
-        padding:0 2% 0 10% ;
+    @media only screen and (max-device-width: 375px) {
+        .downArrowHorisontal {
+            left: 320px;
+            bottom: 155px;
+        }
+        .margin-button-425{
+            margin:0 0 0 5%;
+        }
     }
-    .custom-tab{
-        margin-right: 8%;
+    @media only screen and (max-device-width: 320px){
+        .downArrowHorisontal {
+            left: 260px;
+            bottom: 155px;
+        }
+        .margin-button-425{
+            margin: 15% 0 0 32%;
+        }
     }
-    .product-button {
-        padding: 1% 4%;
-        margin-left: 3%;
-    }
-}
-@media only screen and (max-device-width: 320px){
 
-    .style-for-list-show {
-        padding: 7%;
-    }
-    .padding-right-text-container{
-        padding:0 2% 0 5% ;
-    }
-    .custom-tab{
-        margin-right: 8%;
-    }
-}
+
 

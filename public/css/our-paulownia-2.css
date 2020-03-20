@@ -1,12 +1,14 @@
 .our-paulownia {
     position: relative;
+    padding-top: 56.5%;
     margin-top: -6%;
-    padding-bottom: 20%;
+    margin-bottom: -2%;
 }
 .our-paulownia-content {
-    /*padding-bottom: 100px;*/
+    position:absolute;
+    top: 0;
     padding-top: 10%;
-    max-width: 1745px;
+    width: 100%;
 }
 .our-paulownia-title {
     font-weight: bold;
@@ -23,18 +25,17 @@
 }
 .our-paulownia-leaf {
     position:absolute;
-    top:-80px;
-    right: 70px;
+    top:-10%;
+    right: 5%;
 }
-
 .our-paulownia-bg-pic {
     position:absolute;
+    top: 0;
     width: 100%;
 }
 
-.stacked-cards {
+@media screen and  (max-width:1100px) {
+    .our-paulownia-leaf img{
+        display: none;
+    }
 }
-
-
-/*@media screen and  (min-width:426px) and  (max-width:768px) {}*/
-

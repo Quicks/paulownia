@@ -10,7 +10,7 @@
             <img class="lazyload" data-src="{{asset('/images/our-paulownia-leaf.png')}}">
         </div>
         <div class="row mx-auto our-paulownia-content">
-            <div class="col-12 text-center">
+            <div class="col-12 text-center my-xl-5 my-lg-3 my-md-1 my-sm-0">
                 <p class="our-paulownia-title">Our paulownia</p>
                 <hr class="our-paulownia-line">
             </div>
@@ -39,9 +39,9 @@
     <script src="{{ asset('js/stackedCards.min.js') }}"></script>
 
     <script>
-    $(document).ready(function() {
-        var stackedCardSlide = new stackedCards({ selector: '.stacked-cards' });
-        stackedCardSlide.init();
-    });
+        $(document).ready(function() {
+            var stackedCardSlide = new stackedCards({ selector: '.stacked-cards' });
+            stackedCardSlide.init();
+        });
     </script>
 @endpush

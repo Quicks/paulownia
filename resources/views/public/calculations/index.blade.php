@@ -16,20 +16,27 @@
         }
         .selectric .button {
             color:black;
+            font-size: 2.3rem;
+            line-height: 1rem;
+            right: 2%;
         }
         .selectric-items {
-            background: lightgrey;
+            background: linear-gradient(9.94deg, rgba(56, 53, 51, 0.5) -3.14%, rgba(106, 88, 67, 0) 167.62%);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            width: 305px !important;
+            margin-left: -2%;
         }
         .selectric-items li {
             color: white;
         }
         .selectric-items li.selected{
             color: white;
-            background:none;
+            background:transparent;
         }
-        .selectric-items li:hover {
+        .selectric-items li:hover{
             color: black;
-            background: none;
+            background:transparent;
         }
         .calc-select {
             color: black;
@@ -42,7 +49,7 @@
             color: black;
         }
         .modal-content-calc {
-            background: #2B2723;
+            background: linear-gradient(9.94deg, rgba(56, 53, 51, 0.8) -3.14%, rgba(106, 88, 67, 0) 167.62%);
             color: black;
         }
 

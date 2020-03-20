@@ -1,7 +1,7 @@
 @extends('layouts.public')
 
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/galleries.css') }}?v1">
+    <link rel="stylesheet" href="{{asset('css/galleries.css') }}?v2">
     <link rel="stylesheet" href="{{asset('css/grid-gallery.css')}}">
 @endpush
 

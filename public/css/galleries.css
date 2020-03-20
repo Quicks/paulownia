@@ -1,6 +1,7 @@
 .fon-for-title{
-    background: url("/images/galleries-wave.png") 0 130% no-repeat,
-                url("/images/Galleries-top-pic.jpg") 100% 0 no-repeat;
+    background: url("/images/galleries-wave.png") 0 120% no-repeat,
+                url("/images/Galleries-top-pic.jpg") no-repeat;
+    background-size: 100% auto, cover;
 }
 
 .fon-text {

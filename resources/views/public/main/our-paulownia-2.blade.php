@@ -27,9 +27,6 @@
                                     </div>
                                 </li>
                             @endif
-                            {{-- <a href="{{asset('storage/'.$image->image)}}">
-                                <img class="lazyload" data-src="{{asset('storage/'.$image->image)}}">
-                            </a> --}}
                             @if($loop->iteration == 5) @break @endif
                         @endforeach
                     </ul>

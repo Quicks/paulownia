@@ -1,0 +1,25 @@
+*{
+    font-size: 1rem;
+}
+.main-border-green{
+    border:10px solid #75B018;;
+}
+.line-for-letter{
+    background: url("/images/line-for-letter.png") no-repeat;
+    height: 170px;
+}
+.img-letter{
+    margin-right: 8%;
+    width: 27%;
+    float: right;
+}
+.bolder{
+    font-weight: bolder;
+}
+.line-under{
+    color: blue;
+    text-decoration: underline;
+}
+.back-table{
+    background: lightgrey;
+}

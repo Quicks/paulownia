@@ -17,12 +17,16 @@
             <div class="col-12 mt-3">
                 <div class="stacked-cards">
                     <ul>
-                        @foreach($mainGallery->images as $image)
-                            <li>
-                                <div>
-                                    <img class="lazyload" data-src="{{asset('storage/'.$image->image)}}">
-                                </div>
-                            </li>
+                        @foreach($mainGallery as $gallery)
+                            @if($gallery->images->count())
+                                <li>
+                                    <div>
+                                        <a href="{{route('public.galleries.index', $gallery->id)}}">
+                                            <img class="lazyload" data-src="{{asset('storage/'.$gallery->images->random()->image)}}">
+                                        </a>
+                                    </div>
+                                </li>
+                            @endif
                             {{-- <a href="{{asset('storage/'.$image->image)}}">
                                 <img class="lazyload" data-src="{{asset('storage/'.$image->image)}}">
                             </a> --}}

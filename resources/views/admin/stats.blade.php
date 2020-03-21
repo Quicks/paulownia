@@ -6,7 +6,7 @@
 @endsection
 
 @section('body')
-    <div id="wrapper">
+    <div id="wrapper" style="zoom: 0.75;">
         <div>
             @include ('admin.nav_top_bootstrap_3')
         </div>

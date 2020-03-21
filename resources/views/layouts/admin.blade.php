@@ -15,7 +15,7 @@
     <link href="{{asset('css/crud_custom.css')}}{{env('APP_ENV') != 'production' ? "?".now()->timestamp : ""}}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="app" style="zoom: 0.75;">
         @if (session('flash_message'))
             <div class="custom-status">
                 <span class="custom-icon"></span>

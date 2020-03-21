@@ -20,7 +20,7 @@ function gsearch(searchText, page) {
     $.ajax({
         url: 'https://www.googleapis.com/customsearch/v1',
         type: "get",
-        data: {'key':key, 'cx':cx, 'q':encodeURI(searchText), 'num':onPage, 
+        data: {'key':key, 'cx':cx, 'q':searchText, 'num':onPage, 
             'start':page==1 ? 0 : page*onPage-onPage+1
         },
         success: function (response) {

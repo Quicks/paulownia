@@ -1,8 +1,57 @@
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v14">
+    <link rel="stylesheet" href="{{asset('css/filter-goods.css')}}?v15">
     <link rel="stylesheet" href="{{asset('css/ticker.css') }}?v4">
     <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v6">
+    <link rel="stylesheet" href="{{ asset('css/selectric.css')}}">
 @endpush
+<style>
+    .selectric {
+        color: black;
+        min-width: 220px;
+        max-width: 220px;
+    }
+    .selectric .label {
+        color: black;
+        border-bottom: 1px solid black;
+        font-weight: normal;
+        font-style: italic;
+        letter-spacing: 0.02rem;
+        padding-left: 0.7rem;
+    }
+    .selectric .button {
+        color:#8CBD02;
+        font-size: 2rem;
+        line-height: 1.7rem;
+        right: 2%;
+        font-weight: normal;
+    }
+    .selectric-items {
+        background: lightgrey;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        margin-top: -40px;
+        min-width: 220px;
+        max-width: 220px;
+    }
+    .selectric-items li {
+        color: black;
+    }
+    .selectric-items li.selected{
+        color: black;
+        background: #8CBD02;
+    }
+    .selectric-items li:hover{
+        color: #8CBD02;
+        font-weight: bold;
+        background: transparent;
+    }
+    .selectric-items .selectric-scroll {
+        padding-left: 10px;
+        padding-bottom: 10px;
+        overflow: hidden;
+    }
+
+</style>
 
 <div class="row" style="background: white">
 
@@ -39,18 +88,13 @@
                         <li class="m-0">
                             <hr class="lile-between ml-0 mr-0">
                         </li>
-                        <a href="{{route('public.products.index')}}"
-                           @if(empty(Request::input('category'))) class="style-for-list-goods-link-active"
-                           @else class="style-for-list-goods-link" @endif>
-                            <li class="mt-4 mb-4 text-type">@lang('products.all-goods')</li>
-                        </a>
+                        <li data-category="all" id="all" class="mt-4 mb-4 text-type filterCategory text-type-active">
+                            @lang('products.all-goods')
+                        </li>
+
                         @foreach($categories as $category)
-                            <a @if(Request::input('category') === $category->slug)
-                               class="style-for-list-goods-link-active"
-                               @else class="style-for-list-goods-link" @endif
-                               href="{{route('public.products.index'). "?category=" . $category->slug}}">
-                                <li class="mt-4 mb-4 text-type">{{$category->name}}</li>
-                            </a>
+                            <li data-category="{{$category->slug}}" id="{{$category->slug}}"
+                                class="mt-4 mb-4 text-type filterCategory">{{$category->name}}</li>
                         @endforeach
                         <li class="m-0">
                             <hr class="lile-between ml-0 mr-0">
@@ -116,28 +160,40 @@
 </div>
 
 @push('scripts')
+    <script src="{{asset('js/jquery.selectric.min.js')}}"></script>
     <script>
         $(document).ready(function () {
             let filterPrice = $("#filterPrice");
             let filterType = $("#paulowniaType");
+            let filterCategory = $(".filterCategory");
             let price = {!! $minPrice  !!} + ',' + {!! $maxPrice !!};
             let type = "all";
+            let category = "all";
+
+            filterCategory.on('click', function () {
+                category = $(this).data('category');
+                if($(this).attr("id") == category) {
+                    filterCategory.removeClass('text-type-active');
+                    $(this). addClass('text-type-active');
+                }
+                reloadProducts(category, price, type);
+            });
 
             filterType.change(function () {
                 type = filterType.val();
-                reloadProducts(price, type);
+                reloadProducts(category, price, type);
             });
             filterPrice.slider();
             filterPrice.on('slideStop', function () {
                 price = filterPrice.val();
-                reloadProducts(price, type);
+                reloadProducts(category, price, type);
             });
 
-            function reloadProducts(price, type) {
+            function reloadProducts(category, price, type) {
                 $.ajax({
                     url: window.location.href,
                     type: "get",
-                    data: {'type':type, 'price':price}
+                    data: {'category': category, 'type':type, 'price':price}
                 })
                     .done(function (data) {
                         $("#products-data").empty();
@@ -147,6 +203,11 @@
                         alert('server not responding...');
                     });
             }
+
+            $('select').selectric({
+                arrowButtonMarkup: '<i class="button fa fa-angle-down" aria-hidden="true"></i>',
+                nativeOnMobile: true,
+            });
         });
 
     </script>

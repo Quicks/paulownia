@@ -8,8 +8,8 @@
 
     <body style="font-family: montserrat, sans-serif;">
         <div style="max-width: 1000px; margin: 5% auto; border:10px solid #75B018;" >
-            <div style="text-align: center; margin-top: 5%;background:url({{asset('/public/images/line-for-letter.png')}}) no-repeat; background-size:contain; height: 170px;">
-                <img src="{{asset('/public/images/logo.png')}}" style="margin-right:10%;width: 27%;float: right;">
+            <div style="text-align: center; margin-top: 5%;background:url({{asset('/images/line-for-letter.png')}}) no-repeat; background-size:contain; height: 170px;">
+                <img src="{{asset('/images/logo.png')}}" style="margin-right:10%;width: 27%;float: right;">
                 {{ $header ?? '' }}
             </div>
 

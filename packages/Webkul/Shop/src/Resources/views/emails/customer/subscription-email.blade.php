@@ -1,12 +1,6 @@
 @component('shop::emails.layouts.master')
 
     <div>
-        <div style="text-align: center;">
-            <a href="{{ config('app.url') }}">
-                <img src="{{ bagisto_asset('images/logo.svg') }}">
-            </a>
-        </div>
-
         <div  style="font-size:16px; color:#242424; font-weight:600; margin-top: 60px; margin-bottom: 15px">
             Welcome to Bagisto - Email Subscription
         </div>

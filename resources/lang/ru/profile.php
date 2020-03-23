@@ -60,5 +60,6 @@ return [
     'shipping-method' => 'Способ доставки',
     'payment-method' => 'Способ оплаты',
     'carrier_title' => 'Название перевозчика',
-    'track_number' => 'Номер трека'
+    'track_number' => 'Номер трека',
+    'order' => 'Заказ'
 ];

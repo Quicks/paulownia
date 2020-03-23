@@ -60,5 +60,6 @@ return [
     'shipping-method' => 'Shipping method',
     'payment-method' => 'Payment method',
     'carrier_title' => 'Carrier title',
-    'track_number' => 'Track number'
+    'track_number' => 'Track number',
+    'order' => 'Order'
 ];

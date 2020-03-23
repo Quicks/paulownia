@@ -1,11 +1,15 @@
 @component('shop::emails.layouts.master')
-    <div style="text-align: center;">
-        <a href="{{ config('app.url') }}">
-            <img src="{{ bagisto_asset('images/logo.svg') }}">
-        </a>
-    </div>
 
-    <div style="padding: 30px;">
+    @push('css')
+        <link rel="stylesheet" href="{{asset('css/lists.css') }}">
+    @endpush
+
+
+    <div style="padding: 30px;border:10px solid #75B018;">
+        <div style="background:url('/public/images/line-for-letter.png') no-repeat; background-size:contain; height: 170px;">
+            <img data-src="{{asset('images/logo.png')}}" class="lazyload" style="  margin-right:10%;width: 27%;float: right;" >
+        </div>
+        {{--<img src="/public/images/line-for-letter.jpg"  style="height: 170px;">--}}
         <div style="font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 34px;">
             <span style="font-weight: bold;">
                 {{ __('shop::app.mail.order.heading') }}
@@ -28,7 +32,7 @@
             {{ __('shop::app.mail.order.summary') }}
         </div>
 
-        <div style="display: flex;flex-direction: row;margin-top: 20px;justify-content: space-between;margin-bottom: 40px;">
+        <div style="display: flex;flex-direction: row;margin-top: 20px;justify-content: space-between;margin-bottom: 40px;" >
             <div style="line-height: 25px;">
                 <div style="font-weight: bold;font-size: 16px;color: #242424;">
                     {{ __('shop::app.mail.order.shipping-address') }}

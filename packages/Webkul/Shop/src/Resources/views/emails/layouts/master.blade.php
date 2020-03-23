@@ -3,12 +3,15 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="/css/lists.css">
+        <link rel="stylesheet" type="text/css" href="/css/public.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet" type="text/css">
     </head>
 
     <body style="font-family: montserrat, sans-serif;">
-        <div style="max-width: 1000px; margin-left: auto; margin-right: auto;">
-            <div style="text-align: center;">
+        <div style="max-width: 1000px; margin: 5% auto" class="main-border-green">
+            <div style="text-align: center;margin-top: 5%" class="line-for-letter" >
+                <img src="/images/logo.png" class="img-letter">
                 {{ $header ?? '' }}
             </div>
 

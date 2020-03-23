@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ asset('css/our-paulownia-2.css') }}?v1">
 @endpush
 
-@if(!empty($mainGallery))
+@if($mainGallery->count())
     <div class="our-paulownia">
         <img data-src="{{asset('images/Main-ourPaulownia-background.png')}}" class="our-paulownia-bg-pic lazyload">
         <div class="our-paulownia-leaf">
@@ -34,30 +34,31 @@
             </div>
         </div>
     </div>
-@endif
 
-@push('scripts')
-    <script src="{{ asset('js/stackedCards.min.js') }}"></script>
+    @push('scripts')
+        <script src="{{ asset('js/stackedCards.min.js') }}"></script>
 
-    <script>
-        $(document).ready(function() {
-            var stackedCardSlide = new stackedCards({ selector: '.stacked-cards' });
-            stackedCardSlide.init();
+        <script>
+            $(document).ready(function() {
+                var stackedCardSlide = new stackedCards({ selector: '.stacked-cards' });
+                stackedCardSlide.init();
 
-            var cards = $('.stacked-cards li');
-            var currentCard = -1;
-            var direction = 1;
-            function scrollToNextCard (cards) {
-                if(!cards) return;
-                if(currentCard + direction < cards.length && currentCard + direction >= 0){
-                    cards[currentCard+direction].click();
-                } else {
-                    direction*=-1;
-                    cards[currentCard+direction].click();
+                var cards = $('.stacked-cards li');
+                var currentCard = -1;
+                var direction = 1;
+                if(cards.length > 1) {
+                    setInterval(scrollToNextCard, 3000, cards);
                 }
-                currentCard = currentCard + direction;
-            }
-            setInterval(scrollToNextCard, 3000, cards);
-        });
-    </script>
-@endpush
+                function scrollToNextCard (cards) {
+                    if(currentCard + direction < cards.length && currentCard + direction >= 0){
+                        cards[currentCard+direction].click();
+                    } else {
+                        direction*=-1;
+                        cards[currentCard+direction].click();
+                    }
+                    currentCard = currentCard + direction;
+                }
+            });
+        </script>
+    @endpush
+@endif

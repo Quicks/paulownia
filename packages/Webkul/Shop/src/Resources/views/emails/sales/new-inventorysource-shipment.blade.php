@@ -5,10 +5,8 @@
     <?php $order = $shipment->order; ?>
     <?php $inventory = $shipment->inventory_source; ?>
 
-    <div style="padding: 30px;border:10px solid #75B018;">
-        <div style="background:url('/public/images/line-for-letter.png') no-repeat; background-size:contain; height: 170px;">
-            <img src='//images/logo.png' style="margin-right:10%;width: 27%;float: right;" >
-        </div>
+    <div style="padding: 30px;">
+
         <div style="font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 34px;">
             <span style="font-weight: bold;">
                 {{ __('shop::app.mail.shipment.inventory-heading', ['order_id' => $order->id, 'shipment_id' => $shipment->id]) }}

@@ -50,7 +50,6 @@
     border: none;
 }
 
-
 .text-type{
     font-size: 1.2rem;
     line-height: 0.3rem;
@@ -60,6 +59,11 @@
     color: #8CBD02;
     font-weight: bold;
     cursor: pointer;
+}
+
+.text-type-active {
+    color: #8CBD02;
+    font-weight: bold;
 }
 
 .lile-between {

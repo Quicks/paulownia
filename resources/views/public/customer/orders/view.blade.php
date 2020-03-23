@@ -163,7 +163,7 @@
             @if ($order->shipments->count())
                 @foreach ($order->shipments as $shipment)
                     <div class="mb-3">
-                        <span class="profile-profile-title">@lang('profile.individual-shipment') #{{$shipment->id}}</span>
+                        <span class="profile-profile-title">@lang('profile.order') #{{$order->id}}</span>
                     </div>
                     <div class="mb-3">
                         <span class="profile-profile-title">@lang('profile.carrier_title'): {{$shipment->carrier_title}}</span>

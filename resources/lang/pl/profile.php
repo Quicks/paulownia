@@ -60,5 +60,6 @@ return [
     'shipping-method' => 'Sposób wysyłki',
     'payment-method' => 'Metoda płatności',
     'carrier_title' => 'Tytuł przewoźnika',
-    'track_number' => 'Numer utworu'
+    'track_number' => 'Numer utworu',
+    'order' => 'Zamówienie'
 ];

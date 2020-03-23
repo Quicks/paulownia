@@ -60,5 +60,6 @@ return [
     'shipping-method' => 'طريقة الشحن',
     'payment-method' => 'طريقة الدفع او السداد',
     'carrier_title' => 'عنوان الناقل',
-    'track_number' => 'رقم الشاحنة'
+    'track_number' => 'رقم الشاحنة',
+    'order' => 'طلب'
 ];

@@ -60,5 +60,6 @@ return [
     'shipping-method' => 'Mode de livraison',
     'payment-method' => 'Mode de paiement',
     'carrier_title' => 'Titre du transporteur',
-    'track_number' => 'Numéro de piste'
+    'track_number' => 'Numéro de piste',
+    'order' => 'Commande'
 ];

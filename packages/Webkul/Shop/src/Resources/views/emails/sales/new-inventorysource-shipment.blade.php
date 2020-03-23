@@ -1,10 +1,6 @@
 @component('shop::emails.layouts.master')
 
 
-    @push('css')
-        <link rel="stylesheet" href="{{asset('css/lists.css') }}">
-    @endpush
-
 
     <?php $order = $shipment->order; ?>
     <?php $inventory = $shipment->inventory_source; ?>
@@ -13,7 +9,6 @@
         <div style="background:url('/public/images/line-for-letter.png') no-repeat; background-size:contain; height: 170px;">
             <img data-src="{{asset('images/logo.png')}}" class="lazyload" style="  margin-right:10%;width: 27%;float: right;" >
         </div>
-        {{--<img src="/public/images/line-for-letter.png"  style="height: 170px;">--}}
         <div style="font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 34px;">
             <span style="font-weight: bold;">
                 {{ __('shop::app.mail.shipment.inventory-heading', ['order_id' => $order->id, 'shipment_id' => $shipment->id]) }}

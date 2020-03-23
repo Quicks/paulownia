@@ -9,9 +9,9 @@
     </head>
 
     <body style="font-family: montserrat, sans-serif;">
-        <div style="max-width: 1000px; margin: 5% auto" class="main-border-green">
-            <div style="text-align: center;margin-top: 5%" class="line-for-letter" >
-                <img src="/images/logo.png" class="img-letter">
+        <div style="max-width: 1000px; margin: 5% auto; border:10px solid #75B018;background:url('/public/images/line-for-letter.png') no-repeat; background-size:contain; height: 170px;" >
+            <div style="text-align: center; margin-top: 5%;">
+                <img data-src="{{asset('images/logo.png')}}" class="lazyload" style="  margin-right:10%;width: 27%;float: right;">
                 {{ $header ?? '' }}
             </div>
 
@@ -23,3 +23,6 @@
         </div>
     </body>
 </html>
+
+
+</div>

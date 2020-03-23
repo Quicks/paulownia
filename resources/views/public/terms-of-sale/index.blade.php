@@ -1,5 +1,6 @@
 @extends('layouts.public')
 @section('content')
+
     @push('css')
         <link rel="stylesheet" href="{{asset('css/products-price.css') }}?v3">
         <link rel="stylesheet" href="{{asset('css/terms-of-sale.css') }}?v7">

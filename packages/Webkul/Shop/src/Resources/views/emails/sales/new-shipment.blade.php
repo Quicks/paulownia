@@ -1,13 +1,10 @@
 @component('shop::emails.layouts.master')
-    <div style="text-align: center;">
-        <a href="{{ config('app.url') }}">
-            <img src="{{ bagisto_asset('images/logo.svg') }}">
-        </a>
-    </div>
+
 
     <?php $order = $shipment->order; ?>
 
-    <div style="padding: 30px;">
+    <div style="padding: 30px;" >
+
         <div style="font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 34px;">
             <span style="font-weight: bold;">
                 {{ __('shop::app.mail.shipment.heading', ['order_id' => $order->id, 'shipment_id' => $shipment->id]) }}

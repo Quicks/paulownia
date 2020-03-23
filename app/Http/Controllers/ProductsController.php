@@ -24,14 +24,18 @@ class ProductsController extends Controller
             $products = $product->getAll()->sortByDesc('special_price');
         }
         if ($request->has('category')) {
-            $category_id = Category::whereTranslation('slug', $request->category)->first()->id;
+            if($request->category == 'all') {
+                $category_id = null;
+            } else {
+                $category_id = Category::whereTranslation('slug', $request->category)->first()->id;
+            }
         }
         if (!$request->has('type')) {
             $products = $product->getAll($category_id)->sortByDesc('special_price');
         }
         if ($request->has('type')) {
             if($request->type == 'all') {
-                $products = $product->getAll()->sortByDesc('special_price');
+                $products = $product->getAll($category_id)->sortByDesc('special_price');
             } else {
                 $products = $product->getAll($category_id)->where('type_of_paulownia', $request->type)->sortByDesc('special_price');
             }

@@ -43,6 +43,21 @@
         $(document).ready(function() {
             var stackedCardSlide = new stackedCards({ selector: '.stacked-cards' });
             stackedCardSlide.init();
+
+            var cards = $('.stacked-cards li');
+            var currentCard = -1;
+            var direction = 1;
+            function scrollToNextCard (cards) {
+                if(!cards) return;
+                if(currentCard + direction < cards.length && currentCard + direction >= 0){
+                    cards[currentCard+direction].click();
+                } else {
+                    direction*=-1;
+                    cards[currentCard+direction].click();
+                }
+                currentCard = currentCard + direction;
+            }
+            setInterval(scrollToNextCard, 3000, cards);
         });
     </script>
 @endpush

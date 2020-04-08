@@ -1,47 +1,65 @@
-<div class="custom-admin-sidebar">
-    <ul>
+
+<div id="page-sidebar">
+    <div class="scroll-sidebar">
+        
+
+    <ul id="sidebar-menu">
+        <li class="header"><span>Welcome</span></li>
+
         @if(bouncer()->hasPermission('welcome'))
             <li>
                 <a class="{{Request::is('admin/welcome*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{ url('/admin/welcome') }}">
-                    <i class="fa fa-home fa-2x"></i>
-                    <p>Welcome</p>
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Welcome</span>
                 </a>
             </li>
         @endif
-        @if(bouncer()->hasPermission('news'))
+        <li class="divider"></li>
+
+        <li class="header"><span>Public</span></li>
+
+        <li>
+            @if(bouncer()->hasPermission('news'))
+                <a href="#" title="Elements">
+                    <i class="glyph-icon icon-linecons-diamond"></i>
+                    <span>News</span>
+                </a>
+                <div class="sidebar-submenu">
+
+                    <ul>
+                        <li><a href="{{route('news.index')}}" title="News"><span>News</span></a></li>
+                        <li><a href="{{route('articles.index')}}" title="Articles"><span>Articulo</span></a></li>
+                        <li><a href="{{route('treatises.index')}}" title="treatises"><span>treatises</span></a></li>
+                    </ul>
+                </div>
+            @endif
+        </li>
+        @if(bouncer()->hasPermission('contents'))
             <li>
-                <a class="{{Request::is('admin/news*') || Request::is('admin/articles*') || Request::is('admin/treatises*') ? "custom-admin-sidebar-a-active" : ""}}"
-                   href="{{route('news.index')}}">
-                    <i class="fa fa-newspaper-o fa-2x"></i>
-                    <p>News</p>
+                <a href="#" title="Elements">
+                <i class="glyph-icon icon-linecons-diamond"></i>
+                    <span>Contents</span>
                 </a>
+                <div class="sidebar-submenu">
+
+                    <ul>
+                        <li><a href="{{route('contents.index')}}" title="content editor"><span>Content editor</span></a></li>
+                        <li><a href="{{route('f-a-q.index')}}" title="Faq"><span>Faq</span></a></li>
+                    </ul>
+
+                </div>
             </li>
+
+            
         @endif
+        
         @if(bouncer()->hasPermission('galleries'))
             <li>
                 <a class="{{Request::is('admin/galleries*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('galleries.index')}}">
-                    <i class="fa fa-picture-o fa-2x"></i>
-                    <p>Galleries</p>
-                </a>
-            </li>
-        @endif
-        @if(bouncer()->hasPermission('images'))
-            <li>
-                <a class="{{Request::is('admin/images*') ? "custom-admin-sidebar-a-active" : ""}}"
-                   href="{{route('images.index')}}">
-                    <i class="fa fa-camera-retro fa-2x"></i>
-                    <p>Images</p>
-                </a>
-            </li>
-        @endif
-        @if(bouncer()->hasPermission('offices'))
-            <li>
-                <a class="{{Request::is('admin/offices*') ? "custom-admin-sidebar-a-active" : ""}}"
-                   href="{{route('offices.index')}}">
-                    <i class="fa fa-university fa-2x"></i>
-                    <p>Official Offices</p>
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Galleries</span>
                 </a>
             </li>
         @endif
@@ -49,64 +67,85 @@
             <li>
                 <a class="{{Request::is('admin/partners*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('partners.index')}}">
-                    <i class="fa fa-user-plus fa-2x"></i>
-                    <p>Partners</p>
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Partners</span>
                 </a>
             </li>
         @endif
+        @if(bouncer()->hasPermission('images'))
+            <li>
+                <a class="{{Request::is('admin/images*') ? "custom-admin-sidebar-a-active" : ""}}"
+                   href="{{route('images.index')}}">
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Images</span>
+                </a>
+            </li>
+        @endif
+        @if(bouncer()->hasPermission('offices'))
+            <li>
+                <a class="{{Request::is('admin/offices*') ? "custom-admin-sidebar-a-active" : ""}}"
+                   href="{{route('offices.index')}}">
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Official Offices</span>
+                </a>
+            </li>
+        @endif
+        <li class="divider"></li>
+
+        <li class="header"><span>Shop</span></li>
         @if(bouncer()->hasPermission('dashboard'))
             <li>
                 <a href="{{route('admin.dashboard.index')}}">
-                    <i class="menu-properties icon dashboard-icon"></i>
-                    <p>Dashboard</p>
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Dashboard</span>
                 </a>
             </li>
         @endif
         @if(bouncer()->hasPermission('sales.orders'))
             <li>
                 <a href="{{route('admin.sales.orders.index')}}">
-                    <i class="menu-properties icon sales-icon"></i>
-                    <p>Sales</p>
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Sales</span>
                 </a>
             </li>
         @endif
         @if(bouncer()->hasPermission('catalog.products'))
             <li>
                 <a href="{{route('admin.catalog.products.index')}}">
-                    <i class="menu-properties icon catalog-icon"></i>
-                    <p>Catalog</p>
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Catalog</span>
                 </a>
             </li>
         @endif
         @if(bouncer()->hasPermission('customers'))
             <li>
                 <a href="{{route('admin.customer.index')}}">
-                    <i class="menu-properties icon customer-icon"></i>
-                    <p>Customers</p>
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Customers</span>
                 </a>
             </li>
         @endif
         @if(bouncer()->hasPermission('cart-rule'))
             <li>
                 <a href="{{route('admin.cart-rule.index')}}">
-                    <i class="menu-properties icon promotions-icon"></i>
-                    <p>Promotions</p>
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Promotions</span>
                 </a>
             </li>
         @endif
         @if(bouncer()->hasPermission('locales'))
             <li>
                 <a href="{{route('admin.locales.index')}}">
-                    <i class="menu-properties icon settings-icon"></i>
-                    <p>Settings</p>
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Settings</span>
                 </a>
             </li>
         @endif
         @if(bouncer()->hasPermission('configuration'))
             <li>
                 <a href="{{route('admin.configuration.index')}}">
-                    <i class="menu-properties icon configuration-icon"></i>
-                    <p>Configure</p>
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Configure</span>
                 </a>
             </li>
         @endif
@@ -114,28 +153,28 @@
             <li>
                 <a class="{{Request::is('admin/certificates*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('certificates.index')}}">
-                    <i class="fa fa-certificate fa-2x"></i>
-                    <p>Certificates</p>
+                   <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Certificates</span>
                 </a>
             </li>
         @endif
-        @if(bouncer()->hasPermission('contents'))
-            <li>
-                <a class="{{Request::is('admin/contents*') ? "custom-admin-sidebar-a-active" : ""}}"
-                   href="{{route('contents.index')}}">
-                    <i class="fa fa-pencil-square-o fa-2x"></i>
-                    <p>Contents</p>
-                </a>
-            </li>
-        @endif
+        <li class="divider"></li>
+
+        <li class="header"><span>Tracking</span></li>
+
         @if(bouncer()->hasPermission('tracking'))
             <li>
                 <a class="{{Request::is('stats*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('tracker.stats.index')}}">
-                    <i class="fa fa-line-chart fa-2x"></i>
-                    <p>Tracking statistics</p>
+                   <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>Tracking statistics</span>
                 </a>
             </li>
         @endif
-    </ul>
+
+
+    </ul><!-- #sidebar-menu -->
+
+
+    </div>
 </div>

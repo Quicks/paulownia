@@ -1,0 +1,6 @@
+docker/mysqldata
+docker/logs
+site/node_modules
+site/vendor
+site/storage/framework
+# site/public/*

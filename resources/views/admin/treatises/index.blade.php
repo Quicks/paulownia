@@ -3,15 +3,13 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            @include('admin.sidebar')
-            @include('admin.aside-news')
-
+             
             <div class="col">
                 <div class="card">
                     <div class="card-header">Treatises</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/treatises/create') }}" class="btn btn-success btn-sm" title="Add New Treatise">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                            <i class="fa fa-plus" aria-hidden="true"></i> Agregar nuevo
                         </a>
 
                         <form method="GET" action="{{ url('/admin/treatises') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">

@@ -3,14 +3,14 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            @include('admin.sidebar')
+             
 
             <div class="col">
                 <div class="card">
                     <div class="card-header">Certificates</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/certificates/create') }}" class="btn btn-success btn-sm" title="Add New Certificate">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add new request for certificate
+                            <i class="fa fa-plus" aria-hidden="true"></i> Agregar nuevo
                         </a>
 
                         <form method="GET" action="{{ url('/admin/certificates') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">

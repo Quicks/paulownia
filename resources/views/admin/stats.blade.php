@@ -46,7 +46,7 @@
 
 		    <div class="navbar-default sidebar" role="navigation">
 			    <div class="sidebar-nav navbar-collapse left-sidebar">
-                    @include('admin.sidebar')
+                     
                 </div>
                 <div class="sidebar-nav navbar-collapse right-sidebar">
 				    <ul class="nav" id="side-menu">

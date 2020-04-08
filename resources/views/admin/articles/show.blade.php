@@ -1,14 +1,16 @@
 @extends('layouts.admin')
-
+@section('pageTitle')
+    Ver noticias
+@endsection
+                    
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            @include('admin.sidebar')
-            @include('admin.aside-news')
+             
+              
 
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Article {{ $article->id }}</div>
                     <div class="card-body">
 
                         <a href="{{ url('/admin/articles') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>

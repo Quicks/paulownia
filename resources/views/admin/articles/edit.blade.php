@@ -1,14 +1,13 @@
 @extends('layouts.admin')
-
+@section('pageTitle')
+    Edit Article
+@endsection
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            @include('admin.sidebar')
-            @include('admin.aside-news')
-
+             
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Edit Article #{{ $article->id }}</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/articles') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <a href="{{ url('/admin/image_add/?imageable_id=' . $article->id . '&imageable_type=' . get_class($article) . '&redirect_route='.route('articles.show', $article->id) )  }}"

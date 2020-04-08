@@ -1,0 +1,7 @@
+#sidebar .sfHover{
+  border: #d1d9dd solid 1px;
+}
+
+#sidebar-menu li .sidebar-submenu ul{
+  margin-left: 30px;
+}

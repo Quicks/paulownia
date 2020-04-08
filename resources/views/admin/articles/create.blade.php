@@ -1,14 +1,17 @@
 @extends('layouts.admin')
 
+@section('pageTitle')
+    Create New Article
+@endsection
+                  
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            @include('admin.sidebar')
-            @include('admin.aside-news')
+             
+              
 
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Create New Article</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/articles') }}" title="Back">
                             <button class="btn btn-warning btn-sm">

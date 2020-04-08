@@ -1,30 +1,31 @@
 @extends('layouts.admin')
-
+@section('pageTitle')
+    Lista de articulo
+@endsection
+                    
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            @include('admin.sidebar')
-            @include('admin.aside-news')
-
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Articles</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/articles/create') }}" class="btn btn-success btn-sm" title="Add New Article">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
-                        </a>
+                        <div class="table-title">
+                            <a href="{{ url('/admin/articles/create') }}" class="btn btn-success btn-sm pull-right" title="Add New Article">
+                                <i class="fa fa-plus" aria-hidden="true"></i> Agregar nuevo
+                            </a>
 
-                        <form method="GET" action="{{ url('/admin/articles') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                                <span class="input-group-append">
-                                    <button class="btn btn-secondary" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
-
+                            <form method="GET" action="{{ url('/admin/articles') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
+                                    <span class="input-group-append">
+                                        <button class="btn btn-secondary" type="submit">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                        
                         <br/>
                         <br/>
                         <div class="table-responsive">

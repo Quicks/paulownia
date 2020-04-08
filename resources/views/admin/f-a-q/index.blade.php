@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            @include('admin.sidebar')
+             
             @include('admin.aside-contents')
 
             <div class="col">
@@ -11,7 +11,7 @@
                     <div class="card-header">FAQ</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/f-a-q/create') }}" class="btn btn-success btn-sm" title="Add New FAQ">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                            <i class="fa fa-plus" aria-hidden="true"></i> Agregar nuevo
                         </a>
 
                         <form method="GET" action="{{ url('/admin/f-a-q') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">

@@ -37,6 +37,15 @@ mix.combine([
    'resources/assets/admin_js/admin_template/contentbox.js',
    'resources/assets/admin_js/admin_template/overlay.js',
    'resources/assets/admin_js/admin_template/widgets-init.js',
+   'resources/assets/admin_js/admin_template/bootstrap-datepicker.js',
+   'resources/assets/admin_js/admin_template/datepicker.js',
+   'resources/assets/admin_js/admin_template/ckeditor.js',
+   'resources/assets/admin_js/admin_template/ck_styles.js',
+   'resources/assets/admin_js/admin_template/ck_config.js',
+   'resources/assets/admin_js/admin_template/ck_en.js',
+   'resources/assets/admin_js/admin_template/dropzone.min.js',
+   'resources/assets/admin_js/admin_template/dropzone-amd-module.min.js',
    'resources/assets/admin_js/admin_template/layout.js',
+   'resources/assets/admin_js/admin_template/custom.js',
 ], 'public/js/admin.js');
 mix.combine(['resources/assets/css/admin_template/*', 'resources/assets/css/admin_template/default.css'],'public/css/admin.css')

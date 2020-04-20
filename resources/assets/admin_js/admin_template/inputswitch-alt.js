@@ -15,7 +15,7 @@
                 'style': 'display: block;'
             }).insertAfter(this);
             //Make sure pre-checked boxes are rendered as checked
-            if(obj.is(':checked')) {
+            if(obj.val() == '1') {
                 newObj.addClass(options.activeElementClass);
             }
             obj.hide(); //Hide original checkbox
@@ -32,14 +32,17 @@
             newObj.click(function() {
                 //Assign current clicked object
                 var obj = $(this);
+                var input = $(obj.attr('id'))
                 //Check the current state of the checkbox
                 if(obj.hasClass(options.activeElementClass)) {
                     obj.removeClass(options.activeElementClass);
-                    $(obj.attr('id')).attr('checked',false);
+                    input.val('0')
                 } else {
                     obj.addClass(options.activeElementClass);
-                    $(obj.attr('id')).attr('checked',true);
+                    input.val('1')
                 }
+                input.attr('checked',true);
+
                 //Kill the click function
                 return false;
             });

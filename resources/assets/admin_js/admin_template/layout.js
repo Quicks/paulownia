@@ -137,6 +137,6 @@ $(document).ready(function() {
 
     /* Sidebar scroll */
 
-
-
+    // $('.bootstrap-switch').simpleCheckbox()
+    $('.bsdatepicker').bsdatepicker()
 });

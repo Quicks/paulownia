@@ -6,12 +6,13 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\Article;
-use App\Models\Image;
 use Illuminate\Http\Request;
-use App\Helpers\ImageSaveHelper;
+use App\Http\Traits\ImagesTrait;
+
 
 class ArticlesController extends Controller
 {
+    use ImagesTrait;
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +42,8 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        return view('admin.articles.create');
+        $article = new Article(['active' => 1, 'publish_date' => date("Y-m-d")]);
+        return view('admin.articles.create', compact('article'));
     }
 
     /**
@@ -54,32 +56,13 @@ class ArticlesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'name' => 'required|max:90',
 			'active' => 'required|boolean',
-			'publish_date' => 'required|date',
-            'image' => 'image|max:20000',
-            'images.*' => 'image|max:20000',
-		]);
+			'publish_date' => 'required|date'
+        ]);
         $requestData = $request->all();
         $article = Article::create($requestData);
-        $imageAtributes = $request->image_atr;
-        $imageAtributes['imageable_id'] = $article->id;
-        $imageAtributes['imageable_type'] = 'App\Models\Article';
-
-        if ($request->hasFile('image')) {
-            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
-                $request->file('image'), 'Article', $article->id, $request->watermark);
-            Image::create($imageAtributes);
-        }
-
-        if ($request->hasFile('images')) {
-            foreach ($request->images as $key => $image) {
-                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnailNotEncoded(
-                    $image, 'Article', $article->id, $request->watermark, $key);
-                Image::create($imageAtributes);
-            }
-        }
-
+        $this->saveImages($article->id, 'Article', $request->images, $request->watermark);
+    
         return redirect('admin/articles')->with('flash_message', 'Article added!');
     }
 
@@ -122,20 +105,13 @@ class ArticlesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'name' => 'required|max:90',
 			'active' => 'required|boolean',
 			'publish_date' => 'required|date'
 		]);
-        
         $article = Article::findOrFail($id);
         $article->update($request->except(['image_atr','image']));
-        if ($request->image_atr) {
-            foreach ($request->image_atr as $image_id => $image_atr) {
-                $image = Image::find($image_id);
-                $image->fill($image_atr);
-                $image->save();
-            }
-        }
+        
+        $this->saveImages($article->id, 'Article', $request->images, $request->watermark);
 
         return redirect('admin/articles')->with('flash_message', 'Article updated!');
     }
@@ -155,4 +131,5 @@ class ArticlesController extends Controller
 
         return redirect('admin/articles')->with('flash_message', 'Article deleted!');
     }
+
 }

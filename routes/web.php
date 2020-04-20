@@ -44,7 +44,7 @@ Route::prefix('admin')->group(function () {
     ])->name('admin.reset-password.store');
 
 
-    Route::group(['middleware' => ['admin']], function () {
+    Route::group(['middleware' => ['admin', 'admin.localize'], 'prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function () {
         Route::get('/factura/generate/{id}', 'Webkul\Admin\Http\Controllers\Sales\InvoiceController@generateDocument')->name('factura');
         Route::view('/welcome', 'admin.dashboard')->name('admin.welcome');
         Route::resource('news', 'App\Http\Controllers\Admin\\NewsController');
@@ -69,6 +69,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/shop/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@index')->name('sendNewsLetter.index');
         Route::post('/shop/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@send')->name('sendNewsLetter.send');
         Route::resource('/f-a-q', 'App\Http\Controllers\Admin\\FAQController');
+        Route::get('/locale/{newLocale}', 'App\Http\Controllers\Admin\LocaleController@setLocale');
     });
 });
 

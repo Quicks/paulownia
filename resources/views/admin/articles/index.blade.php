@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('pageTitle')
-    Lista de articulo
+    @lang('admin.article.index.title')
 @endsection
                     
 @section('content')
@@ -9,56 +9,46 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <div class="table-title">
-                            <a href="{{ url('/admin/articles/create') }}" class="btn btn-success btn-sm pull-right" title="Add New Article">
-                                <i class="fa fa-plus" aria-hidden="true"></i> Agregar nuevo
-                            </a>
-
-                            <form method="GET" action="{{ url('/admin/articles') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                                    <span class="input-group-append">
-                                        <button class="btn btn-secondary" type="submit">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                            </form>
+                        <div class="table-title row">
+                            <div class='col-md-1 col-md-offset-11'>
+                                <a href="{{ url('/admin/articles/create') }}" class="btn btn-success btn-sm pull-right" title="Add New Article">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>@lang('admin.btns.new')
+                                </a>
+                            </div>
                         </div>
-                        
                         <br/>
                         <br/>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Name</th><th>Active</th><th>Publish Date</th><th>Actions</th>
+                                        <th>@lang('admin.article.index.table.link_to_public')</th>
+                                        <th>@lang('admin.article.index.table.publish')</th>
+                                        <th>@lang('admin.article.index.table.publish_date')</th>
+                                        <th>@lang('admin.article.index.table.images')</th>
+                                        <th>@lang('admin.article.index.table.actions')</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($articles as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->active }}</td>
+                                        <td><a target='_blank' href="/show/article/{{$item->id}}">{{ $item->title }}</a></td>
+                                        <td>{{ $item->active ? 'Yes' : 'No'}}</td>
                                         <td>{{ $item->publish_date }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/articles/' . $item->id) }}" title="View Article"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            @foreach($item->images as $image)
+                                                <img src="/storage/{{$image->getThumbnailAttribute()}}" class='img-thumbnail admin-thumbnail'/>
+                                            @endforeach
+                                        </td>
+                                        <td>
                                             @if(bouncer()->hasPermission('articles.update'))
-                                                <a href="{{ url('/admin/articles/' . $item->id . '/edit') }}" title="Edit Article"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                                <a href="{{ url('/admin/image_add/?imageable_id=' . $item->id . '&imageable_type=' . get_class($item) . '&redirect_route='.route('articles.show', $item->id) )  }}"
-                                                   title="Add Image">
-                                                    <button class="btn btn-primary btn-sm">
-                                                        <i class="fa fa-picture-o" aria-hidden="true"></i>
-                                                        Add image
-                                                    </button>
-                                                </a>
+                                                <a href="{{ url('/admin/articles/' . $item->id . '/edit') }}" title="Edit Article"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>@lang('admin.btns.edit') </button></a>
                                             @endif
                                             @if(bouncer()->hasPermission('articles.destroy'))
                                                 <form method="POST" action="{{ url('/admin/articles' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                     {{ method_field('DELETE') }}
                                                     {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete Article" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete Article" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> @lang('admin.btns.destroy')</button>
                                                 </form>
                                             @endif
                                         </td>

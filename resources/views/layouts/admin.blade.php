@@ -40,6 +40,8 @@
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom-admin.css">
+
     <script type="text/javascript" src="/js/admin.js"></script> 
     <script type="text/javascript">
         $(window).load(function(){
@@ -66,7 +68,9 @@
                         <h2>@yield('pageTitle')</h2>
                     </div>
                     <div class="panel">
-                        @yield('content')
+                        <div class='panel-body'>
+                            @yield('content')
+                        </div>
                     </div>
                 </div>
             </div>

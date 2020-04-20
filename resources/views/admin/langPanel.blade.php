@@ -1,48 +1,26 @@
-<div class="col-md-2">
-
-    <div class="card">
-        <div class="card-header">Lang Panel</div>
-
-
-        <div class="card-body">
-
-
-            <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist"
-                 aria-orientation="vertical">
-
-                <a class="nav-link btn btn-outline-primary btn-sm active mb-2"
-                   id="main-form-btn" data-toggle="pill"
-                   href="#main-form" role="tab"
-                   aria-controls="main-form" aria-selected="true"
-                   onclick="openAllTabs('main-form');">
-                    MAIN
-                </a>
-
-                @foreach(config('translatable.locales') as $locale)
-
-
-
-                    
-                    <a class="nav-link btn btn-outline-primary btn-sm mb-2 mt-2"
-                       id={{$locale}} data-toggle="pill"
-                       href="#{{$locale}}" role="tab"
-                       aria-controls={{$locale}} aria-selected=@if ($loop->first)"true" @else "false" @endif
-                       onclick="openAllTabs('{{$locale}}');">
-                    {{ strtoupper($locale)}}
-                    </a>
-                @endforeach
-
-
-            </div>
-        </div>
-    </div>
+<div class="card">
+  <div class="card-body">
+    <ul class="nav-responsive nav nav-tabs">
+      <li class='active'>
+        <a class="nav-link btn btn-outline-primary btn-sm mb-2"
+          id="main-form-btn" data-toggle="pill"
+          href="#main-form" role="tab"
+          aria-controls="main-form" aria-selected="true"
+          >
+          @lang('admin.form.main')
+        </a>
+      </li>
+      @foreach(config('translatable.locales') as $locale)
+        <li>
+          <a class="nav-link btn btn-outline-primary btn-sm mb-2 mt-2"
+            id={{$locale}} data-toggle="pill"
+            href="#{{$locale}}" role="tab"
+            aria-controls={{$locale}} aria-selected=@if ($loop->first)"true" @else "false" @endif
+            >
+            @lang('admin.form.lang.'.$locale)
+            </a>
+        </li>
+      @endforeach
+    </ul>
+  </div>
 </div>
-
-@push('scripts')
-  <script type="text/javascript">    //shows-hides multiple tabs with same 'aria-labelledby' on the page
-    function openAllTabs(tab) {
-      $('[aria-labelledby]').each(function() {$(this).removeClass("active show");});
-      $('[aria-labelledby='+tab+']').each(function() {$(this).tab('show');});
-    }
-  </script>
-@endpush

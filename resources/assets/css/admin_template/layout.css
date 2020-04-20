@@ -14,14 +14,14 @@
 }
 #header-logo .logo-content-big,
 .logo-content-small {
-    background: url('../../image-resources/logo-admin.png') left 50% no-repeat;
+    background: url('../../images/logo-sm.png') left 50% no-repeat;
     text-indent: -999em;
     position: absolute;
-    height: 34px;
+    height: 70px;
     width: 190px;
-    left: 10px;
-    top: 50%;
-    margin-top: -17px;
+    background-size: 120px 60px;
+    left: 35px;
+    top: 5px;
 }
 .logo-content-small {
     width: 35px;

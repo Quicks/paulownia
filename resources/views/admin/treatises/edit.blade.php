@@ -1,46 +1,32 @@
 @extends('layouts.admin')
-
+@section('pageTitle')
+    @lang('admin.treatises.edit.title')
+@endsection
 @section('content')
     <div class="container-fluid">
         <div class="row">
              
-              
+            <div class="card">
+                <div class="card-body"> 
+                    @if ($errors->any())
+                        <ul class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                    Тут еще будут файли
 
-            <div class="col">
-                <div class="card">
-                    <div class="card-header">Edit Treatise #{{ $treatise->id }}</div>
-                    <div class="card-body">
-                        <a href="{{ url('/admin/treatises') }}" title="Back">
-                            <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>
-                                Back
-                            </button>
-                        </a>
-                        <a href="{{ url('/admin/file_add/?fileable_id=' . $treatise->id . '&fileable_type=' . get_class($treatise) . '&redirect_route='.route('treatises.show', $treatise->id) )  }}"
-                           title="Upload File">
-                            <button class="btn btn-primary btn-sm">
-                                <i class="fa fa-file-o" aria-hidden="true"></i>
-                                Upload file
-                            </button>
-                        </a>
-                        <br>
-                        <br>
-                            @if ($errors->any())
-                                <ul class="alert alert-danger">
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            @endif
+                    <form method="POST" action="{{ url('/admin/treatises/' . $treatise->id) }}" accept-charset="UTF-8" class="form-horizontal validForm" enctype="multipart/form-data">
+                        {{ method_field('PATCH') }}
+                        {{ csrf_field() }}
 
-                            <form method="POST" action="{{ url('/admin/treatises/' . $treatise->id) }}" accept-charset="UTF-8" class="form-horizontal validForm" enctype="multipart/form-data">
-                                        {{ method_field('PATCH') }}
-                                        {{ csrf_field() }}
-                                        @include ('admin.treatises.form', ['formMode' => 'edit'])
-                            </form>
-                    </div>
+                        @include ('admin.treatises.form', ['formMode' => 'edit'])
+
+                    </form>
                 </div>
             </div>
-            @include('admin.langPanel')
+            
         </div>
     </div>
 @endsection

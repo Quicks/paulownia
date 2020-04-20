@@ -1,6 +1,7 @@
 <div class="form-group {{ $errors->has($locale.'['.$itemProperty.']') ? 'has-error' : ''}}">
     <label for="{{$locale.'['.$itemProperty.']'}}" class="control-label">
-        {{ ucfirst($itemProperty).' ('.$locale.')'}}
+        <span>@lang("admin.form.".$itemProperty)</span>
+        <span>( {{($locale)}} )</span>
     </label>
 
     <input class="form-control @isset($translate) {{$translate}} @endisset" 

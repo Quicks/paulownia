@@ -1,15 +1,14 @@
 <div id="page-header" class="bg-gradient-9">
     <div id="mobile-navigation">
         <button id="nav-toggle" class="collapsed" data-toggle="collapse" data-target="#page-sidebar"><span></span></button>
-        <a href="{{ url('/admin/welcome') }}" title="MonarchUI"></a>
+        <a href="{{ url('/admin/welcome') }}" title="PaulowniaPro"></a>
     </div>
     <div id="header-logo">
-        <a href="{{ url('/admin/welcome') }}" class="logo-content-big" title="MonarchUI">
+        <a href="{{ url('/admin/welcome') }}" class="logo-content-big" title="PaulowniaPro">
             <img src="{{ asset('images/logo.png') }}" alt="Paulownia"/>
         </a>
-        <a href="index.html" class="logo-content-small" title="MonarchUI">
-            Monarch <i>UI</i>
-            <span>The perfect solution for user interfaces</span>
+        <a href=href="{{ url('/admin/welcome') }}" class="logo-content-small" title="PaulowniaPro">
+            
         </a>
         <a id="close-sidebar" href="#" title="Close sidebar">
             
@@ -20,61 +19,41 @@
         <div class="user-account-btn dropdown">
             <a href="#" title="My Account" class="user-profile clearfix" data-toggle="dropdown">
                 <img width="28" src="https://agileui.com/demo/monarch/assets/image-resources/gravatar.jpg" alt="Profile image">
-                <span>Thomas Barnes</span>
+                <span>@lang('admin.lang.'. \App::getLocale())</span>
                 <i class="glyph-icon icon-angle-down"></i>
             </a>
             <div class="dropdown-menu float-left">
+                
                 <div class="box-sm">
-                    <div class="login-box clearfix">
-                        <div class="user-img">
-                            <a href="#" title="" class="change-img">Change photo</a>
-                            <img src="https://agileui.com/demo/monarch/assets/image-resources/gravatar.jpg" alt="">
-                        </div>
-                        <div class="user-info">
-                            <span>
-                                Thomas Barnes
-                                <i>UX/UI developer</i>
-                            </span>
-                            <a href="#" title="Edit profile">Edit profile</a>
-                            <a href="#" title="View notifications">View notifications</a>
-                        </div>
-                    </div>
-                    <div class="divider"></div>
+                    
                     <ul class="reset-ul mrg5B">
                         <li>
-                            <a href="#">
-                                <i class="glyph-icon float-right icon-caret-right"></i>
-                                View login page example
-                                
+                            <a href="/admin/locale/ru">
+                                Руский                             
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="glyph-icon float-right icon-caret-right"></i>
-                                View lockscreen example
-                                
+                            <a href="/admin/locale/es">
+                                Espanol
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="glyph-icon float-right icon-caret-right"></i>
-                                View account details
-                                
+                            <a href="/admin/locale/en">
+                                English
                             </a>
                         </li>
                     </ul>
-                    <div class="pad5A button-pane button-pane-alt text-center">
-                        <a href="#" class="btn display-block font-normal btn-danger">
-                            <i class="glyph-icon icon-power-off"></i>
-                            Logout
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
-    </div><!-- #header-nav-left -->
+    </div>
 
+                                    
     <div id="header-nav-right">
+         <a href="{{ url('/admin/shop/logout') }}" class="btn display-block font-normal btn-danger">
+            <i class="glyph-icon icon-power-off"></i>
+            Logout
+        </a>
         <!-- <a href="#" class="hdr-btn popover-button" title="Search" data-placement="bottom" data-id="#popover-search">
             <i class="glyph-icon icon-search"></i>
         </a>

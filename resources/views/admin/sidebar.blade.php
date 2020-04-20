@@ -1,36 +1,35 @@
 
 <div id="page-sidebar">
     <div class="scroll-sidebar">
-        
-
+    
     <ul id="sidebar-menu">
-        <li class="header"><span>Welcome</span></li>
+        <li class="header"><span>@lang('admin.sidebar.links.dashboard')</span></li>
 
         @if(bouncer()->hasPermission('welcome'))
             <li>
                 <a class="{{Request::is('admin/welcome*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{ url('/admin/welcome') }}">
                     <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Welcome</span>
+                    <span>@lang('admin.sidebar.links.dashboard')</span>
                 </a>
             </li>
         @endif
         <li class="divider"></li>
 
-        <li class="header"><span>Public</span></li>
+        <li class="header"><span>@lang('admin.sidebar.links.public.title')</span></li>
 
         <li>
             @if(bouncer()->hasPermission('news'))
                 <a href="#" title="Elements">
                     <i class="glyph-icon icon-linecons-diamond"></i>
-                    <span>News</span>
+                    <span>@lang('admin.sidebar.links.public.news.title')</span>
                 </a>
                 <div class="sidebar-submenu">
 
                     <ul>
-                        <li><a href="{{route('news.index')}}" title="News"><span>News</span></a></li>
-                        <li><a href="{{route('articles.index')}}" title="Articles"><span>Articulo</span></a></li>
-                        <li><a href="{{route('treatises.index')}}" title="treatises"><span>treatises</span></a></li>
+                        <li><a href="{{route('news.index')}}" title="News"><span>@lang('admin.sidebar.links.public.news.news')</span></a></li>
+                        <li><a href="{{route('articles.index')}}" title="Articles"><span>@lang('admin.sidebar.links.public.news.articles')</span></a></li>
+                        <li><a href="{{route('treatises.index')}}" title="treatises"><span>@lang('admin.sidebar.links.public.news.treatises')</span></a></li>
                     </ul>
                 </div>
             @endif
@@ -39,13 +38,13 @@
             <li>
                 <a href="#" title="Elements">
                 <i class="glyph-icon icon-linecons-diamond"></i>
-                    <span>Contents</span>
+                    <span>@lang('admin.sidebar.links.public.contents.title')</span>
                 </a>
                 <div class="sidebar-submenu">
 
                     <ul>
-                        <li><a href="{{route('contents.index')}}" title="content editor"><span>Content editor</span></a></li>
-                        <li><a href="{{route('f-a-q.index')}}" title="Faq"><span>Faq</span></a></li>
+                        <li><a href="{{route('contents.index')}}" title="content editor"><span>@lang('admin.sidebar.links.public.contents.content_editor')</span></a></li>
+                        <li><a href="{{route('f-a-q.index')}}" title="Faq"><span>@lang('admin.sidebar.links.public.contents.faq')</span></a></li>
                     </ul>
 
                 </div>
@@ -59,7 +58,7 @@
                 <a class="{{Request::is('admin/galleries*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('galleries.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Galleries</span>
+                    <span>@lang('admin.sidebar.links.public.gallery')</span>
                 </a>
             </li>
         @endif
@@ -68,7 +67,7 @@
                 <a class="{{Request::is('admin/partners*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('partners.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Partners</span>
+                    <span>@lang('admin.sidebar.links.public.partners')</span>
                 </a>
             </li>
         @endif
@@ -77,7 +76,7 @@
                 <a class="{{Request::is('admin/images*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('images.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Images</span>
+                    <span>@lang('admin.sidebar.links.public.images')</span>
                 </a>
             </li>
         @endif
@@ -86,18 +85,18 @@
                 <a class="{{Request::is('admin/offices*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('offices.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Official Offices</span>
+                    <span>@lang('admin.sidebar.links.public.official_offices')</span>
                 </a>
             </li>
         @endif
         <li class="divider"></li>
 
-        <li class="header"><span>Shop</span></li>
+        <li class="header"><span>@lang('admin.sidebar.links.shop.title')</span></li>
         @if(bouncer()->hasPermission('dashboard'))
             <li>
                 <a href="{{route('admin.dashboard.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Dashboard</span>
+                    <span>@lang('admin.sidebar.links.shop.dashboard')</span>
                 </a>
             </li>
         @endif
@@ -105,7 +104,7 @@
             <li>
                 <a href="{{route('admin.sales.orders.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Sales</span>
+                    <span>@lang('admin.sidebar.links.shop.sales')</span>
                 </a>
             </li>
         @endif
@@ -113,7 +112,7 @@
             <li>
                 <a href="{{route('admin.catalog.products.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Catalog</span>
+                    <span>@lang('admin.sidebar.links.shop.catalog')</span>
                 </a>
             </li>
         @endif
@@ -121,7 +120,7 @@
             <li>
                 <a href="{{route('admin.customer.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Customers</span>
+                    <span>@lang('admin.sidebar.links.shop.customers')</span>
                 </a>
             </li>
         @endif
@@ -129,7 +128,7 @@
             <li>
                 <a href="{{route('admin.cart-rule.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Promotions</span>
+                    <span>@lang('admin.sidebar.links.shop.promotions')</span>
                 </a>
             </li>
         @endif
@@ -137,7 +136,7 @@
             <li>
                 <a href="{{route('admin.locales.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Settings</span>
+                    <span>@lang('admin.sidebar.links.shop.settings')</span>
                 </a>
             </li>
         @endif
@@ -145,7 +144,7 @@
             <li>
                 <a href="{{route('admin.configuration.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Configure</span>
+                    <span>@lang('admin.sidebar.links.shop.configure')</span>
                 </a>
             </li>
         @endif
@@ -154,26 +153,26 @@
                 <a class="{{Request::is('admin/certificates*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('certificates.index')}}">
                    <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Certificates</span>
+                    <span>@lang('admin.sidebar.links.shop.certificates')</span>
                 </a>
             </li>
         @endif
         <li class="divider"></li>
 
-        <li class="header"><span>Tracking</span></li>
+        <li class="header"><span>@lang('admin.sidebar.links.tracking.title')</span></li>
 
         @if(bouncer()->hasPermission('tracking'))
             <li>
                 <a class="{{Request::is('stats*') ? "custom-admin-sidebar-a-active" : ""}}"
                    href="{{route('tracker.stats.index')}}">
                    <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>Tracking statistics</span>
+                    <span>@lang('admin.sidebar.links.tracking.tracking_statistic')</span>
                 </a>
             </li>
         @endif
 
 
-    </ul><!-- #sidebar-menu -->
+    </ul>
 
 
     </div>

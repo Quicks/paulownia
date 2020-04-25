@@ -49,3 +49,27 @@ mix.combine([
    'resources/assets/admin_js/admin_template/custom.js',
 ], 'public/js/admin.js');
 mix.combine(['resources/assets/css/admin_template/*', 'resources/assets/css/admin_template/default.css'],'public/css/admin.css')
+
+mix.combine([
+   'resources/assets/public_js/jquery-1.12.4.min.js',
+   'resources/assets/public_js/bootstrap.min.js',
+   'resources/assets/public_js/imagesloaded.pkgd.min.js',
+   'resources/assets/public_js/isotope.min.js',
+   'resources/assets/public_js/jquery.countdown.min.js',
+   'resources/assets/public_js/jquery.counterup.min.js',
+   'resources/assets/public_js/jquery.dd.min.js',
+   'resources/assets/public_js/jquery.elevatezoom.js',
+   'resources/assets/public_js/jquery.fitvids.js',
+   'resources/assets/public_js/jquery.parallax-scroll.js',
+   'resources/assets/public_js/jquery-ui.js',
+   'resources/assets/public_js/js.cookie.js',
+   'resources/assets/public_js/magnific-popup.min.js',
+   'resources/assets/public_js/owl.carousel.min.js',
+   'resources/assets/public_js/parallax.js',
+   'resources/assets/public_js/popper.min.js',
+   'resources/assets/public_js/shop-quick-view.js',
+   'resources/assets/public_js/waypoints.min.js',
+   'resources/assets/public_js/scripts.js',
+], 'public/js/app.js');
+mix.combine(['resources/assets/css/public/*'],'public/css/app.css')
+

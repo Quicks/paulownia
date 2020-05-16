@@ -44,7 +44,8 @@ class CertificatesController extends Controller
      */
     public function create()
     {
-        return view('admin.certificates.create');
+        $certificate = new Certificate(['active' => true]);
+        return view('admin.certificates.create', compact('certificate'));
     }
 
     /**
@@ -58,7 +59,7 @@ class CertificatesController extends Controller
     {
         $this->validate($request, [
 			'name' => 'required|max:90',
-			'active' => 'boolean|not_in:1',
+			'active' => 'boolean',
 			'string1' => 'required|max:200',
 			'string2' => 'required|max:200',
 			'string3' => 'required|max:200',
@@ -67,7 +68,7 @@ class CertificatesController extends Controller
         $requestData = $request->all();
         
         Certificate::create($requestData);
-
+        
         return redirect('admin/certificates')->with('flash_message', 'Certificate added!');
     }
 

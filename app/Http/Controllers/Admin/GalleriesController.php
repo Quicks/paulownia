@@ -6,11 +6,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
-use App\Models\Image;
-use App\Helpers\ImageSaveHelper;
+use App\Http\Traits\ImagesTrait;
 
 class GalleriesController extends Controller
 {
+    use ImagesTrait;
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +41,8 @@ class GalleriesController extends Controller
      */
     public function create()
     {
-        return view('admin.galleries.create');
+        $gallery = new Gallery(['active' => true]);
+        return view('admin.galleries.create', compact('gallery'));
     }
 
     /**
@@ -54,30 +55,11 @@ class GalleriesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'name' => 'required|max:90',
-			'active' => 'required|boolean',
-            'image' => 'image|max:20000',
-            'images.*' => 'image|max:20000',
+			'active' => 'required|boolean'
 		]);
-
-        $newGalery = Gallery::create($request->except(['image_atr','image']));
-        $imageAtributes = $request->image_atr;
-        $imageAtributes['imageable_id'] = $newGalery->id;
-        $imageAtributes['imageable_type'] = 'App\Models\Gallery';
-
-        if ($request->hasFile('image')) {
-            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
-                $request->file('image'), 'Gallery', $newGalery->id, $request->watermark);
-            Image::create($imageAtributes);
-        }
-
-        if ($request->hasFile('images')) {
-            foreach ($request->images as $key => $image) {
-                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnailNotEncoded(
-                    $image, 'Gallery', $newGalery->id, $request->watermark, $key);
-                Image::create($imageAtributes);
-            }
-        }
+            
+        $gallery = Gallery::create($request->all());
+        $this->saveImages($gallery->id, 'Gallery', $request->images, $request->watermark);
 
         return redirect('admin/galleries')->with('flash_message', 'Gallery added!');
     }
@@ -121,20 +103,12 @@ class GalleriesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|max:90',
             'active' => 'required|boolean'
         ]);
         $gallery = Gallery::findOrFail($id);
 
-        $gallery->update($request->except(['image_atr','image']));
-
-        if(isset($request->image_atr)) {
-            foreach ($request->image_atr as $image_id => $image_atr) {
-                $image = Image::find($image_id);
-                $image->fill($image_atr);
-                $image->save();
-            }
-        }
+        $gallery->update($request->all());
+        $this->saveImages($gallery->id, 'Gallery', $request->images, $request->watermark);
 
         return redirect('admin/galleries')->with('flash_message', 'Gallery updated!');
     }

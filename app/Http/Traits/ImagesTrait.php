@@ -6,6 +6,9 @@ use App\Helpers\ImageSaveHelper;
 
 trait ImagesTrait {
     protected function saveImages($id, $type, $images, $watermark){
+        if(empty($images)){
+            return;
+        }
         $imageAtributes = [];
         $imageAtributes['imageable_id'] = $id;
         $imageAtributes['imageable_type'] = 'App\Models\\'.$type;

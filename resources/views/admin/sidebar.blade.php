@@ -43,7 +43,7 @@
                 <div class="sidebar-submenu">
 
                     <ul>
-                        <li><a href="{{route('contents.index')}}" title="content editor"><span>@lang('admin.sidebar.links.public.contents.content_editor')</span></a></li>
+                        <!-- <li><a href="{{route('contents.index')}}" title="content editor"><span>@lang('admin.sidebar.links.public.contents.content_editor')</span></a></li> -->
                         <li><a href="{{route('f-a-q.index')}}" title="Faq"><span>@lang('admin.sidebar.links.public.contents.faq')</span></a></li>
                     </ul>
 

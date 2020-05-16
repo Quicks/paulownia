@@ -9,7 +9,6 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImagesTrait;
 
-
 class NewsController extends Controller
 {
     use ImagesTrait;

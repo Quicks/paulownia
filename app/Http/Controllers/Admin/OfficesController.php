@@ -9,9 +9,11 @@ use App\Models\Office;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Helpers\ImageSaveHelper;
+use App\Http\Traits\ImagesTrait;
 
 class OfficesController extends Controller
 {
+    use ImagesTrait;
     /**
      * Display a listing of the resource.
      *
@@ -43,7 +45,8 @@ class OfficesController extends Controller
      */
     public function create()
     {
-        return view('admin.offices.create');
+        $office = new Office;
+        return view('admin.offices.create', compact('office'));
     }
 
     /**
@@ -58,31 +61,13 @@ class OfficesController extends Controller
         $this->validate($request, [
 			'name' => 'required|max:90',
 			'email' => 'required|email',
-            'image' => 'image|max:20000',
-            'images.*' => 'image|max:20000',
             'phone'=>'string|max:190',
-            'posrcode'=>'string|max:190',
+            'postcode'=>'string|max:190',
             'website'=>'url'
 		]);
 
-        $offices = Office::create($request->all());
-        $imageAtributes = $request->image_atr;
-        $imageAtributes['imageable_id'] = $offices->id;
-        $imageAtributes['imageable_type'] = 'App\Models\Office';
-
-        if ($request->hasFile('image')) {
-            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
-                $request->file('image'), 'Office', $offices->id, $request->watermark);
-            Image::create($imageAtributes);
-        }
-
-        if ($request->hasFile('images')) {
-            foreach ($request->images as $key => $image) {
-                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnailNotEncoded(
-                    $image, 'News', $offices->id, $request->watermark, $key);
-                Image::create($imageAtributes);
-            }
-        }
+        $office = Office::create($request->all());
+        $this->saveImages($office->id, 'Office', $request->images, $request->watermark);
 
         return redirect('admin/offices')->with('flash_message', 'Office added!');
     }
@@ -129,20 +114,14 @@ class OfficesController extends Controller
 			'name' => 'required|max:90',
 			'email' => 'required|email',
             'phone'=>'string|max:190',
-            'posrcode'=>'string|max:190',
+            'postcode'=>'string|max:190',
             'website'=>'url'
 		]);
 
         $office = Office::findOrFail($id);
         $office->update($request->except(['image_atr','image']));
+        $this->saveImages($office->id, 'Office', $request->images, $request->watermark);
 
-        if ($request->image_atr) {
-            foreach ($request->image_atr as $image_id => $image_atr) {
-                $image = Image::find($image_id);
-                $image->fill($image_atr);
-                $image->save();
-            }
-        }
         return redirect('admin/offices')->with('flash_message', 'Office updated!');
     }
 

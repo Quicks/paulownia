@@ -9,9 +9,12 @@ use App\Models\Partner;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Helpers\ImageSaveHelper;
+use App\Http\Traits\ImagesTrait;
+
 
 class PartnersController extends Controller
 {
+    use ImagesTrait;
     /**
      * Display a listing of the resource.
      *
@@ -43,7 +46,8 @@ class PartnersController extends Controller
      */
     public function create()
     {
-        return view('admin.partners.create');
+        $partner = new Partner();
+        return view('admin.partners.create', compact('partner'));
     }
 
     /**
@@ -65,24 +69,8 @@ class PartnersController extends Controller
             'website'=>'url'
 		]);
 
-        $partners = Partner::create($request->all());
-        $imageAtributes = $request->image_atr;
-        $imageAtributes['imageable_id'] = $partners->id;
-        $imageAtributes['imageable_type'] = 'App\Models\Partner';
-
-        if ($request->hasFile('image')) {
-            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
-                $request->file('image'), 'Partner', $partners->id, $request->watermark);
-            Image::create($imageAtributes);
-        }
-
-        if ($request->hasFile('images')) {
-            foreach ($request->images as $key => $image) {
-                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnailNotEncoded(
-                    $image, 'Partner', $partners->id, $request->watermark, $key);
-                Image::create($imageAtributes);
-            }
-        }
+        $partner = Partner::create($request->all());
+        $this->saveImages($partner->id, 'Partner', $request->images, $request->watermark);
 
         return redirect('admin/partners')->with('flash_message', 'Partner added!');
     }
@@ -136,13 +124,8 @@ class PartnersController extends Controller
         $partner = Partner::findOrFail($id);
         $partner->update($request->except(['image_atr','image']));
 
-        if ($request->image_atr) {
-            foreach ($request->image_atr as $image_id => $image_atr) {
-                $image = Image::find($image_id);
-                $image->fill($image_atr);
-                $image->save();
-            }
-        }
+        $this->saveImages($partner->id, 'Partner', $request->images, $request->watermark);
+
 
         return redirect('admin/partners')->with('flash_message', 'Partner updated!');
     }

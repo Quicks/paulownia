@@ -10,6 +10,8 @@
 
         <link rel="stylesheet" href="{{ asset('vendor/webkul/admin/assets/css/admin.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}">
+        <link rel="stylesheet" type="text/css" href="/css/admin.css">
+        <link rel="stylesheet" type="text/css" href="/css/custom-admin.css">
         <link href="{{ asset('css/admin_custom.css') }}?v3" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -21,39 +23,40 @@
 
     </head>
 
-    <body @if (app()->getLocale() == 'ar') class="rtl" @endif style="scroll-behavior: smooth; zoom: 0.75;">
+    <body @if (app()->getLocale() == 'ar') class="rtl" @endif style="scroll-behavior: smooth;">
         {!! view_render_event('bagisto.admin.layout.body.before') !!}
+        <div id='sb-site'>
+            <div id="app">
+                @include('admin.header')
+                @include('admin.sidebar')
+                <flash-wrapper ref='flashes'></flash-wrapper>
 
-        <div id="app">
+                <!-- {!! view_render_event('bagisto.admin.layout.nav-top.before') !!}
 
-            <flash-wrapper ref='flashes'></flash-wrapper>
+                @include ('admin::layouts.nav-top')
 
-            {!! view_render_event('bagisto.admin.layout.nav-top.before') !!}
-
-            @include ('admin::layouts.nav-top')
-
-            {!! view_render_event('bagisto.admin.layout.nav-top.after') !!}
-
-
-            {!! view_render_event('bagisto.admin.layout.nav-left.before') !!}
-
-            @include ('admin::layouts.nav-left')
-
-            {!! view_render_event('bagisto.admin.layout.nav-left.after') !!}
+                {!! view_render_event('bagisto.admin.layout.nav-top.after') !!}
 
 
-            <div class="content-container">
+                {!! view_render_event('bagisto.admin.layout.nav-left.before') !!}
 
-                {!! view_render_event('bagisto.admin.layout.content.before') !!}
+                @include ('admin::layouts.nav-left')
 
-                @yield('content-wrapper')
+                {!! view_render_event('bagisto.admin.layout.nav-left.after') !!}
+ -->
 
-                {!! view_render_event('bagisto.admin.layout.content.after') !!}
+                <div class="content-container">
+
+                    <!-- {!! view_render_event('bagisto.admin.layout.content.before') !!} -->
+
+                    @yield('content-wrapper')
+
+                    <!-- {!! view_render_event('bagisto.admin.layout.content.after') !!} -->
+
+                </div>
 
             </div>
-
         </div>
-
         <script type="text/javascript">
             window.flashMessages = [];
 
@@ -77,7 +80,7 @@
 
         <script type="text/javascript" src="{{ asset('vendor/webkul/admin/assets/js/admin.js') }}"></script>
         <script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script>
-
+        
         @stack('scripts')
 
         {!! view_render_event('bagisto.admin.layout.body.after') !!}

@@ -10,6 +10,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- <link rel="stylesheet" href="{{ asset('vendor/webkul/admin/assets/css/admin.css') }}"> -->
+    <link href="{{ asset('css/admin_custom.css') }}?v3" rel="stylesheet">
+
     <style>
         /* Loading Spinner */
         .spinner{margin:0;width:70px;height:18px;margin:-35px 0 0 -9px;position:absolute;top:50%;left:50%;text-align:center}.spinner > div{width:18px;height:18px;background-color:#333;border-radius:100%;display:inline-block;-webkit-animation:bouncedelay 1.4s infinite ease-in-out;animation:bouncedelay 1.4s infinite ease-in-out;-webkit-animation-fill-mode:both;animation-fill-mode:both}.spinner .bounce1{-webkit-animation-delay:-.32s;animation-delay:-.32s}.spinner .bounce2{-webkit-animation-delay:-.16s;animation-delay:-.16s}@-webkit-keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0.0)}40%{-webkit-transform:scale(1.0)}}@keyframes bouncedelay{0%,80%,100%{transform:scale(0.0);-webkit-transform:scale(0.0)}40%{transform:scale(1.0);-webkit-transform:scale(1.0)}}
@@ -36,12 +39,16 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
- 
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/admin.css">
     <link rel="stylesheet" type="text/css" href="/css/custom-admin.css">
+    <link rel="stylesheet" href="{{ asset('vendor/webkul/admin/assets/css/admin.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}"> -->
+        
 
+    <script type="text/javascript" src="{{ asset('vendor/webkul/admin/assets/js/admin.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script>
     <script type="text/javascript" src="/js/admin.js"></script> 
     <script type="text/javascript">
         $(window).load(function(){
@@ -49,6 +56,27 @@
                 $('#loading').fadeOut( 400, "linear" );
             }, 300);
         });
+        
+    </script>
+    <script type="text/javascript">
+        window.flashMessages = [];
+
+        @if ($success = session('success'))
+            window.flashMessages = [{'type': 'alert-success', 'message': "{{ $success }}" }];
+        @elseif ($warning = session('warning'))
+            window.flashMessages = [{'type': 'alert-warning', 'message': "{{ $warning }}" }];
+        @elseif ($error = session('error'))
+            window.flashMessages = [{'type': 'alert-error', 'message': "{{ $error }}" }];
+        @elseif ($info = session('info'))
+            window.flashMessages = [{'type': 'alert-info', 'message': "{{ $info }}" }];
+        @endif
+
+        window.serverErrors = [];
+        @if (isset($errors))
+            @if (count($errors))
+                window.serverErrors = @json($errors->getMessages());
+            @endif
+        @endif
     </script>
     <script>
         var allLangArr = @json(config('translatable.locales'));
@@ -57,26 +85,41 @@
 
 </head>
     <body>
-    <div id="sb-site app">
+    <div id='sb-site'>
 
-        @include('admin.header')
-        @include('admin.sidebar')
-        <div id="page-content-wrapper">
-            <div id="page-content">
-                <div class="container">
-                    <div id='page-title'>
-                        <h2>@yield('pageTitle')</h2>
-                    </div>
-                    <div class="panel">
-                        <div class='panel-body'>
-                            @yield('content')
+        <div id="app">
+
+            @include('admin.header')
+            @include('admin.sidebar')
+            <div id="page-content-wrapper">
+                <div id="page-content">
+                    <div class="container">
+                        <div id='page-title'>
+                            <h2>@yield('pageTitle')</h2>
+                        </div>
+                        <div class="panel">
+                            <div class='panel-body'>
+                                @yield('content')
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-</div>
+    </div>
 @stack('scripts')
-
+<script>
+    setTimeout(() => {
+        $('#sidebar-menu').superclick({
+            animation: {
+                height: 'show'
+            },
+            animationOut: {
+                height: 'hide'
+            }
+        })
+    }, 1000);
+    
+</script>
 </body>
 </html>

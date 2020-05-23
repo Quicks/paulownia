@@ -1,10 +1,10 @@
-@extends('admin::layouts.content')
-
-@section('page_title')
-    {{ __('admin::app.catalog.products.title') }}
-@stop
-
+@extends('layouts.admin')
+@section('pageTitle')
+    @lang('admin.news.index.title')
+@endsection
+                
 @section('content')
+
     <div class="content" style="height: 100%;">
         <div class="page-header">
             <div class="page-title">
@@ -26,7 +26,7 @@
         </div>
 
         {!! view_render_event('bagisto.admin.catalog.products.list.before') !!}
-
+        
         <div class="page-content">
             @inject('products', 'Webkul\Admin\DataGrids\ProductDataGrid')
             {!! $products->render() !!}
@@ -35,15 +35,17 @@
         {!! view_render_event('bagisto.admin.catalog.products.list.after') !!}
 
     </div>
-
+<!-- 
     <modal id="downloadDataGrid" :is-open="modalIds.downloadDataGrid">
         <h3 slot="header">{{ __('admin::app.export.download') }}</h3>
         <div slot="body">
             <export-form></export-form>
         </div>
-    </modal>
+    </modal> -->
 @stop
 
-@push('scripts')
+<!-- @push('scripts')
     @include('admin::export.export', ['gridName' => $products])
-@endpush
+@endpush -->
+
+

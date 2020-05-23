@@ -105,6 +105,8 @@ class ProductController extends Controller
      */
     public function index()
     {
+        
+        // dd($this->product->getAll());
         return view($this->_config['view']);
     }
 

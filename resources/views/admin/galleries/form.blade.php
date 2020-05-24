@@ -5,12 +5,12 @@
         <div class="tab-pane fade active in" id="main-form" role="tabpanel" aria-labelledby="main-form">
             <div class="row">
                 <div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
-                    <label for="name" class="control-label col-sm-3">{{ 'Name' }}</label>
+                    <label for="name" class="control-label col-sm-3">@lang('admin.common.name')</label>
                     <input class="form-control col-sm-6" name="name" type="text" id="name" value="{{ isset($gallery->name) ? $gallery->name : ''}}" required>
                     {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
                 </div>
                 <div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">
-                    <label for="active" class="control-label col-sm-3">@lang('admin.gallery.index.table.publish')</label>
+                    <label for="active" class="control-label col-sm-3">@lang('admin.common.active')</label>
                     <div class='col-sm-6'>
                         <input type="radio" 
                                 id="active-checkbox"

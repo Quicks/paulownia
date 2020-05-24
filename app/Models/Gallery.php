@@ -32,9 +32,12 @@ class Gallery extends Model
      */
     protected $fillable = ['name', 'active'];
 
-    public function images()
-    {
+    public function images() {
         return $this->morphMany('App\Models\Image', 'imageable');
+    }
+
+    public function mainImage() {
+        return $this->images()->first();
     }
 
 }

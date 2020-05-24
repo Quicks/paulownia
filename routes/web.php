@@ -69,7 +69,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/shop/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@index')->name('sendNewsLetter.index');
         Route::post('/shop/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@send')->name('sendNewsLetter.send');
         Route::resource('/f-a-q', 'App\Http\Controllers\Admin\\FAQController');
+        Route::resource('slider', 'App\Http\Controllers\Admin\\SliderController');
         Route::get('/locale/{newLocale}', 'App\Http\Controllers\Admin\LocaleController@setLocale');
+        Route::resource('our-service', 'App\Http\Controllers\Admin\OurServiceController');
     });
 });
 
@@ -79,7 +81,7 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
     Route::get('/show/{type}/{id}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');
     Route::get('/articles', 'App\Http\Controllers\ArticlesController@index')->name('public.articles.index');
     Route::get('/articles/{id}', 'App\Http\Controllers\ArticlesController@show')->name('public.articles.show');
-    Route::get('/galleries/{id}', 'App\Http\Controllers\GalleriesController@index')->name('public.galleries.index');
+    Route::get('/galleries/{id}', 'App\Http\Controllers\GalleriesController@index')->name('public.galleries.show');
     Route::get('/partners', 'App\Http\Controllers\PartnersController@index')->name('public.partners.index');
     Route::get('/partners/{id}', 'App\Http\Controllers\PartnersController@show')->name('public.partners.show');
     Route::get('/treatises', 'App\Http\Controllers\TreatisesController@index')->name('public.treatises.index');
@@ -148,3 +150,5 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
 });
 
 Route::get('/certificate/{code}', 'App\Http\Controllers\CertificateController')->name('certificate');
+
+

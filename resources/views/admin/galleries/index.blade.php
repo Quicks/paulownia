@@ -22,18 +22,22 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>@lang('admin.galleries.index.table.name')</th>
-                                        <th>@lang('admin.galleries.index.table.active')</th>
+                                        <th>@lang('admin.common.name')</th>
+                                        <th>@lang('admin.common.active')</th>
                                         <!-- <th>@lang('admin.galleries.index.table.string')</th> -->
-                                        <th>@lang('admin.galleries.index.table.actions')</th>
+                                        <th>@lang('admin.btns.actions')</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($galleries as $item)
                                 <tr>
                                         <td>{{ $item->name }}</td>
-                                        <td>{{ $item->active }}</td>
-                                        <!-- <td>{{ $item->string1 }}</td> -->
+                                        <td>
+                                            @if($item->active)
+                                                @lang('admin.helpers.yes')
+                                            @else
+                                                @lang('admin.helpers.no')
+                                            @endif
                                         <td>
                                             @if(bouncer()->hasPermission('gallery.update'))
                                                 <a href="{{ url('/admin/galleries/' . $item->id . '/edit') }}" title="Edit partner"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>@lang('admin.btns.edit') </button></a>

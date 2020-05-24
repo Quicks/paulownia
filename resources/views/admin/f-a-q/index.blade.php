@@ -26,7 +26,7 @@
                                         <th>@lang('admin.faq.index.table.topic')</th>
                                         <th>@lang('admin.faq.index.table.question')</th>
                                         <!-- <th>@lang('admin.galleries.index.table.string')</th> -->
-                                        <th>@lang('admin.faq.index.table.actions')</th>
+                                        <th>@lang('admin.btns.actions')</th>
                                     </tr>
                                 </thead>
                                 <tbody>

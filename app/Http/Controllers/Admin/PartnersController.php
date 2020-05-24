@@ -140,7 +140,7 @@ class PartnersController extends Controller
     public function destroy($id)
     {
         $partner = Partner::findOrFail($id);
-        ImageSaveHelper::deleteAllModelImages($partner);
+        $this->deleteAllModelImages($partner);
         $partner->delete();
 
         return redirect('admin/partners')->with('flash_message', 'Partner deleted!');

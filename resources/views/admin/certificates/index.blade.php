@@ -25,14 +25,20 @@
                                         <th>@lang('admin.certificates.index.table.name')</th>
                                         <th>@lang('admin.certificates.index.table.active')</th>
                                         <th>@lang('admin.certificates.index.table.string')</th>
-                                        <th>@lang('admin.certificates.index.table.actions')</th>
+                                        <th>@lang('admin.btns.actions')</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($certificates as $item)
                                 <tr>
                                         <td>{{ $item->name }}</td>
-                                        <td>{{ $item->active }}</td>
+                                        <td>
+                                            @if($item->active)
+                                                @lang('admin.helpers.yes')
+                                            @else
+                                                @lang('admin.helpers.no')
+                                            @endif
+                                        </td>
                                         <td>{{ $item->string1 }}</td>
                                         <td>
                                             @if(bouncer()->hasPermission('certificate.update'))

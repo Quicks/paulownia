@@ -141,7 +141,7 @@ class NewsController extends Controller
     public function destroy($id)
     {
         $news = News::findOrFail($id);
-        ImageSaveHelper::deleteAllModelImages($news);
+        $this->deleteAllModelImages($news);
         $news->delete();
 
         return redirect('admin/news')->with('flash_message', 'News deleted!');

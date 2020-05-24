@@ -1,4 +1,4 @@
-<div class="table cadadasda">
+<div class="table">
     <datagrid-filters></datagrid-filters>
 
     @if (isset($results['paginated']) && $results['paginated'])
@@ -151,7 +151,7 @@
                                 <div class="card-body">
                                     <div class="table-title row">
                                         <div class='col-md-1 col-md-offset-11'>
-                                            <a href="{{ url('/admin/news/create') }}" class="btn btn-success btn-sm pull-right" title="Add New news">
+                                            <a href="{{Request::url().'/create' }}" class="btn btn-success btn-sm pull-right" title="Add New news">
                                                 <i class="fa fa-plus" aria-hidden="true"></i>@lang('admin.btns.new')
                                             </a>
                                         </div>
@@ -159,7 +159,7 @@
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead v-if="massActionsToggle">
-                                                @if (isset($results['massactions']))
+                                                <!-- @if (isset($results['massactions']))
                                                     <tr class="mass-action" v-if="massActionsToggle" style="height: 65px;">
                                                         <th colspan="100%">
                                                             <div class="mass-action-wrapper" style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start;">
@@ -190,12 +190,12 @@
                                                             </div>
                                                         </th>
                                                     </tr>
-                                                @endif
+                                                @endif -->
                                             </thead>
 
                                             <thead v-if="massActionsToggle == false">
                                                 <tr style="height: 65px;">
-                                                    @if (count($results['records']) && $results['enableMassActions'])
+                                                    <!-- @if (count($results['records']) && $results['enableMassActions'])
                                                         <th class="grid_head" id="mastercheckbox" style="width: 50px;">
                                                             <span class="checkbox">
                                                                 <input type="checkbox" v-model="allSelected" v-on:change="selectAll">
@@ -203,7 +203,7 @@
                                                                 <label class="checkbox-view" for="checkbox"></label>
                                                             </span>
                                                         </th>
-                                                    @endif
+                                                    @endif -->
 
                                                     @foreach($results['columns'] as $key => $column)
                                                         <th class="grid_head"
@@ -211,9 +211,7 @@
                                                                 style="width: {{ $column['width'] }}"
                                                             @endif
 
-                                                            @if(isset($column['sortable']) && $column['sortable'])
-                                                                v-on:click="sortCollection('{{ $column['index'] }}')"
-                                                            @endif
+                                                            
                                                         >
                                                             {{ $column['label'] }}
                                                         </th>

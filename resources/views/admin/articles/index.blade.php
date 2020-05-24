@@ -26,14 +26,20 @@
                                         <th>@lang('admin.article.index.table.publish')</th>
                                         <th>@lang('admin.article.index.table.publish_date')</th>
                                         <th>@lang('admin.article.index.table.images')</th>
-                                        <th>@lang('admin.article.index.table.actions')</th>
+                                        <th>@lang('admin.btns.actions')</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($articles as $item)
                                     <tr>
                                         <td><a target='_blank' href="/show/article/{{$item->id}}">{{ $item->title }}</a></td>
-                                        <td>{{ $item->active ? 'Yes' : 'No'}}</td>
+                                        <td>
+                                            @if($item->active)
+                                                @lang('admin.helpers.yes')
+                                            @else
+                                                @lang('admin.helpers.no')
+                                            @endif
+                                        </td>
                                         <td>{{ $item->publish_date }}</td>
                                         <td>
                                             @foreach($item->images as $image)

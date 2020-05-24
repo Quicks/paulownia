@@ -123,7 +123,7 @@ class GalleriesController extends Controller
     public function destroy($id)
     {
         $gallery = Gallery::findOrFail($id);
-        ImageSaveHelper::deleteAllModelImages($gallery);
+        $this->deleteAllModelImages($gallery);
         $gallery->delete();
         return redirect('admin/galleries')->with('flash_message', 'Gallery deleted!');
     }

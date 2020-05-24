@@ -29,4 +29,7 @@ trait ImagesTrait {
             }
         }
     }
+    protected function deleteAllModelImages($object){
+        ImageSaveHelper::deleteAllModelImages($object);
+    }
 }

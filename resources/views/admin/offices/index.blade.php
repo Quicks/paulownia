@@ -29,7 +29,7 @@
                                         <th>@lang('admin.offices.index.table.email')</th>
                                         <th>@lang('admin.offices.index.table.website')</th>
                                         <th>@lang('admin.offices.index.table.image')</th>
-                                        <th>@lang('admin.offices.index.table.actions')</th>
+                                        <th>@lang('admin.btns.actions')</th>
                                     </tr>
                                 </thead>
                                 <tbody>

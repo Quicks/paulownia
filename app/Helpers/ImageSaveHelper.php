@@ -17,7 +17,8 @@ class ImageSaveHelper
         } else {
              $preparedImage = Image::make($requestImageFile)->encode('jpg');
         }
-        $thumbnail = Image::make($requestImageFile)->fit(150)->encode('jpg');
+        
+        $thumbnail = Image::make($requestImageFile)->resize(360, 240)->encode('jpg');
         $fileName = 'uploads/'.$imageModelName.'/'.$imageModelId.'/'.now()->timestamp.$imgNum;
         Storage::put($fileName.'.jpg', $preparedImage->__toString());
         Storage::put($fileName.'-tmb.jpg', $thumbnail->__toString());

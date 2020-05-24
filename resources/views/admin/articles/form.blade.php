@@ -26,29 +26,7 @@
                     </div>
                 </div>
                 <div class='form-group'>
-
                     @include('admin.add-images.cropper', ['images' => $article->images])
-                    <!-- @if($formMode === 'edit')
-                        <label for="images" class="control-label col-sm-3">@lang('admin.article.index.table.images')</label>
-                        <div class='images col-sm-6'>
-                            @foreach ($article->images as $image)
-                                <div class='image-editor-wrapper'>
-                                    <img src="/storage/{{$image->image}}" class='img-responsive'/>
-                                    <div class="image-editor-panel">
-                                        <a class='edit-img-btn' href="{{ url('/admin/image_crop/' . $image->id) }}" title="Crop Image">
-                                            <i class="glyph-icon tooltip-button icon-edit" title="" data-original-title="@lang('admin.btns.crop')"></i>
-                                        </a>
-                                        <a class="btn btn-sm delete-img-btn" title="Delete image" onclick="deleteImage({{$image->id}});" >
-                                            <i class="glyph-icon tooltip-button icon-trash" title="" data-original-title="@lang('admin.btns.delete_image')"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                @include ('admin.add-images.edit_image_form')
-                                <hr>
-                            @endforeach
-                        </div>
-                        
-                    @endif -->
                 </div>
             </div>
 
@@ -92,3 +70,4 @@
 @push('scripts')
    <script src="{{ asset('js/translate.js') }}"></script>
 @endpush
+

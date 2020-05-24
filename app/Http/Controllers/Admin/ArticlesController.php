@@ -126,7 +126,7 @@ class ArticlesController extends Controller
     public function destroy($id)
     {
         $article = Article::findOrFail($id);
-        ImageSaveHelper::deleteAllModelImages($article);
+        $this->deleteAllModelImages($article);
         $article->delete();
 
         return redirect('admin/articles')->with('flash_message', 'Article deleted!');

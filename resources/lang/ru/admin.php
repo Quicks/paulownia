@@ -9,13 +9,23 @@ return [
   'btns.save' => 'Сохранить',
   'btns.crop' => 'Обрезать картинку',
   'btns.delete_image' => 'Удалить картинку',
+  'btns.actions' => 'Действия',
+  
+  'helpers.yes' => 'Да',
+  'helpers.no' => 'Нет',
 
+  'common.name' => 'Название',
+  'common.active' => 'Публиковать?',
+  'common.text' => 'Текст',
+  'common.images' => 'Картинки',
+  
+  'common.image' => 'Картинка',
+  
   'article.index.title' => 'Список статей',
   'article.index.table.link_to_public' => 'Ссылка на публичную часть',
   'article.index.table.publish' => 'Публиковать?',
   'article.index.table.publish_date' => 'Дата публикации',
   'article.index.table.images' => 'Картинки',
-  'article.index.table.actions' => 'Действия',
   'article.edit.title' => 'Редактирование статьи',
   'article.create.title' => 'Создание статьи',
 
@@ -25,7 +35,6 @@ return [
   'news.index.table.publish' => 'Публиковать?',
   'news.index.table.publish_date' => 'Дата публикации',
   'news.index.table.images' => 'Картинки',
-  'news.index.table.actions' => 'Действия',
   'news.edit.title' => 'Редактирование статьи',
   'news.create.title' => 'Создание новости',
 
@@ -34,7 +43,6 @@ return [
   'treatises.index.table.publish' => 'Публиковать?',
   'treatises.index.table.publish_date' => 'Дата публикации',
   'treatises.index.table.files' => 'Файли',
-  'treatises.index.table.actions' => 'Действия',
   'treatises.edit.title' => 'Редактирование трактата',
   'treatises.create.title' => 'Создание трактата',
 
@@ -44,7 +52,6 @@ return [
   'partners.index.table.phone' => 'Телефон',
   'partners.index.table.email' => 'Email',
   'partners.index.table.website' => 'Вебсайт',
-  'partners.index.table.actions' => 'Действия',
   'partners.index.table.image' => 'Картинка',
   'partners.edit.title' => 'Редактирование партнера',
   'partners.create.title' => 'Создание партнера',
@@ -55,10 +62,24 @@ return [
   'offices.index.table.phone' => 'Телефон',
   'offices.index.table.email' => 'Email',
   'offices.index.table.website' => 'Вебсайт',
-  'offices.index.table.actions' => 'Действия',
   'offices.index.table.image' => 'Картинка',
   'offices.edit.title' => 'Редактирование официального представительства',
   'offices.create.title' => 'Создание официального представительства',
+
+  'galleries.index.title' => 'Галереи',
+  'galleries.edit.title' => 'Редактирование галереи',
+  'galleries.create.title' => 'Создание галереи',
+
+  'ourservice.index.title' => 'Наши сервисы',
+  'ourservice.create.title' => 'Создать сервис',
+  'ourservice.edit.title' => 'Редактировать сервис',
+
+  'slider.index.title' => 'Слайдеры',
+  'slider.create.title' => 'Создать слайдер',
+  'slider.edit.title' => 'Редактировать слайдер',
+  'slider.index.table.link' => 'Ссылка',
+
+
 
   'form.main' => 'Общая инфа',
   'form.lang.en' => 'На английском',
@@ -71,6 +92,7 @@ return [
   'form.crop_image' => 'Обрезать картинку',
   'form.delete_image' => 'Удалить картинку',
   'form.text' => 'Текст',
+  'form.desc' => 'Текст',
   'form.one_crop_label' => 'Добавить картинку',
   'form.many_crop_label' => 'Много картинок',
   'form.file_choose' => 'Выбрать файл',
@@ -91,6 +113,8 @@ return [
   'sidebar.links.public.gallery' => 'Галерея',
   'sidebar.links.public.partners' => 'Партнеры',
   'sidebar.links.public.images' => 'Картинки',
+  'sidebar.links.public.our_service' => 'Наши сервисы',
+  'sidebar.links.public.slider' => 'Слайдер',
   'sidebar.links.public.official_offices' => 'Оф. представительства',
   'sidebar.links.shop.title' => 'Магазин',
   'sidebar.links.shop.dashboard' => 'Панель магазина',
@@ -99,6 +123,13 @@ return [
   'sidebar.links.shop.customers' => 'Заказчики',
   'sidebar.links.shop.promotions' => 'Промо',
   'sidebar.links.shop.settings' => 'Настройки',
+  'sidebar.links.shop.tax-categories' => 'Налоги',
+  'sidebar.links.shop.sliders' => 'Слайдер',
+  'sidebar.links.shop.users' => 'Пользователи',
+  'sidebar.links.shop.channels' => 'Каналы',
+  'sidebar.links.shop.inventory_sources' => 'inventory_sources',
+  'sidebar.links.shop.exchange_rates' => 'Курс валют',
+  'sidebar.links.shop.currencies' => 'Валюта',
   'sidebar.links.shop.configure' => 'Конфигурация',
   'sidebar.links.shop.certificates' => 'Сертификаты',
   'sidebar.links.tracking.title' => 'Статистика',

@@ -135,7 +135,7 @@ class OfficesController extends Controller
     public function destroy($id)
     {
         $office = Office::findOrFail($id);
-        ImageSaveHelper::deleteAllModelImages($office);
+        $this->deleteAllModelImages($office);
         $office->delete();
 
         return redirect('admin/offices')->with('flash_message', 'Office deleted!');

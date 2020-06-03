@@ -72,6 +72,8 @@ Route::prefix('admin')->group(function () {
         Route::resource('slider', 'App\Http\Controllers\Admin\\SliderController');
         Route::get('/locale/{newLocale}', 'App\Http\Controllers\Admin\LocaleController@setLocale');
         Route::resource('our-service', 'App\Http\Controllers\Admin\OurServiceController');
+        Route::post('menus/reorder', 'App\Http\Controllers\Admin\MenusController@reorder');
+        Route::resource('menus', 'App\Http\Controllers\Admin\MenusController')->only(['index','update','destroy', 'store']);
     });
 });
 

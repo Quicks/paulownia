@@ -39,7 +39,7 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
-    
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/admin.css">
     <link rel="stylesheet" type="text/css" href="/css/custom-admin.css">
@@ -119,5 +119,6 @@
     }, 1000);
     
 </script>
+
 </body>
 </html>

@@ -45,6 +45,7 @@ mix.combine([
    'resources/assets/admin_js/admin_template/ck_en.js',
    'resources/assets/admin_js/admin_template/dropzone.min.js',
    'resources/assets/admin_js/admin_template/dropzone-amd-module.min.js',
+   'resources/assets/admin_js/admin_template/menu-creator.js',
    'resources/assets/admin_js/admin_template/vue.js',
    'resources/assets/admin_js/admin_template/layout.js',
    'resources/assets/admin_js/admin_template/custom.js',

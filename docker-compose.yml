@@ -27,7 +27,16 @@ services:
       - 86:80
     depends_on:
       - app
-
+  node:
+    image: node:10
+    stdin_open: true
+    working_dir: /var/www
+    volumes_from:
+      - app
+    tty: true
+    command: npm run watch
+    volumes:
+      - .:/var/www
   # The Database
   database:
     container_name: paulownia_database

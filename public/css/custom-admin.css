@@ -1,15 +1,18 @@
-.nav-responsive.nav.nav-tabs{
+.form-sidebar .nav-responsive.nav.nav-tabs{
   padding: 0;
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
 }
-.nav-responsive.nav.nav-tabs li {
+.form-sidebar .nav-responsive.nav.nav-tabs li {
   width: 100%;
 }
 .nav-responsive.nav.nav-tabs a {
   height: auto;
   margin: 0;
+}
+.sub-nav-content{
+  padding: 15px;
 }
 .full-width {
   width: 100%;

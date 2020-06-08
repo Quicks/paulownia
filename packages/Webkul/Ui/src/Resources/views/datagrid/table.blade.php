@@ -155,6 +155,8 @@
                                                 <i class="fa fa-plus" aria-hidden="true"></i>@lang('admin.btns.new')
                                             </a>
                                         </div>
+                                        <br>
+                                        <br>
                                     </div>
                                     <div class="table-responsive">
                                         <table class="table">

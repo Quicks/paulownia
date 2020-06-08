@@ -70,6 +70,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/shop/send_news_letter', 'App\Http\Controllers\Admin\SendNewsletterController@send')->name('sendNewsLetter.send');
         Route::resource('/f-a-q', 'App\Http\Controllers\Admin\\FAQController');
         Route::resource('slider', 'App\Http\Controllers\Admin\\SliderController');
+        Route::resource('products', 'App\Http\Controllers\Admin\\ProductsController');
         Route::get('/locale/{newLocale}', 'App\Http\Controllers\Admin\LocaleController@setLocale');
         Route::resource('our-service', 'App\Http\Controllers\Admin\OurServiceController');
         Route::post('menus/reorder', 'App\Http\Controllers\Admin\MenusController@reorder');

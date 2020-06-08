@@ -1,8 +1,7 @@
-
 @extends('layouts.admin')
 
 @section('pageTitle')
-    @lang('admin.treatises.create.title')
+    @lang('admin.products.create.title')
 @endsection
                   
 @section('content')
@@ -14,13 +13,11 @@
                 @endforeach
             </ul>
         @endif
-        <form method="POST" action="{{ url('/admin/treatises') }}" accept-charset="UTF-8"
+        <form method="POST" action="{{ url('/admin/products') }}" accept-charset="UTF-8"
                 class="form-horizontal validForm" enctype="multipart/form-data">
             {{ csrf_field() }}
-            
-            @include ('admin.treatises.form', ['formMode' => 'create'])
+            @include ('admin.products.form')
         </form>
     </div>
 @endsection
-
 

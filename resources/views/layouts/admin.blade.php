@@ -45,9 +45,9 @@
     <link rel="stylesheet" type="text/css" href="/css/custom-admin.css">
     <link rel="stylesheet" href="{{ asset('vendor/webkul/admin/assets/css/admin.css') }}">
     @stack('index_scripts')
-
-    <!-- <script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script> -->
     <script type="text/javascript" src="/js/admin.js"></script> 
+    <!-- <script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script> -->
+
     <script type="text/javascript">
         $(window).load(function(){
             setTimeout(function() {
@@ -56,29 +56,7 @@
         });
         
     </script>
-    <script type="text/javascript">
-        window.flashMessages = [];
-
-        @if ($success = session('success'))
-            window.flashMessages = [{'type': 'alert-success', 'message': "{{ $success }}" }];
-        @elseif ($warning = session('warning'))
-            window.flashMessages = [{'type': 'alert-warning', 'message': "{{ $warning }}" }];
-        @elseif ($error = session('error'))
-            window.flashMessages = [{'type': 'alert-error', 'message': "{{ $error }}" }];
-        @elseif ($info = session('info'))
-            window.flashMessages = [{'type': 'alert-info', 'message': "{{ $info }}" }];
-        @endif
-
-        window.serverErrors = [];
-        @if (isset($errors))
-            @if (count($errors))
-                window.serverErrors = @json($errors->getMessages());
-            @endif
-        @endif
-    </script>
-    <script>
-        var allLangArr = @json(config('translatable.locales'));
-    </script>
+    
 
 
 </head>
@@ -106,6 +84,31 @@
         </div>
     </div>
 @stack('scripts')
+<script type="text/javascript">
+    window.flashMessages = [];
+
+    @if ($success = session('success'))
+        window.flashMessages = [{'type': 'alert-success', 'message': "{{ $success }}" }];
+    @elseif ($warning = session('warning'))
+        window.flashMessages = [{'type': 'alert-warning', 'message': "{{ $warning }}" }];
+    @elseif ($error = session('error'))
+        window.flashMessages = [{'type': 'alert-error', 'message': "{{ $error }}" }];
+    @elseif ($info = session('info'))
+        window.flashMessages = [{'type': 'alert-info', 'message': "{{ $info }}" }];
+    @endif
+
+    window.serverErrors = [];
+    @if (isset($errors))
+        @if (count($errors))
+            window.serverErrors = @json($errors->getMessages());
+        @endif
+    @endif
+</script>
+<script>
+    var allLangArr = @json(config('translatable.locales'));
+</script>
+<!-- <script type="text/javascript" src="{{ asset('vendor/webkul/admin/assets/js/admin.js') }}"></script> -->
+
 <script>
     setTimeout(() => {
         $('#sidebar-menu').superclick({

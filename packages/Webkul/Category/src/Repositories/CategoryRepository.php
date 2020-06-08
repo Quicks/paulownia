@@ -80,6 +80,18 @@ class CategoryRepository extends Repository
             : $this->model::orderBy('position', 'ASC')->get()->toTree();
     }
 
+        /**
+     * Specify category tree
+     *
+     * @param integer $id
+     * @return mixed
+     */
+    public function getCategoryFlatTree($id = null)
+    {
+        return $id
+            ? $this->model::orderBy('position', 'ASC')->where('id', '!=', $id)->get()->toFlatTree()
+            : $this->model::orderBy('position', 'ASC')->get()->toFlatTree();
+    }
 
     /**
      * Get root categories

@@ -103,6 +103,10 @@ $(document).ready(function() {
         $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
     });
 
+    $('.select2').select2({
+        width: '50%'
+    })
+
     /* Sidebar menu */
     // $(function() {
 

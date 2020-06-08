@@ -73,14 +73,12 @@ class ProductForm extends FormRequest
             'variants.*.name' => 'required',
             'variants.*.sku' => 'required',
             'variants.*.price' => 'required',
-            'variants.*.weight' => 'required',
-            'images.*' => 'mimes:jpeg,jpg,bmp,png',
+            'variants.*.weight' => 'required'
         ];
 
         $inputs = $this->all();
 
         $product = $this->product->find($this->id);
-
         $attributes = $product->attribute_family->custom_attributes;
 
         $productSuperAttributes = $product->super_attributes;
@@ -90,7 +88,9 @@ class ProductForm extends FormRequest
                 if ($attribute->code == 'sku') {
                     continue;
                 }
-
+                if($attribute->value_per_locale){
+                    continue;
+                }
                 if ($product->type == 'configurable' && in_array($attribute->code, ['price', 'cost', 'special_price', 'special_price_from', 'special_price_to', 'width', 'height', 'depth', 'weight'])) {
                     continue;
                 }

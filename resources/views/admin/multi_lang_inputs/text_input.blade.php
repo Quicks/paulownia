@@ -9,9 +9,9 @@
             dir="rtl" 
             class="text-right" 
         @endif
-        name="{{$locale.'['.$itemProperty.']'}}" 
+        name="{{isset($name) ? $name : ($locale.'['.$itemProperty.']')}}" 
         type="text"
-        id="{{$locale.'['.$itemProperty.']'}}"
+        id="{{isset($name) ? $name : ($locale.'['.$itemProperty.']')}}"
         placeholder="@isset($placeholder) {{$placeholder}} @endisset" 
         value="{{ isset($item) && isset($item->translate($locale)->$itemProperty) ? $item->translate($locale)->$itemProperty : ''}}"
     >

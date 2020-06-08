@@ -7,8 +7,8 @@
     </label>
     <textarea class="form-control @isset($translate) {{$translate}} @endisset" 
         @if($locale == 'ar') dir="rtl" class="text-right" @endif
-        name="{{$locale.'['.$itemProperty.']'}}"
-        id="{{$locale.'['.$itemProperty.']'}}" rows="3"
+        name="{{isset($name) ? $name : ($locale.'['.$itemProperty.']')}}"
+        id="{{isset($name) ? $name : ($locale.'['.$itemProperty.']')}}" rows="3"
     >
         {{isset($item) && isset($item->translate($locale)->$itemProperty) ? $item->translate($locale)->$itemProperty : ''}}
     </textarea>

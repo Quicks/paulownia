@@ -71,6 +71,7 @@ Route::prefix('admin')->group(function () {
         Route::resource('/f-a-q', 'App\Http\Controllers\Admin\\FAQController');
         Route::resource('slider', 'App\Http\Controllers\Admin\\SliderController');
         Route::resource('products', 'App\Http\Controllers\Admin\\ProductsController');
+        Route::resource('orders', 'App\Http\Controllers\Admin\\OrdersController');
         Route::get('/locale/{newLocale}', 'App\Http\Controllers\Admin\LocaleController@setLocale');
         Route::resource('our-service', 'App\Http\Controllers\Admin\OurServiceController');
         Route::post('menus/reorder', 'App\Http\Controllers\Admin\MenusController@reorder');
@@ -128,10 +129,10 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
     ])->name('profile.edit');
     Route::get('orders', 'Webkul\Shop\Http\Controllers\OrderController@index')->defaults('_config', [
         'view' => 'public.customer.orders.index'
-    ])->name('orders.index');
+    ])->name('public.orders.index');
     Route::get('orders/view/{id}', 'Webkul\Shop\Http\Controllers\OrderController@view')->defaults('_config', [
         'view' => 'public.customer.orders.view'
-    ])->name('orders.view');
+    ])->name('public.orders.view');
     Route::get('addresses', 'Webkul\Customer\Http\Controllers\AddressController@index')->defaults('_config', [
         'view' => 'public.customer.address.index'
     ])->name('address.index');

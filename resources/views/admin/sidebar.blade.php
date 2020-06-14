@@ -122,11 +122,41 @@
         @endif
         @if(bouncer()->hasPermission('catalog.products'))
             <li>
-                <a href="{{route('admin.catalog.products.index')}}">
-                    <i class="glyph-icon icon-linecons-tv"></i>
+                <a href="#" title="Elements">
+                <i class="glyph-icon icon-linecons-diamond"></i>
                     <span>@lang('admin.sidebar.links.shop.catalog')</span>
                 </a>
+                <div class="sidebar-submenu">
+
+                    <ul>
+                        <li>
+                            <a href="{{route('products.index')}}">
+                                <span>@lang('admin.sidebar.links.shop.products')</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('orders.index')}}">
+                                <span>@lang('admin.sidebar.links.shop.orders')</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a class="{{Request::is('admin/categories') ? "custom-admin-sidebar-a-active" : ""}}"
+                            href="{{route('admin.catalog.categories.index')}}">
+                                <span>@lang('admin.sidebar.links.shop.categories')</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="{{Request::is('admin/attributes') ? "custom-admin-sidebar-a-active" : ""}}"
+                            href="{{route('admin.catalog.attributes.index')}}">
+                                <span>@lang('admin.sidebar.links.shop.attributes')</span>
+                            </a>
+                        </li> -->
+                    </ul>
+
+                </div>
             </li>
+
+            
         @endif
         @if(bouncer()->hasPermission('customers'))
             <li>

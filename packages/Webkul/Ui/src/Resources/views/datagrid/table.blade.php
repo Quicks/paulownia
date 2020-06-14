@@ -8,7 +8,7 @@
     @push('scripts')
         <script type="text/x-template" id="datagrid-filters">
             <div class="grid-container">
-                <div class="filter-row-one" id="datagrid-filters">
+                <!-- <div class="filter-row-one" id="datagrid-filters">
                     <div class="search-filter">
                         <input type="search" id="search-field" class="control" placeholder="{{ __('ui::app.datagrid.search') }}" v-model="searchValue" v-on:keyup.enter="searchCollection(searchValue)" />
 
@@ -143,80 +143,100 @@
                             <span class="icon cross-icon" v-on:click="removeFilter(filter)"></span>
                         </span>
                     </span>
-                </div>
-
-                <table class="table">
-                    <thead v-if="massActionsToggle">
-                        @if (isset($results['massactions']))
-                            <tr class="mass-action" v-if="massActionsToggle" style="height: 65px;">
-                                <th colspan="100%">
-                                    <div class="mass-action-wrapper" style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start;">
-
-                                        <span class="massaction-remove" v-on:click="removeMassActions" style="margin-right: 10px; margin-top: 3px;">
-                                            <span class="icon checkbox-dash-icon"></span>
-                                        </span>
-
-                                        <form method="POST" id="mass-action-form" style="display: inline-flex;" action="" onsubmit="return confirm('{{ __('ui::app.datagrid.click_on_action') }}')">
-                                            @csrf()
-
-                                            <input type="hidden" id="indexes" name="indexes" v-model="dataIds">
-
-                                            <div class="control-group">
-                                                <select class="control" v-model="massActionType" @change="changeMassActionTarget" name="massaction-type" required>
-                                                    <option v-for="(massAction, index) in massActions" :key="index" :value="massAction.type">@{{ massAction.label }}</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="control-group" style="margin-left: 10px;" v-if="massActionType == 'update'">
-                                                <select class="control" v-model="massActionUpdateValue" name="update-options" required>
-                                                    <option v-for="(massActionValue, id) in massActionValues" :value="massActionValue">@{{ id }}</option>
-                                                </select>
-                                            </div>
-
-                                            <input type="submit" class="btn btn-sm btn-primary" style="margin-left: 10px;">
-                                        </form>
+                </div> -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-title row">
+                                        <div class='col-md-1 col-md-offset-11'>
+                                            <a href="{{Request::url().'/create' }}" class="btn btn-success btn-sm pull-right" title="Add New news">
+                                                <i class="fa fa-plus" aria-hidden="true"></i>@lang('admin.btns.new')
+                                            </a>
+                                        </div>
+                                        <br>
+                                        <br>
                                     </div>
-                                </th>
-                            </tr>
-                        @endif
-                    </thead>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead v-if="massActionsToggle">
+                                                <!-- @if (isset($results['massactions']))
+                                                    <tr class="mass-action" v-if="massActionsToggle" style="height: 65px;">
+                                                        <th colspan="100%">
+                                                            <div class="mass-action-wrapper" style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start;">
 
-                    <thead v-if="massActionsToggle == false">
-                        <tr style="height: 65px;">
-                            @if (count($results['records']) && $results['enableMassActions'])
-                                <th class="grid_head" id="mastercheckbox" style="width: 50px;">
-                                    <span class="checkbox">
-                                        <input type="checkbox" v-model="allSelected" v-on:change="selectAll">
+                                                                <span class="massaction-remove" v-on:click="removeMassActions" style="margin-right: 10px; margin-top: 3px;">
+                                                                    <span class="icon checkbox-dash-icon"></span>
+                                                                </span>
 
-                                        <label class="checkbox-view" for="checkbox"></label>
-                                    </span>
-                                </th>
-                            @endif
+                                                                <form method="POST" id="mass-action-form" style="display: inline-flex;" action="" onsubmit="return confirm('{{ __('ui::app.datagrid.click_on_action') }}')">
+                                                                    @csrf()
 
-                            @foreach($results['columns'] as $key => $column)
-                                <th class="grid_head"
-                                    @if(isset($column['width']))
-                                        style="width: {{ $column['width'] }}"
-                                    @endif
+                                                                    <input type="hidden" id="indexes" name="indexes" v-model="dataIds">
 
-                                    @if(isset($column['sortable']) && $column['sortable'])
-                                        v-on:click="sortCollection('{{ $column['index'] }}')"
-                                    @endif
-                                >
-                                    {{ $column['label'] }}
-                                </th>
-                            @endforeach
+                                                                    <div class="control-group">
+                                                                        <select class="control" v-model="massActionType" @change="changeMassActionTarget" name="massaction-type" required>
+                                                                            <option v-for="(massAction, index) in massActions" :key="index" :value="massAction.type">@{{ massAction.label }}</option>
+                                                                        </select>
+                                                                    </div>
 
-                            @if ($results['enableActions'])
-                                <th>
-                                    {{ __('ui::app.datagrid.actions') }}
-                                </th>
-                            @endif
-                        </tr>
-                    </thead>
+                                                                    <div class="control-group" style="margin-left: 10px;" v-if="massActionType == 'update'">
+                                                                        <select class="control" v-model="massActionUpdateValue" name="update-options" required>
+                                                                            <option v-for="(massActionValue, id) in massActionValues" :value="massActionValue">@{{ id }}</option>
+                                                                        </select>
+                                                                    </div>
 
-                    @include('ui::datagrid.body', ['records' => $results['records'], 'actions' => $results['actions'], 'index' => $results['index'], 'columns' => $results['columns'],'enableMassActions' => $results['enableMassActions'], 'enableActions' => $results['enableActions'], 'norecords' => $results['norecords']])
-                </table>
+                                                                    <input type="submit" class="btn btn-sm btn-primary" style="margin-left: 10px;">
+                                                                </form>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                @endif -->
+                                            </thead>
+
+                                            <thead v-if="massActionsToggle == false">
+                                                <tr style="height: 65px;">
+                                                    <!-- @if (count($results['records']) && $results['enableMassActions'])
+                                                        <th class="grid_head" id="mastercheckbox" style="width: 50px;">
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" v-model="allSelected" v-on:change="selectAll">
+
+                                                                <label class="checkbox-view" for="checkbox"></label>
+                                                            </span>
+                                                        </th>
+                                                    @endif -->
+
+                                                    @foreach($results['columns'] as $key => $column)
+                                                        <th class="grid_head"
+                                                            @if(isset($column['width']))
+                                                                style="width: {{ $column['width'] }}"
+                                                            @endif
+
+                                                            
+                                                        >
+                                                            {{ $column['label'] }}
+                                                        </th>
+                                                    @endforeach
+
+                                                    @if ($results['enableActions'])
+                                                        <th>
+                                                            {{ __('ui::app.datagrid.actions') }}
+                                                        </th>
+                                                    @endif
+                                                </tr>
+                                            </thead>
+
+                                            @include('ui::datagrid.body', ['records' => $results['records'], 'actions' => $results['actions'], 'index' => $results['index'], 'columns' => $results['columns'],'enableMassActions' => $results['enableMassActions'], 'enableActions' => $results['enableActions'], 'norecords' => $results['norecords']])
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </script>
 

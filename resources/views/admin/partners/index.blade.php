@@ -1,62 +1,60 @@
 @extends('layouts.admin')
-
+@section('pageTitle')
+    @lang('admin.partners.index.title')
+@endsection
+                    
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            @include('admin.sidebar')
-
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Partners</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/partners/create') }}" class="btn btn-success btn-sm" title="Add New Partner">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
-                        </a>
-
-                        <form method="GET" action="{{ url('/admin/partners') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                                <span class="input-group-append">
-                                    <button class="btn btn-secondary" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
+                        <div class="table-title row">
+                            <div class='col-md-1 col-md-offset-11'>
+                                <a href="{{ url('/admin/partners/create') }}" class="btn btn-success btn-sm pull-right" title="Add New news">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>@lang('admin.btns.new')
+                                </a>
                             </div>
-                        </form>
-
+                        </div>
                         <br/>
                         <br/>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Name</th><th>Postcode</th><th>Phone</th><th>Email</th><th>Actions</th>
+                                        <th>@lang('admin.partners.index.table.name')</th>
+                                        <th>@lang('admin.partners.index.table.postcode')</th>
+                                        <th>@lang('admin.partners.index.table.phone')</th>
+                                        <th>@lang('admin.partners.index.table.email')</th>
+                                        <th>@lang('admin.partners.index.table.website')</th>
+                                        <th>@lang('admin.partners.index.table.image')</th>
+                                        <th>@lang('admin.btns.actions')</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($partners as $item)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                <tr>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->postcode }}</td>
                                         <td>{{ $item->phone }}</td>
                                         <td>{{ $item->email }}</td>
+                                        <td><a target='_blank' rel='noopener noreferrer' href="{{ $item->website }}">{{ $item->website }}</a></td>
                                         <td>
-                                            <a href="{{ url('/admin/partners/' . $item->id) }}" title="View Partner"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/admin/partners/' . $item->id . '/edit') }}" title="Edit Partner"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                            <a href="{{ url('/admin/image_add/?imageable_id=' . $item->id . '&imageable_type=' . get_class($item) . '&redirect_route='.route('partners.show', $item->id) )  }}"
-                                               title="Add Image">
-                                                <button class="btn btn-primary btn-sm">
-                                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
-                                                    Add image
-                                                </button>
-                                            </a>
-
-                                            <form method="POST" action="{{ url('/admin/partners' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Partner" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                                            </form>
+                                            @foreach($item->images as $image)
+                                                <img src="/storage/{{$image->getThumbnailAttribute()}}" class='img-thumbnail admin-thumbnail'/>
+                                            @endforeach
+                                        </td>
+                                        <td>
+                                            @if(bouncer()->hasPermission('partner.update'))
+                                                <a href="{{ url('/admin/partners/' . $item->id . '/edit') }}" title="Edit partner"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>@lang('admin.btns.edit') </button></a>
+                                            @endif
+                                            @if(bouncer()->hasPermission('partner.destroy'))
+                                                <form method="POST" action="{{ url('/admin/partners' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                    {{ method_field('DELETE') }}
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete partner" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> @lang('admin.btns.destroy')</button>
+                                                </form>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

@@ -20,14 +20,14 @@ class FAQController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $faq = FAQ::where('question', 'LIKE', "%$keyword%")
+            $faqs = FAQ::where('question', 'LIKE', "%$keyword%")
                 ->orWhere('answer', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $faq = FAQ::latest()->paginate($perPage);
+            $faqs = FAQ::latest()->paginate($perPage);
         }
 
-        return view('admin.f-a-q.index', compact('faq'));
+        return view('admin.f-a-q.index', compact('faqs'));
     }
 
     /**

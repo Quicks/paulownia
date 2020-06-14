@@ -6,12 +6,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\News;
-use App\Models\Image;
 use Illuminate\Http\Request;
-use App\Helpers\ImageSaveHelper;
+use App\Http\Traits\ImagesTrait;
 
 class NewsController extends Controller
 {
+    use ImagesTrait;
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +40,9 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('admin.news.create');
+        $news = new News(['active' => 1, 'publish_date' => date("Y-m-d")]);
+
+        return view('admin.news.create', compact('news'));
     }
 
     /**
@@ -53,11 +55,8 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:90',
             'active' => 'required|boolean',
             'publish_date' => 'required|date',
-            'image' => 'image|max:20000',
-            'images.*' => 'image|max:20000',
             'video' => 'url'
         ]);
         $requestData = $request->all();
@@ -69,23 +68,7 @@ class NewsController extends Controller
         $requestData['admin_id'] = auth()->guard('admin')->user()->id;
 
         $news = News::create($requestData);
-        $imageAtributes = $request->image_atr;
-        $imageAtributes['imageable_id'] = $news->id;
-        $imageAtributes['imageable_type'] = 'App\Models\News';
-
-        if ($request->hasFile('image')) {
-            $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
-                $request->file('image'), 'News', $news->id, $request->watermark);
-            Image::create($imageAtributes);
-        }
-
-        if ($request->hasFile('images')) {
-            foreach ($request->images as $key => $image) {
-                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnailNotEncoded(
-                    $image, 'News', $news->id, $request->watermark, $key);
-                Image::create($imageAtributes);
-            }
-        }
+        $this->saveImages($news->id, 'News', $request->images, $request->watermark);
 
         return redirect('admin/news')->with('flash_message', 'News added!');
     }
@@ -129,7 +112,6 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|max:90',
             'active' => 'required|boolean',
             'publish_date' => 'required|date',
             'video' => 'url'
@@ -144,13 +126,7 @@ class NewsController extends Controller
             }
         }
         $news->update($request->except(['image_atr', 'image']));
-        if ($request->image_atr) {
-            foreach ($request->image_atr as $image_id => $image_atr) {
-                $image = Image::find($image_id);
-                $image->fill($image_atr);
-                $image->save();
-            }
-        }
+        $this->saveImages($news->id, 'News', $request->images, $request->watermark);
 
         return redirect('admin/news')->with('flash_message', 'News updated!');
     }
@@ -165,9 +141,11 @@ class NewsController extends Controller
     public function destroy($id)
     {
         $news = News::findOrFail($id);
-        ImageSaveHelper::deleteAllModelImages($news);
+        $this->deleteAllModelImages($news);
         $news->delete();
 
         return redirect('admin/news')->with('flash_message', 'News deleted!');
     }
+
+    
 }

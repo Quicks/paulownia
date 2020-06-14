@@ -146,9 +146,7 @@ class ProductRepository extends Repository
     public function update(array $data, $id, $attribute = "id")
     {
         Event::fire('catalog.product.update.before', $id);
-
         $product = $this->find($id);
-
         if ($product->parent_id && $this->checkVariantOptionAvailabiliy($data, $product)) {
             $data['parent_id'] = NULL;
         }
@@ -156,47 +154,23 @@ class ProductRepository extends Repository
         $product->update($data);
 
         $attributes = $product->attribute_family->custom_attributes;
-
         foreach ($attributes as $attribute) {
-            if (! isset($data[$attribute->code]) || (in_array($attribute->type, ['date', 'datetime']) && ! $data[$attribute->code]))
-                continue;
-
-            if ($attribute->type == 'multiselect') {
-                $data[$attribute->code] = implode(",", $data[$attribute->code]);
-            }
-
-            if ($attribute->type == 'image' || $attribute->type == 'file') {
-                $dir = 'product';
-                if (gettype($data[$attribute->code]) == 'object') {
-                    $data[$attribute->code] = request()->file($attribute->code)->store($dir);
-                } else {
-                    $data[$attribute->code] = NULL;
+            if(!$attribute->value_per_locale){
+                if ($attribute->type == 'multiselect') {
+                    $data[$attribute->code] = implode(",", $data[$attribute->code]);
                 }
-            }
+                $this->createOrUpdateValue($product, $attribute, $data[$attribute->code], $data, $data['locale']);
+            }else{
+                foreach($data['translates'] as $locale => $values){
+                    foreach($values as $code => $value){
+                        
+                        if($attribute->code != $code){
+                            continue;
+                        }
 
-            $attributeValue = $this->attributeValue->findOneWhere([
-                    'product_id' => $product->id,
-                    'attribute_id' => $attribute->id,
-                    'channel' => $attribute->value_per_channel ? $data['channel'] : null,
-                    'locale' => $attribute->value_per_locale ? $data['locale'] : null
-                ]);
-
-            if (! $attributeValue) {
-                $this->attributeValue->create([
-                    'product_id' => $product->id,
-                    'attribute_id' => $attribute->id,
-                    'value' => $data[$attribute->code],
-                    'channel' => $attribute->value_per_channel ? $data['channel'] : null,
-                    'locale' => $attribute->value_per_locale ? $data['locale'] : null
-                ]);
-            } else {
-                $this->attributeValue->update([
-                    ProductAttributeValue::$attributeTypeFields[$attribute->type] => $data[$attribute->code]
-                    ], $attributeValue->id
-                );
-
-                if ($attribute->type == 'image' || $attribute->type == 'file') {
-                    Storage::delete($attributeValue->text_value);
+                        $this->createOrUpdateValue($product, $attribute, $value, $data, $locale);
+                        
+                    }
                 }
             }
         }
@@ -257,7 +231,7 @@ class ProductRepository extends Repository
 
             $this->productInventory->saveInventories($data, $product);
 
-            $this->productImage->uploadImages($data, $product);
+            // $this->productImage->uploadImages($data, $product);
         }
 
         Event::fire('catalog.product.update.after', $product);
@@ -657,5 +631,29 @@ class ProductRepository extends Repository
         }
 
         return $superAttrbutes;
+    }
+
+    private function createOrUpdateValue($product, $attribute, $value, $data, $locale){
+        $attributeValue = $this->attributeValue->findOneWhere([
+            'product_id' => $product->id,
+            'attribute_id' => $attribute->id,
+            'channel' => $attribute->value_per_channel ? $data['channel'] : null,
+            'locale' => $attribute->value_per_locale ? $locale : null
+        ]);
+        
+        if (! $attributeValue) {
+            $this->attributeValue->create([
+                'product_id' => $product->id,
+                'attribute_id' => $attribute->id,
+                'value' => $value,
+                'channel' => $attribute->value_per_channel ? $data['channel'] : null,
+                'locale' => $attribute->value_per_locale ? $locale : null
+            ]);
+        } else {
+            $this->attributeValue->update([
+                ProductAttributeValue::$attributeTypeFields[$attribute->type] => $value
+                ], $attributeValue->id
+            );
+        }
     }
 }

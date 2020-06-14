@@ -6,9 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\Treatise;
-use App\Models\File;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class TreatisesController extends Controller
 {
@@ -41,7 +39,9 @@ class TreatisesController extends Controller
      */
     public function create()
     {
-        return view('admin.treatises.create');
+        $treatise = new Treatise(['active' => 1, 'publish_date' => date("Y-m-d")]);
+
+        return view('admin.treatises.create', compact('treatise'));
     }
 
     /**
@@ -53,14 +53,13 @@ class TreatisesController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
-			'name' => 'required|max:90',
 			'active' => 'required|boolean',
 			'publish_date' => 'required|date',
-            'file' => 'file'
+            // 'file' => 'file'<
 		]);
         $requestData = $request->all();
-        
         $treatise = Treatise::create($requestData);
 
         if ($request->hasFile('file')) {
@@ -114,7 +113,6 @@ class TreatisesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'name' => 'required|max:90',
 			'active' => 'required|boolean',
 			'publish_date' => 'required|date'
 		]);

@@ -1,62 +1,52 @@
 @extends('layouts.admin')
-
+@section('pageTitle')
+    @lang('admin.galleries.index.title')
+@endsection
+                    
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            @include('admin.sidebar')
-
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Galleries</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/galleries/create') }}" class="btn btn-success btn-sm" title="Add New Gallery">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
-                        </a>
-
-                        <form method="GET" action="{{ url('/admin/galleries') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                                <span class="input-group-append">
-                                    <button class="btn btn-secondary" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
+                        <div class="table-title row">
+                            <div class='col-md-1 col-md-offset-11'>
+                                <a href="{{ url('/admin/galleries/create') }}" class="btn btn-success btn-sm pull-right" title="Add New news">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>@lang('admin.btns.new')
+                                </a>
                             </div>
-                        </form>
-
+                        </div>
                         <br/>
                         <br/>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Name</th><th>Active</th><th>Actions</th>
+                                        <th>@lang('admin.common.name')</th>
+                                        <th>@lang('admin.common.active')</th>
+                                        <!-- <th>@lang('admin.galleries.index.table.string')</th> -->
+                                        <th>@lang('admin.btns.actions')</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($galleries as $item)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->name }}</td><td>{{ $item->active }}</td>
+                                <tr>
+                                        <td>{{ $item->name }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/galleries/' . $item->id) }}" title="View Gallery"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            @if(bouncer()->hasPermission('galleries.update'))
-                                                <a href="{{ url('/admin/galleries/' . $item->id . '/edit') }}" title="Edit Gallery"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-
-                                                <a href="{{ url('/admin/image_add/?imageable_id=' . $item->id . '&imageable_type=' . get_class($item) . '&redirect_route='.route('galleries.show', $item->id) ) }}"
-                                                    title="Add Image">
-                                                    <button class="btn btn-primary btn-sm">
-                                                        <i class="fa fa-picture-o" aria-hidden="true"></i>
-                                                         Add image
-                                                     </button>
-                                                </a>
+                                            @if($item->active)
+                                                @lang('admin.helpers.yes')
+                                            @else
+                                                @lang('admin.helpers.no')
                                             @endif
-
-                                            @if(bouncer()->hasPermission('galleries.destroy'))
+                                        <td>
+                                            @if(bouncer()->hasPermission('gallery.update'))
+                                                <a href="{{ url('/admin/galleries/' . $item->id . '/edit') }}" title="Edit partner"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>@lang('admin.btns.edit') </button></a>
+                                            @endif
+                                            @if(bouncer()->hasPermission('office.destroy'))
                                                 <form method="POST" action="{{ url('/admin/galleries' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                     {{ method_field('DELETE') }}
                                                     {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete Gallery" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete partner" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> @lang('admin.btns.destroy')</button>
                                                 </form>
                                             @endif
                                         </td>

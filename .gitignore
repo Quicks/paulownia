@@ -3,6 +3,10 @@
 /public/storage
 /public/vendor
 /public/themes
+/public/css/admin.css
+/public/css/app.css
+/public/js/admin.js
+/public/js/app.js
 /storage/*.key
 /vendor
 /.idea
@@ -15,3 +19,5 @@ yarn-error.log
 .env
 /ignorables/*
 package-lock.json
+docker/mysqldata
+docker/logs

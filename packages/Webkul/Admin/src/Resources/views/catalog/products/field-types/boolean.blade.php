@@ -1,12 +1,16 @@
-<select v-validate="'{{$validations}}'" class="control" id="{{ $attribute->code }}" name="{{ $attribute->code }}" {{ $disabled ? 'disabled' : '' }} data-vv-as="&quot;{{ $attribute->admin_name }}&quot;">
 
-    <?php $selectedOption = old($attribute->code) ?: $product[$attribute->code] ?>
+<?php $selectedOption = old($attribute->code) ?: $product[$attribute->code] ?>
 
-    <option value="0" {{ $selectedOption ? '' : 'selected'}}>
-        {{ $attribute->code == 'status' ? __('admin::app.catalog.products.disabled') : __('admin::app.catalog.products.no') }}
-    </option>
-    <option value="1" {{ $selectedOption ? 'selected' : ''}}>
-        {{ $attribute->code == 'status' ? __('admin::app.catalog.products.enabled') : __('admin::app.catalog.products.yes') }}
-    </option>
-    
-</select>
+
+<div class='col-sm-6'>
+    <input type="radio" 
+        id="{{$attribute->code}}checkbox"
+        data-on-color="primary"
+        name="{{$attribute->code}}"
+        class="input-switch-alt "
+        value="{{$selectedOption}}"
+        checked=''
+        data-size="medium"
+        data-on-text="0"
+        data-off-text="1">
+</div>

@@ -9,6 +9,7 @@ class Product extends WebkulProduct
 {
 
     private $translatesCache = [];
+    public $image_versions = ['default' => [360, 240], 'thumb' => [230, 160]];
     public function images()
     {
         return $this->morphMany('App\Models\Image', 'imageable');

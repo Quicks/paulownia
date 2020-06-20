@@ -17,9 +17,17 @@ class ImageSaveHelper
         } else {
              $preparedImage = Image::make($requestImageFile)->encode('jpg');
         }
-        
-        $thumbnail = Image::make($requestImageFile)->resize(360, 240)->encode('jpg');
         $fileName = 'uploads/'.$imageModelName.'/'.$imageModelId.'/'.now()->timestamp.$imgNum;
+
+        $thumbnail = Image::make($requestImageFile)->resize(360, 240)->encode('jpg');
+        $fullClassName = ("\App\Models\\".$imageModelName);
+        $instance = new $fullClassName;
+        if($instance->image_versions){
+            foreach($instance->image_versions as $imageSizeKey => $imageSize){
+                $image_resize = Image::make($requestImageFile)->resize($imageSize[0], $imageSize[1])->encode('jpg');
+                Storage::put($fileName.'_'.$imageSizeKey.'.jpg', $image_resize->__toString());
+            }
+        }
         Storage::put($fileName.'.jpg', $preparedImage->__toString());
         Storage::put($fileName.'-tmb.jpg', $thumbnail->__toString());
         return $fileName.'.jpg';

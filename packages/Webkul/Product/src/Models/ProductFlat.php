@@ -4,7 +4,7 @@ namespace Webkul\Product\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Webkul\Product\Contracts\ProductFlat as ProductFlatContract;
-
+use App\Models\Image;
 class ProductFlat extends Model implements ProductFlatContract
 {
     protected $table = 'product_flat';
@@ -81,6 +81,11 @@ class ProductFlat extends Model implements ProductFlatContract
             ->select('product_images.*');
     }
 
+    public function productImages()
+    {
+        return Image::where('imageable_id', $this->product_id)
+            ->where('imageable_type', 'App\Models\Product');
+    }
     /**
      * Get all of the attributes for the attribute groups.
      */

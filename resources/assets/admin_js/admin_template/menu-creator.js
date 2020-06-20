@@ -290,7 +290,7 @@
              var processItem = function(i, pref) {
                if(i.children.length) {
                  var cref = $('<ol class="dd-list"></ol>'),
-                 item = _this.createNewListItem(i.id, i.title, i.http, i.translations, i);
+                 item = _this.createNewListItem(i.id, i.title, i.link, i.translations, i);
                  pref.append(item);
                  item.append(cref);
                  _this.setParent(item, true);
@@ -298,7 +298,7 @@
                    processItem(e, cref);
                  })
                } else {
-                 var item = _this.createNewListItem(i.id, i.title, i.http, i.translations, i);
+                 var item = _this.createNewListItem(i.id, i.title, i.link, i.translations, i);
                  pref.append(item);
                }
              }

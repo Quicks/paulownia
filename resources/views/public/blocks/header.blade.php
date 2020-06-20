@@ -12,12 +12,19 @@
                 <div class="col-md-5">
                     <ul class="header_list border_list list_none header_dropdown text-center text-md-right">
                         <li>
-                            <div class="custome_dropdown">
-                                <select name="countries" class="custome_select">
-                                    <option value='en' data-title="English">English</option>
-                                    <option value='fn' data-title="France">France</option>
-                                    <option value='us' data-title="United States">United States</option>
-                                </select>
+                            {{$current_locale}}
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                @foreach(config('translatable.locales') as $locale)
+                                    <a class="dropdown-item"
+                                        @if(App::getLocale() != Request::segment(1))
+                                            href="{{url($locale. '/' . Request::path())}}"
+                                        @else
+                                            href="{{Request::root() .'/'. $locale . substr(Request::path(), 2)}}"
+                                        @endif
+                                    >
+                                        {{$locale}}
+                                    </a>
+                                @endforeach
                             </div>
                         </li>
                         <li class="dropdown">
@@ -45,181 +52,44 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 				<ul class="navbar-nav">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle nav-link active" href="#" data-toggle="dropdown">Home</a>
-                        <div class="dropdown-menu">
-                            <ul> 
-                                <li><a class="dropdown-item nav-link nav_item active" href="index.html">Home Page 1</a></li> 
-                                <li><a class="dropdown-item nav-link nav_item" href="index-2.html">Home Page 2</a></li> 
-                                <li><a class="dropdown-item nav-link nav_item" href="index-3.html">Home Page 3</a></li> 
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    <li class="dropdown dropdown-mega-menu">
-                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Shop</a>
-                        <div class="dropdown-menu">
-                            <ul class="mega-menu d-lg-flex">
-                            	<li class="mega-menu-col col-lg-3">
-                                    <ul> 
-                                        <li class="dropdown-header">Shop Pages</li> 
-                                        <li><a class="dropdown-item nav-link nav_item" href="shop-list-view.html">Shop List View</a></li>
-                                        <li><a class="dropdown-item nav-link nav_item" href="shop-grid-view.html">Shop Grid View</a></li>
-                                        <li><a class="dropdown-item nav-link nav_item" href="shop-three-columns.html">shop 3 Column</a></li>
-                                        <li><a class="dropdown-item nav-link nav_item" href="shop-four-columns.html">shop 4 Column</a></li>
-                                    </ul>
-                                </li>
-                                <li class="mega-menu-col col-lg-3">
-                                    <ul> 
-                                        <li class="dropdown-header">Product Detail</li> 
-                                        <li><a class="dropdown-item nav-link nav_item" href="product-detail.html">Product Default</a></li>
-                                        <li><a class="dropdown-item nav-link nav_item" href="product-detail-left-sidebar.html">Product Left Sidebar</a></li>
-                                        <li><a class="dropdown-item nav-link nav_item" href="product-detail-right-sidebar.html">Product Right Sidebar</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="mega-menu-col col-lg-3">
-                                    <ul> 
-                                        <li class="dropdown-header">Extra</li> 
-                                        <li><a class="dropdown-item nav-link nav_item" href="cart.html">Cart</a></li>
-                                        <li><a class="dropdown-item nav-link nav_item" href="checkout.html">Checkout</a></li>
-                                        <li><a class="dropdown-item nav-link nav_item" href="wishlist.html">Wishlist</a></li> 
-                                        <li><a class="dropdown-item nav-link nav_item" href="my-account.html">My Account</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="mega-menu-col col-lg-3">
-                                    <div class="ads_banner">
-                                    	<a href="#"><img src="/images/mega_menu_ads.jpg" alt="mega_menu_ads"/></a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Blog</a>
-                        <div class="dropdown-menu">
-                            <ul>
-                                <li>
-                                    <a class="dropdown-item nav-link nav_item dropdown-toggler" href="#">Blog Layout</a>
-                                    <div class="dropdown-menu">
-                                        <ul> 
-                                        	<li><a class="dropdown-item nav-link nav_item" href="blog-standard-fullwidth.html">Blog Standard Fullwidth</a></li> 
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-standard-left-sidebar.html">Blog Standard Left Sidebar</a></li> 
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-standard-right-sidebar.html">Blog Standard Right Sidebar</a></li> 
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-three-columns.html">Blog 3 Columns </a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-four-columns.html">Blog 4 Columns</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item nav-link nav_item dropdown-toggler" href="#">Blog Masonry</a>
-                                    <div class="dropdown-menu">
-                                        <ul> 
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-masonry-three-columns.html">Masonry 3 Columns</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-masonry-four-columns.html">Masonry 4 Columns</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-masonry-three-columns-wide.html">Masonry 3 Columns Wide</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-masonry-four-columns-wide.html">Masonry 4 Columns Wide</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item nav-link nav_item dropdown-toggler" href="#">Blog List</a>
-                                    <div class="dropdown-menu">
-                                        <ul> 
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-list-left-sidebar.html">Left Sidebar</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-list-right-sidebar.html">Right Sidabar</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item nav-link nav_item dropdown-toggler" href="#">Sinlge Post</a>
-                                    <div class="dropdown-menu">
-                                        <ul> 
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-single.html">Default</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-single-left-sidebar.html">Left Sidebar</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-single-right-sidebar.html">Right Sidebar</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-single-slider.html">Slider Post</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-single-video.html">Video post</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="blog-single-audio.html">Audio Post</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu">
-                            <ul> 
-                                <li><a class="dropdown-item nav-link nav_item" href="team.html">Our Team</a></li>
-                                <li><a class="dropdown-item nav-link nav_item dropdown-toggler" href="#">Gallery</a>
-                                	<div class="dropdown-menu">
-                                        <ul> 
-                                            <li><a class="dropdown-item nav-link nav_item" href="gallery-three-columns.html">Grid 3 Columns</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="gallery-four-columns.html">Grid 4 Columns</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="gallery-three-columns-wide.html">Grid 3 Columns Wide</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="gallery-four-columns-wide.html">Grid 4 Columns Wide</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="gallery-masonry-three-columns.html">Masonry 3 Columns</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="gallery-masonry-four-columns.html">Masonry 4 Columns</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="gallery-masonry-three-columns-wide.html">Masonry 3 Columns Wide</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="gallery-masonry-four-columns-wide.html">Masonry 4 Columns Wide</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="gallery-detail.html">Gallery Detail</a></li>
-                                        </ul>
-                                    </div>
-                                </li>  
-                                <li><a class="dropdown-item nav-link nav_item" href="faq.html">FAQ</a></li> 
-                                <li><a class="dropdown-item nav-link nav_item" href="coming-soon.html">Coming Soon</a></li>
-                                <li><a class="dropdown-item nav-link nav_item" href="404.html">404 Page</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="dropdown dropdown-mega-menu">
-                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Element</a>
-                        <div class="dropdown-menu">
-                        	<ul class="mega-menu d-lg-flex">
-                            	<li class="mega-menu-col col-lg-3">
-                                    <ul> 
-                                        <li><a class="dropdown-item nav-link nav_item" href="accordions.html"><i class="ti-layout-accordion-separated"></i> Accordions</a></li> 
-                                        <li><a class="dropdown-item nav-link nav_item" href="blockquotes.html"><i class="ti-quote-left"></i> Blockquotes</a></li>
-                                        <li><a class="dropdown-item nav-link nav_item" href="buttons.html"><i class="ti-mouse"></i> Buttons</a></li>
-                                        <li><a class="dropdown-item nav-link nav_item" href="call-to-action.html"><i class="ti-headphone-alt"></i> Call to Action</a></li>
-                                        <li><a class="dropdown-item nav-link nav_item" href="carousel.html"><i class="ti-layout-slider"></i> Carousel</a></li>
-                                    </ul>
-                                </li>
-                                <li class="mega-menu-col col-lg-3">
+                    @foreach($menus as $menu)
+                        @if(count($menu->children))
+                            <li class="dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{{ $menu->title }}</a>
+                                <div class="dropdown-menu">
                                     <ul>
-                                    	<li><a class="dropdown-item nav-link nav_item" href="colors.html"><i class="ti-paint-bucket"></i> Colors</a></li>
-                                    	<li><a class="dropdown-item nav-link nav_item" href="columns.html"><i class="ti-layout-column3-alt"></i> Columns</a></li>
-                                    	<li><a class="dropdown-item nav-link nav_item" href="countdown.html"><i class="ti-alarm-clock"></i> Countdown</a></li> 
-                                    	<li><a class="dropdown-item nav-link nav_item" href="counter.html"><i class="ti-timer"></i> Counters</a></li>
-                                        <li><a class="dropdown-item nav-link nav_item" href="heading.html"><i class="ti-text"></i> Heading</a></li>
+                                        @foreach($menu->children as $menu_child)
+                                            @if(count($menu_child->children))
+                                                <li class="dropdown">
+                                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{{ $menu_child->title }}</a>
+                                                    <div class="dropdown-menu">
+                                                        <ul>
+                                                            @foreach($menu_child->children as $sub_child)
+                                                            <li>
+                                                                <a class="dropdown-item nav-link nav_item" 
+                                                                    href="{{$current_locale.'/'.$sub_child->link}}">
+                                                                    {{$sub_child->title}}
+                                                                </a>
+                                                            </li> 
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            @else
+                                                <li>
+                                                    <a class="dropdown-item nav-link nav_item" href="{{$current_locale.'/'.$menu_child->link}}">{{$menu_child->title}}</a>
+                                                </li> 
+                                            @endif
+                                        @endforeach
                                     </ul>
-                                </li>
-                                <li class="mega-menu-col col-lg-3">
-                                    <ul>
-                                    	<li><a class="dropdown-item nav-link nav_item" href="highlights.html"><i class="ti-underline"></i> Highligts</a></li> 
-                                    	<li><a class="dropdown-item nav-link nav_item" href="icon-boxes.html"><i class="ti-widget"></i> Icon Boxes</a></li> 
-                                    	<li><a class="dropdown-item nav-link nav_item" href="lists.html"><i class="ti-list"></i> Lists</a></li> 
-                                        <li><a class="dropdown-item nav-link nav_item" href="maps.html"><i class="ti-map-alt"></i> Maps</a></li>
-                                    	<li><a class="dropdown-item nav-link nav_item" href="pricing-table.html"><i class="ti-layout-column3"></i> Pricing Table</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="mega-menu-col col-lg-3">
-                                    <ul>
-                                    	<li><a class="dropdown-item nav-link nav_item" href="progress-bars.html"><i class="ti-layout-list-post"></i> Progress Bars</a></li>
-                                    	<li><a class="dropdown-item nav-link nav_item" href="social-icons.html"><i class="ti-facebook"></i> Social</a></li>
-                                    	<li><a class="dropdown-item nav-link nav_item" href="tab.html"><i class="ti-layout-accordion-separated"></i> Tab</a></li> 
-                                    	<li><a class="dropdown-item nav-link nav_item" href="table.html"><i class="ti-layout-tab"></i> Table</a></li> 
-                                    	<li><a class="dropdown-item nav-link nav_item" href="testimonial.html"><i class="ti-layout-slider-alt"></i> Testimonials</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                                </div>
+                            </li>
+                        @else
+                        <li>
+                            <a class="nav-link {{Request::getPathInfo() == $menu->link ? 'active' : ''}}" href="{{$current_locale.$menu->link}}">{{$menu->title}}</a>
+                        </li>
+                        @endif
+                    @endforeach
                 </ul>
             </div>
             <ul class="navbar-nav attr-nav align-items-center">

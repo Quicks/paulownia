@@ -67,6 +67,12 @@
                                 <span>@lang('admin.sidebar.links.public.slider')</span>
                             </a>
                         </li>
+                        <li>
+                            <a class="{{Request::is('admin/menus') ? "custom-admin-sidebar-a-active" : ""}}"
+                            href="{{route('menus.index')}}">
+                                <span>@lang('admin.sidebar.links.public.menus')</span>
+                            </a>
+                        </li>
                     </ul>
 
                 </div>

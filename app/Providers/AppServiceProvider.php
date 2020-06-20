@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\Helpers\MenuBuilderService;
+use App\Models\Menu;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -42,6 +44,11 @@ class AppServiceProvider extends ServiceProvider
                     'pageName' => $pageName,
                 ]
             );
+        });
+        view()->composer('*', function ($view) {
+            $current_locale = app()->getLocale();
+            $menus = Menu::parents()->get();
+            $view->with('menus',$menus)->with('current_locale', $current_locale);
         });
 
     }

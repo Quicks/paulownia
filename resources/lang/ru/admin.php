@@ -190,6 +190,7 @@ return [
   'sidebar.links.public.images' => 'Картинки',
   'sidebar.links.public.our_service' => 'Наши сервисы',
   'sidebar.links.public.slider' => 'Слайдер',
+  'sidebar.links.public.menus' => 'Меню',
   'sidebar.links.public.official_offices' => 'Оф. представительства',
   'sidebar.links.shop.title' => 'Магазин',
   'sidebar.links.shop.dashboard' => 'Панель магазина',

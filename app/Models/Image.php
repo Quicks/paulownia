@@ -42,4 +42,9 @@ class Image extends Model
         return str_replace('.jpg', '-tmb.jpg', $this->image);
     }
 
+    public function getImageVersion($version)
+    {
+        return str_replace('.jpg', '_'.$version.'.jpg', $this->image);
+    }
+
 }

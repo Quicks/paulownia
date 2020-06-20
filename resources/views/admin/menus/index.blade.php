@@ -92,7 +92,7 @@
                         }
                     })
                     let elemData = el.parents('.dd-item').data()
-                    data["link"] = el.find('input[type="url"]').val()
+                    data["link"] = el.find('input[name="link"]').val()
                     data["position"] = elemData['position']
                     let id = $(el).parents('.dd-item').data('id')
                     data["_token"] = "{{ csrf_token() }}"

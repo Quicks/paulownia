@@ -2,6 +2,7 @@
 
 namespace Webkul\Category\Models;
 
+use Webkul\Product\Models\Product;
 use Webkul\Core\Eloquent\TranslatableModel;
 use Kalnoy\Nestedset\NodeTrait;
 use Illuminate\Support\Facades\Storage;
@@ -35,4 +36,10 @@ class Category extends TranslatableModel implements CategoryContract
     {
         return $this->image_url();
     }
+
+    public function products()
+    {
+        return $this->belongsToMany('Webkul\Product\Models\Product', 'product_categories');
+    }
+
 }

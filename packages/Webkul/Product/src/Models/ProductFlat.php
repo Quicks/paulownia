@@ -135,4 +135,12 @@ class ProductFlat extends Model implements ProductFlatContract
     {
         return $this->product->cross_sells();
     }
+
+    public function scopeByLocale($qeury, $locale){
+        return $qeury->where(function($q) use($locale) {
+            $q->where('locale', $locale)
+              ->orWhere('locale', 'es');
+        });
+    }
+    
 }

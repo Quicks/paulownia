@@ -417,10 +417,10 @@ class ProductRepository extends Repository
      * @param integer $categoryId
      * @return Collection
      */
-    public function getAll($categoryId = null)
+    public function getAll($params = [])
     {
-        $params = request()->input();
-
+        // $params = request()->input();
+        $categoryId = isset($params['categoryId']) ? $params['categoryId'] : null ;
         $results = app('Webkul\Product\Repositories\ProductFlatRepository')->scopeQuery(function($query) use($params, $categoryId) {
                 $channel = request()->get('channel') ?: (core()->getCurrentChannelCode() ?: core()->getDefaultChannelCode());
 

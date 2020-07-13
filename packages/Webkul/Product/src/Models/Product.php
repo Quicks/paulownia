@@ -89,6 +89,15 @@ class Product extends Model implements ProductContract
         return $this->belongsToMany(InventorySourceProxy::modelClass(), 'product_inventories')->withPivot('id', 'qty');
     }
 
+    public function product_flats()
+    {
+        return $this->hasMany(ProductFlatProxy::modelClass());
+    }
+
+    public function localeInfo($locale){
+        return $this->product_flats()->findBySlugOrFail($this->url_key);
+    }
+
     /**
      * The super attributes that belong to the product.
      */

@@ -30,4 +30,10 @@ class ProductsController extends Controller
 
         return view('public.products.show', compact('product', 'similarProducts'));
     }
+
+    public function byCategory(Request $request, ProductRepository $product)
+    {
+        $products = $product->getAll($request);
+        return view('public.products.by_category', ['products' => $products, 'customClasses' => $request->customClasses ]);
+    }
 }

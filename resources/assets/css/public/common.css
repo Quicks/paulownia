@@ -1,0 +1,7 @@
+.product_img img{
+  width: auto;
+  display: block;
+  height: 170px;
+  margin: auto;
+  padding: 10px 10px 0 10px;
+}

@@ -52,8 +52,8 @@ mix.combine([
    'resources/assets/admin_js/admin_template/vue.js',
    'resources/assets/admin_js/admin_template/layout.js',
    'resources/assets/admin_js/admin_template/custom.js',
-], 'public/js/admin.js');
-mix.combine(['resources/assets/css/admin_template/*', 'resources/assets/css/admin_template/default.css'],'public/css/admin.css')
+], 'public/js/admin.js').version();
+mix.combine(['resources/assets/css/admin_template/*', 'resources/assets/css/admin_template/default.css'],'public/css/admin.css').version()
 
 mix.combine([
    'resources/assets/public_js/jquery-1.12.4.min.js',
@@ -75,6 +75,7 @@ mix.combine([
    'resources/assets/public_js/shop-quick-view.js',
    'resources/assets/public_js/waypoints.min.js',
    'resources/assets/public_js/scripts.js',
-], 'public/js/app.js');
-mix.combine(['resources/assets/css/public/*'],'public/css/app.css')
+   'resources/assets/public_js/custom_scripts.js',
+], 'public/js/app.js').version();
+mix.combine(['resources/assets/css/public/*'],'public/css/app.css').version()
 

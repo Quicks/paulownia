@@ -19,27 +19,27 @@
                       @foreach($categories as $category)
                         @if(count($category->products))
                             <li class="nav-item">
-                                <a class="nav-link" id="tab1" data-toggle="tab" href="#{{$category->name}}" role="tab" aria-controls="{{$category->name}}" aria-selected="true"><span class="pr_icon1"></span>{{$category->name}}</a>
+                                <a class="nav-link" id="tab1" data-toggle="tab" href="#tab-category-{{str_replace(' ', '', $category->name)}}" role="tab" data-category-id="{{$category->id}}" aria-controls="tab-category-{{str_replace(' ', '', $category->name)}}" aria-selected="true"><span class="pr_icon1"></span>{{$category->name}}</a>
                             </li>
                         @endif
                       @endforeach
                     </ul>
                     <div class="small_divider clearfix"></div>
                     <div class="tab-content">
-											<div class="tab-pane fade show active" id="allproducts" role="tabpanel" aria-labelledby="allproducts">
-												<div class="row animation" data-animation="fadeInUp" data-animation-delay="0.05s">
-													@foreach($products as $product)
-														@include('public.products.product_card', ['product' => $product, 'customClasses' => 'col-xl-3'])
-													@endforeach
-												</div>
-											</div>
+                        <div class="tab-pane fade show active" id="allproducts" role="tabpanel" aria-labelledby="allproducts">
+                            <div class="row animation" data-animation="fadeInUp" data-animation-delay="0.05s">
+                                @foreach($products as $product)
+                                    @include('public.products.product_card', ['product' => $product, 'customClasses' => 'col-xl-3'])
+                                @endforeach
+                            </div>
+                        </div>
                       @foreach($categories as $category)
                         @if(count($category->products))
-													<div class="tab-pane fade" id="{{$category->name}}" role="tabpanel" aria-labelledby="{{$category->name}}">
+                            <div class="tab-pane fade" id="tab-category-{{str_replace(' ', '', $category->name)}}" role="tabpanel" aria-labelledby="tab-category-{{str_replace(' ', '', $category->name)}}">
                             <div class="row animation" data-animation="fadeInUp" data-animation-delay="0.05s">
 															
-														</div>
-													</div>
+                                </div>
+                            </div>
                         @endif
                       @endforeach
                     </div>
@@ -93,14 +93,16 @@
 			resizeCardsHeight('.product')
 			$('.nav-item').click(function(){
 				var category = $(this).find('a').attr('aria-controls')
+                var categoryId = $(this).find('a').data('category-id')
 				if(category != 'allproducts'){
 					$.ajax({
-                        url: '/products/by_category/' + category,
+                        url: '/products/by_category/' + categoryId,
                         data: {
                             customClasses: 'col-xl-3',
                             limit: 1000
                         },
 						success: function(response){
+
                             $('#' + category + ' .row').html(response)
                             resizeCardsHeight('.product')
 

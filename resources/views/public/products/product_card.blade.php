@@ -15,7 +15,13 @@
       <div class="product_action_box">
         <ul class="list_none pr_action_btn">
           <li><a href="#"><i class="ti-heart"></i></a></li>
-          <li><a href="#"><i class="ti-shopping-cart"></i></a></li>
+          <li>
+            <a href="#" class='add-product-to-cart' data-product-id="{{$product->product_id}}" data-quantity="1">
+              <i class="ti-shopping-cart"></i>
+            </a>
+
+            <!-- <a href="#"><i class="ti-shopping-cart"></i></a> -->
+          </li>
           <li><a href="{{route('public.products.show', ['id' => $product->url_key])}}"><i class="ti-eye"></i></a></li>
         </ul>
       </div>
@@ -35,7 +41,11 @@
       </div>
       <div class="product_action_box">
         <ul class="list_none pr_action_btn">
-          <li class="add-to-cart"><a href="#"><i class="ti-shopping-cart"></i></a></li>
+          <li>
+            <a href="#" class='add-product-to-cart' data-product-id="{{$product->product_id}}" data-quantity="1">
+              <i class="ti-shopping-cart"></i>
+            </a>
+          </li>
             <li><a href="#"><i class="ti-heart"></i></a></li>
             <li><a href="{{route('public.products.show', ['id' => $product->url_key])}}"><i class="ti-eye"></i></a></li>
         </ul>

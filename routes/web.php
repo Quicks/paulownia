@@ -86,6 +86,8 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
     Route::get('/', 'App\Http\Controllers\MainController@index')->name('main');
     Route::get('galleries/{id}', 'App\Http\Controllers\GalleriesController@show')->name('public.galleries.show');
     Route::get('/show/{type}/{id}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');
+    Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('public.cart.index');
+    Route::get('/check-out', 'App\Http\Controllers\CheckoutController@index')->name('check-out.index');
 
     // Route::get('/news', 'App\Http\Controllers\NewsController@index')->name('public.news.index');
     // Route::get('/show/{type}/{id}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');

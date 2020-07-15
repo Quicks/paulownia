@@ -8,6 +8,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\Helpers\MenuBuilderService;
 use App\Models\Menu;
+use Illuminate\Support\Facades\Blade;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -49,6 +51,10 @@ class AppServiceProvider extends ServiceProvider
             $current_locale = app()->getLocale();
             $menus = Menu::parents()->get();
             $view->with('menus',$menus)->with('current_locale', $current_locale);
+        });
+
+        Blade::directive('money', function ($amount) {
+            return "<?php echo '$' . number_format($amount, 2); ?>";
         });
 
     }

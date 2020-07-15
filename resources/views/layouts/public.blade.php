@@ -36,6 +36,8 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}?v9">
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+
     @stack('css')
 
 </head>

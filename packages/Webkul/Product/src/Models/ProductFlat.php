@@ -5,6 +5,7 @@ namespace Webkul\Product\Models;
 use Illuminate\Database\Eloquent\Model;
 use Webkul\Product\Contracts\ProductFlat as ProductFlatContract;
 use App\Models\Image;
+
 class ProductFlat extends Model implements ProductFlatContract
 {
     protected $table = 'product_flat';

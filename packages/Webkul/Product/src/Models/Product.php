@@ -8,6 +8,8 @@ use Webkul\Category\Models\CategoryProxy;
 use Webkul\Attribute\Models\AttributeProxy;
 use Webkul\Inventory\Models\InventorySourceProxy;
 use Webkul\Product\Contracts\Product as ProductContract;
+use App\Models\Image;
+
 
 class Product extends Model implements ProductContract
 {
@@ -112,6 +114,12 @@ class Product extends Model implements ProductContract
     public function images()
     {
         return $this->hasMany(ProductImageProxy::modelClass(), 'product_id');
+    }
+
+    public function productImages()
+    {
+        return Image::where('imageable_id', $this->id)
+            ->where('imageable_type', 'App\Models\Product');
     }
 
     /**

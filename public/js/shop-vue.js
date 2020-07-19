@@ -1,4 +1,4 @@
-$(document).ready(function(){
+function initShop(){
     Vue.use(VeeValidate);
     Vue.prototype.$http = axios;
     window.eventBus = new Vue();
@@ -82,4 +82,4 @@ $(document).ready(function(){
             }
         }
     });
-});
+}

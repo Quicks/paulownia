@@ -3,7 +3,7 @@
       <div class="blog_img">
 <!--          --><?php //$imagesCount = count($newsItem->images()->get()); ?>
               <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}">
-                  @if($newsItem->images)
+                  @if(isset($newsItem->images()->first()->image230))
                       <img src="/storage/{{$newsItem->images()->first()->image230}}" alt="blog_small_img2">
                   @else
                       <img src="/images/product_img1.jpg" alt="product_img1"/>
@@ -34,7 +34,11 @@
             <h6 class="blog_title"><a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}">{{substr($newsItem->title, 0, 100)}}</a></h6>
             <ul class="list_none blog_meta">
                 <li><a href="javascript:void(0);"><i class="far fa-calendar"></i>{{date('F j, Y', strtotime($newsItem->publish_date))}}</a></li>
-                <li><a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}"><i class="far fa-comments"></i>5 Comment</a></li>
+                <li>
+                    <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}"><i class="far fa-comments"></i>
+                        {{count($newsItem->comments)}} Comment
+                    </a>
+                </li>
             </ul>
             <p>{!! substr($newsItem->text, 0, 200) !!}</p>
             <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}" class="blog_link">Read More <i class="ion-ios-arrow-right"></i></a>

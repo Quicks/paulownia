@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model
+class Article extends News
 {
     use \Dimsav\Translatable\Translatable;
 
@@ -30,12 +30,15 @@ class Article extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'active', 'publish_date'];
+    protected $fillable = ['name', 'active', 'publish_date', 'type'];
 
     public function images()
     {
         return $this->morphMany('App\Models\Image', 'imageable');
     }
+    public function comments()
+    {
+        return $this->morphMany('App\Models\Comment', 'commentable');
+    }
 
-    
 }

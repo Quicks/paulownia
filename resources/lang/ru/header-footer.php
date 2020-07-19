@@ -4,7 +4,7 @@
 return [
 
     //header
-
+    'home' => 'Главная',
     'main' => 'Главная',
     'news' => 'Новости' ,
     'paulownia'=>'Павлония',

@@ -9,7 +9,7 @@ class News extends Model
     use \Dimsav\Translatable\Translatable;
 
     public $translationModel = 'App\Models\Translations\NewsTranslation';
-    
+
     public $translatedAttributes = ['title', 'text', 'keywords'];
     /**
      * The database table used by the model.
@@ -30,10 +30,14 @@ class News extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'active', 'publish_date', 'admin_id', 'video'];
+    protected $fillable = ['name', 'active', 'publish_date', 'admin_id', 'video', 'type'];
 
     public function images()
     {
         return $this->morphMany('App\Models\Image', 'imageable');
+    }
+    public function comments()
+    {
+        return $this->morphMany('App\Models\Comment', 'commentable');
     }
 }

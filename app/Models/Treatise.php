@@ -30,10 +30,14 @@ class Treatise extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'active', 'publish_date'];
+    protected $fillable = ['name', 'active', 'publish_date', 'type'];
 
     public function files()
     {
         return $this->morphMany('App\Models\File', 'fileable');
+    }
+    public function comments()
+    {
+        return $this->morphMany('App\Models\Comment', 'commentable');
     }
 }

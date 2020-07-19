@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ImageSaveHelper
 {
-    public static function saveImageWithThumbnail ($requestImageFile, $imageModelName, 
+    public static function saveImageWithThumbnail ($requestImageFile, $imageModelName,
         $imageModelId, $watermark = false, $imgNum = 0)
     {
         if($watermark) {
@@ -20,6 +20,8 @@ class ImageSaveHelper
         $fileName = 'uploads/'.$imageModelName.'/'.$imageModelId.'/'.now()->timestamp.$imgNum;
 
         $thumbnail = Image::make($requestImageFile)->resize(360, 240)->encode('jpg');
+        $image230 = Image::make($requestImageFile)->resize(230, 160)->encode('jpg');
+        $image1200 = Image::make($requestImageFile)->resize(1200, 800)->encode('jpg');
         $fullClassName = ("\App\Models\\".$imageModelName);
         $instance = new $fullClassName;
         if($instance->image_versions){
@@ -30,10 +32,12 @@ class ImageSaveHelper
         }
         Storage::put($fileName.'.jpg', $preparedImage->__toString());
         Storage::put($fileName.'-tmb.jpg', $thumbnail->__toString());
+        Storage::put($fileName.'-230.jpg', $image230->__toString());
+        Storage::put($fileName.'-1200.jpg', $image1200->__toString());
         return $fileName.'.jpg';
     }
 
-    public static function saveImageWithThumbnailNotEncoded ($requestImageFile, $imageModelName, 
+    public static function saveImageWithThumbnailNotEncoded ($requestImageFile, $imageModelName,
         $imageModelId, $watermark = false, $imgNum = 0)
     {
         $thumbnail = Image::make($requestImageFile)->fit(150)->encode('jpg');
@@ -65,7 +69,7 @@ class ImageSaveHelper
         return ['image' => $fileName.'.jpg', 'thumbnail' => $fileName.'-tmb.jpg'];
     }
 
-        public static function deleteAllModelImages ($modelInstance)
+    public static function deleteAllModelImages ($modelInstance)
     {
         foreach ($modelInstance->images()->get() as $image) {
             Storage::delete($image->image);

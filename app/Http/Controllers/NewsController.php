@@ -22,16 +22,16 @@ class NewsController extends Controller
 
         if($request->has('topic')){
             if($request->topic == 'news') {
-                $allNews = $news->sortByDesc('publish_date')->paginate(3);
+                $allNews = $news->sortByDesc('publish_date')->paginate(9);
             }
             if($request->topic == 'articles') {
-                $allNews = $articles->sortByDesc('publish_date')->paginate(3);
+                $allNews = $articles->sortByDesc('publish_date')->paginate(9);
             }
             if($request->topic == 'treatises') {
-                $allNews = $treatises->sortByDesc('publish_date')->paginate(3);
+                $allNews = $treatises->sortByDesc('publish_date')->paginate(9);
             }
         } else {
-            $allNews = $news->concat($articles)->concat($treatises)->sortByDesc('publish_date')->paginate(3);
+            $allNews = $news->concat($articles)->concat($treatises)->sortByDesc('publish_date')->paginate(9);
         }
 
         if ($request->ajax()) {

@@ -36,4 +36,8 @@ class Treatise extends Model
     {
         return $this->morphMany('App\Models\File', 'fileable');
     }
+    public function comments()
+    {
+        return $this->morphMany('App\Models\Comment', 'commentable');
+    }
 }

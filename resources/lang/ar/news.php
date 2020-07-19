@@ -7,5 +7,6 @@ return [
     'articles' => 'مقالات',
     'treatises' => 'أطروحات',
     'more' => 'قراءة المزيد',
-    'loading' => 'جار التحميل'
+    'loading' => 'جار التحميل',
+    'comment' => 'تعليق',
 ];

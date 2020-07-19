@@ -4,14 +4,19 @@
     	<div class="row align-items-center">
         	<div class="col-sm-12 text-center">
             	<div class="page-title">
-            		<h1>Shop Grid View</h1>
+            		<h1>{{$pageTitle}}</h1>
                 </div>
                 <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">shop Grid view</li>
-                  </ol>
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="{{route('main')}}">@lang('header-footer.home')</a></li>
+                        @foreach($breadcrumbs as $route => $name)
+                            @if(!$loop->last)
+                                <li class="breadcrumb-item"><a href="{{$route}}">@lang($name)</a></li>
+                            @else
+                                <li class="breadcrumb-item active" aria-current="page">@lang($name)</li>
+                            @endif
+                        @endforeach
+                    </ol>
                 </nav>
             </div>
         </div>

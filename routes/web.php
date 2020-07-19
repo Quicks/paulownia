@@ -87,7 +87,16 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
     Route::get('galleries/{id}', 'App\Http\Controllers\GalleriesController@show')->name('public.galleries.show');
     Route::get('/show/{type}/{id}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');
     Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('public.cart.index');
+    Route::get('/cart/cart-preview', 'App\Http\Controllers\CartController@cartPreview');
+
     Route::get('/check-out', 'App\Http\Controllers\CheckoutController@index')->name('check-out.index');
+    Route::get('/check-out/summary', 'App\Http\Controllers\CheckoutController@summary')->name('check-out.summary');
+
+    Route::post('/check-out/save-address', 'App\Http\Controllers\CheckoutController@saveAddress')->name('check-out.save-address');
+    Route::post('/check-out/save-shipping', 'App\Http\Controllers\CheckoutController@saveShipping')->name('check-out.save-shipping');
+    Route::post('/check-out/save-payment', 'App\Http\Controllers\CheckoutController@savePayment')->name('check-out.save-payment');
+    Route::post('/check-out/save-order', 'App\Http\Controllers\CheckoutController@saveOrder')->name('check-out.save-order');
+    Route::get('/check-out/success', 'App\Http\Controllers\CheckoutController@success')->name('check-out.success');
 
      Route::get('/blog', 'App\Http\Controllers\NewsController@index')->name('public.news.index');
      Route::get('/show/{type}/{id}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');

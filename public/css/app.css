@@ -3320,6 +3320,30 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   margin: auto;
   padding: 10px 10px 0 10px;
 }
+@keyframes numberUpdate {
+  0% {color: green;}
+  50% {color: yellow;}
+  100% {color: #212529;}
+}
+
+.number-update{
+  animation-name: numberUpdate;
+  animation-duration: 1.5s;
+  animation-iteration-count: 3;
+}
+.product-row .product-quantity .quantity .qty {
+  width: 60px;
+}
+
+#checkout-wrapper .product-price{
+  width: auto;
+  min-width: 120px;
+}
+
+#checkout-wrapper .payment-text{
+  display: block;
+}
+
 @charset "UTF-8";/*!
   Ionicons, v2.0.0
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/

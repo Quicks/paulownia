@@ -44,10 +44,10 @@
 		</div>
 		<div class="container">
 				<nav class="navbar navbar-expand-lg">
-						<a class="navbar-brand" href="index.html">
-								<img class="logo_light" src="/images/logo_white.png" alt="logo" />
-								<img class="logo_dark" src="/images/logo_dark.png" alt="logo" />
-								<img class="logo_default" src="/images/logo_dark.png" alt="logo" />
+						<a class="navbar-brand" href="/">
+								<!-- <img class="logo_light" src="/images/logo_white.png" alt="logo" /> -->
+								<img class="logo_dark" src="/images/logo-sm.png" alt="logo" />
+								<!-- <img class="logo_default" src="/images/logo_dark.png" alt="logo" /> -->
 						</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
 						<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -114,22 +114,8 @@
 												@endif
 										</span>
 									</a>
-									<div class="cart_box dropdown-menu dropdown-menu-right">
-										@if(Webkul\Checkout\Facades\Cart::getCart())
-											<ul class="cart_list">
-												@foreach(Webkul\Checkout\Facades\Cart::getCart()->items as $item)
-													<li>
-														<a href="#" data-product-id="{{$item->id}}" class="item_remove"><i class="ion-close"></i></a>
-														<a href="#"><img src="/images/cart_thamb1.jpg" alt="cart_thumb1">{{$item->name}}</a>
-														<span class="cart_quantity"> {{$item->quantity}} x <span class="cart_amount"> <span class="price_symbole">@money($item->base_total)</span>
-													</li>
-												@endforeach
-											</ul>
-											<div class="cart_footer">
-												<p class="cart_total">Total: <span class="cart_amount"> <span class="price_symbole">$</span>@money(Webkul\Checkout\Facades\Cart::getCart()->base_grand_total)</span></p>
-												<p class="cart_buttons"><a href="{{route('public.cart.index')}}" class="btn btn-default btn-radius view-cart">View Cart</a><a href="checkout.html" class="btn btn-dark btn-radius checkout">Checkout</a></p>
-											</div>
-										@endif
+									<div class="cart_box dropdown-menu dropdown-menu-right" id='cart-header-preview'>
+										@include('public.cart.cart_preview')
 									</div>
 								</li>
 						</ul>

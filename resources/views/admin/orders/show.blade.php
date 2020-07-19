@@ -80,8 +80,8 @@
         </div>
         <div class="col-md-3">
             <h2 class="invoice-client mrg10T">@lang('admin.orders.show.client_info.title'):</h2>
-            <h5>{{$order->customer->first_name. ' ' .$order->customer->last_name}}</h5>
-            <h5>{{$order->customer->email}}</h5>
+            <h5>{{$order->customer_first_name. ' ' .$order->customer_last_name}}</h5>
+            <h5>{{$order->customer_email}}</h5>
             <address class="invoice-address">
                 {{$address->address1}}
                 <br>

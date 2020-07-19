@@ -37,7 +37,21 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}?v9">
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script type="text/javascript">
+        window.flashMessages = [];
+        @if ($success = session('success'))
+            window.flashMessages = [{'type': 'alert-success', 'message': "{{ $success }}" }];
+        @elseif ($warning = session('warning'))
+            window.flashMessages = [{'type': 'alert-warning', 'message': "{{ $warning }}" }];
+        @elseif ($error = session('error'))
+            window.flashMessages = [{'type': 'alert-error', 'message': "{{ $error }}" }];
+        @endif
 
+        window.serverErrors = [];
+        @if (count($errors))
+            window.serverErrors = @json($errors->getMessages());
+        @endif
+    </script>
     @stack('css')
 
 </head>

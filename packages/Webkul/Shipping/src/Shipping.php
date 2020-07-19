@@ -65,6 +65,12 @@ class Shipping
         }
     }
 
+    public function getActiveShippments(){
+        return array_filter(Config::get('carriers'), function($item){
+            return $item['active'];
+        });
+    }
+
     /**
      * Persist shipping rate to database
      *

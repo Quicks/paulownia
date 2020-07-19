@@ -7,5 +7,6 @@ return [
     'articles' => 'Artykuły',
     'treatises' => 'Traktaty',
     'more' => 'Czytaj więcej',
-    'loading' => 'Ładowanie'
+    'loading' => 'Ładowanie',
+    'comment' => 'Komentarz',
 ];

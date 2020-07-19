@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends News
+class Article extends Model
 {
     use \Dimsav\Translatable\Translatable;
 
@@ -30,7 +30,7 @@ class Article extends News
      *
      * @var array
      */
-    protected $fillable = ['name', 'active', 'publish_date', 'type'];
+    protected $fillable = ['name', 'active', 'publish_date'];
 
     public function images()
     {

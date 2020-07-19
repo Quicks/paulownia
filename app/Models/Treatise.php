@@ -30,7 +30,7 @@ class Treatise extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'active', 'publish_date', 'type'];
+    protected $fillable = ['name', 'active', 'publish_date'];
 
     public function files()
     {

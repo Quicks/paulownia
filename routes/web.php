@@ -99,7 +99,7 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
     Route::get('/check-out/success', 'App\Http\Controllers\CheckoutController@success')->name('check-out.success');
 
      Route::get('/blog', 'App\Http\Controllers\NewsController@index')->name('public.news.index');
-     Route::get('/show/{type}/{id}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');
+     Route::get('/show/{type?}/{id?}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');
     // Route::get('/articles', 'App\Http\Controllers\ArticlesController@index')->name('public.articles.index');
     // Route::get('/articles/{id}', 'App\Http\Controllers\ArticlesController@show')->name('public.articles.show');
     // Route::get('/partners', 'App\Http\Controllers\PartnersController@index')->name('public.partners.index');

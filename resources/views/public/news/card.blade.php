@@ -35,13 +35,13 @@
             <ul class="list_none blog_meta">
                 <li><a href="javascript:void(0);"><i class="far fa-calendar"></i>{{date('F j, Y', strtotime($newsItem->publish_date))}}</a></li>
                 <li>
-                    <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}"><i class="far fa-comments"></i>
-                        {{count($newsItem->comments)}} Comment
+                    <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}#comments"><i class="far fa-comments"></i>
+                        {{count($newsItem->comments)}} {{ __('news.comment')}}
                     </a>
                 </li>
             </ul>
             <p>{!! substr($newsItem->text, 0, 200) !!}</p>
-            <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}" class="blog_link">Read More <i class="ion-ios-arrow-right"></i></a>
+            <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}" class="blog_link">{{ __('news.more')}}<i class="ion-ios-arrow-right"></i></a>
         </div>
     </div>
 </div>

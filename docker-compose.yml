@@ -44,3 +44,5 @@ services:
     env_file: .env
     volumes:
       - ./docker/mysqldata:/var/lib/mysql
+    ports:
+      - 3308:3306

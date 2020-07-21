@@ -65,10 +65,12 @@ class NewsController extends Controller
         } else {
             $news = Treatise::find($id);
         }
+        $previous = get_class($news)::where('id', '<', $news->id)->orderBy('id', 'desc')->first();
+        $next = get_class($news)::where('id', '>', $news->id)->orderBy('id')->first();
         SEOMeta::addKeyword([$news->keywords]);
         SEOMeta::setTitle($news->title . " - " . env('APP_NAME'));
         SEOMeta::setDescription(substr(strip_tags($news->text), 0, 159));
 
-        return view('public.news.view', compact('news'));
+        return view('public.news.show', compact('news', 'previous', 'next'));
     }
 }

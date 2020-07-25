@@ -29,7 +29,8 @@
                             <div class="blog_text">
                                 <h2 class="blog_title">{{$news->title}}</h2>
                                 <ul class="list_none blog_meta">
-{{--                                    <li><a href="#"><i class="far fa-user"></i>by <span class="text_default">admin</span></a></li>--}}
+                                    <li><a href="javascript:void(0);"><i class="far fa-calendar"></i>{{date('F j, Y', strtotime($news->publish_date))}}</a></li>
+                                    {{--                                    <li><a href="#"><i class="far fa-user"></i>by <span class="text_default">admin</span></a></li>--}}
                                     <li><a href="#comments"><i class="far fa-comments"></i>{{count($news->comments)}} {{ __('news.comment')}}</a></li>
                                 </ul>
                                 <p>{{$news->text}}</p>
@@ -92,76 +93,17 @@
                             <div class="posts-title">
                                 <h5>({{count($news->comments)}}) {{ __('news.comment')}}</h5>
                             </div>
-                            <ul class="list_none comment_list">
-                                @foreach($news->comments as $comment)
-                                    <li class="comment_info">
-                                        <div class="d-flex">
-                                            <div class="user_img">
-                                                <img class="radius_all_5" src="/images/client_img1.jpg" alt="client_img1">
-                                            </div>
-                                            <div class="comment_content">
-                                                <div class="d-flex">
-                                                    <div class="meta_data">
-                                                        <h6><a href="#">Merry Walter</a></h6>
-                                                        <div class="comment-time">{{$comment->created_at}}</div>
-                                                    </div>
-                                                    <div class="ml-auto">
-                                                        <a href="#" class="comment-reply btn btn-default rounded-0 btn-sm">{{ __('news.reply')}}</a>
-                                                    </div>
-                                                </div>
-                                                <p>{{$comment->text}}</p>
-                                            </div>
-                                        </div>
-{{--                                        @if($comment->childs)                                       --}}
-{{--                                            <ul class="children_comment">--}}
-{{--                                                @foreach($comment->childs as $childs)--}}
-{{--                                                    <li class="comment_info">--}}
-{{--                                                        <div class="d-flex">--}}
-{{--                                                            <div class="user_img">--}}
-{{--                                                                <img class="radius_all_5" src="assets/images/client_img3.jpg" alt="client_img3">--}}
-{{--                                                            </div>--}}
-{{--                                                            <div class="comment_content">--}}
-{{--                                                                <div class="d-flex">--}}
-{{--                                                                    <div class="meta_data">--}}
-{{--                                                                        <h6><a href="#">Calvin William</a></h6>--}}
-{{--                                                                        <div class="comment-time">{{$comment->created_at}}</div>--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="ml-auto">--}}
-{{--                                                                        <a href="#" class="comment-reply btn btn-default rounded-0 btn-sm">Reply</a>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
-{{--                                                                <p>{{$comment->text}}</p>--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
-{{--                                                    </li>--}}
-{{--                                                @endforeach--}}
-{{--                                            </ul>--}}
-{{--                                        @endif--}}
-                                    </li>
-                                @endforeach
-                            </ul>
+                            @if($news->parentComments)
+                                @include('public.comments.index', ['comments' => $news->parentComments])
+                            @endif
                             <div class="posts-title">
                                 <h5>Write a comment</h5>
                             </div>
-                            <form class="field_form form_style2" name="enq" method="post">
-                                <div class="row">
-                                    <div class="form-group col-md-4">
-                                        <input name="name" class="form-control" placeholder="Your Name" required="required" type="text">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <input name="email" class="form-control" placeholder="Your Email" required="required" type="email">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <input name="website" class="form-control" placeholder="Your Website" required="required" type="text">
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <textarea rows="3" name="message" class="form-control" placeholder="Your Comment" required="required"></textarea>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <button value="Submit" name="submit" class="btn btn-default" title="Submit Your Message!" type="submit">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
+                            @include('public.comments.form', [
+                                'commentable_id' => $news->id,
+                                'commentable_type' => get_class($news),
+                                'parent_id' => 0,
+                            ])
                         </div>
                     </div>
                 </div>

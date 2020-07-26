@@ -9,7 +9,7 @@ class Gallery extends Model
     use \Dimsav\Translatable\Translatable;
 
     public $translationModel = 'App\Models\Translations\GalleryTranslation';
-    
+
     public $translatedAttributes = ['title', 'desc', 'keywords'];
     /**
      * The database table used by the model.
@@ -36,7 +36,7 @@ class Gallery extends Model
         return $this->morphMany('App\Models\Image', 'imageable');
     }
 
-    public function mainImage() {
+    public function scopeMainImage() {
         return $this->images()->first();
     }
 

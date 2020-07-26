@@ -56,7 +56,7 @@ class NewsController extends Controller
     }
 
 
-    public function show(Request $request, $type, $id)
+    public function show($type, $id)
     {
         if ($type == 'news') {
             $news = News::find($id);
@@ -65,8 +65,16 @@ class NewsController extends Controller
         } else {
             $news = Treatise::find($id);
         }
-        $previous = get_class($news)::where('id', '<', $news->id)->orderBy('id', 'desc')->first();
-        $next = get_class($news)::where('id', '>', $news->id)->orderBy('id')->first();
+
+        $previous = get_class($news)::where('publish_date', '<', $news->publish_date)
+                                    ->where('active', true)
+                                    ->orderBy('publish_date', 'desc')
+                                    ->first();
+        $next = get_class($news)::where('publish_date', '>', $news->publish_date)
+                                ->where('active', true)
+                                ->orderBy('publish_date')
+                                ->first();
+
         SEOMeta::addKeyword([$news->keywords]);
         SEOMeta::setTitle($news->title . " - " . env('APP_NAME'));
         SEOMeta::setDescription(substr(strip_tags($news->text), 0, 159));

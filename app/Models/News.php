@@ -40,4 +40,8 @@ class News extends Model
     {
         return $this->morphMany('App\Models\Comment', 'commentable');
     }
+    public function parentComments()
+    {
+        return $this->morphMany('App\Models\Comment', 'commentable')->where('parent_id', '=', 0);
+    }
 }

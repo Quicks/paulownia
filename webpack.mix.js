@@ -15,7 +15,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.combine([
-   'resources/assets/admin_js/admin_template/jquery-core.js', 
+   'resources/assets/admin_js/admin_template/jquery-core.js',
    'resources/assets/admin_js/admin_template/jquery-ui-core.js',
    'resources/assets/admin_js/admin_template/jquery-ui-widget.js',
    'resources/assets/admin_js/admin_template/jquery-ui-mouse.js',
@@ -76,6 +76,7 @@ mix.combine([
    'resources/assets/public_js/waypoints.min.js',
    'resources/assets/public_js/scripts.js',
    'resources/assets/public_js/custom_scripts.js',
+   'resources/assets/public_js/comments.js',
 ], 'public/js/app.js').version();
 mix.combine(['resources/assets/css/public/*'],'public/css/app.css').version()
 

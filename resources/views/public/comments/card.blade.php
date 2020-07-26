@@ -10,7 +10,7 @@
                     <div class="comment-time">{{$comment->created_at}}</div>
                 </div>
                 <div class="ml-auto">
-                    <a href="javascript:void(0);" class="comment-reply btn btn-default rounded-0 btn-sm">{{ __('news.reply')}}</a>
+                    <a href="javascript:void(0);" class="comment-reply btn btn-default rounded-0 btn-sm">{{ __('comments.reply')}}</a>
                 </div>
             </div>
             <p>{{$comment->text}}</p>

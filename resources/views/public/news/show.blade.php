@@ -91,13 +91,13 @@
 
                         <div class="comment-area" id="comments">
                             <div class="posts-title">
-                                <h5>({{count($news->comments)}}) {{ __('news.comment')}}</h5>
+                                <h5>({{count($news->comments)}}) {{ __('comments.comment')}}</h5>
                             </div>
                             @if($news->parentComments)
                                 @include('public.comments.index', ['comments' => $news->parentComments])
                             @endif
                             <div class="posts-title">
-                                <h5>Write a comment</h5>
+                                <h5>{{ __('comments.write_a_comment')}}</h5>
                             </div>
                             @include('public.comments.form', [
                                 'commentable_id' => $news->id,

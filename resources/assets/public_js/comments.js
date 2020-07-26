@@ -21,4 +21,16 @@ $(function() {
         parent.hide();
         $('.comment-reply').show();
     });
+
+    $('.cancel').click(function() {
+        let parent =  findParent(this, '.reply-comment-form').first();
+        if(parent[0]) {
+            parent.hide();
+            $('.comment-reply').show();
+        } else {
+            let mainParent = findParent(this, '.comment-area').first();
+            $(mainParent).children().last()[0].reset();
+        }
+    });
+
 });

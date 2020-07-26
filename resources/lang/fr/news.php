@@ -8,8 +8,6 @@ return [
     'treatises' => 'Traités',
     'more' => 'Lire la suite',
     'loading' => 'Chargement',
-    'comment' => 'Commentaire',
     'previous_post' => 'post précédent',
     'next_post' => 'prochain post',
-    'reply' => 'Répondre',
 ];

@@ -92,36 +92,35 @@ class CheckoutController extends Controller
     public function index()
     {
       $cart = Cart::getCart();
+			$rules = [];
+			$data = [];
+
       foreach ($cart->items as $item) {
+        
         $productId = $item->product_id;
         $product = DB::table('product_flat')->where('product_id', $productId)->get();
-        $minOrder = $product[0]->min_order_qty;
-        $data = ['qty[' . $item->id . ']' => $item->quantity];
-        $messages = ['qty[' . $item->id . ']' => 'The minimum order for this product is ' . $minOrder,];
-        $validator = Validator::make($data, [
-            'qty[' . $item->id . ']' => 'required|numeric|min:' . $minOrder,
-        ]);
-        if ($validator->fails()) {
-            return redirect()->route('public.cart.index')
-                ->withErrors($messages)
-                ->withInput();
-        }
-      }
-
-
+				$minOrder = $product[0]->min_order_qty;
+				$data[$item->name] = $item->quantity;
+        $rules[$item->name] = 'required|numeric|min:' . $minOrder;
+			}
+			
+      $validator = Validator::make($data, $rules);
+			if ($validator->fails()) {
+					return redirect()->route('public.cart.index')
+							->withErrors($validator->errors()->messages())
+							->withInput();
+			}
       if (Cart::hasError())
           return redirect()->route('public.cart.index');
-
       $this->nonCoupon->apply();
-
-      Cart::collectTotals();
-
+      
       return view('public.check-out.index')
         ->with(
           [
             'cart' => Cart::getCart(),
             'paymentMethods' => Payment::getPaymentMethods(),
-            'shippingMethods' => Shipping::getActiveShippments()
+            'shippingMethods' => Shipping::getActiveShippments(),
+            'rates' => Shipping::getRates()
           ]
         );
     }

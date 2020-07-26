@@ -10,14 +10,14 @@
   </ul>
   <div class="cart_footer">
     <p class="cart_total">
-      Total: 
+      @lang('cart.label.total'): 
       <span class="cart_amount">
         @money(Webkul\Checkout\Facades\Cart::getCart()->base_grand_total)
       </span>
     </p>
     <p class="cart_buttons">
-      <a href="{{route('public.cart.index')}}" class="btn btn-default btn-radius view-cart">View Cart</a>
-      <a href="{{route('check-out.index')}}" class="btn btn-dark btn-radius checkout">Checkout</a>
+      <a href="{{route('public.cart.index')}}" class="btn btn-default btn-radius view-cart">@lang('cart.label.view_cart')</a>
+      <a href="{{route('check-out.index')}}" class="btn btn-dark btn-radius checkout">@lang('cart.label.checkout')</a>
     </p>
   </div>
 @endif

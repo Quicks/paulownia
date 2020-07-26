@@ -34,7 +34,7 @@
                     </div>
                     <div class="panel-collapse collapse login_form mb-3" id="loginform">
                         <div class="panel-body">
-                            <form method="post" class="login">
+                            <form method="post" class="login" ref='form'>
                                 <p>
                                   @lang('checkout.label.already_have_account_message')
                                 </p>
@@ -81,53 +81,64 @@
                   <div class="heading_s2">
                     <h5>@lang('checkout.label.billing_details')</h5>
                     </div>
-                    <form method="post">
+                    <form id='checkout-form' method="post">
                       <div class="row">
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.first_name')<span class="required">*</span></label>
-                              <input type="text" required class="form-control" name="fname" v-model='addresses.billing_address.first_name'>
+                              <input type="text" v-validate="'required'" class="form-control" name="billing.first_name" v-model='addresses.billing_address.first_name'>
+                              <span v-show="errors.has('billing.first_name')" class="help error is-danger">@{{ errors.first('billing.first_name') }}</span>
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.last_name')<span class="required">*</span></label>
-                              <input type="text" required class="form-control" name="lname" v-model='addresses.billing_address.last_name'>
+                              <input type="text" v-validate="'required'" class="form-control" name="billing.last_name" v-model='addresses.billing_address.last_name'>
+                              <span v-show="errors.has('billing.last_name')" class="help error is-danger">@{{ errors.first('billing.last_name') }}</span>
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.company_name')</label>
-                              <input class="form-control" required type="text" name="cname" v-model='addresses.billing_address.company_name'>
+                              <input class="form-control" v-validate="'required'" type="text" name="billing.company_name" v-model='addresses.billing_address.company_name'>
+                              <span v-show="errors.has('billing.company_name')" class="help error is-danger">@{{ errors.first('billing.company_name') }}</span>
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.country')<span class="required">*</span></label>
                               <div class="custom_select">
-                                <select v-model='addresses.billing_address.country'>
+                                <select v-validate="'required'" v-model='addresses.billing_address.country' name="billing.country">
                                   <option v-for='country in countries' value='country.code'>
                                     @{{country.name}}
                                   </option>
                                 </select>
                               </div>
+                              <span v-show="errors.has('billing.country')" class="help error is-danger">@{{ errors.first('billing.country') }}</span>
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.address')<span class="required">*</span></label>
-                              <input type="text" v-model='addresses.billing_address.street_address' class="form-control" name="billing_address" required="">
+                              <input type="text" v-validate="'required'" v-model='addresses.billing_address.street_address' class="form-control" name="billing.street_address" required="">
+                              <span v-show="errors.has('billing.street_address')" class="help error is-danger">@{{ errors.first('billing.street_address') }}</span>
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.city')<span class="required">*</span></label>
-                              <input class="form-control" v-model='addresses.billing_address.city' required type="text" name="city">
+                              <input class="form-control" v-validate="'required'" v-model='addresses.billing_address.city' required type="text" name="billing.city">
+                              <span v-show="errors.has('billing.city')" class="help error is-danger">@{{ errors.first('billing.city') }}</span>
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.state')</label>
-                              <input class="form-control" v-model='addresses.billing_address.state' required type="text" name="state">
+                              <input class="form-control" v-validate="'required'" v-model='addresses.billing_address.state' required type="text" name="billing.state">
+                              <span v-show="errors.has('billing.state')" class="help error is-danger">@{{ errors.first('billing.state') }}</span>
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.postcode')<span class="required">*</span></label>
-                              <input class="form-control" required type="text" name="zipcode" v-model='addresses.billing_address.zip'>
+                              <input class="form-control" v-validate="'required'" required type="text" name="billing.postcode" v-model='addresses.billing_address.zip'>
+                              <span v-show="errors.has('billing.postcode')" class="help error is-danger">@{{ errors.first('billing.postcode') }}</span>
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.phone')<span class="required">*</span></label>
-                              <input class="form-control" required v-model='addresses.billing_address.phone' type="text" name="phone">
+                              <input class="form-control" v-validate="'required'" required v-model='addresses.billing_address.phone' type="text" name="billing.phone">
+                              <span v-show="errors.has('billing.phone')" class="help error is-danger">@{{ errors.first('billing.phone') }}</span>
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.email')<span class="required">*</span></label>
-                              <input class="form-control" v-model='addresses.billing_address.email' required type="text" name="email">
+                              <input class="form-control" v-validate="'required|email'" v-model='addresses.billing_address.email' required type="text" name="billing.email">
+                              <span v-show="errors.has('billing.email')" class="help error is-danger">@{{ errors.first('billing.email') }}</span>
+                              <span class="help error is-danger">@{{ renderErrors(backendErrors['billing.email']) }}</span>
                             </div>
                           <div class="form-group col-md-12">
                             <label>
@@ -145,40 +156,61 @@
                           </div>
                         </div>
                         <div class="row different_address" v-if='!use_for_shipping'>
-                            <div class="form-group col-md-6">
-                                <label>@lang('checkout.label.first_name')<span class="required">*</span></label>
-                                <input type="text" required class="form-control" name="fname" value="">
+                          <div class="form-group col-md-6">
+                              <label>@lang('checkout.label.first_name')<span class="required">*</span></label>
+                              <input type="text" v-validate="'required'" class="form-control" name="shipping.first_name" v-model='addresses.shipping_address.first_name'>
+                              <span v-show="errors.has('shipping.first_name')" class="help error is-danger">@{{ errors.first('shipping.first_name') }}</span>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>@lang('checkout.label.last_name')<span class="required">*</span></label>
-                                <input type="text" required class="form-control" name="lname" value="">
+                              <label>@lang('checkout.label.last_name')<span class="required">*</span></label>
+                              <input type="text" v-validate="'required'" class="form-control" name="shipping.last_name" v-model='addresses.shipping_address.last_name'>
+                              <span v-show="errors.has('shipping.last_name')" class="help error is-danger">@{{ errors.first('shipping.last_name') }}</span>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>@lang('checkout.label.company_name')</label>
-                                <input class="form-control" required type="text" name="cname">
+                              <label>@lang('checkout.label.company_name')</label>
+                              <input class="form-control" v-validate="'required'" type="text" name="shipping.company_name" v-model='addresses.shipping_address.company_name'>
+                              <span v-show="errors.has('shipping.company_name')" class="help error is-danger">@{{ errors.first('shipping.company_name') }}</span>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>@lang('checkout.label.country')<span class="required">*</span></label>
-                                <div class="custom_select">
-                                    <select>
-                                    </select>
-                                </div>
+                              <label>@lang('checkout.label.country')<span class="required">*</span></label>
+                              <div class="custom_select">
+                                <select v-validate="'required'" v-model='addresses.shipping_address.country' name="shipping.country">
+                                  <option v-for='country in countries' value='country.code'>
+                                    @{{country.name}}
+                                  </option>
+                                </select>
+                              </div>
+                              <span v-show="errors.has('shipping.country')" class="help error is-danger">@{{ errors.first('shipping.country') }}</span>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>@lang('checkout.label.address')<span class="required">*</span></label>
-                                <input type="text" value="" class="form-control" name="billing_address" required="">
+                              <label>@lang('checkout.label.address')<span class="required">*</span></label>
+                              <input type="text" v-validate="'required'" v-model='addresses.shipping_address.street_address' class="form-control" name="shipping.street_address" required="">
+                              <span v-show="errors.has('shipping.street_address')" class="help error is-danger">@{{ errors.first('shipping.street_address') }}</span>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>@lang('checkout.label.city')<span class="required">*</span></label>
-                                <input class="form-control" required type="text" name="city">
+                              <label>@lang('checkout.label.city')<span class="required">*</span></label>
+                              <input class="form-control" v-validate="'required'" v-model='addresses.shipping_address.city' required type="text" name="shipping.city">
+                              <span v-show="errors.has('shipping.city')" class="help error is-danger">@{{ errors.first('shipping.city') }}</span>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>@lang('checkout.label.country')</label>
-                                <input class="form-control" required type="text" name="state">
+                              <label>@lang('checkout.label.state')</label>
+                              <input class="form-control" v-validate="'required'" v-model='addresses.shipping_address.state' required type="text" name="shipping.state">
+                              <span v-show="errors.has('shipping.state')" class="help error is-danger">@{{ errors.first('shipping.state') }}</span>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>@lang('checkout.label.postcode')<span class="required">*</span></label>
-                                <input class="form-control" required type="text" name="zipcode">
+                              <label>@lang('checkout.label.postcode')<span class="required">*</span></label>
+                              <input class="form-control" v-validate="'required'" required type="text" name="shipping.postcode" v-model='addresses.shipping_address.zip'>
+                              <span v-show="errors.has('shipping.postcode')" class="help error is-danger">@{{ errors.first('shipping.postcode') }}</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label>@lang('checkout.label.phone')<span class="required">*</span></label>
+                              <input class="form-control" v-validate="'required'" required v-model='addresses.shipping_address.phone' type="text" name="shipping.phone">
+                              <span v-show="errors.has('shipping.phone')" class="help error is-danger">@{{ errors.first('shipping.phone') }}</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label>@lang('checkout.label.email')<span class="required">*</span></label>
+                              <input class="form-control" v-validate="'required|email'" v-model='addresses.shipping_address.email' required type="text" name="shipping.email">
+                              <span v-show="errors.has('shipping.email')" class="help error is-danger">@{{ errors.first('shipping.email') }}</span>
                             </div>
                         </div>
                         <!-- <div class="form-row">
@@ -197,8 +229,8 @@
                     <h5>@lang('checkout.label.payment_method')</h5>
                   </div>
                   <div class="custome-radio" v-for='paymentMethod in payment_methods' @click='onPaymentMethodClick(paymentMethod.method)'>
-                    <input class="form-check-input" required="" type="radio" name="payment_option" :checked='payment_method == paymentMethod.method'>
-                    <label class="form-check-label" for="exampleRadios3">@{{paymentMethod.method_title}}</label>
+                    <input class="form-check-input" required="" type="radio" :name="paymentMethod.method" :checked='payment_method == paymentMethod.method'>
+                    <label class="form-check-label" :for="paymentMethod.method">@{{paymentMethod.method_title}}</label>
                     <p data-method="option3" class="payment-text" v-show="payment_method == paymentMethod.method">@{{paymentMethod.description}}</p>
                   </div>
                 </div>
@@ -216,8 +248,8 @@
                     <h5>@lang('checkout.label.shipping_method')</h5>
                   </div>
                   <div class="custome-radio" v-for='shippingMethod in shipping_methods' @click='onShippingMethodClick(shippingMethod.code)'>
-                    <input class="form-check-input" required="" type="radio" name="payment_option" :checked='shipping_method == shippingMethod.code'>
-                    <label class="form-check-label" for="exampleRadios3">@{{shippingMethod.title}}</label>
+                    <input class="form-check-input" required="" type="radio" :name="shippingMethod.code" :checked='shipping_method == shippingMethod.code'>
+                    <label class="form-check-label" :for="shippingMethod.code">@{{shippingMethod.title}}</label>
                     <p data-method="option3" class="payment-text" v-show="shipping_method == shippingMethod.code">@{{shippingMethod.description}}</p>
                   </div>
                 </div>
@@ -301,6 +333,7 @@
 
     <script>
       Vue.prototype.$http = axios;
+      Vue.use(VeeValidate, {events: 'change|blur'});
 
       new Vue({
         el: '#checkout-wrapper',
@@ -332,9 +365,11 @@
               phone: ''
             }
           },
+          backendErrors: {},
           countries: @json(core()->countries()),
           payment_methods: @json($paymentMethods),
           shipping_methods: @json($shippingMethods),
+          rates: @json($rates),
           createAccount: false,
           use_for_shipping: true,
           shipping_method: 'flatrate',
@@ -344,7 +379,8 @@
           cart: {
             items: []
           },
-          user: {}
+          user: {},
+          
         },
         mounted(){
           this.retrieveCartInfo()
@@ -352,6 +388,14 @@
         methods: {
           shippingCalc(){
             return 42
+          },
+          renderErrors(errors){
+            console.log(errors)
+            if(Array.isArray(errors)){
+              return errors.join(',')
+            }else{
+              return errors
+            }
           },
           price_format(number, size=2){
             return parseFloat(number).toFixed(size) + ' ' + this.cart.base_currency_code
@@ -365,21 +409,48 @@
           },
           async onSubmit(){
             var that = this
-            if(this.createAccount){
-              this.user = await this.$http.post('/api/customer/register', {
-                email: this.addresses.billing_address.email,
-                first_name: this.addresses.billing_address.first_name,
-                last_name: this.addresses.billing_address.last_name,
-                password: this.createAccountPass,
-                password_confirmation: this.createAccountPass
-              })
+            try{
+              let validForm = await that.$validator.validateAll()
+              if(validForm){
+                if(this.createAccount){
+                  this.user = await this.$http.post('/api/customer/register', {
+                    email: this.addresses.billing_address.email,
+                    first_name: this.addresses.billing_address.first_name,
+                    last_name: this.addresses.billing_address.last_name,
+                    password: this.createAccountPass,
+                    password_confirmation: this.createAccountPass
+                  }).catch(e => {
+                    Vue.set(that.backendErrors, 'billing.email', e.response.data.errors['email'])
+                    $('input[name="billing.email"]')[0].scrollIntoView(true)
+                    window.scrollTo(0, window.scrollY - 150)
+                  })
+                  if(!this.user){
+                    return false
+                  }
+                }
+                
+                let addressResponse = await this.$http.post('/api/checkout/save-address', this.addressParams())
+                if(addressResponse.errors){
+                  this.errors.billing = addressResponse.errors
+                }
+                let shippingResponse = await this.$http.post('/api/checkout/save-shipping', {shipping_method: this.shipping_method})
+                let paymentResponse = await this.$http.post('/api/checkout/save-payment', {payment:{ method: this.payment_method } })
+                let saveOrderResponse = await this.$http.post('/api/checkout/save-order')
+                location.href = '/'
+              }else{
+                const errorFieldName = this.$validator.errors.items[0].field;
+                $('input[name="'+ errorFieldName + '"]')[0].scrollIntoView(true)
+                window.scrollTo(0, window.scrollY - 150)
+              }
+              
+            }catch(e){
+              if(e.response.data.errors){
+                this.$refs.form.setErrors(e.response.data.errors)
+                let key = Object.keys(that.errors)[0];
+                $('input[name="'+ key + '"]')[0].scrollIntoView(true)
+                window.scrollTo(0, window.scrollY - 150)
+              }
             }
-            await this.$http.post('/api/checkout/save-address', this.addressParams())
-            await this.$http.post('/api/checkout/save-shipping', {shipping_method: this.shipping_method})
-            await this.$http.post('/api/checkout/save-payment', {payment:{ method: this.payment_method } })
-            await this.$http.post('/api/checkout/save-order')
-            location.href = '/'
-
           },
 
           addressParams(){

@@ -11,5 +11,8 @@ return [
   'label.cart_subtotal' => 'Цена за товары',
   'label.vat' => 'Налог',
   'label.cart_total' => 'К оплате',
-  'label.shipping' => 'Просчитать доставку'
+  'label.shipping' => 'Просчитать доставку',
+
+  'label.checkout' => 'Оплата',
+  'label.view_cart' => 'Просмотреть',
 ];

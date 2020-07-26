@@ -4,6 +4,7 @@ namespace Webkul\Shipping;
 
 use Illuminate\Support\Facades\Config;
 use Webkul\Checkout\Facades\Cart;
+use Webkul\API\Http\Resources\Checkout\CartShippingRate as CartShippingRateResource;
 
 /**
  * Class Shipping.
@@ -111,5 +112,20 @@ class Shipping
         }
 
         return $rates;
+    }
+
+    public function getRates(){
+        self::collectRates();
+
+        $rates = [];
+            
+        foreach (Shipping::getGroupedAllShippingRates() as $code => $shippingMethod) {
+            $rates[] = [
+                'carrier_title' => $shippingMethod['carrier_title'],
+                'rates' => CartShippingRateResource::collection(collect($shippingMethod['rates']))
+            ];
+        }
+        return $rates;
+
     }
 }

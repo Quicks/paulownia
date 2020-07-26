@@ -21,3 +21,12 @@
 #checkout-wrapper .payment-text{
   display: block;
 }
+.navbar-nav .cart_box.dropdown-menu{
+  min-width: 320px;
+}
+.cart_box .cart_list li{
+  min-height: 80px;
+}
+span.error{
+  color: red;
+}

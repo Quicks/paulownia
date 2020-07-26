@@ -84,6 +84,7 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
     Route::get('/products/by_category/{categoryId}', 'App\Http\Controllers\ProductsController@byCategory');
     Route::get('/products/{slug}', 'App\Http\Controllers\ProductsController@show')->name('public.products.show');
     Route::get('/', 'App\Http\Controllers\MainController@index')->name('main');
+    Route::get('galleries', 'App\Http\Controllers\GalleriesController@index')->name('public.galleries.index');
     Route::get('galleries/{id}', 'App\Http\Controllers\GalleriesController@show')->name('public.galleries.show');
     Route::get('/show/{type}/{id}', 'App\Http\Controllers\NewsController@show')->name('public.news.show');
     Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('public.cart.index');

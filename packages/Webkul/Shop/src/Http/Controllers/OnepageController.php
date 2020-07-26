@@ -109,7 +109,7 @@ class OnepageController extends Controller
 
         if (Cart::hasError())
             return redirect()->route('shop.checkout.cart.index');
-
+            
         $this->nonCoupon->apply();
 
         Cart::collectTotals();

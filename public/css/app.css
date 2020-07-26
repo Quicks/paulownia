@@ -3343,7 +3343,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #checkout-wrapper .payment-text{
   display: block;
 }
-
+.navbar-nav .cart_box.dropdown-menu{
+  min-width: 320px;
+}
+.cart_box .cart_list li{
+  min-height: 80px;
+}
+span.error{
+  color: red;
+}
 @charset "UTF-8";/*!
   Ionicons, v2.0.0
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/

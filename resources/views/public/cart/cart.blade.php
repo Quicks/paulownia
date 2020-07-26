@@ -16,6 +16,11 @@
 											</tr>
 										</thead>
 										<tbody>
+											<span class='error'>
+												@foreach($errors->messages() as $message)
+													{{$message[0]}}
+												@endforeach
+											</span>
 											@foreach ($cart->items as $item)
 												<tr class='product-row' data-cart-item-id="{{$item->id}}">
 													<td class="product-thumbnail">

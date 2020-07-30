@@ -17,10 +17,14 @@
         </div>
         <ul class="list_none carousel_slide4 owl-carousel owl-theme nav_style2" data-margin="15" data-dots="false" data-nav="true" data-loop="true">
           @foreach($mainGallery as $gallery)
-            
+
             <li>
               <a href='{{route("public.galleries.show", ["id" => $gallery->id])}}'>
-                <img src="/storage/{{$gallery->mainImage()->getThumbnailAttribute()}}" alt="image">
+                  @if(isset($gallery->mainImage()->image))
+                      <img src="/storage/{{$gallery->mainImage()->thumbnail}}" alt="image">
+                  @else
+                      <img src="/images/gallery_item_small1.jpg" alt="image">
+                  @endif
               </a>
             </li>
           @endforeach

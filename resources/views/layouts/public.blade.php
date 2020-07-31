@@ -23,7 +23,7 @@
     @if(empty(SEOMeta::getTitle()))
         <title>{{ config('app.name', 'Laravel') }}</title>
     @endif
-    
+
 <!-- Google ReCAPTCHA v2 -->
     {!! htmlScriptTagJsApi() !!}
 
@@ -35,8 +35,11 @@
     <link rel="mask-icon" href="{{ asset('images/favicons/safari-pinned-tab.svg') }}" color="#5bbad5">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}?v9">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/css/lightgallery.css" />
+    <link rel="stylesheet" href="{{ asset('css/jquery.justified.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/js/lightgallery.js"></script>
     <script type="text/javascript">
         window.flashMessages = [];
         @if ($success = session('success'))

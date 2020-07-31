@@ -102,7 +102,7 @@
                               <label>@lang('checkout.label.country')<span class="required">*</span></label>
                               <div class="custom_select">
                                 <select v-validate="'required'" v-model='addresses.billing_address.country' name="billing.country">
-                                  <option v-for='country in countries' value='country.code'>
+                                  <option v-for='country in countries' :value='country.code'>
                                     @{{country.name}}
                                   </option>
                                 </select>
@@ -175,7 +175,7 @@
                               <label>@lang('checkout.label.country')<span class="required">*</span></label>
                               <div class="custom_select">
                                 <select v-validate="'required'" v-model='addresses.shipping_address.country' name="shipping.country">
-                                  <option v-for='country in countries' value='country.code'>
+                                  <option v-for='country in countries' :value="country.code">
                                     @{{country.name}}
                                   </option>
                                 </select>
@@ -247,9 +247,9 @@
                   <div class='heading_s2'>
                     <h5>@lang('checkout.label.shipping_method')</h5>
                   </div>
-                  <div class="custome-radio" v-for='shippingMethod in shipping_methods' @click='onShippingMethodClick(shippingMethod.code)'>
+                  <div class="custome-radio" v-for='shippingMethod in rates' @click='onShippingMethodClick(shippingMethod.code)'>
                     <input class="form-check-input" required="" type="radio" :name="shippingMethod.code" :checked='shipping_method == shippingMethod.code'>
-                    <label class="form-check-label" :for="shippingMethod.code">@{{shippingMethod.title}}</label>
+                    <label class="form-check-label" :for="shippingMethod.code">@{{shippingMethod.carrier_title}}</label>
                     <p data-method="option3" class="payment-text" v-show="shipping_method == shippingMethod.code">@{{shippingMethod.description}}</p>
                   </div>
                 </div>
@@ -299,13 +299,13 @@
                         <td></td>
                         <td></td>
                         <th>@lang('checkout.label.shipping')</th>
-                        <td>@{{shippingCalc()}}</td>
+                        <td>@{{price_format(shippingCalc())}}</td>
                       </tr>
                       <tr>
                         <td></td>
                         <td></td>
                         <th>@lang('checkout.label.total')</th>
-                        <td class="product-subtotal">@{{price_format(cart.grand_total)}}</td>
+                        <td class="product-subtotal">@{{price_format(total_sum)}}</td>
                       </tr>
                     </tfoot>
                   </table>
@@ -368,7 +368,6 @@
           backendErrors: {},
           countries: @json(core()->countries()),
           payment_methods: @json($paymentMethods),
-          shipping_methods: @json($shippingMethods),
           rates: @json($rates),
           createAccount: false,
           use_for_shipping: true,
@@ -382,15 +381,25 @@
           user: {},
           
         },
+        computed:{
+          total_sum(){
+            return parseInt(this.cart.grand_total) + parseInt(this.shippingCalc())
+          }
+        },
         mounted(){
           this.retrieveCartInfo()
         },
         methods: {
           shippingCalc(){
-            return 42
+            let shippingMethod = this.shipping_method
+            let currentRate = this.rates.find(function(rate) { return rate.code == shippingMethod })
+            if(currentRate){
+              return currentRate.rates.map(function(rate) {return rate.base_price}).reduce(function(prev, next) {return prev + next})
+            }else{
+              return 0
+            }
           },
           renderErrors(errors){
-            console.log(errors)
             if(Array.isArray(errors)){
               return errors.join(',')
             }else{
@@ -436,7 +445,13 @@
                 let shippingResponse = await this.$http.post('/api/checkout/save-shipping', {shipping_method: this.shipping_method})
                 let paymentResponse = await this.$http.post('/api/checkout/save-payment', {payment:{ method: this.payment_method } })
                 let saveOrderResponse = await this.$http.post('/api/checkout/save-order')
-                location.href = '/'
+                console.log(saveOrderResponse)
+                if(this.payment_method == 'paypal_standard'){
+                  location.href = saveOrderResponse.data.redirect_url
+                }else{
+                  this.showSuccessModal()
+                }
+                // location.href = '/'
               }else{
                 const errorFieldName = this.$validator.errors.items[0].field;
                 $('input[name="'+ errorFieldName + '"]')[0].scrollIntoView(true)
@@ -505,6 +520,9 @@
               return res
             // }
             
+          },
+          showSuccessModal(){
+            alert('success order')
           },
           onPaymentMethodClick(method){
             this.payment_method = method

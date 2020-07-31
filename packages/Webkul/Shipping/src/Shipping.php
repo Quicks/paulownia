@@ -82,8 +82,8 @@ class Shipping
         if (! $cart = Cart::getCart())
             return;
 
-        $shippingAddress = $cart->shipping_address;
-
+        if (! $shippingAddress = $cart->shipping_address)
+            return;
         foreach ($this->rates as $rate) {
             $rate->cart_address_id = $shippingAddress->id;
 
@@ -104,6 +104,7 @@ class Shipping
             if (! isset($rates[$rate->carrier])) {
                 $rates[$rate->carrier] = [
                     'carrier_title' => $rate->carrier_title,
+                    'carrier' => $rate->carrier,
                     'rates' => []
                 ];
             }
@@ -118,10 +119,11 @@ class Shipping
         self::collectRates();
 
         $rates = [];
-            
+        
         foreach (Shipping::getGroupedAllShippingRates() as $code => $shippingMethod) {
             $rates[] = [
                 'carrier_title' => $shippingMethod['carrier_title'],
+                'code' => $shippingMethod['carrier'],
                 'rates' => CartShippingRateResource::collection(collect($shippingMethod['rates']))
             ];
         }

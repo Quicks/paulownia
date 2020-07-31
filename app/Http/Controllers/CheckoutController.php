@@ -113,7 +113,7 @@ class CheckoutController extends Controller
       if (Cart::hasError())
           return redirect()->route('public.cart.index');
       $this->nonCoupon->apply();
-      
+
       return view('public.check-out.index')
         ->with(
           [

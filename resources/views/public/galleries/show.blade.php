@@ -16,10 +16,10 @@
     <section class="small_pb">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 image-container" id="lightgallery">
+                <div class="col-md-12 image-container" id="mygallery">
                     @foreach($gallery->images as $k => $image)
                         <a href="/storage/{{$image->image}}">
-                            <img src="/storage/{{$image->thumbnail}}" alt="image {{$k}}"/>
+                            <img src="/storage/{{$image->image}}"/>
                         </a>
                     @endforeach
                 </div>
@@ -41,28 +41,16 @@
         </div>
     </section>
     <!-- END SECTION GALLERY DETAIL -->
-
     <script type="text/javascript">
-        $(function () {
-        //     $('.image-container').empty().justifiedImages({
-        //         images : photos,
-        //         rowHeight: 200,
-        //         maxRowHeight: 400,
-        //         thumbnailPath: function(photo, width, height){
-        //             var purl = photo.url_s;
-        //             if( photo.url_n && (width > photo.width_s * 1.2 || height > photo.height_s * 1.2) ) purl = photo.url_n;
-        //             if( photo.url_m && (width > photo.width_n * 1.2 || height > photo.height_n * 1.2) ) purl = photo.url_m;
-        //             if( photo.url_z && (width > photo.width_m * 1.2 || height > photo.height_m * 1.2) ) purl = photo.url_z;
-        //             if( photo.url_l && (width > photo.width_z * 1.2 || height > photo.height_z * 1.2) ) purl = photo.url_l;
-        //             return purl;
-        //         },
-        //         getSize: function(photo){
-        //             return {width: photo.width_s, height: photo.height_s};
-        //         },
-        //         margin: 1
-        //     });
-
-            $('#lightgallery').lightGallery();
+        jQuery(function($) {
+            $('.image-container').justifiedGallery({
+                lastRow : 'nojustify',
+                rowHeight : 120,
+                rel : 'gallery',
+                margins : 3
+            }).on('jg.complete', function () {
+                $('#mygallery').lightGallery();
+            });
         })
     </script>
 @endsection

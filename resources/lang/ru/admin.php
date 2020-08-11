@@ -4,7 +4,7 @@ return [
   'btns.new' => 'Создать',
   'btns.show' => 'Просмотреть',
   'btns.edit' => 'Редактировать',
-  'btns.add_image' => 'Добаить картинку',
+  'btns.add_image' => 'Добавить картинку',
   'btns.destroy' => 'Удалить',
   'btns.back' => 'Назад',
   'btns.cancel' => 'Отклонить',
@@ -13,7 +13,7 @@ return [
   'btns.crop' => 'Обрезать картинку',
   'btns.delete_image' => 'Удалить картинку',
   'btns.actions' => 'Действия',
-  
+
   'helpers.yes' => 'Да',
   'helpers.no' => 'Нет',
 
@@ -21,9 +21,8 @@ return [
   'common.active' => 'Публиковать?',
   'common.text' => 'Текст',
   'common.images' => 'Картинки',
-  
   'common.image' => 'Картинка',
-  
+
   'article.index.title' => 'Список статей',
   'article.index.table.link_to_public' => 'Ссылка на публичную часть',
   'article.index.table.publish' => 'Публиковать?',
@@ -45,7 +44,7 @@ return [
   'treatises.index.table.link_to_public' => 'Ссылка на публичную часть',
   'treatises.index.table.publish' => 'Публиковать?',
   'treatises.index.table.publish_date' => 'Дата публикации',
-  'treatises.index.table.files' => 'Файли',
+  'treatises.index.table.files' => 'Файлы',
   'treatises.edit.title' => 'Редактирование трактата',
   'treatises.create.title' => 'Создание трактата',
 
@@ -116,10 +115,10 @@ return [
   'products.form.tabs.categories' => 'Категории',
   'product.index.table.link_to_public' => 'Ссылка на публичную часть',
   'product.index.table.publish' => 'Ссылка на публичную часть',
-  
+
   'orders.index.title' => 'Заказы',
-  'orders.index.table.sub_total' => 'Сума',
-  'orders.index.table.grand_total' => 'Сума с доставкой',
+  'orders.index.table.sub_total' => 'Сумма',
+  'orders.index.table.grand_total' => 'Сумма с доставкой',
   'orders.index.table.order_date' => 'Дата заказа',
   'orders.index.table.status' => 'Статус',
   'orders.index.table.billed_to' => 'Кем заказано',
@@ -138,16 +137,23 @@ return [
   'orders.show.table.headers.price' => 'Цена',
   'orders.show.table.headers.status' => 'Статус',
   'orders.show.table.headers.sub_total' => 'Цена без налогов',
-  'orders.show.table.headers.tax_percent' => 'Процент налога от сумы',
+  'orders.show.table.headers.tax_percent' => 'Процент налога от суммы',
   'orders.show.table.headers.tax_amount' => 'Налог в деньгах',
-  'orders.show.table.headers.grand_total' => 'Общая сума',
-  'orders.show.table.total.sub_total' =>	'Сума всех продуктов',
-  'orders.show.table.total.shipping_amount' =>	'Сума доставки',
+  'orders.show.table.headers.grand_total' => 'Общая сумма',
+  'orders.show.table.total.sub_total' =>	'Сумма всех продуктов',
+  'orders.show.table.total.shipping_amount' =>	'Сумма доставки',
   'orders.show.table.total.tax' => 'Налоги',
-  'orders.show.table.total.grand_total' => 'Общая сума',
+  'orders.show.table.total.grand_total' => 'Общая сумма',
   'orders.show.table.total.total_paid' => 'Всего оплачено',
-  'orders.show.table.total.total_refunded' => 'Всего вернуто',
+  'orders.show.table.total.total_refunded' => 'Всего возвращено',
   'orders.show.table.total.total_due' => 'К оплате',
+
+  'certificates.index.title' => 'Сертификаты',
+  'certificates.create.title' => 'Создание сертификата',
+  'certificates.index.table.name' => 'Название',
+  'certificates.index.table.active' => 'Действующий',
+  'certificates.index.table.string' => 'Строка',
+  'certificates.index.table.publish' => 'Публиковать?',
 
   'form.main' => 'Общая инфа',
   'form.lang.en' => 'На английском',
@@ -175,6 +181,9 @@ return [
   'form.watermark' => 'Добавить водяной знак',
   'form.file_change' => 'Изменить',
   'form.translate_to_other' => 'Перевести с испанского на другие языки',
+
+  'faq.index.table.topic' => 'Тема',
+  'faq.index.table.question' => 'Вопрос',
 
   'sidebar.links.dashboard' => 'Главная',
   'sidebar.links.public.news.news' => 'Новости',
@@ -214,7 +223,11 @@ return [
   'sidebar.links.shop.certificates' => 'Сертификаты',
   'sidebar.links.tracking.title' => 'Статистика',
   'sidebar.links.tracking.tracking_statistic' => 'Общая статистика',
+
   'lang.ru' => 'Руский',
   'lang.es' => 'Espanol',
   'lang.en' => 'English',
+
+  'menu.index.title' => 'Меню',
+  'menu.index.link' => 'Ссылка'
 ];

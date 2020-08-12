@@ -147,6 +147,8 @@ return [
   'orders.show.table.total.total_paid' => 'Total paid',
   'orders.show.table.total.total_refunded' => 'Total returned',
   'orders.show.table.total.total_due' => 'To pay',
+  'orders.show.shipments.carrier_title' => 'carrier title',
+  'orders.show.shipments.track_number' => 'track number',
 
   'certificates.index.title' => 'Certificates',
   'certificates.create.title' => 'Certificate creation',

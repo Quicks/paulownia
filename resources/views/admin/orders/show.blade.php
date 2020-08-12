@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-  <div class="">
+  <div class="invoice-wrapper">
     <div class="row">
         <div class="col-sm-3">
             <div class="dummy-logo">
@@ -23,14 +23,18 @@
             No. <b>#{{$order->id}}</b>
             <div class="divider"></div>
             <div class="invoice-date mrg20B">{{date("F d Y")}}</div>
-            
-            
             <div class="tab-content nav-responsive nav nav-tabs" id="nav-tabContent">
                 <ul class="nav-responsive nav nav-tabs pull-right">
                     <li class=''>
-                        <a href="{{ route('admin.sales.invoices.create', $order->id) }}" class="btn btn-alt btn-hover btn-warning" >
+                        <form method="POST" action="{{ route('admin.sales.invoices.store', $order->id) }}" >
+                          @csrf()
+                          <button type="submit" class="btn btn-alt btn-hover btn-warning invoice-btn">
                             <span>@lang('admin.orders.show.btns.send_invoice')</span>
-                        </a>
+                          </button>
+                        </form>
+                        <!-- <a href="{{ route('admin.sales.invoices.create', $order->id) }}" class="btn btn-alt btn-hover btn-warning" >
+                            <span>@lang('admin.orders.show.btns.send_invoice')</span>
+                        </a> -->
                     </li>
                     <li class=''>
                         <a href="#shipping"

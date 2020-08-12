@@ -147,6 +147,8 @@ return [
   'orders.show.table.total.total_paid' => 'Total pagado',
   'orders.show.table.total.total_refunded' => 'Total devuelto',
   'orders.show.table.total.total_due' => 'Pagar',
+  'orders.show.shipments.carrier_title' => 'título del transportista',
+  'orders.show.shipments.track_number' => 'número de pista',
 
   'certificates.index.title' => 'Certificados',
   'certificates.create.title' => 'Crea un certificado',

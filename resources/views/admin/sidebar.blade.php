@@ -110,29 +110,41 @@
         <li class="divider"></li>
 
         <li class="header"><span>@lang('admin.sidebar.links.shop.title')</span></li>
-        @if(bouncer()->hasPermission('dashboard'))
+        <!-- @if(bouncer()->hasPermission('dashboard'))
             <li>
                 <a href="{{route('admin.dashboard.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
                     <span>@lang('admin.sidebar.links.shop.dashboard')</span>
                 </a>
             </li>
-        @endif
-        @if(bouncer()->hasPermission('sales.orders'))
+        @endif -->
+        <!-- @if(bouncer()->hasPermission('sales.orders'))
             <li>
                 <a href="{{route('admin.sales.orders.index')}}">
                     <i class="glyph-icon icon-linecons-tv"></i>
                     <span>@lang('admin.sidebar.links.shop.sales')</span>
                 </a>
             </li>
-        @endif
+        @endif -->
         @if(bouncer()->hasPermission('catalog.products'))
             <li>
-                <a href="#" title="Elements">
-                <i class="glyph-icon icon-linecons-diamond"></i>
+                <!-- <a href="#" title="Elements"> -->
+                <!-- <i class="glyph-icon icon-linecons-diamond"></i>
                     <span>@lang('admin.sidebar.links.shop.catalog')</span>
-                </a>
-                <div class="sidebar-submenu">
+                </a> -->
+                <li>
+                    <a href="{{route('products.index')}}">
+                        <i class="glyph-icon icon-linecons-tv"></i>
+                        <span>@lang('admin.sidebar.links.shop.products')</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('orders.index')}}">
+                        <i class="glyph-icon icon-linecons-tv"></i>
+                        <span>@lang('admin.sidebar.links.shop.orders')</span>
+                    </a>
+                </li>
+                <!-- <div class="sidebar-submenu">
 
                     <ul>
                         <li>
@@ -145,7 +157,7 @@
                                 <span>@lang('admin.sidebar.links.shop.orders')</span>
                             </a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a class="{{Request::is('admin/categories') ? "custom-admin-sidebar-a-active" : ""}}"
                             href="{{route('admin.catalog.categories.index')}}">
                                 <span>@lang('admin.sidebar.links.shop.categories')</span>
@@ -156,10 +168,10 @@
                             href="{{route('admin.catalog.attributes.index')}}">
                                 <span>@lang('admin.sidebar.links.shop.attributes')</span>
                             </a>
-                        </li> -->
+                        </li>
                     </ul>
 
-                </div>
+                </div> -->
             </li>
 
             
@@ -180,7 +192,7 @@
                 </a>
             </li>
         @endif
-        @if(bouncer()->hasPermission('locales'))
+        <!-- @if(bouncer()->hasPermission('locales'))
             <li>
                 <a href="#" title="Elements">
                     <i class="glyph-icon icon-linecons-diamond"></i>
@@ -201,6 +213,7 @@
                 </div>
             </li>
         @endif
+        -->
         @if(bouncer()->hasPermission('configuration'))
             <li>
                 <a href="{{route('admin.configuration.index')}}">
@@ -208,7 +221,7 @@
                     <span>@lang('admin.sidebar.links.shop.configure')</span>
                 </a>
             </li>
-        @endif
+        @endif 
         @if(bouncer()->hasPermission('certificates'))
             <li>
                 <a class="{{Request::is('admin/certificates*') ? "custom-admin-sidebar-a-active" : ""}}"

@@ -64,7 +64,7 @@
     <div id='sb-site'>
 
         <div id="app">
-
+        
             @include('admin.header')
             @include('admin.sidebar')
             <div id="page-content-wrapper">
@@ -72,6 +72,7 @@
                     <div class="container">
                         <div id='page-title'>
                             <h2>@yield('pageTitle')</h2>
+                            @include('admin.flash_messages')
                         </div>
                         <div class="panel">
                             <div class='panel-body'>
@@ -110,7 +111,7 @@
 <!-- <script type="text/javascript" src="{{ asset('vendor/webkul/admin/assets/js/admin.js') }}"></script> -->
 
 <script>
-    setTimeout(() => {
+    setTimeout(function() {
         $('#sidebar-menu').superclick({
             animation: {
                 height: 'show'
@@ -120,7 +121,11 @@
             }
         })
     }, 1000);
-    
+    $(document).ready(function(){
+        if(Object.keys(flashMessages).length !== 0){
+            console.log(flashMessages)
+        }
+    })
 </script>
 
 </body>

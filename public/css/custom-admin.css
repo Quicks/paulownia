@@ -304,3 +304,13 @@
 .dd3-handle:hover {
   background: #2ecc71;
 }
+
+.invoice-btn{
+  padding: 3px 15px;
+  height: auto;
+  border-radius: 3px;
+  margin: 0 5px;
+}
+.invoice-wrapper .nav-tabs li{
+  margin: 0 5px;
+}

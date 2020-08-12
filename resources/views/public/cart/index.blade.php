@@ -31,6 +31,16 @@
 				}, 500)
 			}
 		})
+		$(document).on('change', '.quantity input[name="quantity"]', function(){
+			var quantityDom = $(this).parents('.product-quantity').first()
+			var newQuantity = parseInt($(this).val())
+			if(newQuantity >= 1){
+				clearTimeout(timeout)
+				timeout = setTimeout(function(){
+					updateCart(quantityDom, newQuantity)
+				}, 500)
+			}
+		})
 		$(document).on('click', '.product-remove', function(){
 			Cart.removeFromCart($(this).data('cart-item-id'), function(){
 				rerenderCart()

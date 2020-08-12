@@ -147,7 +147,8 @@ return [
   'orders.show.table.total.total_paid' => 'Всего оплачено',
   'orders.show.table.total.total_refunded' => 'Всего возвращено',
   'orders.show.table.total.total_due' => 'К оплате',
-
+  'orders.show.shipments.carrier_title' => 'название перевозчика',
+  'orders.show.shipments.track_number' => 'трекинговый номер',
   'certificates.index.title' => 'Сертификаты',
   'certificates.create.title' => 'Создание сертификата',
   'certificates.index.table.name' => 'Название',

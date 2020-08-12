@@ -10,4 +10,5 @@ return [
     'loading' => 'Loading',
     'previous_post' => 'previous Post',
     'next_post' => 'next Post',
+    'comment' => 'comment'
 ];

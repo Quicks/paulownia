@@ -10,4 +10,5 @@ return [
     'loading' => 'Chargement',
     'previous_post' => 'post précédent',
     'next_post' => 'prochain post',
+    'comment' => 'commentaire'
 ];

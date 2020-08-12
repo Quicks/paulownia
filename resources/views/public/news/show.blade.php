@@ -96,14 +96,26 @@
                             @if($news->parentComments)
                                 @include('public.comments.index', ['comments' => $news->parentComments])
                             @endif
-                            <div class="posts-title">
-                                <h5>{{ __('comments.write_a_comment')}}</h5>
-                            </div>
-                            @include('public.comments.form', [
-                                'commentable_id' => $news->id,
-                                'commentable_type' => get_class($news),
-                                'parent_id' => 0,
-                            ])
+                            @if(\Illuminate\Support\Facades\Auth::check())
+                                <div class="posts-title">
+                                    <h5>{{ __('comments.write_a_comment')}}</h5>
+                                </div>
+                                @include('public.comments.form', [
+                                    'commentable_id' => $news->id,
+                                    'commentable_type' => get_class($news),
+                                    'parent_id' => 0,
+                                ])
+                            @else
+                                <div class="field_form form_style2">
+                                    <div class="posts-title">
+                                        <h5>{{ __('comments.leave_comment')}}</h5>
+                                    </div>
+                                    <div class="posts-title">
+                                        {{ __('comments.leave_comment_message_begin')}}
+                                        <a href="/login">{{ __('comments.leave_comment_message_logged_in')}}</a>
+                                        {{ __('comments.leave_comment_message_end')}}
+                                    </div>
+                            @endif
                         </div>
                     </div>
                 </div>

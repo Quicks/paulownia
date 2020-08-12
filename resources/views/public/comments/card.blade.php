@@ -9,9 +9,11 @@
                     <h6><a href="#">{{$comment->owner}}</a></h6>
                     <div class="comment-time">{{$comment->created_at}}</div>
                 </div>
-                <div class="ml-auto">
-                    <a href="javascript:void(0);" class="comment-reply btn btn-default rounded-0 btn-sm">{{ __('comments.reply')}}</a>
-                </div>
+                @if(\Illuminate\Support\Facades\Auth::check())
+                    <div class="ml-auto" style="<?php echo  isset($display) ? $display : ''?>">
+                        <a href="javascript:void(0);" class="comment-reply btn btn-default rounded-0 btn-sm">{{ __('comments.reply')}}</a>
+                    </div>
+                @endif
             </div>
             <p>{{$comment->text}}</p>
         </div>
@@ -27,7 +29,7 @@
     @if($comment->childs)
         <ul class="children_comment">
             @foreach($comment->childs as $comment)
-                @include('public.comments.card', ['comment' => $comment])
+                @include('public.comments.card', ['comment' => $comment, 'display' => 'display: none'])
             @endforeach
         </ul>
     @endif

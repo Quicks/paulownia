@@ -11,4 +11,8 @@ return [
     'submit' => 'إرسال',
     'cancel' => 'إلغاء',
     'reply' => 'الرد',
+    'leave_comment' => 'اترك تعليقا',
+    'leave_comment_message_begin' => 'يجب ان تكون',
+    'leave_comment_message_logged_in' => 'تسجيل الدخول',
+    'leave_comment_message_end' => 'لإضافة تعليق.',
 ];

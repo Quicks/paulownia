@@ -10,4 +10,8 @@ return [
     'submit' => 'Отправить',
     'cancel' => 'Отмена',
     'reply' => 'Ответить',
+    'leave_comment' => 'Оставить комментарий',
+    'leave_comment_message_begin' => 'Вам нужно',
+    'leave_comment_message_logged_in' => 'войти',
+    'leave_comment_message_end' => ', чтобы оставить комментарий.',
 ];

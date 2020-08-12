@@ -11,7 +11,7 @@
             <input name="website" class="form-control" placeholder="{{ __('comments.your_website')}}" required="required" type="text">
         </div>
         <div class="form-group col-md-12">
-            <textarea rows="3" name="text" class="form-control" placeholder="{{ __('comments.your_comment')}}" required="required"></textarea>
+            <textarea rows="3" name="text" class="form-control" maxlength="1000" placeholder="{{ __('comments.your_comment')}}" required="required"></textarea>
         </div>
         {{ Form::hidden('parent_id', $parent_id) }}
         {{ Form::hidden('commentable_type', $commentable_type) }}

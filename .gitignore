@@ -21,3 +21,5 @@ yarn-error.log
 package-lock.json
 docker/mysqldata
 docker/logs
+/public/mix-manifest.json
+.composer/

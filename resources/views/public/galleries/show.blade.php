@@ -6,7 +6,6 @@
         $breadcrumbs = [
             route('public.galleries.index') => 'header-footer.gallery',
             route('public.galleries.show', [$gallery->id]) => $gallery->title,
-
         ],
         $pageTitle = $gallery->title
     ])

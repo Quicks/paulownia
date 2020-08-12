@@ -23,7 +23,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Copy existing application directory contents
 # COPY . /var/www
 
-# RUN chown -R www-data:www-data /var/www/site/storage
+# RUN chown -R www-data:www-data /var/www
 # RUN usermod -u 1000 www-data
 
 # # Change current user to www-data

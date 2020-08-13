@@ -6,7 +6,7 @@
         $breadcrumbs = [
             route('public.galleries.index') => 'header-footer.gallery',
         ],
-        $pageTitle = 'Gallery'
+        $pageTitle = 'header-footer.gallery'
     ])
     <!-- END SECTION BANNER -->
 

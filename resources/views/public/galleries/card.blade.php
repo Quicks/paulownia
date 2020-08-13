@@ -9,7 +9,7 @@
             @endif
         </a>
         <div class="gallery_content">
-            <h5><a href="{{route('public.galleries.show',[$gallery->id])}}">{{$gallery->name}}</a></h5>
+            <h5><a href="{{route('public.galleries.show',[$gallery->id])}}">{{$gallery->title}}</a></h5>
         </div>
     </div>
 </li>

@@ -25,8 +25,20 @@
                     </div>
                 </div>
                 <div class='form-group'>
-
-                    @include('admin.add-images.cropper', ['images' => $gallery->images])
+                    @if($formMode == 'create')
+                        <label for="name" class="control-label col-sm-3">@lang('admin.form.file_choose')</label>
+                        <div class="fileinput fileinput-new col-sm-6" data-provides="fileinput">
+                            <span class="btn btn-primary btn-file">
+                                <span class="fileinput-new">@lang('admin.form.file_choose')</span>
+                                <span class="fileinput-exists">@lang('admin.form.file_change')</span>
+                                <input class="form-control" name="images[]" accept="image/*" multiple='true' type="file" id="image-input" value="" >
+                            </span>
+                            <span class="fileinput-filename"></span>
+                            <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">×</a>
+                        </div>
+                    @else
+                        @include('admin.add-images.cropper', ['images' => $gallery->images])
+                    @endif
                 </div>
             </div>
 

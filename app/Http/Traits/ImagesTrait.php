@@ -13,7 +13,12 @@ trait ImagesTrait {
         $imageAtributes['imageable_id'] = $id;
         $imageAtributes['imageable_type'] = 'App\Models\\'.$type;
         foreach ($images as $key => $image) {
-            if(isset($image['_destroy'])){
+            if(is_object($image) && get_class($image) == 'Illuminate\Http\UploadedFile'){
+                $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(
+                    base64_encode(file_get_contents($image)), $type, $id, $watermark, $key);
+                Image::create($imageAtributes);
+            }
+            elseif(isset($image['_destroy'])){
                 Image::destroy($image['id']);
             }elseif(empty($image['id'])){
                 $imageAtributes['image'] = ImageSaveHelper::saveImageWithThumbnail(

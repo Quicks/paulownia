@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ImageSaveHelper
 {
-    public static function saveImageWithThumbnail ($requestImageFile, $imageModelName,
+    public static function saveImageWithThumbnail($requestImageFile, $imageModelName,
         $imageModelId, $watermark = false, $imgNum = 0)
     {
         if($watermark) {
@@ -50,7 +50,7 @@ class ImageSaveHelper
         return $fileDir.$fileName.'.'.$extensionName;
     }
 
-    public static function saveProductImage ($requestImageFile, $imageModelId, $watermark = false)
+    public static function saveProductImage($requestImageFile, $imageModelId, $watermark = false)
     {
         if($watermark) {
             $height = Image::make($requestImageFile)->height();
@@ -69,7 +69,7 @@ class ImageSaveHelper
         return ['image' => $fileName.'.jpg', 'thumbnail' => $fileName.'-tmb.jpg'];
     }
 
-    public static function deleteAllModelImages ($modelInstance)
+    public static function deleteAllModelImages($modelInstance)
     {
         foreach ($modelInstance->images()->get() as $image) {
             Storage::delete($image->image);

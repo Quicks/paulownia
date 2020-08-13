@@ -10,7 +10,7 @@
           <h5>oops! The page you requested was not found!</h5> 
         </div>
         <p>The page you are looking for was moved, removed, renamed or might never existed.</p>
-        <a href="index.html" class="btn btn-outline-black">Back To Home</a>
+        <a href="/" class="btn btn-outline-black">Back To Home</a>
       </div>
     </div>
   </div>

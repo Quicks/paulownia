@@ -42,7 +42,9 @@ Route::prefix('admin')->group(function () {
     Route::post('/reset-password', 'Webkul\User\Http\Controllers\ResetPasswordController@store')->defaults('_config', [
         'redirect' => 'admin.dashboard.index'
     ])->name('admin.reset-password.store');
-
+    Route::post('/invoices/create/{order_id}', 'Webkul\Admin\Http\Controllers\Sales\InvoiceController@store')->defaults('_config', [
+        'redirect' => 'orders.show'
+    ])->name('admin.sales.invoices.store');
 
     Route::group(['middleware' => ['admin', 'admin.localize'], 'prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function () {
         Route::get('/factura/generate/{id}', 'Webkul\Admin\Http\Controllers\Sales\InvoiceController@generateDocument')->name('factura');

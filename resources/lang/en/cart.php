@@ -11,5 +11,7 @@ return [
   'label.cart_subtotal' => 'Price for goods',
   'label.vat' => 'Tax',
   'label.cart_total' => 'To pay',
-  'label.shipping' => 'Calculate shipping'
+  'label.shipping' => 'Calculate shipping',
+  'label.checkout' => 'checkout',
+  'label.view_cart' => 'view cart',
 ];

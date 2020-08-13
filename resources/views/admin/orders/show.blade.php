@@ -28,6 +28,9 @@
                     <li class=''>
                         <form method="POST" action="{{ route('admin.sales.invoices.store', $order->id) }}" >
                           @csrf()
+                          @foreach ($order->items as $item)
+                            <input type="text" name="invoice[items][{{$item->id}}]" value="{{ $item->qty_to_invoice }}" hidden='hidden'>
+                          @endforeach
                           <button type="submit" class="btn btn-alt btn-hover btn-warning invoice-btn">
                             <span>@lang('admin.orders.show.btns.send_invoice')</span>
                           </button>

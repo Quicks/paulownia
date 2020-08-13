@@ -3352,6 +3352,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 span.error{
   color: red;
 }
+
+.comment_content{
+  width: 100%;
+}
 @charset "UTF-8";/*!
   Ionicons, v2.0.0
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/

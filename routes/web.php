@@ -177,3 +177,4 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
 Route::get('/certificate/{code}', 'App\Http\Controllers\CertificateController')->name('certificate');
 
 
+Route::fallback('App\Http\Controllers\HomeController@notFound');

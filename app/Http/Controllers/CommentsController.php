@@ -14,6 +14,7 @@ class CommentsController extends Controller
         $comment->fill($request->all());
         $comment->save();
 
-        return redirect()->route('public.news.show', ['news' => 'news', 'id' => $request->commentable_id]);
+        // return redirect()->route('public.news.show', ['news' => 'news', 'id' => $request->commentable_id]);
+        return redirect()->back();
     }
 }

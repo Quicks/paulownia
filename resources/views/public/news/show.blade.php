@@ -29,11 +29,16 @@
                             <div class="blog_text">
                                 <h2 class="blog_title">{{$news->title}}</h2>
                                 <ul class="list_none blog_meta">
-                                    <li><a href="javascript:void(0);"><i class="far fa-calendar"></i>{{date('F j, Y', strtotime($news->publish_date))}}</a></li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <i class="far fa-calendar"></i>
+                                            {{date('F j, Y', strtotime($news->publish_date))}}
+                                        </a>
+                                    </li>
                                     {{--                                    <li><a href="#"><i class="far fa-user"></i>by <span class="text_default">admin</span></a></li>--}}
                                     <li><a href="#comments"><i class="far fa-comments"></i>{{count($news->comments)}} {{ __('news.comment')}}</a></li>
                                 </ul>
-                                <p>{{$news->text}}</p>
+                                <p>{!!$news->text!!}</p>
                                 <div class="border-top border-bottom blog_post_footer">
                                     <div class="row justify-content-end align-items-center">
 {{--                                        <div class="col-md-8 mb-3 mb-md-0">--}}
@@ -93,8 +98,8 @@
                             <div class="posts-title">
                                 <h5>({{count($news->comments)}}) {{ __('comments.comment')}}</h5>
                             </div>
-                            @if($news->parentComments)
-                                @include('public.comments.index', ['comments' => $news->parentComments])
+                            @if($news->comments()->parents()->get())
+                                @include('public.comments.index', ['comments' => $news->comments()->parents()->get()])
                             @endif
                             <div class="posts-title">
                                 <h5>{{ __('comments.write_a_comment')}}</h5>

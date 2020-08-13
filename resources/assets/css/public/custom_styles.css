@@ -30,3 +30,7 @@
 span.error{
   color: red;
 }
+
+.comment_content{
+  width: 100%;
+}

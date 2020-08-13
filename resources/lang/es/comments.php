@@ -11,4 +11,8 @@ return [
     'submit' => 'Enviar',
     'cancel' => 'Cancelar',
     'reply' => 'Respuesta',
+    'leave_comment' => 'Deja un comentario',
+    'leave_comment_message_begin' => 'Usted debe ser',
+    'leave_comment_message_logged_in' => 'conectado',
+    'leave_comment_message_end' => 'para publicar un comentario.',
 ];

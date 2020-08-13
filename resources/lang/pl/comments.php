@@ -10,4 +10,8 @@ return [
     'submit' => 'Zatwierdź',
     'cancel' => 'Anuluj',
     'reply' => 'Odpowiadać',
+    'leave_comment' => 'Zostaw komentarz',
+    'leave_comment_message_begin' => 'Musisz być',
+    'leave_comment_message_logged_in' => 'zalogowany',
+    'leave_comment_message_end' => ', aby dodać komentarz.',
 ];

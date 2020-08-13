@@ -24,8 +24,6 @@ class LocaleMiddleware
         $segmentsURI = explode('/',$uri);
         if (!empty($segmentsURI[0]) && in_array($segmentsURI[0], $languages)) {
             return $segmentsURI[0];
-        } elseif(Request::input('locale')){
-            return Request::input('locale');
         }
         else {
             return $mainLanguage;

@@ -20,6 +20,7 @@
                                         <th>@lang('admin.orders.index.table.order_date')</th>
                                         <th>@lang('admin.orders.index.table.status')</th>
                                         <th>@lang('admin.orders.index.table.billed_to')</th>
+                                        <th>@lang('admin.orders.index.table.payment_method')</th>
                                         <th>@lang('admin.orders.index.table.shiped_to')</th>
                                         <th>@lang('admin.btns.actions')</th>
                                     </tr>
@@ -41,6 +42,9 @@
                                         </td>
                                         <td>
                                             {{$item->billed_to}}
+                                        </td>
+                                        <td>
+                                            {{$item->method}}
                                         </td>
                                         <td>
                                             {{$item->shipped_to}}

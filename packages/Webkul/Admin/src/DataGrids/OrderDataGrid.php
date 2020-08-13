@@ -28,7 +28,8 @@ class OrderDataGrid extends DataGrid
                     $leftJoin->on('order_address_billing.order_id', '=', 'orders.id')
                         ->where('order_address_billing.address_type', 'billing');
                 })
-                ->addSelect('orders.id', 'orders.base_sub_total', 'orders.base_grand_total', 'orders.created_at', 'channel_name', 'status')
+                ->join('order_payment', 'orders.id', 'order_payment.order_id')
+                ->addSelect('orders.id', 'orders.base_sub_total', 'orders.base_grand_total', 'orders.created_at', 'channel_name', 'status', 'order_payment.method', 'order_payment.method_title')
                 ->addSelect(DB::raw('CONCAT(order_address_billing.first_name, " ", order_address_billing.last_name) as billed_to'))
                 ->addSelect(DB::raw('CONCAT(order_address_shipping.first_name, " ", order_address_shipping.last_name) as shipped_to'));
 

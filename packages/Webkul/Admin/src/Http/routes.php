@@ -146,7 +146,7 @@ Route::group(['middleware' => ['web']], function () {
                 ])->name('admin.sales.invoices.create');
 
                 Route::post('/invoices/create/{order_id}', 'Webkul\Admin\Http\Controllers\Sales\InvoiceController@store')->defaults('_config', [
-                    'redirect' => 'admin.sales.orders.view'
+                    'redirect' => 'orders.show'
                 ])->name('admin.sales.invoices.store');
 
                 Route::get('/invoices/view/{id}', 'Webkul\Admin\Http\Controllers\Sales\InvoiceController@view')->defaults('_config', [

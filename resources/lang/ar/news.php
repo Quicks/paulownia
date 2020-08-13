@@ -10,4 +10,5 @@ return [
     'loading' => 'جار التحميل',
     'previous_post' => 'المنشور السابق',
     'next_post' => 'المشاركة القادمة',
+    'comment' => 'تعليق'
 ];

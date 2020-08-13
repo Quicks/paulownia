@@ -6,27 +6,27 @@
         $breadcrumbs = [
             route('public.news.index') => 'header-footer.news',
         ],
-        $pageTitle = 'Blog List Left Sidebar'
+        $pageTitle = 'header-footer.news'
     ])
     <!-- END SECTION BANNER -->
     <section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <div class="row align-items-center justify-content-between pb-1 mb-4">
-                        <div class="col-auto">
-                            <div class="custom_select">
-                                <select>
-                                    <option value="default">Default sorting</option>
-                                    <option value="popularity">Sort by popularity</option>
-                                    <option value="date">Sort by newness</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <span class="align-middle">Showing {{$allNews->count()}} of {{$allNews->total()}} results</span>
-                        </div>
-                    </div>
+{{--                    <div class="row align-items-center justify-content-between pb-1 mb-4">--}}
+{{--                        <div class="col-auto">--}}
+{{--                            <div class="custom_select">--}}
+{{--                                <select>--}}
+{{--                                    <option value="default">Default sorting</option>--}}
+{{--                                    <option value="popularity">Sort by popularity</option>--}}
+{{--                                    <option value="date">Sort by newness</option>--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-auto">--}}
+{{--                            <span class="align-middle">Showing {{$allNews->count()}} of {{$allNews->total()}} results</span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="row shop_container grid_view">
                         <div class="row justify-content-center">
 

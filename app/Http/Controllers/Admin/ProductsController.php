@@ -23,10 +23,8 @@ class ProductsController extends ProductController
      */
     public function index()
     {
-      
-        // $keyword = $request->get('search');
         $perPage = 25;
-        $products = Product::latest()->paginate($perPage);
+        $products = $this->product->getAll();
         return view('admin.products.index', compact('products'));
     }
 
@@ -101,6 +99,7 @@ class ProductsController extends ProductController
      */
     public function update(ProductForm $request, $webkulProduct)
     {
+        dd($request);
         $product = $this->product->update(request()->all(), $webkulProduct->id);
         $this->saveImages($product->id, 'Product', request()->images, false);
 

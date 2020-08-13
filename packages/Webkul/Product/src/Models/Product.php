@@ -97,7 +97,7 @@ class Product extends Model implements ProductContract
     }
 
     public function localeInfo($locale){
-        return $this->product_flats()->findBySlugOrFail($this->url_key);
+        return $this->product_flats()->where('locale', $this->url_key)->first();
     }
 
     /**

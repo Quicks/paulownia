@@ -11,5 +11,7 @@ return [
   'label.cart_subtotal' => 'Precio por bienes',
   'label.vat' => 'Impuesto',
   'label.cart_total' => 'Pagar',
-  'label.shipping' => 'Calcular costo de envío'
+  'label.shipping' => 'Calcular costo de envío',
+  'label.checkout' => 'checkout',
+  'label.view_cart' => 'view cart',
 ];

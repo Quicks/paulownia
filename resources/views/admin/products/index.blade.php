@@ -34,7 +34,7 @@
                                 @foreach($products as $item)
                                     <tr>
                                         <td>
-                                            <a target='_blank' href="/products/{{$item->id}}">{{ $item->sku }}</a>
+                                            <a target='_blank' href="/products/{{$item->product_id}}">{{ $item->name }}</a>
                                         </td>
                                         <td>
                                             @if($item->status)
@@ -44,22 +44,26 @@
                                             @endif
                                         </td>
                                         <td>
-                                            @foreach($item->images as $image)
-                                                <img src="/storage/{{$image->getThumbnailAttribute()}}" class='img-thumbnail admin-thumbnail'/>
-                                            @endforeach
+                                            @if(count($item->productImages()->get()))
+                                                @foreach($item->productImages()->get() as $image)
+                                                    <img class='img-responsive' src="/storage/{{$image->getImageVersion('thumb')}}" alt="product_img1"/>
+                                                @endforeach
+                                            @else
+                                                <img class='img-responsive' src="/images/banner-logo.png" alt="product_img1"/>
+                                            @endif
                                         </td>
                                         <td>
-                                            {{$item->categories->pluck('name')->implode(',')}}
+                                            {{$item->product->categories->pluck('name')->implode(',')}}
                                         </td>
                                         <td>
                                             {!!$item->short_description!!}
                                         </td>
                                         <td>
                                             @if(bouncer()->hasPermission('products.update'))
-                                                <a href="{{ url('/admin/products/' . $item->id . '/edit') }}" title="Edit Article"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>@lang('admin.btns.edit') </button></a>
+                                                <a href="{{ url('/admin/products/' . $item->product_id . '/edit') }}" title="Edit Article"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>@lang('admin.btns.edit') </button></a>
                                             @endif
                                             @if(bouncer()->hasPermission('products.destroy'))
-                                                <form method="POST" action="{{ url('/admin/products' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                <form method="POST" action="{{ url('/admin/products' . '/' . $item->product_id) }}" accept-charset="UTF-8" style="display:inline">
                                                     {{ method_field('DELETE') }}
                                                     {{ csrf_field() }}
                                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete Article" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> @lang('admin.btns.destroy')</button>

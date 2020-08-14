@@ -5,12 +5,11 @@
         <div class="col-12">
           <div class="text-center">
             <div class="heading_s3 text-center animation" data-animation="fadeInDown" data-animation-delay="0.02s">
-              <div class="sub_heading">Our Works</div>
-                <h2>Our Works</h2>
+              <div class="sub_heading">@lang('public.galleries.sub_title')</div>
+                <h2>@lang('public.galleries.title')</h2>
             </div>
             <p class="animation" data-animation="fadeInUp" data-animation-delay="0.03s">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              <br class="d-none d-md-block"> blandit massa enim. Nullam id varius nunc id varius nunc.
+              @lang('public.galleries.description')
             </p>
             <div class="small_divider"></div>
           </div>

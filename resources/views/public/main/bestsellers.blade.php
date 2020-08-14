@@ -4,9 +4,13 @@
       <div class="row justify-content-center">
           <div class="col-xl-6 col-lg-8 col-sm-10 text-center">
                 <div class="heading_s1 text-center animation" data-animation="fadeInUp" data-animation-delay="0.02s">
-                    <h2>Shop</h2>
+                    <h2>
+                        <a href='{{route("public.products.index")}}'>@lang('products.all-goods')</a>
+                    </h2>
                 </div>
-                <p class="animation" data-animation="fadeInUp" data-animation-delay="0.03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
+                <p class="animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.
+                </p>
             </div>
         </div>
         <div class="row justify-content-center">

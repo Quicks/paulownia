@@ -10,6 +10,10 @@ class CommentsController extends Controller
 {
     public function create (Request $request)
     {
+        $request->validate([
+            'g-recaptcha-response' => 'recaptcha',
+        ]);
+
         $comment = new Comment();
         $comment->fill($request->all());
         $comment->save();
@@ -22,6 +26,5 @@ class CommentsController extends Controller
     {
         $model = explode("\\", $string);
         return mb_strtolower(end($model));
-
     }
 }

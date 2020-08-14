@@ -18,4 +18,8 @@ class Comment extends Model
         return $this->hasMany('App\Models\Comment', 'parent_id');
     }
 
+    public function scopeParents($query){
+        return $query->where('parent_id', 0);
+    }
+
 }

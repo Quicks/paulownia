@@ -1,27 +1,14 @@
 @extends('layouts.public')
 
 @section('content')
-<!-- START SECTION BANNER -->
-<section class="bg_light_yellow breadcrumb_section background_bg bg_fixed bg_size_contain" data-img-src="assets/images/breadcrumb_bg.png">
-	<div class="container">
-    	<div class="row align-items-center">
-        	<div class="col-sm-12 text-center">
-            	<div class="page-title">
-            		<h1>product detail left sidebar</h1>
-                </div>
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">product detail left sidebar</li>
-                  </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- END SECTION BANNER -->
+    @include('public.breadcrumbs', [
+        $breadcrumbs = [
+            route('public.news.index') => 'products.all-goods',
+            route('public.news.show') => $product->title,
 
+        ],
+        $pageTitle = $product->name
+    ])
 
 <!-- START SECTION SHOP DETAIL -->
 <section>
@@ -31,29 +18,20 @@
                 <div class="row">
                     <div class="col-md-6">
                       <div class="product-image">
-                         <span class="pr_flash bg_green">Sale</span>
-                         <img id="product_img" src='assets/images/product1.jpg' alt="product" data-zoom-image="assets/images/product1.jpg"/>
+                         <!-- <span class="pr_flash bg_green">Sale</span> -->
+                         @if(count($product->product->productImages()->get()))
+                            <img id="product_img" src='/storage/{{$product->product->productImages()->first()->image}}' alt="product" data-zoom-image="/images/product1.jpg"/>
+                         @else
+                            <img src="/images/banner-logo.png" alt="product_img1"/>
+                         @endif
                          <div id="pr_item_gallery" class="product_gallery_item owl-thumbs-slider owl-carousel owl-theme">
-                            <div class="item">
-                                <a href="#" class="active" data-image="assets/images/product1.jpg" data-zoom-image="assets/images/product1.jpg">
-                                    <img src="assets/images/product_img1.jpg" alt="product" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#" data-image="assets/images/product1-1.jpg" data-zoom-image="assets/images/product1-1.jpg">
-                                    <img src="assets/images/product_img1-1.jpg" alt="product" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#" data-image="assets/images/product1-2.jpg" data-zoom-image="assets/images/product1-2.jpg">
-                                    <img src="assets/images/product_img1-2.jpg" alt="product" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#" data-image="assets/images/product1-3.jpg" data-zoom-image="assets/images/product1-3.jpg">
-                                    <img src="assets/images/product_img1-3.jpg" alt="product" />
-                                </a>
-                            </div>
+                            @foreach($product->product->productImages()->get() as $image)
+                                <div class="item">
+                                    <a href="#" class="active" data-image="/storage/{{$image->image}}" data-zoom-image="/storage/{{$image->image}}">
+                                        <img src="/storage/{{$image->image}}" alt="product" />
+                                    </a>
+                                </div>
+                            @endforeach
                         </div>
                       </div>
                     </div>
@@ -61,35 +39,39 @@
                         <div class="pr_detail">
                           <div class="product-description">
                             <div class="product-title">
-                              <h4><a href="#">Fresh Organic Strawberry</a></h4>
+                              <h4><a href="#">{{$product->name}}</a></h4>
                             </div>
                             <div class="product_price float-left">
-                                <span class="price">$35.00</span>
+                                <span class="price">${{number_format($product->price, 2, ',', ' ')}}</span>
                             </div>
                             <div class="rating mt-2 float-right"><div class="product_rate" style="width:80%"></div></div>
                             <div class="clearfix"></div>
                             <hr>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                            <p>{!!$product->short_description!!}</p>
                           </div>
                           <hr>
                           <div class="cart_extra">
-                            <div class="cart-product-quantity">
+                            <!-- <div class="cart-product-quantity">
                               <div class="quantity">
                                 <input type="button" value="-" class="minus">
                                 <input type="text" name="quantity" value="1" title="Qty" class="qty" size="4">
                                 <input type="button" value="+" class="plus">
                               </div>
-                            </div>
+                            </div> -->
                             <div class="cart_btn">
-                                <button class="btn btn-default btn-radius btn-sm btn-addtocart" type="button">Add to cart</button>
+                                <button class="btn btn-default btn-radius btn-sm btn-addtocart add-product-to-cart" data-product-id="{{$product->product_id}}" data-quantity='1' type="button">@lang('products.add-cart')</button>
                                 <a class="add_wishlist" href="#"><i class="ti-heart"></i></a>
                             </div>
                           </div>
                           <div class="clearfix"></div>
                           <hr>
                           <ul class="product-meta list_none">
-                            <li>Category: <a href="#">Fresh Fruits</a>, <a href="#">Jiuce</a></li>
-                            <li>Tags: <a href="#" rel="tag">Fruits</a>, <a href="#" rel="tag">Natural</a>, <a href="#" rel="tag">Organic</a> </li>
+                            <li>
+                                Category:
+                                @foreach($product->product->categories as $category)
+                                    <a href="#">{{$category->name}}</a>
+                                @endforeach
+                            </li>
                           </ul>
                           <div class="product_share d-block d-sm-flex align-items-center">
                             <span>Share with:</span>
@@ -113,7 +95,9 @@
             	<div class="tab-style1">
             		<ul class="nav nav-tabs" role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active" id="Description-tab" data-toggle="tab" href="#Description" role="tab" aria-controls="Description" aria-selected="true">Description</a>
+                        <a class="nav-link active" id="Description-tab" data-toggle="tab" href="#Description" role="tab" aria-controls="Description" aria-selected="true">
+                            @lang('products.product-information')
+                        </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" id="Additional-info-tab" data-toggle="tab" href="#Additional-info" role="tab" aria-controls="Additional-info" aria-selected="false">Additional info</a>
@@ -127,8 +111,7 @@
                     </ul>
                 	<div class="tab-content shop_info_tab">
                       <div class="tab-pane fade show active" id="Description" role="tabpanel" aria-labelledby="Description-tab">
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Vivamus bibendum magna Lorem ipsum dolor sit amet, consectetur adipiscing elit.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+                        {!!$product->description!!}
                       </div>
                       <div class="tab-pane fade" id="Additional-info" role="tabpanel" aria-labelledby="Additional-info-tab">
                         <table class="table table-bordered">
@@ -224,108 +207,14 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="heading_s2 m-0">
-                            <h3>Releted Products</h3>
+                            <h3>@lang('products.similar-products')</h3>
                         </div>
                         <div class="small_divider clearfix"></div>
                         <div class="product_slider carousel_slide3 owl-carousel owl-theme nav_top_right2" data-margin="30" data-nav="true" data-dots="false">
-                            <div class="item">
-                                <div class="product">
-                                    <span class="pr_flash bg_green">Sale</span>
-                                    <div class="product_img">
-                                        <a href="#"><img src="assets/images/product_img1.jpg" alt="product_img1"></a>
-                                        <div class="product_action_box">
-                                            <ul class="list_none pr_action_btn">
-                                                <li><a href="#"><i class="ti-heart"></i></a></li>
-                                                <li><a href="#"><i class="ti-shopping-cart"></i></a></li>
-                                                <li><a href="http://bestwebcreator.com//organiq/demo/shop-quick-view.html" class="popup-ajax"><i class="ti-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product_info">
-                                        <h6><a href="#">Fresh Organic Strawberry</a></h6>
-                                        <div class="rating"><div class="product_rate" style="width:80%"></div></div>
-                                        <span class="price">$35.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product">
-                                    <span class="pr_flash bg_orange">-10%</span>
-                                    <div class="product_img">
-                                        <a href="#"><img src="assets/images/product_img2.jpg" alt="product_img2"></a>
-                                        <div class="product_action_box">
-                                            <ul class="list_none pr_action_btn">
-                                                <li><a href="#"><i class="ti-heart"></i></a></li>
-                                                <li><a href="#"><i class="ti-shopping-cart"></i></a></li>
-                                                <li><a href="http://bestwebcreator.com//organiq/demo/shop-quick-view.html" class="popup-ajax"><i class="ti-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product_info">
-                                        <h6><a href="#">Fresh Organic Grapes</a></h6>
-                                        <div class="rating"><div class="product_rate" style="width:80%"></div></div>
-                                        <span class="price">$40.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product">
-                                    <div class="product_img">
-                                        <a href="#"><img src="assets/images/product_img3.jpg" alt="product_img3"></a>
-                                        <div class="product_action_box">
-                                            <ul class="list_none pr_action_btn">
-                                                <li><a href="#"><i class="ti-heart"></i></a></li>
-                                                <li><a href="#"><i class="ti-shopping-cart"></i></a></li>
-                                                <li><a href="http://bestwebcreator.com//organiq/demo/shop-quick-view.html" class="popup-ajax"><i class="ti-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product_info">
-                                        <h6><a href="#">Fresh Organic Cucumber</a></h6>
-                                        <div class="rating"><div class="product_rate" style="width:60%"></div></div>
-                                        <span class="price">$52.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product">
-                                    <span class="pr_flash bg_green">Sale</span>
-                                    <div class="product_img">
-                                        <a href="#"><img src="assets/images/product_img4.jpg" alt="product_img4"></a>
-                                        <div class="product_action_box">
-                                            <ul class="list_none pr_action_btn">
-                                                <li><a href="#"><i class="ti-heart"></i></a></li>
-                                                <li><a href="#"><i class="ti-shopping-cart"></i></a></li>
-                                                <li><a href="http://bestwebcreator.com//organiq/demo/shop-quick-view.html" class="popup-ajax"><i class="ti-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product_info">
-                                        <h6><a href="#">Fresh Organic Orange</a></h6>
-                                        <div class="rating"><div class="product_rate" style="width:100%"></div></div>
-                                        <span class="price">$39.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product">
-                                    <div class="product_img">
-                                        <a href="#"><img src="assets/images/product_img5.jpg" alt="product_img5"></a>
-                                        <div class="product_action_box">
-                                            <ul class="list_none pr_action_btn">
-                                                <li><a href="#"><i class="ti-heart"></i></a></li>
-                                                <li><a href="#"><i class="ti-shopping-cart"></i></a></li>
-                                                <li><a href="http://bestwebcreator.com//organiq/demo/shop-quick-view.html" class="popup-ajax"><i class="ti-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product_info">
-                                        <h6><a href="#">100% Organic Juices</a></h6>
-                                        <div class="rating"><div class="product_rate" style="width:100%"></div></div>
-                                        <span class="price">$33.00</span>
-                                    </div>
-                                </div>
-                            </div>
+                            @foreach($similarProducts as $similarProduct)
+                                @include('public.products.product_card', ['product' => $similarProduct, 'customClasses' => 'col-lg-12'])
+                            @endforeach
+
                         </div>
                     </div>
                 </div>

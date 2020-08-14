@@ -17,6 +17,10 @@
         {{ Form::hidden('commentable_type', $commentable_type) }}
         {{ Form::hidden('commentable_id', $commentable_id) }}
         <div class="form-group col-md-12">
+            {!! htmlFormSnippet() !!}
+            <span class="text-danger">{{ __($errors->first('g-recaptcha-response')) }}</span>
+        </div>
+        <div class="form-group col-md-12">
             <button value="Submit" name="submit" class="btn btn-default submit-reply" title="Submit Your Message!" type="submit">{{ __('comments.submit')}}</button>
             <button value="cancel" name="cancel" class="btn btn-default cancel" title="Cancel Your Message!" type="button">{{ __('comments.cancel')}}</button>
         </div>

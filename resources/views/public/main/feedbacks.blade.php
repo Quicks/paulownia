@@ -5,11 +5,10 @@
         	<div class="col-xl-6 col-lg-8">
             	<div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                     <div class="heading_s2 text-center">
-                    	<span class="sub_heading">@lang('main.our_services.sub_header')</span>
-                        <h2>@lang('main.our_services.title')</h2>
+                    	<h2>@lang('public.our_services.title')</h2>
                     </div>
                     <p class="animation" data-animation="fadeInUp" data-animation-delay="0.03s">
-                        @lang('main.our_services.title.descripton')
+                        @lang('public.our_services.descripton')
                     </p>
                 </div>
                 <div class="small_divider"></div>
@@ -35,34 +34,6 @@
                             </div>
                         </div>
                     @endforeach
-                    <!-- <div class="testimonial_box">
-                        <div class="testi_desc">
-                            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim Nullam id varius nunc id varius nunc.Lorem ipsum dolor sit amet consectetur adipiscing magna laudantium totam rem aperiam eaque ipsa quae inventorec.</p>
-                            </div>
-                        <div class="testi_meta">
-                        	<div class="testimonial_img">
-                                <img src="/images/client_img2.jpg" alt="client">
-                            </div>
-                        	<div class="testi_user">
-                            	<h5>John Mark</h5>
-                                <span>Web Designer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial_box">
-                        <div class="testi_desc">
-                            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim Nullam id varius nunc id varius nunc.Lorem ipsum dolor sit amet consectetur adipiscing magna laudantium totam rem aperiam eaque ipsa quae inventorec.</p>
-                            </div>
-                        <div class="testi_meta">
-                        	<div class="testimonial_img">
-                                <img src="/images/client_img3.jpg" alt="client">
-                            </div>
-                        	<div class="testi_user">
-                            	<h5>Calvin William</h5>
-                                <span>Web Designer</span>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>

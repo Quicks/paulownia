@@ -67,7 +67,7 @@
 																														@foreach($menu_child->children as $sub_child)
 																														<li>
 																																<a class="dropdown-item nav-link nav_item"
-																																		href="{{$current_locale.'/'.$sub_child->link}}">
+																																		href="/{{$current_locale.'/'.$sub_child->link}}">
 																																		{{$sub_child->title}}
 																																</a>
 																														</li>
@@ -77,7 +77,7 @@
 																								</li>
 																						@else
 																								<li>
-																										<a class="dropdown-item nav-link nav_item" href="{{$current_locale.'/'.$menu_child->link}}">{{$menu_child->title}}</a>
+																										<a class="dropdown-item nav-link nav_item" href="/{{$current_locale.'/'.$menu_child->link}}">{{$menu_child->title}}</a>
 																								</li>
 																						@endif
 																				@endforeach
@@ -86,7 +86,7 @@
 														</li>
 												@else
 												<li>
-														<a class="nav-link {{Request::getPathInfo() == $menu->link ? 'active' : ''}}" href="{{$current_locale.$menu->link}}">{{$menu->title}}</a>
+														<a class="nav-link {{Request::getPathInfo() == $menu->link ? 'active' : ''}}" href="/{{$current_locale.$menu->link}}">{{$menu->title}}</a>
 												</li>
 												@endif
 										@endforeach

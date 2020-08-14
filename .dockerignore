@@ -2,3 +2,4 @@ docker/mysqldata
 docker/logs
 public/*
 node_modules/
+storage/

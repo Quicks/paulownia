@@ -44,10 +44,12 @@
     <link rel="stylesheet" type="text/css" href="/css/admin.css">
     <link rel="stylesheet" type="text/css" href="/css/custom-admin.css">
     <link rel="stylesheet" href="{{ asset('vendor/webkul/admin/assets/css/admin.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.3/summernote.min.css" integrity="sha512-uuw2RAlTZzTkwL1e/D/AUjYa7eW4Pkr/p+nBeFpmmWFGprAvZSzF1wqR7U4fVw1sJJUJk+5mzFJ1OY9l8XqPfA==" crossorigin="anonymous" />
     @stack('index_scripts')
     <script type="text/javascript" src="/js/admin.js"></script> 
     <!-- <script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script> -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.3/summernote.min.js" integrity="sha512-IPeiqBi8iWOv3fe5pvS34X9sZe1LCEwo8U5N5RZ6x++tQNyhJrR19FLp7pPZKwkNNMcGyKahTwRQvpRh5kLaQA==" crossorigin="anonymous"></script>
+    
     <script type="text/javascript">
         $(window).load(function(){
             setTimeout(function() {
@@ -120,6 +122,8 @@
                 height: 'hide'
             }
         })
+        
+        $('textarea').summernote({minHeight: 500})
     }, 1000);
     $(document).ready(function(){
         if(Object.keys(flashMessages).length !== 0){

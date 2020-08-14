@@ -8,19 +8,19 @@
             	<div class="row align-items-center justify-content-between pb-1 mb-4">
                 	<div class="col-auto">
                     	<div class="custom_select">
-                    	<select>
+                    	<!-- <select>
                         	<option value="default">Default sorting</option>
                             <option value="popularity">Sort by popularity</option>
                             <option value="date">Sort by newness</option>
-                        </select>
+                        </select> -->
                         </div>
                     </div>
                     <div class="col-auto">
-                    	<span class="align-middle">Showing 1-9 of 50 results</span>
+                    	<!-- <span class="align-middle">Showing 1-9 of 50 results</span>
                         <div class="list_grid_icon">
                             <a href="javascript:Void(0);" class="shorting_icon grid_view active"><i class="ion-grid"></i></a>
                             <a href="javascript:Void(0);" class="shorting_icon list_view"><i class="ion-navicon-round"></i></a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="row shop_container grid_view">
@@ -32,13 +32,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 mt-3 mt-lg-4">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"><i class="ion-ios-arrow-thin-left"></i></a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#"><i class="ion-ios-arrow-thin-right"></i></a></li>
-                        </ul>
+                        {{ $products->links('vendor.pagination.bootstrap-4') }}
                     </div>
                 </div>
             </div>

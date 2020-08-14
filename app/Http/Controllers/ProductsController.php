@@ -19,14 +19,15 @@ class ProductsController extends Controller
         return view('public.products.index', compact('products'));
     }
 
-    public function show($url_key, ProductRepository $commodity)
+    public function show($url_key, ProductRepository $productRepository)
     {
-        $product = ProductFlat::where('url_key', $url_key)->where('locale', App::getLocale())->first();
+        
+        $product = $productRepository->findBySlugOrFail($url_key);
         $categoryId = null;
         if($product->product()->first()->categories()->first()){
             $categoryId = $product->product()->first()->categories()->first()->id;
         }
-        $similarProducts = $commodity->getAll($categoryId)->sortByDesc('special_price')->take(4);
+        $similarProducts = $productRepository->getAll($categoryId)->sortByDesc('special_price')->take(4);
 
         return view('public.products.show', compact('product', 'similarProducts'));
     }

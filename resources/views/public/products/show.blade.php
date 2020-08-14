@@ -37,7 +37,7 @@
                             <div class="item">
                                 <a href="#" class="active" data-image="assets/images/product1.jpg" data-zoom-image="assets/images/product1.jpg">
                                     <img src="assets/images/product_img1.jpg" alt="product" />
-                                </a> 
+                                </a>
                             </div>
                             <div class="item">
                                 <a href="#" data-image="assets/images/product1-1.jpg" data-zoom-image="assets/images/product1-1.jpg">
@@ -121,6 +121,9 @@
                       <li class="nav-item">
                         <a class="nav-link" id="Reviews-tab" data-toggle="tab" href="#Reviews" role="tab" aria-controls="Reviews" aria-selected="false">Reviews (2)</a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="Comments-tab" data-toggle="tab" href="#Comments" role="tab" aria-controls="Comments" aria-selected="false">{{__('comments.comment')}} (2)</a>
+                      </li>
                     </ul>
                 	<div class="tab-content shop_info_tab">
                       <div class="tab-pane fade show active" id="Description" role="tabpanel" aria-labelledby="Description-tab">
@@ -185,7 +188,7 @@
                                 <div class="form-group col-12">
                                     <p class="star_rating">
                                         <span data-value="1"><i class="ion-android-star"></i></span>
-                                        <span data-value="2"><i class="ion-android-star"></i></span> 
+                                        <span data-value="2"><i class="ion-android-star"></i></span>
                                         <span data-value="3"><i class="ion-android-star"></i></span>
                                         <span data-value="4"><i class="ion-android-star"></i></span>
                                         <span data-value="5"><i class="ion-android-star"></i></span>
@@ -200,12 +203,14 @@
                                 <div class="form-group col-md-6">
                                     <input required="required" placeholder="Enter Email *" class="form-control" name="email" type="email">
                                 </div>
-                               
+
                                 <div class="form-group col-12">
                                     <button type="submit" class="btn btn-default" name="submit" value="Submit">Submit Review</button>
                                 </div>
                             </form>
                         </div>
+                      </div>
+                      <div class="tab-pane fade" id="Comments" role="tabpanel" aria-labelledby="Comments-tab">
                       </div>
                 	</div>
                 </div>
@@ -400,9 +405,9 @@
                     <h2>Subscribe Our Newsletter</h2>
                 </div>
                 <p class="m-0 animation" data-animation="fadeInUp" data-animation-delay="0.03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                <div class="small_divider"></div> 
+                <div class="small_divider"></div>
                 <div class="newsletter_form animation" data-animation="fadeInUp" data-animation-delay="0.04s">
-                    <form> 
+                    <form>
                         <div class="rounded_input">
                            <input type="text" class="form-control" required="" placeholder="Enter your Email Address">
                         </div>

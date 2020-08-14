@@ -14,6 +14,14 @@ class Product extends WebkulProduct
     {
         return $this->morphMany('App\Models\Image', 'imageable');
     }
+    public function comments()
+    {
+        return $this->morphMany('App\Models\Comment', 'commentable');
+    }
+    public function parentComments()
+    {
+        return $this->morphMany('App\Models\Comment', 'commentable')->where('parent_id', '=', 0);
+    }
 
     public function translate($locale){
         if(empty($this->translatesCache[$locale])){
@@ -28,7 +36,7 @@ class Product extends WebkulProduct
             }
             $this->translatesCache[$locale] = $stdClass;
         }
-        
+
         return $this->translatesCache[$locale];
     }
 

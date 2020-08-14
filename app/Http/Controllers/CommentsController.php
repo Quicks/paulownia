@@ -14,6 +14,14 @@ class CommentsController extends Controller
         $comment->fill($request->all());
         $comment->save();
 
-        return redirect()->route('public.news.show', ['news' => 'news', 'id' => $request->commentable_id]);
+        $entity = $this->receiveEntity($request->commentable_type);
+
+        return redirect()->route('public.' .$entity. '.show', [$entity => $entity, 'id' => $request->commentable_id]);
+    }
+    protected function receiveEntity ($string)
+    {
+        $model = explode("\\", $string);
+        return mb_strtolower(end($model));
+
     }
 }

@@ -16,6 +16,7 @@
         {{ Form::hidden('parent_id', $parent_id) }}
         {{ Form::hidden('commentable_type', $commentable_type) }}
         {{ Form::hidden('commentable_id', $commentable_id) }}
+        {{ Form::hidden('url', $url) }}
         <div class="form-group col-md-12">
             {!! htmlFormSnippet() !!}
             <span class="text-danger">{{ __($errors->first('g-recaptcha-response')) }}</span>

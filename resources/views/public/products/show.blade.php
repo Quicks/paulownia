@@ -106,7 +106,7 @@
                         <a class="nav-link" id="Reviews-tab" data-toggle="tab" href="#Reviews" role="tab" aria-controls="Reviews" aria-selected="false">Reviews (2)</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="Comments-tab" data-toggle="tab" href="#Comments" role="tab" aria-controls="Comments" aria-selected="false">{{__('comments.comment')}} (2)</a>
+                        <a class="nav-link" id="Comments-tab" data-toggle="tab" href="#Comments" role="tab" aria-controls="Comments" aria-selected="false">{{__('comments.comment')}} ({{count($product->comments)}})</a>
                       </li>
                     </ul>
                 	<div class="tab-content shop_info_tab">
@@ -194,6 +194,34 @@
                         </div>
                       </div>
                       <div class="tab-pane fade" id="Comments" role="tabpanel" aria-labelledby="Comments-tab">
+                          <div class="posts-title">
+                              <h5>({{count($product->comments)}}) {{ __('comments.comment')}}</h5>
+                          </div>
+                          @if($product->comments()->parents()->get())
+                              @include('public.comments.index', ['comments' => $product->comments()->parents()->get(), 'model' => $product])
+                          @endif
+                          @if(\Illuminate\Support\Facades\Auth::check())
+                              <div class="posts-title">
+                                  <h5>{{ __('comments.write_a_comment')}}</h5>
+                              </div>
+                              @include('public.comments.form', [
+                                  'commentable_id' => $product->id,
+                                  'commentable_type' => get_class($product),
+                                  'parent_id' => 0,
+                                  'url' => $product->url_key,
+                              ])
+                          @else
+                              <div class="field_form form_style2">
+                                  <div class="posts-title">
+                                      <h5>{{ __('comments.leave_comment')}}</h5>
+                                  </div>
+                                  <div class="posts-title">
+                                      {{ __('comments.leave_comment_message_begin')}}
+                                      <a href="/login">{{ __('comments.leave_comment_message_logged_in')}}</a>
+                                      {{ __('comments.leave_comment_message_end')}}
+                                  </div>
+                              </div>
+                          @endif
                       </div>
                 	</div>
                 </div>

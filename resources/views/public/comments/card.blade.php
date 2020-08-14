@@ -9,7 +9,7 @@
                     <h6><a href="#">{{$comment->owner}}</a></h6>
                     <div class="comment-time">{{$comment->created_at}}</div>
                 </div>
-                @if(!\Illuminate\Support\Facades\Auth::check())
+                @if(\Illuminate\Support\Facades\Auth::check())
                     <div class="ml-auto" style="<?php echo  isset($display) ? $display : ''?>">
                         <a href="javascript:void(0);" class="comment-reply btn btn-default rounded-0 btn-sm">{{ __('comments.reply')}}</a>
                     </div>
@@ -21,9 +21,10 @@
     </div>
     <div class="reply-comment-form" style="display: none">
         @include('public.comments.form', [
-            'commentable_id' => $news->id,
-            'commentable_type' => get_class($news),
-            'parent_id' => $comment->id
+            'commentable_id' => $model->id,
+            'commentable_type' => get_class($model),
+            'parent_id' => $comment->id,
+            'url' => $model->url_key ?? ''
         ])
     </div>
     @if($comment->childs)

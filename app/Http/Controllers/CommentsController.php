@@ -13,18 +13,17 @@ class CommentsController extends Controller
         $request->validate([
             'g-recaptcha-response' => 'recaptcha',
         ]);
-
         $comment = new Comment();
         $comment->fill($request->all());
         $comment->save();
 
-        $entity = $this->receiveEntity($request->commentable_type);
+        if($request->commentable_type == 'App\Models\News') {
+            $model = 'news';
+            return redirect()->route('public.news.show', [$model => 'news', 'id' => $request->commentable_id]);
+        }
+        if($request->commentable_type == 'Webkul\Product\Models\ProductFlat') {
+            return redirect()->route('public.products.show', ['slug' => $request->url] );
+        }
+    }
 
-        return redirect()->route('public.' .$entity. '.show', [$entity => $entity, 'id' => $request->commentable_id]);
-    }
-    protected function receiveEntity ($string)
-    {
-        $model = explode("\\", $string);
-        return mb_strtolower(end($model));
-    }
 }

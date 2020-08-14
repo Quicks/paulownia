@@ -29,7 +29,14 @@ class ProductFlat extends Model implements ProductFlatContract
     {
         return $this->hasMany(self::class, 'parent_id');
     }
-
+    public function comments()
+    {
+        return $this->morphMany('App\Models\Comment', 'commentable');
+    }
+    public function parentComments()
+    {
+        return $this->morphMany('App\Models\Comment', 'commentable')->where('parent_id', '=', 0);
+    }
     /**
      * Get product type value from base product
      */
@@ -143,5 +150,5 @@ class ProductFlat extends Model implements ProductFlatContract
               ->orWhere('locale', 'es');
         });
     }
-    
+
 }

@@ -17,13 +17,7 @@ class CommentsController extends Controller
         $comment->fill($request->all());
         $comment->save();
 
-        if($request->commentable_type == 'App\Models\News') {
-            $model = 'news';
-            return redirect()->route('public.news.show', [$model => 'news', 'id' => $request->commentable_id]);
-        }
-        if($request->commentable_type == 'Webkul\Product\Models\ProductFlat') {
-            return redirect()->route('public.products.show', ['slug' => $request->url] );
-        }
+        return redirect()->back();
     }
 
 }

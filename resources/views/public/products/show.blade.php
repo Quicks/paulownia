@@ -194,11 +194,8 @@
                         </div>
                       </div>
                       <div class="tab-pane fade" id="Comments" role="tabpanel" aria-labelledby="Comments-tab">
-                          <div class="posts-title">
-                              <h5>({{count($product->comments)}}) {{ __('comments.comment')}}</h5>
-                          </div>
                           @if($product->comments()->parents()->get())
-                              @include('public.comments.index', ['comments' => $product->comments()->parents()->get(), 'model' => $product])
+                              @include('public.comments.index', ['comments' => $product->comments()->parents()->get()])
                           @endif
                           @if(\Illuminate\Support\Facades\Auth::check())
                               <div class="posts-title">
@@ -208,7 +205,6 @@
                                   'commentable_id' => $product->id,
                                   'commentable_type' => get_class($product),
                                   'parent_id' => 0,
-                                  'url' => $product->url_key,
                               ])
                           @else
                               <div class="field_form form_style2">

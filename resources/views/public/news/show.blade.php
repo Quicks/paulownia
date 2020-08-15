@@ -99,7 +99,7 @@
                                 <h5>({{count($news->comments)}}) {{ __('comments.comment')}}</h5>
                             </div>
                             @if($news->comments()->parents()->get())
-                                @include('public.comments.index', ['comments' => $news->comments()->parents()->get(), 'model' => $news])
+                                @include('public.comments.index', ['comments' => $news->comments()->parents()->get()])
                             @endif
                             @if(\Illuminate\Support\Facades\Auth::check())
                                 <div class="posts-title">
@@ -109,7 +109,6 @@
                                     'commentable_id' => $news->id,
                                     'commentable_type' => get_class($news),
                                     'parent_id' => 0,
-                                    'url' => $news->url_key ?? ''
                                 ])
                             @else
                                 <div class="field_form form_style2">

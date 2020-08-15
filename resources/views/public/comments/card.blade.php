@@ -24,7 +24,6 @@
             'commentable_id' => $model->id,
             'commentable_type' => get_class($model),
             'parent_id' => $comment->id,
-            'url' => $model->url_key ?? ''
         ])
     </div>
     @if($comment->childs)

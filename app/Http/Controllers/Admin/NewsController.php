@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\News;
+use App\Rules\isYoutubeUrl;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImagesTrait;
 
@@ -60,6 +61,7 @@ class NewsController extends Controller
             'video' => 'url'
         ]);
         $requestData = $request->all();
+
         if (!empty($request->video)) {
             parse_str(parse_url($request->video, PHP_URL_QUERY), $videoId);
             $requestData['video'] = 'https://www.youtube.com/embed/' . $videoId['v'];
@@ -114,7 +116,7 @@ class NewsController extends Controller
         $this->validate($request, [
             'active' => 'required|boolean',
             'publish_date' => 'required|date',
-            'video' => 'url'
+            'video' => ['url', new isYoutubeUrl]
         ]);
         $news = News::findOrFail($id);
         if (!empty($request->video)) {
@@ -147,5 +149,5 @@ class NewsController extends Controller
         return redirect('admin/news')->with('flash_message', 'News deleted!');
     }
 
-    
+
 }

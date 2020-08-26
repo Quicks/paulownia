@@ -28,7 +28,7 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
                     <div class="row shop_container grid_view">
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center w-100">
 
                             @foreach($allNews as $newsItem)
                                 @include('public/news/card', ['newsItem' => $newsItem])

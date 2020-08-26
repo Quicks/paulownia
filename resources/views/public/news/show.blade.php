@@ -120,6 +120,7 @@
                                         <a href="/login">{{ __('comments.leave_comment_message_logged_in')}}</a>
                                         {{ __('comments.leave_comment_message_end')}}
                                     </div>
+                                </div>
                             @endif
                         </div>
                     </div>

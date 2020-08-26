@@ -13,12 +13,11 @@ class CommentsController extends Controller
         $request->validate([
             'g-recaptcha-response' => 'recaptcha',
         ]);
-
         $comment = new Comment();
         $comment->fill($request->all());
         $comment->save();
 
-        // return redirect()->route('public.news.show', ['news' => 'news', 'id' => $request->commentable_id]);
         return redirect()->back();
     }
+
 }

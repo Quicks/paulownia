@@ -21,9 +21,9 @@
     </div>
     <div class="reply-comment-form" style="display: none">
         @include('public.comments.form', [
-            'commentable_id' => $news->id,
-            'commentable_type' => get_class($news),
-            'parent_id' => $comment->id
+            'commentable_id' => $model->id,
+            'commentable_type' => get_class($model),
+            'parent_id' => $comment->id,
         ])
     </div>
     @if($comment->childs)

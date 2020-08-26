@@ -25,12 +25,11 @@
                             <img src="/images/banner-logo.png" alt="product_img1"/>
                          @endif
                          <div id="pr_item_gallery" class="product_gallery_item owl-thumbs-slider owl-carousel owl-theme">
-
                             @foreach($product->product->productImages()->get() as $image)
                                 <div class="item">
                                     <a href="#" class="active" data-image="/storage/{{$image->image}}" data-zoom-image="/storage/{{$image->image}}">
                                         <img src="/storage/{{$image->image}}" alt="product" />
-                                    </a> 
+                                    </a>
                                 </div>
                             @endforeach
                         </div>
@@ -71,7 +70,7 @@
                                 Category:
                                 @foreach($product->product->categories as $category)
                                     <a href="#">{{$category->name}}</a>
-                                @endforeach 
+                                @endforeach
                             </li>
                           </ul>
                           <div class="product_share d-block d-sm-flex align-items-center">
@@ -105,6 +104,9 @@
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" id="Reviews-tab" data-toggle="tab" href="#Reviews" role="tab" aria-controls="Reviews" aria-selected="false">Reviews (2)</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="Comments-tab" data-toggle="tab" href="#Comments" role="tab" aria-controls="Comments" aria-selected="false">{{__('comments.comment')}} ({{count($product->comments)}})</a>
                       </li>
                     </ul>
                 	<div class="tab-content shop_info_tab">
@@ -169,7 +171,7 @@
                                 <div class="form-group col-12">
                                     <p class="star_rating">
                                         <span data-value="1"><i class="ion-android-star"></i></span>
-                                        <span data-value="2"><i class="ion-android-star"></i></span> 
+                                        <span data-value="2"><i class="ion-android-star"></i></span>
                                         <span data-value="3"><i class="ion-android-star"></i></span>
                                         <span data-value="4"><i class="ion-android-star"></i></span>
                                         <span data-value="5"><i class="ion-android-star"></i></span>
@@ -184,12 +186,38 @@
                                 <div class="form-group col-md-6">
                                     <input required="required" placeholder="Enter Email *" class="form-control" name="email" type="email">
                                 </div>
-                               
+
                                 <div class="form-group col-12">
                                     <button type="submit" class="btn btn-default" name="submit" value="Submit">Submit Review</button>
                                 </div>
                             </form>
                         </div>
+                      </div>
+                      <div class="tab-pane fade" id="Comments" role="tabpanel" aria-labelledby="Comments-tab">
+                          @if($product->comments()->parents()->get())
+                              @include('public.comments.index', ['comments' => $product->comments()->parents()->get()])
+                          @endif
+                          @if(\Illuminate\Support\Facades\Auth::check())
+                              <div class="posts-title">
+                                  <h5>{{ __('comments.write_a_comment')}}</h5>
+                              </div>
+                              @include('public.comments.form', [
+                                  'commentable_id' => $product->id,
+                                  'commentable_type' => get_class($product),
+                                  'parent_id' => 0,
+                              ])
+                          @else
+                              <div class="field_form form_style2">
+                                  <div class="posts-title">
+                                      <h5>{{ __('comments.leave_comment')}}</h5>
+                                  </div>
+                                  <div class="posts-title">
+                                      {{ __('comments.leave_comment_message_begin')}}
+                                      <a href="/login">{{ __('comments.leave_comment_message_logged_in')}}</a>
+                                      {{ __('comments.leave_comment_message_end')}}
+                                  </div>
+                              </div>
+                          @endif
                       </div>
                 	</div>
                 </div>
@@ -210,7 +238,7 @@
                             @foreach($similarProducts as $similarProduct)
                                 @include('public.products.product_card', ['product' => $similarProduct, 'customClasses' => 'col-lg-12'])
                             @endforeach
-                            
+
                         </div>
                     </div>
                 </div>
@@ -290,9 +318,9 @@
                     <h2>Subscribe Our Newsletter</h2>
                 </div>
                 <p class="m-0 animation" data-animation="fadeInUp" data-animation-delay="0.03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                <div class="small_divider"></div> 
+                <div class="small_divider"></div>
                 <div class="newsletter_form animation" data-animation="fadeInUp" data-animation-delay="0.04s">
-                    <form> 
+                    <form>
                         <div class="rounded_input">
                            <input type="text" class="form-control" required="" placeholder="Enter your Email Address">
                         </div>

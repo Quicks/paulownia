@@ -4,7 +4,7 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class isYoutubeUrl implements Rule
+class IsYoutubeUrl implements Rule
 {
     /**
      * Create a new rule instance.
@@ -36,6 +36,6 @@ class isYoutubeUrl implements Rule
      */
     public function message()
     {
-       return __('validation.custom.video.isYoutubeUrl');
+       return __('validation.custom.video.IsYoutubeUrl');
     }
 }

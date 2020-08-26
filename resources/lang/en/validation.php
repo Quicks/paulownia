@@ -127,7 +127,7 @@ return [
 
     'custom' => [
         'video' => [
-            'isYoutubeUrl' => 'Incorrect URL',
+            'IsYoutubeUrl' => 'Incorrect URL',
         ],
     ],
 

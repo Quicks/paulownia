@@ -1,33 +1,24 @@
 <div class="col-lg-4 col-md-6">
-  <div class="blog_post blog_style1 radius_all_10 animation" data-animation="fadeInUp" data-animation-delay="0.05s">
-      <div class="blog_img">
-<!--          --><?php //$imagesCount = count($newsItem->images()->get()); ?>
-              <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}">
-                  @if(isset($newsItem->images()->first()->image230))
-                      <img src="/storage/{{$newsItem->images()->first()->image230}}" alt="blog_small_img2">
-                  @else
-                      <img src="/images/product_img1.jpg" alt="product_img1"/>
-                  @endif
-              </a>
-
-{{--          @if($imagesCount > 1)--}}
-{{--              <div class="carousel_slide1 owl-carousel owl-theme" data-autoplay="true" data-autoheight="true" data-loop="true" data-nav="true" data-dots="false" data-autoplay-timeout="3000">--}}
-{{--                  @foreach($newsItem->images()->get() as $img)--}}
-{{--                      <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}">--}}
-{{--                          <img src="/storage/{{$newsItem->images->first()->image230}}" alt="blog_img4">--}}
-{{--                      </a>--}}
-{{--                  @endforeach--}}
-{{--              </div>--}}
-{{--          @else--}}
-{{--              <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}">--}}
-{{--                  @if($imagesCount == 1)--}}
-{{--                      <img src="/storage/{{$newsItem->images->first()->image230}}" alt="blog_small_img2">--}}
-
-{{--                  @else--}}
-{{--                      <img src="/images/product_img1.jpg" alt="product_img1"/>--}}
-{{--                  @endif--}}
-{{--              </a>--}}
-{{--          @endif--}}
+    <div class="blog_post blog_style1 radius_all_10 animation" data-animation="fadeInUp" data-animation-delay="0.05s">
+        <div class="blog_img">
+            <?php $imagesCount = count($newsItem->images()->get()); ?>
+                @if($imagesCount > 1)
+                    <div class="carousel_slide1 owl-carousel owl-theme" data-autoplay="false" data-autoheight="true" data-loop="true" data-nav="true" data-dots="false" data-autoplay-timeout="3000">
+                        @foreach($newsItem->images()->get() as $img)
+                            <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}">
+                                <img src="/storage/{{$img->image230}}" alt="blog_img4">
+                            </a>
+                        @endforeach
+                    </div>
+                @else
+                    <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}">
+                      @if($imagesCount == 1)
+                          <img src="/storage/{{$newsItem->images->first()->image230}}" alt="blog_small_img2">
+                      @else
+                          <img src="/images/product_img1.jpg" alt="product_img1"/>
+                      @endif
+                    </a>
+                @endif
 
         </div>
         <div class="blog_content">

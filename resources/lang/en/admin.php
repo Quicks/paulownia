@@ -149,7 +149,7 @@ return [
   'orders.show.table.total.total_due' => 'To pay',
   'orders.show.shipments.carrier_title' => 'carrier title',
   'orders.show.shipments.track_number' => 'track number',
-
+  'orders.show.table.total.total_invoiced' => 'total invoiced',
   'certificates.index.title' => 'Certificates',
   'certificates.create.title' => 'Certificate creation',
   'certificates.index.table.name' => 'Name',

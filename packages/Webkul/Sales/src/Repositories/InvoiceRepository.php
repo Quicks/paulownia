@@ -106,8 +106,8 @@ class InvoiceRepository extends Repository
 
                 $orderItem = $this->orderItem->find($itemId);
 
-                if ($qty > $orderItem->qty_to_invoice)
-                    $qty = $orderItem->qty_to_invoice;
+                // if ($qty > $orderItem->qty_to_invoice)
+                //     $qty = $orderItem->qty_to_invoice;
 
                 $invoiceItem = $this->invoiceItem->create([
                         'invoice_id' => $invoice->id,
@@ -221,5 +221,18 @@ class InvoiceRepository extends Repository
         $invoice->save();
 
         return $invoice;
+    }
+    
+    public function updateInvoiceState($invoice, $status)
+    {  
+        $invoice->state = $status;
+        $invoice->save();
+
+        if ($status == 'paid'){
+            $order = $this->orderRepository->findOrFail($invoice->order->id);
+            $this->orderRepository->updateOrderStatus($order);
+        }
+
+        return true;
     }
 }

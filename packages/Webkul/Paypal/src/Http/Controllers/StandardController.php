@@ -51,6 +51,8 @@ class StandardController extends Controller
      */
     public function redirect()
     {
+        $order = $this->orderRepository->create(Cart::prepareDataForOrder());
+        
         return view('paypal::standard-redirect');
     }
 
@@ -61,6 +63,8 @@ class StandardController extends Controller
      */
     public function cancel()
     {
+        $order = $this->orderRepository->findOneByField(['cart_id' => Cart::getCart()->id]);
+        $this->orderRepository->cancel($order->id);
         session()->flash('error', 'Paypal payment has been canceled.');
 
         return redirect()->route('public.cart.index');
@@ -73,7 +77,7 @@ class StandardController extends Controller
      */
     public function success()
     {
-        $order = $this->orderRepository->create(Cart::prepareDataForOrder());
+        $order = $this->orderRepository->findOneByField(['cart_id' => Cart::getCart()->id]);
 
         Cart::deActivateCart();
 

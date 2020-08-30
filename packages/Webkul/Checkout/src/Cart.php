@@ -579,7 +579,7 @@ class Cart {
      *
      * @return mixed
      */
-    public function getCart()
+    public function getCart($cartId = null)
     {
         $cart = null;
 
@@ -591,6 +591,8 @@ class Cart {
 
         } elseif (session()->has('cart')) {
             $cart = $this->cart->find(session()->get('cart')->id);
+        } elseif(!empty($cartId)){
+            $cart = $this->cart->find($cartId);
         }
 
         return $cart && $cart->is_active ? $cart : null;

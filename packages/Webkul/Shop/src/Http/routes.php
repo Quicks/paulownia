@@ -252,19 +252,19 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
 
     //             /* Orders route */
     //             //Customer orders(listing)
-    //             Route::get('orders', 'Webkul\Shop\Http\Controllers\OrderController@index')->defaults('_config', [
-    //                 'view' => 'shop::customers.account.orders.index'
-    //             ])->name('customer.orders.index');
+                Route::get('orders', 'Webkul\Shop\Http\Controllers\OrderController@index')->defaults('_config', [
+                    'view' => 'shop::customers.account.orders.index'
+                ])->name('customer.orders.index');
 
     //             //Customer orders view summary and status
-    //             Route::get('orders/view/{id}', 'Webkul\Shop\Http\Controllers\OrderController@view')->defaults('_config', [
-    //                 'view' => 'shop::customers.account.orders.view'
-    //             ])->name('customer.orders.view');
+                Route::get('orders/view/{id}', 'Webkul\Shop\Http\Controllers\OrderController@view')->defaults('_config', [
+                    'view' => 'shop::customers.account.orders.view'
+                ])->name('customer.orders.view');
 
     //             //Prints invoice
-    //             Route::get('orders/print/{id}', 'Webkul\Shop\Http\Controllers\OrderController@print')->defaults('_config', [
-    //                 'view' => 'shop::customers.account.orders.print'
-    //             ])->name('customer.orders.print');
+                Route::get('orders/print/{id}', 'Webkul\Shop\Http\Controllers\OrderController@print')->defaults('_config', [
+                    'view' => 'shop::customers.account.orders.print'
+                ])->name('customer.orders.print');
 
     //             /* Reviews route */
     //             //Customer reviews

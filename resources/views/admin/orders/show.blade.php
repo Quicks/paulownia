@@ -25,20 +25,23 @@
             <div class="invoice-date mrg20B">{{date("F d Y")}}</div>
             <div class="tab-content nav-responsive nav nav-tabs" id="nav-tabContent">
                 <ul class="nav-responsive nav nav-tabs pull-right">
-                    <li class=''>
-                        <form method="POST" action="{{ route('admin.sales.invoices.store', $order->id) }}" >
-                          @csrf()
-                          @foreach ($order->items as $item)
-                            <input type="text" name="invoice[items][{{$item->id}}]" value="{{ $item->qty_to_invoice }}" hidden='hidden'>
-                          @endforeach
-                          <button type="submit" class="btn btn-alt btn-hover btn-warning invoice-btn">
-                            <span>@lang('admin.orders.show.btns.send_invoice')</span>
-                          </button>
-                        </form>
-                        <!-- <a href="{{ route('admin.sales.invoices.create', $order->id) }}" class="btn btn-alt btn-hover btn-warning" >
-                            <span>@lang('admin.orders.show.btns.send_invoice')</span>
-                        </a> -->
-                    </li>
+                    @if ($order->canInvoice())
+
+                        <li class=''>
+                            <a href="#invoice"
+                            data-href="{{ route('admin.sales.shipments.store', $order->id) }}"
+                            data-toggle="pill" 
+                            class="btn btn-alt btn-hover btn-info" 
+                            id='create-invoice'
+                            role="tab"
+                            aria-controls="invoice"
+                            aria-selected="true"
+                            >
+                                <span>@lang('admin.orders.show.btns.send_invoice')</span>
+                            </a>
+                            
+                        </li>
+                    @endif
                     <li class=''>
                         <a href="#shipping"
                            data-href="{{ route('admin.sales.shipments.store', $order->id) }}"
@@ -84,6 +87,13 @@
                     @include('admin.orders.shipments.create', ['order' => $order])
                 </div>
             </div>
+            <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="invoice">
+                <div class='row'>
+                    @include('admin.orders.invoice.create', ['order' => $order])
+
+                </div>
+            </div>
+            
         </div>
         <div class="col-md-3">
             <h2 class="invoice-client mrg10T">@lang('admin.orders.show.client_info.title'):</h2>
@@ -206,8 +216,13 @@
             </tr>
 
             <tr class="font-bold font-black">
+                <td colspan="7" class="text-right">@lang('admin.orders.show.table.total.total_invoiced')</td>
+                <td colspan="7">{{ core()->formatBasePrice($order->grand_total_invoiced) }}</td>
+            </tr>
+
+            <tr class="font-bold font-black">
                 <td colspan="7" class="text-right">@lang('admin.orders.show.table.total.total_paid')</td>
-                <td colspan="7">{{ core()->formatBasePrice($order->base_grand_total_invoiced) }}</td>
+                <td colspan="7">{{ core()->formatBasePrice($order->grand_total_invoiced) }}</td>
             </tr>
 
             <tr class="font-bold font-black">

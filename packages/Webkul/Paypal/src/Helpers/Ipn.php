@@ -70,6 +70,7 @@ class Ipn
 
         if (! $this->postBack())
             return;
+        \Log::debug($post);
 
         try {
             if (isset($this->post['txn_type']) && 'recurring_payment' == $this->post['txn_type']) {
@@ -105,14 +106,16 @@ class Ipn
      */
     protected function processOrder()
     {
-        if ($this->post['payment_status'] == 'completed') {
+        if ($this->post['payment_status'] == 'Pending') {
             if ($this->post['mc_gross'] != $this->order->grand_total) {
-                
+                return;
             } else {
                 $this->orderRepository->update(['status' => 'processing'], $this->order->id);
 
                 if ($this->order->canInvoice()) {
-                    $this->invoiceRepository->create($this->prepareInvoiceData());
+                    $invoice = $this->invoiceRepository->create($this->prepareInvoiceData());
+                    
+                    $this->invoiceRepository->updateInvoiceState($invoice, "paid");
                 }
             }
         }
@@ -151,11 +154,7 @@ class Ipn
 
         // Set up request to PayPal
         $request = curl_init();
-        curl_setopt_array($request, array
-        (
-            CURLOPT_URL => $url,
-            CURLOPT_POST => TRUE,
-            CURLOPT_POSTFIELDS => http_build_query(array('cmd' => '_notify-validate') + $this->post),
+        curl_setopt_array($request, array(CURLOPT_URL => $url, CURLOPT_POST => TRUE, CURLOPT_POSTFIELDS => http_build_query(array('cmd' => '_notify-validate') + $this->post),
             CURLOPT_RETURNTRANSFER => TRUE,
             CURLOPT_HEADER => FALSE,
         ));
@@ -166,7 +165,6 @@ class Ipn
 
         // Close connection
         curl_close($request);
-
         if ($status == 200 && $response == 'VERIFIED') {
             return true;
         }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Treatise;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\News;
 use Artesaos\SEOTools\Facades\SEOMeta;
@@ -16,9 +17,10 @@ class NewsController extends Controller
             return sprintf('%02d', $n);
         }, range(1, 12));
         $years = range(2019, date('Y'));
-        $news = $this->filter($request,  News::withTranslation()->where('active', '=',  true));
-        $articles = $this->filter($request, Article::withTranslation()->where('active', true));
-        $treatises = $this->filter($request,   Treatise::withTranslation()->where('active', true));
+        $currentDate = Carbon::now();
+        $news = $this->filter($request,  News::withTranslation()->where([['active',  true], ['publish_date', '<=', $currentDate]]));
+        $articles = $this->filter($request, Article::withTranslation()->where([['active', true], ['publish_date', '<=', $currentDate]]));
+        $treatises = $this->filter($request,   Treatise::withTranslation()->where([['active', true], ['publish_date', '<=', $currentDate]]));
 
         if($request->has('topic')){
             if($request->topic == 'news') {

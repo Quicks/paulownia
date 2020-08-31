@@ -4,6 +4,7 @@ return [
   'btns.new' => 'Create',
   'btns.show' => 'View',
   'btns.edit' => 'Edit',
+  'btns.comment' => 'Comment',
   'btns.add_image' => 'Add image',
   'btns.destroy' => 'Destroy',
   'btns.back' => 'Back',
@@ -149,6 +150,11 @@ return [
   'orders.show.table.total.total_due' => 'To pay',
   'orders.show.shipments.carrier_title' => 'carrier title',
   'orders.show.shipments.track_number' => 'track number',
+
+  'customers.index.title' => 'Customers',
+  'customers.index.table.first_name' => 'First name',
+  'customers.index.table.email' => 'Email',
+  'customers.index.table.date_of_birth' => 'Date of birth',
 
   'certificates.index.title' => 'Certificates',
   'certificates.create.title' => 'Certificate creation',

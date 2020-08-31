@@ -74,6 +74,7 @@ Route::prefix('admin')->group(function () {
         Route::resource('slider', 'App\Http\Controllers\Admin\\SliderController');
         Route::resource('products', 'App\Http\Controllers\Admin\\ProductsController');
         Route::resource('orders', 'App\Http\Controllers\Admin\\OrdersController');
+        Route::resource('customers', 'App\Http\Controllers\Admin\\CustomersController');
         Route::get('/locale/{newLocale}', 'App\Http\Controllers\Admin\LocaleController@setLocale');
         Route::resource('our-service', 'App\Http\Controllers\Admin\OurServiceController');
         Route::post('menus/reorder', 'App\Http\Controllers\Admin\MenusController@reorder');

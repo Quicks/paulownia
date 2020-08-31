@@ -1,7 +1,7 @@
 
 <div id="page-sidebar">
     <div class="scroll-sidebar">
-    
+
     <ul id="sidebar-menu">
         <li class="header"><span>@lang('admin.sidebar.links.dashboard')</span></li>
 
@@ -78,7 +78,7 @@
                 </div>
             </li>
 
-            
+
         @endif
         @if(bouncer()->hasPermission('partners'))
             <li>
@@ -144,6 +144,12 @@
                         <span>@lang('admin.sidebar.links.shop.orders')</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('customers.index')}}">
+                        <i class="glyph-icon icon-linecons-tv"></i>
+                        <span>@lang('admin.sidebar.links.shop.customers')</span>
+                    </a>
+                </li>
                 <!-- <div class="sidebar-submenu">
 
                     <ul>
@@ -174,15 +180,7 @@
                 </div> -->
             </li>
 
-            
-        @endif
-        @if(bouncer()->hasPermission('customers'))
-            <li>
-                <a href="{{route('admin.customer.index')}}">
-                    <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>@lang('admin.sidebar.links.shop.customers')</span>
-                </a>
-            </li>
+
         @endif
         @if(bouncer()->hasPermission('cart-rule'))
             <li>
@@ -221,7 +219,7 @@
                     <span>@lang('admin.sidebar.links.shop.configure')</span>
                 </a>
             </li>
-        @endif 
+        @endif
         @if(bouncer()->hasPermission('certificates'))
             <li>
                 <a class="{{Request::is('admin/certificates*') ? "custom-admin-sidebar-a-active" : ""}}"

@@ -4,6 +4,7 @@ return [
   'btns.new' => 'Создать',
   'btns.show' => 'Просмотреть',
   'btns.edit' => 'Редактировать',
+  'btns.comment' => 'Комментировать',
   'btns.add_image' => 'Добавить картинку',
   'btns.destroy' => 'Удалить',
   'btns.back' => 'Назад',
@@ -149,6 +150,12 @@ return [
   'orders.show.table.total.total_due' => 'К оплате',
   'orders.show.shipments.carrier_title' => 'название перевозчика',
   'orders.show.shipments.track_number' => 'трекинговый номер',
+
+  'customers.index.title' => 'Заказчики',
+  'customers.index.table.first_name' => 'Имя',
+  'customers.index.table.email' => 'Email',
+  'customers.index.table.date_of_birth' => 'Дата рождения',
+
   'certificates.index.title' => 'Сертификаты',
   'certificates.create.title' => 'Создание сертификата',
   'certificates.index.table.name' => 'Название',

@@ -4,6 +4,7 @@ return [
   'btns.new' => 'Crear un',
   'btns.show' => 'Ver',
   'btns.edit' => 'Editar',
+  'btns.comment' => 'Comentario',
   'btns.add_image' => 'Añadir foto',
   'btns.destroy' => 'Eliminar',
   'btns.back' => 'De regreso',
@@ -149,6 +150,11 @@ return [
   'orders.show.table.total.total_due' => 'Pagar',
   'orders.show.shipments.carrier_title' => 'título del transportista',
   'orders.show.shipments.track_number' => 'número de pista',
+
+  'customers.index.title' => 'Clientes',
+  'customers.index.table.first_name' => 'Nombre de pila',
+  'customers.index.table.email' => 'Email',
+  'customers.index.table.date_of_birth' => 'Fecha de nacimiento',
 
   'certificates.index.title' => 'Certificados',
   'certificates.create.title' => 'Crea un certificado',

@@ -1,9 +1,8 @@
 <div class="col-lg-4 col-sm-6 {{isset($customClasses) ? $customClasses : ''}}">
   <div class="product">
     @if(round($product->special_price))
-        <span class="pr_flash bg_orange">-${{number_format($product->special_price, 2, ',', ' ')}}%</span>
+      <span class="pr_flash bg_orange">-${{number_format(100 - ($product->special_price * 100 / $product->price), 2, ',', ' ')}}%</span>
     @endif
-    <!-- <span class="pr_flash bg_green">Sale</span> -->
     <div class="product_img">
       <a href="{{route('public.products.show', ['id' => $product->id])}}">
         @if(count($product->productImages()->get()))

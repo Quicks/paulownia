@@ -90,3 +90,6 @@
 .blocker {
     z-index: 10!important;
 }
+#sb-site #page-sidebar{
+    position: absolute;
+}

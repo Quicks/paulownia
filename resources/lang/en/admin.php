@@ -153,8 +153,12 @@ return [
 
   'customers.index.title' => 'Customers',
   'customers.index.table.first_name' => 'First name',
+  'customers.index.table.last_name' => 'Last name',
   'customers.index.table.email' => 'Email',
+  'customers.index.table.status' => 'Status',
+  'customers.index.table.gender' => 'Gender',
   'customers.index.table.date_of_birth' => 'Date of birth',
+  'customers.create.title' => 'Customer creation',
 
   'certificates.index.title' => 'Certificates',
   'certificates.create.title' => 'Certificate creation',

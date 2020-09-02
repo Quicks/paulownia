@@ -160,6 +160,7 @@ return [
   'customers.index.table.gender' => 'Gender',
   'customers.index.table.date_of_birth' => 'Date of birth',
   'customers.create.title' => 'Customer creation',
+  'customers.edit.title' => 'Customer editing',
 
   'certificates.index.title' => 'Certificates',
   'certificates.create.title' => 'Certificate creation',

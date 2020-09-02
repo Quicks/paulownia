@@ -39,4 +39,42 @@ class CustomersController extends Controller
 
         return redirect('admin/customers')->with('flash_message', 'Customer added!');
     }
+
+    public function show($id)
+    {
+        $customer = Customer::findOrFail($id)->first();
+
+        return view('admin.customers.show', compact('customer'));
+    }
+
+    public function edit($id)
+    {
+        $customer = Customer::findOrFail($id)->first();
+
+        return view('admin.customers.edit', compact('customer'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'first_name' => 'required|max:90',
+            'last_name' => 'required|max:90',
+            'email' => 'required|email',
+            'gender' => 'required',
+            'date_of_birth' => 'required',
+            'phone'=>'string|max:30',
+        ]);
+
+        Customer::findOrFail($id)->first()->fill($request->all())->save();
+
+        return redirect('admin/customers')->with('flash_message', 'Customer updated!');
+    }
+
+    public function destroy($id)
+    {
+        $customer = Customer::findOrFail($id)->first();
+        $customer->delete();
+
+        return redirect('admin/customers')->with('flash_message', 'Customer deleted!');
+    }
 }

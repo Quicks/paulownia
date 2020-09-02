@@ -161,6 +161,7 @@ return [
   'customers.index.table.gender' => 'Género',
   'customers.index.table.date_of_birth' => 'Fecha de nacimiento',
   'customers.create.title' => 'Creación de clientes',
+  'customers.edit.title' => 'Edición de clientes',
 
   'certificates.index.title' => 'Certificados',
   'certificates.create.title' => 'Crea un certificado',

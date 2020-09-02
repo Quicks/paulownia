@@ -160,6 +160,7 @@ return [
   'customers.index.table.gender' => 'Пол',
   'customers.index.table.date_of_birth' => 'Дата рождения',
   'customers.create.title' => 'Создание заказчика',
+  'customers.edit.title' => 'Редактирование заказчика',
 
   'certificates.index.title' => 'Сертификаты',
   'certificates.create.title' => 'Создание сертификата',

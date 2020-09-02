@@ -20,6 +20,7 @@ class CustomersController extends Controller
         $customer = new Customer();
         return view('admin.customers.create', compact('customer'));
     }
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -31,8 +32,10 @@ class CustomersController extends Controller
             'phone'=>'string|max:30',
 
         ]);
+        $requestData = $request->all();
+        $requestData['channel_id'] = 1;
 
-        $customer = Customer::create($request->all());
+        Customer::create($requestData);
 
         return redirect('admin/customers')->with('flash_message', 'Customer added!');
     }

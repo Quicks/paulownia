@@ -153,8 +153,12 @@ return [
 
   'customers.index.title' => 'Заказчики',
   'customers.index.table.first_name' => 'Имя',
+  'customers.index.table.last_name' => 'Фамилия',
   'customers.index.table.email' => 'Email',
+  'customers.index.table.status' => 'Статус',
+  'customers.index.table.gender' => 'Пол',
   'customers.index.table.date_of_birth' => 'Дата рождения',
+  'customers.create.title' => 'Создание заказчика',
 
   'certificates.index.title' => 'Сертификаты',
   'certificates.create.title' => 'Создание сертификата',

@@ -145,6 +145,12 @@
                     <span>@lang('admin.sidebar.links.shop.orders')</span>
                 </a>
             </li>
+            <li>
+                <a href="{{route('customers.index')}}">
+                    <i class="glyph-icon icon-linecons-tv"></i>
+                    <span>@lang('admin.sidebar.links.shop.customers')</span>
+                </a>
+            </li>
 {{--                <li>--}}
 {{--                    <a href="{{route('customers.index')}}">--}}
 {{--                        <i class="glyph-icon icon-linecons-tv"></i>--}}

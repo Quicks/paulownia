@@ -153,8 +153,12 @@ return [
 
   'customers.index.title' => 'Clientes',
   'customers.index.table.first_name' => 'Nombre de pila',
+  'customers.index.table.last_name' => 'Apellido',
   'customers.index.table.email' => 'Email',
+  'customers.index.table.status' => 'Estado',
+  'customers.index.table.gender' => 'Género',
   'customers.index.table.date_of_birth' => 'Fecha de nacimiento',
+  'customers.create.title' => 'Creación de clientes',
 
   'certificates.index.title' => 'Certificados',
   'certificates.create.title' => 'Crea un certificado',

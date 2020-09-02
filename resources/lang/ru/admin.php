@@ -150,6 +150,7 @@ return [
   'orders.show.table.total.total_due' => 'К оплате',
   'orders.show.shipments.carrier_title' => 'название перевозчика',
   'orders.show.shipments.track_number' => 'трекинговый номер',
+  'orders.show.table.total.total_invoiced' => 'Всего к оплате',
 
   'customers.index.title' => 'Заказчики',
   'customers.index.table.first_name' => 'Имя',

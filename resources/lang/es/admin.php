@@ -150,6 +150,8 @@ return [
   'orders.show.table.total.total_due' => 'Pagar',
   'orders.show.shipments.carrier_title' => 'título del transportista',
   'orders.show.shipments.track_number' => 'número de pista',
+  'orders.show.table.total.total_invoiced' => 'total facturado',
+
 
   'customers.index.title' => 'Clientes',
   'customers.index.table.first_name' => 'Nombre de pila',

@@ -3356,6 +3356,12 @@ span.error{
 .comment_content{
   width: 100%;
 }
+
+.mfp-container.mfp-inline-holder .mfp-content{
+  width: 30%;
+  background: white;
+  padding: 25px;
+}
 .masonry {
   columns: 1;
   column-gap: 10px;

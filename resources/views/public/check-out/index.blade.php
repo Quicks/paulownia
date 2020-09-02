@@ -321,8 +321,7 @@
 
         </div>
     </section>
-<!-- END SECTION SHOP DETAIL -->
-    <!-- <checkout></checkout> -->
+  
   </div>
 @endsection
 
@@ -418,8 +417,11 @@
           },
           async onSubmit(){
             var that = this
+            var preLoder = $("#preloader");
+
             try{
               let validForm = await that.$validator.validateAll()
+              preLoder.show()
               if(validForm){
                 if(this.createAccount){
                   this.user = await this.$http.post('/api/customer/register', {
@@ -445,21 +447,34 @@
                 let shippingResponse = await this.$http.post('/api/checkout/save-shipping', {shipping_method: this.shipping_method})
                 let paymentResponse = await this.$http.post('/api/checkout/save-payment', {payment:{ method: this.payment_method } })
                 let saveOrderResponse = await this.$http.post('/api/checkout/save-order')
-                console.log(saveOrderResponse)
                 if(this.payment_method == 'paypal_standard'){
                   location.href = saveOrderResponse.data.redirect_url
                 }else{
-                  this.showSuccessModal()
+                  $.magnificPopup.open({
+                    items: {
+                      src: `<div id="success-popup"><div class="col-xl-8 col-md-12 col-sm-12 ml-xl-4 pl-5 "><h1>Thank you for your order!</h1> <p>We will email you, your order details and tracking information</p> <a href="/" class="product-button-success" style="text-decoration: none;">Continue Shopping</a></div></div>`,
+                      type: 'inline'
+                    },
+                    callbacks: {
+                      close: function() {
+                        location.href = '/'
+                      }
+                    }
+                  });
                 }
+                preLoder.hide()
+
                 // location.href = '/'
               }else{
                 const errorFieldName = this.$validator.errors.items[0].field;
                 $('input[name="'+ errorFieldName + '"]')[0].scrollIntoView(true)
                 window.scrollTo(0, window.scrollY - 150)
               }
-              
+
             }catch(e){
               if(e.response.data.errors){
+                preLoder.hide()
+
                 this.$refs.form.setErrors(e.response.data.errors)
                 let key = Object.keys(that.errors)[0];
                 $('input[name="'+ key + '"]')[0].scrollIntoView(true)
@@ -520,9 +535,6 @@
               return res
             // }
             
-          },
-          showSuccessModal(){
-            alert('success order')
           },
           onPaymentMethodClick(method){
             this.payment_method = method

@@ -18,7 +18,7 @@
     <div id="header-nav-left">
         <div class="user-account-btn dropdown">
             <a href="#" title="My Account" class="user-profile clearfix" data-toggle="dropdown">
-                <img width="28" src="https://agileui.com/demo/monarch/assets/image-resources/gravatar.jpg" alt="Profile image">
+                <!-- <img width="28" src="https://agileui.com/demo/monarch/assets/image-resources/gravatar.jpg" alt="Profile image"> -->
                 <span>@lang('admin.lang.'. \App::getLocale())</span>
                 <i class="glyph-icon icon-angle-down"></i>
             </a>

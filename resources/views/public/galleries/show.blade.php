@@ -29,11 +29,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8 col-md-7 mb-2 mb-md-0">
+                <div class="col-lg-12 col-md-12 mb-2 mb-md-0">
                     <div class="heading_s2">
                         <h3>{{$gallery->title}}</h3>
                     </div>
-                    <p>{{$gallery->desc}}</p>
+                    <p class="text-justify">{{$gallery->desc}}</p>
                 </div>
 
             </div>
@@ -43,7 +43,7 @@
 
     <script type="text/javascript">
         $(function () {
-            
+
             $('#lightgallery').lightGallery();
         })
     </script>

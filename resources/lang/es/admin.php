@@ -4,6 +4,7 @@ return [
   'btns.new' => 'Crear un',
   'btns.show' => 'Ver',
   'btns.edit' => 'Editar',
+  'btns.comment' => 'Comentario',
   'btns.add_image' => 'Añadir foto',
   'btns.destroy' => 'Eliminar',
   'btns.back' => 'De regreso',
@@ -151,6 +152,16 @@ return [
   'orders.show.shipments.track_number' => 'número de pista',
   'orders.show.table.total.total_invoiced' => 'total facturado',
 
+
+  'customers.index.title' => 'Clientes',
+  'customers.index.table.first_name' => 'Nombre de pila',
+  'customers.index.table.last_name' => 'Apellido',
+  'customers.index.table.email' => 'Email',
+  'customers.index.table.status' => 'Estado',
+  'customers.index.table.gender' => 'Género',
+  'customers.index.table.date_of_birth' => 'Fecha de nacimiento',
+  'customers.create.title' => 'Creación de clientes',
+  'customers.edit.title' => 'Edición de clientes',
 
   'certificates.index.title' => 'Certificados',
   'certificates.create.title' => 'Crea un certificado',

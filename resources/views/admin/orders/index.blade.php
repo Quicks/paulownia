@@ -21,7 +21,7 @@
                                         <th>@lang('admin.orders.index.table.status')</th>
                                         <th>@lang('admin.orders.index.table.billed_to')</th>
                                         <th>@lang('admin.orders.index.table.payment_method')</th>
-                                        <th>@lang('admin.orders.index.table.shiped_to')</th>
+                                        <!-- <th>@lang('admin.orders.index.table.shiped_to')</th> -->
                                         <th>@lang('admin.btns.actions')</th>
                                     </tr>
                                 </thead>
@@ -38,7 +38,7 @@
                                             {{$item->created_at}}
                                         </td>
                                         <td>
-                                            {{$item->status}}
+                                            @include('admin.status_label', ['status' => $item->status])
                                         </td>
                                         <td>
                                             {{$item->billed_to}}
@@ -46,9 +46,9 @@
                                         <td>
                                             {{$item->method}}
                                         </td>
-                                        <td>
+                                        <!-- <td>
                                             {{$item->shipped_to}}
-                                        </td>
+                                        </td> -->
                                         <td>
                                             @if(bouncer()->hasPermission('orders.show'))
                                                 <a href="{{ url('/admin/orders/' . $item->id) }}" title="Show Order">

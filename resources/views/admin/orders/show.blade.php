@@ -42,20 +42,46 @@
                             
                         </li>
                     @endif
-                    <li class=''>
-                        <a href="#shipping"
-                           data-href="{{ route('admin.sales.shipments.store', $order->id) }}"
-                           data-toggle="pill" 
-                           class="btn btn-alt btn-hover btn-info" 
-                           id='create-shipment'
-                           role="tab"
-                           aria-controls="shipping"
-                           aria-selected="true"
-                        >
-                            <span>@lang('admin.orders.show.btns.shipment')</span>
-                        </a>
-                        
-                    </li>
+                    @if($order->status == 'processing')
+                        <li class=''>
+                            <a href="#shipping"
+                            data-href="{{ route('admin.sales.shipments.store', $order->id) }}"
+                            data-toggle="pill" 
+                            class="btn btn-alt btn-hover btn-info" 
+                            id='create-shipment'
+                            role="tab"
+                            aria-controls="shipping"
+                            aria-selected="true"
+                            >
+                                <span>@lang('admin.orders.show.btns.shipment')</span>
+                            </a>
+                            
+                        </li>
+                    @endif
+                    @if($order->status == 'pending_payment')
+                        <li>
+                            <form method="POST" action="{{ route('orders.update', $order->id) }}" >
+                                @csrf()
+                                {{ method_field('PUT') }}
+                                <input class="form-control col-sm-6 hidden" name="status" value="processing" hidden='true'>
+                                <button type="submit" class="btn btn-alt btn-hover btn-success invoice-btn pull-right">
+                                    <span>@lang('admin.orders.show.btns.payed')</span>
+                                </button>
+                            </form>
+                        </li>
+                    @endif
+                    @if($order->status != 'canceled')
+                        <li>
+                            <form method="POST" action="{{ route('orders.update', $order->id) }}" >
+                                @csrf()
+                                {{ method_field('PUT') }}
+                                <input class="form-control col-sm-6 hidden" name="status" value="completed" hidden='true'>
+                                <button type="submit" class="btn btn-alt btn-hover btn-success invoice-btn pull-right">
+                                    <span>@lang('admin.orders.show.btns.completed')</span>
+                                </button>
+                            </form>
+                        </li>
+                    @endif
                     <li class=''>
                         @if ($order->canCancel())
                             <a href="{{ route('admin.sales.orders.cancel', $order->id) }}" class="btn btn-alt btn-hover btn-danger">
@@ -63,11 +89,11 @@
                             </a>
                         @endif
                     </li>
-                    <li class=''>
+                    <!-- <li class=''>
                         <a class="btn btn-alt btn-hover btn-info">
                             <span>@lang('admin.btns.print')</span>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>            
         </div>
@@ -90,28 +116,39 @@
             <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="invoice">
                 <div class='row'>
                     @include('admin.orders.invoice.create', ['order' => $order])
-
                 </div>
             </div>
             
         </div>
         <div class="col-md-3">
-            <h2 class="invoice-client mrg10T">@lang('admin.orders.show.client_info.title'):</h2>
-            <h5>{{$order->customer_first_name. ' ' .$order->customer_last_name}}</h5>
-            <h5>{{$order->customer_email}}</h5>
-            <address class="invoice-address">
-                {{$address->address1}}
-                <br>
-                {{$address->city. ', '.$address->country. ' '. $address->postcode }}
-                <br>
-                {{$address->phone}}
-            </address>
+            <h2 class="invoice-client mrg10T">@lang('admin.orders.show.customer.title'):</h2>
+
+            <ul class='reset-ul'>
+                <li>@lang('admin.orders.show.customer.full_name'): {{$order->customer_first_name. ' ' .$order->customer_last_name}}</li>
+                <li>@lang('admin.orders.show.customer.email'): {{$order->customer_email}}</li>
+                <li>
+                    <address class="invoice-address">
+                        @lang('admin.orders.show.customer.address'): {{$address->address1}}
+                        <br>
+                        @lang('admin.orders.show.customer.city'): {{$address->city. ', '.$address->country. ' '. $address->postcode }}
+                        <br>
+                        @lang('admin.orders.show.customer.phone'): {{$address->phone}}
+                    </address>
+                </li>
+            </ul>
+    
         </div>
         <div class="col-md-3">
             <h2 class="invoice-client mrg10T">@lang('admin.orders.show.order_info.title'):</h2>
             <ul class="reset-ul">
                 <li>@lang('admin.orders.index.table.order_date'): {{$order->created_at->format('F d Y')}}</li>
-                <li>@lang('admin.orders.index.table.status'): <span class="bs-label label-warning">{{$order->status}}</span></li>
+                <li>
+                    @lang('admin.orders.index.table.status'): 
+                    <span>
+                        @include('admin.status_label', ['status' => $order->status])
+                        
+                    </span>
+                </li>
                 <li>Id: #{{$order->id}}</li>
             </ul>
         </div>
@@ -122,6 +159,11 @@
                 <li>@lang('admin.orders.show.payment_and_shipment.payment_currency'): {{$order->order_currency_code}}</li>
                 <li>@lang('admin.orders.show.payment_and_shipment.shiping_method'): {{$order->shipping_title}}</li>
                 <li>@lang('admin.orders.show.payment_and_shipment.shiping_price'): {{core()->formatBasePrice($order->base_shipping_amount)}}</li>
+                @if(!empty($order->shipments->first()))
+                    <?php $shipment = $order->shipments->first() ?>
+                    <li>@lang('admin.orders.show.shipments.carrier_title'): {{$shipment->carrier_title}}</li>
+                    <li>@lang('admin.orders.show.shipments.track_number'): {{$shipment->track_number}}</li>
+                @endif
             </ul>
         </div>
     </div>
@@ -204,7 +246,6 @@
                     <td colspan="7" class="font-red">-{{ core()->formatBasePrice($order->base_discount_amount) }}</td>
                 </tr>
             @endif
-
             <tr class="font-bold font-black">
                 <td colspan="7" class="text-right">@lang('admin.orders.show.table.total.tax')</td>
                 <td colspan="7">{{ core()->formatBasePrice($order->base_tax_amount) }}</td>
@@ -217,22 +258,40 @@
 
             <tr class="font-bold font-black">
                 <td colspan="7" class="text-right">@lang('admin.orders.show.table.total.total_invoiced')</td>
-                <td colspan="7">{{ core()->formatBasePrice($order->grand_total_invoiced) }}</td>
+                <td colspan="7">
+                    {{ core()->formatBasePrice($order->grand_total_invoiced) }}
+                </td>
             </tr>
-
+            @if($order->status != 'pending_payment' && $order->status != 'pending')
+                <tr class="font-bold font-black">
+                    <td colspan="7" class="text-right">@lang('admin.orders.show.table.total.total_payed')</td>
+                    <td colspan="7">
+                        {{ core()->formatBasePrice($order->grand_total_invoiced) }}
+                    </td>
+                </tr>
+            @endif
+<!--    
             <tr class="font-bold font-black">
                 <td colspan="7" class="text-right">@lang('admin.orders.show.table.total.total_paid')</td>
                 <td colspan="7">{{ core()->formatBasePrice($order->grand_total_invoiced) }}</td>
-            </tr>
+            </tr> -->
 
-            <tr class="font-bold font-black">
+            <!-- <tr class="font-bold font-black">
                 <td colspan="7" class="text-right">@lang('admin.orders.show.table.total.total_refunded')</td>
                 <td colspan="7">{{ core()->formatBasePrice($order->base_grand_total_refunded) }}</td>
-            </tr>
+            </tr> -->
 
             <tr class="font-bold font-black">
                 <td colspan="7" class="text-right">@lang('admin.orders.show.table.total.total_due')</td>
-                <td colspan="7" class="font-blue font-size-23">{{ core()->formatBasePrice($order->base_total_due) }}</td>
+                <td colspan="7" class="font-blue font-size-23">
+                    @if($order->status == 'pending_payment')
+                        {{ core()->formatBasePrice($order->grand_total_invoiced) }}
+                    @elseif($order->status == 'pending')
+                        {{ core()->formatBasePrice($order->grand_total) }}
+                    @else
+                        {{ core()->formatBasePrice(0.00) }}
+                    @endif
+                </td>
             </tr>
         </tbody>
     </table>

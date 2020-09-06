@@ -38,7 +38,8 @@ class InvoiceController extends WebkulInvoiceController{
         }
 
         $this->invoice->create(array_merge($data, ['order_id' => $orderId]));
-
+        $order->status = 'pending_payment';
+        $order->save();
         session()->flash('success', trans('admin::app.response.create-success', ['name' => 'Invoice']));
 
         return redirect()->route($this->_config['redirect'], $orderId);

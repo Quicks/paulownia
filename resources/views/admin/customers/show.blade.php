@@ -48,8 +48,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments"></div>
-                <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders"></div>
+                <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments">
+                    @include ('admin.customers.comments.show-comment', ['customer' => $customer])
+                </div>
+                <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders">
+                    @include ('admin.customers.orders.show-order', ['customer' => $customer])
+                </div>
             </div>
         </div>
         <div class='col-md-1'>
@@ -100,5 +104,8 @@
     }
     .flex-column {
         flex-direction: column;
+    }
+    .h-auto {
+        height: auto!important;
     }
 </style>

@@ -165,6 +165,8 @@ return [
   'customers.index.table.phone' => 'Teléfono',
   'customers.create.title' => 'Creación de clientes',
   'customers.edit.title' => 'Edición de clientes',
+  'customers.edit.comment.title' => 'Comentario sobre la creación de clientes',
+  'customers.edit.comment' => 'Comentario',
   'customers.show.title' => 'Información sobre el cliente',
   'customers.show.comments' => 'Comentarios',
   'customers.show.orders' => 'Pedidos',

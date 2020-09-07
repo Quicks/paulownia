@@ -164,6 +164,8 @@ return [
   'customers.index.table.phone' => 'Телефон',
   'customers.create.title' => 'Создание заказчика',
   'customers.edit.title' => 'Редактирование заказчика',
+  'customers.edit.comment.title' => 'Создание комментария о заказчике',
+  'customers.edit.comment' => 'Комментарий',
   'customers.show.title' => 'Информация о заказчике',
   'customers.show.comments' => 'Комментарии',
   'customers.show.orders' => 'Заказы',

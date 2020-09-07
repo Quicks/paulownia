@@ -42,8 +42,7 @@ class CustomersController extends Controller
 
     public function show($id)
     {
-        $customer = Customer::findOrFail($id)->first();
-
+        $customer = Customer::with('orders')->findOrFail($id)->first();
         return view('admin.customers.show', compact('customer'));
     }
 
@@ -56,14 +55,20 @@ class CustomersController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'first_name' => 'required|max:90',
-            'last_name' => 'required|max:90',
-            'email' => 'required|email',
-            'gender' => 'required',
-            'date_of_birth' => 'required',
-            'phone'=>'string|max:30',
-        ]);
+        if(!$request->has('notes')) {
+            $this->validate($request, [
+                'first_name' => 'required|max:90',
+                'last_name' => 'required|max:90',
+                'email' => 'required|email',
+                'gender' => 'required',
+                'date_of_birth' => 'required',
+                'phone'=>'string|max:30',
+            ]);
+        } else {
+            $this->validate($request, [
+                'notes' => 'string|nullable'
+            ]);
+        }
 
         Customer::findOrFail($id)->first()->fill($request->all())->save();
 
@@ -77,4 +82,11 @@ class CustomersController extends Controller
 
         return redirect('admin/customers')->with('flash_message', 'Customer deleted!');
     }
+
+    public function comment($id)
+    {
+        $customer = Customer::find($id);
+        return view('admin.customers.comments.create-comment', compact('customer'));
+    }
+
 }

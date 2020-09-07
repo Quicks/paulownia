@@ -164,6 +164,8 @@ return [
   'customers.index.table.phone' => 'Phone',
   'customers.create.title' => 'Customer creation',
   'customers.edit.title' => 'Customer editing',
+  'customers.edit.comment.title' => 'Comment about customer creating',
+  'customers.edit.comment' => 'Comment',
   'customers.show.title' => 'Information about customer',
   'customers.show.comments' => 'Comments',
   'customers.show.orders' => 'Orders',

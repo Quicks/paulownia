@@ -10,4 +10,8 @@ class Customer extends Model
 
     protected $hidden = ['password', 'remember_token'];
 
+    public function orders ()
+    {
+        return $this->hasMany('App\Models\Order', 'customer_id');
+    }
 }

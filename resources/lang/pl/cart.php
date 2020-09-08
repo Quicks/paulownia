@@ -1,15 +1,16 @@
 <?php
 
 return [
-  'label.title' => 'Название',
-  'label.price' => 'Цена',
-  'label.quantity' => 'Количество',
-  'label.total' => 'Общая цена',
-  'label.remove' => 'Удалить с корзины',
-  'label.proceed_to_checkout' => 'Оформить заказ',
-  'label.cart_totals' => 'Сумма заказов',
-  'label.cart_subtotal' => 'Цена за товары',
-  'label.vat' => 'Налог',
-  'label.cart_total' => 'К оплате',
-  'label.shipping' => 'Просчитать доставку'
+  'label.title' => 'Tytuł',
+  'label.price' => 'Cena',
+  'label.quantity' => 'Ilość',
+  'label.total' => 'Cena łączna',
+  'label.remove' => 'Usuń z kosza',
+  'label.proceed_to_checkout' => 'Do kasy',
+  'label.cart_totals' => 'Całkowita liczba zamówień',
+  'label.cart_subtotal' => 'Cena produktu',
+  'label.vat' => 'Podatek',
+  'label.cart_total' => 'Do zapłaty',
+  'label.shipping' => 'Oblicz wysyłkę',
+  'label.empty_cart' => 'Nie masz jeszcze żadnych produktów w koszyku. Idź do strony <a href=":link">: tytuł </a>, aby ją wypełnić.'
 ];

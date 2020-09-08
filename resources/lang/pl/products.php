@@ -20,5 +20,7 @@ return [
     'amount' => 'Ilość',
     'total' => 'Całkowity,',
     'add-cart' =>'Dodaj do koszyka',
-    'all-goods' => 'Wszystkie towary'
+    'all-goods' => 'Wszystkie towary',
+    'title' => 'wynik'
+
 ];

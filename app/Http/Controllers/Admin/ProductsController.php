@@ -24,7 +24,7 @@ class ProductsController extends ProductController
     public function index()
     {
         $perPage = 25;
-        $products = $this->product->getAll();
+        $products = $this->product->getAll(['sort' => 'created_at', 'order' => 'desc']);
         return view('admin.products.index', compact('products'));
     }
 
@@ -99,7 +99,6 @@ class ProductsController extends ProductController
      */
     public function update(ProductForm $request, $webkulProduct)
     {
-        dd($request);
         $product = $this->product->update(request()->all(), $webkulProduct->id);
         $this->saveImages($product->id, 'Product', request()->images, false);
 

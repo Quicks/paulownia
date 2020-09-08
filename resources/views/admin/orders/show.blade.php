@@ -22,11 +22,10 @@
             <h4 class="invoice-title">@lang('admin.orders.show.title')</h4>
             No. <b>#{{$order->id}}</b>
             <div class="divider"></div>
-            <div class="invoice-date mrg20B">{{date("F d Y")}}</div>
+            <div class="invoice-date mrg20B">{{$order->created_at}}</div>
             <div class="tab-content nav-responsive nav nav-tabs" id="nav-tabContent">
                 <ul class="nav-responsive nav nav-tabs pull-right">
-                    @if ($order->canInvoice())
-
+                    @if ($order->canInvoice() && $order->status == 'pending')
                         <li class=''>
                             <a href="#invoice"
                             data-href="{{ route('admin.sales.shipments.store', $order->id) }}"
@@ -70,7 +69,7 @@
                             </form>
                         </li>
                     @endif
-                    @if($order->status != 'canceled')
+                    @if($order->status != 'canceled' && $order->status != 'completed')
                         <li>
                             <form method="POST" action="{{ route('orders.update', $order->id) }}" >
                                 @csrf()

@@ -20,4 +20,10 @@
       <a href="{{route('check-out.index')}}" class="btn btn-dark btn-radius checkout">@lang('cart.label.checkout')</a>
     </p>
   </div>
+@else
+  <ul class="cart_list">
+    <li>
+      @lang('cart.label.empty_cart', ['link' => route('public.products.index'), 'title' => trans('products.title')])
+    </li>
+  </ul>
 @endif

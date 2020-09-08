@@ -14,4 +14,5 @@ return [
   'label.shipping' => 'Calcular costo de envío',
   'label.checkout' => 'checkout',
   'label.view_cart' => 'view cart',
+  'label.empty_cart' => 'Aún no hay productos en su carrito. Vaya a la página <a href=":link">: title </a> para completarla. '
 ];

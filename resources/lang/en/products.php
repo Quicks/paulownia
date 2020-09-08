@@ -20,6 +20,7 @@ return [
     'amount' => 'Amount',
     'total' => 'Total',
     'add-cart' =>'Add to cart',
-    'all-goods' => 'All goods'
+    'all-goods' => 'All goods',
+    'title' => 'Shop'
 
 ];

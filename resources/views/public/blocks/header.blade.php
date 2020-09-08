@@ -110,7 +110,7 @@
 										<i class="ion-bag"></i>
 										<span class="cart_count">
 												@if(Webkul\Checkout\Facades\Cart::getCart())
-														{{Webkul\Checkout\Facades\Cart::getCart()->items_count}}
+													{{Webkul\Checkout\Facades\Cart::getCart()->items_count}}	
 												@endif
 										</span>
 									</a>

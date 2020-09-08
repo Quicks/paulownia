@@ -11,5 +11,6 @@ return [
   'label.cart_subtotal' => 'Prix ​​des marchandises',
   'label.vat' => 'Impôt',
   'label.cart_total' => 'Payer',
-  'label.shipping' => 'Calculer la livraison'
+  'label.shipping' => 'Calculer la livraison',
+  'label.empty_cart' => 'Il n`y a pas encore de produits dans votre panier. Accédez à la page <a href=":link">: title </a> pour la remplir.'
 ];

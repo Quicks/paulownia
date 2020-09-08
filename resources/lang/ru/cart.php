@@ -12,7 +12,8 @@ return [
   'label.vat' => 'Налог',
   'label.cart_total' => 'К оплате',
   'label.shipping' => 'Просчитать доставку',
-
   'label.checkout' => 'Оплата',
   'label.view_cart' => 'Просмотреть',
+  'label.empty_cart' => 'В вашей карзине нет пока товаров. Перейдите на страничку <a href=":link">:title</a> чтобы наполнить ее.'
+
 ];

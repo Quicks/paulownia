@@ -5,8 +5,8 @@
 						<div class="row align-items-center">
 								<div class="col-md-7">
 									<ul class="contact_detail border_list list_none text-center text-md-left">
-												<li><a href="#"><i class="ti-mobile"></i> <span>+123 456 7890</span></a></li>
-												<li><a href="#"><i class="ti-email"></i> <span>info@yourmail.com</span></a></li>
+												<li><a href="tel:+34642787555"><i class="ti-mobile"></i> <span>+34642787555</span></a></li>
+												<li><a href="mailto:info@paulownia.pro" target='_blank'><i class="ti-email"></i> <span>info@paulownia.pro</span></a></li>
 										</ul>
 								</div>
 								<div class="col-md-5">

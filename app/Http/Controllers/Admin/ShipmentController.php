@@ -25,7 +25,6 @@ class ShipmentController extends WebkulShipmentController{
       ]);
 
       $data = request()->all();
-      // dd($data);
       if (! $this->isInventoryValidate($data)) {
         session()->flash('error', trans('admin::app.sales.shipments.quantity-invalid'));
 

@@ -15,7 +15,7 @@ class ProductsController extends Controller
 {
     public function index(Request $request, ProductRepository $product)
     {
-        $products = $product->getAll();
+        $products = $product->getAll(['sort' => 'created_at', 'order' => 'desc']);
         return view('public.products.index', compact('products'));
     }
 

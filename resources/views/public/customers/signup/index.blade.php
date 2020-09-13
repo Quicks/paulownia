@@ -9,7 +9,7 @@
             	<div class="heading_s2">
                 	<h3>Регистрация</h3>
                 </div>
-            	<form method="POST" action="{{ route('customer.session.create') }}" class='login_form'>
+            	<form method="POST" action="{{ route('customer.register.create') }}" class='login_form'>
                     {{ csrf_field() }}
 
                     <div class="form-group">

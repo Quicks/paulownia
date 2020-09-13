@@ -73,7 +73,6 @@ class RegistrationController extends Controller
             'password' => 'confirmed|min:6|required',
             // 'g-recaptcha-response' => 'recaptcha',
         ]);
-
         $data = request()->input();
 
         $data['password'] = bcrypt($data['password']);
@@ -99,6 +98,7 @@ class RegistrationController extends Controller
         Event::fire('customer.registration.after', $customer);
 
         if ($customer) {
+
             if (core()->getConfigData('customer.settings.email.verification')) {
                 try {
                     Mail::queue(new VerificationEmail($verificationData));
@@ -118,7 +118,7 @@ class RegistrationController extends Controller
             return redirect()->back(); //redirect()->route($this->_config['redirect']);
         } else {
             session()->flash('error', trans('shop::app.customer.signup-form.failed'));
-
+            
             return redirect()->back();
         }
     }

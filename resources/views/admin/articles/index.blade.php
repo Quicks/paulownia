@@ -25,7 +25,7 @@
                                         <th>@lang('admin.article.index.table.link_to_public')</th>
                                         <th>@lang('admin.article.index.table.publish')</th>
                                         <th>@lang('admin.article.index.table.publish_date')</th>
-                                        <th>@lang('admin.news.index.table.langs')</th>
+                                        <th>@lang('admin.article.index.table.langs')</th>
                                         <th>@lang('admin.article.index.table.images')</th>
                                         <th>@lang('admin.btns.actions')</th>
                                     </tr>

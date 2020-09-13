@@ -1,9 +1,9 @@
-<div class='col-md-11'>
-    
+<div class='col-md-10'>
+
     <div class="tab-content nav-responsive nav nav-tabs" id="nav-tabContent">
         <div class="tab-pane fade active in" id="main-form" role="tabpanel" aria-labelledby="main-form">
             <div class="row">
-                
+
                 <div class="form-group {{ $errors->has('publish_date') ? 'has-error' : ''}}">
                     <label for="publish_date" class="control-label col-sm-3">@lang('admin.treatises.index.table.publish_date')</label>
                     <input class="form-control bsdatepicker col-sm-6" name="publish_date" type="text" id="publish_date"
@@ -13,7 +13,7 @@
                 <div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">
                     <label for="active" class="control-label col-sm-3">@lang('admin.treatises.index.table.publish')</label>
                     <div class='col-sm-6'>
-                        <input type="radio" 
+                        <input type="radio"
                                 id="active-checkbox"
                                 data-on-color="primary"
                                 name="active"
@@ -27,7 +27,7 @@
                 </div>
 
             </div>
-            
+
         </div>
         @foreach(config('translatable.locales') as $locale)
             <div class="tab-pane fade" id={{$locale}} role="tabpanel"
@@ -54,7 +54,7 @@
         @endforeach
     </div>
 </div>
-<div class='col-md-1'>
+<div class='col-md-2'>
     <div class='form-sidebar'>
         @include('admin.langPanel')
         <div>

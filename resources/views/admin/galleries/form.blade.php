@@ -1,5 +1,5 @@
 
-<div class='col-md-11'>
+<div class='col-md-10'>
 
     <div class="tab-content nav-responsive nav nav-tabs" id="nav-tabContent">
         <div class="tab-pane fade active in" id="main-form" role="tabpanel" aria-labelledby="main-form">
@@ -12,7 +12,7 @@
                 <div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">
                     <label for="active" class="control-label col-sm-3">@lang('admin.common.active')</label>
                     <div class='col-sm-6'>
-                        <input type="radio" 
+                        <input type="radio"
                                 id="active-checkbox"
                                 data-on-color="primary"
                                 name="active"
@@ -61,7 +61,7 @@
         @endforeach
     </div>
 </div>
-<div class='col-md-1'>
+<div class='col-md-2'>
     <div class='form-sidebar'>
         @include('admin.langPanel')
         <div>

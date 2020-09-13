@@ -29,6 +29,7 @@ return [
   'article.index.table.publish' => 'Publicar?',
   'article.index.table.publish_date' => 'Fecha de publicación',
   'article.index.table.images' => 'Imágenes',
+  'article.index.table.langs' => 'Idiomas',
   'article.edit.title' => 'Editar artículo',
   'article.create.title' => 'Creando un articulo',
 
@@ -38,6 +39,7 @@ return [
   'news.index.table.publish' => 'Publicar?',
   'news.index.table.publish_date' => 'Fecha de publicación',
   'news.index.table.images' => 'Imágenes',
+  'news.index.table.langs' => 'Idiomas',
   'news.edit.title' => 'Editando un articulo',
   'news.create.title' => 'Creación de noticias',
 
@@ -46,6 +48,7 @@ return [
   'treatises.index.table.publish' => 'Publicar?',
   'treatises.index.table.publish_date' => 'Fecha de publicación',
   'treatises.index.table.files' => 'Archivos',
+  'treatises.index.table.langs' => 'Idiomas',
   'treatises.edit.title' => 'Editando un tratado',
   'treatises.create.title' => 'Creación de un tratado',
 
@@ -70,6 +73,7 @@ return [
   'offices.create.title' => 'Creación de una oficina de representación oficial',
 
   'galleries.index.title' => 'Galerías',
+  'galleries.index.table.langs' => 'Idiomas',
   'galleries.edit.title' => 'Edición de galería',
   'galleries.create.title' => 'Creación de galería',
 
@@ -116,6 +120,7 @@ return [
   'products.form.tabs.categories' => 'Categorías',
   'product.index.table.link_to_public' => 'Enlace a la parte pública',
   'product.index.table.publish' => 'Enlace a la parte pública',
+  'product.index.table.langs' => 'Idiomas',
 
   'orders.index.title' => 'Pedidos',
   'orders.index.table.sub_total' => 'Cantidad',

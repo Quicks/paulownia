@@ -29,6 +29,7 @@ return [
   'article.index.table.publish' => 'Publish?',
   'article.index.table.publish_date' => 'Publish date',
   'article.index.table.images' => 'Images',
+  'article.index.table.langs' => 'Languages',
   'article.edit.title' => 'Edit article',
   'article.create.title' => 'Article creation',
 
@@ -38,6 +39,7 @@ return [
   'news.index.table.publish' => 'Publish?',
   'news.index.table.publish_date' => 'Date of publication',
   'news.index.table.images' => 'Images',
+  'news.index.table.langs' => 'Languages',
   'news.edit.title' => 'Editing an article',
   'news.create.title' => 'News creation',
 
@@ -46,6 +48,7 @@ return [
   'treatises.index.table.publish' => 'Publish?',
   'treatises.index.table.publish_date' => 'Date of publication',
   'treatises.index.table.files' => 'Files',
+  'treatises.index.table.langs' => 'Languages',
   'treatises.edit.title' => 'Editing a treatise',
   'treatises.create.title' => 'Creation of a treatise',
 
@@ -70,6 +73,7 @@ return [
   'offices.create.title' => 'Creation of an official representative office',
 
   'galleries.index.title' => 'Galleries',
+  'galleries.index.table.langs' => 'Languages',
   'galleries.edit.title' => 'Gallery editing',
   'galleries.create.title' => 'Gallery creation',
 
@@ -116,6 +120,7 @@ return [
   'products.form.tabs.categories' => 'Categories',
   'product.index.table.link_to_public' => 'Link to the public part',
   'product.index.table.publish' => 'Link to the public part',
+  'product.index.table.langs' => 'Languages',
 
   'orders.index.title' => 'Orders',
   'orders.index.table.payment_method' => 'Payment method',

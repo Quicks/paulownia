@@ -4,7 +4,7 @@
 return [
     'profile' => 'Profile',
     'favorite' => 'Favorite',
-    'story' => 'Story',
+    'story' => 'Orders',
     'address' => 'Address',
     'exit' => 'Exit',
     'deleteall' => 'Delete all',
@@ -61,5 +61,6 @@ return [
     'payment-method' => 'Payment method',
     'carrier_title' => 'Carrier title',
     'track_number' => 'Track number',
-    'order' => 'Order'
+    'order' => 'Order',
+    'orders.total_ordered' => 'ordered'
 ];

@@ -14,6 +14,7 @@ return [
     'faq'=>'FAQ',
     'about us'=>'O nas',
     'contacts'=>'Łączność',
+    'account' => 'Аккаунт',
 
     //footer
 

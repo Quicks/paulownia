@@ -52,7 +52,11 @@ class RegistrationController extends Controller
      */
     public function show()
     {
-        return view($this->_config['view']);
+        if (auth()->guard('customer')->check()) {
+            return redirect()->route('main');
+        } else {
+            return view($this->_config['view']);
+        }
     }
 
     /**
@@ -67,7 +71,7 @@ class RegistrationController extends Controller
             'last_name' => 'string|required',
             'email' => 'email|required|unique:customers,email',
             'password' => 'confirmed|min:6|required',
-            'g-recaptcha-response' => 'recaptcha',
+            // 'g-recaptcha-response' => 'recaptcha',
         ]);
 
         $data = request()->input();

@@ -5,8 +5,8 @@
 						<div class="row align-items-center">
 								<div class="col-md-7">
 									<ul class="contact_detail border_list list_none text-center text-md-left">
-												<li><a href="#"><i class="ti-mobile"></i> <span>+123 456 7890</span></a></li>
-												<li><a href="#"><i class="ti-email"></i> <span>info@yourmail.com</span></a></li>
+												<li><a href="tel:+34642787555"><i class="ti-mobile"></i> <span>+34642787555</span></a></li>
+												<li><a href="mailto:info@paulownia.pro" target='_blank'><i class="ti-email"></i> <span>info@paulownia.pro</span></a></li>
 										</ul>
 								</div>
 								<div class="col-md-5">
@@ -31,9 +31,14 @@
 													<a class="dropdown-toggle" href="#" data-toggle="dropdown">My Account</a>
 													<div class="dropdown-menu shadow dropdown-menu-right">
 														<ul>
-																<li><a class="dropdown-item" href="my-account.html">My account</a></li>
-																<li><a class="dropdown-item" href="wishlist.html">Wishlist</a></li>
-																<li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+															@if(Auth::guard('customer')->check())
+															<li><a class="dropdown-item" href="/{{$current_locale}}/customer/account/profile">My account</a></li>
+															<li><a class="dropdown-item" href="/{{$current_locale}}/customer/logout">Log out</a></li>
+																@else
+																	<li><a class="dropdown-item" href="/{{$current_locale}}/customer/login">Login</a></li>
+																@endif
+																<!-- <li><a class="dropdown-item" href="wishlist.html">Wishlist</a></li> -->
+																<!-- <li><a class="dropdown-item" href="checkout.html">Checkout</a></li> -->
 														</ul>
 													</div>
 												</li>

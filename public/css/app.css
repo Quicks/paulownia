@@ -3320,6 +3320,28 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   margin: auto;
   padding: 10px 10px 0 10px;
 }
+.margin-auto{
+  margin: auto;
+}
+
+.bs-label {
+  font-size: 80%;
+  line-height: 1;
+  display: inline;
+  padding: .3em .6em .5em;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: baseline;
+  white-space: nowrap;
+  color: #fff;
+  border-radius: .25em;
+}
+
+.reset-ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
 @keyframes numberUpdate {
   0% {color: green;}
   50% {color: yellow;}

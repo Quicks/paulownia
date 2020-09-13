@@ -14,7 +14,7 @@ return [
     'faq'=>'FAQ',
     'about us'=>'About us',
     'contacts'=>'Contacts',
-
+    'account' => 'Account',
     //footer
 
     'to customers'=>'To customers',

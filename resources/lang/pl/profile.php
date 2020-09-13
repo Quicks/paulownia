@@ -61,5 +61,6 @@ return [
     'payment-method' => 'Metoda płatności',
     'carrier_title' => 'Tytuł przewoźnika',
     'track_number' => 'Numer utworu',
-    'order' => 'Zamówienie'
+    'order' => 'Zamówienie',
+    'orders.total_ordered' => 'ordered'
 ];

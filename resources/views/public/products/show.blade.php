@@ -60,7 +60,7 @@
                             </div> -->
                             <div class="cart_btn">
                                 <button class="btn btn-default btn-radius btn-sm btn-addtocart add-product-to-cart" data-product-id="{{$product->product_id}}" data-quantity='1' type="button">@lang('products.add-cart')</button>
-                                <a class="add_wishlist" href="#"><i class="ti-heart"></i></a>
+                                <a class="add_wishlist" data-product-id="{{$product->product_id}}" href="#"><i class="ti-heart"></i></a>
                             </div>
                           </div>
                           <div class="clearfix"></div>

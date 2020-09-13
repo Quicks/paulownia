@@ -33,7 +33,7 @@
                     <div class="heading_s2">
                         <h3>{{$gallery->title}}</h3>
                     </div>
-                    <p class="text-justify">{{$gallery->desc}}</p>
+                    <p class="text-justify">{!!$gallery->desc!!}</p>
                 </div>
 
             </div>

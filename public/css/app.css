@@ -10570,6 +10570,7 @@ body.active {
 .blog_style1 .blog_content,
 .blog_style2 .blog_content {
 	background-color: #fff;
+    min-height: 242px;
 }
 .blog_style1 .blog_title {
 	font-family: 'Lobster Two', cursive;

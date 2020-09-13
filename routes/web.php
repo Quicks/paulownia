@@ -140,7 +140,7 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
         // Registration Routes
         //registration form show
         Route::get('register', 'Webkul\Customer\Http\Controllers\RegistrationController@show')->defaults('_config', [
-            'view' => 'shop::customers.signup.index'
+            'view' => 'public.customers.signup.index'
         ])->name('customer.register.index');
 
         //registration form store
@@ -178,21 +178,21 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
             Route::prefix('account')->group(function () {
                 //Customer Dashboard Route
                 Route::get('index', 'Webkul\Customer\Http\Controllers\AccountController@index')->defaults('_config', [
-                    'view' => 'shop::customers.account.index'
+                    'view' => 'public.customers.account.index'
                 ])->name('customer.account.index');
 
                 //Customer Profile Show
-                Route::get('profile', 'Webkul\Customer\Http\Controllers\CustomerController@index')->defaults('_config', [
-                    'view' => 'shop::customers.account.profile.index'
+                Route::get('profile', 'App\Http\Controllers\CustomerController@index')->defaults('_config', [
+                    'view' => 'public.customers.account.profile.index'
                 ])->name('customer.profile.index');
 
                 //Customer Profile Edit Form Show
-                Route::get('profile/edit', 'Webkul\Customer\Http\Controllers\CustomerController@edit')->defaults('_config', [
+                Route::get('profile/edit', 'App\Http\Controllers\CustomerController@edit')->defaults('_config', [
                     'view' => 'shop::customers.account.profile.edit'
                 ])->name('customer.profile.edit');
 
                 //Customer Profile Edit Form Store
-                Route::post('profile/edit', 'Webkul\Customer\Http\Controllers\CustomerController@update')->defaults('_config', [
+                Route::post('profile/edit', 'App\Http\Controllers\CustomerController@update')->defaults('_config', [
                     'redirect' => 'customer.profile.index'
                 ])->name('customer.profile.edit');
                 /*  Profile Routes Ends Here  */
@@ -200,23 +200,23 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
                 /*    Routes for Addresses   */
                 //Customer Address Show
                 Route::get('addresses', 'Webkul\Customer\Http\Controllers\AddressController@index')->defaults('_config', [
-                    'view' => 'shop::customers.account.address.index'
+                    'view' => 'public.customers.account.address.index'
                 ])->name('customer.address.index');
 
                 //Customer Address Create Form Show
                 Route::get('addresses/create', 'Webkul\Customer\Http\Controllers\AddressController@create')->defaults('_config', [
-                    'view' => 'shop::customers.account.address.create'
+                    'view' => 'public.customers.account.address.create'
                 ])->name('customer.address.create');
 
                 //Customer Address Create Form Store
                 Route::post('addresses/create', 'Webkul\Customer\Http\Controllers\AddressController@store')->defaults('_config', [
-                    'view' => 'shop::customers.account.address.address',
+                    'view' => 'public.customers.account.address.address',
                     'redirect' => 'customer.address.index'
                 ])->name('customer.address.create');
 
                 //Customer Address Edit Form Show
                 Route::get('addresses/edit/{id}', 'Webkul\Customer\Http\Controllers\AddressController@edit')->defaults('_config', [
-                    'view' => 'shop::customers.account.address.edit'
+                    'view' => 'public.customers.account.address.edit'
                 ])->name('customer.address.edit');
 
                 //Customer Address Edit Form Store
@@ -233,13 +233,13 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
                 /* Wishlist route */
                 //Customer wishlist(listing)
                 Route::get('wishlist', 'Webkul\Customer\Http\Controllers\WishlistController@index')->defaults('_config', [
-                    'view' => 'shop::customers.account.wishlist.wishlist'
+                    'view' => 'public.customers.account.wishlist.wishlist'
                 ])->name('customer.wishlist.index');
 
     //             /* Orders route */
     //             //Customer orders(listing)
                 Route::get('orders', 'Webkul\Shop\Http\Controllers\OrderController@index')->defaults('_config', [
-                    'view' => 'shop::customers.account.orders.index'
+                    'view' => 'public.customers.account.orders.index'
                 ])->name('customer.orders.index');
 
     //             //Customer orders view summary and status
@@ -254,9 +254,9 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
 
     //             /* Reviews route */
     //             //Customer reviews
-    //             Route::get('reviews', 'Webkul\Customer\Http\Controllers\CustomerController@reviews')->defaults('_config', [
-    //                 'view' => 'shop::customers.account.reviews.index'
-    //             ])->name('customer.reviews.index');
+                Route::get('reviews', 'Webkul\Customer\Http\Controllers\CustomerController@reviews')->defaults('_config', [
+                    'view' => 'public.customers.account.reviews.index'
+                ])->name('customer.reviews.index');
 
     //             //Customer review delete
     //             Route::get('reviews/delete/{id}', 'Webkul\Shop\Http\Controllers\ReviewController@destroy')->defaults('_config', [

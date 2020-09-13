@@ -22,8 +22,8 @@
 <script>
   $(document).ready(function(){
     setTimeout(function(){
-      $('#flash-messages').fadeOut('slow')
-    }, 8000)
+      $('#flash-message').fadeOut('slow')
+    }, 5000)
   })
 </script>
 

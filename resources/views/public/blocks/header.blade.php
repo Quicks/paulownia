@@ -31,9 +31,14 @@
 													<a class="dropdown-toggle" href="#" data-toggle="dropdown">My Account</a>
 													<div class="dropdown-menu shadow dropdown-menu-right">
 														<ul>
-																<li><a class="dropdown-item" href="my-account.html">My account</a></li>
-																<li><a class="dropdown-item" href="wishlist.html">Wishlist</a></li>
-																<li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+															@if(Auth::guard('customer')->check())
+															<li><a class="dropdown-item" href="/{{$current_locale}}/customer/account/profile">My account</a></li>
+															<li><a class="dropdown-item" href="/{{$current_locale}}/customer/logout">Log out</a></li>
+																@else
+																	<li><a class="dropdown-item" href="/{{$current_locale}}/customer/login">Login</a></li>
+																@endif
+																<!-- <li><a class="dropdown-item" href="wishlist.html">Wishlist</a></li> -->
+																<!-- <li><a class="dropdown-item" href="checkout.html">Checkout</a></li> -->
 														</ul>
 													</div>
 												</li>

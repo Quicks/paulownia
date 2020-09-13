@@ -1,83 +1,78 @@
-@extends('shop::layouts.master')
+<div class="account-content">
 
-@section('page_title')
-    {{ __('shop::app.customer.account.address.edit.page-title') }}
-@endsection
+    <div class="account-layout">
 
-@section('content-wrapper')
+        <form method="post" action="{{ route('customer.address.edit', $address->id) }}" id='edit-address-form'>
 
-    <div class="account-content">
-        @include('shop::customers.account.partials.sidemenu')
+            <div class="account-table-content">
+                @method('PUT')
+                @csrf
 
-        <div class="account-layout">
+                <?php $addresses = explode(PHP_EOL, $address->address1); ?>
+                <div class="form-group">
+                    <label>@lang('profile.street-address')<span class="required">*</span></label>
+                    <input type="text" required class="form-control" name="address1[]" value="{{ isset($addresses[0]) ? $addresses[0] : '' }}"/>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">@lang('profile.country')<span class="required">*</span></label>
+                    <input type="text" required class="form-control" name="country" value="{{ $address->country }}">
+                </div>
+                <input type="hidden" class="form-control" name="name" value='factual'>
+                <div class="form-group">
+                    <label for="country" >@lang('profile.state')<span class="required">*</span></label>
+                    <input type="text" required class="form-control" name="state" value="{{ $address->state }}">
+                </div>
+                <div class="form-group">
+                    <label for="city">@lang('profile.city')<span class="required">*</span></label>
+                    <input type="text" required class="form-control" name="city" value="{{ $address->city }}">
+                </div>
+                
 
-            <div class="account-head mb-15">
-                <span class="back-icon"><a href="{{ route('customer.account.index') }}"><i class="icon icon-menu-back"></i></a></span>
-                <span class="account-heading">{{ __('shop::app.customer.account.address.edit.title') }}</span>
-                <span></span>
-            </div>
-
-            {!! view_render_event('bagisto.shop.customers.account.address.edit.before', ['address' => $address]) !!}
-            
-            <form method="post" action="{{ route('customer.address.edit', $address->id) }}" @submit.prevent="onSubmit">
-
-                <div class="account-table-content">
-                    @method('PUT')
-                    @csrf
-
-                    {!! view_render_event('bagisto.shop.customers.account.address.edit_form_controls.before', ['address' => $address]) !!}
-
-
-                    <?php $addresses = explode(PHP_EOL, $address->address1); ?>
-
-                    <div class="control-group" :class="[errors.has('address1[]') ? 'has-error' : '']">
-                        <label for="address_0" class="required">{{ __('shop::app.customer.account.address.edit.street-address') }}</label>
-                        <input type="text" class="control" name="address1[]" id="address_0" v-validate="'required'" value="{{ isset($addresses[0]) ? $addresses[0] : '' }}" data-vv-as="&quot;{{ __('shop::app.customer.account.address.create.street-address') }}&quot;">
-                        <span class="control-error" v-if="errors.has('address1[]')">@{{ errors.first('address1[]') }}</span>
-                    </div>
-
-                    @if (core()->getConfigData('customer.settings.address.street_lines') && core()->getConfigData('customer.settings.address.street_lines') > 1)
-                        <div class="control-group" style="margin-top: -25px;">
-                            @for ($i = 1; $i < core()->getConfigData('customer.settings.address.street_lines'); $i++)
-                                <input type="text" class="control" name="address1[{{ $i }}]" id="address_{{ $i }}" value="{{ isset($addresses[$i]) ? $addresses[$i] : '' }}">
-                            @endfor
-                        </div>
-                    @endif
-
-                    @include ('shop::customers.account.address.country-state', ['countryCode' => old('country') ?? $address->country, 'stateCode' => old('state') ?? $address->state])
-
-                    <div class="control-group" :class="[errors.has('city') ? 'has-error' : '']">
-                        <label for="city" class="required">{{ __('shop::app.customer.account.address.create.city') }}</label>
-                        <input type="text" class="control" name="city" v-validate="'required|alpha_spaces'" value="{{ $address->city }}" data-vv-as="&quot;{{ __('shop::app.customer.account.address.create.city') }}&quot;">
-                        <span class="control-error" v-if="errors.has('city')">@{{ errors.first('city') }}</span>
-                    </div>
-
-                    <div class="control-group" :class="[errors.has('postcode') ? 'has-error' : '']">
-                        <label for="postcode" class="required">{{ __('shop::app.customer.account.address.create.postcode') }}</label>
-                        <input type="text" class="control" name="postcode" v-validate="'required'" value="{{ $address->postcode }}" data-vv-as="&quot;{{ __('shop::app.customer.account.address.create.postcode') }}&quot;">
-                        <span class="control-error" v-if="errors.has('postcode')">@{{ errors.first('postcode') }}</span>
-                    </div>
-
-                    <div class="control-group" :class="[errors.has('phone') ? 'has-error' : '']">
-                        <label for="phone" class="required">{{ __('shop::app.customer.account.address.create.phone') }}</label>
-                        <input type="text" class="control" name="phone" v-validate="'required'" value="{{ $address->phone }}" data-vv-as="&quot;{{ __('shop::app.customer.account.address.create.phone') }}&quot;">
-                        <span class="control-error" v-if="errors.has('phone')">@{{ errors.first('phone') }}</span>
-                    </div>
-
-                    {!! view_render_event('bagisto.shop.customers.account.address.edit_form_controls.after', ['address' => $address]) !!}
-
-                    <div class="button-group">
-                        <button class="btn btn-primary btn-lg" type="submit">
-                            {{ __('shop::app.customer.account.address.create.submit') }}
-                        </button>
-                    </div>
+                <div class="form-group">
+                    <label for="postcode">@lang('profile.postcode')<span class="required">*</span></label>
+                    <input type="text" required class="form-control" name="postcode" value="{{ $address->postcode }}">
                 </div>
 
-            </form>
+                <div class="form-group">
+                    <label for="phone">@lang('profile.phone')<span class="required">*</span></label>
+                    <input type="text" required class="form-control" name="phone" value="{{ $address->phone }}">
+                </div>
 
-            {!! view_render_event('bagisto.shop.customers.account.address.edit.after', ['address' => $address]) !!}
+                <div class="form-group">
+                    <input class="btn btn-default btn-sm" type="submit" value="{{__('profile.save-address')}}">
+                </div>
 
-        </div>
+            </div>
+
+        </form>
     </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('#edit-address-form').submit(function(event){
+            let addressData = {}
+            event.preventDefault();
 
-@endsection
+            $(this).serializeArray().forEach(function(field){
+                addressData[field.name] = field.value
+            })
+            $.ajax({
+                method: 'POST',
+                url: $(this).attr('action'),
+                data: addressData,
+                success: function(data){
+                    $('#address').html(data)
+                },
+                error: function (request, status, error) {
+                    let errors = request.responseJSON.errors
+                    for(error in errors){
+                        let domWithError = $('input[name="'+ error +'"]')
+                        domWithError.siblings('label').addClass('required')
+                        domWithError.focus()
+                    }
+                }
+            })
+        })
+    })
+</script>

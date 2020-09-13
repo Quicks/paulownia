@@ -19,7 +19,7 @@ class RedirectIfNotCustomer
     {
         if (! Auth::guard($guard)->check()) {
             session()->flash('warning', trans('public-translations.auth-first-wishlist'));
-            return redirect()->route('main');
+            return redirect()->route('customer.session.index');
         } else {
             if (Auth::guard($guard)->user()->status == 0) {
                 Auth::guard($guard)->logout();

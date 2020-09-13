@@ -1,24 +1,6 @@
-@extends('shop::layouts.master')
-
-@section('content-wrapper')
-
 <div class="account-content">
     @inject ('productImageHelper', 'Webkul\Product\Helpers\ProductImage')
-
-    @include('shop::customers.account.partials.sidemenu')
-
     <div class="account-layout">
-
-        <div class="account-head mb-15">
-            <span class="account-heading">{{ __('shop::app.wishlist.title') }}</span>
-
-            @if (count($items))
-            <div class="account-action">
-                <a href="{{ route('customer.wishlist.removeall') }}">{{ __('shop::app.wishlist.deleteall') }}</a>
-            </div>
-            @endif
-            <div class="horizontal-rule"></div>
-        </div>
 
         {!! view_render_event('bagisto.shop.customers.account.wishlist.list.before', ['wishlist' => $items]) !!}
 
@@ -69,4 +51,3 @@
 
     </div>
 </div>
-@endsection

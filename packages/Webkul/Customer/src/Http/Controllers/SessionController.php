@@ -38,7 +38,7 @@ class SessionController extends Controller
     public function show()
     {
         if (auth()->guard('customer')->check()) {
-            return redirect()->route('customer.session.index');
+            return redirect()->route('main');
         } else {
             return view($this->_config['view']);
         }
@@ -49,7 +49,7 @@ class SessionController extends Controller
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-            'g-recaptcha-response' => 'recaptcha',
+            // 'g-recaptcha-response' => 'recaptcha',
         ]);
 
         if (! auth()->guard('customer')->attempt(request(['email', 'password']))) {

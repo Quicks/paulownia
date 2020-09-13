@@ -4,7 +4,7 @@ return [
   'label.title' => 'Title',
   'label.price' => 'Price',
   'label.quantity' => 'Quantity',
-  'label.total' => 'Totat',
+  'label.total' => 'Total',
   'label.remove' => 'Remove from cart',
   'label.proceed_to_checkout' => 'Proceed to checkout',
   'label.cart_totals' => 'Sum of orders',

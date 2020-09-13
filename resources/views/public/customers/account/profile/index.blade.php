@@ -1,73 +1,74 @@
-@extends('shop::layouts.master')
+@extends('layouts.public')
 
-@section('page_title')
-    {{ __('shop::app.customer.account.profile.index.title') }}
-@endsection
+@section('content')
+    @include('public.breadcrumbs', [
+        $breadcrumbs = [
+        ],
+        $pageTitle = 'header-footer.account'
+    ])
 
-@section('content-wrapper')
-
-<div class="account-content">
-
-    @include('shop::customers.account.partials.sidemenu')
-
-    <div class="account-layout">
-
-        <div class="account-head">
-
-            <span class="back-icon"><a href="{{ route('customer.account.index') }}"><i class="icon icon-menu-back"></i></a></span>
-
-            <span class="account-heading">{{ __('shop::app.customer.account.profile.index.title') }}</span>
-
-            <span class="account-action">
-                <a href="{{ route('customer.profile.edit') }}">{{ __('shop::app.customer.account.profile.index.edit') }}</a>
-            </span>
-
-            <div class="horizontal-rule"></div>
+<section>
+	<div class="container">
+        <div class="row">
+        	<div class="col-12">
+                <div class="tab-style1">
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="all" aria-selected="true">@lang('profile.profile')</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="address-tab" data-toggle="tab" href="#address" role="tab" aria-controls="address" aria-selected="false">@lang('profile.address')</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="wishlist-tab" data-toggle="tab" href="#wishlist" role="tab" aria-controls="wishlist" aria-selected="false" data-href="/{{$current_locale}}/customer/account/wishlist">@lang('profile.favorite')</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="orders-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="false" data-href='/{{$current_locale}}/customer/account/orders'>@lang('profile.story')</a>
+                      </li>
+                      <!-- <li class="nav-item">
+                        <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false" data-href='/customer/account/reviews'>Reviews</a>
+                      </li> -->
+                    </ul>
+                    <div class="tab-content shop_info_tab">
+                      <div class="tab-pane fade active show login_form" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        @include('public.customers.account.profile.edit')
+                      </div>
+                      <div class="tab-pane fade login_form" id="address" role="tabpanel" aria-labelledby="address-tab">
+                          @include('public.customers.account.address.index', ['addresses' => auth()->guard('customer')->user()->addresses])
+                      </div>
+                      <div class="tab-pane fade login_form" id="wishlist" role="tabpanel" aria-labelledby="wishlist-tab">
+                      </div>
+                      <div class="tab-pane fade login_form" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                      </div>
+                      <!-- <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                      </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
-
-         {!! view_render_event('bagisto.shop.customers.account.profile.view.before', ['customer' => $customer]) !!}
-
-        <div class="account-table-content" style="width: 50%;">
-            <table style="color: #5E5E5E;">
-                <tbody>
-                    <tr>
-                        <td>{{ __('shop::app.customer.account.profile.fname') }}</td>
-                        <td>{{ $customer->first_name }}</td>
-                    </tr>
-
-                    <tr>
-                        <td>{{ __('shop::app.customer.account.profile.lname') }}</td>
-                        <td>{{ $customer->last_name }}</td>
-                    </tr>
-
-                    <tr>
-                        <td>{{ __('shop::app.customer.account.profile.gender') }}</td>
-                        <td>{{ $customer->gender }}</td>
-                    </tr>
-
-                    <tr>
-                        <td>{{ __('shop::app.customer.account.profile.dob') }}</td>
-                        <td>{{ $customer->date_of_birth }}</td>
-                    </tr>
-
-                    <tr>
-                        <td>{{ __('shop::app.customer.account.profile.email') }}</td>
-                        <td>{{ $customer->email }}</td>
-                    </tr>
-
-                    {{-- @if ($customer->subscribed_to_news_letter == 1)
-                        <tr>
-                            <td> {{ __('shop::app.footer.subscribe-newsletter') }}</td>
-                            <td>
-                                <a class="btn btn-sm btn-primary" href="{{ route('shop.unsubscribe', $customer->email) }}">{{ __('shop::app.subscription.unsubscribe') }} </a>
-                            </td>
-                        </tr>
-                    @endif --}}
-                </tbody>
-            </table>
-        </div>
-
-         {!! view_render_event('bagisto.shop.customers.account.profile.view.after', ['customer' => $customer]) !!}
     </div>
-</div>
+</section>
 @endsection
+@push('scripts')
+<script>
+    $(document).ready(function(){
+        $('a.nav-link').click(function(){
+            let domId = $(this).attr('href')
+            location.hash = domId
+        })
+        $('a.nav-link[data-href]').click(function(){
+            let url = $(this).data('href')
+            let domId = $(this).attr('href')
+            $.ajax({
+                url: url,
+                success: function(data){
+                   $(domId).html(data) 
+                }
+            })
+        })
+        if(location.hash){
+            $('a.nav-link[href="' + location.hash + '"]').trigger('click')
+        }
+    })
+</script>
+@endpush

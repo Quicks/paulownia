@@ -68,7 +68,22 @@ $(document).ready(function(){
     })
     return false
   })
-
+  $(document).on('click', '.add-product-to-wishlist', function(e){
+    var productId = $(this).data('product-id')
+    $.ajax({
+      url: '/api/wishlist/add/' + productId,
+      success: function(data){
+        console.log(data)
+        $.ajax({
+          url: '/api/wishlist',
+          success: function(wishlistData){
+            console.log(wishlistData)
+          }
+        })
+      }
+    })
+    return false
+  })
   $(document).on('click', '.item_remove', function(e){
     var productId = $(this).data('product-id')
     var that = this

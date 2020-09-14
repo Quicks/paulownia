@@ -31,7 +31,7 @@
                     </a>
                 </li>
             </ul>
-            <p>{!! substr($newsItem->text, 0, 200) !!}</p>
+            <p>{!! substr(strip_tags($newsItem->text), 0, 200) !!}</p>
             <a href="{{route('public.news.show', [mb_strtolower(class_basename($newsItem)), $newsItem->id])}}" class="blog_link">{{ __('news.more')}}<i class="ion-ios-arrow-right"></i></a>
         </div>
     </div>

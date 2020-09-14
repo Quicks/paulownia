@@ -28,7 +28,11 @@
 														</div>
 												</li>
 												<li class="dropdown">
-													<a class="dropdown-toggle" href="#" data-toggle="dropdown">{{Auth::guard('customer')->user()->email}}</a>
+													@if(Auth::guard('customer')->check())
+														<a class="dropdown-toggle" href="#" data-toggle="dropdown">{{Auth::guard('customer')->user()->email}}</a>
+													@else
+														<a class="dropdown-toggle" href="#" data-toggle="dropdown">My account</a>
+													@endif	
 													<div class="dropdown-menu shadow dropdown-menu-right">
 														<ul>
 															@if(Auth::guard('customer')->check())

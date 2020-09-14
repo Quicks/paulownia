@@ -17,14 +17,14 @@
 				anchorClass: 'sf-with-ul',
 				menuArrowClass: 'sf-arrows'
 			},
-			outerClick = (function() {
-				$(window).load(function() {
-					$('body').children().on('click.superclick', function() {
-						var $allMenus = $('.sf-js-enabled');
-						$allMenus.superclick('reset');
-					});
-				});
-			})(),
+			// outerClick = (function() {
+			// 	$(window).load(function() {
+			// 		$('body').children().on('click.superclick', function() {
+			// 			var $allMenus = $('.sf-js-enabled');
+			// 			$allMenus.superclick('reset');
+			// 		});
+			// 	});
+			// })(),
 			toggleMenuClasses = function($menu, o) {
 				var classes = c.menuClass;
 				if (o.cssArrows) {
@@ -61,7 +61,8 @@
 			over = function() {
 				var $this = $(this),
 					o = getOptions($this);
-				$this.siblings().superclick('hide').end().superclick('show');
+				// $this.siblings().superclick('hide').end().superclick('show');
+				$this.siblings().end().superclick('show');
 			},
 			out = function() {
 				var $this = $(this),

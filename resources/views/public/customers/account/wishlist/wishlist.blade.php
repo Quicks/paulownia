@@ -4,7 +4,7 @@
 
         {!! view_render_event('bagisto.shop.customers.account.wishlist.list.before', ['wishlist' => $items]) !!}
 
-        <div class="account-items-list">
+        <div class="account-items-list row">
             @if ($items->count())
                 @foreach ($items as $item)
                     @include('public.products.product_card', ['product' => $item->product, 'customClasses' => 'col-xl-3'])

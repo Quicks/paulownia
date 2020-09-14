@@ -26,3 +26,7 @@
   list-style: none;
   padding-left: 10px;
 }
+
+.pr_action_btn li a.wishlisted {
+  background-color: #369000;
+}

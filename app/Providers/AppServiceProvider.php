@@ -51,10 +51,16 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function ($view) {
             $current_locale = app()->getLocale();
             $menus = Menu::parents()->get();
+            $customerId = '-1';
+            if(auth()->guard('customer')->user()){
+                $customerId = auth()->guard('customer')->user()->id;
+            }
             $wishlistItems = \Webkul\Customer\Models\Wishlist::where([
                 'channel_id' => core()->getCurrentChannel()->id,
-                'customer_id' => auth()->guard('customer')->user()->id]
+                'customer_id' => $customerId 
+                ]
             );
+            
             $view->with('menus',$menus)->with('current_locale', $current_locale)->with('wishlist_items', $wishlistItems);
         });
 

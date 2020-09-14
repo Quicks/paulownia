@@ -14,4 +14,8 @@ class Customer extends Model
     {
         return $this->hasMany('App\Models\Order', 'customer_id');
     }
+
+    public function fullName(){
+        return $this->first_name . ' ' . $this->last_name;
+    }
 }

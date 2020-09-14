@@ -30,3 +30,6 @@
 .pr_action_btn li a.wishlisted {
   background-color: #369000;
 }
+.pull-right{
+  float: right;
+}

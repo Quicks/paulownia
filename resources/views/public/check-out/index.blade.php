@@ -28,6 +28,8 @@
     <section>
         <div class="container">
           <div class="row">
+            @if(!Auth::guard('customer')->user())
+
               <div class="col-md-6">
                   <div class="toggle_info">
                       <span>@lang('checkout.label.already_have_account') <a href="#loginform" data-toggle="collapse" class="collapsed" aria-expanded="false">@lang('checkout.label.login_page')</a></span>
@@ -59,7 +61,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <div class="toggle_info">
                     <span>Have a coupon? <a href="#coupon" data-toggle="collapse" class="collapsed" aria-expanded="false">Click here to enter your code</a></span>
                     </div>
@@ -74,7 +76,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+              @else
+                <div id='user-addresses' data-addresses='{{Auth::guard("customer")->user()->addresses->toJson()}}'></div>
+              @endif
+              
             </div>
             <div class="row">
               <div class="col-md-12">
@@ -93,11 +99,11 @@
                               <input type="text" v-validate="'required'" class="form-control" name="billing.last_name" v-model='addresses.billing_address.last_name'>
                               <span v-show="errors.has('billing.last_name')" class="help error is-danger">@{{ errors.first('billing.last_name') }}</span>
                             </div>
-                            <div class="form-group col-md-6">
+                            <!-- <div class="form-group col-md-6">
                               <label>@lang('checkout.label.company_name')</label>
-                              <input class="form-control" v-validate="'required'" type="text" name="billing.company_name" v-model='addresses.billing_address.company_name'>
+                              <input class="form-control" required v-validate="'required'" type="text" name="billing.company_name" v-model='addresses.billing_address.company_name'>
                               <span v-show="errors.has('billing.company_name')" class="help error is-danger">@{{ errors.first('billing.company_name') }}</span>
-                            </div>
+                            </div> -->
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.country')<span class="required">*</span></label>
                               <div class="custom_select">
@@ -111,8 +117,8 @@
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.address')<span class="required">*</span></label>
-                              <input type="text" v-validate="'required'" v-model='addresses.billing_address.street_address' class="form-control" name="billing.street_address" required="">
-                              <span v-show="errors.has('billing.street_address')" class="help error is-danger">@{{ errors.first('billing.street_address') }}</span>
+                              <input type="text" v-validate="'required'" v-model='addresses.billing_address.address1' class="form-control" name="billing.address1" required="">
+                              <span v-show="errors.has('billing.address1')" class="help error is-danger">@{{ errors.first('billing.address1') }}</span>
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.city')<span class="required">*</span></label>
@@ -126,7 +132,7 @@
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.postcode')<span class="required">*</span></label>
-                              <input class="form-control" v-validate="'required'" required type="text" name="billing.postcode" v-model='addresses.billing_address.zip'>
+                              <input class="form-control" v-validate="'required'" required type="text" name="billing.postcode" v-model='addresses.billing_address.postcode'>
                               <span v-show="errors.has('billing.postcode')" class="help error is-danger">@{{ errors.first('billing.postcode') }}</span>
                             </div>
                             <div class="form-group col-md-6">
@@ -166,11 +172,11 @@
                               <input type="text" v-validate="'required'" class="form-control" name="shipping.last_name" v-model='addresses.shipping_address.last_name'>
                               <span v-show="errors.has('shipping.last_name')" class="help error is-danger">@{{ errors.first('shipping.last_name') }}</span>
                             </div>
-                            <div class="form-group col-md-6">
+                            <!-- <div class="form-group col-md-6">
                               <label>@lang('checkout.label.company_name')</label>
                               <input class="form-control" v-validate="'required'" type="text" name="shipping.company_name" v-model='addresses.shipping_address.company_name'>
                               <span v-show="errors.has('shipping.company_name')" class="help error is-danger">@{{ errors.first('shipping.company_name') }}</span>
-                            </div>
+                            </div> -->
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.country')<span class="required">*</span></label>
                               <div class="custom_select">
@@ -184,8 +190,8 @@
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.address')<span class="required">*</span></label>
-                              <input type="text" v-validate="'required'" v-model='addresses.shipping_address.street_address' class="form-control" name="shipping.street_address" required="">
-                              <span v-show="errors.has('shipping.street_address')" class="help error is-danger">@{{ errors.first('shipping.street_address') }}</span>
+                              <input type="text" v-validate="'required'" v-model='addresses.shipping_address.address1' class="form-control" name="shipping.address1" required="">
+                              <span v-show="errors.has('shipping.address1')" class="help error is-danger">@{{ errors.first('shipping.address1') }}</span>
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.city')<span class="required">*</span></label>
@@ -199,7 +205,7 @@
                             </div>
                             <div class="form-group col-md-6">
                               <label>@lang('checkout.label.postcode')<span class="required">*</span></label>
-                              <input class="form-control" v-validate="'required'" required type="text" name="shipping.postcode" v-model='addresses.shipping_address.zip'>
+                              <input class="form-control" v-validate="'required'" required type="text" name="shipping.postcode" v-model='addresses.shipping_address.postcode'>
                               <span v-show="errors.has('shipping.postcode')" class="help error is-danger">@{{ errors.first('shipping.postcode') }}</span>
                             </div>
                             <div class="form-group col-md-6">
@@ -321,7 +327,6 @@
 
         </div>
     </section>
-  
   </div>
 @endsection
 
@@ -339,28 +344,28 @@
         data: {
           addresses:{
             billing_address: {
-              company_name: '',
+              // company_name: '',
               first_name: '',
               last_name: '',
               email: '',
-              street_address: '',
+              address1: '',
               city: '',
               country: '',
               state: '',
-              zip: '',
+              postcode: '',
               phone: '',
               email: ''
             },
             shipping_address: {
-              company_name: '',
+              // company_name: '',
               first_name: '',
               last_name: '',
               email: '',
-              street_address: '',
+              address1: '',
               city: '',
               country: '',
               state: '',
-              zip: '',
+              postcode: '',
               phone: ''
             }
           },
@@ -370,7 +375,7 @@
           rates: @json($rates),
           createAccount: false,
           use_for_shipping: true,
-          shipping_method: 'flatrate',
+          shipping_method: 'shippingToSpainPortugal',
           payment_method: 'cashondelivery',
           createAccountPass: '',
           coupon: '',
@@ -385,8 +390,9 @@
             return parseInt(this.cart.grand_total) + parseInt(this.shippingCalc())
           }
         },
-        mounted(){
-          this.retrieveCartInfo()
+        async mounted(){
+          await this.retrieveCustomerInfo()
+          await this.retrieveCartInfo()
         },
         methods: {
           shippingCalc(){
@@ -408,11 +414,20 @@
           price_format(number, size=2){
             return parseFloat(number).toFixed(size) + ' ' + this.cart.base_currency_code
           },
+          retrieveCustomerInfo(){
+            const addresses = document.querySelector('#user-addresses');
+            if(addresses){
+              this.addresses.billing_address = JSON.parse(addresses.dataset.addresses)[0]
+            }
+          },
           retrieveCartInfo(){
             var that = this
             this.$http.get('/api/checkout/cart')
               .then(function(response){
                 that.cart = response.data.data
+                that.addresses.billing_address.email = response.data.data.customer_email
+                that.addresses.billing_address.first_name = response.data.data.customer_first_name
+                that.addresses.billing_address.last_name = response.data.data.customer_last_name
               })
           },
           async onSubmit(){
@@ -511,17 +526,17 @@
               var res = {
                 billing: {
                   address1:  [
-                    billingAddress.street_address
+                    billingAddress.address1
                   ],
                   use_for_shipping: billingAddress.use_for_shipping,
                   first_name: billingAddress.first_name,
                   last_name: billingAddress.last_name,
                   email: billingAddress.email,
                   phone: billingAddress.phone,
-                  postcode: billingAddress.zip,
+                  postcode: billingAddress.postcode,
                   state: billingAddress.state,
                   country: billingAddress.country,
-                  company_name: billingAddress.company_name,
+                  // company_name: billingAddress.company_name,
                   city: billingAddress.city,
                 },
                 shipping: {

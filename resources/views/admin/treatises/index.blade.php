@@ -2,7 +2,7 @@
 @section('pageTitle')
     @lang('admin.treatises.index.title')
 @endsection
-                    
+
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -25,6 +25,7 @@
                                         <th>@lang('admin.treatises.index.table.link_to_public')</th>
                                         <th>@lang('admin.treatises.index.table.publish')</th>
                                         <th>@lang('admin.treatises.index.table.publish_date')</th>
+                                        <th>@lang('admin.treatises.index.table.langs')</th>
                                         <th>@lang('admin.treatises.index.table.files')</th>
                                         <th>@lang('admin.btns.actions')</th>
                                     </tr>
@@ -41,6 +42,13 @@
                                             @endif
                                         </td>
                                         <td>{{ $item->publish_date }}</td>
+                                        <td>
+                                            @foreach($item->translations as $trans)
+                                                @if(!empty($trans->title) && !empty($trans->text))
+                                                    {{ $trans->locale }}
+                                                @endif
+                                            @endforeach
+                                        </td>
                                         <td>
                                             <a href='{{$item->video}}' target='_blank' rel="noopener noreferrer">{{$item->video}}</a>
                                         </td>

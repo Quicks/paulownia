@@ -2,7 +2,7 @@
 @section('pageTitle')
     @lang('admin.news.index.title')
 @endsection
-                    
+
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -27,6 +27,7 @@
                                         <th>@lang('admin.news.index.table.publish_date')</th>
                                         <th>@lang('admin.news.index.table.images')</th>
                                         <th>@lang('admin.news.index.table.video')</th>
+                                        <th>@lang('admin.news.index.table.langs')</th>
                                         <th>@lang('admin.btns.actions')</th>
                                     </tr>
                                 </thead>
@@ -49,7 +50,13 @@
                                         </td>
                                         <td>
                                             <a href='{{$item->video}}' target='_blank' rel="noopener noreferrer">{{$item->video}}</a>
-                                            
+                                        </td>
+                                        <td>
+                                            @foreach($item->translations as $trans)
+                                                @if(!empty($trans->title) && !empty($trans->text))
+                                                    {{ $trans->locale }}
+                                                @endif
+                                            @endforeach
                                         </td>
                                         <td>
                                             @if(bouncer()->hasPermission('news.update'))

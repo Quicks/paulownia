@@ -29,6 +29,7 @@ return [
   'article.index.table.publish' => 'Публиковать?',
   'article.index.table.publish_date' => 'Дата публикации',
   'article.index.table.images' => 'Картинки',
+  'article.index.table.langs' => 'Языки',
   'article.edit.title' => 'Редактирование статьи',
   'article.create.title' => 'Создание статьи',
 
@@ -38,6 +39,7 @@ return [
   'news.index.table.publish' => 'Публиковать?',
   'news.index.table.publish_date' => 'Дата публикации',
   'news.index.table.images' => 'Картинки',
+  'news.index.table.langs' => 'Языки',
   'news.edit.title' => 'Редактирование статьи',
   'news.create.title' => 'Создание новости',
 
@@ -46,6 +48,7 @@ return [
   'treatises.index.table.publish' => 'Публиковать?',
   'treatises.index.table.publish_date' => 'Дата публикации',
   'treatises.index.table.files' => 'Файлы',
+  'treatises.index.table.langs' => 'Языки',
   'treatises.edit.title' => 'Редактирование трактата',
   'treatises.create.title' => 'Создание трактата',
 
@@ -70,6 +73,7 @@ return [
   'offices.create.title' => 'Создание официального представительства',
 
   'galleries.index.title' => 'Галереи',
+  'galleries.index.table.langs' => 'Языки',
   'galleries.edit.title' => 'Редактирование галереи',
   'galleries.create.title' => 'Создание галереи',
 
@@ -116,6 +120,7 @@ return [
   'products.form.tabs.categories' => 'Категории',
   'product.index.table.link_to_public' => 'Ссылка на публичную часть',
   'product.index.table.publish' => 'Ссылка на публичную часть',
+  'product.index.table.langs' => 'Языки',
 
   'orders.index.title' => 'Заказы',
   'orders.index.table.payment_method' => 'Способ оплаты',

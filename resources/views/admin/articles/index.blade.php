@@ -2,7 +2,7 @@
 @section('pageTitle')
     @lang('admin.article.index.title')
 @endsection
-                    
+
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -25,6 +25,7 @@
                                         <th>@lang('admin.article.index.table.link_to_public')</th>
                                         <th>@lang('admin.article.index.table.publish')</th>
                                         <th>@lang('admin.article.index.table.publish_date')</th>
+                                        <th>@lang('admin.article.index.table.langs')</th>
                                         <th>@lang('admin.article.index.table.images')</th>
                                         <th>@lang('admin.btns.actions')</th>
                                     </tr>
@@ -41,6 +42,13 @@
                                             @endif
                                         </td>
                                         <td>{{ $item->publish_date }}</td>
+                                        <td>
+                                            @foreach($item->translations as $trans)
+                                                @if(!empty($trans->title) && !empty($trans->text))
+                                                    {{ $trans->locale }}
+                                                @endif
+                                            @endforeach
+                                        </td>
                                         <td>
                                             @foreach($item->images as $image)
                                                 <img src="/storage/{{$image->getThumbnailAttribute()}}" class='img-thumbnail admin-thumbnail'/>

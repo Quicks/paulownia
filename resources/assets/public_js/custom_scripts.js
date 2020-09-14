@@ -69,17 +69,29 @@ $(document).ready(function(){
     return false
   })
   $(document).on('click', '.add-product-to-wishlist', function(e){
+    let that = this
     var productId = $(this).data('product-id')
     $.ajax({
       url: '/api/wishlist/add/' + productId,
-      success: function(data){
-        console.log(data)
-        $.ajax({
-          url: '/api/wishlist',
-          success: function(wishlistData){
-            console.log(wishlistData)
-          }
-        })
+      success: function(response){
+        if(response.data){
+          $.magnificPopup.open({
+            items: {
+              src: $('#wishlist-added-popup').html(),
+              type: 'inline'
+            }
+          });
+          $(that).addClass('wishlisted')
+        }else{
+          $.magnificPopup.open({
+            items: {
+              src: $('#wishlist-removed-popup').html(),
+              type: 'inline'
+            }
+          });
+          $(that).removeClass('wishlisted')
+        }
+        
       }
     })
     return false

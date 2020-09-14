@@ -75,7 +75,16 @@
     </main>
     @include('public/blocks/footer')
 
-
+    <div id="wishlist-added-popup" class="white-popup mfp-hide">
+        <div class='wishlist-added'>
+            @lang('wishlist.added')
+        </div>
+    </div>
+    <div id="wishlist-removed-popup" class="white-popup mfp-hide">
+        <div class='wishlist-removed'>
+            @lang('wishlist.removed')
+        </div>
+    </div>
 </div>
 @include('cookieConsent::index')
 

@@ -47,10 +47,15 @@ class AppServiceProvider extends ServiceProvider
                 ]
             );
         });
+        
         view()->composer('*', function ($view) {
             $current_locale = app()->getLocale();
             $menus = Menu::parents()->get();
-            $view->with('menus',$menus)->with('current_locale', $current_locale);
+            $wishlistItems = \Webkul\Customer\Models\Wishlist::where([
+                'channel_id' => core()->getCurrentChannel()->id,
+                'customer_id' => auth()->guard('customer')->user()->id]
+            );
+            $view->with('menus',$menus)->with('current_locale', $current_locale)->with('wishlist_items', $wishlistItems);
         });
 
         Blade::directive('money', function ($amount) {

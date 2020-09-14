@@ -3345,6 +3345,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .pr_action_btn li a.wishlisted {
   background-color: #369000;
 }
+.pull-right{
+  float: right;
+}
 @keyframes numberUpdate {
   0% {color: green;}
   50% {color: yellow;}

@@ -24,7 +24,7 @@
                     <label for="country">@lang('profile.country')<span class="required">*</span></label>
                     <input type="text" required class="form-control" name="country">
                 </div>
-                <input type="hidden" class="form-control" name="name" value='factual'>
+                <input type="hidden" class="form-control" name="name" value='billing'>
                 <div class="form-group">
                     <label for="country" >@lang('profile.state')<span class="required">*</span></label>
                     <input type="text" required class="form-control" name="state">
@@ -53,6 +53,11 @@
         </form>
     </div>
 </div>
+<div id="created-address-popup" class="white-popup mfp-hide">
+    <div>
+        @lang('profile.created-address')
+    </div>
+</div>
 <script>
     $(document).ready(function(){
         $('#create-address-form').submit(function(event){
@@ -67,6 +72,12 @@
                 url: $(this).attr('action'),
                 data: addressData,
                 success: function(data){
+                    $.magnificPopup.open({
+                        items: {
+                        src: $('#created-address-popup').html(),
+                        type: 'inline'
+                        }
+                    });
                     $('#address').html(data)
                 },
                 error: function (request, status, error) {

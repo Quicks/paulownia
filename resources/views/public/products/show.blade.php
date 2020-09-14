@@ -102,9 +102,9 @@
                       <li class="nav-item">
                         <a class="nav-link" id="Additional-info-tab" data-toggle="tab" href="#Additional-info" role="tab" aria-controls="Additional-info" aria-selected="false">Additional info</a>
                       </li>
-                      <li class="nav-item">
+                      <!-- <li class="nav-item">
                         <a class="nav-link" id="Reviews-tab" data-toggle="tab" href="#Reviews" role="tab" aria-controls="Reviews" aria-selected="false">Reviews (2)</a>
-                      </li>
+                      </li> -->
                       <li class="nav-item">
                         <a class="nav-link" id="Comments-tab" data-toggle="tab" href="#Comments" role="tab" aria-controls="Comments" aria-selected="false">{{__('comments.comment')}} ({{count($product->comments)}})</a>
                       </li>
@@ -165,7 +165,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="review_form field_form">
+                        <!-- <div class="review_form field_form">
                             <h5>Add a review</h5>
                             <form class="row mt-3">
                                 <div class="form-group col-12">
@@ -191,13 +191,13 @@
                                     <button type="submit" class="btn btn-default" name="submit" value="Submit">Submit Review</button>
                                 </div>
                             </form>
-                        </div>
+                        </div> -->
                       </div>
                       <div class="tab-pane fade" id="Comments" role="tabpanel" aria-labelledby="Comments-tab">
                           @if($product->comments()->parents()->get())
                               @include('public.comments.index', ['comments' => $product->comments()->parents()->get()])
                           @endif
-                          @if(\Illuminate\Support\Facades\Auth::check())
+                          @if(\Illuminate\Support\Facades\Auth::guard('customer')->check())
                               <div class="posts-title">
                                   <h5>{{ __('comments.write_a_comment')}}</h5>
                               </div>

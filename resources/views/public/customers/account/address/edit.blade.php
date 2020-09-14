@@ -18,7 +18,7 @@
                     <label for="country">@lang('profile.country')<span class="required">*</span></label>
                     <input type="text" required class="form-control" name="country" value="{{ $address->country }}">
                 </div>
-                <input type="hidden" class="form-control" name="name" value='factual'>
+                <input type="hidden" class="form-control" name="name" value='billing'>
                 <div class="form-group">
                     <label for="country" >@lang('profile.state')<span class="required">*</span></label>
                     <input type="text" required class="form-control" name="state" value="{{ $address->state }}">
@@ -41,11 +41,19 @@
 
                 <div class="form-group">
                     <input class="btn btn-default btn-sm" type="submit" value="{{__('profile.save-address')}}">
+                    <a class='delete-address-btn btn btn-danger btn-sm pull-right' href="{{ route('address.delete', $address->id) }}" >
+                        @lang('profile.delete')
+                    </a>
                 </div>
-
+                
             </div>
 
         </form>
+    </div>
+</div>
+<div id="edited-address-popup" class="white-popup mfp-hide">
+    <div class=''>
+        @lang('profile.edited-address')
     </div>
 </div>
 <script>
@@ -63,6 +71,12 @@
                 data: addressData,
                 success: function(data){
                     $('#address').html(data)
+                    $.magnificPopup.open({
+                        items: {
+                        src: $('#edited-address-popup').html(),
+                        type: 'inline'
+                        }
+                    });
                 },
                 error: function (request, status, error) {
                     let errors = request.responseJSON.errors

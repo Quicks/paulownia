@@ -28,15 +28,15 @@
 														</div>
 												</li>
 												<li class="dropdown">
-													<a class="dropdown-toggle" href="#" data-toggle="dropdown">My Account</a>
+													<a class="dropdown-toggle" href="#" data-toggle="dropdown">{{Auth::guard('customer')->user()->email}}</a>
 													<div class="dropdown-menu shadow dropdown-menu-right">
 														<ul>
 															@if(Auth::guard('customer')->check())
-															<li><a class="dropdown-item" href="/{{$current_locale}}/customer/account/profile">My account</a></li>
-															<li><a class="dropdown-item" href="/{{$current_locale}}/customer/logout">Log out</a></li>
-																@else
-																	<li><a class="dropdown-item" href="/{{$current_locale}}/customer/login">Login</a></li>
-																@endif
+																<li><a class="dropdown-item" href="/{{$current_locale}}/customer/account/profile">My account</a></li>
+																<li><a class="dropdown-item" href="/{{$current_locale}}/customer/logout">Log out</a></li>
+															@else
+																<li><a class="dropdown-item" href="/{{$current_locale}}/customer/login">Login</a></li>
+															@endif
 																<!-- <li><a class="dropdown-item" href="wishlist.html">Wishlist</a></li> -->
 																<!-- <li><a class="dropdown-item" href="checkout.html">Checkout</a></li> -->
 														</ul>

@@ -187,14 +187,14 @@
 {{--                </div> --}}
 
         @endif
-        @if(bouncer()->hasPermission('cart-rule'))
-            <li>
-                <a href="{{route('admin.cart-rule.index')}}">
-                    <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>@lang('admin.sidebar.links.shop.promotions')</span>
-                </a>
-            </li>
-        @endif
+{{--        @if(bouncer()->hasPermission('cart-rule'))--}}
+{{--            <li>--}}
+{{--                <a href="{{route('admin.cart-rule.index')}}">--}}
+{{--                    <i class="glyph-icon icon-linecons-tv"></i>--}}
+{{--                    <span>@lang('admin.sidebar.links.shop.promotions')</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--        @endif--}}
 {{--        @if(bouncer()->hasPermission('locales'))--}}
 {{--            <li>--}}
 {{--                <a href="#" title="Elements">--}}
@@ -217,14 +217,14 @@
 {{--            </li>--}}
 {{--        @endif--}}
 
-        @if(bouncer()->hasPermission('configuration'))
-            <li>
-                <a href="{{route('admin.configuration.index')}}">
-                    <i class="glyph-icon icon-linecons-tv"></i>
-                    <span>@lang('admin.sidebar.links.shop.configure')</span>
-                </a>
-            </li>
-        @endif
+{{--        @if(bouncer()->hasPermission('configuration'))--}}
+{{--            <li>--}}
+{{--                <a href="{{route('admin.configuration.index')}}">--}}
+{{--                    <i class="glyph-icon icon-linecons-tv"></i>--}}
+{{--                    <span>@lang('admin.sidebar.links.shop.configure')</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--        @endif--}}
         @if(bouncer()->hasPermission('certificates'))
             <li>
                 <a class="{{Request::is('admin/certificates*') ? "custom-admin-sidebar-a-active" : ""}}"

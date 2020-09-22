@@ -195,7 +195,10 @@
                       </div>
                       <div class="tab-pane fade" id="Comments" role="tabpanel" aria-labelledby="Comments-tab">
                           @if($product->comments()->parents()->get())
-                              @include('public.comments.index', ['comments' => $product->comments()->parents()->get()])
+                              @include('public.comments.index', [
+                                  'comments' => $product->comments()->parents()->get(),
+                                  'model' => $product
+                              ])
                           @endif
                           @if(\Illuminate\Support\Facades\Auth::guard('customer')->check())
                               <div class="posts-title">
@@ -213,7 +216,7 @@
                                   </div>
                                   <div class="posts-title">
                                       {{ __('comments.leave_comment_message_begin')}}
-                                      <a href="/login">{{ __('comments.leave_comment_message_logged_in')}}</a>
+                                      <a href="/customer/login">{{ __('comments.leave_comment_message_logged_in')}}</a>
                                       {{ __('comments.leave_comment_message_end')}}
                                   </div>
                               </div>

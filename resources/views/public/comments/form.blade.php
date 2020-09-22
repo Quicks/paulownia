@@ -2,10 +2,10 @@
     {{ csrf_field() }}
     <div class="row">
         <div class="form-group col-md-4">
-            <input name="owner" class="form-control" placeholder="{{ __('comments.your_name')}}" required="required" type="text">
+            <input name="owner" class="form-control" placeholder="{{ __('comments.your_name')}}" required="required" type="text" value="{{ Auth::guard('customer')->user()->first_name ?? '' }}">
         </div>
         <div class="form-group col-md-4">
-            <input name="email" class="form-control" placeholder="{{ __('comments.your_email')}}" required="required" type="email">
+            <input name="email" class="form-control" placeholder="{{ __('comments.your_email')}}" required="required" type="email" value="{{ Auth::guard('customer')->user()->email ?? '' }}">
         </div>
         <div class="form-group col-md-4">
             <input name="website" class="form-control" placeholder="{{ __('comments.your_website')}}" required="required" type="text">

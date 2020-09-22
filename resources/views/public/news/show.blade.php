@@ -99,9 +99,12 @@
                                 <h5>({{count($news->comments)}}) {{ __('comments.comment')}}</h5>
                             </div>
                             @if($news->comments()->parents()->get())
-                                @include('public.comments.index', ['comments' => $news->comments()->parents()->get()])
+                                @include('public.comments.index', [
+                                    'comments' => $news->comments()->parents()->get(),
+                                    'model' => $news
+                                ])
                             @endif
-                            @if(\Illuminate\Support\Facades\Auth::check())
+                            @if(Auth::guard('customer')->check())
                                 <div class="posts-title">
                                     <h5>{{ __('comments.write_a_comment')}}</h5>
                                 </div>
@@ -117,7 +120,7 @@
                                     </div>
                                     <div class="posts-title">
                                         {{ __('comments.leave_comment_message_begin')}}
-                                        <a href="/login">{{ __('comments.leave_comment_message_logged_in')}}</a>
+                                        <a href="/customer/login">{{ __('comments.leave_comment_message_logged_in')}}</a>
                                         {{ __('comments.leave_comment_message_end')}}
                                     </div>
                                 </div>

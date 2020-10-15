@@ -193,6 +193,11 @@ return [
   'certificates.index.table.string' => 'Строка',
   'certificates.index.table.publish' => 'Публиковать?',
 
+  'custom_pages.index.title' => 'Кастомные страницы',
+  'custom_pages.index.table.parent_link' => 'Ссылка на родителя',
+  'custom_pages.create.title' => 'Создать кастомную страницу',
+  'custom_pages.edit.title' => 'Редактировать кастомную страницу',
+
   'form.main' => 'Общая инфа',
   'form.lang.en' => 'На английском',
   'form.lang.es' => 'На испанском',
@@ -238,6 +243,7 @@ return [
   'sidebar.links.public.our_service' => 'Наши сервисы',
   'sidebar.links.public.slider' => 'Слайдер',
   'sidebar.links.public.menus' => 'Меню',
+  'sidebar.links.public.custom_pages' => 'Кастомные стран.',
   'sidebar.links.public.official_offices' => 'Оф. представительства',
   'sidebar.links.shop.title' => 'Магазин',
   'sidebar.links.shop.dashboard' => 'Панель магазина',

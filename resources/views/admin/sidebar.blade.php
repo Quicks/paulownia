@@ -73,6 +73,12 @@
                                     <span>@lang('admin.sidebar.links.public.menus')</span>
                             </a>
                         </li>
+                        <li>
+                            <a class="{{Request::is('admin/custom_pages') ? "custom-admin-sidebar-a-active" : ""}}"
+                                href="{{route('custom_pages.index')}}">
+                                    <span>@lang('admin.sidebar.links.public.custom_pages')</span>
+                            </a>
+                        </li>
                     </ul>
 
                 </div>

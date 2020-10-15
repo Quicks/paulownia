@@ -193,6 +193,11 @@ return [
   'certificates.index.table.string' => 'Línea',
   'certificates.index.table.publish' => 'Publicar?',
 
+  'custom_pages.index.title' => 'Paginas personalizadas',
+  'custom_pages.index.table.parent_link' => 'Enlace principal',
+  'custom_pages.create.title' => 'Crear página personalizada',
+  'custom_pages.edit.title' => 'Editar página personalizada',
+
   'form.main' => 'Información general',
   'form.lang.en' => 'En inglés',
   'form.lang.es' => 'En español',
@@ -238,6 +243,7 @@ return [
   'sidebar.links.public.our_service' => 'Nuestros servicios',
   'sidebar.links.public.slider' => 'Deslizador',
   'sidebar.links.public.menus' => 'Menú',
+  'sidebar.links.public.custom_pages' => 'Paginas personalizadas',
   'sidebar.links.public.official_offices' => 'Concesionarios oficiales',
   'sidebar.links.shop.title' => 'Puntuación',
   'sidebar.links.shop.dashboard' => 'Tablero de tienda',

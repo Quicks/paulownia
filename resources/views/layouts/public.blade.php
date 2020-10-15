@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}?v9">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/css/lightgallery.css" />
     <link rel="stylesheet" href="{{ asset('css/jquery.justified.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/js/lightgallery.js"></script>
@@ -61,7 +62,7 @@
 <body>
 
 <div id="app" class="container-fluid p-0">
-    
+
     @include('public/blocks/preloader')
     @include('public/blocks/header')
     <main class="main-background">

@@ -50,6 +50,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/factura/generate/{id}', 'Webkul\Admin\Http\Controllers\Sales\InvoiceController@generateDocument')->name('factura');
         Route::view('/welcome', 'admin.dashboard')->name('admin.welcome');
         Route::resource('news', 'App\Http\Controllers\Admin\\NewsController');
+        Route::resource('custom_pages', 'App\Http\Controllers\Admin\\CustomPagesController');
         Route::resource('galleries', 'App\Http\Controllers\Admin\\GalleriesController');
         Route::resource('treatises', 'App\Http\Controllers\Admin\\TreatisesController');
         Route::resource('offices', 'App\Http\Controllers\Admin\\OfficesController');
@@ -338,10 +339,10 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
     //     'redirect' => 'address.index'
     // ])->name('address.edit');
     // Route::post('/write-to-us', 'App\Http\Controllers\WriteToUsController@send')->name('write-to-us');
+    Route::get('/{link}', 'App\Http\Controllers\CustomPagesController@show');
 
 });
 
 Route::get('/certificate/{code}', 'App\Http\Controllers\CertificateController')->name('certificate');
-
 
 Route::fallback('App\Http\Controllers\HomeController@notFound');

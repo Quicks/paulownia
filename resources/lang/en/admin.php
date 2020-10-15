@@ -192,6 +192,11 @@ return [
   'certificates.index.table.string' => 'String',
   'certificates.index.table.publish' => 'Publish?',
 
+  'custom_pages.index.title' => 'Custom pages',
+  'custom_pages.index.table.parent_link' => 'Parent link',
+  'custom_pages.create.title' => 'Create custom page',
+  'custom_pages.edit.title' => 'Edit custom page',
+
   'form.main' => 'General info',
   'form.lang.en' => 'In English',
   'form.lang.es' => 'In Spanish',
@@ -237,6 +242,7 @@ return [
   'sidebar.links.public.our_service' => 'Our services',
   'sidebar.links.public.slider' => 'Slider',
   'sidebar.links.public.menus' => 'Menu',
+  'sidebar.links.public.custom_pages' => 'Custom pages',
   'sidebar.links.public.official_offices' => 'Official dealerships',
   'sidebar.links.shop.title' => 'Shop',
   'sidebar.links.shop.dashboard' => 'Dashboard shop',

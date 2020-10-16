@@ -194,7 +194,7 @@ return [
   'certificates.index.table.publish' => 'Publicar?',
 
   'custom_pages.index.title' => 'Paginas personalizadas',
-  'custom_pages.index.table.parent_link' => 'Enlace principal',
+  'custom_pages.index.table.siblings' => 'Hermanas',
   'custom_pages.create.title' => 'Crear página personalizada',
   'custom_pages.edit.title' => 'Editar página personalizada',
 

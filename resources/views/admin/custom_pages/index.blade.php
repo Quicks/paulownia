@@ -24,7 +24,7 @@
                                     <tr>
                                         <th>@lang('admin.article.index.table.link_to_public')</th>
                                         <th>@lang('admin.article.index.table.langs')</th>
-                                        <th>@lang('admin.custom_pages.index.table.parent_link')</th>
+                                        <th>@lang('admin.custom_pages.index.table.siblings')</th>
                                         <th>@lang('admin.btns.actions')</th>
                                     </tr>
                                 </thead>
@@ -39,7 +39,7 @@
                                                 @endif
                                             @endforeach
                                         </td>
-                                        <td>{{ $item->parentLink() }}</td>
+                                        <td>{{ $item->allSiblings()->pluck('link')->implode(',  ') }}</td>
 
                                         <td>
                                             @if(bouncer()->hasPermission('custom_pages.update'))

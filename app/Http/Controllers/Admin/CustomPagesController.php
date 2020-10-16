@@ -13,10 +13,10 @@ class CustomPagesController extends Controller
 
   public function index(Request $request)
     {
-        $perPage = 25;
-        $custom_pages = CustomPage::latest()->paginate($perPage);
-        
-        return view('admin.custom_pages.index', compact('custom_pages'));
+      $perPage = 25;
+      $custom_pages = CustomPage::latest()->paginate($perPage);
+      
+      return view('admin.custom_pages.index', compact('custom_pages'));
     }
 
     /**
@@ -26,9 +26,9 @@ class CustomPagesController extends Controller
      */
     public function create()
     {
-      $possibleParents = CustomPage::parents()->get();
+      $possibleSiblings = CustomPage::all();
       $custom_page = new CustomPage();
-      return view('admin.custom_pages.create', compact('custom_page', 'possibleParents'));
+      return view('admin.custom_pages.create', compact('custom_page', 'possibleSiblings'));
     }
 
     /**
@@ -40,13 +40,13 @@ class CustomPagesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-          'link' => 'required',
-        ]);
-        $requestData = $request->all();
-        $custom_page = CustomPage::create($requestData);
-    
-        return redirect('admin/custom_pages')->with('flash_message', 'CustomPage added!');
+      $this->validate($request, [
+        'link' => 'required',
+      ]);
+      $requestData = $request->all();
+      $custom_page = CustomPage::create($request->all());
+      $custom_page->siblings()->sync($request->siblings);
+      return redirect('admin/custom_pages')->with('flash_message', 'CustomPage added!');
     }
 
     /**
@@ -58,9 +58,9 @@ class CustomPagesController extends Controller
      */
     public function show($id)
     {
-        $custom_page = CustomPage::findOrFail($id);
+      $custom_page = CustomPage::findOrFail($id);
 
-        return view('admin.custom_pages.show', compact('custom_page'));
+      return view('admin.custom_pages.show', compact('custom_page'));
     }
 
     /**
@@ -72,10 +72,9 @@ class CustomPagesController extends Controller
      */
     public function edit($id)
     {
-        $custom_page = CustomPage::findOrFail($id);
-        $possibleParents = CustomPage::parents()->get();
-
-        return view('admin.custom_pages.edit', compact('custom_page', 'possibleParents'));
+      $custom_page = CustomPage::findOrFail($id);
+      $possibleSiblings = CustomPage::all();
+      return view('admin.custom_pages.edit', compact('custom_page', 'possibleSiblings'));
     }
 
     /**
@@ -88,13 +87,14 @@ class CustomPagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-          'link' => 'required',
-        ]);
-        $custom_page = CustomPage::findOrFail($id);
-        $custom_page->update($request->all());
-        
-        return redirect('admin/custom_pages')->with('flash_message', 'CustomPage updated!');
+      $this->validate($request, [
+        'link' => 'required',
+      ]);
+      $custom_page = CustomPage::findOrFail($id);
+      $custom_page->update($request->all());
+      $custom_page->siblings()->sync($request->siblings);
+
+      return redirect('admin/custom_pages')->with('flash_message', 'CustomPage updated!');
     }
 
     /**
@@ -106,10 +106,10 @@ class CustomPagesController extends Controller
      */
     public function destroy($id)
     {
-        $custom_page = CustomPage::findOrFail($id);
-        $custom_page->delete();
+      $custom_page = CustomPage::findOrFail($id);
+      $custom_page->delete();
 
-        return redirect('admin/custom_pages')->with('flash_message', 'custom_page deleted!');
+      return redirect('admin/custom_pages')->with('flash_message', 'custom_page deleted!');
     }
   
 }

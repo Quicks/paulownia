@@ -340,6 +340,8 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
     // ])->name('address.edit');
     // Route::post('/write-to-us', 'App\Http\Controllers\WriteToUsController@send')->name('write-to-us');
     Route::get('/{link}', 'App\Http\Controllers\CustomPagesController@show');
+    Route::fallback('App\Http\Controllers\CustomPagesController@show');
+
 
 });
 

@@ -1,4 +1,4 @@
-<!-- START FOOTER -->
+<!-- START FOOTER
 <footer class="bg_gray">
 	<div class="top_footer small_pt small_pb">
         <div class="container">
@@ -157,4 +157,4 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> -->

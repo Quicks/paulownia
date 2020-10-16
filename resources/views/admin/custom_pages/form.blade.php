@@ -10,17 +10,19 @@
                         value="{{ isset($custom_page->link) ? $custom_page->link : old('link')}}" required>
                     {!! $errors->first('link', '<p class="help-block">:message</p>') !!}
                 </div>
-                
+
                 <div class="form-group {{ $errors->has('link') ? 'has-error' : ''}}">
-                    <label for="parent_id" class="control-label col-sm-3">@lang('admin.custom_pages.index.table.parent_link')</label>
-                    <select class="form-control col-sm-6" name="parent_id" type="text" id="parent_id"
-                        value="{{ isset($custom_page->parent_id) ? $custom_page->parent_id : ''}}">
-                        <option>Выберите родителя</option>
-                        @foreach($possibleParents as $possible_parent)
-                            @if($possible_parent->id == $custom_page->parent_id)
-                                <option selected='selected' value="{{$possible_parent->id}}">{{$possible_parent->link}}</option>
+                    <label for="parent_id" class="control-label col-sm-3">@lang('admin.custom_pages.index.table.siblings')</label>
+                    <select class="form-control col-sm-6" name="siblings[]" multiple>
+                        <option>Выберите соседа</option>
+                        @foreach($possibleSiblings as $possible_sibling)
+                            @if($possible_sibling->id == $custom_page->id)
+                                @continue
+                            @endif
+                            @if($custom_page->allSiblings()->contains('id', $possible_sibling->id))
+                                <option selected='selected' value="{{$possible_sibling->id}}">{{$possible_sibling->link}}</option>
                             @else
-                                <option value="{{$possible_parent->id}}">{{$possible_parent->link}}</option>
+                                <option value="{{$possible_sibling->id}}">{{$possible_sibling->link}}</option>
                             @endif
                         @endforeach
                     </select>

@@ -18,7 +18,6 @@ class CreateCustomPagesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->integer('position');
-            $table->integer('parent_id')->nullable();
             $table->string('link');
         });
         Schema::create('custom_page_translations', function (Blueprint $table){

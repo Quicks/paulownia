@@ -3348,6 +3348,87 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .pull-right{
   float: right;
 }
+.custom-page-container{
+  margin-top: 65px;
+}
+.custom-page-copyright {
+  text-align: center;
+  font-family: Prompt;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+.custom-page-title{
+  font-family: Prompt;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  color: #575756;
+}
+.custom-page-description{
+  background: #FCFCFC;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  padding: 0 40px 80px 40px;
+  margin-top: 20px;
+}
+#app{
+  background: linear-gradient(180deg, rgba(197, 197, 197, 0.4) 4.86%, rgba(255, 255, 255, 0) 100%), url(paulownia2.jpg);
+}
+.custom-page-tabs{
+  padding: 33px 120px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 80px;
+  margin: 0 40px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.custom-page-tab{
+  background: #FFFFFF;
+  border: 1px solid #5B9600;
+  box-sizing: border-box;
+  border-radius: 30px 0px;
+  display: inline-block;
+  padding: 8px 17px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  /* line-height: 21px; */
+  /* identical to box height */
+
+  text-align: center;
+  text-transform: uppercase;
+  color: #5B9600;
+
+}
+.custom-page-tab.active{
+  background: #5B9600;
+  color: #FFFFFF;
+}
+
+.custom-page-description_title{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  padding-top: 35px;
+  margin-bottom: 25px;
+  color: #5B9600;
+}
+
 @keyframes numberUpdate {
   0% {color: green;}
   50% {color: yellow;}

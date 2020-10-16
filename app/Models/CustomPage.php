@@ -17,26 +17,37 @@ class CustomPage extends Model
      *
      * @var array
      */
-    protected $fillable = ['link', 'position', 'parent_id'];
+    protected $fillable = ['link', 'position'];
 
-    public function children(){
-      return $this->hasMany(CustomPage::class, 'parent_id');
+    // public function children(){
+    //   return $this->hasMany(CustomPage::class, 'parent_id');
+    // }
+
+    // public function parent(){
+    //     return $this->belongsTo(CustomPage::class, 'parent_id');
+    // }
+
+    // public function scopeParents($query){
+    //     return $query->where('parent_id', 0);
+    // }
+    public function siblings()
+    {
+        return $this->belongsToMany(CustomPage::class, 'custom_page_siblings', 'custom_page_id', 'custom_page_sibling_id');
     }
 
-    public function parent(){
-        return $this->belongsTo(CustomPage::class, 'parent_id');
+    public function asSibling(){
+        return $this->belongsToMany(CustomPage::class, 'custom_page_siblings', 'custom_page_sibling_id', 'custom_page_id');
     }
 
-    public function scopeParents($query){
-        return $query->whereNull('parent_id');
+    public function allSiblings(){
+        return $this->siblings->merge($this->asSibling);
     }
-
-    public function parentLink(){
-        $res = '';
-        if(!empty($this->parent)){
-            $res = $this->parent->link;
-        }
-        return $res;
-    }
+    // public function parentLink(){
+    //     $res = '';
+    //     if(!empty($this->parent)){
+    //         $res = $this->parent->link;
+    //     }
+    //     return $res;
+    // }
 
 }

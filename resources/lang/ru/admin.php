@@ -194,7 +194,7 @@ return [
   'certificates.index.table.publish' => 'Публиковать?',
 
   'custom_pages.index.title' => 'Кастомные страницы',
-  'custom_pages.index.table.parent_link' => 'Ссылка на родителя',
+  'custom_pages.index.table.siblings' => 'Соседи',
   'custom_pages.create.title' => 'Создать кастомную страницу',
   'custom_pages.edit.title' => 'Редактировать кастомную страницу',
 

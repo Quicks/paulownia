@@ -193,7 +193,7 @@ return [
   'certificates.index.table.publish' => 'Publish?',
 
   'custom_pages.index.title' => 'Custom pages',
-  'custom_pages.index.table.parent_link' => 'Parent link',
+  'custom_pages.index.table.siblings' => 'Siblings',
   'custom_pages.create.title' => 'Create custom page',
   'custom_pages.edit.title' => 'Edit custom page',
 

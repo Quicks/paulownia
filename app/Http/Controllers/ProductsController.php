@@ -15,8 +15,9 @@ class ProductsController extends Controller
 {
     public function index(Request $request, ProductRepository $product)
     {
-        $products = $product->getAll(['sort' => 'created_at', 'order' => 'desc']);
-        return view('public.products.index', compact('products'));
+        $allProducts = $product->getAll()->get();
+        $products = $product->getAll(['sort' => 'created_at', 'order' => 'desc'])->paginate(isset($params['limit']) ? $params['limit'] : 9);
+        return view('public.products.index', compact('products', 'allProducts'));
     }
 
     public function show($url_key, ProductRepository $productRepository)
@@ -34,7 +35,7 @@ class ProductsController extends Controller
 
     public function byCategory(Request $request, ProductRepository $product)
     {
-        $products = $product->getAll($request);
+        $products = $product->getAll($request)->paginate(isset($params['limit']) ? $params['limit'] : 9);
         return view('public.products.by_category', ['products' => $products, 'customClasses' => $request->customClasses ]);
     }
 }

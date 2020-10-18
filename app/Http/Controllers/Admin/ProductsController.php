@@ -24,7 +24,7 @@ class ProductsController extends ProductController
     public function index()
     {
         $perPage = 25;
-        $products = $this->product->getAll(['sort' => 'created_at', 'order' => 'desc']);
+        $products = $this->product->getAll(['sort' => 'created_at', 'order' => 'desc'])->paginate(isset($params['limit']) ? $params['limit'] : 9);
         return view('admin.products.index', compact('products'));
     }
 

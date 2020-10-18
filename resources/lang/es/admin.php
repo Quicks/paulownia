@@ -275,3 +275,4 @@ return [
   'menu.index.title' => 'Menú',
   'menu.index.link' => 'Enlace'
 ];
+

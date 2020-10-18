@@ -20,5 +20,5 @@ return [
     'amount' => 'Количество',
     'total' => 'Total',
     'add-cart' =>'Добавить в корзину',
-    'all-goods' => 'Все товары'
+    'all-goods' => 'Наши товары'
 ];

@@ -65,7 +65,7 @@
 
     @include('public/blocks/preloader')
     @include('public/blocks/header')
-    <main class="main-background">
+    <main class="main-background container custom-page-container">
         @if (session('success') || session('warning') || session('error') || session('info'))
             <div id="flash-message" class="custom-status">
                 <span class="custom-icon" onclick="$('#flash-message').remove()"></span>

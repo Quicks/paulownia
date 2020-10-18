@@ -1,34 +1,25 @@
 @extends('layouts.public')
 @section('content')
-
+@include('public.blocks.page_header', ['title' => __('products.all-goods')])
+<div class='custom-page-description'>
 <section>
-	<div class="container">
+    <div class='products-info'>
+        ОСЕНЬ / ЗИМА 2020/2021
+        Мы рады приветствовать всех любителей Павловнии, посетителей нашего сайта и наших клиентов. Мы ценим ваше доверие и выбор Paulownia Professional® в качестве основного поставщика. В осенне-зимнем сезоне 2020/2021 мы предложим вам деревья павловнии 3 и 5 метров и Stumps разного формата открытым корнем. Сток по всем позициям ограничен !!! Летний сезон деревьев и саженцев павловнии в горшках 5 л и 600 мл окончен и даные товары будут доступны в начале весеннего сезона 2021 года.
+        Перевозка:
+        Стоимость доставки рассчитывается индивидуально после получения вашего заказа.
+        Стоимость доставки для минимальных заказов от € 13,50(По Европе).
+
+        Экономичные, срочные отгрузки 24 часа Испания, Португалия.
+        Доставка во все европейские страны, включая Канарские острова 72 часа
+    </div>
+	<div class="products-data">
     	<div class="row">	
-        	<div class="col-lg-9">
-            	<div class="row align-items-center justify-content-between pb-1 mb-4">
-                	<div class="col-auto">
-                    	<div class="custom_select">
-                    	<!-- <select>
-                        	<option value="default">Default sorting</option>
-                            <option value="popularity">Sort by popularity</option>
-                            <option value="date">Sort by newness</option>
-                        </select> -->
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                    	<!-- <span class="align-middle">Showing 1-9 of 50 results</span>
-                        <div class="list_grid_icon">
-                            <a href="javascript:Void(0);" class="shorting_icon grid_view active"><i class="ion-grid"></i></a>
-                            <a href="javascript:Void(0);" class="shorting_icon list_view"><i class="ion-navicon-round"></i></a>
-                        </div> -->
-                    </div>
-                </div>
+        	<div class="col-lg-9 products-list">
                 <div class="row shop_container grid_view">
                   @foreach($products as $product)
                     @include('public.products.product_card', ['product' => $product])
                   @endforeach
-                  
-                    
                 </div>
                 <div class="row">
                     <div class="col-12 mt-3 mt-lg-4">
@@ -36,120 +27,114 @@
                     </div>
                 </div>
             </div>
-        	<div class="col-lg-3 order-lg-first mt-5 mt-lg-0">
-            	<div class="sidebar">
-                    <div class="widget">
-                        <h5 class="widget_title">Categories</h5>
-                        <ul class="list_none widget_categories border_bottom_dash">
-                            <li><a href="#"><span class="categories_name">Dried Products</span><span class="categories_num">(9)</span></a></li>
-                            <li><a href="#"><span class="categories_name">Vegetables</span><span class="categories_num">(6)</span></a></li>
-                            <li><a href="#"><span class="categories_name">Fruits Fresh</span><span class="categories_num">(4)</span></a></li>
-                            <li><a href="#"><span class="categories_name">Juice</span><span class="categories_num">(7)</span></a></li>
-                            <li><a href="#"><span class="categories_name">Fresh Meal</span><span class="categories_num">(12)</span></a></li>
-                        </ul>
-                    </div>
-                    <div class="widget">
-                    	<h5 class="widget_title">Filter</h5>
-                        <div class="filter_price">
-                             <div id="price_filter"></div>
-                             <div class="d-flex align-items-center justify-content-between">
-                                 <span>Price <span id="flt_price"></span></span>
-                                 <input type="hidden" id="price_first">
-                                 <input type="hidden" id="price_second">
-                                 <button type="submit" class="btn btn-default btn-sm">Filter</button>
-                             </div>
-                         </div>
-                    </div>
-                    <div class="widget">
-                        <h5 class="widget_title">Recent Items</h5>
-                        <ul class="recent_post border_bottom_dash list_none">
-                            <li>
-                                <div class="post_img">
-                                    <a href="#"><img src="assets/images/shop_small1.jpg" alt="shop_small1"></a>
+        	<div class="col-lg-3 order-lg-first mt-5 mt-lg-0 products-sidebar pd-10" data-products-price-min="{{$allProducts->min('price')}}" data-products-price-max="{{$allProducts->max('price')}}" >
+                <div id="accordion" class="accordion">
+                    <div class="card">
+                      <div class="card-header" id="heading-One">
+                        <h6 class="mb-0">
+                            <a data-toggle="collapse" href="#collapse-One" aria-expanded="true" aria-controls="collapse-One">
+                                Цена, $
+                            </a>
+                        </h6>
+                      </div>
+                      <div id="collapse-One" class="collapse show" aria-labelledby="heading-One" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class='row form-group'>
+                                <div class='col-md-6 pd-10'>
+                                    <label>От </label>
+                                    <input placeholder="От" class='col-md-12 form-control' step="1" name="filters[price][from]" type="number" max="{{$allProducts->max('price')}}" min="{{$allProducts->min('price')}}">
                                 </div>
-                                <div class="post_content">
-                                    <h6><a href="#">100% Organic Juices</a></h6>
-                                    <div class="rating"><div class="product_rate" style="width:100%"></div></div>
-                                    <div class="product_price"><span class="price">$33.00</span></div>
+                                <div class='col-md-6 pd-10'>
+                                    <label>До </label>
+                                    <input placeholder="До" class='col-md-12 form-control' step="1" name="filters[price][to]" type="number" min="{{$allProducts->min('price')}}" max="{{$allProducts->max('price')}}">
                                 </div>
-                            </li>
-                            <li>
-                                <div class="post_img">
-                                    <a href="#"><img src="assets/images/shop_small2.jpg" alt="shop_small2"></a>
-                                </div>
-                                <div class="post_content">
-                                    <h6><a href="#">Fresh Organic Grapes</a></h6>
-                                    <div class="rating"><div class="product_rate" style="width:80%"></div></div>
-                                    <div class="product_price"><span class="price">$40.00</span></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="post_img">
-                                    <a href="#"><img src="assets/images/shop_small3.jpg" alt="shop_small3"></a>
-                                </div>
-                                <div class="post_content">
-                                    <h6><a href="#">Fresh Organic Tomato</a></h6>
-                                    <div class="rating"><div class="product_rate" style="width:60%"></div></div>
-                                    <div class="product_price"><span class="price">$54.00</span></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="widget">
-                    	<h5 class="widget_title">tags</h5>
-                        <div class="tags">
-                        	<a href="#">General</a>
-                            <a href="#">Design</a>
-                            <a href="#">jQuery</a>
-                            <a href="#">Branding</a>
-                            <a href="#">Modern</a>
-                            <a href="#">Blog</a>
-                            <a href="#">Quotes</a>
-                            <a href="#">Advertisement</a>
+                            </div>
+                            <div id="slider-range"></div>
+
                         </div>
+                      </div>
+                    </div>
+                </div>
+                <div id="accordion2" class="accordion">
+                    <div class="card">
+                      <div class="card-header" id="heading-Two">
+                        <h6 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapse-Two" aria-expanded="false" aria-controls="collapse-Two">
+                                Donec sollicitudin molestie malesuada?
+                            </a>
+                        </h6>
+                      </div>
+                      <div id="collapse-Two" class="collapse" aria-labelledby="heading-Two" data-parent="#accordion2">
+                        <div class="card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div id="accordion3" class="accordion">
+                    <div class="card">
+                      <div class="card-header" id="heading-Three">
+                        <h6 class="mb-0"> <a class="collapsed" data-toggle="collapse" href="#collapse-Three" aria-expanded="false" aria-controls="collapse-Three">Vivamus magna justo lacinia eget convallis at tellus?</a> </h6>
+                      </div>
+                      <div id="collapse-Three" class="collapse" aria-labelledby="heading-Three" data-parent="#accordion3">
+                        <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. </div>
+                      </div>
+                    </div>
+                </div>
+                <div id="accordion4" class="accordion">
+                    <div class="card">
+                      <div class="card-header" id="heading-Four">
+                        <h6 class="mb-0"> <a class="collapsed" data-toggle="collapse" href="#collapse-Four" aria-expanded="false" aria-controls="collapse-Four">Proin tortor risus Curabitur non nulla amet?</a> </h6>
+                      </div>
+                      <div id="collapse-Four" class="collapse" aria-labelledby="heading-Four" data-parent="#accordion4">
+                        <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. </div>
+                      </div>
+                    </div>
+                </div>
+                <div id="accordion5" class="accordion">
+                    <div class="card">
+                      <div class="card-header" id="heading-Five">
+                        <h6 class="mb-0"> <a class="collapsed" data-toggle="collapse" href="#collapse-Five" aria-expanded="false" aria-controls="collapse-Five">Donec sollicitudin molestie malesuada?</a> </h6>
+                      </div>
+                      <div id="collapse-Five" class="collapse" aria-labelledby="heading-Five" data-parent="#accordion">
+                        <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. </div>
+                      </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<!-- END SECTION NEWSLATTER -->
-<section class="bg_light_green newslatter_wrap">
-	<div class="container">
-    	<div class="row justify-content-center">
-        	<div class="col-lg-6 col-md-8 text-center">
-                <div class="heading_s2 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
-                    <h2>Subscribe Our Newsletter</h2>
-                </div>
-                <p class="m-0 animation" data-animation="fadeInUp" data-animation-delay="0.03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                <div class="small_divider"></div> 
-                <div class="newsletter_form animation" data-animation="fadeInUp" data-animation-delay="0.04s">
-                    <form> 
-                        <div class="rounded_input">
-                           <input type="text" class="form-control" required="" placeholder="Enter your Email Address">
-                        </div>
-                        <button type="submit" title="Subscribe" class="btn btn-default" name="submit" value="Submit">subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="overlap_shape">
-        <div class="ol_shape19">
-            <div class="animation" data-animation="fadeInLeft" data-animation-delay="0.5s">
-                <img data-parallax='{"y": 20, "smoothness": 20}' src="assets/images/shape34.png" alt="shape34"/>
-            </div>
-        </div>
-        <div class="ol_shape20">
-            <div class="animation" data-animation="fadeInRight" data-animation-delay="0.5s">
-                <img data-parallax='{"y": 20, "smoothness": 20}' src="assets/images/shape35.png" alt="shape35"/>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- END SECTION NEWSLATTER -->
-
+</div>
 @endsection
 
+@push('scripts')
 
+<script>
+  $( function() {
+    let min = parseInt($('.products-sidebar').data('products-price-min'))
+    let max = parseInt($('.products-sidebar').data('products-price-max'))
+    $( "#slider-range" ).slider({
+      range: true,
+      min: min,
+      max: max,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $('input[name="filters[price][from]"]').val(ui.values[0])
+        $('input[name="filters[price][to]"]').val(ui.values[1])
+        // $("#amount").val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $('input[name="filters[price][from]"]').val(75)
+    $('input[name="filters[price][to]"]').val(300)
+    $('input[name="filters[price][from]"]').change(function(){
+        $("#slider-range").slider('values', 0 , $(this).val()); // sets first handle (index 0) to 50
+    })
+    $('input[name="filters[price][to]"]').change(function(){
+        $("#slider-range").slider('values', 1 , $(this).val()); // sets first handle (index 0) to 50
+    })
+
+  } );
+</script>
+
+@endpush

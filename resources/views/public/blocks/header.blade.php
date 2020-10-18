@@ -102,6 +102,8 @@
     .header-wrap {
         position: relative;
         width: 100%;
+        position: relative;
+        z-index: 2;
     }
     .header-wrap > img {
         position: absolute;

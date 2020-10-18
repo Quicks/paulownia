@@ -1,5 +1,7 @@
 .custom-page-container{
   margin-top: 65px;
+  padding: 0;
+  max-width: 1248px;
 }
 .custom-page-copyright {
   text-align: center;
@@ -9,6 +11,8 @@
   font-size: 12px;
   line-height: 18px;
   text-transform: uppercase;
+
+  color: #C4C4C4;
 }
 .custom-page-title{
   font-family: Prompt;

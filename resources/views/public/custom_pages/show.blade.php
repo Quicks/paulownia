@@ -2,15 +2,8 @@
 
 @section('content')
   <div class='container custom-page-container'>
-    <div class='custom-page-copyright'>
-      PAULOWNIA PROFESSIONAL®
-      
-    </div>
-    <div class='custom-page-title'>
-      <span>
-        {!!$custom_page->title!!}
-      </span>
-    </div>
+    @include('public.blocks.page_header', ['title' => $custom_page->title])
+    
     @if(!$custom_page->allSiblings()->isEmpty())
       <div class='custom-page-tabs'>
         @foreach($custom_page->allSiblings() as $sibling)
@@ -20,6 +13,11 @@
             </a>
           </div>
         @endforeach
+        <div class='custom-page-tab active'>
+            <a href='{{$custom_page->link}}'>
+              {!!$custom_page->title!!}
+            </a>
+          </div>
       </div>
     @endif
     @if(!empty(trim($custom_page->description)))

@@ -473,7 +473,26 @@ class ProductRepository extends Repository
                         $qb->orderBy($params['sort'] == 'created_at' ? 'product_flat.created_at' : $attribute->code, $params['order']);
                     }
                 }
-
+                
+                if(!empty($params['filters'])){
+                    $filters = $params['filters'];
+                    if(!empty($filters['price'])){
+                        $qb = $qb->where('product_flat.price', '>=', $filters['price']['from'])->where('product_flat.price', '<=', $filters['price']['to']);
+                    }
+                    if(!empty($filters['categories'])){
+                        $qb = $qb->whereIn('product_categories.category_id', $filters['categories']);
+                    }
+                    if(!empty($filters['type_of_paulownia'])){
+                        $qb = $qb->where('product_flat.type_of_paulownia', $filters['type_of_paulownia']);
+                    }
+                    if(!empty($filters['tree_size'])){
+                        $qb = $qb->where('product_flat.tree_size', $filters['tree_size']);
+                    }
+                    if(!empty($filters['season'])){
+                        $qb = $qb->where('product_flat.season', $filters['season']);
+                    }
+                    
+                }
                 $qb = $qb->where(function($query1) {
                     foreach (['product_flat', 'flat_variants'] as $alias) {
                         $query1 = $query1->orWhere(function($query2) use($alias) {
@@ -481,7 +500,6 @@ class ProductRepository extends Repository
 
                             foreach ($attributes as $attribute) {
                                 $column = $alias . '.' . $attribute->code;
-
                                 $queryParams = explode(',', request()->get($attribute->code));
 
                                 if ($attribute->type != 'price') {

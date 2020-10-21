@@ -21,6 +21,17 @@ return [
     'total' => 'Total',
     'add-cart' =>'Add to cart',
     'all-goods' => 'Our goods',
-    'title' => 'Shop'
-
+    'title' => 'Shop',
+    'tree_size' => 'Tree size',
+    'tree_size.600_ml' => '600 ml',
+    'tree_size.5_l' => '5 l',
+    'tree_size.3_m' => 'Tree 3 m',
+    'tree_size.5_m' => 'Tree 5 m',
+    'categories' => 'Categories',
+    'price' => 'Price',
+    'price.from' => 'from',
+    'price.to' => 'to',
+    'sort' => 'Sort',
+    'season' => 'Season',
+    'filters.submit' => 'Submit'
 ];

@@ -101,6 +101,8 @@ return [
   'products.form.attributes.featured' => 'Выводить в рекомендуемые?',
   'products.form.attributes.visible_individually' => 'Выводить в индивидуальных',
   'products.form.attributes.status' => 'Публиковать?',
+  'products.form.attributes.type_of_paulownia' => 'Тип павловнии',
+  'products.form.attributes.season' => 'Сезон',
   'products.form.attributes.tree_size' => 'Размер дерева',
   'products.form.attributes.Tree_age' => 'Возраст дерева',
   'products.form.attributes.Tree_container' => 'Контейнер для дерева',

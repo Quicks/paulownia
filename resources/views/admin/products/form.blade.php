@@ -1,4 +1,4 @@
-<div class='col-md-11'>
+<div class='col-md-10'>
 
     <div class="tab-content nav-responsive nav nav-tabs" id="nav-tabContent">
         <div class="tab-pane fade active in" id="main-form" role="tabpanel" aria-labelledby="main-form">
@@ -52,23 +52,33 @@
             </ul>
               <div class="tab-content nav-responsive nav nav-tabs sub-nav-content" id="nav-tabContent">
                 @foreach ($product->attribute_family->attribute_groups as $attributeGroup)
-                  
                   @if (count($attributeGroup->custom_attributes))
-
                     <div class="tab-pane fade {{$loop->first ? 'active in' : ''}}" id="{{strtolower($attributeGroup->name)}}" role="tabpanel" aria-labelledby="{{$attributeGroup->name}}">
                       @foreach ($attributeGroup->custom_attributes as $attribute)
                         @if (! $product->super_attributes->contains($attribute) )
+                          @if($attribute->code == 'tree_size')
+                          <div class="form-group text">
 
-                          @if (!$attribute->value_per_locale && view()->exists($typeView = 'admin::catalog.products.field-types.' . $attribute->type) )
+                              <label for="tree_size" class="control-label col-sm-3 required">
+                                @lang('admin.products.form.attributes.'. $attribute->code)
+                              </label>
+                              <select class='form-control col-sm-6' name='tree_size' data-value="{{$product->tree_size}}">
+                                <option value=''>Выберите размер</option>
+                                <option value='600_ml'>600мл</option>
+                                <option value='5_l'>5 литров</option>
+                                <option value='3_m'>Дерево 3 метра</option>
+                                <option value='5_m'>Дерево 5 метров</option>
+                              </select>
+                            </div>
+                          @elseif (!$attribute->value_per_locale && view()->exists($typeView = 'admin::catalog.products.field-types.' . $attribute->type) )
                             <div class="form-group {{ $attribute->type }}">
 
                               <label for="{{ $attribute->code }}" class="control-label col-sm-3 {{ $attribute->is_required ? 'required' : ''}}" >
                                 @lang('admin.products.form.attributes.'. $attribute->code)
-                                    
-
                                 @if ($attribute->type == 'price')
                                     <span class="currency-code">({{ core()->currencySymbol(core()->getBaseCurrencyCode()) }})</span>
                                 @endif
+                                
                               </label>
                               @include ($typeView)
                             </div>
@@ -79,6 +89,7 @@
                   @endif
 
                 @endforeach
+
                 <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images">
                   <div class='form-group'>
                       @include('admin.add-images.cropper', ['images' => $product->images])
@@ -139,7 +150,7 @@
     </div>
     
 </div>
-<div class='col-md-1'>
+<div class='col-md-2'>
     <div class='form-sidebar'>
         @include('admin.langPanel')
         <div>
@@ -154,6 +165,10 @@
   <script src="{{ asset('js/translate.js') }}"></script>
   <script>
     $(document).ready(function(){
+
+      let selected = $('select[name="tree_size"]').data('value')
+      $('select[name="tree_size"] option[value='+ selected +']').attr('selected', 'true')
+
       let lastViewedSubTab = undefined;
       $('.form-sidebar li a').click(function(){
         if($(this).attr('href') != '#main-form'){

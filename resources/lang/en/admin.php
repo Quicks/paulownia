@@ -97,6 +97,8 @@ return [
   'products.form.attributes.name' => 'Product name',
   'products.form.attributes.url_key' => 'Url',
   'products.form.attributes.tax_category_id' => 'Tax type',
+  'products.form.attributes.type_of_paulownia' => 'Type of paulownia',
+  'products.form.attributes.season' => 'Season',
   'products.form.attributes.new' => 'Display as new?',
   'products.form.attributes.featured' => 'Output to recommended?',
   'products.form.attributes.visible_individually' => 'Display in individual',

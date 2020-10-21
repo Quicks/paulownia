@@ -10,7 +10,7 @@
         </a>
         <div class="header-message-wrap desktop">
             <div class="message-text">
-                Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.Reference site about Lorem Ipsum, giving information on its origins, as
+                Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.Reference site about Lorem Ipsum, giving information
             </div>
             <img class="message-close" src="{{asset('/images/close.svg')}}" alt="">
         </div>
@@ -19,35 +19,48 @@
                 <img src="{{asset("images/burger.svg")}}" alt="menu">
             </div>
             <div class="nav-bar-menu desktop">
-                @foreach($menus as $menu)
-                    @if(count($menu->children))
-                        <div class="submenu menu-link">
-                            <a class="menu-link-after" href="#">{{ $menu->title }}</a>
-                            <img src="{{asset("images/burger.svg")}}" alt="menu">
-{{--                            <div class="burger-menu">--}}
-{{--                                @foreach($menu->children as $menu_child)--}}
-{{--                                    @if(count($menu_child->children))--}}
-{{--                                        <div class="dropdown">--}}
-{{--                                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{{ $menu_child->title }}</a>--}}
-{{--                                            <div class="dropdown-menu">--}}
-{{--                                                @foreach($menu_child->children as $sub_child)--}}
-{{--                                                    <a class="dropdown-item nav-link nav_item"--}}
-{{--                                                       href="/{{$current_locale.'/'.$sub_child->link}}">--}}
-{{--                                                        {{$sub_child->title}}--}}
-{{--                                                    </a>--}}
-{{--                                                @endforeach--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    @else--}}
-{{--                                        <a class="dropdown-item nav-link nav_item" href="/{{$current_locale.'/'.$menu_child->link}}">{{$menu_child->title}}</a>--}}
-{{--                                    @endif--}}
-{{--                                @endforeach--}}
-{{--                            </div>--}}
-                        </div>
-                    @else
-                        <a class="menu-link {{Request::getPathInfo() == $menu->link ? 'active' : ''}}" href="/{{$current_locale.$menu->link}}">{{$menu->title}}</a>
-                    @endif
-                @endforeach
+                <nav class="navbar navbar-expand-lg" style="align-items: center">
+{{--                    <a class="navbar-brand" href="#">Navbar</a>--}}
+{{--                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">--}}
+{{--                        <span class="navbar-toggler-icon"></span>--}}
+{{--                    </button>--}}
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            @foreach($menus as $menu)
+                                @if(count($menu->children))
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle menu-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {{$menu->title}}
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            @foreach($menu->children as $child)
+                                                @if(count($child->children))
+                                                    <ul class="nav-item dropdown">
+                                                        <a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            {{$child->title}}
+                                                        </a>
+                                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownSubmenu">
+                                                            @foreach($child->children as $subchild)
+                                                                <a class="dropdown-item" href="/{{$current_locale.$subchild->link}}">{{$subchild->title}}</a>
+                                                            @endforeach
+                                                        </div>
+                                                    </ul>
+                                                @else
+                                                    <a class="dropdown-item" href="/{{$current_locale.$child->link}}">{{$child->title}}</a>
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                    </li>
+                                @else
+                                    <li class="nav-item">
+                                        <a class="menu-link {{Request::getPathInfo() == $menu->link ? 'active' : ''}}" href="/{{$current_locale.$menu->link}}">{{$menu->title}}</a>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    </div>
+                </nav>
             </div>
             <div class="nav-bar-panel">
                 <div class="panel-item">
@@ -55,7 +68,7 @@
                     <div class="panel-item-name desktop">&nbsp;</div>
                 </div>
                 <div class="panel-item">
-                    <img src="{{asset("images/heart.svg")}}" alt="favorite">
+                    <img src="{{asset("images/heart-white.svg")}}" alt="favorite">
                     <div class="panel-item-name desktop">Wishlist</div>
                 </div>
                 <div class="panel-item position-relative">
@@ -93,7 +106,7 @@
             <span>info@paulownia.pro</span>
             <span> +34 642 787 555</span>
         </div>
-        <div class="write-us desktop">Напишите нам</div>
+        <div class="header-write-us desktop">Напишите нам</div>
     </div>
 
 </header>
@@ -193,11 +206,11 @@
     }
 
     @media (min-width: 1440px) {
-        .mobile {
+        .header-wrap .mobile {
             display: none;
         }
-        .desktop {
-            display: block;
+        .header-wrap .desktop {
+            display: flex;
         }
         .nav-bar-burger-menu {
             display: none;
@@ -247,6 +260,41 @@
             margin-right: 35px;
             display: flex;
             align-items: center;
+        }
+        #navbarSupportedContent > ul {
+            align-items: center;
+        }
+        #navbarDropdown{
+            text-transform: uppercase;
+        }
+        #navbarSupportedContent > ul > li.nav-item.dropdown > div {
+            /*width: 260px;*/
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+            border-radius: 30px 0 0 0;
+            margin-top: -30px;
+            padding: 10px
+        }
+        #navbarSupportedContent > ul > li.nav-item.dropdown > div > a,
+        #navbarDropdownSubmenu {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            line-height: 22px;
+            color: #575756;
+        }
+        #navbarSupportedContent > ul > li.nav-item.dropdown > div > ul > div {
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+            border-radius: 0 0 30px 0;
+            margin-top: -46px;
+            margin-left: 10px;
+            padding: 10px
+        }
+        #navbarSupportedContent > ul > li.nav-item.dropdown > div > ul > div > a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            line-height: 22px;
+            color: #575756;
         }
         .menu-link-after {
             font-family: 'Poppins', sans-serif;
@@ -298,7 +346,7 @@
             margin-left: 15px;
 
         }
-        .write-us {
+        .header-write-us {
             width: 134px;
             height: 32px;
             background: #5B9600;

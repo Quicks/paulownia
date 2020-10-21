@@ -102,7 +102,6 @@
     .header-wrap {
         position: relative;
         width: 100%;
-        position: relative;
         z-index: 2;
     }
     .header-wrap > img {
@@ -318,5 +317,4 @@
             margin: 10px 135px 0;
         }
     }
-
 </style>

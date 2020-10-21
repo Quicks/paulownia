@@ -1,160 +1,388 @@
-<!-- START FOOTER
-<footer class="bg_gray">
-	<div class="top_footer small_pt small_pb">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                	<div class="footer_logo">
-                    	<a href="index.html"><img alt="logo" src="/images/logo_dark.png"></a>
-                    </div>
-                    <div class="footer_desc">
-                    	<p>Phasellus blandit massa enim. elit id varius nunc. Lorems ipsum dolor sit consectetur industry. If you are going to use a passage of Lorem Ipsum.</p>
-                    </div>
-                    <ul class="contact_info list_none">
-                    	<li>
-                            <span class="ti-mobile"></span>
-                            <p>+123 456 7890</p>
-                        </li>
-                        <li>
-                            <span class="ti-email"></span>
-                            <a href="mailto:info@yourmail.com">info@yourmail.com</a>
-                        </li>
-                        <li>
-                            <span class="ti-location-pin"></span>
-                            <address>123 Street, Old Trafford, NewYork, USA</address>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4">
-                	<h5 class="widget_title">Information</h5>
-                    <ul class="list_none widget_links">
-                    	<li><a href="#">Delivery Information</a></li>
-                        <li><a href="#">Secure Payment</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Top Sellers</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Our Sitemap</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4">
-                	<h5 class="widget_title">Customer Support</h5>
-                    <ul class="list_none widget_links">
-                    	<li><a href="#">My Account</a></li>
-                        <li><a href="#">Shopping Cart</a></li>
-                        <li><a href="#">Addresses</a></li>
-                        <li><a href="#">Discount</a></li>
-                        <li><a href="#">Orders History</a></li>
-                        <li><a href="#">Order Tracking</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-4">
-                	<h5 class="widget_title">Instagram</h5>
-                    <ul class="list_none instafeed">
-                    	<li><a href="#"><img src="/images/insta_img1.jpg" alt="insta_img"><span class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                        <li><a href="#"><img src="/images/insta_img2.jpg" alt="insta_img"><span class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                        <li><a href="#"><img src="/images/insta_img3.jpg" alt="insta_img"><span class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                        <li><a href="#"><img src="/images/insta_img4.jpg" alt="insta_img"><span class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                        <li><a href="#"><img src="/images/insta_img5.jpg" alt="insta_img"><span class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                        <li><a href="#"><img src="/images/insta_img6.jpg" alt="insta_img"><span class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                        <li><a href="#"><img src="/images/insta_img7.jpg" alt="insta_img"><span class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                        <li><a href="#"><img src="/images/insta_img8.jpg" alt="insta_img"><span class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                    </ul>
-                </div>
+<!-- START FOOTER-->
+<footer>
+    <div class="footer-wrap">
+        <img class="mobile" src="{{asset('/images/footer-bg-mobile.svg')}}" alt="">
+        <img class="desktop" src="{{asset('/images/footer-bg-desktop.svg')}}" alt="">
+        <a href="/">
+            <img class="footer-logo-bg mobile" src="{{asset("images/footer-logo-ellipse-mobile.svg")}}" alt="">
+            <img class="footer-logo-bg desktop" src="{{asset("images/footer-logo-ellipse-desktop.svg")}}" alt="">
+            <img class="footer-logo mobile" src="{{asset("images/header-logo.svg")}}" alt="">
+            <img class="footer-logo desktop" src="{{asset("images/footer-logo-desktop.svg")}}" alt="">
+        </a>
+        <div class="footer-blocks">
+            <div class="write-us">
+                <a href="#">
+                    <img src="{{asset('/images/write-us.svg')}}" alt="">
+                </a>
+                <a href="#">Напишите нам</a>
             </div>
-        </div>
-    </div>
-    <div class="middle_footer">
-    	<div class="container">
-        	<div class="row">
-            	<div class="col-12">
-                	<div class="shopping_info">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">	
-                                <div class="icon_box icon_box_style2">
-                                    <div class="box_icon">
-                                        <i class="fas fa-truck"></i>
-                                    </div>
-                                    <div class="intro_desc">
-                                    	<h5>Free Delivery</h5>
-                                        <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">	
-                                <div class="icon_box icon_box_style2">
-                                    <div class="box_icon">
-                                        <i class="fas fa-dollar-sign"></i>
-                                    </div>
-                                    <div class="intro_desc">
-                                    	<h5>30 Day Returns Guarantee</h5>
-                                        <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">	
-                                <div class="icon_box icon_box_style2">
-                                    <div class="box_icon">
-                                        <i class="far fa-life-ring"></i>
-                                    </div>
-                                    <div class="intro_desc">
-                                    	<h5>27/4 Online Support</h5>
-                                        <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="menu-contacts-block-wrap">
+                <div class="menu-contacts-block">
+                    <div class="menu">
+                        <span class="menu-title">Разделы:</span>
+                        <a href="/" class="menu-item">ГЛАВНАЯ</a>
+                        <a href="#" class="menu-item">ПАВЛОВНИЯ</a>
+                        <a href="#" class="menu-item">МАГАЗИН</a>
+                        <a href="#" class="menu-item">галерея</a>
+                        <a href="#" class="menu-item">НОВОСТИ</a>
+                        <a href="#" class="menu-item">БИЗНЕС-ПЛАН</a>
+                        <a href="#" class="menu-item">КОНТАКТЫ</a>
+                    </div>
+
+                    <div class="contacts-info mobile">
+                        <div class="schedule">
+                            <span class="schedule-title">График работы:</span>
+                            <span class="schedule-value">Пн-Пт: 9:00-18:00</span>
+                        </div>
+                        <div class="messangers">
+                            <a href="#">
+                                <img src="{{asset('/images/skype.svg')}}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{{asset('/images/whatsapp.svg')}}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{{asset('/images/telegram.svg')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="phone">
+                            <a href="tel:+34 642 787 555">+34 642 787 555</a>
+                        </div>
+                        <div class="email">
+                            <a href="mailto:info@paulownia.pro">info@paulownia.pro</a>
+                        </div>
+                        <div class="socials">
+                            <a href="#">
+                                <img src="{{asset('/images/youtube.svg')}}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{{asset('/images/facebook.svg')}}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{{asset('/images/instagram.svg')}}" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
+                <div class="services">
+                    <span class="services-title">Услуги Paulownia Professional®:</span>
+                    <a href="/" class="services-item">Продажа саженцев и деревьев павловнии </a>
+                    <a href="/" class="services-item">Купля/Продажа древесины </a>
+                    <a href="/" class="services-item">Анализ и персональное проектирование плантаций</a>
+                    <a href="/" class="services-item">Расчет рентабельности инвестиций</a>
+                    <a href="/" class="services-item">Консультация на протяжении выращивания</a>
+                    <a href="/" class="services-item">Выкупаем плантации павловнии</a>
+                </div>
+                <div class="legal-warning">
+                    <span class="legal-warning-title">Правовое предупреждение:</span>
+                    <a href="/" class="legal-warning-item">Условия покупки</a>
+                    <a href="/" class="legal-warning-item">Политика конфиденциальности</a>
+                    <a href="/" class="legal-warning-item">FAQ Магазин</a>
+                    <a href="/" class="legal-warning-item">FAQ Уход за саженцами</a>
+                    <a href="/" class="legal-warning-item">Карта сайта</a>
+                </div>
+                <div class="contacts-payment-block">
+                    <div class="contacts-info desktop">
+                        <div class="schedule">
+                            <span class="schedule-title">График работы:</span>
+                            <span class="schedule-value">Пн-Пт: 9:00-18:00</span>
+                        </div>
+                        <div class="messangers">
+                            <a href="#">
+                                <img src="{{asset('/images/skype.svg')}}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{{asset('/images/whatsapp.svg')}}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{{asset('/images/telegram.svg')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="phone">
+                            <a href="tel:+34 642 787 555">+34 642 787 555</a>
+                        </div>
+                        <div class="email">
+                            <a href="mailto:info@paulownia.pro">info@paulownia.pro</a>
+                        </div>
+                        <div class="socials">
+                            <a href="#">
+                                <img src="{{asset('/images/youtube.svg')}}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{{asset('/images/facebook.svg')}}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{{asset('/images/instagram.svg')}}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="payment">
+                        <a href="#">
+                            <img src="{{asset('/images/mastercard.svg')}}" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="{{asset('/images/visa.svg')}}" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="{{asset('/images/american-express.svg')}}" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="{{asset('/images/paypal.svg')}}" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="{{asset('/images/unknow-system-border.svg')}}" alt="">
+                        </a>
+                    </div>
+                </div>
             </div>
+            <div class="copyright">Copyright  ©2021, Paulownia Professional S.L.® </div>
         </div>
     </div>
-    <div class="bottom_footer">
-    	<div class="container">
-        	<div class="row align-items-center">
-            	<div class="col-lg-4">
-                    <p class="copyright m-lg-0 text-center">Copyright © 2019 All Rights Reserved </p>
-                </div>
-                <div class="col-lg-4 order-lg-first">
-                    <ul class="list_none footer_payment text-center text-lg-left">
-                        <li><a href="#"><img src="/images/visa.png" alt="visa"/></a></li>
-                        <li><a href="#"><img src="/images/discover.png" alt="discover"/></a></li>
-                        <li><a href="#"><img src="/images/master_card.png" alt="master_card"/></a></li>
-                        <li><a href="#"><img src="/images/paypal.png" alt="paypal"/></a></li>
-                        <li><a href="#"><img src="/images/amarican_express.png" alt="amarican_express"/></a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <ul class="list_none social_icons radius_social text-center text-lg-right">
-                        <li><a href="#" class="sc_facebook"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#" class="sc_twitter"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#" class="sc_google"><i class="fab fa-google-plus-g"></i></a></li>
-                        <li><a href="#" class="sc_instagram"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#" class="sc_pinterest"><i class="fab fa-pinterest"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="overlap_shape">
-        <div class="ol_shape21">
-            <div class="animation">
-                <img data-parallax='{"y": 20, "smoothness": 20}' src="/images/shape36.png" alt="shape36"/>
-            </div>
-        </div>
-        <div class="ol_shape22">
-            <div class="animation">
-                <img data-parallax='{"y": 20, "smoothness": 20}' src="/images/shape37.png" alt="shape37"/>
-            </div>
-        </div>
-        <div class="ol_shape23">
-            <div class="animation">
-                <img data-parallax='{"y": 20, "smoothness": 20}' src="/images/shape38.png" alt="shape38"/>
-            </div>
-        </div>
-        <div class="ol_shape24">
-            <div class="animation">
-                <img data-parallax='{"y": 20, "smoothness": 20}' src="/images/shape39.png" alt="shape39"/>
-            </div>
-        </div>
-    </div>
-</footer> -->
+</footer>
+<!-- END FOOTER-->
+<style>
+    footer {
+        flex-shrink: 0;
+    }
+    .footer-wrap {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+    }
+    .footer-wrap > img {
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+    .desktop {
+        display: none;
+    }
+    .footer-logo-bg {
+        position: absolute;
+        top: -15px;
+        left: 24px;
+        z-index: -2;
+    }
+    .footer-logo {
+        width: 108px;
+        position: absolute;
+        top: 7px;
+        left: 65px;
+    }
+    .footer-blocks {
+        display: flex;
+        flex-direction: column;
+        padding: 95px 15px 10px 20px;
+    }
+    .write-us {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 275px;
+        height: 52px;
+        background: white;
+        border: 0.5px solid #C4C4C4;
+        border-radius: 30px;
+        padding: 5px 12px 5px 5px;
+        margin-bottom: 30px;
+    }
+    .write-us > a:first-child {
+        width: 42px;
+        height: 42px;
+        background: #5B9600;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .write-us > a:last-child {
+        width: 208px;
+        height: 32px;
+        background: #5B9600;
+        border-radius: 30px 0;
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: uppercase;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .menu-contacts-block {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+    }
+    .menu, .contacts-info {
+        width: calc((100% - 10px) / 2);
+    }
+    .menu {
+        font-family: 'Poppins', sans-serif;
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-title {
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    .menu-item {
+        font-size: 14px;
+        line-height: 25px;
+        color: white;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+    .menu-item:last-child {
+        margin-bottom: 0;
+    }
+    .contacts-info {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        line-height: 21px;
+        color: white;
+    }
+    .schedule {
+        display: flex;
+        flex-direction: column;
+    }
+    .schedule-value {
+        color: white;
+        margin-bottom: 5px;
+    }
+    .messangers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+    .messangers > a {
+        margin-right: 5px;
+    }
+    .messangers > a:last-child {
+        margin-right: 0;
+    }
+    footer .phone > a, footer .email > a {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.04em;
+        color: #FDFDFD;
+    }
+    .socials {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 35px;
+    }
+    .socials > a{
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .services, .legal-warning {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        line-height: 25px;
+        color: white;
+        margin-top: 15px;
+    }
+    .services-title, .legal-warning-title {
+        font-weight: 600;
+    }
+    .services-item, .legal-warning-item {
+        color: white;
+    }
+    .payment {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    .copyright {
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        line-height: 20px;
+        color: white;
+        margin-top: 30px;
+        text-align: center;
+    }
+    @media (min-width: 1440px) {
+        .mobile {
+            display: none;
+        }
+        .footer-logo-bg {
+            top: -30px;
+            left: 125px;
+        }
+        .footer-logo {
+            width: 314px;
+            top: 0;
+            left: 180px;
+        }
+        .desktop {
+            display: block;
+        }
+        .footer-blocks {
+            padding:110px 140px 20px;
+        }
+        .write-us {
+            margin: auto;
+            margin-right: 0;
+        }
+        .menu-contacts-block-wrap {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+        .menu {
+            margin-right: 0;
+            width: 100%;
+        }
+        .menu-item {
+            line-height: 21px;
+        }
+        .services, .legal-warning, .payment {
+            margin-top: 0;
+        }
+        .contacts-info {
+            width: 100%;
+        }
+        .schedule-title {
+            font-weight: 600;
+        }
+        .messangers {
+             justify-content: start;
+         }
+        .socials {
+            justify-content: start;
+            margin: 10px 0 10px;
+        }
+        .payment > a, .socials > a {
+            margin-right: 10px;
+        }
+        .payment > a:last-child, .socials > a:last-child {
+            margin-right: 0;
+        }
+
+        .copyright {
+            font-size: 14px;
+            line-height: 20px;
+            margin: 0;
+        }
+
+
+
+
+    }
+</style>

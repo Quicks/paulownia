@@ -72,22 +72,24 @@
                 <p class="status-text"> {!! session('success').session('warning').session('error').session('info') !!} </p>
             </div>
         @endif
-        @yield('content')
+        <div class="content">
+            @yield('content')
+        </div>
     </main>
     @include('public/blocks/footer')
 
-    <div id="wishlist-added-popup" class="white-popup mfp-hide">
-        <div class='wishlist-added'>
-            @lang('wishlist.added')
-        </div>
-    </div>
-    <div id="wishlist-removed-popup" class="white-popup mfp-hide">
-        <div class='wishlist-removed'>
-            @lang('wishlist.removed')
-        </div>
-    </div>
+{{--    <div id="wishlist-added-popup" class="white-popup mfp-hide">--}}
+{{--        <div class='wishlist-added'>--}}
+{{--            @lang('wishlist.added')--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div id="wishlist-removed-popup" class="white-popup mfp-hide">--}}
+{{--        <div class='wishlist-removed'>--}}
+{{--            @lang('wishlist.removed')--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </div>
-@include('cookieConsent::index')
+{{--@include('cookieConsent::index')--}}
 
 @stack('scripts')
 

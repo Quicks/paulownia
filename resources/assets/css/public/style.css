@@ -26,7 +26,12 @@ Version      : 1.0
 /*===================================*
   01. GENERAL STYLE
 *===================================*/
+html, body {
+    height: 100%;
+}
 body {
+    display: flex;
+    flex-direction: column;
 	background: #ffffff none repeat scroll 0 0;
     color: #636363;
     font-family: 'Poppins', sans-serif;
@@ -36,6 +41,9 @@ body {
     -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing:grayscale;
 	overflow-X: hidden;
+}
+.content {
+    flex: 1 0 auto;
 }
 h1,h2,h3,h4,h5,h6 {
 	color: #333333;
@@ -382,7 +390,7 @@ button:focus {
 }
 .text_uppercase * {
 	text-transform: uppercase;
-}	
+}
 .form-control,
 .form-control:focus,
 .custom-file-input:focus ~ .custom-file-label {
@@ -807,31 +815,31 @@ button:focus {
 @-webkit-keyframes bounceimg {
 0% {
     -webkit-transform: translateY(-20px);
-    transform: translateY(-20px); 
+    transform: translateY(-20px);
 }
 50% {
    -webkit-transform: translateY(-10px);
-     transform: translateY(-10px); 
-} 
+     transform: translateY(-10px);
+}
 100% {
    -webkit-transform: translateY(-20px);
-     transform: translateY(-20px); 
-} 
+     transform: translateY(-20px);
+}
 }
 
 @keyframes bounceimg {
 0% {
     -webkit-transform: translateY(-20px);
-    transform: translateY(-20px); 
+    transform: translateY(-20px);
 }
 50% {
    -webkit-transform: translateY(-10px);
-     transform: translateY(-10px); 
-} 
+     transform: translateY(-10px);
+}
 100% {
    -webkit-transform: translateY(-20px);
-     transform: translateY(-20px); 
-} 
+     transform: translateY(-20px);
+}
 }
 
 /*Loader Css*/
@@ -970,13 +978,13 @@ button:focus {
 .dark_skin .cart_list li {
 	border-color: #ddd;
 }
-.dark_skin .navbar .navbar-nav .dropdown-menu li a.active, 
-.dark_skin .navbar .navbar-nav .dropdown-menu li a:hover, 
-.dark_skin .navbar .navbar-nav .dropdown-menu > ul > li:hover > a, 
+.dark_skin .navbar .navbar-nav .dropdown-menu li a.active,
+.dark_skin .navbar .navbar-nav .dropdown-menu li a:hover,
+.dark_skin .navbar .navbar-nav .dropdown-menu > ul > li:hover > a,
 .dark_skin .navbar .navbar-nav .dropdown-menu > ul > .mega-menu-col ul > li:hover > a {
 	color: #07d765;
 }
-.dark_skin .navbar .navbar-nav .dropdown-item, 
+.dark_skin .navbar .navbar-nav .dropdown-item,
 .dark_skin .navbar .navbar-nav .dropdown-header,
 .dark_skin .cart_quantity,
 .dark_skin .cart_total {
@@ -1019,7 +1027,7 @@ button:focus {
 	text-transform: capitalize;
 	font-size: 14px;
 }
-.navbar .navbar-nav > li > a.active, 
+.navbar .navbar-nav > li > a.active,
 .navbar .navbar-nav > li:hover > a {
 	color: #07d765;
 }
@@ -1086,14 +1094,14 @@ button:focus {
 .dropdown-item.active, .dropdown-item:active {
 	background-color: transparent;
 }
-.navbar .navbar-nav.attr-nav .dropdown-menu li a.active, 
-.navbar .navbar-nav.attr-nav .dropdown-menu li a:hover, 
+.navbar .navbar-nav.attr-nav .dropdown-menu li a.active,
+.navbar .navbar-nav.attr-nav .dropdown-menu li a:hover,
 .navbar .navbar-nav.attr-nav .dropdown-menu > ul > li:hover > a {
 	background-color: rgba(0,0,0,0);
 }
 .navbar .navbar-nav .dropdown-menu li a.active,
 .navbar .navbar-nav .dropdown-menu li a:hover,
-.navbar .navbar-nav .dropdown-menu > ul > li:hover > a, 
+.navbar .navbar-nav .dropdown-menu > ul > li:hover > a,
 .navbar .navbar-nav .dropdown-menu > ul > .mega-menu-col ul > li:hover > a {
 	color: #07d765;
 }
@@ -2879,7 +2887,7 @@ body.active {
 .testimonial_img img {
 	max-width: 76px;
 }
-.testi_user span, 
+.testi_user span,
 .author_intro span {
 	font-style: italic;
 	color: #07d765;
@@ -5078,7 +5086,7 @@ blockquote::before {
 	margin: 0;
 }
 .related_post,
-.comment-area, 
+.comment-area,
 .comment_form {
 	margin-top: 50px;
 }
@@ -5159,7 +5167,7 @@ from {
 }
 to {
    background-position: -400px 0;
-} 
+}
 }
 @-webkit-keyframes bounce_bg_img {
 from {
@@ -5167,7 +5175,7 @@ from {
 }
 to {
    background-position: -400px 0;
-}   
+}
 }
 
 .cs_content_box {
@@ -5232,7 +5240,7 @@ to {
 	-o-transition: all 2s ease-in-out;
 	transition: all 2s ease-in-out;
 }
-.pr_white span, 
+.pr_white span,
 .pr_white.progress_content.pr_style1 .count_pr {
 	color: #fff;
 }

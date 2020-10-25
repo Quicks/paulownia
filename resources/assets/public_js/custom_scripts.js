@@ -15,7 +15,7 @@ var Cart = (function(){
       data: {
         product: productId,
         quantity: quantity
-      }, 
+      },
       success: function(response){
         updatePreview()
         callback(response)
@@ -91,7 +91,7 @@ $(document).ready(function(){
           });
           $(that).removeClass('wishlisted')
         }
-        
+
       }
     })
     return false
@@ -104,5 +104,9 @@ $(document).ready(function(){
       $('.cart_count').text(response.data.items_count)
     })
     return false
+  })
+  // close message in header
+  $('.message-close').click(function () {
+    $('.header-message-wrap').css('visibility', 'hidden')
   })
 })

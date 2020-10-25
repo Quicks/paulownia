@@ -10,21 +10,14 @@
         </a>
         <div class="header-message-wrap desktop">
             <div class="message-text">
-                Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.Reference site about Lorem Ipsum, giving information
+                Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum
             </div>
             <img class="message-close" src="{{asset('/images/close.svg')}}" alt="">
         </div>
         <div class="nav-bar-wrap">
-            <div class="nav-bar-burger-menu mobile">
-                <img src="{{asset("images/burger.svg")}}" alt="menu">
-            </div>
-            <div class="nav-bar-menu desktop">
+            <div class="nav-bar-menu">
                 <nav class="navbar navbar-expand-lg" style="align-items: center">
-{{--                    <a class="navbar-brand" href="#">Navbar</a>--}}
-{{--                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">--}}
-{{--                        <span class="navbar-toggler-icon"></span>--}}
-{{--                    </button>--}}
-
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             @foreach($menus as $menu)
@@ -68,7 +61,7 @@
                     <div class="panel-item-name desktop">&nbsp;</div>
                 </div>
                 <div class="panel-item">
-                    <img src="{{asset("images/heart-white.svg")}}" alt="favorite">
+                    <a href="#"><img src="{{asset("images/heart-white.svg")}}" alt="favorite"></a>
                     <div class="panel-item-name desktop">Wishlist</div>
                 </div>
                 <div class="panel-item position-relative">
@@ -80,25 +73,27 @@
                 </div>
                 <div class="panel-item">
                     <img src="{{asset("images/man.svg")}}" alt="profile">
-                    <div class="panel-item-name desktop">My Account</div>
+                    <div class="panel-item-name desktop">Account</div>
                 </div>
-                <div class="panel-item position-relative">
-                    <div class="selected-lang">{{$current_locale}}</div>
-                    <img class="position-absolute" src="{{asset("images/chevron-down.svg")}}" alt="language switcher">
-                    <div class="panel-item-name desktop">&nbsp;</div>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        @foreach(config('translatable.locales') as $locale)
-                            <a class="dropdown-item"
-                                @if(App::getLocale() != Request::segment(1))
-                                    href="{{url($locale. '/' . Request::path())}}"
-                                @else
-                                    href="{{Request::root() .'/'. $locale . substr(Request::path(), 2)}}"
-                                @endif
-                            >
-                                {{$locale}}
-                            </a>
-                        @endforeach
-                    </div>
+                <div class="panel-item">
+                    <ul class="header_list border_list list_none header_dropdown text-center text-md-right">
+                        <li class="dropdown-toggle">
+                            {{$current_locale}}
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                @foreach(config('translatable.locales') as $locale)
+                                    <a class="dropdown-item"
+                                       @if(App::getLocale() != Request::segment(1))
+                                       href="{{url($locale. '/' . Request::path())}}"
+                                       @else
+                                       href="{{Request::root() .'/'. $locale . substr(Request::path(), 2)}}"
+                                        @endif
+                                    >
+                                        {{$locale}}
+                                    </a>
+                                @endforeach
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -138,13 +133,15 @@
     }
     .nav-bar-wrap {
         height: 35px;
-        padding: 0 20px 0 10px;
+        padding: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    .nav-bar-burger-menu {
-        cursor: pointer;
+    .nav-bar-wrap .navbar-toggler {
+        background: none;
+        margin: 0;
+        box-shadow: none;
     }
     .nav-bar-panel {
         display: flex;
@@ -163,6 +160,10 @@
     .panel-item .position-absolute {
         top: 10px;
         left: 22px;
+    }
+    .panel-item .dropdown-toggle {
+        text-transform: uppercase;
+        color: white;
     }
     .count-bg {
         position: absolute;
@@ -183,15 +184,6 @@
         bottom: 1px;
         right: 4px;
     }
-    .selected-lang {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        line-height: 21px;
-        text-transform: uppercase;
-        color: white;
-        margin-right: 3px;
-        margin-top: 3px;
-    }
     .contacts-wrap {
         display: flex;
         flex-direction: column;
@@ -205,7 +197,7 @@
         margin-top: 10px;
     }
 
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
         .header-wrap .mobile {
             display: none;
         }
@@ -229,7 +221,6 @@
             display: flex;
             align-items: center;
             justify-content: start;
-
         }
         .message-text {
             font-family: 'Poppins', sans-serif;
@@ -239,17 +230,17 @@
             color: #FDFDFD;
         }
         .message-close {
-           margin-left: 15px;
+            margin-left: 15px;
+            cursor: pointer;
         }
         .nav-bar-wrap {
-            padding: 15px 146px 0 295px;
+            padding: 0 25px 0 295px;
             justify-content: space-between;
         }
         .nav-bar-menu {
             display: flex;
             align-items: center;
             justify-content: start;
-
         }
         .menu-link {
             font-family: 'Poppins', sans-serif;
@@ -257,7 +248,7 @@
             line-height: 21px;
             text-transform: uppercase;
             color: white;
-            margin-right: 35px;
+            margin-right: 20px;
             display: flex;
             align-items: center;
         }
@@ -296,13 +287,6 @@
             line-height: 22px;
             color: #575756;
         }
-        .menu-link-after {
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-            line-height: 21px;
-            text-transform: uppercase;
-            color: white;
-        }
         .menu-link > img {
             margin-left: 5px;
             width: 16px;
@@ -315,11 +299,10 @@
         .panel-item {
             display: flex;
             flex-direction: column;
-            margin-left: 25px;
+            margin-left: 12px;
         }
-        .panel-item .position-absolute{
-            top: 10px;
-            left: 22px;
+        .panel-item .dropdown-menu {
+            min-width: 4rem;
         }
         .panel-item-name {
             font-family: 'Poppins', sans-serif;
@@ -337,13 +320,13 @@
         }
         .contacts-wrap {
             flex-direction: row-reverse;
-            font-size: 18px;
-            line-height: 27px;
-            padding-right: 135px;
-            margin-top: 35px;
+            font-size: 14px;
+            line-height: 20px;
+            padding-right: 30px;
+            margin-top: 10px;
         }
         .contacts-wrap > span {
-            margin-left: 15px;
+            margin-left: 10px;
 
         }
         .header-write-us {
@@ -362,7 +345,26 @@
             justify-content: center;
             cursor: pointer;
             float: right;
-            margin: 10px 135px 0;
+            margin: 2px 25px 0;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .nav-bar-wrap {
+            margin-top: 15px;
+        }
+        .contacts-wrap {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 20px;
+        }
+        .header-write-us {
+            margin-top: 20px;
+        }
+    }
+    @media (min-width: 1920px) {
+        .nav-bar-wrap {
+            margin-top: 30px;
         }
     }
 </style>

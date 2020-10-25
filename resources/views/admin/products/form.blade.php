@@ -1,5 +1,4 @@
 <div class='col-md-10'>
-
     <div class="tab-content nav-responsive nav nav-tabs" id="nav-tabContent">
         <div class="tab-pane fade active in" id="main-form" role="tabpanel" aria-labelledby="main-form">
             <div class="row">
@@ -167,8 +166,10 @@
     $(document).ready(function(){
 
       let selected = $('select[name="tree_size"]').data('value')
-      $('select[name="tree_size"] option[value='+ selected +']').attr('selected', 'true')
-
+      if(selected){
+        $('select[name="tree_size"] option[value='+ selected +']').attr('selected', 'true')
+      }
+      
       let lastViewedSubTab = undefined;
       $('.form-sidebar li a').click(function(){
         if($(this).attr('href') != '#main-form'){

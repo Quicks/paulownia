@@ -5,3 +5,6 @@
 #sidebar-menu li .sidebar-submenu ul{
   margin-left: 30px;
 }
+.image-preview{
+  max-width: 100px;
+}

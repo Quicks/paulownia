@@ -425,7 +425,6 @@ class ProductRepository extends Repository
                 $channel = request()->get('channel') ?: (core()->getCurrentChannelCode() ?: core()->getDefaultChannelCode());
 
                 $locale = request()->get('locale') ?: app()->getLocale();
-
                 $qb = $query->distinct()
                         ->addSelect('product_flat.*')
                         ->addSelect(DB::raw('IF( product_flat.special_price_from IS NOT NULL

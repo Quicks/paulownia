@@ -2,23 +2,33 @@
 @section('content')
 @include('public.blocks.page_header', ['title' => __('products.all-goods')])
 <div class='custom-page-description'>
-<section>
+  <section>
     <div class='products-info'>
-        ОСЕНЬ / ЗИМА 2020/2021
-        Мы рады приветствовать всех любителей Павловнии, посетителей нашего сайта и наших клиентов. Мы ценим ваше доверие и выбор Paulownia Professional® в качестве основного поставщика. В осенне-зимнем сезоне 2020/2021 мы предложим вам деревья павловнии 3 и 5 метров и Stumps разного формата открытым корнем. Сток по всем позициям ограничен !!! Летний сезон деревьев и саженцев павловнии в горшках 5 л и 600 мл окончен и даные товары будут доступны в начале весеннего сезона 2021 года.
-        Перевозка:
-        Стоимость доставки рассчитывается индивидуально после получения вашего заказа.
-        Стоимость доставки для минимальных заказов от € 13,50(По Европе).
+        <div class='close-btn'>
+          <img src='/images/close.png'>
+        </div>
+        <div class='title highlighted'>
+          ОСЕНЬ / ЗИМА 2020/2021
+        </div>
 
-        Экономичные, срочные отгрузки 24 часа Испания, Португалия.
-        Доставка во все европейские страны, включая Канарские острова 72 часа
+        Мы рады приветствовать всех любителей Павловнии, посетителей нашего сайта и наших клиентов. Мы ценим ваше доверие и выбор Paulownia Professional® в качестве основного поставщика. В <span class='highlighted'>осенне-зимнем сезоне 2020/2021</span> мы предложим вам деревья павловнии <span class='highlighted'>3 и 5 метров</span> и Stumps разного формата открытым корнем. Сток по всем позициям ограничен !!! <span class='highlighted'>Летний сезон</span> деревьев и саженцев павловнии <span class='highlighted'>в горшках 5 л и 600 мл окончен</span> и даные товары будут доступны в начале весеннего сезона 2021 года.
+        
+        <div class='title highlighted'>
+          Перевозка:
+        </div>
+        <p>
+          Стоимость доставки рассчитывается индивидуально после получения вашего заказа.</br>
+        Стоимость доставки для <span class='highlighted'>минимальных заказов</span> от <span class='highlighted'>€ 13,50</span>(По Европе).
+        </p>
+        Экономичные, срочные отгрузки <span class='highlighted'>24 часа Испания, Португалия</span>.<br>
+        Доставка во все <span class='highlighted'>европейские страны</span>, включая Канарские острова 72 часа
     </div>
-	<div class="products-data">
+	  <div class="products-data">
     	<div class="row">	
         	<div class="col-lg-9 products-list">
                 <div class="row shop_container grid_view">
                   @foreach($products as $product)
-                    @include('public.products.product_card', ['product' => $product])
+                    @include('public.products.product_card', ['product' => $product, 'customClasses' => 'col-lg-4'])
                   @endforeach
                 </div>
                 <div class="row">
@@ -46,7 +56,7 @@
                               <div class='col-md-6 pd-10'>
                                   <label>@lang('products.price.from')</label>
                                   <input placeholder="От" class='col-md-12 form-control'
-                                    data-current-value='{{empty($currentFilters["price"]) ? 75 : $currentFilters["price"]["from"]}}'
+                                    data-current-value='{{empty($currentFilters["price"]) ? 25 : $currentFilters["price"]["from"]}}'
                                     step="1"
                                     name="filters[price][from]"
                                     type="number"
@@ -58,7 +68,7 @@
                                   <label>@lang('products.price.to')</label>
                                   <input placeholder="До"
                                     class='col-md-12 form-control'
-                                    data-current-value='{{empty($currentFilters["price"]) ? 75 : $currentFilters["price"]["to"]}}'
+                                    data-current-value='{{empty($currentFilters["price"]) ? 400 : $currentFilters["price"]["to"]}}'
                                     step="1"
                                     name="filters[price][to]"
                                     type="number"
@@ -252,6 +262,10 @@
     })
     $('input[name="filters[price][to]"]').change(function(){
         $("#slider-range").slider('values', 1 , $(this).val()); // sets first handle (index 0) to 50
+    })
+
+    $('.close-btn').click(function(){
+      $('.products-info').fadeOut(900)
     })
 
   } );

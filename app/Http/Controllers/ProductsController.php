@@ -33,7 +33,7 @@ class ProductsController extends Controller
         if($product->product()->first()->categories()->first()){
             $categoryId = $product->product()->first()->categories()->first()->id;
         }
-        $similarProducts = $productRepository->getAll($categoryId)->sortByDesc('special_price')->take(4);
+        $similarProducts = $productRepository->getAll($categoryId)->get()->sortByDesc('special_price')->take(4);
 
         return view('public.products.show', compact('product', 'similarProducts'));
     }

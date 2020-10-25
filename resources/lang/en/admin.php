@@ -141,6 +141,7 @@ return [
   'orders.show.order_info.title' => 'Information about order',
   'orders.show.customer.title' => 'Client information',
   'orders.show.customer.full_name' => 'Full name',
+  'orders.show.customer.id_number' => 'ID number',
   'orders.show.customer.email' => 'Email',
   'orders.show.customer.address' => 'Address',
   'orders.show.customer.city' => 'City',

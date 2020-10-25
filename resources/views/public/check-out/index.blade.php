@@ -1,333 +1,406 @@
 @extends('layouts.public')
 <link rel="stylesheet" href="{{asset('css/checkout.css') }}?v1">
-
 @section('content')
-  <div id='checkout-wrapper'>
-    <!-- START SECTION BANNER -->
-    <section class="bg_light_yellow breadcrumb_section background_bg bg_fixed bg_size_contain" data-img-src="assets/images/breadcrumb_bg.png">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-sm-12 text-center">
-                  <div class="page-title">
-                    <h1>Checkout</h1>
-                    </div>
-                    <nav aria-label="breadcrumb">
-                      <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
-                      </ol>
-                    </nav>
-                </div>
-            </div>
+  @include('public.blocks.page_header', ['title' => __('products.checkout')])
+  <div id='success-modal-wrapper'>
+    <div class='success-modal round-corners white-background text-center'>
+      <div class='round-corners green-background title-wrapper'>
+        <img src="/images/checkmark-square-2.png" alt="">
+        @lang('checkout.label.thank_for_order')
+      </div>
+      <div class='message'>
+        @lang('checkout.label.order_message.1')<br>
+        @lang('checkout.label.order_message.2')<br>
+        <br>
+        <div class='title'>
+          @lang('checkout.label.order_message.3')
         </div>
-    </section>
-    <!-- END SECTION BANNER -->
-
-    <!-- START SECTION SHOP DETAIL -->
+        @lang('checkout.label.order_message.4')
+        <div>
+          <a href="#" class="custom-page-tab">@lang('checkout.label.my_orders')</a>
+        </div>
+        <div>
+          
+          <a href="/{{$current_locale.'/products'}}" class="custom-page-tab active">@lang('checkout.label.continue_buy')</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id='checkout-wrapper' class='custom-page-description'>
     <section>
         <div class="container">
           <div class="row">
             @if(!Auth::guard('customer')->user())
-
-              <div class="col-md-6">
-                  <div class="toggle_info">
-                      <span>@lang('checkout.label.already_have_account') <a href="#loginform" data-toggle="collapse" class="collapsed" aria-expanded="false">@lang('checkout.label.login_page')</a></span>
-                    </div>
-                    <div class="panel-collapse collapse login_form mb-3" id="loginform">
-                        <div class="panel-body">
-                            <form method="post" class="login" ref='form'>
-                                <p>
-                                  @lang('checkout.label.already_have_account_message')
-                                </p>
-                                <div class="form-group">
-                                    <label>@lang('checkout.label.email') <span class="required">*</span></label>
-                                    <input type="text" required class="form-control" name="username">
-                                </div>
-                                <div class="form-group">
-                                    <label>@lang('checkout.label.password') <span class="required">*</span></label>
-                                    <input class="form-control" required type="password" name="password">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default btn-block" name="login" value="Log in">@lang('checkout.label.login_btn')</button>
-                                </div>
-                                <div class="login_footer">
-                                    <a href="#">@lang('checkout.label.forget_password')</a>
-                                    <label>
-                                        <input name="rememberme" type="checkbox" value="forever"> <span>@lang('checkout.label.remember_me')</span>
-                                    </label>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col-md-6">
-                  <div class="toggle_info">
-                    <span>Have a coupon? <a href="#coupon" data-toggle="collapse" class="collapsed" aria-expanded="false">Click here to enter your code</a></span>
-                    </div>
-                    <div class="panel-collapse collapse coupon_form mb-3" id="coupon">
-                        <div class="panel-body">
-                          <p>If you have a coupon code, please apply it below.</p>
-                            <div class="coupon field_form input-group">
-                                <input type="text" value="" class="form-control" placeholder="Enter Coupon Code..">
-                                <div class="input-group-append">
-                                    <button class="btn btn-default btn-sm" type="submit">Apply Coupon</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
               @else
                 <div id='user-addresses' data-addresses='{{Auth::guard("customer")->user()->addresses->toJson()}}'></div>
               @endif
               
             </div>
             <div class="row">
-              <div class="col-md-12">
-                  <div class="heading_s2">
-                    <h5>@lang('checkout.label.billing_details')</h5>
+            
+              <div class="col-md-6 checkout-wrapper">
+                  <div class="checkout-header row">
+                    1. @lang('checkout.label.billing_details')
+                  </div>
+                  <form id='checkout-form' method="post">
+                    <div class="row">
+                      <div class="form-group col-md-12">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="billing.full_name"
+                          v-model='addresses.billing_address.full_name'
+                          placeholder="{{__('checkout.label.first_name')}} {{__('checkout.label.last_name')}}"
+                        >
+                        <span v-show="errors.has('billing.first_name')" class="help error is-danger">@{{ errors.first('billing.first_name') }}</span>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="billing.company_name"
+                          v-model='addresses.billing_address.company_name'
+                          placeholder="{{__('checkout.label.company_name')}}"
+                        >
+                        <span v-show="errors.has('billing.company_name')" class="help error is-danger">@{{ errors.first('billing.company_name') }}</span>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="billing.id_number"
+                          v-model='addresses.billing_address.id_number'
+                          placeholder="{{__('checkout.label.id_number')}}"
+                        >
+                        <span v-show="errors.has('billing.id_number')" class="help error is-danger">@{{ errors.first('billing.id_number') }}</span>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="billing.address1"
+                          v-model='addresses.billing_address.address1'
+                          placeholder="{{__('checkout.label.address')}}"
+                        >
+                        <span v-show="errors.has('billing.address1')" class="help error is-danger">@{{ errors.first('billing.address1') }}</span>
+                      </div>
+                      <div class="form-group col-md-7">
+                        <div class="custom_select">
+                          <select v-validate="'required'" v-model='addresses.billing_address.country' name="billing.country">
+                            <option disabled selected value="">@lang('checkout.label.country')</option>
+                            <option v-for='country in countries' :value="country.code">
+                              @{{country.name}}
+                            </option>
+                          </select>
+                        </div>
+                        <span v-show="errors.has('billing.country')" class="help error is-danger">@{{ errors.first('billing.country') }}</span>
+                      </div>
+                      <div class="form-group col-md-5">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="billing.postcode"
+                          v-model='addresses.billing_address.postcode'
+                          placeholder="{{__('checkout.label.postcode')}}"
+                        >
+                        <span v-show="errors.has('billing.postcode')" class="help error is-danger">@{{ errors.first('billing.postcode') }}</span>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="billing.city"
+                          v-model='addresses.billing_address.city'
+                          placeholder="{{__('checkout.label.city')}}"
+                        >
+                        <span v-show="errors.has('billing.city')" class="help error is-danger">@{{ errors.first('billing.city') }}</span>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="billing.state"
+                          v-model='addresses.billing_address.state'
+                          placeholder="{{__('checkout.label.state')}}"
+                        >
+                        <span v-show="errors.has('billing.state')" class="help error is-danger">@{{ errors.first('billing.state') }}</span>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="billing.phone"
+                          v-model='addresses.billing_address.phone'
+                          placeholder="{{__('checkout.label.phone')}}"
+                        >
+                        <span v-show="errors.has('billing.phone')" class="help error is-danger">@{{ errors.first('billing.phone') }}</span>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <div class='address-toggle title' @click='switchDifferentaddress'>
+                          +ОтПравить на другой адрес?
+                        </div>
+                      </div>
+                    
                     </div>
-                    <form id='checkout-form' method="post">
-                      <div class="row">
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.first_name')<span class="required">*</span></label>
-                              <input type="text" v-validate="'required'" class="form-control" name="billing.first_name" v-model='addresses.billing_address.first_name'>
-                              <span v-show="errors.has('billing.first_name')" class="help error is-danger">@{{ errors.first('billing.first_name') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.last_name')<span class="required">*</span></label>
-                              <input type="text" v-validate="'required'" class="form-control" name="billing.last_name" v-model='addresses.billing_address.last_name'>
-                              <span v-show="errors.has('billing.last_name')" class="help error is-danger">@{{ errors.first('billing.last_name') }}</span>
-                            </div>
-                            <!-- <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.company_name')</label>
-                              <input class="form-control" required v-validate="'required'" type="text" name="billing.company_name" v-model='addresses.billing_address.company_name'>
-                              <span v-show="errors.has('billing.company_name')" class="help error is-danger">@{{ errors.first('billing.company_name') }}</span>
-                            </div> -->
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.country')<span class="required">*</span></label>
-                              <div class="custom_select">
-                                <select v-validate="'required'" v-model='addresses.billing_address.country' name="billing.country">
-                                  <option v-for='country in countries' :value='country.code'>
-                                    @{{country.name}}
-                                  </option>
-                                </select>
-                              </div>
-                              <span v-show="errors.has('billing.country')" class="help error is-danger">@{{ errors.first('billing.country') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.address')<span class="required">*</span></label>
-                              <input type="text" v-validate="'required'" v-model='addresses.billing_address.address1' class="form-control" name="billing.address1" required="">
-                              <span v-show="errors.has('billing.address1')" class="help error is-danger">@{{ errors.first('billing.address1') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.city')<span class="required">*</span></label>
-                              <input class="form-control" v-validate="'required'" v-model='addresses.billing_address.city' required type="text" name="billing.city">
-                              <span v-show="errors.has('billing.city')" class="help error is-danger">@{{ errors.first('billing.city') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.state')</label>
-                              <input class="form-control" v-validate="'required'" v-model='addresses.billing_address.state' required type="text" name="billing.state">
-                              <span v-show="errors.has('billing.state')" class="help error is-danger">@{{ errors.first('billing.state') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.postcode')<span class="required">*</span></label>
-                              <input class="form-control" v-validate="'required'" required type="text" name="billing.postcode" v-model='addresses.billing_address.postcode'>
-                              <span v-show="errors.has('billing.postcode')" class="help error is-danger">@{{ errors.first('billing.postcode') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.phone')<span class="required">*</span></label>
-                              <input class="form-control" v-validate="'required'" required v-model='addresses.billing_address.phone' type="text" name="billing.phone">
-                              <span v-show="errors.has('billing.phone')" class="help error is-danger">@{{ errors.first('billing.phone') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.email')<span class="required">*</span></label>
-                              <input class="form-control" v-validate="'required|email'" v-model='addresses.billing_address.email' required type="text" name="billing.email">
-                              <span v-show="errors.has('billing.email')" class="help error is-danger">@{{ errors.first('billing.email') }}</span>
-                              <span class="help error is-danger">@{{ renderErrors(backendErrors['billing.email']) }}</span>
-                            </div>
-                          <div class="form-group col-md-12">
-                            <label>
-                              <input name="createaccount" id="createaccount" v-model='createAccount' type="checkbox" value=""> <span> @lang('checkout.label.create_account')</span>
-                            </label>
+                    <div class="row different_address" v-if='!use_for_shipping'>
+                      <div class="form-group col-md-12">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="shipping.first_name"
+                          v-model='addresses.shipping_address.first_name'
+                          placeholder="{{__('checkout.label.first_name')}} {{__('checkout.label.last_name')}}" 
+                        >
+                        <span v-show="errors.has('shipping.first_name')" class="help error is-danger">@{{ errors.first('billing.first_name') }}</span>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="shipping.address"
+                          v-model='addresses.shipping_address.address' 
+                          placeholder="{{__('checkout.label.address')}}"
+                        >
+                        <span v-show="errors.has('shipping.address')" class="help error is-danger">@{{ errors.first('billing.address') }}</span>
+                      </div>
+                      <div class="form-group col-md-7">
+                        <div class="custom_select">
+                          <select v-validate="'required'" v-model='addresses.shipping_address.country' name="shipping.country">
+                            <option disabled selected value="">@lang('checkout.label.country')</option>
+                            <option v-for='country in countries' :value="country.code">
+                              @{{country.name}}
+                            </option>
+                          </select>
+                        </div>
+                        <span v-show="errors.has('shipping.country')" class="help error is-danger">@{{ errors.first('shipping.country') }}</span>
+                      </div>
+                      <div class="form-group col-md-5">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="shipping.postcode"
+                          v-model='addresses.shipping_address.postcode'
+                          placeholder="{{__('checkout.label.postcode')}}"
+                        >
+                        <span v-show="errors.has('shipping.postcode')" class="help error is-danger">@{{ errors.first('shipping.postcode') }}</span>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="shipping.city"
+                          v-model='addresses.shipping_address.city'
+                          placeholder="{{__('checkout.label.city')}}"
+                        >
+                        <span v-show="errors.has('shipping.city')" class="help error is-danger">@{{ errors.first('shipping.city') }}</span>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="shipping.state"
+                          v-model='addresses.shipping_address.state'
+                          placeholder="{{__('checkout.label.state')}}"
+                        >
+                        <span v-show="errors.has('shipping.state')" class="help error is-danger">@{{ errors.first('shipping.state') }}</span>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <input 
+                          type="text"
+                          v-validate="'required'"
+                          class="form-control"
+                          name="shipping.phone"
+                          v-model='addresses.shipping_address.phone'
+                          placeholder="{{__('checkout.label.phone')}}"
+                        >
+                        <span v-show="errors.has('shipping.phone')" class="help error is-danger">@{{ errors.first('shipping.phone') }}</span>
+                      </div>
+                    </div>
+                    <div>
+                      <label class="checkbox-container">
+                        @lang('checkout.label.commercial_aggree')
+                        <input class="form-check-input" v-validate="'required'" required="" type="checkbox" name="commercial_aggree" v-model='commercial_aggree'>
+                        <span class="checkmark"></span>
+                      </label>
+                      <span v-show="errors.has('commercial_aggree')" class="help error is-danger">@{{ errors.first('commercial_aggree') }}</span>
+
+                    </div>
+                    <div class="shipping_method">
+                      <div class='checkout-header row'>
+                        2. @lang('checkout.label.shipping_method')
+                      </div>
+                      <div class="custome-radio" v-for='shippingMethod in rates' @click='onShippingMethodClick(shippingMethod.code)'>
+                        <label class="checkbox-container">
+                          @{{shippingMethod.carrier_title}}
+                          <input class="form-check-input" required="" type="radio" :name="shippingMethod.code" :checked='shipping_method == shippingMethod.code'>
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div>
+                      <div class='checkout-header row'>
+                        3. @lang('checkout.label.payment_method')
+                      </div>
+                      <div class="custome-radio" v-for='paymentMethod in payment_methods' @click='onPaymentMethodClick(paymentMethod.method)'>
+                        <label class="checkbox-container">
+                          @{{paymentMethod.method_title}}
+                          <input class="form-check-input" required="" type="radio" :name="paymentMethod.method" :checked='payment_method == paymentMethod.method'>
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                      
+                    
+                  </form>
+                </div>
+                <div class="col-md-6 order-wrapper gray-background">
+                <div class='checkout-header row'>
+                  @lang('checkout.label.your_orders')
+                </div>
+                <div class="">
+                  <div class='row table-title'>
+                    <div class='col-8 text-center product-row-title'>
+                      @lang('checkout.label.title')
+                    </div>
+                    <div class='col-2 text-center product-row-title'>
+                      @lang('checkout.label.quantity')
+                    </div>
+                    <div class='bakgraoundcol-2 text-center product-row-title'>
+                      @lang('checkout.label.total')
+                    </div>
+                  </div>
+                  <div class='product-row round-corners row white-background' v-for='item in cart.items'>
+                    <div class='product-image col-3'>
+                      <img class='round-corners' :src="getProductImage(item.product)"/>
+                    </div>
+                  
+                    <div class='product-info col-5'>
+                      <div class='product-title'>
+                        @{{item.name}}
+                      </div>
+
+                      <div class='product-sku'>@lang('checkout.label.sku'): 
+                        <span> @{{item.product.sku}} </span>
+                      </div>
+                      <div class='product-size green-color checkout-label'>@lang('checkout.label.size'): 
+                        <span class='black-color'> @{{item.product.tree_size}} </span>
+                      </div>
+                      <div class='product-age green-color checkout-label'>@lang('checkout.label.age'): 
+                        <span class='black-color'> @{{item.product.tree_age}} </span>
+                      </div>
+                    </div>
+                    <div class='product-quantity content-centered col-2 text-center'>
+                      @{{item.quantity}}
+                    </div>
+
+                    <div class='product-total content-centered col-2 text-center'>
+                      @{{price_format(item.total)}}
+                    </div>
+
+                  </div>
+                  <div class='cart-total row'>
+                    <div class='col-md-6'>
+                      <div class='promo-wrapper round-corners bordered content-centered'>
+                        <div class='title'>
+                          @lang('checkout.label.promo')
+                        </div>
+
+                        <input type="text" class='form-control' placeholder="{{__('checkout.label.input_promo')}}">
+                      </div>
+                    </div>
+                    <div class='col-md-6 cart-info'>
+                      <div class='cart-info-block'>
+                        <div class='row'>
+                          <div class='col-7'>
+                            @lang('checkout.label.sub_total'): 
                           </div>
-                          <div class="form-group col-md-6 create-account" v-if='createAccount'>
-                            <label>@lang('checkout.label.password') <span class="required">*</span></label>
-                            <input class="form-control" required type="password" placeholder="Password" name="password" v-model='createAccountPass'>
-                          </div>
-                          <div class="form-group col-md-12">
-                            <label>
-                              <input name="createaccount" v-model='use_for_shipping' id="differentaddress" type="checkbox" value=""> <span>@lang('checkout.label.ship_to_same_address')</span>
-                            </label>
+                          <div class='col-5'>
+                            <span class='value'>@{{price_format(cart.sub_total)}}</span>
                           </div>
                         </div>
-                        <div class="row different_address" v-if='!use_for_shipping'>
-                          <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.first_name')<span class="required">*</span></label>
-                              <input type="text" v-validate="'required'" class="form-control" name="shipping.first_name" v-model='addresses.shipping_address.first_name'>
-                              <span v-show="errors.has('shipping.first_name')" class="help error is-danger">@{{ errors.first('shipping.first_name') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.last_name')<span class="required">*</span></label>
-                              <input type="text" v-validate="'required'" class="form-control" name="shipping.last_name" v-model='addresses.shipping_address.last_name'>
-                              <span v-show="errors.has('shipping.last_name')" class="help error is-danger">@{{ errors.first('shipping.last_name') }}</span>
-                            </div>
-                            <!-- <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.company_name')</label>
-                              <input class="form-control" v-validate="'required'" type="text" name="shipping.company_name" v-model='addresses.shipping_address.company_name'>
-                              <span v-show="errors.has('shipping.company_name')" class="help error is-danger">@{{ errors.first('shipping.company_name') }}</span>
-                            </div> -->
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.country')<span class="required">*</span></label>
-                              <div class="custom_select">
-                                <select v-validate="'required'" v-model='addresses.shipping_address.country' name="shipping.country">
-                                  <option v-for='country in countries' :value="country.code">
-                                    @{{country.name}}
-                                  </option>
-                                </select>
-                              </div>
-                              <span v-show="errors.has('shipping.country')" class="help error is-danger">@{{ errors.first('shipping.country') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.address')<span class="required">*</span></label>
-                              <input type="text" v-validate="'required'" v-model='addresses.shipping_address.address1' class="form-control" name="shipping.address1" required="">
-                              <span v-show="errors.has('shipping.address1')" class="help error is-danger">@{{ errors.first('shipping.address1') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.city')<span class="required">*</span></label>
-                              <input class="form-control" v-validate="'required'" v-model='addresses.shipping_address.city' required type="text" name="shipping.city">
-                              <span v-show="errors.has('shipping.city')" class="help error is-danger">@{{ errors.first('shipping.city') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.state')</label>
-                              <input class="form-control" v-validate="'required'" v-model='addresses.shipping_address.state' required type="text" name="shipping.state">
-                              <span v-show="errors.has('shipping.state')" class="help error is-danger">@{{ errors.first('shipping.state') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.postcode')<span class="required">*</span></label>
-                              <input class="form-control" v-validate="'required'" required type="text" name="shipping.postcode" v-model='addresses.shipping_address.postcode'>
-                              <span v-show="errors.has('shipping.postcode')" class="help error is-danger">@{{ errors.first('shipping.postcode') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.phone')<span class="required">*</span></label>
-                              <input class="form-control" v-validate="'required'" required v-model='addresses.shipping_address.phone' type="text" name="shipping.phone">
-                              <span v-show="errors.has('shipping.phone')" class="help error is-danger">@{{ errors.first('shipping.phone') }}</span>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>@lang('checkout.label.email')<span class="required">*</span></label>
-                              <input class="form-control" v-validate="'required|email'" v-model='addresses.shipping_address.email' required type="text" name="shipping.email">
-                              <span v-show="errors.has('shipping.email')" class="help error is-danger">@{{ errors.first('shipping.email') }}</span>
-                            </div>
+                      </div>
+                      <div class='cart-info-block'>
+                        <div class='row'>
+                          <div class='col-7'>
+                            @lang('checkout.label.iva'):
+                          </div>
+                          <div class='col-5'>
+                            <span class='value'>@{{price_format(ivaCalc())}}</span>
+                          </div>
                         </div>
-                        <!-- <div class="form-row">
-                          <div class="form-group col-md-12">
-                              <label>Order notes</label>
-                                <textarea rows="5" class="form-control"></textarea>
-                            </div>
-                        </div> -->
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <div class="payment_method">
-                  <div class='heading_s2'>
-                    <h5>@lang('checkout.label.payment_method')</h5>
-                  </div>
-                  <div class="custome-radio" v-for='paymentMethod in payment_methods' @click='onPaymentMethodClick(paymentMethod.method)'>
-                    <input class="form-check-input" required="" type="radio" :name="paymentMethod.method" :checked='payment_method == paymentMethod.method'>
-                    <label class="form-check-label" :for="paymentMethod.method">@{{paymentMethod.method_title}}</label>
-                    <p data-method="option3" class="payment-text" v-show="payment_method == paymentMethod.method">@{{paymentMethod.description}}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                  <div class="small_divider clearfix"></div>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <div class="payment_method">
-                  <div class='heading_s2'>
-                    <h5>@lang('checkout.label.shipping_method')</h5>
-                  </div>
-                  <div class="custome-radio" v-for='shippingMethod in rates' @click='onShippingMethodClick(shippingMethod.code)'>
-                    <input class="form-check-input" required="" type="radio" :name="shippingMethod.code" :checked='shipping_method == shippingMethod.code'>
-                    <label class="form-check-label" :for="shippingMethod.code">@{{shippingMethod.carrier_title}}</label>
-                    <p data-method="option3" class="payment-text" v-show="shipping_method == shippingMethod.code">@{{shippingMethod.description}}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                  <div class="small_divider clearfix"></div>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <div class="heading_s2">
-                  <h5>@lang('checkout.label.your_orders')</h5>
-                </div>
-                <div class="table-responsive order_table">
+                      </div>
+                      <div class='cart-info-block'>
+                        <div class='row'>
+                          <div class='col-7'>
+                            @lang('checkout.label.shipping'):
+                          </div>
+                          <div class='col-5'>
+                            <span class='value'>@{{shippingCalc()}}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='cart-info-block total'>
+                        <div class='row'>
+                          <div class='col-7 black-color'>
+                            @lang('checkout.label.total'):
+                          </div>
+                          <div class='col-5 '>
+                            <span class='value black-color'>@{{price_format(total_sum)}}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='separator'></div>
+                      <div class='commercial_terms'>
+                        <label class="checkbox-container">
+                          @lang('checkout.label.commercial_terms')
+                          <input class="form-check-input" v-validate="'required'" required="" type="checkbox" name="commercial_terms" v-model='commercial_terms'>
+                          <span class="checkmark"></span>
+                        </label>
+                        <span v-show="errors.has('commercial_terms')" class="help error is-danger">@{{ errors.first('commercial_terms') }}</span>
+                      </div>
+                    </div>  
+                    
+                    <div class='pd-10 order-notice'>
+                      <textarea name="" placeholder="{{__('checkout.label.notice')}}" id="" v.model='customer_message' rows="5"></textarea>
+                    </div>
+                    <a href="#" @click.prevent='onSubmit' class="custom-page-tab active submit-btn">@lang('checkout.label.order')</a>
 
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th class="product-name">@lang('cart.label.title')</th>
-                        <th class="product-price">@lang('cart.label.price')</th>
-                        <th class="product-quantity">@lang('cart.label.quantity')</th>
-                        <th class="product-subtotal">@lang('cart.label.total')</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class='product-row' v-for='item in cart.items'>
-                        <td class="product-name" data-title="Product">
-                          <a href="#">@{{item.name}}</a>
-                        </td>
-                        <td class="product-price" data-title="Price">@{{price_format(item.price)}}</td>
-                        <td class="product-quantity" data-title="Quantity" >
-                          @{{item.quantity}}
-                        </td>
-                        <td class="product-subtotal" data-title="Total">@{{price_format(item.total)}}</td>
-                      </tr>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <th>@lang('checkout.label.sub_total')</th>
-                        <td class="product-subtotal">@{{price_format(cart.sub_total)}}</td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <th>@lang('checkout.label.shipping')</th>
-                        <td>@{{price_format(shippingCalc())}}</td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <th>@lang('checkout.label.total')</th>
-                        <td class="product-subtotal">@{{price_format(total_sum)}}</td>
-                      </tr>
-                    </tfoot>
-                  </table>
+                    <div class='round-corners urgent-border pd-17 urgent-message'>
+                      <div class='title text-left'>
+                        ВНИМАНИЕ !!!
+                      </div>
+                      <div class='gray-color'>
+                        Не производите оплату, до получения счет-проформы с окончательным расчетом стоимости доставки. После получения счета-проформы оплата должна быть произведена непосредственно на наш банковский счет, используя номер счета-проформы в качестве описания платежа. Как только общая сумма заказа поступит на счет Paulownia Professional S.L., мы приступим к немедленной отправке заказанного вами товара.
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            
+              </div>
             <div class="row">
               <div class="col-12">
-                  <div class="small_divider clearfix"></div>
-                </div>
+                <div class="small_divider clearfix"></div>
+              </div>
             </div>
-            <a href="#" @click.prevent='onSubmit' class="btn btn-default pull-right">@lang('checkout.label.order')</a>
-
         </div>
     </section>
   </div>
+  
 @endsection
 
 @push('scripts')
@@ -344,20 +417,22 @@
         data: {
           addresses:{
             billing_address: {
-              // company_name: '',
+              company_name: '',
               first_name: '',
-              last_name: '',
-              email: '',
+              full_name: '',
+              last_name: 'not seted',
+              email: 'email@email.com',
               address1: '',
               city: '',
               country: '',
+              id_number: '',
               state: '',
               postcode: '',
               phone: '',
-              email: ''
             },
             shipping_address: {
-              // company_name: '',
+              company_name: '',
+              full_name: '',
               first_name: '',
               last_name: '',
               email: '',
@@ -369,6 +444,9 @@
               phone: ''
             }
           },
+          customer_message: '',
+          commercial_terms: false,
+          commercial_aggree: false,
           backendErrors: {},
           countries: @json(core()->countries()),
           payment_methods: @json($paymentMethods),
@@ -395,6 +473,20 @@
           await this.retrieveCartInfo()
         },
         methods: {
+          ivaCalc(){
+            console.log(parseFloat(this.cart.grand_total))
+            return parseFloat(this.cart.grand_total) / 10
+          },
+          getProductImage(product){
+            if(product.images.length){
+              return '/storage/' + product.images[0].medium_image_url
+            }else{
+              return product.base_image.small_image_url
+            }
+          },
+          switchDifferentaddress(){
+            this.use_for_shipping = !this.use_for_shipping
+          },
           shippingCalc(){
             let shippingMethod = this.shipping_method
             let currentRate = this.rates.find(function(rate) { return rate.code == shippingMethod })
@@ -412,7 +504,7 @@
             }
           },
           price_format(number, size=2){
-            return parseFloat(number).toFixed(size) + ' ' + this.cart.base_currency_code
+            return parseFloat(number).toFixed(size)
           },
           retrieveCustomerInfo(){
             const addresses = document.querySelector('#user-addresses');
@@ -425,19 +517,21 @@
             this.$http.get('/api/checkout/cart')
               .then(function(response){
                 that.cart = response.data.data
-                that.addresses.billing_address.email = response.data.data.customer_email
-                that.addresses.billing_address.first_name = response.data.data.customer_first_name
-                that.addresses.billing_address.last_name = response.data.data.customer_last_name
+                if(response.data.data.customer_email){
+                  that.addresses.billing_address.email = response.data.data.customer_email
+                  that.addresses.billing_address.first_name = response.data.data.customer_first_name
+                  that.addresses.billing_address.last_name = response.data.data.customer_last_name
+                  that.addresses.billing_address.full_name = response.data.data.customer_first_name + ' ' +response.data.data.customer_last_name
+                }
               })
           },
           async onSubmit(){
             var that = this
             var preLoder = $("#preloader");
-
             try{
               let validForm = await that.$validator.validateAll()
-              preLoder.show()
               if(validForm){
+                preLoder.show()
                 if(this.createAccount){
                   this.user = await this.$http.post('/api/customer/register', {
                     email: this.addresses.billing_address.email,
@@ -465,9 +559,11 @@
                 if(this.payment_method == 'paypal_standard'){
                   location.href = saveOrderResponse.data.redirect_url
                 }else{
+                  let html = $('#success-modal-wrapper').html()
+
                   $.magnificPopup.open({
                     items: {
-                      src: `<div id="success-popup"><div class="col-xl-8 col-md-12 col-sm-12 ml-xl-4 pl-5 "><h1>Thank you for your order!</h1> <p>We will email you, your order details and tracking information</p> <a href="/" class="product-button-success" style="text-decoration: none;">Continue Shopping</a></div></div>`,
+                      src: html,
                       type: 'inline'
                     },
                     callbacks: {
@@ -499,25 +595,6 @@
           },
 
           addressParams(){
-            // {
-            //   "billing" :  {
-            //       "address1" : { "0" : "h23" },
-            //       "use_for_shipping" : "true",
-            //       "first_name" : "john",
-            //       "last_name" : "doe",
-            //       "email" : "john@webkul.com",
-            //       "city" : "noida",
-            //       "state"  :"DL",
-            //       "postcode" : "110092",
-            //       "country" : "IN",
-            //       "phone" : "8802097347"
-            //   },
-            //   "shipping" : {
-            //       "address1" : {
-            //       "0" : ""
-            //       }
-            //   }
-            // }
             var billingAddress = this.addresses.billing_address
             var shippingAddress = this.addresses.shipping_address
             // if(this.user.email){
@@ -534,9 +611,10 @@
                   email: billingAddress.email,
                   phone: billingAddress.phone,
                   postcode: billingAddress.postcode,
+                  id_number: billingAddress.id_number,
                   state: billingAddress.state,
                   country: billingAddress.country,
-                  // company_name: billingAddress.company_name,
+                  company_name: billingAddress.company_name,
                   city: billingAddress.city,
                 },
                 shipping: {
@@ -556,6 +634,14 @@
           },
           onShippingMethodClick(code){
             this.shipping_method = code
+          }
+        },
+        watch: {
+          'addresses.billing_address.full_name': function(newValue, old){
+            console.log(old)
+            let splited = newValue.split(' ')
+            this.addresses.billing_address.first_name = splited[0]
+            this.addresses.billing_address.last_name = splited[1]
           }
         }
       })

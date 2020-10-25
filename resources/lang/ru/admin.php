@@ -103,6 +103,7 @@ return [
   'products.form.attributes.status' => 'Публиковать?',
   'products.form.attributes.type_of_paulownia' => 'Тип павловнии',
   'products.form.attributes.season' => 'Сезон',
+  'orders.show.customer.id_number' => 'ID номер',
   'products.form.attributes.tree_size' => 'Размер дерева',
   'products.form.attributes.Tree_age' => 'Возраст дерева',
   'products.form.attributes.Tree_container' => 'Контейнер для дерева',

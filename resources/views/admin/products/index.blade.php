@@ -43,7 +43,7 @@
                                                 @lang('admin.helpers.no')
                                             @endif
                                         </td>
-                                        <td>
+                                        <td class='image-preview'>
                                             @if(count($item->productImages()->get()))
                                                 @foreach($item->productImages()->get() as $image)
                                                     <img class='img-responsive' src="/storage/{{$image->getImageVersion('thumb')}}" alt="product_img1"/>

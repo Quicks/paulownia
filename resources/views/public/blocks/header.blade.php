@@ -196,8 +196,8 @@
         .mobile {
             display: none;
         }
-        .desktop {
-            display: block;
+        .header-wrap .desktop {
+            display: flex;
         }
         .nav-bar-burger-menu {
             display: none;

@@ -220,7 +220,8 @@ class Product extends Model implements ProductContract
      */
     public function haveSufficientQuantity($qty)
     {
-        return $qty <= $this->totalQuantity() ? true : (core()->getConfigData('catalog.inventory.stock_options.backorders') ? true : false);
+        return true;
+        // return $qty <= $this->totalQuantity() ? true : (core()->getConfigData('catalog.inventory.stock_options.backorders') ? true : false);
     }
 
     /**

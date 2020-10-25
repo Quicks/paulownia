@@ -125,6 +125,7 @@
             <ul class='reset-ul'>
                 <li>@lang('admin.orders.show.customer.full_name'): {{$order->customer_first_name. ' ' .$order->customer_last_name}}</li>
                 <li>@lang('admin.orders.show.customer.email'): {{$order->customer_email}}</li>
+                <li>@lang('admin.orders.show.customer.id_number'): {{$address->id_number}}</li>
                 <li>
                     <address class="invoice-address">
                         @lang('admin.orders.show.customer.address'): {{$address->address1}}

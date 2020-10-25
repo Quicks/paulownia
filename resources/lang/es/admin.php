@@ -103,6 +103,7 @@ return [
   'products.form.attributes.status' => 'Publicar?',
   'products.form.attributes.tree_size' => 'Tamaño del árbol',
   'products.form.attributes.Tree_age' => 'Edad del árbol',
+  'orders.show.customer.id_number' => 'ID number',
   'products.form.attributes.Tree_container' => 'Contenedor de madera',
   'products.form.attributes.min_order_qty' => 'Cantidad mínima de pedido',
   'products.form.attributes.volume_box' => 'Volumen de la caja',

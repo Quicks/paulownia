@@ -675,6 +675,7 @@ class Cart {
             $billingAddress['city'] = $address['city'];
             $billingAddress['postcode'] = $address['postcode'];
             $billingAddress['phone'] = $address['phone'];
+            $billingAddress['id_number'] = $address['id_number'];
         }
 
         if (isset($data['shipping']['address_id']) && $data['shipping']['address_id']) {
@@ -1013,7 +1014,7 @@ class Cart {
      * Deactivates current cart
      *
      * @return void
-     */
+     */Response
     public function deActivateCart()
     {
         if ($cart = $this->getCart()) {

@@ -31,10 +31,12 @@ class Product extends JsonResource
     public function toArray($request)
     {
         $product = $this->product ? $this->product : $this;
-
+        // dd();
         return [
             'id' => $product->id,
-            'type' => $product->type,
+            'type' => $product->type,   
+            'tree_size' => $product->tree_size,   
+            'tree_age' => $product->Tree_age,   
             'name' => $this->name,
             'url_key' => $this->url_key,
             'price' => $product->type == 'configurable' ? $this->productPriceHelper->getVariantMinPrice($product) : $this->price,
@@ -42,7 +44,7 @@ class Product extends JsonResource
             'short_description' => $this->short_description,
             'description' => $this->description,
             'sku' => $this->sku,
-            'images' => ProductImage::collection($product->images),
+            'images' => CustomProductImage::collection($product->productImages()->get()),
             'base_image' => $this->productImageHelper->getProductBaseImage($product),
             'variants' => Self::collection($this->variants),
             'in_stock' => $product->type == 'configurable' ? 1 : $product->haveSufficientQuantity(1),

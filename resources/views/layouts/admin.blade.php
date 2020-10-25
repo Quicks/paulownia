@@ -122,8 +122,12 @@
                 height: 'hide'
             }
         })
+        $(document).on('shown.bs.tab', 'a[data-toggle="pill"]', function (e) {
+            if(!$('#' + $(this).attr('aria-controls') + ' .note-editor').size()){
+                $('#' + $(this).attr('aria-controls') + ' textarea').summernote({minHeight: 500})
+            }
+        })
         
-        $('textarea').summernote({minHeight: 500})
     }, 1000);
     $(document).ready(function(){
         if(Object.keys(flashMessages).length !== 0){

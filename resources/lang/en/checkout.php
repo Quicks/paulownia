@@ -16,6 +16,7 @@ return [
   'label.sku' => 'SKU',
   'label.size' => 'Size',
   'label.age' => 'Age',
+  'label.container' => 'Container',
   'label.id_number' => 'ID number',
   'label.my_orders' => 'my orders',
   'label.continue_buy' => 'return to shop',

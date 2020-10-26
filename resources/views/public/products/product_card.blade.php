@@ -39,10 +39,9 @@
             {{$product->name}}
           </a>
         </h6>
-        <!-- <div class="rating"><div class="product_rate" style="width:80%"></div></div> -->
-        <div><strong>Размер: </strong><span> 1 метр </span></div>
-        <div><strong>Возраст: </strong><span> 3 года </span></div>
-        <div><strong>Контейнер: </strong><span> 5 литров </span></div>
+        <div><strong>@lang('checkout.label.size'): </strong><span> {{$product->tree_size}} </span></div>
+        <div><strong>@lang('checkout.label.age'): </strong><span> {{$product->Tree_age}} </span></div>
+        <div><strong>@lang('checkout.label.container'): </strong><span> {{$product->Tree_container}} </span></div>
       </div>
       <div class='product-footer'>
           <div class='price-block'>
@@ -57,12 +56,10 @@
             <span class='action-btn wishlist-btn'>
               <a data-product-id="{{$product->product_id}}" href="#1" class='{{$wishlist_items->where("product_id", $product->product_id)->exists() ? "wishlisted" : ""}}'>
                 @include('icons/heart')
-                <!-- <img src="/images/heart.svg" alt="add to cart"/> -->
               </a>
             </span>
             <span class='action-btn cart-btn'>
-              <a href="#" class='add-product-to-cart' data-product-id="{{$product->product_id}}" data-quantity="1">
-                <!-- <img src="/images/bag.svg" alt="add to cart"/> -->
+              <a href="#" class='add-product-to-cart' data-product-id="{{$product->product_id}}" data-quantity="{{$product->min_order_qty}}">
                 @include('icons/bag')
               </a>
             </span>

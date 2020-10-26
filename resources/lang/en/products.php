@@ -10,6 +10,7 @@ return [
     'min-order' =>'Minimum order 1 tray',
     'pieces' => 'pieces',
     'size' => 'Size',
+    'checkout' => 'Checkout',
     'product-information' => 'Product information',
     'characteristic' => 'Characteristic',
     'delivery' => 'Delivery',

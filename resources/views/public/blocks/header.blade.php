@@ -62,15 +62,38 @@
                 </div>
                 <div class="panel-item">
                     <a href="#"><img src="{{asset("images/heart-white.svg")}}" alt="favorite"></a>
-                    <div class="panel-item-name desktop">Wishlist</div>
+                    <div class="panel-item-name desktop">
+                        <a href=''>Wishlist</a>
+                    
+                    </div>
                 </div>
-                <div class="panel-item position-relative">
+                <nav class="navbar navbar-expand-lg">
+                    <ul class="navbar-nav attr-nav align-items-center"> 
+                        <li class="dropdown cart_wrap">
+                            <a class="nav-link panel-item" href="#" data-toggle="dropdown">
+                                <img src="{{asset("images/bag.svg")}}" alt="cart">
+                                <div class="count-bg">
+                                    <span>
+                                        @if(Webkul\Checkout\Facades\Cart::getCart())
+                                            {{Webkul\Checkout\Facades\Cart::getCart()->items_count}}
+                                    @endif
+                                    </span>
+                                </div>
+                                <div class="panel-item-name desktop">Basket</div>
+                            </a>
+                            <div class="cart_box dropdown-menu dropdown-menu-right round-corners" id='cart-header-preview'>
+                                @include('public.cart.cart_preview')
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- <div class="panel-item position-relative">
                     <img src="{{asset("images/bag.svg")}}" alt="cart">
                     <div class="count-bg">
                         <span>2</span>
                     </div>
                     <div class="panel-item-name desktop">Basket</div>
-                </div>
+                </div> -->
                 <div class="panel-item">
                     <img src="{{asset("images/man.svg")}}" alt="profile">
                     <div class="panel-item-name desktop">Account</div>
@@ -98,8 +121,8 @@
             </div>
         </div>
         <div class="contacts-wrap">
-            <span>info@paulownia.pro</span>
-            <span> +34 642 787 555</span>
+            <span><a href='mailto:info@paulownia.pro'>info@paulownia.pro</a></span>
+            <span> <a href='phone:+34 642 787 555'>+34 642 787 555</a></span>
         </div>
         <div class="header-write-us desktop">Напишите нам</div>
     </div>

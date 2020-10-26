@@ -9,9 +9,13 @@ use App\Helpers\ImageSaveHelper;
 use Illuminate\Support\Facades\Storage;
 use Webkul\Product\Repositories\ProductImageRepository;
 use Webkul\Product\Models\ProductImage;
+use App\Http\Traits\ImagesTrait;
+
 
 class ImageController extends Controller
 {
+    use ImagesTrait;
+
     public function createImage(Request $request)
     {
         $imageable_id = $request->imageable_id;
@@ -128,6 +132,12 @@ class ImageController extends Controller
         $productImage->path_tmb = $filesPaths['thumbnail'];
         $productImage->save();
         return $productImage->id;
+    }
+
+    public function store(Request $request){
+        $image = Image::create($request);
+        $this->saveImages($image->id, 'Image', $request->image);
+
     }
 
 }

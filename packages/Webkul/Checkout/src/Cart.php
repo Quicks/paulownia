@@ -213,12 +213,13 @@ class Cart {
 
             if ($ifExists) {
                 $item = $this->cartItem->findOneByField('id', $ifExists);
-
                 $data['quantity'] = $data['quantity'] + $item->quantity;
 
                 $result = $this->updateItem($id, $data, $ifExists);
             } else {
+                $data['quantity'] = $item->product->min_order_qty;
                 $result = $this->createItem($id, $data);
+
             }
 
             return $result;

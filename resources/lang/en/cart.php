@@ -14,5 +14,5 @@ return [
   'label.shipping' => 'Calculate shipping',
   'label.checkout' => 'checkout',
   'label.view_cart' => 'view cart',
-  'label.empty_cart' => 'There are no items in your basket yet. Go to the <a href=":link">:title</a> to fill it.'
+  'label.empty_cart' => 'There are no items in your basket yet. Go to the <a style="color: #5B9600 !important" href=":link">:title</a> to fill it.'
 ];

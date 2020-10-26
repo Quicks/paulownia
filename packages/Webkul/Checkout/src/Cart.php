@@ -217,7 +217,6 @@ class Cart {
 
                 $result = $this->updateItem($id, $data, $ifExists);
             } else {
-                $data['quantity'] = $item->product->min_order_qty;
                 $result = $this->createItem($id, $data);
 
             }

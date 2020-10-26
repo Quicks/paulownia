@@ -1014,7 +1014,7 @@ class Cart {
      * Deactivates current cart
      *
      * @return void
-     */Response
+     */
     public function deActivateCart()
     {
         if ($cart = $this->getCart()) {

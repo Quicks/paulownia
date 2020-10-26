@@ -16,6 +16,7 @@ return [
   'label.size' => 'Размер',
   'label.age' => 'Возраст',
   'label.promo' => 'Промокод',
+  'label.container' => 'Контейнер',
   'label.id_number' => 'ID номер',
   'label.thank_for_order' => 'СПАСИБО ЗА ЗАКАЗ',
   'label.order_message.1' => 'Ваш заказ получен.',

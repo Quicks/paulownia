@@ -15,9 +15,9 @@
                                 <option @if(Request::getRequestUri() =='/admin/images/?type=' . $type) selected @endif value="?type={{$type}}">{{substr($type, 11)}}</option>
                             @endforeach
                         </select>
-                        <br/>
-                        <br/>
 
+                        <br/>
+                        <br/>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>

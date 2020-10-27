@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 
 use App\Models\CustomPage;
 use Illuminate\Http\Request;
+use Webkul\Attribute\Models\Attribute;
+
 
 class CustomPagesController extends Controller
 {
@@ -26,9 +28,11 @@ class CustomPagesController extends Controller
      */
     public function create()
     {
+      $possibleParents = CustomPage::whereNull('parent_id')->get();
       $possibleSiblings = CustomPage::all();
       $custom_page = new CustomPage();
-      return view('admin.custom_pages.create', compact('custom_page', 'possibleSiblings'));
+      $possibleSorts = Attribute::where('code', 'type_of_paulownia')->first()->options;
+      return view('admin.custom_pages.create', compact('custom_page', 'possibleSiblings', 'possibleParents', 'possibleSorts'));
     }
 
     /**
@@ -73,8 +77,10 @@ class CustomPagesController extends Controller
     public function edit($id)
     {
       $custom_page = CustomPage::findOrFail($id);
+      $possibleParents = CustomPage::whereNull('parent_id')->get();
       $possibleSiblings = CustomPage::all();
-      return view('admin.custom_pages.edit', compact('custom_page', 'possibleSiblings'));
+      $possibleSorts = Attribute::where('code', 'type_of_paulownia')->first()->options;
+      return view('admin.custom_pages.edit', compact('custom_page', 'possibleSiblings', 'possibleParents', 'possibleSorts'));
     }
 
     /**

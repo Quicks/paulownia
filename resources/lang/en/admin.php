@@ -197,6 +197,8 @@ return [
 
   'custom_pages.index.title' => 'Custom pages',
   'custom_pages.index.table.siblings' => 'Siblings',
+  'custom_pages.index.table.parent' => 'Parent page',
+  'custom_pages.index.table.sort' => 'Sort',
   'custom_pages.create.title' => 'Create custom page',
   'custom_pages.edit.title' => 'Edit custom page',
 
@@ -225,6 +227,7 @@ return [
   'form.keywords' => 'Keywords',
   'form.watermark' => 'Add watermark',
   'form.file_change' => 'Change',
+  'form.page_title' => 'Page title',
   'form.translate_to_other' => 'Translate from Spanish to other languages',
 
   'faq.index.table.topic' => 'Topic',

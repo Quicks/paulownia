@@ -196,6 +196,8 @@ return [
 
   'custom_pages.index.title' => 'Paginas personalizadas',
   'custom_pages.index.table.siblings' => 'Hermanas',
+  'custom_pages.index.table.parent' => 'página principal',
+  'custom_pages.index.table.sort' => 'grado',
   'custom_pages.create.title' => 'Crear página personalizada',
   'custom_pages.edit.title' => 'Editar página personalizada',
 
@@ -224,6 +226,7 @@ return [
   'form.keywords' => 'Palabras clave',
   'form.watermark' => 'Agregar marca de agua',
   'form.file_change' => 'Editar',
+  'form.page_title' => 'Título de la página',
   'form.translate_to_other' => 'Traducir del español a otros idiomas',
 
   'faq.index.table.topic' => 'Tema',

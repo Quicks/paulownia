@@ -65,6 +65,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/file_save/{id}', 'App\Http\Controllers\Admin\FilesController@storeFile');
         Route::delete('/file_del/{fileId}', 'App\Http\Controllers\Admin\FilesController@delete');
         Route::get('/images', 'App\Http\Controllers\Admin\ImageController@index')->name('images.index');
+        Route::post('/images', 'App\Http\Controllers\Admin\ImageController@store')->name('images.create');
         Route::post('/translate', 'App\Http\Controllers\Admin\TranslateController@translate')->name('translate');
         Route::resource('certificates', 'App\Http\Controllers\Admin\\CertificatesController');
         Route::post('/update_product_image/{id}', 'App\Http\Controllers\Admin\ImageController@updateProductImage')->name('updateProductImage');

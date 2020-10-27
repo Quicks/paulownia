@@ -41,9 +41,40 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 80px;
   margin: 0 40px;
+  
+}
+.siblings, .parent-siblings{
   display: flex;
   justify-content: space-evenly;
 }
+
+.parent-siblings{
+  margin-bottom: 20px;
+}
+
+.parent-siblings ~ .siblings .custom-page-tab{
+  border: 0;
+  background-color: transparent;
+}
+.parent-siblings ~ .parent-siblings .custom-page-tab{
+  border: 0;
+  background-color: transparent;
+}
+.parent-siblings ~ .parent-siblings .custom-page-tab a{
+  color: #575756;
+}
+
+.parent-siblings ~ .parent-siblings .custom-page-tab.active a{
+  color: #5B9600;
+}
+
+.parent-siblings ~ .siblings .custom-page-tab a{
+  color: #575756;
+}
+.parent-siblings ~ .siblings .custom-page-tab.active a{
+  color: #5B9600;
+}
+
 
 .custom-page-tab{
   background: #FFFFFF;
@@ -64,11 +95,13 @@
   color: #5B9600;
 
 }
+
 .custom-page-tab.active{
   background: #5B9600;
+}
+.custom-page-tab.active a{
   color: #FFFFFF;
 }
-
 .custom-page-description_title{
   font-family: Poppins;
   font-style: normal;

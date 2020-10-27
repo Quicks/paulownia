@@ -8,14 +8,20 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">Images</div>
-                    <div class="card-body">
-                        <select onchange="window.location.href = this.value" class="custom-select">
+                    <div class="card-body row">
+                        <select onchange="window.location.href = this.value" class="custom-select form-control col-md-3">
                             <option @if(Request::getRequestUri() == "/admin/images") selected @endif value="/admin/images/">All</option>
                             @foreach($types as $type)
                                 <option @if(Request::getRequestUri() =='/admin/images/?type=' . $type) selected @endif value="?type={{$type}}">{{substr($type, 11)}}</option>
                             @endforeach
                         </select>
+                        <div class='col-md-5'></div>
+                        <form method="POST" action='{{route("images.create")}}' enctype="multipart/form-data" multiple='true'>
+                            {{ csrf_field() }}
 
+                            <input class='col-md-2 form-control' type='file' name='images[]' multiple='true'>
+                            <input class='col-md-2 form-control' type='submit'>
+                        </form>
                         <br/>
                         <br/>
                         <div class="table-responsive">

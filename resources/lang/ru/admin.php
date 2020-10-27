@@ -198,6 +198,8 @@ return [
 
   'custom_pages.index.title' => 'Кастомные страницы',
   'custom_pages.index.table.siblings' => 'Соседи',
+  'custom_pages.index.table.parent' => 'Родительская страница',
+  'custom_pages.index.table.sort' => 'Сорт',
   'custom_pages.create.title' => 'Создать кастомную страницу',
   'custom_pages.edit.title' => 'Редактировать кастомную страницу',
 
@@ -226,6 +228,7 @@ return [
   'form.keywords' => 'Ключевые слова',
   'form.watermark' => 'Добавить водяной знак',
   'form.file_change' => 'Изменить',
+  'form.page_title' => 'Заголовок страницы',
   'form.translate_to_other' => 'Перевести с испанского на другие языки',
 
   'faq.index.table.topic' => 'Тема',

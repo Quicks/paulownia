@@ -79,6 +79,12 @@
                                     <span>@lang('admin.sidebar.links.public.custom_pages')</span>
                             </a>
                         </li>
+                        <li>
+                            <a class="{{Request::is('admin/images') ? "custom-admin-sidebar-a-active" : ""}}"
+                                href="{{route('images.index')}}">
+                                    <span>@lang('admin.sidebar.links.public.images')</span>
+                            </a>
+                        </li>
                     </ul>
 
                 </div>

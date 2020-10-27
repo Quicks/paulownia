@@ -14,7 +14,10 @@ class CustomPagesController extends Controller
     public function show($link)
     {
       $custom_page = CustomPage::where('link', $link)->firstOrFail();
-
+      $products = [];
+      if($custom_page->sort){
+        
+      }
       return view('public.custom_pages.show', compact('custom_page'));
     }
  

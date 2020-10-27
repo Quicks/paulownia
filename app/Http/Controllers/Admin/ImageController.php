@@ -114,7 +114,7 @@ class ImageController extends Controller
         if (!empty($request->get('type'))) {
             $images = $images->where('imageable_type', $request->get('type'));
         }
-
+        $images = $images->sortByDesc('created_at');
         return view('admin.images.index', compact('images', 'types'));
     }
 
@@ -135,9 +135,9 @@ class ImageController extends Controller
     }
 
     public function store(Request $request){
-        $image = Image::create($request);
-        $this->saveImages($image->id, 'Image', $request->image);
-
+        $image = Image::create($request->all());
+        $this->saveImages($image->id, 'Image', $request->images, false);
+        return back()->with('flash_message', 'Image added!');
     }
 
 }

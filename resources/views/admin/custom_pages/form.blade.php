@@ -1,6 +1,6 @@
 <div class='col-md-10'>
 
-    <div class="tab-content nav-responsive nav nav-tabs" id="nav-tabContent">
+    <div class="tab-content nav-responsive nav nav-tabs" id="custom-page-form">
         <div class="tab-pane fade active in" id="main-form" role="tabpanel" aria-labelledby="main-form">
             <div class="row">
 
@@ -28,12 +28,45 @@
                     </select>
                     {!! $errors->first('parent_id', '<p class="help-block">:message</p>') !!}
                 </div>
+                <div class="form-group {{ $errors->has('parent_id') ? 'has-error' : ''}}">
+                    <label for="parent_id" class="control-label col-sm-3">@lang('admin.custom_pages.index.table.parent')</label>
+                    <select class="form-control col-sm-6" name="parent_id">
+                        <option>Выберите главную страницу</option>
+                        @foreach($possibleParents as $possible_parent)
+                            @if($possible_parent->id == $custom_page->id)
+                                @continue
+                            @endif
+                            @if($custom_page->parent_id == $possible_parent->id)
+                                <option selected='selected' value="{{$possible_parent->id}}">{{$possible_parent->link}}</option>
+                            @else
+                                <option value="{{$possible_parent->id}}">{{$possible_parent->link}}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                    {!! $errors->first('parent_id', '<p class="help-block">:message</p>') !!}
+                </div>
+                <div class="form-group {{ $errors->has('sort') ? 'has-error' : ''}}">
+                    <label for="sort" class="control-label col-sm-3">@lang('admin.custom_pages.index.table.sort')</label>
+                    <select class="form-control col-sm-6" name="sort">
+                        <option>Выберите сорт</option>
+                        @foreach($possibleSorts as $possible_sort)
+                            @if($custom_page->sort == $possible_sort->id)
+                                <option selected='selected' value="{{$possible_sort->name}}">{{$possible_sort->admin_name}}</option>
+                            @else
+                                <option value="{{$possible_sort->id}}">{{$possible_sort->admin_name}}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                    {!! $errors->first('sort', '<p class="help-block">:message</p>') !!}
+                </div>
             </div>
 
         </div>
         @foreach(config('translatable.locales') as $locale)
             <div class="tab-pane fade" id={{$locale}} role="tabpanel" aria-labelledby={{$locale}}>
                 <div class="border p-4 mb-4 bg-light rounded">
+                    @include('admin.multi_lang_inputs.text_input', [
+                            'item' => isset($custom_page) ? $custom_page : null, 'itemProperty' => 'page_title', 'translate' => 'translate'])
                     @include('admin.multi_lang_inputs.text_input', [
                             'item' => isset($custom_page) ? $custom_page : null, 'itemProperty' => 'title', 'translate' => 'translate'])
 

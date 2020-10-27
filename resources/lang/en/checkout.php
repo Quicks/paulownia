@@ -13,6 +13,8 @@ return [
   'label.city' => 'City',
   'label.title' => 'Name',
   'label.quantity' => 'Q-ty',
+  'label.product_added' => 'Product added',
+  'label.success_put_bag' => 'Item successfully added to bag!',
   'label.sku' => 'SKU',
   'label.size' => 'Size',
   'label.age' => 'Age',

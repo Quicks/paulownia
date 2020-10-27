@@ -74,7 +74,10 @@
         @endif
         <div class="content">
             @yield('content')
+            @include('public.blocks.success_to_bag')
+
         </div>
+
     </main>
     @include('public/blocks/footer')
 
@@ -92,6 +95,5 @@
 {{--@include('cookieConsent::index')--}}
 
 @stack('scripts')
-
 </body>
 </html>

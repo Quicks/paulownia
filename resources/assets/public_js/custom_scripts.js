@@ -18,6 +18,13 @@ var Cart = (function(){
       },
       success: function(response){
         updatePreview()
+        let html = $('#success-put-to-bag-modal-wrapper').html()
+        $.magnificPopup.open({
+          items: {
+            src: html,
+            type: 'inline'
+          }
+        });
         callback(response)
       }
     })
@@ -109,4 +116,75 @@ $(document).ready(function(){
   $('.message-close').click(function () {
     $('.header-message-wrap').css('visibility', 'hidden')
   })
+  
+  var timeoutTitme = 200;
+  var timeout;
+  $(document).on('click', '.plus', function(){
+    var quantityDom = $(this).parents('.product-quantity').first()
+    var quantity = quantityDom.find('input[name="quantity"]').val()
+    var newQuantity = parseInt(quantity) + 1
+    quantityDom.find('input[name="quantity"]').val(newQuantity)	
+    clearTimeout(timeout)
+    timeout = setTimeout(function(){
+      updateCart(quantityDom, newQuantity)
+    }, timeoutTitme)
+  })
+  $(document).on('click', '.minus', function(){
+    var quantityDom = $(this).parents('.product-quantity').first()
+    var quantity = quantityDom.find('input[name="quantity"]').val()
+    var newQuantity = parseInt(quantity) - 1
+    var minOrderQty = quantityDom.data('cart-min-qty')
+    if(newQuantity >= minOrderQty){
+      quantityDom.find('input[name="quantity"]').val(newQuantity)
+      clearTimeout(timeout)
+      timeout = setTimeout(function(){
+        updateCart(quantityDom, newQuantity)
+      }, timeoutTitme)
+    }
+  })
+  $(document).on('change', '.quantity input[name="quantity"]', function(){
+    var quantityDom = $(this).parents('.product-quantity').first()
+    var newQuantity = parseInt($(this).val())
+    var minOrderQty = quantityDom.data('cart-min-qty')
+    if(newQuantity >= minOrderQty){
+      clearTimeout(timeout)
+      timeout = setTimeout(function(){
+        updateCart(quantityDom, newQuantity)
+      }, timeoutTitme)
+    }else{
+      clearTimeout(timeout)
+      timeout = setTimeout(function(){
+        updateCart(quantityDom, minOrderQty)
+      }, timeoutTitme)
+    }
+  })
+  $(document).on('click', '.product-remove', function(){
+    Cart.removeFromCart($(this).data('cart-item-id'), function(){
+      rerenderCart()
+    })
+  })
+  
+  function updateCart(quantityDom, newQuantity){
+    var cartItemId = quantityDom.data('cart-item-id')
+    Cart.updateQuantity(cartItemId, newQuantity, function(){
+      rerenderCart(function(){
+        var row = $('.product-row[data-cart-item-id="' + cartItemId + '"]')
+        row.find('.product-subtotal').addClass('number-update')
+        $('.cart_total_amount').addClass('number-update')
+      })
+    })
+  }
+
+  function rerenderCart(callback){
+    $.ajax({
+      url: '/{{App::getLocale()}}/cart',
+      data: {
+        format: 'html'
+      },
+      success: function(response){
+        $('#cart-wrapper').html(response)
+        callback()
+      } 
+    })
+  }
 })

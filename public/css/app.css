@@ -4162,6 +4162,9 @@ input.form-control{
 .cart_list .product-row{
   margin-bottom: 0;
 }
+#success-put-to-bag-modal-wrapper{
+  display: none;
+}
 @media only screen and (min-width: 1500px) {
   .custom-page-container {
     margin-top: 120px;
@@ -10730,25 +10733,50 @@ body.active {
 	margin-right: 10px;
 }
 .quantity {
+	position: relative;
 	border: 1px solid #ccc;
 	margin-right: 10px;
-	border-radius: 50px;
 	display: inline-block;
 	vertical-align: middle;
 }
-.quantity .minus, .quantity .plus {
+.quantity .minus{
 	display: block;
-	float: left;
-	border-radius: 50px;
 	cursor: pointer;
-	border: 0;
 	padding: 0;
-	width: 34px;
-	height: 34px;
 	line-height: 36px;
 	text-align: center;
 	font-size: 20px;
 	margin: 4px;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	right: 0;
+	top: 15px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 10px solid #5B9600;
+	background: transparent;
+	border-bottom: 0;
+}
+.quantity .plus{
+	display: block;
+	cursor: pointer;
+	padding: 0;
+	line-height: 36px;
+	text-align: center;
+	font-size: 20px;
+	margin: 4px;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 10px solid #5B9600;
+	background: transparent;
+	border-top: 0;
 }
 .quantity .qty {
 	float: left;
@@ -10759,9 +10787,9 @@ body.active {
 	text-align: center;
 	padding: 0;
 }
-.quantity .minus:hover, .quantity .plus:hover {
-	background-color: #5B9600;
-	color: #fff;
+.product-quantity .quantity .minus:hover, .product-quantity .quantity .plus:hover {
+	background-color: transparent;
+	/* color: #fff; */
 }
 .product-thumbnail img {
 	max-width: 100px;

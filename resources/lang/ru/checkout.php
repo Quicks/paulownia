@@ -15,6 +15,8 @@ return [
   'label.sku' => 'Артикул',
   'label.size' => 'Размер',
   'label.age' => 'Возраст',
+  'label.product_added' => 'Товар добавлен',
+  'label.success_put_bag' => 'Товар успешно добавлен в корзину!',
   'label.promo' => 'Промокод',
   'label.container' => 'Контейнер',
   'label.id_number' => 'ID номер',

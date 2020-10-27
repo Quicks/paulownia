@@ -726,6 +726,9 @@ input.form-control{
 .cart_list .product-row{
   margin-bottom: 0;
 }
+#success-put-to-bag-modal-wrapper{
+  display: none;
+}
 @media only screen and (min-width: 1500px) {
   .custom-page-container {
     margin-top: 120px;

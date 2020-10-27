@@ -20,8 +20,13 @@
             <span class='black-color'> {{$item->product->tree_age}} </span>
           </div>
         </div>
-        <div class='product-quantity content-centered col-2 text-center'>
-          {{$item->quantity}}
+        <div class='product-quantity content-centered col-2 text-center' data-title="Quantity" data-cart-item-id="{{$item->id}}" data-cart-min-qty='{{$item->product->min_order_qty}}'>
+          <div class="quantity">
+            <input type="button" value="-" class="minus">
+            <input type="text" name="quantity" value="{{$item->quantity}}" title="Qty" class="qty" size="4">
+            <input type="button" value="+" class="plus">
+          </div>
+          <!-- {{$item->quantity}} -->
         </div>
 
         <div class='product-total content-centered col-2 text-center'>

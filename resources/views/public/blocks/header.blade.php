@@ -60,15 +60,18 @@
                     <img src="{{asset("images/search.svg")}}" alt="search">
                     <div class="panel-item-name desktop">&nbsp;</div>
                 </div>
-                <div class="panel-item">
-                    <a href="#"><img src="{{asset("images/heart-white.svg")}}" alt="favorite"></a>
-                    <div class="panel-item-name desktop">
-                        <a href=''>Wishlist</a>
-                    
-                    </div>
-                </div>
+                
                 <nav class="navbar navbar-expand-lg">
                     <ul class="navbar-nav attr-nav align-items-center"> 
+                        <li>
+                            <div class="panel-item wishlist">
+                                <a href="#"><img src="{{asset("images/heart-white.svg")}}" alt="favorite"></a>
+                                <div class="panel-item-name desktop">
+                                    <a href=''>Wishlist</a>
+                                
+                                </div>
+                            </div>
+                        </li>    
                         <li class="dropdown cart_wrap">
                             <a class="nav-link panel-item" href="#" data-toggle="dropdown">
                                 <img src="{{asset("images/bag.svg")}}" alt="cart">
@@ -85,15 +88,9 @@
                                 @include('public.cart.cart_preview')
                             </div>
                         </li>
+                        
                     </ul>
                 </nav>
-                <!-- <div class="panel-item position-relative">
-                    <img src="{{asset("images/bag.svg")}}" alt="cart">
-                    <div class="count-bg">
-                        <span>2</span>
-                    </div>
-                    <div class="panel-item-name desktop">Basket</div>
-                </div> -->
                 <div class="panel-item">
                     <img src="{{asset("images/man.svg")}}" alt="profile">
                     <div class="panel-item-name desktop">Account</div>
@@ -188,6 +185,9 @@
         text-transform: uppercase;
         color: white;
     }
+    .navbar .navbar-nav .dropdown-item{
+        padding: 20px 20px 20px 35px;
+    }
     .count-bg {
         position: absolute;
         width: 14px;
@@ -219,6 +219,21 @@
         padding-right: 10px;
         margin-top: 10px;
     }
+    
+    .wishlist a{
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 15px;
+        /* identical to box height */
+        letter-spacing: -0.04em;
+        color: #FDFDFD;
+    }
+    .wishlist{
+        margin: 12px;
+    }
+
 
     @media (min-width: 1024px) {
         .header-wrap .mobile {
@@ -287,7 +302,8 @@
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
             border-radius: 30px 0 0 0;
             margin-top: -30px;
-            padding: 10px
+            /* overflow: hidden; */
+            /* padding: 10px */
         }
         #navbarSupportedContent > ul > li.nav-item.dropdown > div > a,
         #navbarDropdownSubmenu {
@@ -296,19 +312,35 @@
             line-height: 22px;
             color: #575756;
         }
+        #navbarDropdownSubmenu:hover, #navbarSupportedContent > ul > li.nav-item.dropdown > div > a:hover {
+            color: #5B9600;
+        }
         #navbarSupportedContent > ul > li.nav-item.dropdown > div > ul > div {
             background: white;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
             border-radius: 0 0 30px 0;
-            margin-top: -46px;
-            margin-left: 10px;
+            margin-top: -63px;
+            /* margin-left: 10px; */
             padding: 10px
+        }
+        .dropdown-item.dropdown-toggle::after{
+            position: absolute;
+            right: 20px;
+        }
+        .dropdown-toggle[aria-expanded='true']::after{
+            transform: rotate(-90deg);
+        }
+        [aria-labelledby="navbarDropdown"] .nav-item.dropdown.show{
+            background: #EFEFEF;
         }
         #navbarSupportedContent > ul > li.nav-item.dropdown > div > ul > div > a {
             font-family: 'Poppins', sans-serif;
             font-size: 15px;
             line-height: 22px;
             color: #575756;
+        }
+        #navbarSupportedContent > ul > li.nav-item.dropdown > div > ul > div > a:hover{
+            color: #5B9600;
         }
         .menu-link > img {
             margin-left: 5px;
@@ -347,6 +379,9 @@
             line-height: 20px;
             padding-right: 30px;
             margin-top: 10px;
+        }
+        .contacts-wrap a{
+            color: #FDFDFD;
         }
         .contacts-wrap > span {
             margin-left: 10px;

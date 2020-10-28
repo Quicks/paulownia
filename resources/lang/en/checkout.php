@@ -17,6 +17,7 @@ return [
   'label.success_put_bag' => 'Item successfully added to bag!',
   'label.sku' => 'SKU',
   'label.size' => 'Size',
+  'label.pcs' => 'pcs',
   'label.age' => 'Age',
   'label.container' => 'Container',
   'label.id_number' => 'ID number',

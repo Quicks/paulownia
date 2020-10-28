@@ -98,6 +98,7 @@
 
 .custom-page-tab.active{
   background: #5B9600;
+  color: #FFFFFF;
 }
 .custom-page-tab.active a{
   color: #FFFFFF;

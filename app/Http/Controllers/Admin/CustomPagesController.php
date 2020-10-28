@@ -28,7 +28,7 @@ class CustomPagesController extends Controller
      */
     public function create()
     {
-      $possibleParents = CustomPage::whereNull('parent_id')->get();
+      $possibleParents = CustomPage::whereNull('parent_id')->orWhere('parent_id', 0)->get();
       $possibleSiblings = CustomPage::all();
       $custom_page = new CustomPage();
       $possibleSorts = Attribute::where('code', 'type_of_paulownia')->first()->options;
@@ -77,7 +77,7 @@ class CustomPagesController extends Controller
     public function edit($id)
     {
       $custom_page = CustomPage::findOrFail($id);
-      $possibleParents = CustomPage::whereNull('parent_id')->get();
+      $possibleParents = CustomPage::whereNull('parent_id')->orWhere('parent_id', 0)->get();
       $possibleSiblings = CustomPage::all();
       $possibleSorts = Attribute::where('code', 'type_of_paulownia')->first()->options;
       return view('admin.custom_pages.edit', compact('custom_page', 'possibleSiblings', 'possibleParents', 'possibleSorts'));

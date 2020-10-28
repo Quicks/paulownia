@@ -20,6 +20,7 @@ return [
   'label.promo' => 'Промокод',
   'label.container' => 'Контейнер',
   'label.id_number' => 'ID номер',
+  'label.pcs' => 'шт',
   'label.thank_for_order' => 'СПАСИБО ЗА ЗАКАЗ',
   'label.order_message.1' => 'Ваш заказ получен.',
   'label.order_message.2' => 'Вы можете увидеть подробности в своем аккаунте.',

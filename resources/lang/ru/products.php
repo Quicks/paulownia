@@ -19,7 +19,8 @@ return [
     'cartridge' => 'В картридже',
     'units' => 'единиц',
     'amount' => 'Количество',
-    'total' => 'Total',
+    'total' => 'Всего',
+    'tree_age' => 'Возраст дерева',
     'add-cart' =>'Добавить в корзину',
     'all-goods' => 'Наши товары',
     'tree_size' => 'Размер',
@@ -32,6 +33,11 @@ return [
     'price.from' => 'От',
     'price.to' => 'До',
     'sort' => 'Сорт',
+    'popular-goods' => 'Популярные товары',
+    'min_order_qty' => 'Минимальный заказ',
+    'description' => 'Описание',
+    'characteristics' => 'Характеристики',
+    'additional_info' => 'Дополнительная информация',
     'season' => 'Сезон',
     'filters.submit' => 'Применить'
 

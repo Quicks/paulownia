@@ -59,9 +59,19 @@
               </a>
             </span>
             <span class='action-btn cart-btn'>
-              <a href="#" class='add-product-to-cart' data-product-id="{{$product->product_id}}" data-quantity="{{$product->min_order_qty}}">
-                @include('icons/bag')
-              </a>
+              @if(Webkul\Checkout\Facades\Cart::getCart())
+                <a href="#" class='add-product-to-cart' 
+                  data-product-id="{{$product->product_id}}" 
+                  data-quantity="{{Webkul\Checkout\Facades\Cart::getCart()->items->contains(function($value,   $key) use($product) { return $value->product_id == $product->product_id; } ) ? 1 :$product->min_order_qty}}">
+                  @include('icons/bag')
+                </a>
+              @else
+                <a href="#" class='add-product-to-cart'
+                  data-product-id="{{$product->product_id}}" 
+                  data-quantity="{{$product->min_order_qty}}">
+                    @include('icons/bag')
+                </a>
+              @endif
             </span>
           </div>
           

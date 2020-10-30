@@ -13,50 +13,42 @@ class NewsController extends Controller
 {
     public function index(Request $request)
     {
-        $months = array_map(function ($n) {
-            return sprintf('%02d', $n);
-        }, range(1, 12));
-        $years = range(2019, date('Y'));
         $currentDate = Carbon::now();
-        $news = $this->filter($request,  News::withTranslation()->where([['active',  true], ['publish_date', '<=', $currentDate]]));
-        $articles = $this->filter($request, Article::withTranslation()->where([['active', true], ['publish_date', '<=', $currentDate]]));
-        $treatises = $this->filter($request,   Treatise::withTranslation()->where([['active', true], ['publish_date', '<=', $currentDate]]));
-
-        if($request->has('topic')){
-            if($request->topic == 'news') {
-                $allNews = $news->sortByDesc('publish_date')->paginate(9);
-            }
-            if($request->topic == 'articles') {
-                $allNews = $articles->sortByDesc('publish_date')->paginate(9);
-            }
-            if($request->topic == 'treatises') {
-                $allNews = $treatises->sortByDesc('publish_date')->paginate(9);
-            }
-        } else {
-            $allNews = $news->concat($articles)->concat($treatises)->sortByDesc('publish_date')->paginate(9);
+        
+        $allNews = News::where([['active',  true], ['publish_date', '<=', $currentDate]]);
+        if($request->search){
+            $allNews = $allNews
+                ->select('news.id', 'news.publish_date')
+                ->join('news_translations', 'news.id', 'news_translations.news_id')
+                ->orWhere('news_translations.title', 'like', '%'.$request->search.'%')
+                ->orWhere('news_translations.text', 'like', '%'.$request->search.'%')
+                ->groupBy('news.id');
         }
+        $allNews = $allNews->paginate(9);
+        // $articles = $this->filter($request, Article::withTranslation()->where([['active', true], ['publish_date', '<=', $currentDate]]));
+        // $treatises = $this->filter($request,   Treatise::withTranslation()->where([['active', true], ['publish_date', '<=', $currentDate]]));
 
-        if ($request->ajax()) {
-            $view = view('public.news.newsData', compact('allNews'))->render();
-            return response()->json(['html' => $view]);
-        }
+        // if($request->has('topic')){
+        //     if($request->topic == 'news') {
+        //         $allNews = $news->sortByDesc('publish_date')->paginate(5);
+        //     }
+        //     if($request->topic == 'articles') {
+        //         $allNews = $articles->sortByDesc('publish_date')->paginate(5);
+        //     }
+        //     if($request->topic == 'treatises') {
+        //         $allNews = $treatises->sortByDesc('publish_date')->paginate(5);
+        //     }
+        // } else {
+        //     $allNews = $news->concat($articles)->concat($treatises)->sortByDesc('publish_date')->paginate(5);
+        // }
 
-        return view('public.news.index', compact('news',
-            'articles', 'treatises', 'allNews', 'years', 'months'));
+        // if ($request->ajax()) {
+        //     $view = view('public.news.newsData', compact('allNews'))->render();
+        //     return response()->json(['html' => $view]);
+        // }
+
+        return view('public.news.index', compact('allNews'));
     }
-
-    public function filter($request, $query)
-    {
-        if ($request->has('month')) {
-           $query->whereMonth('publish_date', $request->month);
-        }
-        if ($request->has('year')) {
-            $query->whereYear('publish_date', $request->year);
-        }
-
-        return $query->get();
-    }
-
 
     public function show($type, $id)
     {

@@ -77,6 +77,7 @@ mix.combine([
    'resources/assets/public_js/scripts.js',
    'resources/assets/public_js/custom_scripts.js',
    'resources/assets/public_js/comments.js',
+   'resources/assets/public_js/slick.min.js',
    'resources/assets/public_js/jquery.justified.min.js',
 ], 'public/js/app.js').version();
 mix.combine(['resources/assets/css/public/*'],'public/css/app.css').version()

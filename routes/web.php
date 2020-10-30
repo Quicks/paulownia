@@ -12,10 +12,6 @@
 */
 
 // Route::get('/php', function () {phpinfo();}); //to check server php configuration
-Route::get('/test', function() {
-    $sorts = \Webkul\Attribute\Models\Attribute::where('code', 'type_of_paulownia')->first()->options;
-    return view('public.test', compact('sorts'));
-});
 
 Route::prefix('admin')->group(function () {
 

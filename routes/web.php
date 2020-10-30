@@ -12,6 +12,10 @@
 */
 
 // Route::get('/php', function () {phpinfo();}); //to check server php configuration
+Route::get('/test', function() {
+    $sorts = \Webkul\Attribute\Models\Attribute::where('code', 'type_of_paulownia')->first()->options;
+    return view('public.test', compact('sorts'));
+});
 
 Route::prefix('admin')->group(function () {
 
@@ -111,6 +115,7 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
     Route::post('/comments', 'App\Http\Controllers\CommentsController@create')->name('public.comments.create');
 
     Route::prefix('customer')->group(function () {
+        Route::post('/profitability/calculation', 'App\Http\Controllers\CalculationsController@store')->name('profitability.calculation.store');
         // forgot Password Routes
         // Forgot Password Form Show
         Route::get('/forgot-password', 'Webkul\Customer\Http\Controllers\ForgotPasswordController@create')->defaults('_config', [

@@ -4369,6 +4369,11 @@ input.form-control{
   height: 45px;
 }
 
+.slick-prev:before,
+.slick-next:before {
+    color: red;
+}
+
 /*.profit-counter-form input[name="tree_amount"]::placeholder,*/
 /*.profit-counter-form input[name="tree_amount"]::-webkit-input-placeholder,*/
 /*.profit-counter-form input[name="tree_amount"]:-moz-placeholder,*/
@@ -4386,6 +4391,60 @@ input.form-control{
 
 /*============== profit-counter end =============*/
 
+/*===========product show slider start =================*/
+.product-posters-nav {
+  width: 65px;
+}
+
+.nav-slider {
+  height: 520px;
+}
+
+.product-posters-nav img {
+  width: 63px;
+  height: 76px;
+  border: 0.5px solid #928D8D;
+}
+
+.product-posters-nav .slick-current img {
+  border: 1.5px solid #5B9600;
+}
+.product-info .arrow-down,
+.product-info .arrow-up {
+  width: 18px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.product-info .arrow-down {
+  top: 10px;
+  position: relative;
+}
+
+.product-info .arrow-up {
+  transform: rotate(180deg);
+  position: relative;
+  top: -10px;
+}
+
+.product-posters-for div {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 30px 0;
+}
+
+.product-posters-for img {
+  width: 598px;
+  height: 520px;
+}
+
+.product-posters-nav .slide-border {
+  border: 0.5px solid #928D8D;
+}
+
+.product-posters-for {
+  width: calc(100% - 65px);
+}
+/*===========product show slider end =================*/
 
 @media only screen and (min-width: 1500px) {
   .custom-page-container {
@@ -4418,6 +4477,9 @@ input.form-control{
   }
   #slider-range{
     margin-bottom: 20px;
+  }
+  .product-posters-for {
+    width: 100%;
   }
 }
 

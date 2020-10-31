@@ -8,20 +8,37 @@
 
     	<div class="row product-info">
             <div class='col-md-7'>
-                <div class='shadowed-element'>
-                    @if(count($product->product->productImages()->get()))
-                        <img id="product_img" src='/storage/{{$product->product->productImages()->first()->image}}' alt="product" data-zoom-image="/images/product1.jpg"/>
-                    @else
-                        <img src="/images/banner-logo.png" alt="product_img1"/>
-                    @endif
-                    <div id="pr_item_gallery" class="product_gallery_item owl-thumbs-slider owl-carousel owl-theme">
-                        @foreach($product->product->productImages()->get() as $image)
-                            <div class="item">
-                                <a href="#" class="active" data-image="/storage/{{$image->image}}" data-zoom-image="/storage/{{$image->image}}">
-                                    <img src="/storage/{{$image->image}}" alt="product" />
-                                </a>
-                            </div>
-                        @endforeach
+                <div class='d-flex'>
+                    <div class=" d-none d-sm-flex d-md-flex d-lg-flex flex-column justify-content-start align-items-center nav-slider mr-3">
+                        <img  src="{{ asset('images/arrow-select.svg') }}" class="arrow-up">
+                        <div class='product-posters-nav'>
+                            @if($product->product->images->count())
+                                @foreach($product->product->images as $image)
+                                    <div class="slide-border mb-2">
+                                        <img
+                                            src="/storage/{{$image->path_tmb}}"
+                                            alt="{{$product->product->name}}"
+                                        />
+                                    </div>
+                                @endforeach
+                            @endif
+                        </div>
+                        <img  src="{{ asset('images/arrow-select.svg') }}" class="arrow-down">
+                    </div>
+                    <div class='product-posters-for'>
+                        @if($product->product->images->count())
+                            @foreach($product->product->images as $image)
+                                <div class="round-corners shadowed-element">
+                                    <img
+                                        class="round-corners"
+                                        src="/storage/{{$image->path}}"
+                                        alt="{{$product->product->name}}"
+                                    />
+                                </div>
+                            @endforeach
+                        @else
+                            <img src="/images/banner-logo.png" alt="product_img1"/>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -158,6 +175,37 @@
             if(newValue >= minOrder){
                 input.val(newValue)
                 $('.add-product-to-cart').data('quantity', newValue)
+            }
+        })
+
+        $(document).ready(function(){
+            if($('.product-posters-for img').get().length > 2){
+                $('.product-posters-for').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    asNavFor: '.product-posters-nav',
+                    verticalSwiping: true,
+                    vertical: true,
+                    dots: false,
+                    centerMode: false,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                });
+                $('.product-posters-nav').slick({
+                    slidesToShow: 6,
+                    slidesToScroll: 1,
+                    asNavFor: '.product-posters-for',
+                    dots: false,
+                    verticalSwiping: true,
+                    vertical: true,
+                    autoplay: false,
+                    centerMode: false,
+                    arrows: true,
+                    prevArrow: $('.product-info .arrow-down'),
+                    nextArrow: $('.product-info .arrow-up'),
+                    focusOnSelect: true,
+                });
             }
         })
     </script>

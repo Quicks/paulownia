@@ -898,14 +898,6 @@ input.form-control{
   height: 45px;
 }
 
-.slick-prev:before,
-.slick-next:before {
-    color: red;
-}
-
-/*.profit-counter-form input[name="tree_amount"]::placeholder,*/
-/*.profit-counter-form input[name="tree_amount"]::-webkit-input-placeholder,*/
-/*.profit-counter-form input[name="tree_amount"]:-moz-placeholder,*/
 .profit-counter-form select option {
     font-weight: normal;
     color: red;

@@ -27,6 +27,7 @@ class ProductsController extends Controller
 
     public function show($url_key, ProductRepository $productRepository)
     {
+        
         $product = $productRepository->findBySlugOrFail($url_key);
         $categoryId = null;
         if($product->product()->first()->categories()->first()){

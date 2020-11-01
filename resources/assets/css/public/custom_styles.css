@@ -893,7 +893,16 @@ input.form-control{
   box-sizing: border-box;
   border-radius: 30px;
 }
+#preloader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+#preloader img{
+  display: block;
+  max-width: 250px;
+}
 .profit-counter-form select {
   background: url(../images/arrow-select.svg) no-repeat;
   background-position: right 16px top 18px; /* Change the px value here to change the distance */

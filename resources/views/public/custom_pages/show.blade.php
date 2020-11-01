@@ -55,7 +55,7 @@
       <div class='custom-page-description'>
         {!!$custom_page->description!!}
         @if($custom_page->sort)
-          <div class='products-list' data-sort-id='{{$custom_page->sort}}'></div>
+          <div class='products-list row' data-sort-id='{{$custom_page->sort}}'></div>
         @endif
         <div class='text-center shop-btn-wrapper'>
           <a href="" class='custom-page-tab active shop-btn'>
@@ -79,9 +79,10 @@
       $.ajax({
         url: '/products/by_filter',
         data: {
-          filter: {
-            sort_id: sortId
-          }
+          filters: {
+            type_of_paulownia: sortId
+          },
+          limit: 4
         },success: function(response){
           $(productBlock).html(response)
         }

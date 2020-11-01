@@ -867,6 +867,8 @@ input.form-control{
   color: #595656;
 }
 
+.profit-counter-main-form input[name="tree_amount"],
+.profit-counter-main-form select,
 .profit-counter-form input[name="tree_amount"],
 .profit-counter-form select {
   text-transform: none;
@@ -874,8 +876,10 @@ input.form-control{
   border: 0.5px solid #C4C4C4;
   box-sizing: border-box;
   border-radius: 30px;
+  height: 45px;
 }
 
+.profit-counter-main-form select,
 .profit-counter-form select {
   background: url(../images/arrow-select.svg) no-repeat;
   background-position: right 16px top 18px; /* Change the px value here to change the distance */
@@ -886,25 +890,13 @@ input.form-control{
   padding : 4px 20px
 }
 
-.profit-counter-form .accordion .card-header h6 {
-  margin-bottom: 1px;
-}
-
-.profit-counter-form .card {
-  background-color: #FCFCFC;
-}
-
-.profit-counter-form input[name="tree_amount"],
-.profit-counter-form select {
-  height: 45px;
-}
-
+.profit-counter-main-form select option,
 .profit-counter-form select option {
     font-weight: normal;
-    color: red;
     font-family: Poppins;
 }
 
+.profit-counter-main-form .submit-btn,
 .profit-counter-form .submit-btn {
   width: 134px;
   height: 31px;

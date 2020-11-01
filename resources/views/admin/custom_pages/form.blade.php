@@ -48,7 +48,7 @@
                 <div class="form-group {{ $errors->has('sort') ? 'has-error' : ''}}">
                     <label for="sort" class="control-label col-sm-3">@lang('admin.custom_pages.index.table.sort')</label>
                     <select class="form-control col-sm-6" name="sort">
-                        <option>Выберите сорт</option>
+                        <option value='0'>Выберите сорт</option>
                         @foreach($possibleSorts as $possible_sort)
                             @if($custom_page->sort == $possible_sort->id)
                                 <option selected='selected' value="{{$possible_sort->name}}">{{$possible_sort->admin_name}}</option>

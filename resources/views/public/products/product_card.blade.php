@@ -1,5 +1,5 @@
 <div class="col-lg-3 col-sm-6 {{isset($customClasses) ? $customClasses : ''}} pd-10">
-  <div class="product">
+  <div class="product round-corners">
     <div class='product-card-top'>
       TOP
     </div>

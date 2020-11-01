@@ -29,8 +29,11 @@
   background: #FCFCFC;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
-  padding: 0 40px 80px 40px;
+  padding: 0 40px 40px 40px;
   margin-top: 20px;
+}
+.products-list{
+  margin-top: 24px;
 }
 #app{
   background: linear-gradient(180deg, rgba(197, 197, 197, 0.4) 4.86%, rgba(255, 255, 255, 0) 100%), url(/images/paulownia3.png);
@@ -117,4 +120,6 @@
   margin-bottom: 25px;
   color: #5B9600;
 }
-
+.shop-btn-wrapper{
+  margin-top: 40px;
+}

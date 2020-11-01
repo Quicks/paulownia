@@ -534,8 +534,8 @@ class ProductRepository extends Repository
     public function findBySlugOrFail($slug, $columns = null)
     {
         $product = app('Webkul\Product\Repositories\ProductFlatRepository')->findOneWhere([
-                'product_id' => $slug,
-                // 'url_key' => $slug,
+                // 'product_id' => $slug,
+                'url_key' => $slug,
                 'locale' => app()->getLocale(),
                 'channel' => core()->getCurrentChannelCode(),
             ]);

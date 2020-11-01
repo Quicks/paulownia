@@ -4,7 +4,8 @@ namespace Webkul\API\Http\Controllers\Shop;
 
 use Illuminate\Support\Facades\Event;
 use Webkul\Customer\Repositories\CustomerRepository;
-
+use Webkul\Customer\Models\CustomerAddress;
+use DB;
 /**
  * Customer controller
  *
@@ -47,24 +48,34 @@ class CustomerController extends Controller
         request()->validate([
             'first_name' => 'required',
             'last_name' => 'required',
+            'address1' => 'required',
+            'city' => 'required',
+            'company_name' => 'required',
+            'country' => 'required',
+            'id_number' => 'required',
+            'phone' => 'required',
+            'postcode' => 'required',
+            'state' => 'required',
             'email' => 'email|required|unique:customers,email',
             'password' => 'confirmed|min:6|required'
         ]);
 
-        $data = request()->input();
+        
 
-        $data = array_merge($data, [
+        Event::fire('customer.registration.before');
+        $transaction = DB::transaction(function() {
+            $data = request()->input();
+
+            $data = array_merge($data, [
                 'password' => bcrypt($data['password']),
                 'channel_id' => core()->getCurrentChannel()->id,
                 'is_verified' => 1,
                 'customer_group_id' => 1
             ]);
-
-        Event::fire('customer.registration.before');
-
-        $customer = $this->customerRepository->create($data);
-
-        Event::fire('customer.registration.after', $customer);
+            $customer = $this->customerRepository->create($data);
+            $address = CustomerAddress::create(array_merge(request()->all(), ['customer_id' => $customer->id]));     
+            Event::fire('customer.registration.after', $customer);
+        });
 
         return response()->json([
                 'message' => 'Your account has been created successfully.'

@@ -104,6 +104,14 @@
   background: #5B9600;
   color: #FFFFFF;
 }
+.account-list .custom-page-tab.active{
+  background: #5B9600;
+  color: #FFFFFF;
+}
+.account-list .custom-page-tab.active:hover{
+  color: #FFFFFF;
+}
+
 .custom-page-tab.active a{
   color: #FFFFFF;
 }

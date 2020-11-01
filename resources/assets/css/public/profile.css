@@ -1,0 +1,88 @@
+#signup-form-wrapper{
+  width: 988px;
+  margin: 0 auto;
+}
+#login-form-wrapper{
+  height: 450px;
+}
+.customer-signups-forms input.form-control{
+  background: #FFFFFF;
+  border: 0.5px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+.customer-signups-forms select.form-control{
+  background: #FFFFFF;
+  border: 0.5px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+.profile-form-header .authorize-btn{
+  width: 237px;
+}
+.profile-form-header{
+  margin-bottom: 50px;
+}
+.profile-form-other-title{
+  font-family: Poppins;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #5B9600;
+}
+.authorize-btn{
+  margin-left: -40px;
+}
+
+.custom-page-tab.facebook{
+  border: none;
+  background: #4267B2;
+  color: #FFFFFF;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+  
+  text-align: center;
+  text-transform: uppercase;
+}
+.register-wrapper{
+  min-height: 400px;
+}
+
+.custom-page-tab.google{
+  border: none;
+  background: #EA4335;
+  color: #FFFFFF;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  text-align: center;
+  text-transform: uppercase;
+}
+.separator{
+  margin: 30px 0;
+}
+.profile-text{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #595656;
+}
+.customer-signups-forms .custom-page-description{
+  padding-bottom: 5px;
+}
+

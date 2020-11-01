@@ -40,5 +40,6 @@ return [
     'additional_info' => 'Дополнительная информация',
     'season' => 'Сезон',
     'filters.submit' => 'Применить'
-
+    'plant-label' => 'саженцы',
+    'shop-btn' => 'магазин',
 ];

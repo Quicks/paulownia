@@ -1,11 +1,12 @@
 <!-- LOADER -->
 <div id="preloader">
-    <div class="line-scale">
+    <img src="/images/logo.png" alt="Paulownia Professional logo">
+    <!-- <div class="line-scale">
     	<div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
-    </div>
+    </div> -->
 </div>
 <!-- END LOADER --> 

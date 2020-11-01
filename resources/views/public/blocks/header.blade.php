@@ -27,27 +27,27 @@
                                             {{$menu->title}}
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            @foreach($menu->children as $child)
+                                            @foreach($menu->children()->orderBy('position', 'asc')->get() as $child)
                                                 @if(count($child->children))
                                                     <ul class="nav-item dropdown">
                                                         <a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             {{$child->title}}
                                                         </a>
                                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownSubmenu">
-                                                            @foreach($child->children as $subchild)
-                                                                <a class="dropdown-item" href="/{{$current_locale.$subchild->link}}">{{$subchild->title}}</a>
+                                                            @foreach($child->children()->orderBy('position', 'asc')->get() as $subchild)
+                                                                <a class="dropdown-item" href="/{{$current_locale.'/'.$subchild->link}}">{{$subchild->title}}</a>
                                                             @endforeach
                                                         </div>
                                                     </ul>
                                                 @else
-                                                    <a class="dropdown-item" href="/{{$current_locale.$child->link}}">{{$child->title}}</a>
+                                                    <a class="dropdown-item" href="/{{$current_locale.'/'.$child->link}}">{{$child->title}}</a>
                                                 @endif
                                             @endforeach
                                         </div>
                                     </li>
                                 @else
                                     <li class="nav-item">
-                                        <a class="menu-link {{Request::getPathInfo() == $menu->link ? 'active' : ''}}" href="/{{$current_locale.$menu->link}}">{{$menu->title}}</a>
+                                        <a class="menu-link {{Request::getPathInfo() == $menu->link ? 'active' : ''}}" href="/{{$current_locale.'/'.$menu->link}}">{{$menu->title}}</a>
                                     </li>
                                 @endif
                             @endforeach
@@ -68,7 +68,6 @@
                                 <a href="#"><img src="{{asset("images/heart-white.svg")}}" alt="favorite"></a>
                                 <div class="panel-item-name desktop">
                                     <a href=''>Wishlist</a>
-                                
                                 </div>
                             </div>
                         </li>    

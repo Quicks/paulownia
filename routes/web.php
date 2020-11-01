@@ -88,7 +88,7 @@ Route::prefix('admin')->group(function () {
 
 Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function () {
     Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('public.products.index');
-    Route::get('/products/by_category/{categoryId}', 'App\Http\Controllers\ProductsController@byCategory');
+    Route::get('/products/by_filter/', 'App\Http\Controllers\ProductsController@byFilter');
     Route::get('/products/{slug}', 'App\Http\Controllers\ProductsController@show')->name('public.products.show');
     Route::get('/', 'App\Http\Controllers\MainController@index')->name('main');
     Route::get('galleries', 'App\Http\Controllers\GalleriesController@index')->name('public.galleries.index');

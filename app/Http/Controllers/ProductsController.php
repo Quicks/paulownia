@@ -27,7 +27,6 @@ class ProductsController extends Controller
 
     public function show($url_key, ProductRepository $productRepository)
     {
-        
         $product = $productRepository->findBySlugOrFail($url_key);
         $categoryId = null;
         if($product->product()->first()->categories()->first()){
@@ -38,9 +37,9 @@ class ProductsController extends Controller
         return view('public.products.show', compact('product', 'similarProducts'));
     }
 
-    public function byCategory(Request $request, ProductRepository $product)
+    public function byFilter(Request $request, ProductRepository $product)
     {
         $products = $product->getAll($request)->paginate(isset($params['limit']) ? $params['limit'] : 9);
-        return view('public.products.by_category', ['products' => $products, 'customClasses' => $request->customClasses ]);
+        return view('public.products.by_filter', ['products' => $products, 'customClasses' => $request->customClasses ]);
     }
 }

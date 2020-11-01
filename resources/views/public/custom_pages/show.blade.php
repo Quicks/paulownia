@@ -54,12 +54,38 @@
     @if(!empty(trim($custom_page->description)))
       <div class='custom-page-description'>
         {!!$custom_page->description!!}
+        @if($custom_page->sort)
+          <div class='products-list' data-sort-id='{{$custom_page->sort}}'></div>
+        @endif
+        <div class='text-center shop-btn-wrapper'>
+          <a href="" class='custom-page-tab active shop-btn'>
+            В магазин
+          </a>
+        </div>
       </div>
-      @if(!empty($products))
-        @foreach($products as $product)
-          @include('public.products.product_card', ['product' => $product, 'customClasses' => 'col-lg-4'])
-        @endforeach
-      @endif
     @endif
   </div>
 @endsection
+
+@push('scripts')
+  <script>
+    $(document).ready(function(){
+      var productPath = "{{route('public.products.index')}}"
+      $('.custom-page-container .shop-btn').attr('href', productPath)
+    })
+    var productBlock = $('.products-list').get()
+    if(productBlock.length){
+      var sortId = $(productBlock).data('sort-id')
+      $.ajax({
+        url: '/products/by_filter',
+        data: {
+          filter: {
+            sort_id: sortId
+          }
+        },success: function(response){
+          $(productBlock).html(response)
+        }
+      })
+    }
+  </script>
+@endpush

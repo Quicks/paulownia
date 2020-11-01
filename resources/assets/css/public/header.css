@@ -2,7 +2,6 @@
   position: relative;
   width: 100%;
   z-index: 2;
-  padding-right: 100px;
 }
 .header-wrap > img {
   position: absolute;
@@ -108,8 +107,36 @@
 .navbar-nav .dropdown .dropdown-menu .dropdown-item{
   padding: 12px 24px;
 }
-
+@media (max-width: 768px){
+  .navbar-nav.attr-nav{
+    flex-direction: inherit;
+  }
+  .navbar-nav .cart_box.dropdown-menu{
+    min-width: auto;
+  }
+  #app .navbar-nav .dropdown-menu.cart_box{
+    width: 250px;
+  }
+  #navbarSupportedContent{
+    position: fixed;
+    top: 35px;
+    width: 65%;
+    background: white;
+  }
+  #navbarSupportedContent .nav-item{
+    padding: 10px;
+  }
+  #navbarSupportedContent .dropdown-toggle.menu-link{
+    padding: 0;
+  }
+  .custom-page-tabs{
+    margin: 0;
+  }
+}
 @media (min-width: 1024px) {
+  .header-wrap {
+    padding-right: 100px;
+  }
   .header-wrap .mobile {
       display: none;
   }

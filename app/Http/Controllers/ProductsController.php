@@ -39,7 +39,7 @@ class ProductsController extends Controller
 
     public function byFilter(Request $request, ProductRepository $product)
     {
-        $products = $product->getAll($request)->paginate(isset($params['limit']) ? $params['limit'] : 9);
+        $products = $product->getAll(['filters' => $request->filters])->paginate(isset($params['limit']) ? $params['limit'] : 9);
         return view('public.products.by_filter', ['products' => $products, 'customClasses' => $request->customClasses ]);
     }
 }

@@ -70,6 +70,7 @@
 
     @include('public/blocks/preloader')
     @include('public/blocks/header')
+    @yield('main_profitability_container')
     <main class="main-background container custom-page-container">
         @if (session('success') || session('warning') || session('error') || session('info'))
             <div id="flash-message" class="custom-status">

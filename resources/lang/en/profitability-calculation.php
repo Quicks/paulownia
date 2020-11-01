@@ -13,4 +13,11 @@ return [
     'p-type-placeholder' => 'Вид и форма посадки',
     'tree-amount-placeholder' => 'Количество деревьев',
     'success-flash' => 'Success added',
+    'deal-tag' => 'начните ваш агробизне с нами: древесина, промышленная павловния,  озеленение',
+    'sale-plant' => 'продать плантацию',
+    'count-verb' => 'Рассчитать',
+    'count-tag' => 'доход плантации',
+    'sort-label' => 'сорт павловнии',
+    'p-type-label' => 'схема посадки',
+    'tree-amount-label' => 'колличество',
 ];

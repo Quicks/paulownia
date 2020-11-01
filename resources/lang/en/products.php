@@ -40,5 +40,7 @@ return [
     'price.to' => 'to',
     'sort' => 'Sort',
     'season' => 'Season',
-    'filters.submit' => 'Submit'
+    'filters.submit' => 'Submit',
+    'plant-label' => 'саженцы',
+    'shop-btn' => 'магазин',
 ];

@@ -23,7 +23,9 @@
     @if(empty(SEOMeta::getTitle()))
         <title>{{ config('app.name', 'Laravel') }}</title>
     @endif
-
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vee-validate/2.0.0-rc.26/vee-validate.min.js"></script>
 <!-- Google ReCAPTCHA v2 -->
     {!! htmlScriptTagJsApi() !!}
 
@@ -39,6 +41,9 @@
     <link rel="stylesheet" href="{{ asset('css/jquery.justified.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vee-validate/2.0.0-rc.26/vee-validate.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/js/lightgallery.js"></script>
     <script type="text/javascript">
@@ -75,22 +80,14 @@
         <div class="content">
             @yield('content')
             @include('public.blocks.success_to_bag')
-
+            @include('public.blocks.wishlist_added_popup')
+            @include('public.blocks.wishlist_removed_popup')
         </div>
-
     </main>
     @include('public/blocks/footer')
 
-    <div id="wishlist-added-popup" class="white-popup mfp-hide">
-        <div class='wishlist-added'>
-            @lang('wishlist.added')
-        </div>
-    </div>
-    <div id="wishlist-removed-popup" class="white-popup mfp-hide">
-        <div class='wishlist-removed'>
-            @lang('wishlist.removed')
-        </div>
-    </div>
+    
+    
 </div>
 {{--@include('cookieConsent::index')--}}
 

@@ -6,6 +6,8 @@ return [
   'label.your_orders' => 'Your orders',
   'label.billing_details' => 'Contact details',
   'label.first_name' => 'First name',
+  'label.wishlist_added' => 'Product added to wishlist',
+  'label.wishlist_removed' => 'Product removed from wishlist',
   'label.last_name' => 'Last name',
   'label.company_name' => 'Company name',
   'label.country' => 'Country',

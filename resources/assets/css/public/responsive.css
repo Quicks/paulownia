@@ -2069,7 +2069,7 @@ section.pb_70, .pb_70 {
 	margin: 18px 0 0 5px;
 }
 .navbar .attr-nav li.cart_wrap .nav-link {
-	padding: 22px 10px !important;
+	padding: 0 10px !important;
 }
 .navbar .attr-nav li.cart_wrap .nav-link i {
 	font-size: 26px;

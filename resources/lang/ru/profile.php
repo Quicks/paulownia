@@ -2,6 +2,18 @@
 
 
 return [
+    'logout' => 'Выйти',
+    'profile_text1' => 'By CREATE AN ACCOUNT you agree that you`ve read and accepted our ',
+    'profile_text2' => 'and ',
+    'profile_text3' => 'Paulownia proffesional is committed to keeping your information confidential',
+    'authorize' => 'Ввойти',
+    'privacy_policy'=> 'privacy policy',
+    'terms_conditions'=> 'terms conditions',
+    'signup' => 'Зарегистрироватся',
+    'create_btn' => 'Создать аккаунт',
+    'create_facebook_btn' => 'регистрация через FACEBOOK',
+    'create_google_btn' => 'регистрация через GOOGLE',
+    'authorize' => 'Ввойти',
     'profile' => 'Профиль',
     'favorite' => 'Избранные',
     'story' => 'История',
@@ -57,6 +69,7 @@ return [
     'total-due' => 'Итого к оплате',
     'invoice' => 'Выставленный счет',
     'print' => 'Распечатать',
+    'calculation_profitability' => 'Расчеты прибыльности',
     'individual-shipment' => 'Индивидуальная отправка',
     'shipping-address' => 'Адрес доставки',
     'billing-address' => 'Платежный адрес',

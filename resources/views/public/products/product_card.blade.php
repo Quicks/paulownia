@@ -54,7 +54,7 @@
           </div>
           <div class='action-block'>
             <span class='action-btn wishlist-btn'>
-              <a data-product-id="{{$product->product_id}}" href="#1" class='{{$wishlist_items->where("product_id", $product->product_id)->exists() ? "wishlisted" : ""}}'>
+              <a data-product-id="{{$product->product_id}}" href="#1" class='add-product-to-wishlist {{$wishlist_items->where("product_id", $product->product_id)->exists() ? "wishlisted" : ""}}'>
                 @include('icons/heart')
               </a>
             </span>

@@ -252,9 +252,9 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
 
     //             /* Orders route */
     //             //Customer orders(listing)
-                Route::get('orders', 'Webkul\Shop\Http\Controllers\OrderController@index')->defaults('_config', [
-                    'view' => 'shop::customers.account.orders.index'
-                ])->name('customer.orders.index');
+                // Route::get('orders', 'Webkul\Shop\Http\Controllers\OrderController@index')->defaults('_config', [
+                //     'view' => 'shop::customers.account.orders.index'
+                // ])->name('customer.orders.index');
 
     //             //Customer orders view summary and status
                 Route::get('orders/view/{id}', 'Webkul\Shop\Http\Controllers\OrderController@view')->defaults('_config', [

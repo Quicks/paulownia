@@ -42,4 +42,5 @@ class CustomerController extends WebkulCustomerController
             return redirect()->back($this->_config['redirect']);
         }
     }
+
 }

@@ -50,7 +50,7 @@ class AppServiceProvider extends ServiceProvider
         
         view()->composer('*', function ($view) {
             $current_locale = app()->getLocale();
-            $menus = Menu::parents()->get();
+            $menus = Menu::parents()->orderBy('position')->get();
             $customerId = '-1';
             if(auth()->guard('customer')->user()){
                 $customerId = auth()->guard('customer')->user()->id;

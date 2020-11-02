@@ -197,6 +197,7 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
                     'view' => 'shop::customers.account.profile.edit'
                 ])->name('customer.profile.edit');
 
+                
                 //Customer Profile Edit Form Store
                 Route::post('profile/edit', 'App\Http\Controllers\CustomerController@update')->defaults('_config', [
                     'redirect' => 'customer.profile.index'
@@ -350,5 +351,7 @@ Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\Loca
 });
 
 Route::get('/certificate/{code}', 'App\Http\Controllers\CertificateController')->name('certificate');
-
+Route::get('profile/register-form', 'App\Http\Controllers\HomeController@renderRegisterForm');
+Route::get('profile/login-form', 'App\Http\Controllers\HomeController@renderLoginForm');
+Route::get('render/header', 'App\Http\Controllers\HomeController@renderHeader');
 Route::fallback('App\Http\Controllers\HomeController@notFound');

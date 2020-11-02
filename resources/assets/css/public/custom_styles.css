@@ -496,9 +496,27 @@ span.error{
   font-size: 15px;
   line-height: 22px;
   /* identical to box height */
-
-
   color: #575756;
+}
+
+.language-list{
+  text-align: center;
+}
+.dropdown-toggle.account-list-btn:after{
+  content: '';
+}
+.dropdown-toggle.account-list-btn{
+  padding: 0;
+  flex-direction: column;
+}
+.header_dropdown .dropdown-menu.account-list{
+  padding: 24px;
+}
+.header_dropdown .account-list .dropdown-item{
+  border-bottom: none;
+}
+.header_dropdown .language-list .dropdown-item{
+  border-bottom: none;
 }
 .submit-btn{
   padding: 8px 59px;
@@ -878,7 +896,17 @@ input.form-control{
   border-radius: 30px;
   height: 45px;
 }
+#preloader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+
+#preloader img{
+  display: block;
+  max-width: 250px;
+}
 .profit-counter-main-form select,
 .profit-counter-form select {
   background: url(../images/arrow-select.svg) no-repeat;

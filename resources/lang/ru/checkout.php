@@ -8,6 +8,8 @@ return [
   'label.first_name' => 'Имя',
   'label.last_name' => 'Фамилия',
   'label.company_name' => 'Название компании',
+  'label.wishlist_added' => 'Продукт добавлен в избранные',
+  'label.wishlist_removed' => 'Продукт удален из избранных',
   'label.country' => 'Страна',
   'label.address' => 'Адрес',
   'label.title' => 'Название',

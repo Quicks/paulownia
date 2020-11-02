@@ -5,13 +5,19 @@
 @endsection
 
 @section('content')
-    @include('public/main/slider', ['sliders' => $sliders])
-    @include('public/main/promotions')
-    @include('public/main/why_we')
-    @include('public/main/bestsellers')
-    @include('public/main/feedbacks', ['ourServices' => $ourServices])
-    @include('public/main/our_sorts')
-    @include('public/main/gallery')
+    @include('public/main/slider-plant', [ 'sliderHeader' => __('products.plant-label') ])
+    @include('public/main/slider-wood', [
+        'sliderHeader' => __('products.wood-label'),
+        'classContainer' => 'wood-slider-container',
+        'sliderClass' => 'wood-slider'
+    ])
+    
+    {{--@include('public/main/promotions')--}}
+    {{--@include('public/main/why_we')--}}
+    {{--@include('public/main/bestsellers')--}}
+    {{--@include('public/main/feedbacks', ['ourServices' => $ourServices])--}}
+    {{--@include('public/main/our_sorts')--}}
+    {{--@include('public/main/gallery')--}}
     @include('public/main/news', ['news' => $news])
     @include('public/main/map')
 @endsection

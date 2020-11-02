@@ -896,6 +896,7 @@ input.form-control{
     font-family: Poppins;
 }
 
+.wood-slider-container .submit-btn,
 .plant-slider-container .submit-btn,
 .profit-counter-main-form .submit-btn,
 .profit-counter-form .submit-btn {

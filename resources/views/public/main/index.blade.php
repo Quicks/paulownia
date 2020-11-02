@@ -6,11 +6,7 @@
 
 @section('content')
     @include('public/main/slider-plant', [ 'sliderHeader' => __('products.plant-label') ])
-    @include('public/main/slider-wood', [
-        'sliderHeader' => __('products.wood-label'),
-        'classContainer' => 'wood-slider-container',
-        'sliderClass' => 'wood-slider'
-    ])
+    @include('public/main/slider-wood', ['sliderHeader' => __('products.wood-label')])
     
     {{--@include('public/main/promotions')--}}
     {{--@include('public/main/why_we')--}}

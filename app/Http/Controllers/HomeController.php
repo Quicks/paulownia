@@ -10,6 +10,17 @@ class HomeController extends Controller
         return view('public.home.not_found');
     }
 
+    /**
+     * @return json with slides
+     */
+    public function getJson(\Illuminate\Http\Request $request)
+    {
+        $slides = \App\Models\Slider::with('image')->latest()->take(3)->get();
+        if ($request->ajax()) {
+            return response()->json(compact('slides'));
+        }
+    }
+
     public function renderRegisterForm(){
         return view('public.customers.signup.form');
     }

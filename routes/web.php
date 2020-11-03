@@ -86,6 +86,8 @@ Route::prefix('admin')->group(function () {
     });
 });
 
+Route::get('top-slider', 'App\Http\Controllers\HomeController@getJson');
+
 Route::group(['middleware' => ['localize'], 'prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function () {
     Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('public.products.index');
     Route::get('/products/by_filter/', 'App\Http\Controllers\ProductsController@byFilter');

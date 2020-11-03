@@ -42,5 +42,6 @@ return [
     'season' => 'Season',
     'filters.submit' => 'Submit',
     'plant-label' => 'саженцы',
+    'wood-label' => 'древесина',
     'shop-btn' => 'магазин',
 ];

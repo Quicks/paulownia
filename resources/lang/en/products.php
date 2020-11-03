@@ -44,4 +44,5 @@ return [
     'plant-label' => 'саженцы',
     'wood-label' => 'древесина',
     'shop-btn' => 'магазин',
+    'sort-header' => 'наши сорта',
 ];

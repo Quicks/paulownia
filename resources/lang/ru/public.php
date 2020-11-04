@@ -18,4 +18,10 @@ return [
   'blog.description' => 'Немного о наших статьях',
 
   'map.title' => 'Мы на карте',
+  'type_fabriq' => 'промышленная',
+  'type_garden' => 'плантации',
+  'type_wood' => 'древесина',
+  'type_green' => 'для озеленения',
+  'type_orchard' => 'павловния в саду',
+  'type_carbon' => 'CO2',
 ];

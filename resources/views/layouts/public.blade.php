@@ -85,6 +85,7 @@
             @include('public.blocks.wishlist_removed_popup')
         </div>
     </main>
+    @yield('map_container')
     @include('public/blocks/footer')
 
     

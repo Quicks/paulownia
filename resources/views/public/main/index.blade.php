@@ -15,5 +15,8 @@
     @include('public/main/our_sorts')
     @include('public/main/news', ['news' => $news])
     @include('public/main/gallery') 
+@endsection
+
+@section('map_container')
     @include('public/main/map')
 @endsection

@@ -40,6 +40,8 @@
 @push('scripts')
     <script>
         $(document).ready(function(){
+        	$('.main-background').addClass('main-to-bottom');
+
             $('.top-slider').slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,

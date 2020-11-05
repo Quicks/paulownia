@@ -1,10 +1,15 @@
+.main-to-bottom {
+	position: relative;
+    top: 428px;
+}
+
 /*===========profitability-contaner start =================*/
 
 .profitability-container {
 	width: 100%;
 	height: 600px;
-	position: relative;
-    top: -62px;
+	position: absolute;
+    top: 62px;
 }
 
 .top-slider,
@@ -48,7 +53,7 @@
 
 .top-ellipse-wrap {
 	position: absolute;
-    top: 235px;
+    top: 210px;
     left: 170px;
     width: 88%;
 }
@@ -170,15 +175,15 @@
 .plant-slider-container {
 	background-color: rgba(255, 255, 255, 0.4);
 	padding-top: 100px;
-    position: relative;
+    /*position: relative;*/
     top: -131px;
-    height: 875px;
+    height: 830px;
 }
 
 .wood-slider-container {
 	background: url('../images/woodback.png') no-repeat;
 	position: relative;
-    top: -171px;
+    top: -37px;
     min-height: 660px;
     z-index: 1;
 }
@@ -244,7 +249,7 @@
 	min-height: 480px;
 	background-color: rgba(255, 255, 255, 0.4);
 	padding-top: 110px;
-	top: -231px;
+	top: -95px;
 	position: relative;
 }
 
@@ -258,7 +263,7 @@
     margin: 0 auto;
     border-radius: 80px;
     box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.05);
-    position: relative;
+    /*position: relative;*/
     z-index: 2;
 	top: -258px;
 	display: flex;
@@ -308,7 +313,7 @@
 	min-height: 500px;
 	background-color: rgba(255, 255, 255, 0.4);
 	position: relative;
-    top: -231px;
+    top: -95px;
 }
 
 .type-wrap,
@@ -332,13 +337,13 @@
 
 /*===========news container end =================*/
 
-/*===========news container start =================*/
+/*===========type container start =================*/
 .type-container {
 	width: 100%;
 	max-height: 730px;
 	background-color: rgba(255, 255, 255, 0.4);
 	position: relative;
-    top: -231px;
+    top: -95px;
     padding-top: 80px;
 	display: flex;
     flex-direction: column;
@@ -423,12 +428,29 @@
     align-self: flex-end;
     z-index: 1;
 }
-/*===========news container end =================*/
+/*===========type container end =================*/
+
+/*===========map container start =================*/
 
 .wave-separator {
 	position: relative;
-    top: -231px;
+    top: -126px;
 }
 
 
+.map-main-container {
+	position: relative;
+    top: 189px;
+    height: 600px;
+}
+
+.map-main-container .map iframe {
+	height: 650px;
+}
+
+main {
+	position: relative;
+    z-index: 1;
+}
+/*===========map container end =================*/
 

@@ -28,7 +28,7 @@
 <div class="wave-separator">
   <svg viewBox="0 0 500 90" preserveAspectRatio="xMinYMin meet"> 
       <path d="M0, 50 C150, 150 150,   1 500, 60 L500, 00 L0, 0 Z"
-          style="stroke:none; fill:rgba(255, 255, 255, 0.4);"> 
+          style="stroke:none; fill:rgba(255, 255, 255, 0.8);"> 
       </path> 
   </svg>
 </div>

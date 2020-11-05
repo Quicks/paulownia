@@ -1,34 +1,34 @@
-<section class="pb_70">
-	<div class="container">
-    <div class="row">
-      <div class="col-md-12 mb-md-5 mb-4">
-        <div class="col-12">
-          <div class="text-center">
-            <div class="heading_s3 text-center animation" data-animation="fadeInDown" data-animation-delay="0.02s">
-              <div class="sub_heading">@lang('public.galleries.sub_title')</div>
-                <h2>@lang('public.galleries.title')</h2>
-            </div>
-            <p class="animation" data-animation="fadeInUp" data-animation-delay="0.03s">
-              @lang('public.galleries.description')
-            </p>
-            <div class="small_divider"></div>
-          </div>
-        </div>
-        <ul class="list_none carousel_slide4 owl-carousel owl-theme nav_style2" data-margin="15" data-dots="false" data-nav="true" data-loop="true">
-          @foreach($mainGallery as $gallery)
-
-            <li>
-              <a href='{{route("public.galleries.show", ["id" => $gallery->id])}}'>
-                  @if(isset($gallery->mainImage()->image))
-                      <img src="/storage/{{$gallery->mainImage()->thumbnail}}" alt="image">
-                  @else
-                      <img src="/images/gallery_item_small1.jpg" alt="image">
-                  @endif
-              </a>
-            </li>
-          @endforeach
-        </ul>
-      </div>
+<div class="type-container">
+  <h6>PAULOWNIA PROFESSIONAL®</h6>
+  <h1>{{__('header-footer.paulownia')}}</h1>
+  <div class="row">
+    <div class="col-10 type-wrap">
+        <a href="{{ url()->current() }}" target="_blank">
+          <div class="inner-btn">{{__('public.type_fabriq')}}</div>
+        </a>
+        <a href="{{ url()->current() }}" target="_blank">
+          <div class="inner-btn">{{__('public.type_garden')}}</div>
+        </a>
+        <a href="{{ url()->current() }}" target="_blank">
+          <div class="inner-btn">{{__('public.type_wood')}}</div>
+        </a>
+        <a href="{{ url()->current() }}" target="_blank">
+          <div class="inner-btn">{{__('public.type_green')}}</div>
+        </a>
+        <a href="{{ url()->current() }}" target="_blank">
+          <div class="inner-btn">{{__('public.type_orchard')}}</div>
+        </a>
+        <a href="{{ url()->current() }}" target="_blank">
+          <div class="inner-btn">{{__('public.type_carbon')}}</div>
+        </a>
     </div>
   </div>
-</section>
+  <img src="{{ asset('images/type-flower.png') }}" alt="paulownia" class="pink-flower">
+</div>
+<div class="wave-separator">
+  <svg viewBox="0 0 500 90" preserveAspectRatio="xMinYMin meet"> 
+      <path d="M0, 50 C150, 150 150,   1 500, 60 L500, 00 L0, 0 Z"
+          style="stroke:none; fill:rgba(255, 255, 255, 0.4);"> 
+      </path> 
+  </svg>
+</div>

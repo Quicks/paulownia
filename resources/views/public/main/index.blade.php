@@ -13,7 +13,7 @@
     {{--@include('public/main/bestsellers')--}}
     {{--@include('public/main/feedbacks', ['ourServices' => $ourServices])--}}
     @include('public/main/our_sorts')
-    {{--@include('public/main/gallery')--}}
-    @include('public/main/news')
+    @include('public/main/news', ['news' => $news])
+    @include('public/main/gallery') 
     @include('public/main/map')
 @endsection
